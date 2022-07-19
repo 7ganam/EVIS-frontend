@@ -1,0 +1,58 @@
+export const categories = [
+  {
+    level: 0,
+    featured: true,
+    category: "Gadgets",
+    name: "Samsung Galaxy-M1",
+    banner: "/assets/images/products/samsung.png",
+  },
+  {
+    level: 1,
+    featured: true,
+    name: "Tomatto",
+    category: "Grocery",
+    banner: "/assets/images/products/tomato.png",
+  },
+  {
+    level: 0,
+    featured: false,
+    category: "Beauty",
+    name: "Boston Round Cream Pack",
+    banner: "/assets/images/products/beauty-cream.png",
+  },
+  {
+    level: 1,
+    featured: true,
+    category: "Fashion",
+    name: "Woman Party Dress",
+    banner: "/assets/images/products/red-dress.png",
+  },
+  {
+    level: 0,
+    featured: true,
+    name: "White Tops",
+    category: "Fashion",
+    banner: "/assets/images/products/white-tops.png",
+  },
+  {
+    level: 1,
+    featured: false,
+    category: "Fashion",
+    name: "Casual Shirt for Man",
+    banner: "/assets/images/products/formal-shirt.png",
+  },
+  {
+    level: 0,
+    featured: true,
+    category: "Fashion",
+    name: "Blue Premium T-shirt",
+    banner: "/assets/images/products/blu-tshirt.png",
+  },
+  {
+    level: 1,
+    featured: false,
+    category: "Fashion",
+    name: "Man Trowzer Pant",
+    banner: "/assets/images/products/pnat.png",
+  },
+];

@@ -1,0 +1,58 @@
+export const reviews = [
+  {
+    published: true,
+    name: "Samsung Galaxy-M1",
+    customer: "Gage Pequette",
+    image: "/assets/images/products/samsung.png",
+    comment: "“But I must explain to you how all this of denouncing pleasure.”",
+  },
+  {
+    published: true,
+    name: "Tomatto",
+    customer: "Zachary Taylor",
+    image: "/assets/images/products/tomato.png",
+    comment: "“But I must explain to you how all this of denouncing pleasure.”",
+  },
+  {
+    published: false,
+    name: "Boston Round Cream Pack",
+    customer: "Ollie Casper",
+    image: "/assets/images/products/beauty-cream.png",
+    comment: "“But I must explain to you how all this of denouncing pleasure.”",
+  },
+  {
+    published: true,
+    name: "Woman Party Dress",
+    customer: "Tony Richardson",
+    image: "/assets/images/products/red-dress.png",
+    comment: "“But I must explain to you how all this of denouncing pleasure.”",
+  },
+  {
+    published: true,
+    name: "White Tops",
+    customer: "Zach Marshall",
+    image: "/assets/images/products/white-tops.png",
+    comment: "“But I must explain to you how all this of denouncing pleasure.”",
+  },
+  {
+    published: false,
+    name: "Casual Shirt for Man",
+    customer: "Ken Matthews",
+    image: "/assets/images/products/formal-shirt.png",
+    comment: "“But I must explain to you how all this of denouncing pleasure.”",
+  },
+  {
+    published: true,
+    name: "Blue Premium T-shirt",
+    customer: "Nathan Clark",
+    image: "/assets/images/products/blu-tshirt.png",
+    comment: "“But I must explain to you how all this of denouncing pleasure.”",
+  },
+  {
+    published: false,
+    name: "Man Trowzer Pant",
+    customer: "Bruce Reynolds",
+    image: "/assets/images/products/pnat.png",
+    comment: "“But I must explain to you how all this of denouncing pleasure.”",
+  },
+];
