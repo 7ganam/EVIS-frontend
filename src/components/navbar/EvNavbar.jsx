@@ -4,7 +4,7 @@ import { Box, Container, MenuItem, styled } from "@mui/material";
 import BazarCard from "components/BazarCard";
 import { FlexBox } from "components/flex-box";
 import NavLink from "components/nav-link/NavLink";
-import navbarNavigations from "data/navbarNavigations";
+import evNavbarNavigations from "data/ev-navbarNavigations";
 import useSettings from "hooks/useSettings";
 import MegaMenu from "./MegaMenu";
 import MegaMenu2 from "./MegaMenu2"; // NavList props interface
@@ -186,7 +186,9 @@ const Navbar = ({ hideCategories, elevation }) => {
       {!hideCategories ? (
         <InnerContainer sx={{ justifyContent: "center" }}>
           {/* Horizontal menu */}
-          <FlexBox gap={4}>{renderNestedNav(navbarNavigations, true)}</FlexBox>
+          <FlexBox gap={4}>
+            {renderNestedNav(evNavbarNavigations, true)}
+          </FlexBox>
         </InnerContainer>
       ) : (
         <InnerContainer
@@ -194,7 +196,9 @@ const Navbar = ({ hideCategories, elevation }) => {
             justifyContent: "center",
           }}
         >
-          <FlexBox gap={4}>{renderNestedNav(navbarNavigations, true)}</FlexBox>
+          <FlexBox gap={4}>
+            {renderNestedNav(evNavbarNavigations, true)}
+          </FlexBox>
         </InnerContainer>
       )}
     </NavBarWrapper>
