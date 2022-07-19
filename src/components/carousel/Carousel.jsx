@@ -40,6 +40,7 @@ const Carousel = ({
   naturalSlideWidth,
   dotGroupMarginTop,
   naturalSlideHeight,
+  fontSize,
 }) => {
   // site settings
   const { settings } = useSettings();
@@ -84,7 +85,7 @@ const Carousel = ({
             className={clsx(leftButtonClass, arrowButtonClass)}
           >
             {settings.direction === "ltr" ? (
-              <ArrowBack fontSize="small" color="inherit" />
+              <ArrowBack fontSize={fontSize || "small"} color="inherit" />
             ) : (
               <ArrowForward fontSize="small" color="inherit" />
             )}
@@ -99,9 +100,9 @@ const Carousel = ({
             className={clsx(arrowButtonClass, rightButtonClass)}
           >
             {settings.direction === "ltr" ? (
-              <ArrowForward fontSize="small" color="inherit" />
+              <ArrowForward fontSize={fontSize || "small"} color="inherit" />
             ) : (
-              <ArrowBack fontSize="small" color="inherit" />
+              <ArrowBack fontSize={fontSize || "small"} color="inherit" />
             )}
           </StyledArrowNextButton>
         </Fragment>
