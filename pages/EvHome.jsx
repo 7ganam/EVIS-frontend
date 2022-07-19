@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import EvLayout from "components/layouts/EvLayout";
 import MobileNavigationBar from "components/mobile-navigation/MobileNavigationBar";
-import PageFooter from "components/page-footer/PageFooter";
+import EvPageFooter from "components/Ev-page-footer/EvPageFooter";
 import AllProducts from "pages-sections/grocery3/AllProducts";
 import DiscountProducts from "pages-sections/grocery3/DiscountProducts";
 import GroceryShopSection1 from "pages-sections/grocery3/Grocery3ShopSection1";
@@ -25,7 +25,7 @@ const EvHome = (props) => {
         <AllProducts productsData={allProducts} />
       </Container>
 
-      <PageFooter />
+      <EvPageFooter />
 
       <MobileNavigationBar />
     </EvLayout>
