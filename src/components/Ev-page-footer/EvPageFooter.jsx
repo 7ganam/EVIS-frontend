@@ -48,6 +48,7 @@ const SectionTitle = styled("div")(({ theme }) => ({
   fontSize: "30px",
   fontWeight: "bolder",
   marginBottom: 10,
+  marginTop: "10px",
 })); // =================================================================
 
 // =================================================================
@@ -55,8 +56,8 @@ const PageFooter = ({ sx, id, bgcolor }) => {
   return (
     <StyledFooter id={id} sx={sx} bgcolor={bgcolor}>
       <Container>
-        <Grid container spacing={6}>
-          <Grid item md={3} sm={6} xs={12}>
+        <Grid container spacing={4} columns={{ xs: 12, md: 13 }}>
+          <Grid item md={4} sm={6} xs={12}>
             <Box
               sx={{
                 bgcolor: "white",
