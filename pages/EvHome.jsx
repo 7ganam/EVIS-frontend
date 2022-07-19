@@ -1,19 +1,18 @@
 import { Container } from "@mui/material";
-import ShopLayout2 from "components/layouts/ShopLayout2";
+import EvLayout from "components/layouts/EvLayout";
 import MobileNavigationBar from "components/mobile-navigation/MobileNavigationBar";
 import PageFooter from "components/page-footer/PageFooter";
-import Setting from "components/Setting";
 import AllProducts from "pages-sections/grocery3/AllProducts";
 import DiscountProducts from "pages-sections/grocery3/DiscountProducts";
 import GroceryShopSection1 from "pages-sections/grocery3/Grocery3ShopSection1";
 import TopSailedProducts from "pages-sections/grocery3/TopSailedProducts";
-import api from "utils/api/grocery3-shop"; // ======================================================
-
+import api from "utils/api/grocery3-shop";
 // ======================================================
-const Grocery3 = (props) => {
+// ======================================================
+const EvHome = (props) => {
   const { offerProducts, allProducts, topSailedProducts } = props;
   return (
-    <ShopLayout2 showNavbar={true}>
+    <EvLayout showNavbar={true}>
       <GroceryShopSection1 />
 
       <Container
@@ -28,10 +27,8 @@ const Grocery3 = (props) => {
 
       <PageFooter />
 
-      <Setting />
-
       <MobileNavigationBar />
-    </ShopLayout2>
+    </EvLayout>
   );
 };
 
@@ -47,4 +44,4 @@ export async function getStaticProps() {
     },
   };
 }
-export default Grocery3;
+export default EvHome;

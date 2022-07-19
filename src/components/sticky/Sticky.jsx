@@ -3,11 +3,9 @@ import { styled } from "@mui/material/styles";
 import { slideDown } from "animations/keyframes";
 import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-export const StyledBox = styled(
-  ({ children, componentHeight, fixedOn, fixed, ...rest }) => (
-    <div {...rest}>{children}</div>
-  )
-)(({ theme, componentHeight, fixedOn, fixed }) => ({
+export const StyledBox = styled(({ children, ...rest }) => (
+  <div {...rest}>{children}</div>
+))(({ theme, componentHeight, fixedOn, fixed }) => ({
   "& .hold": {
     zIndex: 2,
     boxShadow: "none",
