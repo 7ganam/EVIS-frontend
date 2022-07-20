@@ -10,7 +10,7 @@ import DownloadSection from "pages-sections/ev-home/DownloadSection";
 import TopSailedProducts from "pages-sections/grocery3/TopSailedProducts";
 import AboutSection from "pages-sections/ev-home/AboutSection";
 import WhatToExpectSection from "pages-sections/ev-home/WhatToExpectSection";
-
+import EventSection from "pages-sections/ev-home/EventSection";
 import api from "utils/api/grocery3-shop";
 // ======================================================
 // ======================================================
@@ -47,52 +47,56 @@ const EvHome = (props) => {
     },
   ];
   const aboutSectionData = {
-    text: `As is true for many emerging technologies, vehicle electrification is experiencing rapid innovation. The Middle East & Africa Electric Vehicle Market is expected to witness substantial growth & business opportunities over the next decade.
-
-    Governments are focusing on renewable energy and clean transportation technologies along with the implementation of economic and energy diversification plans.
-
-    EVIS is unique by integrating inter-related technologies at one event, allowing attendees to network across the value chains and exploit new opportunities at the intersection of EV technologies.`,
+    text: `As is true for many emerging technologies, vehicle electrification is experiencing rapid innovation. The Middle East & Africa Electric Vehicle Market is expected to witness substantial growth & business opportunities over the next decade. Governments are focusing on renewable energy and clean transportation technologies along with the implementation of economic and energy diversification plans.
+    EVIS is unique by integrating inter-related technologies at one event, allowing attendees to network across the value chains and exploit new opportunities at the intersection of EV technologies.
+    The Electric Vehicles are continually evolving for a future of mobility and more efficient modes of transportation, bringing together key players and influential business leaders who works together on electric vehicles, energy and charging infrastructure, information technology to explore more advanced systems. 
+    Bringing together all the stakeholders, experts, thought leaders, influencers, manufacturers, and regulation experts has generated a great opportunity to get an exposure on the latest trends and innovations in the EV and transport industries.
+.`,
     youtube: "x2CDpB6mrp4",
   };
   const serviceList = [
     {
-      icon: "Truck",
-      title: "5,000+ Attendees",
-      subtitle: "Start from $10",
       image: "/assets/images/ev-home/why-attendees-d.png",
     },
     {
-      icon: "MoneyGuarantee",
-      title: "10,000+ Gross SQM",
-      subtitle: "7 Days Back",
       image: "/assets/images/ev-home/why-sqm-d.png",
     },
     {
-      icon: "AlarmClock",
-      title: "200+ Exhibitors",
-      subtitle: "For free return",
       image: "/assets/images/ev-home/why-exhibitions-d.png",
     },
     {
-      icon: "Payment",
-      title: "1,000 Delegates",
-      subtitle: "Secure system",
       image: "/assets/images/ev-home/why-delegates-d.png",
     },
     {
-      icon: "OnlineSupport",
-      title: "30+ Conference Sessions",
-      subtitle: "24/7 daily",
       image: "/assets/images/ev-home/why-conference-d.png",
     },
     {
-      icon: "OnlineSupport",
-      title: "50+ Speakers",
-      subtitle: "24/7 daily",
       image: "/assets/images/ev-home/why-speakers-d.png",
     },
   ];
-
+  const featureList = [
+    {
+      title: "Exhibition Area",
+      text: "With over 6,000 square meters of display space, Electric Vehicle Innovation Summit brings in the biggest and best brands from all over the world to present their latest products and innovations in the industry.",
+      image: "/assets/images/ev-home/exh2-gradient.png",
+      buttonText: "EXHIBIT AT EVIS",
+      buttonLink: "/",
+    },
+    {
+      title: "networking opportunities",
+      text: "The Electric Vehicle Innovation Summit fosters individual engagement and community interaction through networking opportunities and customized experiences including new technology, sharing economy activities, personalized meet ups and attendee personalized networking. ",
+      image: "/assets/images/ev-home/exh4-gradient.png",
+      buttonText: "ATTEND EVIS",
+      buttonLink: "/",
+    },
+    {
+      title: "high standards",
+      text: "The Electric Vehicle Innovation Summit is to be held in accordance with the highest standards governing such professional specialized conferences addressing advanced subject of interest to the specialized experts yet appealing to the public at large. ",
+      image: "/assets/images/ev-home/speaker-gradient.png",
+      buttonText: "ATTEND EVIS",
+      buttonLink: "/",
+    },
+  ];
   return (
     <EvLayout showNavbar={true}>
       <VideoSection />
@@ -117,7 +121,7 @@ const EvHome = (props) => {
           mb: 6,
         }}
       >
-        <DiscountProducts offerProducts={offerProducts} />
+        <EventSection featureList={featureList} />
         <TopSailedProducts productsData={topSailedProducts} />
         <AllProducts productsData={allProducts} />
       </Container>

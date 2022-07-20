@@ -1,8 +1,7 @@
-import { Box, Grid, useTheme } from "@mui/material";
+import { Box, Grid, useTheme, Card } from "@mui/material";
 
 import { SectionTitle } from "components/StyledTypography";
 import { Container } from "@mui/material";
-import EvCard from "components/EvCard";
 import React from "react";
 import Image from "components/BazarImage";
 
@@ -30,8 +29,10 @@ const WhatToExpectSection = ({ serviceList }) => {
           {serviceList.map((item, ind) => {
             return (
               <Grid item lg={2} md={3} xs={6} key={ind}>
-                <EvCard
+                <Card
                   hoverEffect
+                  data-aos="fade-up"
+                  data-aos-duration={ind * 500}
                   sx={{
                     p: "3rem",
                     height: "100%",
@@ -42,7 +43,7 @@ const WhatToExpectSection = ({ serviceList }) => {
                   }}
                 >
                   <Image height={150} mb={0.5} src={item.image} alt="logo" />
-                </EvCard>
+                </Card>
               </Grid>
             );
           })}

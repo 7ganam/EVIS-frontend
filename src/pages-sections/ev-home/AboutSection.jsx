@@ -1,4 +1,4 @@
-import { Box, Grid, useTheme } from "@mui/material";
+import { Box, Grid, Paper, useTheme } from "@mui/material";
 
 import { SectionTitle } from "components/StyledTypography";
 import { Paragraph } from "components/Typography";
@@ -11,13 +11,28 @@ const AboutSection = ({ text, youtube }) => {
     <Box sx={{ mt: "100px" }}>
       <SectionTitle text={"ABOUT ELECTRIC VEHICLE INNOVATION SUMMIT"} />
       <Grid container sx={{ p: "10px" }}>
-        <Grid item md={5} sm={12} xs={12}>
-          <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
+        <Grid item md={5} sm={12} xs={12} sx={{ pt: 0 }}>
+          <Box
+            hoverEffect
+            data-aos="fade-up"
+            data-aos-duration={1700}
+            sx={{ borderRadius: "10px", overflow: "hidden" }}
+          >
             <YoutubeEmbed embedId={youtube} />
           </Box>
         </Grid>
         <Grid item md={7} sm={12} xs={12} sx={{ pl: "60px" }}>
-          <Paragraph fontWeight={500}>{text}</Paragraph>
+          <Paper
+            sx={{
+              borderColor: theme.palette.primary.dark,
+              borderStyle: "solid ",
+              borderWidth: "1px",
+              borderRadius: "0px 0px 0 0",
+              p: 4,
+            }}
+          >
+            <Paragraph fontWeight={500}>{text}</Paragraph>
+          </Paper>
         </Grid>
       </Grid>
     </Box>
