@@ -41,6 +41,8 @@ const Carousel = ({
   dotGroupMarginTop,
   naturalSlideHeight,
   fontSize,
+  leftButtonSx,
+  rightButtonSx,
 }) => {
   // site settings
   const { settings } = useSettings();
@@ -80,6 +82,7 @@ const Carousel = ({
             id="backArrowButton"
             sx={{
               left: "-20px",
+              ...leftButtonSx,
             }}
             style={leftButtonStyle || {}}
             className={clsx(leftButtonClass, arrowButtonClass)}
@@ -95,6 +98,7 @@ const Carousel = ({
             id="backForwardButton"
             sx={{
               right: "-20px",
+              ...rightButtonSx,
             }}
             style={rightButtonStyle || {}}
             className={clsx(arrowButtonClass, rightButtonClass)}

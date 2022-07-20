@@ -1,6 +1,6 @@
 import { Box, useTheme } from "@mui/material";
 import Carousel from "components/carousel/Carousel";
-import { H3, H5 } from "components/Typography";
+import { H1, H4 } from "components/Typography";
 import React from "react"; // styled component
 
 // ============================================================
@@ -9,6 +9,9 @@ const CarouselSection2 = ({ cardList = [] }) => {
 
   return (
     <Carousel
+      interval={"3000"}
+      leftButtonClass={"left-car-arrow"}
+      rightButtonClass={"right-car-arrow"}
       infinite={true}
       dotColor={theme.palette.primary.main}
       spacing="0px"
@@ -18,22 +21,21 @@ const CarouselSection2 = ({ cardList = [] }) => {
       visibleSlides={1}
       showArrowOnHover={true}
       arrowButtonColor="inherit"
-      leftButtonStyle={{
+      leftButtonSx={{
         backgroundColor: theme.palette.primary.main,
         color: "white",
         height: "100px",
         width: "100px",
         left: "-40px",
-        top: "50%",
-        MarginTop: "-30px",
+        top: "260px",
       }}
-      rightButtonStyle={{
+      rightButtonSx={{
         backgroundColor: theme.palette.primary.main,
         color: "white",
         height: "100px",
         width: "100px",
         right: "-40px",
-        MarginTop: "-30px",
+        top: "260px",
       }}
       fontSize="large"
     >
@@ -52,7 +54,7 @@ const CarouselSection2 = ({ cardList = [] }) => {
             height: "500px",
 
             color: "white",
-            padding: "3rem",
+            padding: "10rem",
             bgcolor: item.bgColor,
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.336), rgba(0, 0, 0, 0.226)),url(${item.imgUrl})`,
             backgroundSize: "cover",
@@ -61,12 +63,13 @@ const CarouselSection2 = ({ cardList = [] }) => {
           }}
         >
           <Box>
-            <H3
+            <H1
               mb={{
                 sm: 4,
                 xs: 3,
               }}
               fontSize={{
+                md: 60,
                 sm: 35,
                 xs: 24,
               }}
@@ -74,10 +77,11 @@ const CarouselSection2 = ({ cardList = [] }) => {
               sx={{ textAlign: "center" }}
             >
               {item.title}
-            </H3>
-            <H5
+            </H1>
+            <H4
               fontWeight="600"
               fontSize={{
+                md: 25,
                 sm: 18,
                 xs: 14,
               }}
@@ -85,7 +89,7 @@ const CarouselSection2 = ({ cardList = [] }) => {
               sx={{ textAlign: "center" }}
             >
               {item.subtitle}
-            </H5>
+            </H4>
           </Box>
         </Box>
       ))}
