@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import EvLayout from "components/layouts/EvLayout";
 import MobileNavigationBar from "components/mobile-navigation/MobileNavigationBar";
 import EvPageFooter from "components/Ev-page-footer/EvPageFooter";
@@ -6,6 +6,7 @@ import AllProducts from "pages-sections/grocery3/AllProducts";
 import DiscountProducts from "pages-sections/grocery3/DiscountProducts";
 import VideoSection from "pages-sections/ev-home/VideoSection";
 import CarouselSection2 from "pages-sections/ev-home/CarouselSection2";
+import DownloadSection from "pages-sections/ev-home/DownloadSection";
 import TopSailedProducts from "pages-sections/grocery3/TopSailedProducts";
 import api from "utils/api/grocery3-shop";
 // ======================================================
@@ -52,7 +53,7 @@ const EvHome = (props) => {
         }}
       >
         <CarouselSection2 cardList={carouselCardList} />
-
+        <DownloadSection />
         <DiscountProducts offerProducts={offerProducts} />
         <TopSailedProducts productsData={topSailedProducts} />
         <AllProducts productsData={allProducts} />
