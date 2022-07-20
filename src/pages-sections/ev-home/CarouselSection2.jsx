@@ -1,7 +1,8 @@
-import { Box, useTheme } from "@mui/material";
+import { Button, Box, useTheme } from "@mui/material";
 import Carousel from "components/carousel/Carousel";
 import { H1, H4 } from "components/Typography";
 import React from "react"; // styled component
+import DownloadingIcon from "@mui/icons-material/Downloading";
 
 // ============================================================
 const CarouselSection2 = ({ cardList = [] }) => {
@@ -9,7 +10,7 @@ const CarouselSection2 = ({ cardList = [] }) => {
 
   return (
     <Carousel
-      interval={"3000"}
+      interval={"12000"}
       leftButtonClass={"left-car-arrow"}
       rightButtonClass={"right-car-arrow"}
       infinite={true}
@@ -90,6 +91,29 @@ const CarouselSection2 = ({ cardList = [] }) => {
             >
               {item.subtitle}
             </H4>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                mt: "30px",
+              }}
+            >
+              <Button
+                color="primary"
+                variant="contained"
+                onClick={() => console.log("downlaod")}
+              >
+                {"Download Event Brochure"}
+                <DownloadingIcon
+                  sx={{
+                    ml: 1,
+                    height: { xs: "30px", md: "40px" },
+                    width: { xs: "30px", md: "40px" },
+                  }}
+                />
+              </Button>
+            </Box>
           </Box>
         </Box>
       ))}

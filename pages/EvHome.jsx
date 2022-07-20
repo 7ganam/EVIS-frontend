@@ -10,7 +10,10 @@ import DownloadSection from "pages-sections/ev-home/DownloadSection";
 import TopSailedProducts from "pages-sections/grocery3/TopSailedProducts";
 import AboutSection from "pages-sections/ev-home/AboutSection";
 import WhatToExpectSection from "pages-sections/ev-home/WhatToExpectSection";
+import SubscribeSection from "pages-sections/ev-home/SubscribeSection";
 import EventSection from "pages-sections/ev-home/EventSection";
+import VideosSection from "pages-sections/ev-home/VideosSection";
+
 import api from "utils/api/grocery3-shop";
 // ======================================================
 // ======================================================
@@ -97,6 +100,17 @@ const EvHome = (props) => {
       buttonLink: "/",
     },
   ];
+  const videosList = [
+    { youtube: "tKfOCjdwaJ0" },
+    { youtube: "Jw_MFPnYn7s" },
+    { youtube: "CAKf5hgSZyU" },
+    { youtube: "tKfOCjdwaJ0" },
+    { youtube: "Jw_MFPnYn7s" },
+    { youtube: "CAKf5hgSZyU" },
+    { youtube: "tKfOCjdwaJ0" },
+    { youtube: "Jw_MFPnYn7s" },
+    { youtube: "CAKf5hgSZyU" },
+  ];
   return (
     <EvLayout showNavbar={true}>
       <VideoSection />
@@ -107,7 +121,7 @@ const EvHome = (props) => {
         }}
       >
         <CarouselSection2 cardList={carouselCardList} />
-        <DownloadSection />
+        {/* <DownloadSection /> */}
         <AboutSection
           text={aboutSectionData.text}
           youtube={aboutSectionData.youtube}
@@ -122,8 +136,8 @@ const EvHome = (props) => {
         }}
       >
         <EventSection featureList={featureList} />
-        <TopSailedProducts productsData={topSailedProducts} />
-        <AllProducts productsData={allProducts} />
+        <SubscribeSection />
+        <VideosSection videosList={videosList} />
       </Container>
       <EvPageFooter />
 
