@@ -180,7 +180,7 @@ export const Paragraph = ({
       component="p"
       mb={0}
       mt={0}
-      fontSize="14px"
+      fontSize="20px"
       {...props}
     >
       {children}
