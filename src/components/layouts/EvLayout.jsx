@@ -4,6 +4,8 @@ import EvNavbar from "components/navbar/EvNavbar";
 import Sticky from "components/sticky/Sticky";
 import EvTopbar from "components/topbar/EvTopbar";
 import Head from "next/head";
+import EvPageFooter from "components/Ev-page-footer/EvPageFooter";
+
 import React, { Fragment, useCallback, useState } from "react";
 
 const EvLayout = (props) => {
@@ -40,11 +42,13 @@ const EvLayout = (props) => {
       <Box
         position="relative"
         sx={{
-          background: "#fff",
+          background: "white",
+          minHeight: "100vh",
         }}
       >
         {children}
       </Box>
+      <EvPageFooter />
     </Fragment>
   );
 };

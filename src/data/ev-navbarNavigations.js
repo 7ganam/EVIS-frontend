@@ -3,7 +3,7 @@ const evNavbarNavigations = [
     title: "HOME ",
     megaMenu: false,
     megaMenuWithSub: false,
-    url: "/EvHome",
+    url: "/",
   },
   {
     megaMenu: false,
@@ -12,19 +12,19 @@ const evNavbarNavigations = [
     child: [
       {
         title: "Book Your Stand",
-        url: "/vendor/book-your-stand",
+        url: "/exhibition/book-your-stand",
       },
       {
         title: "About EVIS",
-        url: "/vendor/about",
+        url: "/exhibition/about",
       },
       {
         title: " 	Why Exhibit",
-        url: "/vendor/why-exhibit",
+        url: "/exhibition/why-exhibit",
       },
       {
         title: "Profile",
-        url: "/vendor/profile",
+        url: "/exhibition/profile",
       },
     ],
   },
@@ -35,19 +35,15 @@ const evNavbarNavigations = [
     child: [
       {
         title: "Enquire About Sponsorship Opportunities",
-        url: "/vendor/sponsorship-opportunities",
+        url: "/sponsorship/sponsorship-opportunities",
       },
       {
         title: "Sponsorship And Branding Opportunities",
-        url: "/vendor/sponsorship-branding",
+        url: "/sponsorship/sponsorship-branding",
       },
       {
-        title: " 	Why Exhibit",
-        url: "/vendor/dashboard",
-      },
-      {
-        title: "Profile",
-        url: "/vendor/account-setting",
+        title: "Why Exhibit",
+        url: "/sponsorship/why-exhibit",
       },
     ],
   },
@@ -58,19 +54,19 @@ const evNavbarNavigations = [
     child: [
       {
         title: "Why Visit",
-        url: "/vendor/why-visit",
+        url: "/visit/why-visit",
       },
       {
         title: "Register Your Interest To Visit",
-        url: "/vendor/register-visit",
+        url: "/visit/register-visit",
       },
       {
         title: "Exhibitors List  ",
-        url: "/vendor/exhibitors",
+        url: "/visit/exhibitors",
       },
       {
         title: "Why Abu Dhabi",
-        url: "/vendor/why-abu-dhabi",
+        url: "/visit/why-abu-dhabi",
       },
     ],
   },
@@ -81,19 +77,11 @@ const evNavbarNavigations = [
     child: [
       {
         title: "Main Conference",
-        url: "/vendor/main-conference",
+        url: "/conferences/main-conference",
       },
       {
         title: "Delegate Registration / Passes And Pricing",
-        url: "/vendor/delegate-registration",
-      },
-      {
-        title: " 	Why Exhibit",
-        url: "/vendor/dashboard",
-      },
-      {
-        title: "Profile",
-        url: "/vendor/account-setting",
+        url: "/conferences/delegate-registration",
       },
     ],
   },
