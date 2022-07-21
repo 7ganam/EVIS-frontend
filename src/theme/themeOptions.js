@@ -29,7 +29,7 @@ const themesOptions = {
     breakpoints,
     components: { ...components },
     palette: {
-      primary: { ...primary, light: primary[100] },
+      primary: { ...primary },
       ...themeColors,
     },
   },
