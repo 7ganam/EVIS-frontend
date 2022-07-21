@@ -27,7 +27,9 @@ const App = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      startEvent: "load",
+    });
     AOS.refresh(); // Remove the server-side injected CSS.
 
     const jssStyles = document.querySelector("#jss-server-side");
@@ -36,6 +38,17 @@ const App = ({ Component, pageProps }) => {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
+
+  useEffect(() => {
+    const INTERVAL = 1000;
+    const interval = setInterval(() => {
+      AOS.refresh(); // Remove the server-side injected CSS.
+      console.log("refresh aos");
+    }, INTERVAL);
+
+    return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+  }, []);
+
   return (
     <Fragment>
       <Head>
@@ -48,7 +61,7 @@ const App = ({ Component, pageProps }) => {
       <SettingsProvider>
         <AppProvider>
           <MuiTheme>
-            <RTL>{getLayout(<Component {...pageProps} />)}</RTL>
+            <RTL>{getLayout(<Component {...pageProps} AOS />)}</RTL>
           </MuiTheme>
         </AppProvider>
       </SettingsProvider>
