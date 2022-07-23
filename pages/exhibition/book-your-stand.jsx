@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import {SectionTitle} from "../../src/components/StyledTypography";
+import {SectionTitle} from "components/StyledTypography";
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
 // ======================================================
