@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-
+import {SectionTitle} from "components/StyledTypography";
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
 // ======================================================
@@ -14,7 +14,8 @@ const generalPage = (props) => {
           mb: 6,
         }}
       >
-        <div>book your stand</div>
+        <SectionTitle text={'This is done by tarek'} />
+        
       </Container>
     </EvLayout>
   );
