@@ -14,7 +14,7 @@ const generalPage = (props) => {
           mb: 6,
         }}
       >
-        <div>book your stand</div>
+        <div>This is done by tarek</div>
       </Container>
     </EvLayout>
   );
