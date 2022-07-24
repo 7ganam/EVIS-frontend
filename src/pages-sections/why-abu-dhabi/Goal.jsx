@@ -13,6 +13,8 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
     [theme.breakpoints.down("sm")]: {
         flexDirection: "column",
     },
+    // dataAos: "fade-up",
+    // dataAosDuration: "500",
 }));
 const GridItemOne = styled(Grid)(({ theme }) => ({
     padding: 20,
@@ -44,18 +46,34 @@ const GridItemTwo = styled(Grid)(({ theme }) => ({
     [theme.breakpoints.down("sm")]: {
         display: "none",
     },
+    paddingLeft: "2rem",
 }));
 
-const Goal = () => {
+const Goal = (props) => {
+    if (props.reversed) {
+        return (
+            <StyledGrid data-aos="fade-up"
+                data-aos-duration={1000}>
+                <GridItemTwo >
+                    <H1>{props.headline}</H1>
+                    <p>{props.paragraph}</p>
+                </GridItemTwo>
+                <GridItemOne>
+                    <img src={props.imageSrc} width="400px" alt="" />
+                </GridItemOne>
+            </StyledGrid>
+        )
+    }
+
     return (
-        // <Box>test</Box>
-        <StyledGrid>
+        <StyledGrid data-aos="fade-up"
+            data-aos-duration={1000}>
             <GridItemOne>
-                <img src="/assets/images/why-abu-dhabi/economy-environment2.jpg" width="400px" alt="" />
+                <img src={props.imageSrc} width="400px" alt="" />
             </GridItemOne>
             <GridItemTwo>
-                <H1>Dummy Headline</H1>
-                <p>Estidama, the Arabic word for sustainability, is the sustainability initiative of the Abu Dhabi Urban Planning Council (UPC). Abu Dhabi’s Plan 2030 establishes a clear vision for sustainability as the foundation of any new development occurring in the Emirate of Abu Dhabi.The purpose of Estidama is to create a new sustainability framework that will direct the current course of development while allowing adaptation as new understanding evolves. Its ultimate goal is to create an ever-improving quality of life for the residents of the Emirate on four equal pillars of sustainability: environmental, economic, social, and cultural.</p>
+                <H1>{props.headline}</H1>
+                <p>{props.paragraph}</p>
             </GridItemTwo>
         </StyledGrid>
     )

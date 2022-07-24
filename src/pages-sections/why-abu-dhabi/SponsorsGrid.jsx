@@ -1,5 +1,12 @@
 import { Box, Button, Grid, styled, useTheme } from "@mui/material";
 
+const StyledImage = (props) => {
+    return (
+
+        <img src={props.Src} width="170" style={{ margin: "10px" }} />
+
+    )
+}
 
 const SponsorsGrid = () => {
     return (
@@ -9,13 +16,14 @@ const SponsorsGrid = () => {
                 // margin: "10px auto",
                 textAlign: "center",
             }}
+        // columnSpacing={12}
         >
-            <img src="/assets/images/why-abu-dhabi/Organizers/AbuDhabi.png" width="200" />
-            <img src="/assets/images/why-abu-dhabi/Organizers/ADNEC.png" width="200" />
-            <img src="/assets/images/why-abu-dhabi/Organizers/Audi.png" width="200" />
-            <img src="/assets/images/why-abu-dhabi/Organizers/BritishVolt.png" width="200" />
-            <img src="/assets/images/why-abu-dhabi/Organizers/Masdar.png" width="200" />
-            <img src="/assets/images/why-abu-dhabi/Organizers/Nirvana.png" width="200" />
+            <StyledImage Src="/assets/images/why-abu-dhabi/Organizers/Masdar.png" />
+            <StyledImage Src="/assets/images/why-abu-dhabi/Organizers/ADNEC.png" />
+            <StyledImage Src="/assets/images/why-abu-dhabi/Organizers/AbuDhabi.png" />
+            <StyledImage Src="/assets/images/why-abu-dhabi/Organizers/Nirvana.png" />
+            <StyledImage Src="/assets/images/why-abu-dhabi/Organizers/Audi.png" />
+            <StyledImage Src="/assets/images/why-abu-dhabi/Organizers/BritishVolt.png" />
         </Grid>
     )
 }
