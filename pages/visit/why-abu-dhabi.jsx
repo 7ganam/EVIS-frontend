@@ -2,6 +2,9 @@ import { Container } from "@mui/material";
 
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
+import Section1 from "../../src/pages-sections/why-abu-dhabi/Section1";
+import Goal from "../../src/pages-sections/why-abu-dhabi/Goal";
+import SponsorsGrid from "../../src/pages-sections/why-abu-dhabi/SponsorsGrid";
 // ======================================================
 // ======================================================
 const generalPage = (props) => {
@@ -9,13 +12,17 @@ const generalPage = (props) => {
 
   return (
     <EvLayout showNavbar={true}>
+      <Section1 />
       <Container
         sx={{
           mb: 6,
         }}
       >
-        <div>why-abu-dhabi</div>
+        <Goal />
+        <Goal />
+        <Goal />
       </Container>
+      <SponsorsGrid />
     </EvLayout>
   );
 };
