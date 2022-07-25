@@ -55,14 +55,14 @@ const featureList = [
   {
     title: "Open Tech Sessions",
     text: "Explore the latest technical content and developments in the industry which includes presentations, panel discussions and case studies, all in the show floor and free to attend for everyone.",
-    image: "/assets/images/ev-home/exh2-gradient.png",
+    image: "/assets/images/why-exhibit/8.jpg",
     buttonText: "BOOK A STAND",
     buttonLink: "/",
   },
   {
     title: "New Product Showcase",
     text: "You can preview new and improved solutions for your applications during the new product showcase. Attend live demonstrations at the booths to learn about new and improved products.",
-    image: "/assets/images/ev-home/exh4-gradient.png",
+    image: "/assets/images/why-exhibit/7.jpg",
     buttonText: "DOWNLOAD BROCHURE NOW",
     buttonLink: "/",
   },
