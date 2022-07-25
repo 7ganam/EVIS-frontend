@@ -1,6 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import RTL from "components/RTL";
+// import RTL from "components/RTL";
 import { AppProvider } from "contexts/AppContext";
 import SettingsProvider from "contexts/SettingContext";
 import Head from "next/head";
@@ -61,7 +61,8 @@ const App = ({ Component, pageProps }) => {
       <SettingsProvider>
         <AppProvider>
           <MuiTheme>
-            <RTL>{getLayout(<Component {...pageProps} AOS />)}</RTL>
+            {/* <RTL>{getLayout(<Component {...pageProps} AOS />)}</RTL> */}
+            {getLayout(<Component {...pageProps} AOS />)}
           </MuiTheme>
         </AppProvider>
       </SettingsProvider>
