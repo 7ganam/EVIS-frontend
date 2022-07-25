@@ -32,11 +32,13 @@ const ExpectToMeet = ({ list }) => {
                     alignItems: "center",
                     flexDirection: "column",
                     bgcolor: theme.palette.primary.light,
+                    textAlign:"center"
+
                   }}
                 >
 
                     <H5
-                    width='190px'
+                    width='220px'
                     sx = {{
                         color: 'white',
                         mt : '15px',

@@ -25,7 +25,7 @@ const WhatToExpect = ({ serviceList }) => {
           mb: "70px",
         }}
       >
-        <SectionTitle text={"BY EXHIBITING, YOU CAN"} />
+        <SectionTitle text={"UPON VISITING ..."} />
 
         <Grid container spacing={3}
             alignItems="center"
@@ -38,8 +38,8 @@ const WhatToExpect = ({ serviceList }) => {
                   data-aos="fade-up"
                   data-aos-duration={ind * 500}
                   sx={{
-                    p: "1rem",
-                    height: "260px",
+                    p: "2rem",
+                    height: "250px",
                     display: "flex",
                     borderRadius: "8px",
                     alignItems: "center",
@@ -54,7 +54,7 @@ const WhatToExpect = ({ serviceList }) => {
                     width='190px'
                     sx = {{
                         color: 'black',
-                        mt : '10px',
+                        mt : '20px',
                     }}
                     >
                     {item.text}
