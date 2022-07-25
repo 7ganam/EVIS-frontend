@@ -14,8 +14,8 @@ const WhyVisitSection = () => {
       <SectionTitle text="WHY VISIT ?" />
       <Grid container sx={{ p: "10px" }}>
         <Grid item md={5} sm={12} xs={12} sx={{ pt: 0 }}>
-          <Grid item md={6} sm={12} xs={12} sx={{ pt: 0 }}>
-            <H4 color="grey.700" width="600px" fontWeight={500}>
+          <Grid item md={6} sm={12} xs={12} sx={{ pt: 0 , maxWidth : '100vw' }}>
+            <H4 color="grey.700" sx = {{ width : {xs : '200px' , md : '600px'}  }} fontWeight={500} >
               The Electric Vehicle Innovation Summit is the leading EV trade
               show and conference in the region offering access to hundreds of
               companies and experts in the industry.
