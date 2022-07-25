@@ -1,4 +1,6 @@
-import { Container } from "@mui/material";
+import { Container , Box} from "@mui/material";
+
+import WhyVisitSection from "pages-sections/why-visit-sections/WhyVisitSection";
 
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
@@ -14,7 +16,9 @@ const generalPage = (props) => {
           mb: 6,
         }}
       >
-        <div>why-visit</div>
+        <Box hoverEffect data-aos="fade-up" data-aos-duration={1000}>
+          <WhyVisitSection />
+        </Box>
       </Container>
     </EvLayout>
   );
