@@ -19,7 +19,7 @@ const ExpectToMeet = ({ list }) => {
         >
           {list.map((item ,ind) => {
             return (
-              <Grid item lg={2.4} md={3} xs={10} key={ind}>
+              <Grid item lg={2.4} md={3} xs={12} key={ind}>
                 <Card
                   hoverEffect
                   data-aos="fade-up"
