@@ -53,6 +53,13 @@ const serviceList = [
     text: "Industry specific education",
   }
 ];
+
+const whyVisit = {
+p1 : "The Electric Vehicle Innovation Summit is the leading EV trade show and conference in the region offering access to hundreds of companies and experts in the industry." ,
+p2 : "EVIS is more focused on Electric Vehicles which include land, air and sea, hence you will be able to get more insight on the latest applications, technologies, and market progress on electric vehicles.",
+img : "/assets/images/why-visit/1.jpeg"
+}
+
 const generalPage = (props) => {
   const { offerProducts, allProducts, topSailedProducts } = props;
 
@@ -64,7 +71,7 @@ const generalPage = (props) => {
         }}
       >
         <Box hoverEffect data-aos="fade-up" data-aos-duration={1000}>
-          <WhyVisitSection />
+          <WhyVisitSection data = {whyVisit} />
         </Box>
       </Container>
       <WhatToExpect serviceList={serviceList} />
