@@ -34,7 +34,7 @@ const Landing = () => {
           fontSize={{
             md: 60,
             sm: 35,
-            xs: 24,
+            xs: 30,
           }}
           lineHeight="1.37"
           sx={{ textAlign: "center" }}
