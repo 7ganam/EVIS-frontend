@@ -32,18 +32,20 @@ const WhatToExpect = ({ serviceList }) => {
         >
           {serviceList.map((item ,ind) => {
             return (
-              <Grid item lg={2.4} md={3} xs={6} key={ind}>
+              <Grid item lg={2.4} md={3} xs={12} key={ind}>
                 <Card
                   hoverEffect
                   data-aos="fade-up"
                   data-aos-duration={ind * 500}
                   sx={{
-                    p: "3rem",
-                    height: "300px",
+                    p: "1rem",
+                    height: "250px",
                     display: "flex",
                     borderRadius: "8px",
                     alignItems: "center",
                     flexDirection: "column",
+                    textAlign:"center"
+
                   }}
                 >
                   <Image height={100} mb={0.5} src={item.image} alt="logo" />

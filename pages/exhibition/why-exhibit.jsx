@@ -4,28 +4,27 @@ import FeatureSection from "pages-sections/why-exhibit-sections/FeatureSection";
 import WhatToExpect from "pages-sections/why-exhibit-sections/WhatToExpect";
 import ExpectToMeet from "pages-sections/why-exhibit-sections/ExpectToMeet";
 
-
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
 // ======================================================
 // ======================================================
 
 const peopleList = [
-  'Vehicle Manufacturers and Distributors' ,
-  'Integrated Energy Companies',
-  'Banks, Finance and Investment Firms',
-  'R & D Companies',
-  'Engineers, Architects, and Designers',
-  'Consultants',
-  'Environmental Agencies',
-  'Government Officials',
-  'Law Firms and Academia',
-  'Municipalities',
-  'CEO/ President/ Chairman',
-  'Owner/ Partner/ Proprietor',
-  'Public Transport Operators',
-  'Technical/ Business Specialists ',
-  'Technology Service Provider'
+  "Vehicle Manufacturers and Distributors",
+  "Integrated Energy Companies",
+  "Banks, Finance and Investment Firms",
+  "R & D Companies",
+  "Engineers, Architects, and Designers",
+  "Consultants",
+  "Environmental Agencies",
+  "Government Officials",
+  "Law Firms and Academia",
+  "Municipalities",
+  "CEO/ President/ Chairman",
+  "Owner/ Partner/ Proprietor",
+  "Public Transport Operators",
+  "Technical/ Business Specialists ",
+  "Technology Service Provider",
 ];
 
 const serviceList = [
@@ -48,7 +47,7 @@ const serviceList = [
   {
     image: "/assets/images/why-exhibit/6.png",
     text: "Stay ahead of the curve on evolving customer requirements",
-  }
+  },
 ];
 
 const featureList = [
@@ -68,6 +67,13 @@ const featureList = [
   },
 ];
 
+const whyExhibit = {
+  p1: "EV innovation is accelerating due to contributions from all around the globe. Improvement in batteries, motor control, and support software will continue to occur and will make EVs a better investment.",
+  p2 : "The exhibition will provide a world-class environment for EV industry to showcase the latest solutions in front of an audience who matters, including financiers and investors, engineers, R&D & government officials.",
+  p3 : "More than 5,000 professionals representing leading companies in the EV industry will be in Abu Dhabi with the goal of networking and sourcing the latest technologies across the 3 days of exhibition.",
+  img : "/assets/images/why-exhibit/charger.png"
+};
+
 const generalPage = (props) => {
   const { offerProducts, allProducts, topSailedProducts } = props;
 
@@ -79,12 +85,12 @@ const generalPage = (props) => {
         }}
       >
         <Box hoverEffect data-aos="fade-up" data-aos-duration={1000}>
-          <WhyExhibitSection />
+          <WhyExhibitSection data = {whyExhibit} />
         </Box>
       </Container>
       <FeatureSection featureList={featureList} />
       <WhatToExpect serviceList={serviceList} />
-      <ExpectToMeet list = {peopleList}/>
+      <ExpectToMeet list={peopleList} />
     </EvLayout>
   );
 };
