@@ -105,16 +105,21 @@ const Header = ({ className }) => {
           </Box>
 
           <Box ml={2.5} p={1.25} component={IconButton} onClick={toggleSidenav}>
-            <StyledButton
-              variant="contained"
-              color="primary"
-              sx={{
-                px: "30px",
-                py: "6px",
-              }}
-            >
-              Book A Stand
-            </StyledButton>
+            <Link href={`/gallery`}>
+              <a>
+                {" "}
+                <StyledButton
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    px: "30px",
+                    py: "6px",
+                  }}
+                >
+                  Book A Stand
+                </StyledButton>
+              </a>
+            </Link>
           </Box>
         </FlexBox>
 
