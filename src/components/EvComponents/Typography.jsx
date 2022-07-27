@@ -77,7 +77,7 @@ export const H3 = ({
       mb={0}
       mt={0}
       fontSize="20px"
-      fontWeight="100"
+      fontWeight="500"
       lineHeight="1.5"
       {...props}
     >
