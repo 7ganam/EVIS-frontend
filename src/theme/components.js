@@ -102,25 +102,10 @@ export const components = {
   },
   MuiButton: {
     styleOverrides: {
-      root: ({ ownerState }) => ({
-        minWidth: 0,
-        minHeight: 0,
-        fontWeight: 600,
-        textTransform: "capitalize",
-        ...(ownerState.color === "info" && {
-          borderRadius: "8px",
-        }),
-      }),
-      sizeLarge: {
-        padding: "1.25rem 2.5rem",
+      root: {
+        fontSize: "1rem",
+        fontWeight: "600",
       },
-      // sizeMedium: { padding: "1.07rem 2.15rem" },
-      sizeSmall: {
-        padding: ".92rem 1.61rem",
-      },
-    },
-    defaultProps: {
-      color: "inherit",
     },
   },
 };

@@ -25,47 +25,11 @@ YOU CAN JUST KEEP [THEMES.DEFAULT] AND REMOVE OTHER THEME OPTIONS.
 
 const themesOptions = {
   [THEMES.DEFAULT]: {
-    typography,
-    breakpoints,
+    // typography,
+    // breakpoints,
     components: { ...components },
     palette: {
-      primary: { ...primary },
-      ...themeColors,
-    },
-  },
-  [THEMES.GROCERY]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: {
-      primary: { ...primary, light: primary[100] },
-      ...themeColors,
-    },
-  },
-  [THEMES.FURNITURE]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: {
-      primary: { ...paste, light: paste[100] },
-      ...themeColors,
-    },
-  },
-  [THEMES.HEALTH]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: {
-      primary: { ...blue, light: blue[100] },
-      ...themeColors,
-    },
-  },
-  [THEMES.GIFT]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: {
-      primary: { ...marron, light: marron[100] },
+      primary: { ...primary, contrastText: "#fff" },
       ...themeColors,
     },
   },
