@@ -1,5 +1,5 @@
 import React from "react";
-import RoundedImage from "./RoundedImage";
+import RoundedImage from "components/EvComponents/RoundedImage";
 import { Grid, Item } from "@mui/material"
 
 const imagesData = [
