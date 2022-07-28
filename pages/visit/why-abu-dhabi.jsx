@@ -2,6 +2,9 @@ import { Container } from "@mui/material";
 
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
+
+// import RoundedImage from "components/EvComponents/RoundedImages";
+import RoundedImagesPanel from "components/EvComponents/RoundedImages/RoundedImagesPanel";
 // ======================================================
 // ======================================================
 const generalPage = (props) => {
@@ -9,13 +12,15 @@ const generalPage = (props) => {
 
   return (
     <EvLayout showNavbar={true}>
-      <Container
+      {/* <Container
         sx={{
           mb: 6,
         }}
       >
         <div>why-abu-dhabi</div>
-      </Container>
+      </Container> */}
+      <RoundedImagesPanel />
+
     </EvLayout>
   );
 };
