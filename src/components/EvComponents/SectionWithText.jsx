@@ -6,7 +6,7 @@ import BazarButton from "components/BazarButton";
 
 const SectionWithText = (props) => {
     const theme = useTheme();
-    const { title, text } = props.data;
+    const { title, text , cmd} = props.data;
   return <Box sx = {{pt : 2}}>
     <H2
     color={theme.palette.primary.main}
@@ -23,7 +23,7 @@ const SectionWithText = (props) => {
     <H6
     color = {theme.palette.primary.main} 
     sx = {{pb : 0.3 , pl : 0.5}}>
-        Do something here
+        {cmd}
     </H6>
     </BazarButton>
 
