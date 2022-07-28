@@ -30,18 +30,18 @@ function CardsSection() {
             img={cardData.img}
             buttonText={cardData.buttonText}
             buttonLink={cardData.buttonLink}
-          >
-            {cardData.content}
-          </CardWithImageButton>
+            text={cardData.content}
+            title={cardData.title}
+          />
         </Grid>{" "}
         <Grid item md={4} sm={6} xs={12}>
           <CardWithImageButton
             img={cardData.img}
             buttonText={cardData.buttonText}
             buttonLink={cardData.buttonLink}
-          >
-            {cardData.content}
-          </CardWithImageButton>
+            text={cardData.content}
+            title={cardData.title}
+          />
         </Grid>
       </Grid>
     </Box>
