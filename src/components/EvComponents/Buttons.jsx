@@ -16,10 +16,10 @@ export function BigButton({ text }) {
       sx={{
         textTransform: "uppercase",
         height: "70px",
-        fontSize: "20px",
-        // letterSpacing: "2px",
+        fontSize: "25px",
         wordSpacing: "0px",
         px: "40px",
+        fontWeight: "700",
       }}
     >
       {text}
