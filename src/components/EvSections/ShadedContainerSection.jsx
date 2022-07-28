@@ -14,8 +14,13 @@ const data = {
 const ShadedContainerSection = () => {
 
   return (
-    <Box>
-    <SectionTitle>Shaded Container Section</SectionTitle>
+    <Box
+    sx = {{
+        mb : 6,
+        mt : 1,
+    }}
+    >
+    <SectionTitle>Shaded Container Section</SectionTitle> {/* To be remove on use*/}
     <ShadedTextContainer data = {data}/>
     </Box>
   )

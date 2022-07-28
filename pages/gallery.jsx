@@ -25,14 +25,7 @@ const EvHome = (props) => {
         <ImageCardsSection />
         <ButtonsSection />
       </Container>
-      <Box
-      sx = {{
-          mb : 6,
-          mt : 1,
-      }}
-      >
       <ShadedContainerSection />
-      </Box>
 
     </EvLayout>
   );
