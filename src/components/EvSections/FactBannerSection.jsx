@@ -16,6 +16,10 @@ const data = [
     title: "6%",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nisi consectetur nisi, euismod consectetur nisi nisi vitae nisi.",
   },
+  {
+    title: "10%",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nisi consectetur nisi, euismod consectetur nisi nisi vitae nisi.",
+  }
 ];
 
 const FactBannerSection = () => {
@@ -27,14 +31,14 @@ const FactBannerSection = () => {
         sx={{
           backgroundColor: theme.palette.primary.main,
           my: 6,
-          px: 3,
+          px: 2,
           height: "auto",
         }}
       >
         <Grid container spacing={3}>
           {data.map((item, index) => {
             return (
-              <Grid item xs={12} md={4} key={index}>
+              <Grid item xs={12} md={3} key={index}>
                 <FactBox data={item} />
               </Grid>
             );
