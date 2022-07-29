@@ -1,7 +1,5 @@
 import { Box } from "@mui/system";
 import React from "react";
-import Image from 'next/image';
-import { Grid } from "@mui/material";
 
 const SponsorImage = (props) => {
     return (
