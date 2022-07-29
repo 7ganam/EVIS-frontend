@@ -6,7 +6,7 @@ const FactBox = (props) => {
   return (
     <Box sx={{
         md : 6,
-        width : "280px",
+        width : "100%",
     }}>
         <Grid container spacing={3}>
             <Grid item xs={12}>
