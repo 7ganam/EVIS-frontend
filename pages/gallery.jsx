@@ -26,8 +26,8 @@ const EvHome = (props) => {
         <ImageCardsSection />
         <ButtonsSection />
         <RoundedImagesSection />
-      </Container >
-    </EvLayout >
+      </Container>
+    </EvLayout>
   );
 };
 
