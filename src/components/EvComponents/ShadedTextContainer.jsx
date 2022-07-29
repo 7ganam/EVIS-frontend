@@ -1,7 +1,7 @@
 import React from "react";
 import {  Box, Container } from "@mui/material";
 import { SectionTitle } from "components/EvComponents/StyledTypography";
-import { Paragraph } from "components/EvComponents/Typography";
+import { Paragraph , H2 } from "components/EvComponents/Typography";
 
 const ShadedTextContainer = (props) => {
     const { title , text } = props.data;
