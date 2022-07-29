@@ -14,11 +14,7 @@ const SponsorImage = (props) => {
         }}>
             <img src={props.imageSrc}
                 width={"150px"}
-                // height={"50px"}
                 alt="sponsor logo"
-                sx={{
-                    // objectFit: "cover" 
-                }}
             />
         </Box>
     )

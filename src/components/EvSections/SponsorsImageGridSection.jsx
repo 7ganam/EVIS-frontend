@@ -1,7 +1,5 @@
 import { Box } from "@mui/system";
 import React from "react";
-// import Image from "components/BazarImage";
-import Image from 'next/image'
 import { Grid } from "@mui/material";
 import SponsorImage from "components/EvComponents/SponsorImage";
 import { SectionTitle, BlockTitle } from "components/EvComponents/StyledTypography";
@@ -64,12 +62,6 @@ const SponsorsImageGrid = () => {
                             </Box>
                         </Grid>)
                 })}
-                {/* <SponsorImage imageSrc="/assets/images/brands/samsung.png" />
-            <SponsorImage imageSrc="/assets/images/brands/xiaomi.png" />
-            <SponsorImage imageSrc="/assets/images/brands/bmw.png" />
-            <SponsorImage imageSrc="/assets/images/brands/ferrari.png" />
-            <SponsorImage imageSrc="/assets/images/brands/tesla.png" />
-            <SponsorImage imageSrc="/assets/images/brands/toyota.png" /> */}
             </Grid>
         </Box>
     )
