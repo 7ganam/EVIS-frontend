@@ -1,6 +1,6 @@
 import React from "react";
 import RoundedImage from "components/EvComponents/RoundedImage";
-import { Grid, Item } from "@mui/material"
+import { Grid } from "@mui/material"
 
 const imagesData = [
     {
@@ -65,22 +65,17 @@ const imagesData = [
     },
 ];
 
-const RoundedImagesPanel = () => {
+const RoundedImagesSection = () => {
     return (
         <Grid container columns={{ xs: 1, sm: 3, md: 6 }} sx={{ padding: "35px" }}>
-
-            {Array.from(imagesData).map((_, index) => (
-                <Grid item xs={12} sm={1} md={1} key={index}>
-                    <RoundedImage Src={imagesData[index].imageSrc} Name={imagesData[index].name} Title={imagesData[index].title} />
-                </Grid>
-            ))}
-
-            {/* <Grid item xs={12} sm={1} md={1}>
-                <RoundedImage Src="/assets/images/faces/face-7.jpg" Name="Test Speaker 1" Title="Test Title 1" />
-            </Grid> */}
+            {imagesData.map(({ imageSrc, name, title }) => {
+                return (
+                    <Grid item xs={12} sm={1} md={1} key={name}>
+                        <RoundedImage Src={imageSrc} Name={name} Title={title} />
+                    </Grid>)
+            })}
         </Grid>
-
     )
 }
 
-export default RoundedImagesPanel;
+export default RoundedImagesSection;

@@ -6,7 +6,7 @@ import TextSection from "components/EvSections/TextSection";
 import EvLayout from "components/layouts/EvLayout";
 
 import api from "utils/api/grocery3-shop";
-import RoundedImagesPanel from "components/EvSections/RoundedImagesPanelSection";
+import RoundedImagesSection from "components/EvSections/RoundedImagesSection";
 
 // ======================================================
 // ======================================================
@@ -21,7 +21,7 @@ const EvHome = (props) => {
         <CardsSection />
         <FontsSections />
         <TextSection />
-        <RoundedImagesPanel />
+        <RoundedImagesSection />
       </Container>
     </EvLayout>
   );
