@@ -2,6 +2,8 @@ import { Container } from "@mui/material";
 import CardsSection from "components/EvSections/CardsSection";
 import FontsSections from "components/EvSections/FontsSections";
 import TextSection from "components/EvSections/TextSection";
+import ImageCardsSection from "components/EvSections/ImageCardsSection";
+import ButtonsSection from "components/EvSections/ButtonsSection";
 
 import EvLayout from "components/layouts/EvLayout";
 
@@ -21,10 +23,11 @@ const EvHome = (props) => {
         <CardsSection />
         <FontsSections />
         <TextSection />
-
+        <ImageCardsSection />
+        <ButtonsSection />
         <RoundedImagesSection />
-      </Container>
-    </EvLayout>
+      </Container >
+    </EvLayout >
   );
 };
 
