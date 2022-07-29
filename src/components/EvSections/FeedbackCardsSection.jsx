@@ -32,7 +32,7 @@ const FeedbackCardsSection = () => {
     }}
     >
     <SectionTitle>Feedback Boxes Section</SectionTitle>     {/* this title will be removed on use */}
-    <Grid container sx={{ mt: 2 }}>
+    <Grid container sx={{ mt: 2 }} spacing = {5}>
       {data.map((item, index) => (
         <Grid item xs={12} md = {4} key={index}>
           <FeedbackCard item={item} />
