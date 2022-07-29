@@ -21,6 +21,7 @@ const EvHome = (props) => {
         <CardsSection />
         <FontsSections />
         <TextSection />
+
         <RoundedImagesSection />
       </Container>
     </EvLayout>
