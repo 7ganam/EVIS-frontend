@@ -4,7 +4,7 @@ import FontsSections from "components/EvSections/FontsSections";
 import TextSection from "components/EvSections/TextSection";
 
 import EvLayout from "components/layouts/EvLayout";
-
+import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
 import api from "utils/api/grocery3-shop";
 // ======================================================
 // ======================================================
@@ -19,6 +19,7 @@ const EvHome = (props) => {
         <CardsSection />
         <FontsSections />
         <TextSection />
+        <SponsorsImageGridSection />
       </Container>
     </EvLayout>
   );
