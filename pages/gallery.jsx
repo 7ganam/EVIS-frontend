@@ -5,13 +5,16 @@ import TextSection from "components/EvSections/TextSection";
 import ImageCardsSection from "components/EvSections/ImageCardsSection";
 import ButtonsSection from "components/EvSections/ButtonsSection";
 import TwoColumnSection from "components/EvSections/TwoColumnSection";
+import FactBannerSection from "components/EvSections/FactBannerSection";
+import FeedbackCardsSection from "components/EvSections/FeedbackCardsSection";
+
 
 import EvLayout from "components/layouts/EvLayout";
 
 import api from "utils/api/grocery3-shop";
 // ======================================================
 // ======================================================
-const EvHome = (props) => {
+const EvHome = () => {
   return (
     <EvLayout showNavbar={true} title={"Home"}>
       <Container
@@ -25,6 +28,8 @@ const EvHome = (props) => {
         <ImageCardsSection />
         <ButtonsSection />
         <TwoColumnSection />
+        <FactBannerSection />
+        <FeedbackCardsSection />
       </Container>
     </EvLayout>
   );
