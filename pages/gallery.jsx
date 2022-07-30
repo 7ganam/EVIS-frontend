@@ -9,6 +9,8 @@ import FeedbackCardsSection from "components/EvSections/FeedbackCardsSection";
 import EvLayout from "components/layouts/EvLayout";
 
 import api from "utils/api/grocery3-shop";
+import RoundedImagesSection from "components/EvSections/RoundedImagesSection";
+
 // ======================================================
 // ======================================================
 const EvHome = (props) => {
@@ -25,7 +27,7 @@ const EvHome = (props) => {
         <ImageCardsSection />
         <ButtonsSection />
         <FeedbackCardsSection />
-        
+        <RoundedImagesSection />
       </Container>
     </EvLayout>
   );
