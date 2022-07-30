@@ -6,7 +6,7 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 const FeedbackCard = (props) => {
   const { text , name , title , company } = props.item;
   return (
-      <Box sx = {{width: "320px"}}>
+      <Box sx = {{width: "100%"}}>
         <Box
                 sx={{
                   textAlign: "left",
