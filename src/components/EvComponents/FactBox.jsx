@@ -1,7 +1,8 @@
 import React from 'react';
-import {Box , Grid  } from  "@mui/material";
+import {Box , Grid , useTheme } from  "@mui/material";
 
 const FactBox = (props) => {
+    const theme = useTheme();
     const {title, text} = props.data;
   return (
     <Box sx={{
@@ -15,7 +16,7 @@ const FactBox = (props) => {
                     fontSize: "40px",
                     fontWeight: "bold",
                     mb: 0.1,
-                    color: "orange",
+                    color: theme.palette.secondary.main,
                 }}>
                     {title}
                 </Box>
