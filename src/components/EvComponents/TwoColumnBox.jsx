@@ -35,7 +35,7 @@ const TwoColumnContent = (img , title , text ,direction) => {
     } 
     if (direction === "right"){
         return( <Grid container spacing={5}>
-        <Grid item md={6} sm={12} xs={12}>
+        <Grid item md={6} sm={12} xs={12} order = {{xs : 2 , md : 1}}>
           <Box sx={{}}>
             <BlockTitle> {title} </BlockTitle>
             <Paragraph>
@@ -43,7 +43,7 @@ const TwoColumnContent = (img , title , text ,direction) => {
             </Paragraph>
           </Box>
         </Grid>
-        <Grid item md={6} sm={12} xs={12}>
+        <Grid item md={6} sm={12} xs={12} order = {{xs : 1 , md : 2}}>
           <Box sx={{}}>
             <Image
               width={"100%"}
