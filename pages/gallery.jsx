@@ -4,6 +4,7 @@ import FontsSections from "components/EvSections/FontsSections";
 import TextSection from "components/EvSections/TextSection";
 import ImageCardsSection from "components/EvSections/ImageCardsSection";
 import ButtonsSection from "components/EvSections/ButtonsSection";
+import TwoColumnSection from "components/EvSections/TwoColumnSection";
 
 import EvLayout from "components/layouts/EvLayout";
 
@@ -23,6 +24,7 @@ const EvHome = (props) => {
         <TextSection />
         <ImageCardsSection />
         <ButtonsSection />
+        <TwoColumnSection />
       </Container>
     </EvLayout>
   );
