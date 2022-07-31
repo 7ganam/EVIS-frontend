@@ -1,4 +1,4 @@
-import { Container , Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import CardsSection from "components/EvSections/CardsSection";
 import FontsSections from "components/EvSections/FontsSections";
 import TextSection from "components/EvSections/TextSection";
@@ -12,6 +12,7 @@ import EvLayout from "components/layouts/EvLayout";
 import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
 import api from "utils/api/grocery3-shop";
 import RoundedImagesSection from "components/EvSections/RoundedImagesSection";
+import FullWidthCardsSection from "components/EvSections/FullWidthCardsSection";
 
 // ======================================================
 // ======================================================
@@ -33,6 +34,7 @@ const EvHome = () => {
         <FeedbackCardsSection />
         <RoundedImagesSection />
         <SponsorsImageGridSection />
+        <FullWidthCardsSection />
       </Container>
       <ShadedContainerSection />
 
