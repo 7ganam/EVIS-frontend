@@ -1,20 +1,18 @@
-import { Container , Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import CardsSection from "components/EvSections/CardsSection";
 import FontsSections from "components/EvSections/FontsSections";
 import TextSection from "components/EvSections/TextSection";
 import ImageCardsSection from "components/EvSections/ImageCardsSection";
 import ButtonsSection from "components/EvSections/ButtonsSection";
-<<<<<<< HEAD
 import ShadedContainerSection from "components/EvSections/ShadedContainerSection";
-=======
 import FeedbackCardsSection from "components/EvSections/FeedbackCardsSection";
->>>>>>> migrate-to-new-styles
 
 import EvLayout from "components/layouts/EvLayout";
 import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
 import api from "utils/api/grocery3-shop";
 import RoundedImagesSection from "components/EvSections/RoundedImagesSection";
-
+import FeedbackQuote from "components/EvComponents/FeedbackQuote";
+import FeedbackQuotesSection from "components/EvSections/FeedbackQuotesSection";
 // ======================================================
 // ======================================================
 const EvHome = (props) => {
@@ -33,6 +31,8 @@ const EvHome = (props) => {
         <FeedbackCardsSection />
         <RoundedImagesSection />
         <SponsorsImageGridSection />
+        {/* <FeedbackQuote /> */}
+        <FeedbackQuotesSection />
       </Container>
       <ShadedContainerSection />
 
