@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container , Box } from "@mui/material";
 import CardsSection from "components/EvSections/CardsSection";
 import FontsSections from "components/EvSections/FontsSections";
 import TextSection from "components/EvSections/TextSection";
@@ -7,10 +7,10 @@ import ButtonsSection from "components/EvSections/ButtonsSection";
 import TwoColumnSection from "components/EvSections/TwoColumnSection";
 import FactBannerSection from "components/EvSections/FactBannerSection";
 import FeedbackCardsSection from "components/EvSections/FeedbackCardsSection";
-
-
+import ShadedContainerSection from "components/EvSections/ShadedContainerSection";
+import FeedbackCardsSection from "components/EvSections/FeedbackCardsSection";
 import EvLayout from "components/layouts/EvLayout";
-
+import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
 import api from "utils/api/grocery3-shop";
 import RoundedImagesSection from "components/EvSections/RoundedImagesSection";
 
@@ -33,7 +33,10 @@ const EvHome = () => {
         <FactBannerSection />
         <FeedbackCardsSection />
         <RoundedImagesSection />
+        <SponsorsImageGridSection />
       </Container>
+      <ShadedContainerSection />
+
     </EvLayout>
   );
 };
