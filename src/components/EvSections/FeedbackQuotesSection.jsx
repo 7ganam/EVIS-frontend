@@ -1,8 +1,5 @@
 import React from "react";
-import { Grid, Box } from "@mui/material";
-import { H2, H3, H4, H5, Paragraph } from "components/EvComponents/Typography";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import { Divider } from '@mui/material';
+import { Grid } from "@mui/material";
 import { useTheme } from "@mui/material";
 import FeedbackQuote from "components/EvComponents/FeedbackQuote";
 

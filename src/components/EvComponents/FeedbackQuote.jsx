@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Box } from "@mui/material";
-import { H2, H3, H4, H5, Paragraph } from "components/EvComponents/Typography";
+import { Box } from "@mui/material";
+import { H3, Paragraph } from "components/EvComponents/Typography";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Divider } from '@mui/material';
 import { useTheme } from "@mui/material";
@@ -21,7 +21,6 @@ const FeedbackQuote = (props) => {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                // textAlign: "left",
                 marginTop: "0",
             }}>
                 <FormatQuoteIcon sx={{
@@ -30,11 +29,6 @@ const FeedbackQuote = (props) => {
                     fontSize: "60px",
                     marginLeft: "-12px",
                 }} />
-                {/* <Divider component="li" sx={{
-                    borderBottomWidth: 3,
-                    borderBottomHeight: 30,
-                    borderBottomColor: "red"
-                }} /> */}
                 <Box sx={{
                     margin: "10px",
                 }}>
