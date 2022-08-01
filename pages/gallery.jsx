@@ -1,4 +1,4 @@
-import { Container , Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import CardsSection from "components/EvSections/CardsSection";
 import FontsSections from "components/EvSections/FontsSections";
 import TextSection from "components/EvSections/TextSection";
@@ -35,7 +35,6 @@ const EvHome = () => {
         <SponsorsImageGridSection />
       </Container>
       <ShadedContainerSection />
-
     </EvLayout>
   );
 };
