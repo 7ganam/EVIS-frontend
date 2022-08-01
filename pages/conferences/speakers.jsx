@@ -79,8 +79,7 @@ const GeneralPage = (props) => {
                     <RoundedImagesSection Data={imagesData} backgroundColor={theme.palette.paste.contrastText} Spacing={3} md={3} />
                 </Container>
             </Container>
-            <Container
-            >
+            <Container>
                 <SponsorsGrid />
                 <PartnersGrid />
             </Container>
