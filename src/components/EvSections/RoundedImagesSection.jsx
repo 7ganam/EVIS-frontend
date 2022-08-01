@@ -2,7 +2,7 @@ import React from "react";
 import RoundedImage from "components/EvComponents/RoundedImage";
 import { Grid } from "@mui/material"
 
-const imagesData = [
+let imagesData = [
     {
         imageSrc: "/assets/images/faces/face-7.jpg",
         name: "Speaker 1",
@@ -65,13 +65,17 @@ const imagesData = [
     },
 ];
 
-const RoundedImagesSection = () => {
+const RoundedImagesSection = (props) => {
+    if (props.Data) {
+        imagesData = props.Data;
+    }
     return (
-        <Grid container columns={{ xs: 1, sm: 3, md: 6 }} sx={{ padding: "35px" }}>
+        <Grid container spacing={props.Spacing} sx={{ padding: "35px", textAlign: "center", placeItems: "center", }}>
             {imagesData.map(({ imageSrc, name, title }) => {
                 return (
-                    <Grid item xs={12} sm={1} md={1} key={name}>
-                        <RoundedImage Src={imageSrc} Name={name} Title={title} />
+                    <Grid item xs={12} sm={4}
+                        md={props.md ? props.md : 2} key={name}>
+                        <RoundedImage Src={imageSrc} Name={name} Title={title} bgColor={props.backgroundColor} />
                     </Grid>)
             })}
         </Grid>
