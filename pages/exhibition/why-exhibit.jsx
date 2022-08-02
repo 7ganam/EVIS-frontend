@@ -69,12 +69,6 @@ const featureList = [
   }
 ];
 
-// const whyExhibit = {
-//   p1: "EV innovation is accelerating due to contributions from all around the globe. Improvement in batteries, motor control, and support software will continue to occur and will make EVs a better investment.",
-//   p2 : "The exhibition will provide a world-class environment for EV industry to showcase the latest solutions in front of an audience who matters, including financiers and investors, engineers, R&D & government officials.",
-//   p3 : "More than 5,000 professionals representing leading companies in the EV industry will be in Abu Dhabi with the goal of networking and sourcing the latest technologies across the 3 days of exhibition.",
-//   img : "/assets/images/why-exhibit/charger.png"
-// };
 const footer1 = [
   {
       source: "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0MzI2NTQyODYxZjIzZDk0NjRmNjA=.png",
@@ -144,10 +138,6 @@ const generalPage = () => {
       </Container>
 
 
-      {/* <FeatureSection featureList={featureList} /> */}
-      {/* <CardsSection data = {featureList} />
-      <WhatToExpect serviceList={serviceList} />
-      <ExpectToMeet list={peopleList} /> */}
     </EvLayout>
   );
 };
