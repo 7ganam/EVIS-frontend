@@ -8,7 +8,7 @@ const Footer = (props) => {
   const footer1 = props.footer1;
   const footer2 = props.footer2;
   return (
-    <Box>
+    <Box sx = {{px : 6}}>
         <SponsorsImageGridSection data = {footer1} />
         <Box sx={{ textAlign: "center", }}>
             <BlockTitle>KNOWLEDGE PARTNERS</BlockTitle>
