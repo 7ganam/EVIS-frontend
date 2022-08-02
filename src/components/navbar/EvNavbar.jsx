@@ -110,7 +110,7 @@ const Navbar = ({ elevation, isFixed }) => {
                 alignItems: "center",
                 px: "10px",
                 height: "55px",
-                fontWeight: "700",
+                fontWeight: "600",
                 fontSize: "17px",
               }}
             >
@@ -128,7 +128,7 @@ const Navbar = ({ elevation, isFixed }) => {
               flexDirection="column"
               sx={{
                 height: "55px",
-                fontWeight: "700",
+                fontWeight: "600",
                 "&:hover": {
                   "& > .child-nav-item": {
                     display: "block",
@@ -295,7 +295,7 @@ const Navbar = ({ elevation, isFixed }) => {
             }}
           >
             <FlexBox
-              gap={2}
+              gap={"1px"}
               sx={{
                 width: "100%",
                 height: "100%",
