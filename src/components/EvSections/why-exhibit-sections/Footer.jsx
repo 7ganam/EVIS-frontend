@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box , Grid ,Container , useTheme , Card} from "@mui/material";
+import { Box } from "@mui/material";
 import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
 import {  BlockTitle } from "components/EvComponents/StyledTypography";
 
