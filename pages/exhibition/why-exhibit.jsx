@@ -1,8 +1,9 @@
-import { Container, Box } from "@mui/material";
-import WhyExhibitSection from "pages-sections/why-exhibit-sections/WhyExhibitSection";
-import FeatureSection from "pages-sections/why-exhibit-sections/FeatureSection";
-import WhatToExpect from "pages-sections/why-exhibit-sections/WhatToExpect";
-import ExpectToMeet from "pages-sections/why-exhibit-sections/ExpectToMeet";
+import { Container } from "@mui/material";
+import WhyExhibit from "components/EvSections/why-exhibit-sections/WhyExhibit";
+import ExhibitionFeatures from "components/EvSections/why-exhibit-sections/ExhibitionFeatures";
+import ByExhibit from "components/EvSections/why-exhibit-sections/ByExhibit";
+import ExpectMeet from "components/EvSections/why-exhibit-sections/ExpectMeet"
+
 
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
@@ -29,54 +30,61 @@ const peopleList = [
 
 const serviceList = [
   {
-    image: "/assets/images/why-exhibit/2.png",
-    text: "Connect with thousands of prospective customers and partners",
+    img: "/assets/images/why-exhibit/2.png",
+    content: "Connect with thousands of prospective customers and partners",
   },
   {
-    image: "/assets/images/why-exhibit/3.png",
-    text: "Network with global representatives from across the H/EV supply chain",
+    img: "/assets/images/why-exhibit/3.png",
+    content: "Network with global representatives from across the H/EV supply chain",
   },
   {
-    image: "/assets/images/why-exhibit/4.png",
-    text: "Stay informed on the latest trends in the EV industry",
+    img: "/assets/images/why-exhibit/4.png",
+    content: "Stay informed on the latest trends in the EV industry",
   },
   {
-    image: "/assets/images/why-exhibit/5.png",
-    text: "Benchmark your products and services against industry competition",
+    img: "/assets/images/why-exhibit/5.png",
+    content: "Benchmark your products and services against industry competition",
   },
   {
-    image: "/assets/images/why-exhibit/6.png",
-    text: "Stay ahead of the curve on evolving customer requirements",
+    img: "/assets/images/why-exhibit/6.png",
+    content: "Stay ahead of the curve on evolving customer requirements",
   },
 ];
 
 const featureList = [
   {
-    title: "Open Tech Sessions",
-    text: "Explore the latest technical content and developments in the industry which includes presentations, panel discussions and case studies, all in the show floor and free to attend for everyone.",
-    image: "/assets/images/why-exhibit/8.jpg",
-    buttonText: "BOOK A STAND",
-    buttonLink: "/",
-  },
-  {
-    title: "New Product Showcase",
-    text: "You can preview new and improved solutions for your applications during the new product showcase. Attend live demonstrations at the booths to learn about new and improved products.",
-    image: "/assets/images/why-exhibit/7.jpg",
+    img: "/assets/images/why-exhibit/7.jpg",
+    content : "You can preview new and improved solutions for your applications during the new product showcase. Attend live demonstrations at the booths to learn about new and improved products.",
     buttonText: "DOWNLOAD BROCHURE NOW",
     buttonLink: "/",
+    title: "New Product Showcase",
   },
+  {
+    img: "/assets/images/why-exhibit/8.jpg",
+    content : "Explore the latest technical content and developments in the industry which includes presentations, panel discussions and case studies, all in the show floor and free to attend for everyone.",
+    buttonText: "BOOK A STAND",
+    buttonLink: "/",
+    title: "Open Tech Sessions",
+  }
 ];
 
+// const whyExhibit = {
+//   p1: "EV innovation is accelerating due to contributions from all around the globe. Improvement in batteries, motor control, and support software will continue to occur and will make EVs a better investment.",
+//   p2 : "The exhibition will provide a world-class environment for EV industry to showcase the latest solutions in front of an audience who matters, including financiers and investors, engineers, R&D & government officials.",
+//   p3 : "More than 5,000 professionals representing leading companies in the EV industry will be in Abu Dhabi with the goal of networking and sourcing the latest technologies across the 3 days of exhibition.",
+//   img : "/assets/images/why-exhibit/charger.png"
+// };
+
 const whyExhibit = {
-  p1: "EV innovation is accelerating due to contributions from all around the globe. Improvement in batteries, motor control, and support software will continue to occur and will make EVs a better investment.",
-  p2 : "The exhibition will provide a world-class environment for EV industry to showcase the latest solutions in front of an audience who matters, including financiers and investors, engineers, R&D & government officials.",
-  p3 : "More than 5,000 professionals representing leading companies in the EV industry will be in Abu Dhabi with the goal of networking and sourcing the latest technologies across the 3 days of exhibition.",
-  img : "/assets/images/why-exhibit/charger.png"
+  img: "/assets/images/why-exhibit/charger.png",
+  title: " ",
+  p1: `EV innovation is accelerating due to contributions from all around the globe. Improvement in batteries, motor control, and support software will continue to occur and will make EVs a better investment.`, 
+  p2 :`The exhibition will provide a world-class environment for EV industry to showcase the latest solutions in front of an audience who matters, including financiers and investors, engineers, R&D & government officials.`,
+  p3 :`More than 5,000 professionals representing leading companies in the EV industry will be in Abu Dhabi with the goal of networking and sourcing the latest technologies across the 3 days of exhibition.`,
+  direction: "right",
 };
 
-const generalPage = (props) => {
-  const { offerProducts, allProducts, topSailedProducts } = props;
-
+const generalPage = () => {
   return (
     <EvLayout showNavbar={true}>
       <Container
@@ -84,13 +92,18 @@ const generalPage = (props) => {
           mb: 6,
         }}
       >
-        <Box hoverEffect data-aos="fade-up" data-aos-duration={1000}>
-          <WhyExhibitSection data = {whyExhibit} />
-        </Box>
+        <WhyExhibit whyExhibit = {whyExhibit} />
+        <ExhibitionFeatures data = {featureList} />
+        <ByExhibit data = {serviceList} />
+      <ExpectMeet data = {peopleList}/>
+
       </Container>
-      <FeatureSection featureList={featureList} />
+
+
+      {/* <FeatureSection featureList={featureList} /> */}
+      {/* <CardsSection data = {featureList} />
       <WhatToExpect serviceList={serviceList} />
-      <ExpectToMeet list={peopleList} />
+      <ExpectToMeet list={peopleList} /> */}
     </EvLayout>
   );
 };
