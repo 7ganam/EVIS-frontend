@@ -8,7 +8,7 @@ import { SectionTitle } from "components/EvComponents/StyledTypography";
 const MobilityFuture = (props) => {
     const item = props.item;
   return (
-    <Box sx={{ px: 6 }}>
+    <Box sx={{}}>
       <SectionTitle>FUTURE OF MOBILITY</SectionTitle>
       <TwoColumnBox item={item} />
     </Box>
