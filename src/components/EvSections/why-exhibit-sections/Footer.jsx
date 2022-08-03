@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from "@mui/material";
-import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
+import ImgGrid from "components/EvSections/why-exhibit-sections/ImgGrid";
 import {  BlockTitle } from "components/EvComponents/StyledTypography";
 
 
@@ -9,11 +9,11 @@ const Footer = (props) => {
   const footer2 = props.footer2;
   return (
     <Box sx = {{px : 6}}>
-        <SponsorsImageGridSection data = {footer1} />
+        <ImgGrid data = {footer1} />
         <Box sx={{ textAlign: "center", }}>
             <BlockTitle>KNOWLEDGE PARTNERS</BlockTitle>
         </Box>
-        <SponsorsImageGridSection data = {footer2} />
+        <ImgGrid data = {footer2} />
     </Box>
   )
 }

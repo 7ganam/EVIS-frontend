@@ -4,15 +4,57 @@ import { Grid } from "@mui/material";
 import SponsorImage from "components/EvComponents/SponsorImage";
 import { SectionTitle, BlockTitle } from "components/EvComponents/StyledTypography";
 
+const sponsorsImagesData = [
+    {
+        source: "/assets/images/brands/tesla.png",
+    },
+    {
+        source: "/assets/images/brands/apple.png",
+    },
+    {
+        source: "/assets/images/brands/bmw.png",
+    },
+    {
+        source: "/assets/images/brands/dell.png",
+    },
+    {
+        source: "/assets/images/brands/ferrari.png",
+    },
+    {
+        source: "/assets/images/brands/ray-ban.png",
+    },
+    {
+        source: "/assets/images/brands/lotto.png",
+    },
+    {
+        source: "/assets/images/brands/toyota.png",
+    },
+    {
+        source: "/assets/images/brands/xiaomi.png",
+    },
+    {
+        source: "/assets/images/brands/samsung.png",
+    },
+    {
+        source: "/assets/images/brands/sony.png",
+    },
+    {
+        source: "/assets/images/brands/occular.png",
+    },
+    {
+        source: "/assets/images/brands/levis.png",
+    },
+    {
+        source: "/assets/images/brands/amazon.png",
+    },
+]
 
-
-const SponsorsImageGrid = (props) => {
-    const data = props.data;
+const SponsorsImageGrid = () => {
     return (
         <Box sx={{ textAlign: "center", }}>
-            {/* <SectionTitle>Event Sponsors</SectionTitle> */}
+            <SectionTitle>Event Sponsors</SectionTitle>
             <Grid container columns={{ xs: 12, sm: 12, md: 12 }} sx={{ padding: "35px", textAlign: "center", placeItems: "center", }}>
-                {data.map(({ source }) => {
+                {sponsorsImagesData.map(({ source }) => {
                     return (
                         <Grid item xs={12} sm={4} md={2} key={source} sx={{
                             textAlign: "center",
