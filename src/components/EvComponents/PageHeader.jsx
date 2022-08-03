@@ -28,27 +28,27 @@ function PageHeader({ text, buttonText, buttonLink, image }) {
         }}
       >
         <Box sx={{ maxWidth: "530px", textAlign: "center" }}>
-          {" "}
-          <H1 sx={{ fontSize: "35px" }}>{text}</H1>
-          <Box ml={2.5} p={1.25}>
-            <Link href={buttonLink}>
-              <a>
-                {" "}
-                <StyledButton
-                  variant="contained"
-                  color="primary"
-                  sx={{
-                    px: "30px",
-                    py: "15px",
-                    fontWeight: "700",
-                    border: "1px white solid",
-                  }}
-                >
-                  {buttonText}
-                </StyledButton>
-              </a>
-            </Link>
-          </Box>
+          {text && <H1 sx={{ fontSize: "35px" }}>{text}</H1>}
+          {buttonText && buttonLink && (
+            <Box ml={2.5} p={1.25}>
+              <Link href={buttonLink}>
+                <a>
+                  <StyledButton
+                    variant="contained"
+                    color="primary"
+                    sx={{
+                      px: "30px",
+                      py: "15px",
+                      fontWeight: "700",
+                      border: "1px white solid",
+                    }}
+                  >
+                    {buttonText}
+                  </StyledButton>
+                </a>
+              </Link>
+            </Box>
+          )}
         </Box>
       </Box>
     </Box>
