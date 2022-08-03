@@ -1,32 +1,30 @@
-import React from 'react';
-import { Box , Grid } from "@mui/material";
+import React from "react";
+import { Box, Grid } from "@mui/material";
 import { SectionTitle } from "components/EvComponents/StyledTypography";
 import CardWithImageButton from "components/EvComponents/CardWithImageButton";
 
-
-
 const ExhibitionFeatures = (props) => {
-    const data = props.data;
+  const data = props.data;
   return (
-    <Box sx = {{px : 6 , pt : 5}}>
-        <SectionTitle>EXHIBITION FEATURES </SectionTitle>
-        <Grid container sx = {{py : 3}} spacing = {10}> 
+    <Box sx={{ px: 6, pt: 5 }}>
+      <SectionTitle>EXHIBITION FEATURES </SectionTitle>
+      <Grid container sx={{ py: 3 }} spacing={5}>
         {data.map((card, ind) => {
-          return(
+          return (
             <Grid item xs={12} sm={6} md={6} key={ind}>
-              <CardWithImageButton 
-              img={card.img}
-              buttonText={card.buttonText}
-              buttonLink={card.buttonLink}
-              text={card.content}
-              title={card.title}
+              <CardWithImageButton
+                img={card.img}
+                buttonText={card.buttonText}
+                buttonLink={card.buttonLink}
+                text={card.content}
+                title={card.title}
               />
             </Grid>
-          )
+          );
         })}
-        </Grid>
+      </Grid>
     </Box>
-  )
-}
+  );
+};
 
-export default ExhibitionFeatures
+export default ExhibitionFeatures;
