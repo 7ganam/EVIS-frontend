@@ -7,13 +7,13 @@ import { BlockTitle } from "components/EvComponents/StyledTypography";
 function CardWithImageButton({ text, img, buttonText, buttonURL, title }) {
   return (
     <Box>
-      <Box sx={{ height: "250px", width: "100%" }}>
+      <Box sx={{ height: "auto", width: "100%" }}>
         <Image
           // height={60}
           width={"100%"}
           height={"100%"}
           mb={0}
-          src="/assets/images/why-exhibit/charger.png"
+          src={img}
           alt="logo"
           sx={{ objectFit: "cover" }}
         />
