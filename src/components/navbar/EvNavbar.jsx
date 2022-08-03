@@ -1,6 +1,6 @@
 import { ArrowLeft, KeyboardArrowDown } from "@mui/icons-material";
 import ArrowRight from "@mui/icons-material/ArrowRight";
-import { Box, Container, MenuItem, styled } from "@mui/material";
+import { Box, MenuItem, styled, Button } from "@mui/material";
 import BazarCard from "components/BazarCard";
 import { FlexBox } from "components/flex-box";
 import NavLink from "components/nav-link/NavLink";
@@ -8,9 +8,16 @@ import evNavbarNavigations from "data/ev-navbarNavigations";
 import useSettings from "hooks/useSettings";
 import MegaMenu from "./MegaMenu";
 import MegaMenu2 from "./MegaMenu2"; // NavList props interface
+import Link from "next/link";
+import Image from "components/BazarImage";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useState } from "react";
+import MobileMenu from "components/navbar/MobileMenu";
 
 // const common css style
 const navLinkStyle = {
+  whitespace: "nowrap",
   cursor: "pointer",
   transition: "color 150ms ease-in-out",
   "&:hover": {
@@ -42,22 +49,21 @@ const ParentNavItem = styled(Box)(({ theme }) => ({
   },
 }));
 const NavBarWrapper = styled(BazarCard)(({ theme, line }) => ({
-  height: "60px",
   display: "block",
   borderRadius: "0px",
   position: "relative",
   ...(line === 0 && {
     borderBottom: `1px solid ${theme.palette.grey[200]}`,
   }),
-  [theme.breakpoints.down(1150)]: {
-    display: "none",
-  },
 }));
-const InnerContainer = styled(Container)(() => ({
+const InnerContainer = styled(Box)(({ theme }) => ({
   height: "100%",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
+  [theme.breakpoints.down(1150)]: {
+    display: "none",
+  },
 }));
 
 const ChildNavsWrapper = styled(Box)(() => ({
@@ -70,8 +76,10 @@ const ChildNavsWrapper = styled(Box)(() => ({
 })); // ==========================================================
 
 // ==========================================================
-const Navbar = ({ hideCategories, elevation }) => {
+const Navbar = ({ elevation, isFixed }) => {
   const { settings } = useSettings();
+  const theme = useTheme();
+  const downMd = useMediaQuery(theme.breakpoints.down(1150));
 
   const renderNestedNav = (list = [], isRoot = false) => {
     return list.map((nav) => {
@@ -93,7 +101,19 @@ const Navbar = ({ hideCategories, elevation }) => {
 
         if (nav.url) {
           return (
-            <StyledNavLink href={nav.url} key={nav.title}>
+            <StyledNavLink
+              href={nav.url}
+              key={nav.title}
+              sx={{
+                whiteSpace: "nowrap ",
+                display: "flex",
+                alignItems: "center",
+                px: "10px",
+                height: "55px",
+                fontWeight: "600",
+                fontSize: "17px",
+              }}
+            >
               {nav.title}
             </StyledNavLink>
           );
@@ -107,6 +127,8 @@ const Navbar = ({ hideCategories, elevation }) => {
               position="relative"
               flexDirection="column"
               sx={{
+                height: "55px",
+                fontWeight: "600",
                 "&:hover": {
                   "& > .child-nav-item": {
                     display: "block",
@@ -114,7 +136,18 @@ const Navbar = ({ hideCategories, elevation }) => {
                 },
               }}
             >
-              <FlexBox alignItems="flex-end" gap={0.3} sx={navLinkStyle}>
+              <FlexBox
+                alignItems="flex-end"
+                gap={0.3}
+                sx={{
+                  ...navLinkStyle,
+                  display: "flex",
+                  alignItems: "center",
+                  height: "100%",
+                  px: "10px",
+                  fontSize: "17px",
+                }}
+              >
                 {nav.title}{" "}
                 <KeyboardArrowDown
                   sx={{
@@ -183,24 +216,112 @@ const Navbar = ({ hideCategories, elevation }) => {
 
   return (
     <NavBarWrapper hoverEffect={false} elevation={elevation} line={elevation}>
-      {!hideCategories ? (
-        <InnerContainer sx={{ justifyContent: "center" }}>
-          {/* Horizontal menu */}
-          <FlexBox gap={4}>
-            {renderNestedNav(evNavbarNavigations, true)}
-          </FlexBox>
-        </InnerContainer>
-      ) : (
-        <InnerContainer
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          // height: isFixed ? "90px" : "110px",
+          // height: isFixed ? "100" : "150px",
+        }}
+      >
+        <Box
           sx={{
+            flexGrow: "1",
+            display: "flex",
             justifyContent: "center",
+            alignItems: "center",
+            height: "70%",
+            maxWidth: "400px",
+            pl: "30px",
+            // bgcolor: "blue",
+            // minWidth: "300px",
           }}
         >
-          <FlexBox gap={4}>
-            {renderNestedNav(evNavbarNavigations, true)}
-          </FlexBox>
-        </InnerContainer>
-      )}
+          <Link href="/">
+            <a>
+              <Image
+                height={isFixed ? "70" : "90"}
+                mb={0}
+                src="/assets/images/EvLogo.png"
+                alt="logo"
+                // sx={{ height: "10%" }}
+              />
+            </a>
+          </Link>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            px: "40px",
+            width: "100%",
+            // bgcolor: "red",
+          }}
+        >
+          <Box
+            sx={{
+              display: downMd || isFixed ? "none" : "flex",
+              justifyContent: "end",
+              py: "1px",
+              minHeight: "70px",
+              // bgcolor: "orange",
+            }}
+          >
+            <Box component={Button}>
+              <Link href={`/gallery`}>
+                <a>
+                  {" "}
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    sx={{
+                      px: "30px",
+                      py: "6px",
+                    }}
+                  >
+                    Book A Stand
+                  </Button>
+                </a>
+              </Link>
+            </Box>
+          </Box>
+          <InnerContainer
+            sx={{
+              justifyContent: "",
+              height: "100%",
+              width: "100%",
+              // bgcolor: "yellow",
+            }}
+          >
+            <FlexBox
+              gap={"1px"}
+              sx={{
+                width: "100%",
+                height: "100%",
+                flexWrap: "wrap",
+                pb: "20px",
+                pt: isFixed ? "20px" : "0",
+                justifyContent: "end",
+              }}
+            >
+              {renderNestedNav(evNavbarNavigations, true)}
+            </FlexBox>
+          </InnerContainer>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "end",
+              width: "100%",
+              ml: "auto",
+            }}
+          >
+            {" "}
+            {downMd && <MobileMenu />}
+          </Box>
+        </Box>
+      </Box>
     </NavBarWrapper>
   );
 }; //  set default props data

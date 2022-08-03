@@ -120,7 +120,7 @@ export const themeColors = {
   paste: { ...paste },
   marron: { ...marron },
   background: {
-    default: grey[100],
+    default: "#ffff",
   },
   text: {
     primary: grey[900],
