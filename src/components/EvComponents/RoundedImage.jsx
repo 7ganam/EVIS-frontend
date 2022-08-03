@@ -10,7 +10,9 @@ const RoundedImage = (props) => {
                 <Image
                     sx={{
                         display: "block",
-                        margin: "0 auto", borderRadius: "50%"
+                        margin: "0 auto", 
+                        pb : 6,
+                        borderRadius: "50%"
                     }}
                     alt="rounded image"
                     src={props.Src}
