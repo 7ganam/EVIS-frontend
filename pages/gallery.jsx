@@ -12,15 +12,27 @@ import EvLayout from "components/layouts/EvLayout";
 import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
 import api from "utils/api/grocery3-shop";
 import RoundedImagesSection from "components/EvSections/RoundedImagesSection";
-import FeedbackQuote from "components/EvComponents/FeedbackQuote";
 import FeedbackQuotesSection from "components/EvSections/FeedbackQuotesSection";
 import FullWidthCardsSection from "components/EvSections/FullWidthCardsSection";
+import PageHeader from "components/EvComponents/PageHeader";
+// ======================================================
+// ======================================================
+const pageHeaderData = {
+  text: "Europe’s largest advanced battery and electric vehicle tech conference",
+  buttonText: "Save The Date",
+  buttonLink: "/",
+  image: "/assets/images/ev-home/carousel2.jpeg",
+};
 
-// ======================================================
-// ======================================================
 const EvHome = () => {
   return (
     <EvLayout showNavbar={true} title={"Home"}>
+      <PageHeader
+        text={pageHeaderData.text}
+        buttonText={pageHeaderData.buttonText}
+        buttonLink={pageHeaderData.buttonLink}
+        image={pageHeaderData.image}
+      ></PageHeader>
       <Container
         sx={{
           mb: 6,
