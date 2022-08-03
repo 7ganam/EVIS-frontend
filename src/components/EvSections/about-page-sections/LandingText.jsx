@@ -13,17 +13,17 @@ const LandingText = (props) => {
         <SectionTitle>EVENT OVERVIEW</SectionTitle>
      <Grid container spacing={3} sx = {{pt : 5}}>
         <Grid item xs={12} sm = {12} md = {12}>
-            <Box sx={{color : "grey.700"}}>
+            <Box >
                 <Paragraph>{p1}</Paragraph>
             </Box>
         </Grid>
         <Grid item xs={12} sm = {12} md = {12}>
-            <Box sx={{color : "grey.700"}}>
+            <Box >
                 <Paragraph>{p2}</Paragraph>
             </Box>
         </Grid>
         <Grid item xs={12} sm = {12} md = {12}>
-            <Box sx={{color : "grey.700"}}>
+            <Box >
                 <Paragraph>{p3}</Paragraph>
             </Box>
         </Grid>
