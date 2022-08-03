@@ -9,7 +9,8 @@ const SummitThemes = (props) => {
     const data = props.data;
     return (
         <Box sx={{ 
-            pt: 1,            
+            pt: 1,   
+            px : 6         
             }}>
           <SectionTitle>Summit Themes </SectionTitle>
     

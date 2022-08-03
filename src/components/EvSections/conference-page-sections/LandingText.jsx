@@ -10,7 +10,7 @@ const LandingText = (props) => {
   const  {main , t1 , t2 , p1 , p2 , btnText}  = props.section;
   return (
     
-    <Box sx={{ mt: "10px" , py :5  }}>
+    <Box sx={{ mt: "10px" , py :5 , px : 6  }}>
         <Box sx={{color : "grey.700"}}>
      <Paragraph>{main}</Paragraph>
      </Box>
