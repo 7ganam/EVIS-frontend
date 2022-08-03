@@ -23,10 +23,9 @@ const EvLayout = (props) => {
       </Head>
 
       <EvTopbar />
+      {/* <EvHeader isFixed={isFixed} searchBoxType="type2" /> */}
 
       <Sticky fixedOn={0} onSticky={toggleIsFixed}>
-        <EvHeader isFixed={isFixed} searchBoxType="type2" />
-
         <Box
           zIndex={1}
           position="relative"
