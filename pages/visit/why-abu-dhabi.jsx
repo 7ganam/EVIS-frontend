@@ -129,13 +129,14 @@ const generalPage = () => {
         sx={{
           mb: 6,
         }}
-      ></Container>
-      <LandingText section={sections} />
+      >
+              <LandingText section={sections} />
       <TwoColumnBox item={item} />
       <TextField section={data} />
       <Facts data={facts} p={p} />
       <TextField section={data2} />
       <Footer footer1={footer1} footer2={footer2} />
+      </Container>
     </EvLayout>
   );
 };
