@@ -7,25 +7,25 @@ const data = [
   {
     img: "/assets/images/gallery/1.png",
     title: "Meet over 540+ Exhibitors",
-    text: "The Electric & Hybrid Vehicle Technology Expo provides attendees the chance to find solutions to their application needs, get a look at the latest technologies, and connect with their peers.",
+    ps: ["The Electric & Hybrid Vehicle Technology Expo provides attendees the chance to find solutions to their application needs, get a look at the latest technologies, and connect with their peers."],
     direction: "left",
   },
   {
     img: "/assets/images/gallery/2.png",
     title: "Meet over 540+ Exhibitors",
-    text: "The Electric & Hybrid Vehicle Technology Expo provides attendees the chance to find solutions to their application needs, get a look at the latest technologies, and connect with their peers.",
+    ps: ["The Electric & Hybrid Vehicle Technology Expo provides attendees the chance to find solutions to their application needs, get a look at the latest technologies, and connect with their peers."],
     direction: "right",
   },
   {
     img: "/assets/images/gallery/3.png",
     title: "Meet over 540+ Exhibitors",
-    text: "The Electric & Hybrid Vehicle Technology Expo provides attendees the chance to find solutions to their application needs, get a look at the latest technologies, and connect with their peers.",
+    ps: ["The Electric & Hybrid Vehicle Technology Expo provides attendees the chance to find solutions to their application needs, get a look at the latest technologies, and connect with their peers."],
     direction: "left",
   },
   {
     img: "/assets/images/gallery/4.png",
     title: "Meet over 540+ Exhibitors",
-    text: "The Electric & Hybrid Vehicle Technology Expo provides attendees the chance to find solutions to their application needs, get a look at the latest technologies, and connect with their peers.",
+    ps: ["The Electric & Hybrid Vehicle Technology Expo provides attendees the chance to find solutions to their application needs, get a look at the latest technologies, and connect with their peers."],
     direction: "right",
   },
 ];
