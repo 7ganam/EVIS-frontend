@@ -98,7 +98,6 @@ const footer2 = [
   },
 ];
 
-
 const facts = [
   {
     title: "44 %",
@@ -115,10 +114,11 @@ const facts = [
   {
     title: "6 %",
     text: "NUCLEAR",
-  }
+  },
 ];
 
-const p = 'The strategy targets an energy mix that combines renewable, nuclear and clean energy sources to meet the UAE’s economic requirements and environmental goals as follows:';
+const p =
+  "The strategy targets an energy mix that combines renewable, nuclear and clean energy sources to meet the UAE’s economic requirements and environmental goals as follows:";
 
 const generalPage = () => {
   return (
@@ -133,7 +133,7 @@ const generalPage = () => {
       <LandingText section={sections} />
       <TwoColumnBox item={item} />
       <TextField section={data} />
-      <Facts data = {facts} p = {p} />
+      <Facts data={facts} p={p} />
       <TextField section={data2} />
       <Footer footer1={footer1} footer2={footer2} />
     </EvLayout>
