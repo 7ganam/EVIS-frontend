@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Grid, Container, useTheme, Card } from "@mui/material";
+import { Box, Grid, Container, Card } from "@mui/material";
 import { SectionTitle } from "components/EvComponents/StyledTypography";
 import { H4 } from "components/Typography";
 
 const Press2 = (props) => {
   const data = props.data;
-  const theme = useTheme();
 
   return (
     <Box
@@ -15,7 +14,9 @@ const Press2 = (props) => {
         py: "10px",
       }}
     >
-      <SectionTitle>ANNOUNCING THE ELECTRIC VEHICLE INNOVATION SUMMIT</SectionTitle>
+      <SectionTitle>
+        ANNOUNCING THE ELECTRIC VEHICLE INNOVATION SUMMIT
+      </SectionTitle>
 
       <Container
         sx={{
@@ -42,7 +43,7 @@ const Press2 = (props) => {
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center center",
-                }}
+                  }}
                 >
                   <H4
                     width="190px"
@@ -59,7 +60,7 @@ const Press2 = (props) => {
         </Grid>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default Press2
+export default Press2;
