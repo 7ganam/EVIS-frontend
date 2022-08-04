@@ -53,7 +53,7 @@ const SponsorsImageGrid = () => {
     return (
         <Box sx={{ textAlign: "center", }}>
             <SectionTitle>Event Sponsors</SectionTitle>
-            <Grid container columns={{ xs: 12, sm: 12, md: 12 }} sx={{ padding: "35px", textAlign: "center", placeItems: "center", }}>
+            <Grid container sx={{ padding: "35px", textAlign: "center", placeItems: "center", }}>
                 {sponsorsImagesData.map(({ source }) => {
                     return (
                         <Grid item xs={12} sm={4} md={2} key={source} sx={{
