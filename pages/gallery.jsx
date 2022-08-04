@@ -12,6 +12,8 @@ import EvLayout from "components/layouts/EvLayout";
 import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
 import api from "utils/api/grocery3-shop";
 import RoundedImagesSection from "components/EvSections/RoundedImagesSection";
+import SponsorsGrid from "components/EvSections/SponsorsGrid";
+import PartnersGrid from "components/EvSections/PartnersGrid";
 import FeedbackQuotesSection from "components/EvSections/FeedbackQuotesSection";
 import FullWidthCardsSection from "components/EvSections/FullWidthCardsSection";
 import PageHeader from "components/EvComponents/PageHeader";
@@ -48,6 +50,8 @@ const EvHome = () => {
         <FeedbackCardsSection />
         <RoundedImagesSection />
         <SponsorsImageGridSection />
+        <SponsorsGrid />
+        <PartnersGrid />
         <FeedbackQuotesSection />
         <FullWidthCardsSection />
       </Container>
