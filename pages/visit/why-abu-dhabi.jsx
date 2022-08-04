@@ -7,6 +7,7 @@ import LandingText from "components/EvSections/why-abu-dhabi-page/LandingText";
 import TwoColumnBox from "components/EvComponents/TwoColumnBox";
 import TextField from "components/EvSections/why-abu-dhabi-page/TextField";
 import Footer from "components/EvSections/why-exhibit-sections/Footer";
+import Facts from "components/EvSections/why-abu-dhabi-page/Facts";
 
 // ======================================================
 
@@ -30,13 +31,7 @@ const data = {
     "In 2017, the UAE launched ‘Energy Strategy 2050’, which is considered the first unified energy strategy in the country that is based on supply and demand. The strategy aims to increase the contribution of clean energy in the total energy mix from 25% to 50% by 2050 and reduce carbon footprint of power generation by 70 percent, thus saving AED 700 billion by 2050. It also seeks to increase consumption efficiency of individuals and corporates by 40%.",
     "The new energy strategy is being implemented in three phases. The first phase aims to accelerate efficient consumption of energy as well as diversifying and securing it. The second phase is to find new solutions that integrate with energy and transportation solutions. The third phase focuses on research and development in addition to innovation and creativity to supply sustainable energy.",
   ],
-  lst: [
-    "The strategy targets an energy mix that combines renewable, nuclear and clean energy sources to meet the UAE’s economic requirements and environmental goals as follows:",
-    "44 % clean energy",
-    "38 % gas",
-    "12 % clean coal",
-    "6 % nuclear.",
-  ],
+  lst: [],
 };
 const data2 = {
   title: "Global Investments",
@@ -103,6 +98,28 @@ const footer2 = [
   },
 ];
 
+
+const facts = [
+  {
+    title: "44 %",
+    text: "CLEAN ENERGY",
+  },
+  {
+    title: "38 %",
+    text: "GAS",
+  },
+  {
+    title: "12 %",
+    text: "CLEAN COAL",
+  },
+  {
+    title: "6 %",
+    text: "NUCLEAR",
+  }
+];
+
+const p = 'The strategy targets an energy mix that combines renewable, nuclear and clean energy sources to meet the UAE’s economic requirements and environmental goals as follows:';
+
 const generalPage = () => {
   return (
     <EvLayout showNavbar={true}>
@@ -116,6 +133,7 @@ const generalPage = () => {
       <LandingText section={sections} />
       <TwoColumnBox item={item} />
       <TextField section={data} />
+      <Facts data = {facts} p = {p} />
       <TextField section={data2} />
       <Footer footer1={footer1} footer2={footer2} />
     </EvLayout>
