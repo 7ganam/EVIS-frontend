@@ -5,7 +5,10 @@ import { H2, H4 } from "components/EvComponents/Typography";
 
 const RoundedImage = (props) => {
     return (
-        <Box sx={{ padding: "10px" }}>
+        <Box sx={{
+            padding: "10px", backgroundColor: props.bgColor,
+            borderRadius: "7px",
+        }}>
             <Box sx={{ textAlign: "center", }}>
                 <Image
                     sx={{
