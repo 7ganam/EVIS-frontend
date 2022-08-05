@@ -10,8 +10,7 @@ const Press2 = (props) => {
     <Box
       sx={{
         width: "100%",
-        px: 6,
-        py: "10px",
+        pb: 1,
       }}
     >
       <SectionTitle>
@@ -46,7 +45,7 @@ const Press2 = (props) => {
                   }}
                 >
                   <H4
-                    width="190px"
+                    width="auto"
                     sx={{
                       color: "white",
                     }}
