@@ -2,13 +2,10 @@ import { Box, Grid, styled, useTheme } from "@mui/material";
 import React from "react";
 import YoutubeEmbed from "components/YoutubeEmbed";
 
-
-
 const Videos = ({ videosList }) => {
   const theme = useTheme();
   return (
-    <Box mt={6} px = {6}>
-
+    <Box mt={6}>
       <Grid container mb={-0.5} spacing={3}>
         {videosList.map((item, ind) => (
           <Grid key={ind} item md={4} sm={6} xs={12}>

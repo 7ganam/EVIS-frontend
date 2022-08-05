@@ -10,7 +10,6 @@ const Press2 = (props) => {
     <Box
       sx={{
         width: "100%",
-        px: 6,
         py: "10px",
       }}
     >
