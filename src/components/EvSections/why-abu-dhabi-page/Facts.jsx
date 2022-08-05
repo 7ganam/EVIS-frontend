@@ -1,6 +1,6 @@
 import React from "react";
 import FactBox from "components/EvComponents/FactBox";
-import { Box, useTheme, Grid } from "@mui/material";
+import { Box, useTheme, Grid , Container} from "@mui/material";
 import { Paragraph } from "components/EvComponents/Typography";
 
 
@@ -16,16 +16,22 @@ const Facts = (props) => {
     const data = props.data;
   const theme = useTheme();
   return (
-    <Box sx = {{px : 6}}>
+    <Box >
+      <Container sx={{ mb: 6 }}>
+        
+      <Box sx={{ px: 6 }}>
       <Paragraph>{p} </Paragraph>  
+      </Box>
+      </Container>
       <Box
         sx={{
           backgroundColor: theme.palette.primary.main,
           my: 6,
-          px: 2,
+          px: 8,
           height: "auto",
         }}
       >
+        <Container>
         <Grid container spacing={3}>
           {data.map((item, index) => {
             return (
@@ -35,6 +41,7 @@ const Facts = (props) => {
             );
           })}
         </Grid>
+        </Container>
       </Box>
     </Box>
   );
