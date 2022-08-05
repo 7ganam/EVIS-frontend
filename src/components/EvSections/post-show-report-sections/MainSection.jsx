@@ -9,6 +9,7 @@ import * as yup from "yup";
 import Image from "components/BazarImage";
 
 const initialValues = {
+  title: "",
   first_name: "",
   second_name: "",
   job_title: "",
@@ -65,11 +66,26 @@ function MainSection({ sponsors }) {
                   elevation={2}
                 >
                   <Typography fontWeight="600" mb={2}>
-                    Please fill the form to recieve a download link of the
-                    Electric Vehicle Innovation Summit event brochure.
+                    Please fill the form to receive a download link of the 2022
+                    Post Show Report.
                   </Typography>
 
                   <Grid container spacing={2}>
+                    <Grid item sm={6} xs={12}>
+                      <TextField
+                        fullWidth
+                        sx={{
+                          mb: 2,
+                        }}
+                        label="Title"
+                        onBlur={handleBlur}
+                        name="title"
+                        onChange={handleChange}
+                        value={values.title}
+                        error={!!touched.title && !!errors.title}
+                        helperText={touched.title && errors.title}
+                      />
+                    </Grid>
                     <Grid item sm={6} xs={12}>
                       <TextField
                         fullWidth

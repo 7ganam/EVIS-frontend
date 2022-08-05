@@ -28,7 +28,7 @@ const evNavbarNavigations = [
       },
       {
         title: "Download 2022 Post Show Report ",
-        url: "/exhibition/2022-post-show-report",
+        url: "/exhibition/post-show-report",
       },
       {
         title: "EXHIBITOR MANUAL",
