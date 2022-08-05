@@ -9,17 +9,16 @@ import * as yup from "yup";
 import Image from "components/BazarImage";
 
 const initialValues = {
-  title: "",
   first_name: "",
   second_name: "",
   job_title: "",
-  company: "",
   city: "",
   country: countryList[229],
   shipping_contact: "",
   address: "",
   website: "",
   email: "",
+  poBox: "",
 }; // uncomment these fields below for from validation
 const checkoutSchema = yup.object().shape({
   // shipping_name: yup.string().required("required"),
@@ -66,26 +65,19 @@ function MainSection({ sponsors }) {
                   elevation={2}
                 >
                   <Typography fontWeight="600" mb={2}>
-                    Please fill the form to receive a download link of the 2022
-                    Post Show Report.
+                    Sponsorship opportunities provided by Electric Vehicle
+                    Innovation Summit (EVIS) Annual Exhibition and Conference
+                    are specially designed to allow your organization to enjoy
+                    maximum exposure to a sophisticated and interested audience
+                    of Electric Vehicles. Our audience includes high level
+                    decision makers, buyers and investors of the industry.
+                  </Typography>
+                  <Typography fontWeight="600" mb={2}>
+                    Please fill in some basic details and our dedicated
+                    executive will be in touch with you shortly.
                   </Typography>
 
                   <Grid container spacing={2}>
-                    <Grid item sm={6} xs={12}>
-                      <TextField
-                        fullWidth
-                        sx={{
-                          mb: 2,
-                        }}
-                        label="Title"
-                        onBlur={handleBlur}
-                        name="title"
-                        onChange={handleChange}
-                        value={values.title}
-                        error={!!touched.title && !!errors.title}
-                        helperText={touched.title && errors.title}
-                      />
-                    </Grid>
                     <Grid item sm={6} xs={12}>
                       <TextField
                         fullWidth
@@ -137,13 +129,13 @@ function MainSection({ sponsors }) {
                         sx={{
                           mb: 2,
                         }}
-                        label="Company Name"
+                        label="Nationality"
                         onBlur={handleBlur}
-                        name="company"
+                        name="nationality"
                         onChange={handleChange}
-                        value={values.company}
-                        error={!!touched.company && !!errors.company}
-                        helperText={touched.company && errors.company}
+                        value={values.nationality}
+                        error={!!touched.nationality && !!errors.nationality}
+                        helperText={touched.nationality && errors.nationality}
                       />
                     </Grid>{" "}
                     <Grid item sm={6} xs={12}>
@@ -242,21 +234,6 @@ function MainSection({ sponsors }) {
                     <Grid item sm={6} xs={12}>
                       <TextField
                         fullWidth
-                        sx={{
-                          mb: 2,
-                        }}
-                        label="Website"
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                        name="website"
-                        value={values.website}
-                        error={!!touched.website && !!errors.website}
-                        helperText={touched.website && errors.website}
-                      />
-                    </Grid>{" "}
-                    <Grid item sm={6} xs={12}>
-                      <TextField
-                        fullWidth
                         label="Address"
                         onBlur={handleBlur}
                         onChange={handleChange}
@@ -266,6 +243,21 @@ function MainSection({ sponsors }) {
                         helperText={touched.address && errors.address}
                       />
                     </Grid>
+                    <Grid item sm={12} xs={12}>
+                      <TextField
+                        fullWidth
+                        sx={{
+                          mb: 2,
+                        }}
+                        label="PO Box"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        name="poBox"
+                        value={values.poBox}
+                        error={!!touched.poBox && !!errors.poBox}
+                        helperText={touched.poBox && errors.poBox}
+                      />
+                    </Grid>{" "}
                   </Grid>
                 </Card1>
 
@@ -278,7 +270,7 @@ function MainSection({ sponsors }) {
                       type="submit"
                       fullWidth
                     >
-                      Download Report
+                      Submit
                     </Button>
                   </Grid>
                 </Grid>
