@@ -132,7 +132,7 @@ const generalPage = () => {
 
       <Container
         sx={{
-          mb: 2,
+          mb: 1,
         }}
       >
         <LandingText section={sections} />
@@ -140,7 +140,7 @@ const generalPage = () => {
         <TextField section={data} />
         </Container>
         <Facts data={facts} p={p} />
-        <Container sx={{ mb: 6 }}>
+        <Container sx={{ mb: 1 }}>
 
         <TextField section={data2} />
         <Footer footer1={footer1} footer2={footer2} />
