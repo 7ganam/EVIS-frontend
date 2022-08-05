@@ -121,7 +121,6 @@ const EvHome = () => {
       <Container
         sx={{
           mb: 6,
-          px: 6,
         }}
       >
         <Videos videosList={videosList} />

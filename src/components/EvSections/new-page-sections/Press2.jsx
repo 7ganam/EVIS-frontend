@@ -46,7 +46,7 @@ const Press2 = (props) => {
                   }}
                 >
                   <H4
-                    width="190px"
+                    width="auto"
                     sx={{
                       color: "white",
                     }}
