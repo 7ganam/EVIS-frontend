@@ -7,27 +7,31 @@ import Image from "components/BazarImage";
 
 
 
-const TwoColumnContent = (img , title , text ,direction) => {
+const TwoColumnContent = (img , title , ps ,direction) => {
     if(direction === "left"){
         return ( <Grid container spacing={5} >
         <Grid item md={6} sm={12} xs={12}>
           <Box sx={{}}>
             <Image
               width={"100%"}
-              height={"100%"}
+              // height={"320px"}
               mb={0}
               src={img}
               alt="logo"
-              sx={{ objectFit: "cover" }}
+              sx={{ objectFit: "cover", aspectRatio: " 16 / 10" }}
             />
           </Box>
         </Grid>
         <Grid item md={6} sm={12} xs={12}>
-          <Box sx={{}}>
+          <Box sx={{ pl: { md: "20px" } }}>
             <BlockTitle> {title} </BlockTitle>
-            <Paragraph>
-                {text}
-            </Paragraph>
+            {ps?.map((item, index) => {
+              return (<Box sx = {{pt : 1}} key = {index}>
+                <Paragraph>
+                    {item}
+                </Paragraph>
+                </Box>)
+            })}
           </Box>
         </Grid>
       </Grid>)
@@ -36,37 +40,40 @@ const TwoColumnContent = (img , title , text ,direction) => {
     if (direction === "right"){
         return( <Grid container spacing={5}>
         <Grid item md={6} sm={12} xs={12} order = {{xs : 2 , md : 1}}>
-          <Box sx={{}}>
+        <Box sx={{}}>
             <BlockTitle> {title} </BlockTitle>
-            <Paragraph>
-                {text}
-            </Paragraph>
+            {ps?.map((item, index) => {
+              return (<Box sx = {{pt : 1}} key = {index}>
+                <Paragraph>
+                    {item}
+                </Paragraph>
+                </Box>)
+            })}
           </Box>
         </Grid>
-        <Grid item md={6} sm={12} xs={12} order = {{xs : 1 , md : 2}}>
-          <Box sx={{}}>
+        
+        <Grid item md={6} sm={12} xs={12} order={{ xs: 1, md: 2 }}>
+          <Box sx={{ pl: { md: "20px" } }}>
             <Image
               width={"100%"}
-              height={"100%"}
+              // height={"320px"}
               mb={0}
               src={img}
               alt="logo"
-              sx={{ objectFit: "cover" }}
+              sx={{ objectFit: "cover", aspectRatio: " 16 / 10" }}
             />
           </Box>
         </Grid>
-      </Grid>)
-    }
-
-
-}
-
+      </Grid>
+    );
+  }
+};
 
 const TwoColumnBox = (props) => {
-  const { img , title , text , direction } = props.item;
+  const { img , title , ps , direction } = props.item;
   return (
     <Box sx={{ pt: "50px", px: 6 }}>
-        {TwoColumnContent(img , title , text , direction)}
+        {TwoColumnContent(img , title , ps , direction)}
     </Box>
   );
 };

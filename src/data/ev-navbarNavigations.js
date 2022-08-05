@@ -80,6 +80,10 @@ const evNavbarNavigations = [
         url: "/conferences/main-conference",
       },
       {
+        title: "Speakers",
+        url: "/conferences/speakers",
+      },
+      {
         title: "Delegate Registration / Passes And Pricing",
         url: "/conferences/delegate-registration",
       },

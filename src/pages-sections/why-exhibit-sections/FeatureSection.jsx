@@ -1,30 +1,34 @@
 import { Box, Grid, Stack, useTheme } from "@mui/material";
 
-import { SectionTitle } from "components/StyledTypography";
+import { SectionTitle } from "components/EvComponents/StyledTypography";
 
 import React from "react";
-import Event from "pages-sections/why-exhibit-sections/Event";
+// import Event from "pages-sections/why-exhibit-sections/Event";
+import CardWithImageButton from "components/EvComponents/CardWithImageButton";
 // ===============================================================
 const FeatureSection = ({ featureList }) => {
   const theme = useTheme();
 
   return (
-    <Box sx={{}}>
-      <SectionTitle text={"EVENT FEATURES"} />
-      <Stack>
+    <Box sx={{px : 5}}>
+      <SectionTitle> EVENT FEATURES </SectionTitle>
+      <Grid container spacing = {3}>
         {featureList.map((feature, ind) => {
           return (
+            <Grid item xs={12} sm={6} md={4} key={ind}>
             <Box
               hoverEffect
               data-aos="fade-up"
               data-aos-duration={1000}
               key={ind}
             >
-              <Event feature={feature} />
+              {/* <Event feature={feature} /> */}
+              <CardWithImageButton feature={feature} />
             </Box>
+            </Grid>
           );
         })}
-      </Stack>
+      </Grid>
     </Box>
   );
 };
