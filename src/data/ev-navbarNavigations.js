@@ -101,7 +101,28 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "MEDIA CENTRE",
-    url: "/media-center",
+    child: [
+      {
+        title: "PRESS/MEDIA REGISTRATION",
+        url: "/media-center/media-registration",
+      },
+      {
+        title: "MEDIA PARTNERS",
+        url: "/media-center/partners",
+      },
+      {
+        title: "SUPPORTING ASSOCIATIONS ",
+        url: "/media-center/support-associations",
+      },
+      {
+        title: "NEWS/PRESS RELEASES",
+        url: "/media-center/press-releases",
+      },
+      {
+        title: "POLICY DIALOGUES",
+        url: "/media-center/policy-dialogues",
+      },
+    ],
   },
   {
     title: "CONTACT US ",
