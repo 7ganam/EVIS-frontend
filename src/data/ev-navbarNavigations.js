@@ -23,8 +23,16 @@ const evNavbarNavigations = [
         url: "/exhibition/why-exhibit",
       },
       {
-        title: "Profile",
-        url: "/exhibition/profile",
+        title: "Download Event Brochure",
+        url: "/exhibition/event-brochure",
+      },
+      {
+        title: "Download 2022 Post Show Report ",
+        url: "/exhibition/2022-post-show-report",
+      },
+      {
+        title: "EXHIBITOR MANUAL",
+        url: "/exhibition/exhibitor-manual",
       },
     ],
   },

@@ -11,6 +11,7 @@ const initialValues = {
   first_name: "",
   second_name: "",
   job_title: "",
+  company: "",
   city: "",
   country: countryList[229],
   shipping_contact: "",
@@ -118,13 +119,13 @@ function MainSection({ sponsors }) {
                         sx={{
                           mb: 2,
                         }}
-                        label="Nationality"
+                        label="Company Name"
                         onBlur={handleBlur}
-                        name="nationality"
+                        name="company"
                         onChange={handleChange}
-                        value={values.nationality}
-                        error={!!touched.nationality && !!errors.nationality}
-                        helperText={touched.nationality && errors.nationality}
+                        value={values.company}
+                        error={!!touched.company && !!errors.company}
+                        helperText={touched.company && errors.company}
                       />
                     </Grid>{" "}
                     <Grid item sm={6} xs={12}>
@@ -259,7 +260,7 @@ function MainSection({ sponsors }) {
                       type="submit"
                       fullWidth
                     >
-                      Submit
+                      Download Brochure
                     </Button>
                   </Grid>
                 </Grid>
