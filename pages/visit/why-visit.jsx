@@ -7,6 +7,8 @@ import ExpectToMeet from "pages-sections/why-exhibit-sections/ExpectToMeet";
 import TwoColumnBox from "components/EvComponents/TwoColumnBox";
 import Section1 from "components/EvSections/WhyVisitSections/Section1";
 import Section2 from "components/EvSections/WhyVisitSections/Section2";
+import Section3 from "components/EvSections/WhyVisitSections/Section3";
+import Section4 from "components/EvSections/WhyVisitSections/Section4";
 
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
@@ -56,18 +58,12 @@ const serviceList = [
   }
 ];
 
-// const whyVisit = {
-//   p1: "The Electric Vehicle Innovation Summit is the leading EV trade show and conference in the region offering access to hundreds of companies and experts in the industry.",
-//   p2: "EVIS is more focused on Electric Vehicles which include land, air and sea, hence you will be able to get more insight on the latest applications, technologies, and market progress on electric vehicles.",
-//   img: "/assets/images/why-visit/1.jpeg"
-// }
 const whyVisit = {
   img: "/assets/images/why-visit/1.jpeg",
   title: "WHY VISIT",
   text: "The Electric Vehicle Innovation Summit is the leading EV trade show and conference in the region offering access to hundreds of companies and experts in the industry. <br/> EVIS is more focused on Electric Vehicles which include land, air and sea, hence you will be able to get more insight on the latest applications, technologies, and market progress on electric vehicles.",
   direction: "right",
 }
-// img, title, text, direction
 
 const generalPage = (props) => {
   const { offerProducts, allProducts, topSailedProducts } = props;
@@ -82,20 +78,22 @@ const generalPage = (props) => {
         <Section1 />
       </Container>
       <Section2 />
+      <Section3 />
+      <Section4 />
 
-      <Container
+      {/* <Container
         sx={{
           mb: 6,
         }}
       >
 
-        {/* <TwoColumnBox item={whyVisit} /> */}
+        <TwoColumnBox item={whyVisit} />
         <Box hoverEffect data-aos="fade-up" data-aos-duration={1000}>
           <WhyVisitSection data={whyVisit} />
         </Box>
       </Container>
       <WhatToExpect serviceList={serviceList} />
-      <ExpectToMeet list={peopleList} />
+      <ExpectToMeet list={peopleList} /> */}
     </EvLayout>
   );
 };
