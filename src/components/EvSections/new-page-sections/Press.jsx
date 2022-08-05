@@ -10,8 +10,6 @@ const Press = (props) => {
     <Box
       sx={{
         width: "100%",
-
-        py: "10px",
       }}
     >
       <SectionTitle>EVIS PRESS CONFERENCE</SectionTitle>

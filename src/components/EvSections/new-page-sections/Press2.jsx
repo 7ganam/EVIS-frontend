@@ -10,7 +10,7 @@ const Press2 = (props) => {
     <Box
       sx={{
         width: "100%",
-        py: "10px",
+        pb: 1,
       }}
     >
       <SectionTitle>
