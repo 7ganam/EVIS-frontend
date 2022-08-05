@@ -102,6 +102,12 @@ const evNavbarNavigations = [
     url: "/contact-us",
   },
   {
+    title: "NEWS",
+    megaMenu: false,
+    megaMenuWithSub: false,
+    url: "/news",
+  },
+  {
     title: "TRAVEL & VISAS",
     megaMenu: false,
     megaMenuWithSub: false,

@@ -3,7 +3,7 @@ import {Box , Grid , useTheme } from  "@mui/material";
 
 const FactBox = (props) => {
     const theme = useTheme();
-    const {title, text} = props.data;
+    const {title, text } = props.data;
   return (
     <Box sx={{
         md : 6,
