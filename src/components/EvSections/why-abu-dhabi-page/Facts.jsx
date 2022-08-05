@@ -18,7 +18,6 @@ const Facts = (props) => {
   return (
     <Box >
       <Container sx={{ mb: 6 }}>
-        
       <Box sx={{ px: 6 }}>
       <Paragraph>{p} </Paragraph>  
       </Box>
@@ -26,7 +25,6 @@ const Facts = (props) => {
       <Box
         sx={{
           backgroundColor: theme.palette.primary.main,
-          my: 6,
           px: 8,
           height: "auto",
         }}

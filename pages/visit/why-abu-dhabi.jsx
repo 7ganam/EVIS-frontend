@@ -132,7 +132,7 @@ const generalPage = () => {
 
       <Container
         sx={{
-          mb: 6,
+          mb: 2,
         }}
       >
         <LandingText section={sections} />
