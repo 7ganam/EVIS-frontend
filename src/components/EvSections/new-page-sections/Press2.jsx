@@ -11,7 +11,7 @@ const Press2 = (props) => {
       sx={{
         width: "100%",
         px: 6,
-        py: "10px",
+        pb: 1,
       }}
     >
       <SectionTitle>

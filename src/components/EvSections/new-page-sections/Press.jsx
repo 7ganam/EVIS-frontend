@@ -11,7 +11,6 @@ const Press = (props) => {
       sx={{
         width: "100%",
         px: 6,
-        py: "10px",
       }}
     >
       <SectionTitle>EVIS PRESS CONFERENCE</SectionTitle>
@@ -20,6 +19,7 @@ const Press = (props) => {
         sx={{
           mb: "70px",
           pt: 3,
+        
         }}
       >
         <Grid container spacing={3} alignItems="center">
