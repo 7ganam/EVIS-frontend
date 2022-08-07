@@ -42,10 +42,8 @@ const SubscribeSection = () => {
       }) => (
         <form onSubmit={handleSubmit}>
           <Card
-            data-aos="fade-left"
-            data-aos-duration={1000}
             sx={{
-              mb: 4,
+              my: 4,
               px: 3,
               pb: 3,
             }}

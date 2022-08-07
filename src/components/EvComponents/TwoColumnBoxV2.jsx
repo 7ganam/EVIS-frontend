@@ -25,15 +25,15 @@ const TwoColumnBoxV2 = ({ item, imgPosition }) => {
     <Box sx={{}}>
       <Grid
         container
-        rowSpacing={{ xs: "0", md: "0" }}
-        columnSpacing={{ xs: "0", md: "0" }}
+        rowSpacing={"20px"}
+        columnSpacing={"50px"}
         direction={{
           xs: "column",
           md: imgPosition === "left" ? "row" : "row-reverse",
         }}
       >
-        <Grid item md={6} sm={12} xs={12}>
-          <Box sx={{}}>
+        <Grid item md={6} sm={12} xs={12} sx={{ overflow: "hidden" }}>
+          <Box>
             <Image
               width={"100%"}
               mb={0}
@@ -44,7 +44,7 @@ const TwoColumnBoxV2 = ({ item, imgPosition }) => {
           </Box>
         </Grid>
         <Grid item md={6} sm={12} xs={12}>
-          <Box sx={{ pl: { md: "20px" } }}>
+          <Box>
             <BlockTitle> {title} </BlockTitle>
             {ps?.map((item, index) => {
               return (

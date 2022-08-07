@@ -12,7 +12,6 @@ import Link from "next/link";
 import Image from "components/BazarImage";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useState } from "react";
 import MobileMenu from "components/navbar/MobileMenu";
 
 // const common css style
@@ -110,7 +109,7 @@ const Navbar = ({ elevation, isFixed }) => {
                 alignItems: "center",
                 px: "10px",
                 height: "55px",
-                fontWeight: "600",
+                fontWeight: "400",
                 fontSize: "17px",
               }}
             >
@@ -128,7 +127,7 @@ const Navbar = ({ elevation, isFixed }) => {
               flexDirection="column"
               sx={{
                 height: "55px",
-                fontWeight: "600",
+                fontWeight: "400",
                 "&:hover": {
                   "& > .child-nav-item": {
                     display: "block",
@@ -242,7 +241,7 @@ const Navbar = ({ elevation, isFixed }) => {
               <Image
                 height={isFixed ? "70" : "90"}
                 mb={0}
-                src="/assets/images/EvLogo.png"
+                src="/assets/images/EvLogo_MENA.png"
                 alt="logo"
                 // sx={{ height: "10%" }}
               />
@@ -263,28 +262,22 @@ const Navbar = ({ elevation, isFixed }) => {
             sx={{
               display: downMd || isFixed ? "none" : "flex",
               justifyContent: "end",
-              py: "1px",
+
               minHeight: "70px",
               // bgcolor: "orange",
             }}
           >
-            <Box component={Button}>
-              <Link href={`/gallery`}>
-                <a>
-                  {" "}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    sx={{
-                      px: "30px",
-                      py: "6px",
-                    }}
-                  >
-                    Book A Stand
-                  </Button>
-                </a>
-              </Link>
-            </Box>
+            <Link href="/">
+              <a>
+                <Image
+                  height={70}
+                  mb={0}
+                  src="/assets/images/NirvanaLogo.png"
+                  alt="logo"
+                  // sx={{ height: "10%" }}
+                />
+              </a>
+            </Link>
           </Box>
           <InnerContainer
             sx={{

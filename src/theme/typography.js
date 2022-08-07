@@ -1,5 +1,6 @@
 export const fontSize = 14;
 export const fontFamily = [
+  "Source Sans Pro",
   "Roboto",
   "-apple-system",
   "BlinkMacSystemFont",

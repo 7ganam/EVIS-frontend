@@ -22,7 +22,7 @@ const BlockTitleBox = styled(Box)(({ theme }) => ({
 
 export function SectionTitle({ children }) {
   return (
-    <TitleBox mt={4}>
+    <TitleBox my={3}>
       <H1>{children}</H1>
     </TitleBox>
   );
