@@ -1,21 +1,9 @@
-// import { Box } from "@mui/system";
 import React from "react";
-// import { Grid } from "@mui/material";
-import SponsorImage from "components/EvComponents/SponsorImage";
-import { SectionTitle, BlockTitle } from "components/EvComponents/StyledTypography";
-import TwoColumnBox from "components/EvComponents/TwoColumnBox";
-import { BigButton } from "components/EvComponents/Buttons";
-// import { Button } from "@mui/material";
-import { H3, Paragraph } from "components/EvComponents/Typography";
-import Image from "components/BazarImage";
-import RoundedImage from "components/EvComponents/RoundedImage";
-// import { useTheme } from "@mui/material";
-import { Box, Button, Grid, styled, useTheme, Typography, Container } from "@mui/material";
+import { Box, Grid, Typography, Container } from "@mui/material";
 
 const StyledImage = (props) => {
     return (
         <img src={props.Src} width="170" style={{ margin: "10px" }} />
-
     )
 };
 
@@ -61,11 +49,9 @@ const partnersData = [
     },
 ];
 
-const Section3 = () => {
-    const theme = useTheme();
+const SponsorsPartnersSection = () => {
     return (
         <Container>
-            {/* Sponsors Grid */}
             <Grid container
                 sx={{ textAlign: "center", placeItems: "center", marginTop: "40px" }}
             >
@@ -78,7 +64,6 @@ const Section3 = () => {
             </Grid>
 
             <Box sx={{ textAlign: "center", paddingBottom: "3rem" }}>
-                {/* <h6>KNOWLEDGE PARTNERS</h6>, */}
                 <Typography variant="h5" component="h5">KNOWLEDGE PARTNERS</Typography>
                 <Grid container
                     sx={{ textAlign: "center", placeItems: "center", }}
@@ -96,4 +81,4 @@ const Section3 = () => {
     )
 };
 
-export default Section3;
+export default SponsorsPartnersSection;
