@@ -1,13 +1,6 @@
 import React from "react";
-import SponsorImage from "components/EvComponents/SponsorImage";
-import { SectionTitle, BlockTitle } from "components/EvComponents/StyledTypography";
-import TwoColumnBox from "components/EvComponents/TwoColumnBox";
-import { BigButton } from "components/EvComponents/Buttons";
-import { H3, Paragraph } from "components/EvComponents/Typography";
-import Image from "components/BazarImage";
-import RoundedImage from "components/EvComponents/RoundedImage";
-import { Box, Button, Grid, styled, useTheme, Typography, Container } from "@mui/material";
-
+import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { Grid, Container } from "@mui/material";
 
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
@@ -17,7 +10,6 @@ import api from "utils/api/grocery3-shop";
 
 const StyledImage = (props) => {
     return (
-
         <img src={props.Src} width="170" style={{ margin: "10px" }} />
 
     )
@@ -36,7 +28,6 @@ const keyPartners = [
     {
         source: "/assets/images/organizers/Nirvana.png"
     },
-
 ];
 
 const sponsors = [
@@ -95,7 +86,7 @@ const generalPage = (props) => {
         <EvLayout showNavbar={true}>
             <Container sx={{
                 textAlign: "center", placeItems: "center", display: "flex",
-                flexDirection: "column", jusitfyContent: "center", alignItems: "center"
+                flexDirection: "column", justifyContent: "center", alignItems: "center"
             }}>
 
                 <SectionTitle>KEY PARTNERS</SectionTitle>
