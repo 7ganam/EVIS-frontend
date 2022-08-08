@@ -9,7 +9,7 @@ import {
 import NavLink from "components/nav-link/NavLink";
 import Scrollbar from "components/Scrollbar";
 import { H6 } from "components/Typography";
-import navbarNavigations from "data/navbarNavigations";
+import navbarNavigations from "data/ev-navbarNavigations";
 import { Fragment, useState } from "react";
 
 const MobileMenu = () => {

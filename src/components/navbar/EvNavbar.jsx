@@ -239,11 +239,11 @@ const Navbar = ({ elevation, isFixed }) => {
           <Link href="/">
             <a>
               <Image
-                height={isFixed ? "70" : "90"}
+                // height={{ xs: "50", md: isFixed ? "70" : "90" }}
                 mb={0}
                 src="/assets/images/EvLogo_MENA.png"
                 alt="logo"
-                // sx={{ height: "10%" }}
+                sx={{ height: { xs: "60px", md: isFixed ? "70px" : "90px" } }}
               />
             </a>
           </Link>
