@@ -2,7 +2,7 @@ import React from "react";
 import { SectionTitle, BlockTitle } from "components/EvComponents/StyledTypography";
 import { H1 } from "components/EvComponents/Typography";
 import { Box, Grid, useTheme, Container } from "@mui/material";
-import CircularTextContainer from "components/EvComponents/CircularTextContainer";
+import ModifiedRectangularTextContainer from "components/EvComponents/ModifiedRectangularTextContainer";
 
 const agenciesAndSuppliers = [
     {
@@ -19,6 +19,9 @@ const agenciesAndSuppliers = [
     },
     {
         name: "Suppliers of Electric Components & Spare Parts"
+    },
+    {
+        name: "Local authorities"
     },
 ];
 
@@ -38,6 +41,10 @@ const managersAndSpecialists = [
     {
         name: "Engineering and Designing Companies"
     },
+    {
+        name: "Investors, banks and financial companies"
+
+    },
 ];
 
 const providersAndManufactures = [
@@ -55,6 +62,9 @@ const providersAndManufactures = [
     },
     {
         name: "Automotive EV Service Providers"
+    },
+    {
+        name: "Thermal management system providers"
     },
 ]
 
@@ -93,7 +103,7 @@ const Section3 = () => {
                             {agenciesAndSuppliers.map(({ name }) => {
                                 return (
                                     <Box item xs={12} sm={4} md={4} key={name}>
-                                        <CircularTextContainer text={name} Color={theme.palette.paste.contrastText} BGColor={theme.palette.primary.main} />
+                                        <ModifiedRectangularTextContainer text={name} Color={theme.palette.paste.contrastText} BGColor={theme.palette.primary.main} />
                                     </Box>)
                             })}
                         </Box>
@@ -119,7 +129,7 @@ const Section3 = () => {
                                     {managersAndSpecialists.map(({ name }) => {
                                         return (
                                             <Box item xs={12} sm={4} md={4} key={name}>
-                                                <CircularTextContainer text={name} Color={theme.palette.primary.main} BGColor={theme.palette.paste.contrastText} />
+                                                <ModifiedRectangularTextContainer text={name} Color={theme.palette.primary.main} BGColor={theme.palette.paste.contrastText} />
                                             </Box>)
                                     })}
                                 </Box>
@@ -155,7 +165,7 @@ const Section3 = () => {
                             {providersAndManufactures.map(({ name }) => {
                                 return (
                                     <Box item xs={12} sm={4} md={4} key={name}>
-                                        <CircularTextContainer text={name} Color={theme.palette.paste.contrastText} BGColor={theme.palette.primary.main} />
+                                        <ModifiedRectangularTextContainer text={name} Color={theme.palette.paste.contrastText} BGColor={theme.palette.primary.main} />
                                     </Box>)
                             })}
                         </Box>
