@@ -11,13 +11,14 @@ import { H3 } from "components/EvComponents/Typography";
 import { SectionTitle } from "components/EvComponents/StyledTypography";
 import { styled } from "@mui/material/styles";
 
-function createData(name, first, second, full) {
-  return { name, first, second, full };
+function createData(name, first, second,third, full) {
+  return { name, first, second ,third, full };
 }
 
 const rows = [
-  createData("Full Access Pass", 468, 495, 550),
-  createData("One Day Pass", 298, 315, 350),
+  createData("FULL ACCESS PASS (Live & Online) ", 600, 510, 540 ,570),
+  createData("ONE DAY PASS (Live & Online)", 400, 340, 360 ,380),
+  createData("VIRTUAL ACCESS PASS (Live & Online)", 300, 255, 270 ,285),
 ];
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -41,22 +42,26 @@ export default function BasicTable() {
         >
           <TableHead>
             <TableRow>
+
               <StyledTableCell sx={{ color: "white" }}>
                 <H3>2022 Rates</H3>
               </StyledTableCell>
+              <StyledTableCell sx={{ color: "white" }}>
+                <H3></H3>
+              </StyledTableCell>
               <StyledTableCell align="center">
                 <H3>
-                  First Early Bird <br /> (valid until 15 Jan)
+                ENDS ON November 15, 2022
                 </H3>
               </StyledTableCell>
               <StyledTableCell align="center">
                 {" "}
                 <H3>
-                  Second Early Bird <br /> (valid until 15 Mar)
+                ENDS ON January 15, 2022
                 </H3>
               </StyledTableCell>
               <StyledTableCell align="center">
-                <H3>Full Price</H3>
+                <H3>   ENDS ON March 15, 2022	</H3>
               </StyledTableCell>
             </TableRow>
           </TableHead>
@@ -76,6 +81,9 @@ export default function BasicTable() {
                 </StyledTableCell>
                 <StyledTableCell align="center">
                   <H3>{row.second} USD</H3>
+                </StyledTableCell>
+                <StyledTableCell align="center">
+                  <H3>{row.third} USD</H3>
                 </StyledTableCell>
                 <StyledTableCell align="center">
                   <H3>{row.full} USD</H3>
