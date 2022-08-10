@@ -12,13 +12,13 @@ const RoundedImage = (props) => {
             <Box sx={{ textAlign: "center", }}>
                 <Image
                     sx={{
-                        display: "block",
-                        margin: "0 auto", 
-                        pb : 6,
-                        borderRadius: "50%"
+                        borderRadius: "50%",
+                        objectFit: "cover",
                     }}
                     alt="rounded image"
                     src={props.Src}
+                    width={"100%"}
+                    height={"100%"}
                 />
             </Box>
             <Box sx={{ textAlign: "center" }}>
