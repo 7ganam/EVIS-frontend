@@ -5,7 +5,7 @@ import api from "utils/api/grocery3-shop";
 import LandingText from "components/EvSections/about-page-sections/LandingText";
 import MobilityFuture from "components/EvSections/about-page-sections/MobilityFuture";
 import CoreSection from "components/EvSections/about-page-sections/CoreSection";
-
+import ExpectMeet from "components/EvSections/about-page-sections/ExpectMeet";
 import Footer from "components/EvSections/why-exhibit-sections/Footer";
 
 // ======================================================
@@ -153,7 +153,11 @@ const itemsData = [
       direction : "right"
   }
 ];
-
+const features = [
+  "Recent announcements by vehicle manufacturers intending to electrify the car and buses markets.",
+  "Battery manufacturing is undergoing important transitions, including major investments to expand production.",
+  "Utilities, charging point operators, charging hardware manufacturers and other power sector shareholders are also boosting investments in charging infrastructures."
+];
 
 const generalPage = () => {
   return (
@@ -166,7 +170,7 @@ const generalPage = () => {
         <LandingText section={section} />
         <MobilityFuture item = {item} />
         <CoreSection items = {itemsData} />
-
+        <ExpectMeet data = {features} />
         <Footer footer1={footer1} footer2={footer2} />
       </Container>
     </EvLayout>
