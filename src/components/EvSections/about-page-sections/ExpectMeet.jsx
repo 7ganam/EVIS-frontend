@@ -11,7 +11,6 @@ const ExpectMeet = (props) => {
       sx={{
         width: "100%",
         px: 6,
-
         py: "10px",
       }}
     >
@@ -19,7 +18,7 @@ const ExpectMeet = (props) => {
 
       <Container
         sx={{
-          mb: "70px",
+          mb: 2,
           pt: 3,
         }}
       >

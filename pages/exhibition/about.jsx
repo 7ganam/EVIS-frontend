@@ -8,6 +8,7 @@ import CoreSection from "components/EvSections/about-page-sections/CoreSection";
 import ExpectMeet from "components/EvSections/about-page-sections/ExpectMeet";
 import Facts from "components/EvSections/about-page-sections/Facts";
 import Footer from "components/EvSections/why-exhibit-sections/Footer";
+import {H3} from "components/EvComponents/Typography";
 
 // ======================================================
 // ======================================================
@@ -160,6 +161,34 @@ const features = [
   "Utilities, charging point operators, charging hardware manufacturers and other power sector shareholders are also boosting investments in charging infrastructures."
 ];
 
+const p = "";
+const facts = [
+  {
+    title: "5,000+",
+    text: <H3>Attendees</H3>,
+  },
+  {
+    title: "10,000+",
+    text: <H3>Gross SQM</H3>,
+  },
+  {
+    title: "200+",
+    text: <H3>Exhibitors</H3>,
+  },
+  {
+    title: "1000+",
+    text: <H3>Delegate</H3>,
+  },
+  {
+    title: "30+",
+    text: <H3>Conference sessions</H3>,
+  },
+  {
+    title: "100+",
+    text: <H3>Speakers</H3>,
+  }
+];
+
 const generalPage = () => {
   return (
     <EvLayout showNavbar={true}>
@@ -173,8 +202,7 @@ const generalPage = () => {
         <CoreSection items = {itemsData} />
         <ExpectMeet data = {features} />
         </Container>
-        <Facts/>
-
+        <Facts data={facts} p={p}/>
         <Container sx={{ mb: 6 }}>
         <Footer footer1={footer1} footer2={footer2} />
       </Container>

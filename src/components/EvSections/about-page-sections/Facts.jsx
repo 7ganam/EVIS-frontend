@@ -1,7 +1,7 @@
 import React from "react";
 import FactBox from "components/EvComponents/FactBox";
 import { Box, useTheme, Grid , Container} from "@mui/material";
-import { Paragraph } from "components/EvComponents/Typography";
+import { SectionTitle } from "components/EvComponents/StyledTypography";
 
 
 // const data2 = ["The strategy targets an energy mix that combines renewable, nuclear and clean energy sources to meet the UAE’s economic requirements and environmental goals as follows:",
@@ -19,13 +19,13 @@ const Facts = (props) => {
     <Box >
       <Container sx={{ mb: 6 }}>
       <Box sx={{ px: 6 }}>
-      <Paragraph>{p} </Paragraph>  
+      <SectionTitle>{p} </SectionTitle>  
       </Box>
       </Container>
       <Box
         sx={{
           backgroundColor: theme.palette.primary.main,
-          px: 8,
+          px: 12,
           height: "auto",
         }}
       >
@@ -33,7 +33,7 @@ const Facts = (props) => {
         <Grid container spacing={3}>
           {data.map((item, index) => {
             return (
-              <Grid item xs={12} md={3} key={index}>
+              <Grid item xs={12} md={2} key={index}>
                 <FactBox data={item} />
               </Grid>
             );
