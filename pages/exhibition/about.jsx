@@ -6,6 +6,7 @@ import LandingText from "components/EvSections/about-page-sections/LandingText";
 import MobilityFuture from "components/EvSections/about-page-sections/MobilityFuture";
 import CoreSection from "components/EvSections/about-page-sections/CoreSection";
 import ExpectMeet from "components/EvSections/about-page-sections/ExpectMeet";
+import Facts from "components/EvSections/about-page-sections/Facts";
 import Footer from "components/EvSections/why-exhibit-sections/Footer";
 
 // ======================================================
@@ -171,6 +172,10 @@ const generalPage = () => {
         <MobilityFuture item = {item} />
         <CoreSection items = {itemsData} />
         <ExpectMeet data = {features} />
+        </Container>
+        <Facts/>
+
+        <Container sx={{ mb: 6 }}>
         <Footer footer1={footer1} footer2={footer2} />
       </Container>
     </EvLayout>
