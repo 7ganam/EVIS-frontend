@@ -1,9 +1,36 @@
 const evNavbarNavigations = [
+  // {
+  //   title: "HOME ",
+  //   megaMenu: false,
+  //   megaMenuWithSub: false,
+  //   url: "/",
+  // },
   {
-    title: "HOME ",
     megaMenu: false,
     megaMenuWithSub: false,
-    url: "/",
+    title: "ABOUT",
+    child: [
+      {
+        title: "About EVIS",
+        url: "/about/about",
+      },
+      {
+        title: "Why Abu Dhabi",
+        url: "/about/why-abu-dhabi",
+      },
+      {
+        title: "Contact Us",
+        url: "/about/contact-us",
+      },
+      {
+        title: "Event Brochure",
+        url: "/about/event-brochure",
+      },
+      {
+        title: "2022 Executive Committee",
+        url: "/about/Executive-committee-2022",
+      },
+    ],
   },
   {
     megaMenu: false,
@@ -15,16 +42,8 @@ const evNavbarNavigations = [
         url: "/exhibition/book-your-stand",
       },
       {
-        title: "About EVIS",
-        url: "/exhibition/about",
-      },
-      {
         title: " 	Why Exhibit",
         url: "/exhibition/why-exhibit",
-      },
-      {
-        title: "Download Event Brochure",
-        url: "/exhibition/event-brochure",
       },
       {
         title: "Download 2022 Post Show Report ",
@@ -50,7 +69,7 @@ const evNavbarNavigations = [
         url: "/sponsorship/sponsorship-branding",
       },
       {
-        title: "Why Exhibit",
+        title: "Why Sponsor",
         url: "/sponsorship/why-exhibit",
       },
     ],
@@ -71,10 +90,6 @@ const evNavbarNavigations = [
       {
         title: "Exhibitors List  ",
         url: "/visit/exhibitors",
-      },
-      {
-        title: "Why Abu Dhabi",
-        url: "/visit/why-abu-dhabi",
       },
     ],
   },
@@ -103,38 +118,26 @@ const evNavbarNavigations = [
     title: "MEDIA CENTRE",
     child: [
       {
-        title: "PRESS/MEDIA REGISTRATION",
+        title: "Press/Media Registration",
         url: "/media-center/media-registration",
       },
       {
-        title: "MEDIA PARTNERS",
+        title: "Media Partners",
         url: "/media-center/partners",
       },
       {
-        title: "SUPPORTING ASSOCIATIONS ",
+        title: "Supporting Associations ",
         url: "/media-center/support-associations",
       },
       {
-        title: "NEWS/PRESS RELEASES",
-        url: "/media-center/press-releases",
+        title: "News",
+        url: "/media-center/news",
       },
       {
-        title: "POLICY DIALOGUES",
+        title: "Policy Dialogues",
         url: "/media-center/policy-dialogues",
       },
     ],
-  },
-  {
-    title: "CONTACT US ",
-    megaMenu: false,
-    megaMenuWithSub: false,
-    url: "/contact-us",
-  },
-  {
-    title: "NEWS",
-    megaMenu: false,
-    megaMenuWithSub: false,
-    url: "/news",
   },
   {
     title: "TRAVEL & VISAS",
@@ -142,11 +145,11 @@ const evNavbarNavigations = [
     megaMenuWithSub: false,
     url: "/travel-visas",
   },
-  {
-    title: "ALL SHOWS",
-    megaMenu: false,
-    megaMenuWithSub: false,
-    url: "/all-shows",
-  },
+  // {
+  //   title: "ALL SHOWS",
+  //   megaMenu: false,
+  //   megaMenuWithSub: false,
+  //   url: "/all-shows",
+  // },
 ];
 export default evNavbarNavigations;

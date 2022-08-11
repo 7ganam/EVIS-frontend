@@ -110,7 +110,6 @@ const Navbar = ({ elevation, isFixed }) => {
                 px: "10px",
                 height: "55px",
                 fontWeight: "400",
-                fontSize: "17px",
               }}
             >
               {nav.title}
@@ -144,7 +143,6 @@ const Navbar = ({ elevation, isFixed }) => {
                   alignItems: "center",
                   height: "100%",
                   px: "10px",
-                  fontSize: "17px",
                 }}
               >
                 {nav.title}{" "}
@@ -243,7 +241,7 @@ const Navbar = ({ elevation, isFixed }) => {
                 mb={0}
                 src="/assets/images/EvLogo_MENA.png"
                 alt="logo"
-                sx={{ height: { xs: "60px", md: isFixed ? "70px" : "90px" } }}
+                sx={{ height: { xs: "60px", md: isFixed ? "70px" : "120px" } }}
               />
             </a>
           </Link>
@@ -267,7 +265,7 @@ const Navbar = ({ elevation, isFixed }) => {
               // bgcolor: "orange",
             }}
           >
-            <Link href="/">
+            {/* <Link href="/">
               <a>
                 <Image
                   height={70}
@@ -277,7 +275,7 @@ const Navbar = ({ elevation, isFixed }) => {
                   // sx={{ height: "10%" }}
                 />
               </a>
-            </Link>
+            </Link> */}
           </Box>
           <InnerContainer
             sx={{
@@ -295,7 +293,9 @@ const Navbar = ({ elevation, isFixed }) => {
                 flexWrap: "wrap",
                 pb: "20px",
                 pt: isFixed ? "20px" : "0",
-                justifyContent: "end",
+                justifyContent: "center",
+                fontSize: "20px",
+                fontWeight: "500",
               }}
             >
               {renderNestedNav(evNavbarNavigations, true)}
