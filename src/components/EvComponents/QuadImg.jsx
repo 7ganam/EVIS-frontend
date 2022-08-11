@@ -102,6 +102,7 @@ const QuadImg = (props) => {
         container
         sx={{          
           mb: 6,
+          pt : 3
         }}
       >
         {data.map((item, index) => {
