@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 
 import EvLayout from "components/layouts/EvLayout";
 
@@ -9,6 +9,14 @@ import WhatToExpectSection from "pages-sections/ev-home/WhatToExpectSection";
 import SubscribeSection from "pages-sections/ev-home/SubscribeSection";
 import EventSection from "pages-sections/ev-home/EventSection";
 import VideosSection from "pages-sections/ev-home/VideosSection";
+import TwoColumnBox from "components/EvComponents/TwoColumnBox";
+import TwoColumnBoxV3 from "components/EvComponents/TwoColumnBoxV3";
+// import WhatToExpectSection from "components/EvSections/HomeSections/WhatToExpectSection";
+import DownloadSection from "components/EvSections/HomeSections/DownloadSection";
+import NewEventFeatureSection from "components/EvSections/HomeSections/NewEventFeatureSection";
+import YoutubeEmbed from "components/YoutubeEmbed";
+
+
 
 import api from "utils/api/grocery3-shop";
 // ======================================================
@@ -92,7 +100,7 @@ const EvHome = (props) => {
       title: "high standards",
       text: "The Electric Vehicle Innovation Summit is to be held in accordance with the highest standards governing such professional specialized conferences addressing advanced subject of interest to the specialized experts yet appealing to the public at large. ",
       image: "/assets/images/ev-home/speaker-gradient.png",
-      buttonText: "ATTEND EVIS",
+      buttonText: "CONFERENCE OVERVIEW",
       buttonLink: "/",
     },
   ];
@@ -107,8 +115,51 @@ const EvHome = (props) => {
     { youtube: "Jw_MFPnYn7s" },
     { youtube: "CAKf5hgSZyU" },
   ];
+
+  const item = {
+    img: "/assets/images/ev-home/carousel3-2.jpeg",
+    title: "Electric Vehicle Innovation Summit",
+    ps: [
+      "As is true for many emerging technologies, vehicle electrification is experiencing rapid innovation. The Middle East & Africa Electric Vehicle Market is expected to witness substantial growth & business opportunities over the next decade. Governments are focusing on renewable energy and clean transportation technologies along with the implementation of economic and energy diversification plans.",
+      "EVIS is unique by integrating inter - related technologies at one event, allowing attendees to network across the value chains and exploit new opportunities at the intersection of EV technologies.",
+      "The Electric Vehicles are continually evolving for a future of mobility and more efficient modes of transportation, bringing together key players and influential business leaders who works together on electric vehicles, energy and charging infrastructure, information technology to explore more advanced systems.",
+      "Bringing together all the stakeholders, experts, thought leaders, influencers, manufacturers, and regulation experts has generated a great opportunity to get an exposure on the latest trends and innovations in the EV and transport industries.",
+    ],
+    direction: "right"
+  }
+
+  const buttonsData = [
+    {
+      text: "Download Sales Brochure"
+    },
+    {
+      text: "Download Post Show Report"
+    },
+    {
+      text: "Book Your Stand NO"
+    },
+    {
+      text: "Register your interest to visit"
+    },
+    {
+      text: "Delegate Registration"
+    },
+  ]
+
   return (
     <EvLayout showNavbar={true} title={"Home"}>
+      <Box marginBottom="40px">
+        <TwoColumnBox item={item} />
+      </Box>
+
+      {/* <WhatToExpectSection /> */}
+      <WhatToExpectSection serviceList={serviceList} />
+      <Box sx={{ margin: "20px 0" }}>
+        <Container>
+          <DownloadSection ButtonsData={buttonsData} />
+        </Container>
+      </Box>
+
       <VideoSection />
 
       <Container
@@ -116,24 +167,37 @@ const EvHome = (props) => {
           mb: 6,
         }}
       >
+
         <CarouselSection2 cardList={carouselCardList} />
-        {/* <DownloadSection /> */}
-        <AboutSection
+
+        {/* <EventSection featureList={featureList} /> */}
+        <NewEventFeatureSection Data={featureList} />
+
+        <Box
+          hoverEffect
+          data-aos="fade-up"
+          data-aos-duration={1700}
+          sx={{ borderRadius: "10px", overflow: "hidden" }}
+        >
+          {/* <YoutubeEmbed embedId={aboutSectionData.youtube} /> */}
+        </Box>
+
+        {/* <AboutSection
           text={aboutSectionData.text}
           youtube={aboutSectionData.youtube}
-        />
+        /> */}
       </Container>
 
-      <WhatToExpectSection serviceList={serviceList} />
 
       <Container
         sx={{
           mb: 6,
         }}
       >
-        <EventSection featureList={featureList} />
-        <SubscribeSection />
         <VideosSection videosList={videosList} />
+        <Box margin="30px 0 0">
+          <SubscribeSection />
+        </Box>
       </Container>
     </EvLayout>
   );
