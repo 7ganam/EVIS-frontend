@@ -18,9 +18,10 @@ const Content = (item, index) => {
         }}
       >
         <Grid container>
-          <Grid item sm={6} order={{ sm: 2 }}></Grid>
+          <Grid item  xs= {12} sm={6} order={{ sm: 2 }}></Grid>
           <Grid
             item
+            xs = {12}
             sm={6}
             order={{ sm: 1 }}
             sx={{
@@ -63,9 +64,10 @@ const Content = (item, index) => {
         }}
       >
         <Grid container>
-          <Grid item sm={6} order={{ sm: 1 }}></Grid>
+          <Grid item xs = {12} sm={6} order={{ sm: 1 }}></Grid>
           <Grid
             item
+            xs = {12}
             sm={6}
             order={{ sm: 2 }}
             sx={{
@@ -98,8 +100,7 @@ const QuadImg = (props) => {
     <Box>
       <Grid
         container
-        sx={{
-          height: "1000px",
+        sx={{          
           mb: 6,
         }}
       >
