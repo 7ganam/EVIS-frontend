@@ -75,7 +75,7 @@ const data = [
     {
         Src: "/assets/images/contact-us/HeshamAlbahri.jpeg",
         Name: "Hesham Albahri",
-        Position: "Member of Organizing Committee - US Market",
+        Position: "Member of Organizing Committee - US Market Executive Manager ",
         Mobile: "+18185817431",
         Email: "hesham@leadingeventsusa.com",
         EmailTo: "mhesham@leadingeventsusa.com"
