@@ -17,6 +17,8 @@ import PartnersGrid from "components/EvSections/PartnersGrid";
 import FeedbackQuotesSection from "components/EvSections/FeedbackQuotesSection";
 import FullWidthCardsSection from "components/EvSections/FullWidthCardsSection";
 import PageHeader from "components/EvComponents/PageHeader";
+import QuadImgSection from "components/EvSections/QuadImgSection";
+
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -56,6 +58,7 @@ const EvHome = () => {
         <FullWidthCardsSection />
       </Container>
       <ShadedContainerSection />
+      <QuadImgSection />
     </EvLayout>
   );
 };
