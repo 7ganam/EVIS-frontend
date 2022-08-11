@@ -23,8 +23,16 @@ const evNavbarNavigations = [
         url: "/exhibition/why-exhibit",
       },
       {
-        title: "Profile",
-        url: "/exhibition/profile",
+        title: "Download Event Brochure",
+        url: "/exhibition/event-brochure",
+      },
+      {
+        title: "Download 2022 Post Show Report ",
+        url: "/exhibition/post-show-report",
+      },
+      {
+        title: "EXHIBITOR MANUAL",
+        url: "/exhibition/exhibitor-manual",
       },
     ],
   },
@@ -93,13 +101,40 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "MEDIA CENTRE",
-    url: "/media-center",
+    child: [
+      {
+        title: "PRESS/MEDIA REGISTRATION",
+        url: "/media-center/media-registration",
+      },
+      {
+        title: "MEDIA PARTNERS",
+        url: "/media-center/partners",
+      },
+      {
+        title: "SUPPORTING ASSOCIATIONS ",
+        url: "/media-center/support-associations",
+      },
+      {
+        title: "NEWS/PRESS RELEASES",
+        url: "/media-center/press-releases",
+      },
+      {
+        title: "POLICY DIALOGUES",
+        url: "/media-center/policy-dialogues",
+      },
+    ],
   },
   {
     title: "CONTACT US ",
     megaMenu: false,
     megaMenuWithSub: false,
     url: "/contact-us",
+  },
+  {
+    title: "NEWS",
+    megaMenu: false,
+    megaMenuWithSub: false,
+    url: "/news",
   },
   {
     title: "TRAVEL & VISAS",

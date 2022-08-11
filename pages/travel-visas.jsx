@@ -1,8 +1,10 @@
-import { Container } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import { SectionTitle } from "components/EvComponents/StyledTypography";
 import EvLayout from "components/layouts/EvLayout";
 import api from "utils/api/grocery3-shop";
-import MainSection from "components/EvSections/book-your-stand-sections/MainSection";
+import MainSection from "components/EvSections/travel-visa-sections/FormSection";
+import IntroSection from "components/EvSections/travel-visa-sections/IntroSection";
+
 import { Box } from "@mui/system";
 // ======================================================
 // ======================================================
@@ -28,6 +30,15 @@ const sponsorsData = [
   },
 ];
 
+const itemData = {
+  img: "/assets/images/travel-visit/city.jpeg",
+  title: "Enjoy preferred rates by booking through us!",
+  ps: [
+    "Book your accommodation, flights, tours, visa and transportation at preferred rates via our associations with the region’s most trusted travel management company. ",
+    "Fill out the form based on your requirements to directly get in touch with dedicated staff from Nirvana Travel & Tourism and enjoy preferred rates. We made it all easy - just for you!",
+  ],
+};
+
 const generalPage = (props) => {
   // const { offerProducts, allProducts, topSailedProducts } = props;
 
@@ -40,9 +51,12 @@ const generalPage = (props) => {
       >
         <Box sx={{ mb: "20px" }}>
           {" "}
-          <SectionTitle>Book Your Stand</SectionTitle>
+          <SectionTitle>Travel & Visas</SectionTitle>
         </Box>
-        <MainSection sponsors={sponsorsData} />
+        <Stack direction={"column"} spacing={3}>
+          <IntroSection itemData={itemData}></IntroSection>
+          <MainSection sponsors={sponsorsData} />
+        </Stack>
       </Container>
     </EvLayout>
   );

@@ -6,7 +6,7 @@ import CardWithImageButton from "components/EvComponents/CardWithImageButton";
 const ExhibitionFeatures = (props) => {
   const data = props.data;
   return (
-    <Box sx={{ px: 6, pt: 5 }}>
+    <Box sx={{ pt: 5 }}>
       <SectionTitle>EXHIBITION FEATURES </SectionTitle>
       <Grid container sx={{ py: 3 }} spacing={5}>
         {data.map((card, ind) => {

@@ -26,7 +26,8 @@ const FactBannerSection = () => {
   const theme = useTheme();
   return (
     <Box>
-      <SectionTitle>middle banner </SectionTitle>   {/* outer box and this title is to be removed on usage */}
+      <SectionTitle>middle banner </SectionTitle>{" "}
+      {/* outer box and this title is to be removed on usage */}
       <Box
         sx={{
           backgroundColor: theme.palette.primary.main,
