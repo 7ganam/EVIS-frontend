@@ -9,7 +9,6 @@ import ExpectMeet from "components/EvSections/about-page-sections/ExpectMeet";
 import Facts from "components/EvSections/about-page-sections/Facts";
 import Footer from "components/EvSections/why-exhibit-sections/Footer";
 import {H3} from "components/EvComponents/Typography";
-import QuadImg from 'components/EvComponents/QuadImg';
 
 
 // ======================================================
@@ -204,11 +203,12 @@ const generalPage = () => {
       >
         <LandingText section={section} />
         <MobilityFuture item = {item} />
-        <CoreSection items = {itemsData} />
+        </Container>
+        <CoreSection data = {itemsData} />
+        <Container sx={{ mb: 6 }}>
         <ExpectMeet data = {features} />
         </Container>
         <Facts data={facts} p={p}/>
-        <QuadImg data = {itemsData} />
         <Container sx={{ mb: 6 }}>
         <Footer footer1={footer1} footer2={footer2} />
       </Container>

@@ -11,7 +11,7 @@ const ExpectMeet = (props) => {
       sx={{
         width: "100%",
         px: 6,
-        py: "10px",
+        pb: "10px",
       }}
     >
       <SectionTitle>WHAT TO EXPECT</SectionTitle>

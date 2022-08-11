@@ -1,16 +1,16 @@
 import React from "react";
-import TwoColumnBox from "components/EvComponents/TwoColumnBox";
+// import TwoColumnBox from "components/EvComponents/TwoColumnBox";
 import { Box } from "@mui/material";
 import { SectionTitle } from "components/EvComponents/StyledTypography";
+import QuadImg from 'components/EvComponents/QuadImg';
+
 
 const CoreSection = (props) => {
-  const items = props.items;
+  const data = props.data;
   return (
     <Box sx={{ pb: 3 }}>
       <SectionTitle>CORE SECTORS</SectionTitle>
-      {items.map((item, index) => {
-        return <TwoColumnBox item={item} key={index} />;
-      })}
+      <QuadImg data = {data} />
     </Box>
   );
 };
