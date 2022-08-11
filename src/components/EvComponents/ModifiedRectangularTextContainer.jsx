@@ -4,11 +4,11 @@ import { BlockTitle } from "components/EvComponents/StyledTypography";
 import { H1, H2, H3, H4, H5, H6, Paragraph } from "components/EvComponents/Typography";
 
 
-const CircularTextContainer = (props) => {
+const ModifiedRectangularTextContainer = (props) => {
     return (
         <Box sx={{
             textAlign: "center",
-            borderRadius: "50%",
+            borderRadius: "7px",
             width: "130px",
             height: "130px",
             backgroundColor: props.BGColor,
@@ -38,4 +38,4 @@ const CircularTextContainer = (props) => {
     )
 };
 
-export default CircularTextContainer;
+export default ModifiedRectangularTextContainer;
