@@ -9,142 +9,118 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "ABOUT",
+
     child: [
       {
-        title: "About EVIS",
-        url: "/about/about",
+        title: "Summit",
+        url: "/about#summit",
       },
       {
-        title: "Why Abu Dhabi",
-        url: "/about/why-abu-dhabi",
+        title: "Exhibition",
+        url: "/about/#exhibition",
       },
       {
-        title: "Contact Us",
-        url: "/about/contact-us",
+        title: "Open Tech Sessions",
+        url: "/about#open-tech",
       },
       {
-        title: "Event Brochure",
-        url: "/about/event-brochure",
+        title: "Advisory Board",
+        url: "/about#advisory-board",
       },
       {
-        title: "2022 Executive Committee",
-        url: "/about/Executive-committee-2022",
+        title: "Venue",
+        url: "/about#venue",
       },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "EXHIBITION",
+    title: "Agenda",
     child: [
       {
-        title: "Book Your Stand",
-        url: "/exhibition/book-your-stand",
+        title: "Summit",
+        url: "/agenda/summit",
       },
       {
-        title: " 	Why Exhibit",
-        url: "/exhibition/why-exhibit",
-      },
-      {
-        title: "Download 2022 Post Show Report ",
-        url: "/exhibition/post-show-report",
-      },
-      {
-        title: "EXHIBITOR MANUAL",
-        url: "/exhibition/exhibitor-manual",
+        title: "Open Tech Sessions",
+        url: "/agenda/open-tech-sessions",
       },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "SPONSORSHIP",
+    title: "Speakers",
     child: [
       {
-        title: "Enquire About Sponsorship Opportunities",
-        url: "/sponsorship/sponsorship-opportunities",
+        title: "EVIS2023 Speakers",
+        url: "/speakers/2023",
       },
       {
-        title: "Sponsorship And Branding Opportunities",
-        url: "/sponsorship/sponsorship-branding",
-      },
-      {
-        title: "Why Sponsor",
-        url: "/sponsorship/why-exhibit",
+        title: "Previous Speakers",
+        url: "/speakers/previous",
       },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "VISIT",
+    title: "Sponsors & Partners",
     child: [
       {
-        title: "Why Visit",
-        url: "/visit/why-visit",
+        title: "EVIS2023 Sponsors & Exhibitors & Partners",
+        url: "/sponsors-partners/2023",
       },
       {
-        title: "Register Your Interest To Visit",
-        url: "/visit/register-visit",
+        title: "Previous Sponsors & Exhibitors & Partners",
+        url: "/sponsors-partners/previous",
       },
       {
-        title: "Exhibitors List  ",
-        url: "/visit/exhibitors",
+        title: "Testimonials",
+        url: "/sponsors-partners/Testimonials",
       },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "CONFERENCES ",
+    title: "News & Media",
     child: [
-      {
-        title: "Main Conference",
-        url: "/conferences/main-conference",
-      },
-      {
-        title: "Speakers",
-        url: "/conferences/speakers",
-      },
-      {
-        title: "Delegate Registration / Passes And Pricing",
-        url: "/conferences/delegate-registration",
-      },
-    ],
-  },
-  {
-    megaMenu: false,
-    megaMenuWithSub: false,
-    title: "MEDIA CENTRE",
-    child: [
-      {
-        title: "Press/Media Registration",
-        url: "/media-center/media-registration",
-      },
-      {
-        title: "Media Partners",
-        url: "/media-center/partners",
-      },
-      {
-        title: "Supporting Associations ",
-        url: "/media-center/support-associations",
-      },
       {
         title: "News",
-        url: "/media-center/news",
+        url: "/news-media/news",
       },
       {
-        title: "Policy Dialogues",
-        url: "/media-center/policy-dialogues",
+        title: "Media/Gallery",
+        url: "/news-media/gallery",
       },
     ],
   },
   {
-    title: "TRAVEL & VISAS",
     megaMenu: false,
     megaMenuWithSub: false,
-    url: "/travel-visas",
+    title: "Participate ",
+    child: [
+      {
+        title: "Attendee",
+        url: "/participate/attendee",
+      },
+      {
+        title: "Delegate",
+        url: "/participate/delegate",
+      },
+      {
+        title: "Exhibitor",
+        url: "/participate/exhibitor",
+      },
+      {
+        title: "Sponsor",
+        url: "/participate/sponsor",
+      },
+    ],
   },
+
   // {
   //   title: "ALL SHOWS",
   //   megaMenu: false,

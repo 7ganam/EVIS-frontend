@@ -49,7 +49,9 @@ const TwoColumnBoxV2 = ({ item, imgPosition }) => {
             {ps?.map((item, index) => {
               return (
                 <Box sx={{ pt: 1 }} key={index}>
-                  <Paragraph>{item}</Paragraph>
+                  <Paragraph>
+                    <Box sx={{ whiteSpace: "pre-wrap" }}>{item}</Box>
+                  </Paragraph>
                 </Box>
               );
             })}
