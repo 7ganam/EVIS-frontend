@@ -1,6 +1,6 @@
 import React from "react";
 import EvLayout from "components/layouts/EvLayout";
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import api from "utils/api/grocery3-shop";
 import { SectionTitle } from "components/EvComponents/StyledTypography";
 import Videos from "components/EvSections/new-page-sections/Videos";
@@ -8,6 +8,7 @@ import ExhibitionFeatures from "components/EvSections/why-exhibit-sections/Exhib
 import Press from "components/EvSections/new-page-sections/Press";
 import Press2 from "components/EvSections/new-page-sections/Press2";
 import Footer from "components/EvSections/why-exhibit-sections/Footer";
+import NewsCard from "components/EvComponents/NewsCard";
 
 const videosList = [
   { youtube: "tKfOCjdwaJ0" },
@@ -27,6 +28,7 @@ const featureList = [
     buttonLink: "/",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
+    date: "2022-08-15"
   },
   {
     img: "/assets/images/news-page/1.png",
@@ -34,6 +36,61 @@ const featureList = [
     buttonText: "READ MORE",
     buttonLink: "/",
     title: "Time for the Middle East to go electric? How and why?",
+    date: "2022-08-08"
+  },
+  {
+    img: "/assets/images/news-page/2.png",
+    content:
+      "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
+    buttonText: "READ MORE",
+    buttonLink: "/",
+    title:
+      "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
+    date: "2022-08-15"
+  },
+  {
+    img: "/assets/images/news-page/1.png",
+    content: "An informative article on EV Adoption in the Middle East",
+    buttonText: "READ MORE",
+    buttonLink: "/",
+    title: "Time for the Middle East to go electric? How and why?",
+    date: "2022-08-08"
+  },
+  {
+    img: "/assets/images/news-page/2.png",
+    content:
+      "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
+    buttonText: "READ MORE",
+    buttonLink: "/",
+    title:
+      "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
+    date: "2022-08-15"
+  },
+  {
+    img: "/assets/images/news-page/1.png",
+    content: "An informative article on EV Adoption in the Middle East",
+    buttonText: "READ MORE",
+    buttonLink: "/",
+    title: "Time for the Middle East to go electric? How and why?",
+    date: "2022-08-08"
+  },
+  {
+    img: "/assets/images/news-page/2.png",
+    content:
+      "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
+    buttonText: "READ MORE",
+    buttonLink: "/",
+    title:
+      "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
+    date: "2022-08-15"
+  },
+  {
+    img: "/assets/images/news-page/1.png",
+    content: "An informative article on EV Adoption in the Middle East",
+    buttonText: "READ MORE",
+    buttonLink: "/",
+    title: "Time for the Middle East to go electric? How and why?",
+    date: "2022-08-08"
   },
 ];
 
@@ -123,6 +180,16 @@ const EvHome = () => {
           mb: 6,
         }}
       >
+        <Grid container spacing={5} >
+          {featureList.map(({ img, title, date }) => {
+            return (
+              <Grid item xs={12} sm={4} md={3} key={title} >
+                <NewsCard srcImage={img} header={title} date={date} />
+              </Grid>
+            )
+          })}
+        </Grid>
+        {/* <NewsCard srcImage={featureList[0].img} header={featureList[0].title} date="2022-08-15" /> */}
         <Videos videosList={videosList} />
         <ExhibitionFeatures data={featureList} />
         <Press data={news} />
