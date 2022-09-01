@@ -1,6 +1,6 @@
 import React from "react";
 import EvLayout from "components/layouts/EvLayout";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 import api from "utils/api/grocery3-shop";
 import { SectionTitle } from "components/EvComponents/StyledTypography";
 import Videos from "components/EvSections/new-page-sections/Videos";
@@ -9,6 +9,19 @@ import Press from "components/EvSections/new-page-sections/Press";
 import Press2 from "components/EvSections/new-page-sections/Press2";
 import Footer from "components/EvSections/why-exhibit-sections/Footer";
 import NewsCard from "components/EvComponents/NewsCard";
+import Divider from '@mui/material/Divider';
+import { styled } from '@mui/material/styles';
+import { useTheme } from "@emotion/react";
+import { H1, H2, H3, H4, H5, H6, Paragraph } from "components/EvComponents/Typography";
+
+
+// const Root = styled('div')(({ theme }) => ({
+//   width: '100%',
+//   ...theme.typography.body2,
+//   '& > :not(style) + :not(style)': {
+//     marginTop: theme.spacing(2),
+//   },
+// }));
 
 const videosList = [
   { youtube: "tKfOCjdwaJ0" },
@@ -171,9 +184,41 @@ const footer2 = [
 ];
 
 const EvHome = () => {
+  const theme = useTheme();
+
   return (
     <EvLayout showNavbar={true} title={"Home"}>
-      <SectionTitle>News</SectionTitle>
+
+      <Box sx={{ boxShadow: 5, width: "250px", margin: "20px auto 40px", padding: "1px 10px", borderRadius: "10px" }}>
+        <SectionTitle>LATEST NEWS</SectionTitle>
+        <Box sx={{
+          display: "flex",
+          flexDirection: "row",
+          margin: "-13px 18px 17px",
+        }}>
+          <Divider sx={{ border: "1px solid #bbc4c7", margin: "0", width: "40%", height: "1px", }} />
+          <Divider sx={{ border: "1px solid #55b4d4", margin: "0", width: "20%", height: "3px", backgroundColor: theme.palette.secondary.main }} />
+          <Divider sx={{ border: "1px solid #bbc4c7", margin: "0", width: "40%", height: "2px", }} />
+        </Box>
+      </Box>
+
+      <Box sx={{
+        display: "flex", flexDirection: "column", margin: "50px", textAlign: "center",
+      }}>
+        <Box><H3>{featureList[0].date.slice(0, 4)}</H3></Box>
+        <br />
+        <Box sx={{
+          display: "flex",
+          flexDirection: "row",
+          margin: "-13px 18px 17px",
+        }}>
+          <Divider sx={{ border: "1px solid #bbc4c7", margin: "0", width: "47%", height: "1px", }} />
+          <Divider sx={{ border: "1px solid #55b4d4", margin: "0", width: "6%", height: "2px", backgroundColor: theme.palette.secondary.main }} />
+          <Divider sx={{ border: "1px solid #bbc4c7", margin: "0", width: "47%", height: "2px", }} />
+        </Box>
+      </Box>
+
+
 
       <Container
         sx={{
@@ -189,11 +234,11 @@ const EvHome = () => {
             )
           })}
         </Grid>
-        {/* <NewsCard srcImage={featureList[0].img} header={featureList[0].title} date="2022-08-15" /> */}
-        <Videos videosList={videosList} />
+
+        {/* <Videos videosList={videosList} />
         <ExhibitionFeatures data={featureList} />
         <Press data={news} />
-        <Press2 data={news2} />
+        <Press2 data={news2} /> */}
         <Footer footer1={footer1} footer2={footer2} />
       </Container>
     </EvLayout>
