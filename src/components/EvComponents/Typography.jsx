@@ -180,7 +180,7 @@ export const Paragraph = ({
       component="p"
       mb={0}
       mt={0}
-      sx={{ fontSize: "17px", lineHeight: "1.5em", fontWeight: "500" }}
+      sx={{ fontSize: "20px", lineHeight: "1.5em", fontWeight: "500" }}
       {...props}
     >
       {children}
