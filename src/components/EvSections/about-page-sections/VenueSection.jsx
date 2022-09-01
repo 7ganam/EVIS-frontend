@@ -18,7 +18,7 @@ const VenueSection = (props) => {
       <Grid container>
         <Grid item md={6} sm={12} xs={12} sx={{ padding: "20px" }}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d232406.6567360958!2d54.324372!3d24.473188000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd3ec9c9737756f30!2sNirvana%20Travel%20%26%20Tourism!5e0!3m2!1sen!2sae!4v1659829234637!5m2!1sen!2sae"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14531.667585283021!2d54.4369963!3d24.4189545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc2f73ba3f513d4b3!2sAbu%20Dhabi%20National%20Exhibition%20Centre!5e0!3m2!1sen!2seg!4v1662066790096!5m2!1sen!2seg"
             width="100%"
             height="400"
             border="0"
