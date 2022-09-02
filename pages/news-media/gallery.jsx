@@ -235,7 +235,7 @@ const EvHome = () => {
                     })}
                 </Grid>
 
-                <Box sx={{
+                {/* <Box sx={{
                     display: "flex", flexDirection: "column", margin: "50px", textAlign: "center",
                 }}>
                     <Box><SectionTitle>VIDEOS</SectionTitle></Box>
@@ -251,7 +251,7 @@ const EvHome = () => {
                     </Box>
                 </Box>
 
-                <Videos videosList={videosList} />
+                <Videos videosList={videosList} /> */}
                 {/* <ExhibitionFeatures data={featureList} /> */}
                 {/* <Press data={news} /> */}
                 {/* <Press2 data={news2} /> */}
