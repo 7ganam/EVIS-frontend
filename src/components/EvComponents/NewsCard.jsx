@@ -21,7 +21,7 @@ const NewsCard = (props) => {
             {/* <Divider /> */}
             <Box sx={{ backgroundColor: theme.palette.grey[200], padding: "12px 15px", borderRight: "1px solid #cccccc", borderLeft: "1px solid #cccccc", }}>
                 {/* <Button></Button> */}
-                <Button variant="outlined" sx={{ width: "100%" }}>Know More</Button>
+                <Button href={props.reference} variant="outlined" sx={{ width: "100%" }} >Know More</Button>
             </Box>
 
         </Box>
