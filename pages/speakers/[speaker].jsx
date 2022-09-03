@@ -470,9 +470,11 @@ const SpeakerPage = () => {
     return (
       <Box pt={20}>
         <Container mb={6}>
-          <Box sx = {{
-            textAlign : 'center'
-          }}>
+          <Box
+            sx={{
+              textAlign: "center",
+            }}
+          >
             <H2>Loading ...</H2>
           </Box>
         </Container>
@@ -483,7 +485,7 @@ const SpeakerPage = () => {
   // console.log(nameData);
 
   return (
-    <Box pt={20}>
+    <Box py={15}>
       <Container mb={6}>
         <Grid
           container
