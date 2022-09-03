@@ -480,7 +480,7 @@ const SpeakerPage = () => {
     );
   }
 
-  console.log(nameData);
+  // console.log(nameData);
 
   return (
     <Box pt={20}>
