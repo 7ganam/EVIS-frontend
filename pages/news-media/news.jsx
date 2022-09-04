@@ -38,7 +38,7 @@ const featureList = [
     content:
       "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
     buttonText: "READ MORE",
-    buttonLink: "/",
+    buttonLink: "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     date: "2022-08-15"
@@ -47,7 +47,7 @@ const featureList = [
     img: "/assets/images/news-page/1.png",
     content: "An informative article on EV Adoption in the Middle East",
     buttonText: "READ MORE",
-    buttonLink: "/",
+    buttonLink: "Time for the Middle East to go electric%3F How and why%3F",
     title: "Time for the Middle East to go electric? How and why?",
     date: "2022-08-08"
   },
@@ -56,7 +56,7 @@ const featureList = [
     content:
       "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
     buttonText: "READ MORE",
-    buttonLink: "/",
+    buttonLink: "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     date: "2022-08-15"
@@ -65,7 +65,7 @@ const featureList = [
     img: "/assets/images/news-page/1.png",
     content: "An informative article on EV Adoption in the Middle East",
     buttonText: "READ MORE",
-    buttonLink: "/",
+    buttonLink: "Time for the Middle East to go electric%3F How and why%3F",
     title: "Time for the Middle East to go electric? How and why?",
     date: "2022-08-08"
   },
@@ -74,7 +74,7 @@ const featureList = [
     content:
       "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
     buttonText: "READ MORE",
-    buttonLink: "/",
+    buttonLink: "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     date: "2022-08-15"
@@ -83,7 +83,7 @@ const featureList = [
     img: "/assets/images/news-page/1.png",
     content: "An informative article on EV Adoption in the Middle East",
     buttonText: "READ MORE",
-    buttonLink: "/",
+    buttonLink: "Time for the Middle East to go electric%3F How and why%3F",
     title: "Time for the Middle East to go electric? How and why?",
     date: "2022-08-08"
   },
@@ -92,7 +92,7 @@ const featureList = [
     content:
       "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
     buttonText: "READ MORE",
-    buttonLink: "/",
+    buttonLink: "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     date: "2022-08-15"
@@ -101,10 +101,11 @@ const featureList = [
     img: "/assets/images/news-page/1.png",
     content: "An informative article on EV Adoption in the Middle East",
     buttonText: "READ MORE",
-    buttonLink: "/",
+    buttonLink: "Time for the Middle East to go electric%3F How and why%3F",
     title: "Time for the Middle East to go electric? How and why?",
     date: "2022-08-08"
   },
+
 ];
 
 const news = [
@@ -226,10 +227,10 @@ const EvHome = () => {
         }}
       >
         <Grid container spacing={5} >
-          {featureList.map(({ img, title, date }) => {
+          {featureList.map(({ img, title, date, buttonLink }) => {
             return (
               <Grid item xs={12} sm={4} md={3} key={title} >
-                <NewsCard srcImage={img} header={title} date={date} />
+                <NewsCard srcImage={img} header={title} date={date} directory={buttonLink} />
               </Grid>
             )
           })}

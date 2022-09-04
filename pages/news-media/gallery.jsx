@@ -8,7 +8,7 @@ import ExhibitionFeatures from "components/EvSections/why-exhibit-sections/Exhib
 import Press from "components/EvSections/new-page-sections/Press";
 import Press2 from "components/EvSections/new-page-sections/Press2";
 import Footer from "components/EvSections/why-exhibit-sections/Footer";
-import NewsCard from "components/EvComponents/NewsCard";
+import GalleryCard from "components/EvComponents/GalleryCard";
 import Divider from '@mui/material/Divider';
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@emotion/react";
@@ -229,7 +229,7 @@ const EvHome = () => {
                     {featureList.map(({ img, title, date, buttonLink }) => {
                         return (
                             <Grid item xs={12} sm={4} md={3} key={title} >
-                                <NewsCard srcImage={img} header={title} date={date} reference={buttonLink} />
+                                <GalleryCard srcImage={img} header={title} date={date} reference={buttonLink} />
                             </Grid>
                         )
                     })}
