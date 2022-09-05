@@ -1,6 +1,6 @@
 import { Box, Container, Grid } from "@mui/material";
-import Navbar from "components/navbar/Navbar";
-import Stepper from "components/stepper/Stepper";
+import Navbar from "src/components/navbar/Navbar";
+import Stepper from "src/components/stepper/Stepper";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ShopLayout1 from "./ShopLayout1";

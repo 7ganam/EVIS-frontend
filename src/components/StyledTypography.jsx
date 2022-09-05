@@ -1,5 +1,5 @@
 import { Box, styled } from "@mui/material";
-import { H1 } from "components/Typography";
+import { H1 } from "src/components/Typography";
 
 const TitleBox = styled(Box)(({ theme }) => ({
   textAlign: "center",

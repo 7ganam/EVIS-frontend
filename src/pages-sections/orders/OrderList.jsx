@@ -1,7 +1,7 @@
 import { Pagination } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import TableRow from "components/TableRow";
-import { H5 } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import TableRow from "src/components/TableRow";
+import { H5 } from "src/components/Typography";
 import { Fragment } from "react";
 import OrderRow from "./OrderRow"; // ============================================================
 

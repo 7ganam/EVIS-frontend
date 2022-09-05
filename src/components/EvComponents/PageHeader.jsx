@@ -1,6 +1,6 @@
 import { Box, styled, Button } from "@mui/material";
 import React from "react";
-import { H1 } from "components/Typography";
+import { H1 } from "src/components/Typography";
 const StyledButton = styled(Button)(() => ({
   color: "#fff",
   fontWeight: 400,

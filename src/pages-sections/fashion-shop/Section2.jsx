@@ -1,8 +1,8 @@
-import Carousel from "components/carousel/Carousel";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import Light from "components/icons/Light";
-import ProductCard3 from "components/product-cards/ProductCard3";
-import useWindowSize from "hooks/useWindowSize";
+import Carousel from "src/components/carousel/Carousel";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import Light from "src/components/icons/Light";
+import ProductCard3 from "src/components/product-cards/ProductCard3";
+import useWindowSize from "src/hooks/useWindowSize";
 import React, { useEffect, useState } from "react"; // common arrow button for slider
 
 export const arrowButtonStyle = {

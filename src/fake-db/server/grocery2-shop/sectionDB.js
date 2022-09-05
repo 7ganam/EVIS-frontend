@@ -2,7 +2,7 @@
 // YOU NEED TO BUILD YOUR OWN SERVER
 // IF YOU NEED HELP ABOUT SERVER SIDE IMPLEMENTATION
 // CONTACT US AT support@ui-lib.com
-import Mock from "fake-db/mock";
+import Mock from "src/fake-db/mock";
 import { carouselCardList, serviceList, shopByCategory } from "./grocery-data";
 Mock.onGet("/api/grocery-section2/services").reply(async () => {
   try {

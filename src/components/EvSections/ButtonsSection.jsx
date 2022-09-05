@@ -1,11 +1,11 @@
 import React from "react";
-import { BigButton } from "components/EvComponents/Buttons";
+import { BigButton } from "src/components/EvComponents/Buttons";
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import {
   SectionTitle,
   BlockTitle,
-} from "components/EvComponents/StyledTypography";
+} from "src/components/EvComponents/StyledTypography";
 
 function ButtonsSection() {
   return (

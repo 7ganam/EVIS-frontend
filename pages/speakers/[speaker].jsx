@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { Container, Grid, Box } from "@mui/material";
-import { H2, H4, H5 } from "components/EvComponents/Typography";
+import { H2, H4, H5 } from "src/components/EvComponents/Typography";
 
-import Image from "components/BazarImage";
+import Image from "src/components/BazarImage";
 
 let data = [
   {

@@ -1,10 +1,10 @@
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { Box, Grid } from "@mui/material";
-import BazarIconButton from "components/BazarIconButton";
-import Carousel from "components/carousel/Carousel";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import ProductCard11 from "components/product-cards/ProductCard11";
-import useSettings from "hooks/useSettings";
+import BazarIconButton from "src/components/BazarIconButton";
+import Carousel from "src/components/carousel/Carousel";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import ProductCard11 from "src/components/product-cards/ProductCard11";
+import useSettings from "src/hooks/useSettings";
 import Link from "next/link";
 import { useState } from "react"; // ==========================================================
 

@@ -1,7 +1,7 @@
 import React from "react";
-import CardWithImageButton from "components/EvComponents/CardWithImageButton";
+import CardWithImageButton from "src/components/EvComponents/CardWithImageButton";
 import { Grid, Box } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 function CardsSection({ cardsData }) {
   // const cardData =  props.data

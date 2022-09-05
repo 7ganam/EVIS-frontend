@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, Box } from "@mui/material";
-import { BlockTitle } from "components/EvComponents/StyledTypography";
-import { Paragraph } from "components/EvComponents/Typography";
-import Image from "components/BazarImage";
+import { BlockTitle } from "src/components/EvComponents/StyledTypography";
+import { Paragraph } from "src/components/EvComponents/Typography";
+import Image from "src/components/BazarImage";
 
 const TwoColumnContent = (img, title, ps, direction) => {
   if (direction === "left") {

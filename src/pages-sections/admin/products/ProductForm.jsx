@@ -1,5 +1,5 @@
 import { Button, Card, Grid, MenuItem, TextField } from "@mui/material";
-import DropZone from "components/DropZone";
+import DropZone from "src/components/DropZone";
 import { Formik } from "formik";
 import React from "react";
 

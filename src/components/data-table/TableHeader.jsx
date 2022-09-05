@@ -6,7 +6,7 @@ import {
   TableRow,
   TableSortLabel,
 } from "@mui/material";
-import UpDown from "components/icons/UpDown";
+import UpDown from "src/components/icons/UpDown";
 // styled components
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   fontWeight: 600,

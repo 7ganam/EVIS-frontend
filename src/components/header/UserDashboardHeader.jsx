@@ -1,9 +1,9 @@
 import Menu from "@mui/icons-material/Menu";
 import { Box, styled } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import Sidenav from "components/sidenav/Sidenav";
-import { H2 } from "components/Typography";
-import useWindowSize from "hooks/useWindowSize";
+import { FlexBox } from "src/components/flex-box";
+import Sidenav from "src/components/sidenav/Sidenav";
+import { H2 } from "src/components/Typography";
+import useWindowSize from "src/hooks/useWindowSize";
 import React from "react";
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",

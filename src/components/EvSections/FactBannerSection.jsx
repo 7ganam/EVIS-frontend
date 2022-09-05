@@ -1,7 +1,7 @@
 import React from "react";
-import FactBox from "components/EvComponents/FactBox";
+import FactBox from "src/components/EvComponents/FactBox";
 import { Box, useTheme, Grid } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 const data = [
   {
@@ -19,7 +19,7 @@ const data = [
   {
     title: "10%",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nisi consectetur nisi, euismod consectetur nisi nisi vitae nisi.",
-  }
+  },
 ];
 
 const FactBannerSection = () => {

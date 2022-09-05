@@ -1,9 +1,9 @@
 import { Box, Container, Grid } from "@mui/material";
-import CarouselCard3 from "components/carousel-cards/CarouselCard3";
-import Carousel from "components/carousel/Carousel";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import Navbar from "components/navbar/Navbar";
-import useSettings from "hooks/useSettings";
+import CarouselCard3 from "src/components/carousel-cards/CarouselCard3";
+import Carousel from "src/components/carousel/Carousel";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import Navbar from "src/components/navbar/Navbar";
+import useSettings from "src/hooks/useSettings";
 import { Fragment } from "react";
 import CarouselSection from "./CarouselSection";
 import HomeFourCard1 from "./homeFour-cards/HomeFourCard1"; // =================================================================

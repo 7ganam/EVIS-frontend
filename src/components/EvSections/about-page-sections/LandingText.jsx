@@ -1,7 +1,7 @@
 import React from "react";
-import { Paragraph } from "components/EvComponents/Typography";
+import { Paragraph } from "src/components/EvComponents/Typography";
 import { Box, Grid } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 const LandingText = (props) => {
   const { p1, p2, p3 } = props.section;

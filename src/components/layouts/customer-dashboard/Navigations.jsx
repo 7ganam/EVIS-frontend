@@ -1,9 +1,9 @@
 import { CreditCard, FavoriteBorder, Person, Place } from "@mui/icons-material";
 import ShoppingBagOutlined from "@mui/icons-material/ShoppingBagOutlined";
 import { Card, styled, Typography } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import CustomerService from "components/icons/CustomerService";
-import NavLink from "components/nav-link/NavLink";
+import { FlexBox } from "src/components/flex-box";
+import CustomerService from "src/components/icons/CustomerService";
+import NavLink from "src/components/nav-link/NavLink";
 import { useRouter } from "next/router";
 import { Fragment } from "react"; // custom styled components
 

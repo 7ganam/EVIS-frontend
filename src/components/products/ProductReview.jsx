@@ -1,7 +1,7 @@
 import { Rating } from "@mui/lab";
 import { Box, Button, TextField } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import { H2, H5 } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import { H2, H5 } from "src/components/Typography";
 import { useFormik } from "formik";
 import React from "react";
 import * as yup from "yup";

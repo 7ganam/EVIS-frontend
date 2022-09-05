@@ -1,5 +1,5 @@
 import React from "react";
-import { Paragraph } from "components/EvComponents/Typography";
+import { Paragraph } from "src/components/EvComponents/Typography";
 import { Box, Grid } from "@mui/material";
 
 const LandingText = (props) => {
@@ -12,11 +12,6 @@ const LandingText = (props) => {
             <Paragraph>
               <Box sx={{ whiteSpace: "pre-wrap" }}>{text}</Box>
             </Paragraph>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={12} md={12}>
-          <Box sx={{ height: "300px", border: "1px solid black" }}>
-            (Insert Agenda – c/o subject expert)
           </Box>
         </Grid>
       </Grid>

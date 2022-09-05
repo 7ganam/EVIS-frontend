@@ -1,9 +1,9 @@
 import React from "react";
-import TwoColumnBoxV2 from "components/EvComponents/TwoColumnBoxV2";
+import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
 import { Grid, Box, useTheme } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import YoutubeEmbed from "components/YoutubeEmbed";
-import { Paragraph } from "components/EvComponents/Typography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import YoutubeEmbed from "src/components/YoutubeEmbed";
+import { Paragraph } from "src/components/EvComponents/Typography";
 
 const OpenTechSection = (props) => {
   const theme = useTheme();

@@ -1,6 +1,6 @@
 import React from "react";
-import { Paragraph } from "components/EvComponents/Typography";
-import { BlockTitle } from "components/EvComponents/StyledTypography";
+import { Paragraph } from "src/components/EvComponents/Typography";
+import { BlockTitle } from "src/components/EvComponents/StyledTypography";
 
 import { Box, Grid } from "@mui/material";
 

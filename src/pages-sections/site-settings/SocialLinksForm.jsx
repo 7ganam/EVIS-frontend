@@ -1,8 +1,8 @@
 import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
 import { Button, Divider, Grid, TextField } from "@mui/material";
-import AppleStore from "components/icons/AppleStore";
-import PlayStore from "components/icons/PlayStore";
-import { H4 } from "components/Typography";
+import AppleStore from "src/components/icons/AppleStore";
+import PlayStore from "src/components/icons/PlayStore";
+import { H4 } from "src/components/Typography";
 import { Formik } from "formik";
 import React from "react";
 

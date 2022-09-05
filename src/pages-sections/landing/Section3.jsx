@@ -1,6 +1,6 @@
 import { Box, Button, Container, Grid, styled } from "@mui/material";
-import { FlexRowCenter } from "components/flex-box";
-import { H2, H4, Paragraph } from "components/Typography";
+import { FlexRowCenter } from "src/components/flex-box";
+import { H2, H4, Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import PageCard from "./PageCard";
 const FilterButton = styled(Button)(({ theme, selected }) => ({

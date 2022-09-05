@@ -1,8 +1,8 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
-import BazarButton from "components/BazarButton";
-import BazarTextField from "components/BazarTextField";
-import { FlexBox } from "components/flex-box";
-import { H3, H6, Small } from "components/Typography";
+import BazarButton from "src/components/BazarButton";
+import BazarTextField from "src/components/BazarTextField";
+import { FlexBox } from "src/components/flex-box";
+import { H3, H6, Small } from "src/components/Typography";
 import { useFormik } from "formik";
 import React, { useCallback, useState } from "react";
 import * as yup from "yup";

@@ -1,15 +1,15 @@
 import { Container } from "@mui/material";
 
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import LandingText from "components/EvSections/about-page-sections/LandingText";
-import Exhibition from "components/EvSections/about-page-sections/Exhibition";
-import SummitSection from "components/EvSections/about-page-sections/SummitSection";
-import OpenTechSection from "components/EvSections/about-page-sections/OpenTechSection";
-import AdvisoryBoardSection from "components/EvSections/about-page-sections/AdvisoryBoardSection";
-import VenueSection from "components/EvSections/about-page-sections/VenueSection";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import LandingText from "src/components/EvSections/about-page-sections/LandingText";
+import Exhibition from "src/components/EvSections/about-page-sections/Exhibition";
+import SummitSection from "src/components/EvSections/about-page-sections/SummitSection";
+import OpenTechSection from "src/components/EvSections/about-page-sections/OpenTechSection";
+import AdvisoryBoardSection from "src/components/EvSections/about-page-sections/AdvisoryBoardSection";
+import VenueSection from "src/components/EvSections/about-page-sections/VenueSection";
 
-import Footer from "components/EvSections/why-exhibit-sections/Footer";
+import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
 
 // ======================================================
 // ======================================================
@@ -200,7 +200,9 @@ const generalPage = () => {
         }}
       >
         <LandingText id={"summit"} section={section} />
-        <SummitSection></SummitSection>
+      </Container>
+      <SummitSection></SummitSection>
+      <Container>
         <Exhibition item={ExhibitionItem} />
         <OpenTechSection item={OpenTechData}></OpenTechSection>
       </Container>

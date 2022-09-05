@@ -1,10 +1,10 @@
 import { Box, Button, Divider, Grid, Radio, TextField } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Card1 from "components/Card1";
-import { FlexBox } from "components/flex-box";
-import { Paragraph } from "components/Typography";
+import Card1 from "src/components/Card1";
+import { FlexBox } from "src/components/flex-box";
+import { Paragraph } from "src/components/Typography";
 import { Formik } from "formik";
-import useWindowSize from "hooks/useWindowSize";
+import useWindowSize from "src/hooks/useWindowSize";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { Fragment, useState } from "react";

@@ -1,11 +1,11 @@
 import { Formik } from "formik";
 import { Button, Grid, Stack, TextField } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
-import Card1 from "components/Card1";
-import countryList from "data/countryList";
+import Card1 from "src/components/Card1";
+import countryList from "src/data/countryList";
 
 import * as yup from "yup";
-import Image from "components/BazarImage";
+import Image from "src/components/BazarImage";
 
 const initialValues = {
   first_name: "",

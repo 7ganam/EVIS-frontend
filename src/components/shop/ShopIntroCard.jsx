@@ -1,11 +1,11 @@
 import { Call, Place } from "@mui/icons-material";
 import { Avatar, Box, Button, Card, Rating } from "@mui/material";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import FacebookFilled from "components/icons/FacebookFilled";
-import InstagramFilled from "components/icons/InstagramFilled";
-import TwitterFilled from "components/icons/TwitterFilled";
-import YoutubeFilled from "components/icons/YoutubeFilled";
-import { H3, Small, Span } from "components/Typography";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
+import FacebookFilled from "src/components/icons/FacebookFilled";
+import InstagramFilled from "src/components/icons/InstagramFilled";
+import TwitterFilled from "src/components/icons/TwitterFilled";
+import YoutubeFilled from "src/components/icons/YoutubeFilled";
+import { H3, Small, Span } from "src/components/Typography";
 import React from "react"; // =======================================================
 
 // =======================================================

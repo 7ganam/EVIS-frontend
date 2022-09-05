@@ -1,6 +1,6 @@
 import { Container, Grid } from "@mui/material";
-import CategorySectionHeader from "components/CategorySectionHeader";
-import ProductCard1 from "components/product-cards/ProductCard1";
+import CategorySectionHeader from "src/components/CategorySectionHeader";
+import ProductCard1 from "src/components/product-cards/ProductCard1";
 
 const Section11 = ({ moreItems }) => {
   return (

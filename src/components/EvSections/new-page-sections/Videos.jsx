@@ -1,6 +1,6 @@
 import { Box, Grid, styled, useTheme } from "@mui/material";
 import React from "react";
-import YoutubeEmbed from "components/YoutubeEmbed";
+import YoutubeEmbed from "src/components/YoutubeEmbed";
 
 const Videos = ({ videosList }) => {
   const theme = useTheme();

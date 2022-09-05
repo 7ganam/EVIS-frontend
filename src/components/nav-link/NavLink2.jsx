@@ -1,4 +1,4 @@
-import { Small } from "components/Typography";
+import { Small } from "src/components/Typography";
 import Link from "next/link";
 
 // ==============================================================

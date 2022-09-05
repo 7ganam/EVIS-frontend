@@ -1,7 +1,7 @@
 import { alpha, Box, styled } from "@mui/material";
-import BazarImage from "components/BazarImage";
-import NavLink2 from "components/nav-link/NavLink2";
-import { H1, Paragraph, Span } from "components/Typography";
+import BazarImage from "src/components/BazarImage";
+import NavLink2 from "src/components/nav-link/NavLink2";
+import { H1, Paragraph, Span } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // styled components
 

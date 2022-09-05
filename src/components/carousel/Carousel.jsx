@@ -1,7 +1,7 @@
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import clsx from "clsx";
-import useSettings from "hooks/useSettings";
+import useSettings from "src/hooks/useSettings";
 import { Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import React, { Fragment } from "react";

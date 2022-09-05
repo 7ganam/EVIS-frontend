@@ -1,8 +1,8 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { Paragraph } from "components/EvComponents/Typography";
-import { BlockTitle } from "components/EvComponents/StyledTypography";
-import { ReadMoreButton } from "components/EvComponents/Buttons";
+import { Paragraph } from "src/components/EvComponents/Typography";
+import { BlockTitle } from "src/components/EvComponents/StyledTypography";
+import { ReadMoreButton } from "src/components/EvComponents/Buttons";
 
 const SectionWithText = (props) => {
   const { title, text, cmd } = props.data;

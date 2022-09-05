@@ -1,13 +1,13 @@
 import React from "react";
-import EvLayout from "components/layouts/EvLayout";
+import EvLayout from "src/components/layouts/EvLayout";
 import { Container } from "@mui/material";
-import api from "utils/api/grocery3-shop";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import Videos from "components/EvSections/new-page-sections/Videos";
-import ExhibitionFeatures from "components/EvSections/why-exhibit-sections/ExhibitionFeatures";
-import Press from "components/EvSections/new-page-sections/Press";
-import Press2 from "components/EvSections/new-page-sections/Press2";
-import Footer from "components/EvSections/why-exhibit-sections/Footer";
+import api from "src/utils/api/grocery3-shop";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import Videos from "src/components/EvSections/new-page-sections/Videos";
+import ExhibitionFeatures from "src/components/EvSections/why-exhibit-sections/ExhibitionFeatures";
+import Press from "src/components/EvSections/new-page-sections/Press";
+import Press2 from "src/components/EvSections/new-page-sections/Press2";
+import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
 
 const videosList = [
   { youtube: "tKfOCjdwaJ0" },

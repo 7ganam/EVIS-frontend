@@ -1,7 +1,7 @@
 import { Box, Card, Grid } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import LazyImage from "components/LazyImage";
-import NavLink from "components/nav-link/NavLink";
+import { FlexBox } from "src/components/flex-box";
+import LazyImage from "src/components/LazyImage";
+import NavLink from "src/components/nav-link/NavLink";
 import Link from "next/link";
 import StyledMegaMenu from "./StyledMegaMenu"; // =========================================================
 

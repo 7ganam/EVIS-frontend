@@ -1,7 +1,7 @@
 import React from "react";
-import FactBox from "components/EvComponents/FactBox";
+import FactBox from "src/components/EvComponents/FactBox";
 import { Box, useTheme, Grid } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 const FactsSection = ({ data }) => {
   const theme = useTheme();

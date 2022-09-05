@@ -1,6 +1,6 @@
 import { Box, Button, Grid, styled, useTheme } from "@mui/material";
-import Carousel from "components/carousel/Carousel";
-import { H1, H6, Paragraph } from "components/Typography";
+import Carousel from "src/components/carousel/Carousel";
+import { H1, H6, Paragraph } from "src/components/Typography";
 import React from "react"; // styled components
 
 const StyledBox = styled(Box)(() => ({

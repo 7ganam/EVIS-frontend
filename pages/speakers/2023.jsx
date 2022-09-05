@@ -1,8 +1,8 @@
 import { Container } from "@mui/material";
 
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import SpeakersSection from "components/EvSections/agenda-page-sections/SpeakersSection";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import SpeakersSection from "src/components/EvSections/agenda-page-sections/SpeakersSection";
 import { Box } from "@mui/system";
 // ======================================================
 // ======================================================

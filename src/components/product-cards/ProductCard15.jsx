@@ -1,6 +1,6 @@
 import { Box, styled } from "@mui/material";
-import LazyImage from "components/LazyImage";
-import { H6, Paragraph } from "components/Typography";
+import LazyImage from "src/components/LazyImage";
+import { H6, Paragraph } from "src/components/Typography";
 import React from "react";
 const StyledCard = styled(Box)(({ theme }) => ({
   textAlign: "center",

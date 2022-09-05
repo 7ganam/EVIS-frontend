@@ -1,25 +1,25 @@
 import { Divider } from "@mui/material";
-import Footer from "components/footer/Footer";
-import Header from "components/header/Header";
-import MobileNavigationBar from "components/mobile-navigation/MobileNavigationBar";
-import Navbar from "components/navbar/Navbar";
-import SaleNavbar from "components/navbar/SaleNavbar";
-import Sticky from "components/sticky/Sticky";
-import Topbar from "components/topbar/Topbar";
+import Footer from "src/components/footer/Footer";
+import Header from "src/components/header/Header";
+import MobileNavigationBar from "src/components/mobile-navigation/MobileNavigationBar";
+import Navbar from "src/components/navbar/Navbar";
+import SaleNavbar from "src/components/navbar/SaleNavbar";
+import Sticky from "src/components/sticky/Sticky";
+import Topbar from "src/components/topbar/Topbar";
 import Head from "next/head";
 import { Fragment } from "react"; // icons
 
-import BabyFeeder from "components/icons/BabyFeeder";
-import BasketBall from "components/icons/BasketBall";
-import BeautyProducts from "components/icons/BeautyProducts";
-import Camera from "components/icons/Camera";
-import DrillMachine from "components/icons/DrillMachine";
-import Picture from "components/icons/Picture";
-import Sofa from "components/icons/Sofa";
-import Tshirt from "components/icons/Tshirt";
-import Watch from "components/icons/Watch";
-import Wheel from "components/icons/Wheel";
-import WomenDress from "components/icons/WomenDress";
+import BabyFeeder from "src/components/icons/BabyFeeder";
+import BasketBall from "src/components/icons/BasketBall";
+import BeautyProducts from "src/components/icons/BeautyProducts";
+import Camera from "src/components/icons/Camera";
+import DrillMachine from "src/components/icons/DrillMachine";
+import Picture from "src/components/icons/Picture";
+import Sofa from "src/components/icons/Sofa";
+import Tshirt from "src/components/icons/Tshirt";
+import Watch from "src/components/icons/Watch";
+import Wheel from "src/components/icons/Wheel";
+import WomenDress from "src/components/icons/WomenDress";
 /**
  *  Used:
  *  1. sale-page-1 page

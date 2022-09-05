@@ -1,17 +1,17 @@
 import { Box } from "@mui/system";
 import React from "react";
 import { Grid } from "@mui/material";
-import SponsorImage from "components/EvComponents/SponsorImage";
+import SponsorImage from "src/components/EvComponents/SponsorImage";
 import {
   SectionTitle,
   BlockTitle,
-} from "components/EvComponents/StyledTypography";
-import TwoColumnBox from "components/EvComponents/TwoColumnBox";
-import { BigButton } from "components/EvComponents/Buttons";
+} from "src/components/EvComponents/StyledTypography";
+import TwoColumnBox from "src/components/EvComponents/TwoColumnBox";
+import { BigButton } from "src/components/EvComponents/Buttons";
 import { Button } from "@mui/material";
-import { H3, Paragraph } from "components/EvComponents/Typography";
-import Image from "components/BazarImage";
-import RoundedImage from "components/EvComponents/RoundedImage";
+import { H3, Paragraph } from "src/components/EvComponents/Typography";
+import Image from "src/components/BazarImage";
+import RoundedImage from "src/components/EvComponents/RoundedImage";
 import { useTheme } from "@mui/material";
 
 const DownloadSection = (props) => {

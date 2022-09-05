@@ -1,4 +1,4 @@
-import bazarReactDatabase from "data/bazar-react-database";
+import bazarReactDatabase from "src/data/bazar-react-database";
 export const mainCarouselData = [
   {
     title: "50% Off For Your First Shopping",

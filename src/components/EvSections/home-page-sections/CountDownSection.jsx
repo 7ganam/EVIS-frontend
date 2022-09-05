@@ -1,7 +1,7 @@
 import React from "react";
-import { CountdownMonths } from "components/EvComponents/CountdownMonths";
+import { CountdownMonths } from "src/components/EvComponents/CountdownMonths";
 import { Box } from "@mui/system";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { Card } from "@mui/material";
 
 function CountDownSection() {

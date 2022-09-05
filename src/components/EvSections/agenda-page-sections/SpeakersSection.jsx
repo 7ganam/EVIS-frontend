@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { Container, Grid, Box, useTheme } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import ModifiedRoundedImage from "components/EvComponents/ModifiedRoundedImage";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import ModifiedRoundedImage from "src/components/EvComponents/ModifiedRoundedImage";
 import { Button } from "@mui/material";
 import { AnimationWrapper } from "react-hover-animation";
-
-
 
 const SpeakersSection = (props) => {
   const theme = useTheme();
@@ -48,7 +46,11 @@ const SpeakersSection = (props) => {
                 return (
                   <Grid item xs={12} sm={4} md={3} key={name}>
                     <AnimationWrapper>
-                      <div onClick={() => {router.push(`/speakers/${name}`)}}>
+                      <div
+                        onClick={() => {
+                          router.push(`/speakers/${name}`);
+                        }}
+                      >
                         <ModifiedRoundedImage
                           Src={imageSrc}
                           Name={name}
@@ -66,7 +68,11 @@ const SpeakersSection = (props) => {
                   return (
                     <Grid item xs={12} sm={4} md={3} key={name}>
                       <AnimationWrapper>
-                        <div onClick={() => {router.push(`/speakers/${name}`)}}>
+                        <div
+                          onClick={() => {
+                            router.push(`/speakers/${name}`);
+                          }}
+                        >
                           <ModifiedRoundedImage
                             Src={imageSrc}
                             Name={name}

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import Carousel from "components/carousel/Carousel";
-import ProductCard3 from "components/product-cards/ProductCard3";
-import useWindowSize from "hooks/useWindowSize";
+import Carousel from "src/components/carousel/Carousel";
+import ProductCard3 from "src/components/product-cards/ProductCard3";
+import useWindowSize from "src/hooks/useWindowSize";
 import React, { useEffect, useState } from "react"; // component props interface
 
 const CarouselSection = ({ productList }) => {

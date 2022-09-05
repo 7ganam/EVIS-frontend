@@ -1,18 +1,18 @@
 import { ArrowLeft, KeyboardArrowDown } from "@mui/icons-material";
 import ArrowRight from "@mui/icons-material/ArrowRight";
 import { Box, MenuItem, styled, Button } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import { FlexBox } from "components/flex-box";
-import NavLink from "components/nav-link/NavLink";
-import evNavbarNavigations from "data/ev-navbarNavigations";
-import useSettings from "hooks/useSettings";
+import BazarCard from "src/components/BazarCard";
+import { FlexBox } from "src/components/flex-box";
+import NavLink from "src/components/nav-link/NavLink";
+import evNavbarNavigations from "src/data/ev-navbarNavigations";
+import useSettings from "src/hooks/useSettings";
 import MegaMenu from "./MegaMenu";
 import MegaMenu2 from "./MegaMenu2"; // NavList props interface
 import Link from "next/link";
-import Image from "components/BazarImage";
+import Image from "src/components/BazarImage";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import MobileMenu from "components/navbar/MobileMenu";
+import MobileMenu from "src/components/navbar/MobileMenu";
 
 // const common css style
 const navLinkStyle = {

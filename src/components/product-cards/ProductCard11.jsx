@@ -1,6 +1,6 @@
 import { Box, styled } from "@mui/material";
-import LazyImage from "components/LazyImage";
-import { Paragraph } from "components/Typography";
+import LazyImage from "src/components/LazyImage";
+import { Paragraph } from "src/components/Typography";
 import React from "react"; // styled component
 
 const StyledParagraph = styled(Paragraph)(({ theme }) => ({

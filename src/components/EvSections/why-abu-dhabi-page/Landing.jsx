@@ -1,8 +1,9 @@
 import { Box, useTheme } from "@mui/material";
-import { H1 } from "components/EvComponents/Typography";
-import React from "react"; 
+import { H1 } from "src/components/EvComponents/Typography";
+import React from "react";
 
-const imgUrl = "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTYzMjEyNDI5MzYxNDgzZDg1YTM0ZjU=.jpeg";
+const imgUrl =
+  "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTYzMjEyNDI5MzYxNDgzZDg1YTM0ZjU=.jpeg";
 const Landing = () => {
   const theme = useTheme();
   return (

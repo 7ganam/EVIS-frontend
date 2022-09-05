@@ -1,8 +1,8 @@
 import { Container, Grid } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import BazarIconButton from "components/BazarIconButton";
-import appIcons from "components/icons";
-import { H4, Span } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import BazarIconButton from "src/components/BazarIconButton";
+import appIcons from "src/components/icons";
+import { H4, Span } from "src/components/Typography";
 import React from "react";
 
 const Section12 = ({ serviceList }) => {

@@ -1,5 +1,5 @@
 import { Box, styled } from "@mui/material";
-import navigations from "data/navigations";
+import navigations from "src/data/navigations";
 import CategoryMenuItem from "./CategoryMenuItem";
 import MegaMenu1 from "./mega-menu/MegaMenu1";
 import MegaMenu2 from "./mega-menu/MegaMenu2"; // styled component

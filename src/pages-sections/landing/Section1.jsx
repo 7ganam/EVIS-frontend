@@ -1,7 +1,7 @@
 import { Box, Button, Container } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import LazyImage from "components/LazyImage";
-import { H1, Paragraph, Span } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import LazyImage from "src/components/LazyImage";
+import { H1, Paragraph, Span } from "src/components/Typography";
 import Link from "next/link";
 import { Link as Scroll } from "react-scroll";
 import Typewriter from "typewriter-effect";

@@ -1,7 +1,7 @@
 import { KeyboardArrowDown } from "@mui/icons-material";
 import { Card, MenuItem, Select, styled, useTheme } from "@mui/material";
-import { FlexBetween } from "components/flex-box";
-import { H5 } from "components/Typography";
+import { FlexBetween } from "src/components/flex-box";
+import { H5 } from "src/components/Typography";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { analyticsChartOptions } from "./chartsOptions"; // apext chart instance

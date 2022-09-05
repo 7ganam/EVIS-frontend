@@ -1,7 +1,7 @@
 import React from "react";
-import BazarButton from "components/BazarButton";
+import BazarButton from "src/components/BazarButton";
 
-import { H3, H4, H5 } from "components/Typography";
+import { H3, H4, H5 } from "src/components/Typography";
 import { Grid, Box } from "@mui/material";
 
 const LandingText = () => {
@@ -16,10 +16,10 @@ const LandingText = () => {
         successful establishment of Masdar City, the first of its kind
         worldwide.
       </H4>
-      <Grid container  mt={5}>
+      <Grid container mt={5}>
         <Grid item md={6} sm={12} xs={12} sx={{ pt: 0 }}>
           <H3>Paid Conference</H3>
-          <H5 color="grey.700"  fontWeight={500}>
+          <H5 color="grey.700" fontWeight={500}>
             Each conference day kicks off with a notable keynote address
             followed by a roundtable panel of top industry leaders discussing
             the most important market disruptors of the last year and what they
@@ -29,7 +29,7 @@ const LandingText = () => {
         <Grid item md={6} sm={12} xs={12} sx={{ pt: 0 }}>
           <H3>Open Tech Sessions</H3>
 
-          <H5 color="grey.700"  fontWeight={500}>
+          <H5 color="grey.700" fontWeight={500}>
             Explore the latest technical content and developments in the
             industry which includes presentations, panel discussions and case
             studies, all in the show floor and free to attend for everyone.
@@ -39,7 +39,7 @@ const LandingText = () => {
       <Grid container spacing={6} justifyContent={"center"}>
         <Grid item sm={3} xs={12} mt={{ xs: "20px", md: "40px" }}>
           <BazarButton variant="contained" color="primary" fullWidth>
-            <H5 color = 'white'>Book Your Delegate Pass</H5>
+            <H5 color="white">Book Your Delegate Pass</H5>
           </BazarButton>
         </Grid>
       </Grid>

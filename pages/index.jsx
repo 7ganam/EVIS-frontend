@@ -1,19 +1,19 @@
 import { Container, Stack } from "@mui/material";
 
-import EvLayout from "components/layouts/EvLayout";
+import EvLayout from "src/components/layouts/EvLayout";
 
-import WhatToExpectSection from "components/EvSections/home-page-sections/WhatToExpectSection";
-import SubscribeSection from "pages-sections/ev-home/SubscribeSection";
-import EventSection from "pages-sections/ev-home/EventSection";
-import VideosSection from "pages-sections/ev-home/VideosSection";
-import PageHeader from "components/EvComponents/PageHeader";
-import TwoColumnBoxV2 from "components/EvComponents/TwoColumnBoxV2";
-import FactsSection from "components/EvSections/home-page-sections/FactsSection";
-import FeaturesSection from "components/EvSections/home-page-sections/FeaturesSection";
-import CountDownSection from "components/EvSections/home-page-sections/CountDownSection";
-import DownloadSection from "components/EvSections/home-page-sections/DownloadSection";
+import WhatToExpectSection from "src/components/EvSections/home-page-sections/WhatToExpectSection";
+import SubscribeSection from "src/pages-sections/ev-home/SubscribeSection";
+import EventSection from "src/pages-sections/ev-home/EventSection";
+import VideosSection from "src/pages-sections/ev-home/VideosSection";
+import PageHeader from "src/components/EvComponents/PageHeader";
+import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
+import FactsSection from "src/components/EvSections/home-page-sections/FactsSection";
+import FeaturesSection from "src/components/EvSections/home-page-sections/FeaturesSection";
+import CountDownSection from "src/components/EvSections/home-page-sections/CountDownSection";
+import DownloadSection from "src/components/EvSections/home-page-sections/DownloadSection";
 
-import api from "utils/api/grocery3-shop";
+import api from "src/utils/api/grocery3-shop";
 
 // ======================================================
 // ======================================================

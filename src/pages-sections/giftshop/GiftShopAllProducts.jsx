@@ -1,6 +1,6 @@
 import { Box, Button, Grid } from "@mui/material";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import ProductCard16 from "components/product-cards/ProductCard16";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import ProductCard16 from "src/components/product-cards/ProductCard16";
 import React from "react";
 
 const GiftShopAllProducts = ({ productsData }) => {

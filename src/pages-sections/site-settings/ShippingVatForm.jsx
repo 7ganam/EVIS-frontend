@@ -1,5 +1,5 @@
 import { Button, Grid, TextField } from "@mui/material";
-import { H4 } from "components/Typography";
+import { H4 } from "src/components/Typography";
 import { Formik } from "formik";
 import React, { useState } from "react";
 

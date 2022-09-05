@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Add, Close, Remove } from "@mui/icons-material";
 import { Button, Card, IconButton, styled } from "@mui/material";
-import Image from "components/BazarImage";
-import { FlexBox } from "components/flex-box";
-import { Span } from "components/Typography";
-import { useAppContext } from "contexts/AppContext";
+import Image from "src/components/BazarImage";
+import { FlexBox } from "src/components/flex-box";
+import { Span } from "src/components/Typography";
+import { useAppContext } from "src/contexts/AppContext";
 import Link from "next/link";
 import React, { useCallback } from "react"; // styled components
 

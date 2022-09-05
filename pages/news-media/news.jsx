@@ -1,19 +1,26 @@
 import React from "react";
-import EvLayout from "components/layouts/EvLayout";
+import EvLayout from "src/components/layouts/EvLayout";
 import { Container, Grid, Box } from "@mui/material";
-import api from "utils/api/grocery3-shop";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import Videos from "components/EvSections/new-page-sections/Videos";
-import ExhibitionFeatures from "components/EvSections/why-exhibit-sections/ExhibitionFeatures";
-import Press from "components/EvSections/new-page-sections/Press";
-import Press2 from "components/EvSections/new-page-sections/Press2";
-import Footer from "components/EvSections/why-exhibit-sections/Footer";
-import NewsCard from "components/EvComponents/NewsCard";
-import Divider from '@mui/material/Divider';
-import { styled } from '@mui/material/styles';
+import api from "src/utils/api/grocery3-shop";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import Videos from "src/components/EvSections/new-page-sections/Videos";
+import ExhibitionFeatures from "src/components/EvSections/why-exhibit-sections/ExhibitionFeatures";
+import Press from "src/components/EvSections/new-page-sections/Press";
+import Press2 from "src/components/EvSections/new-page-sections/Press2";
+import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
+import NewsCard from "src/components/EvComponents/NewsCard";
+import Divider from "@mui/material/Divider";
+import { styled } from "@mui/material/styles";
 import { useTheme } from "@emotion/react";
-import { H1, H2, H3, H4, H5, H6, Paragraph } from "components/EvComponents/Typography";
-
+import {
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  Paragraph,
+} from "src/components/EvComponents/Typography";
 
 // const Root = styled('div')(({ theme }) => ({
 //   width: '100%',
@@ -38,10 +45,11 @@ const featureList = [
     content:
       "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
     buttonText: "READ MORE",
-    buttonLink: "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
+    buttonLink:
+      "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
-    date: "2022-08-15"
+    date: "2022-08-15",
   },
   {
     img: "/assets/images/news-page/1.png",
@@ -49,17 +57,18 @@ const featureList = [
     buttonText: "READ MORE",
     buttonLink: "Time for the Middle East to go electric%3F How and why%3F",
     title: "Time for the Middle East to go electric? How and why?",
-    date: "2022-08-08"
+    date: "2022-08-08",
   },
   {
     img: "/assets/images/news-page/2.png",
     content:
       "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
     buttonText: "READ MORE",
-    buttonLink: "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
+    buttonLink:
+      "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
-    date: "2022-08-15"
+    date: "2022-08-15",
   },
   {
     img: "/assets/images/news-page/1.png",
@@ -67,17 +76,18 @@ const featureList = [
     buttonText: "READ MORE",
     buttonLink: "Time for the Middle East to go electric%3F How and why%3F",
     title: "Time for the Middle East to go electric? How and why?",
-    date: "2022-08-08"
+    date: "2022-08-08",
   },
   {
     img: "/assets/images/news-page/2.png",
     content:
       "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
     buttonText: "READ MORE",
-    buttonLink: "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
+    buttonLink:
+      "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
-    date: "2022-08-15"
+    date: "2022-08-15",
   },
   {
     img: "/assets/images/news-page/1.png",
@@ -85,17 +95,18 @@ const featureList = [
     buttonText: "READ MORE",
     buttonLink: "Time for the Middle East to go electric%3F How and why%3F",
     title: "Time for the Middle East to go electric? How and why?",
-    date: "2022-08-08"
+    date: "2022-08-08",
   },
   {
     img: "/assets/images/news-page/2.png",
     content:
       "EVIS features important discussions on how cities can be more sustainable by lowering transport emissions & build the right infrastructure & policy framework for a sustainable & just mobility sector.",
     buttonText: "READ MORE",
-    buttonLink: "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
+    buttonLink:
+      "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
     title:
       "EVIS Reveals Policy, Infrastructure and Behavior: Towards a mobility paradigm shift in MENA Cities",
-    date: "2022-08-15"
+    date: "2022-08-15",
   },
   {
     img: "/assets/images/news-page/1.png",
@@ -103,9 +114,8 @@ const featureList = [
     buttonText: "READ MORE",
     buttonLink: "Time for the Middle East to go electric%3F How and why%3F",
     title: "Time for the Middle East to go electric? How and why?",
-    date: "2022-08-08"
+    date: "2022-08-08",
   },
-
 ];
 
 const news = [
@@ -189,50 +199,115 @@ const EvHome = () => {
 
   return (
     <EvLayout showNavbar={true} title={"Home"}>
-
-      <Box sx={{ boxShadow: 5, width: "250px", margin: "20px auto 40px", padding: "1px 10px", borderRadius: "10px" }}>
+      <Box
+        sx={{
+          boxShadow: 5,
+          width: "250px",
+          margin: "20px auto 40px",
+          padding: "1px 10px",
+          borderRadius: "10px",
+        }}
+      >
         <SectionTitle>LATEST NEWS</SectionTitle>
-        <Box sx={{
-          display: "flex",
-          flexDirection: "row",
-          margin: "-13px 18px 17px",
-        }}>
-          <Divider sx={{ border: "1px solid #bbc4c7", margin: "0", width: "40%", height: "1px", }} />
-          <Divider sx={{ border: "1px solid #55b4d4", margin: "0", width: "20%", height: "3px", backgroundColor: theme.palette.secondary.main }} />
-          <Divider sx={{ border: "1px solid #bbc4c7", margin: "0", width: "40%", height: "2px", }} />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            margin: "-13px 18px 17px",
+          }}
+        >
+          <Divider
+            sx={{
+              border: "1px solid #bbc4c7",
+              margin: "0",
+              width: "40%",
+              height: "1px",
+            }}
+          />
+          <Divider
+            sx={{
+              border: "1px solid #55b4d4",
+              margin: "0",
+              width: "20%",
+              height: "3px",
+              backgroundColor: theme.palette.secondary.main,
+            }}
+          />
+          <Divider
+            sx={{
+              border: "1px solid #bbc4c7",
+              margin: "0",
+              width: "40%",
+              height: "2px",
+            }}
+          />
         </Box>
       </Box>
 
-      <Box sx={{
-        display: "flex", flexDirection: "column", margin: "50px", textAlign: "center",
-      }}>
-        <Box><H3>{featureList[0].date.slice(0, 4)}</H3></Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          margin: "50px",
+          textAlign: "center",
+        }}
+      >
+        <Box>
+          <H3>{featureList[0].date.slice(0, 4)}</H3>
+        </Box>
         <br />
-        <Box sx={{
-          display: "flex",
-          flexDirection: "row",
-          margin: "-13px 18px 17px",
-        }}>
-          <Divider sx={{ border: "1px solid #bbc4c7", margin: "0", width: "47%", height: "1px", }} />
-          <Divider sx={{ border: "1px solid #55b4d4", margin: "0", width: "6%", height: "2px", backgroundColor: theme.palette.secondary.main }} />
-          <Divider sx={{ border: "1px solid #bbc4c7", margin: "0", width: "47%", height: "2px", }} />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            margin: "-13px 18px 17px",
+          }}
+        >
+          <Divider
+            sx={{
+              border: "1px solid #bbc4c7",
+              margin: "0",
+              width: "47%",
+              height: "1px",
+            }}
+          />
+          <Divider
+            sx={{
+              border: "1px solid #55b4d4",
+              margin: "0",
+              width: "6%",
+              height: "2px",
+              backgroundColor: theme.palette.secondary.main,
+            }}
+          />
+          <Divider
+            sx={{
+              border: "1px solid #bbc4c7",
+              margin: "0",
+              width: "47%",
+              height: "2px",
+            }}
+          />
         </Box>
       </Box>
-
-
 
       <Container
         sx={{
           mb: 6,
         }}
       >
-        <Grid container spacing={5} >
+        <Grid container spacing={5}>
           {featureList.map(({ img, title, date, buttonLink }) => {
             return (
-              <Grid item xs={12} sm={4} md={3} key={title} >
-                <NewsCard srcImage={img} header={title} date={date} directory={buttonLink} />
+              <Grid item xs={12} sm={4} md={3} key={title}>
+                <NewsCard
+                  srcImage={img}
+                  header={title}
+                  date={date}
+                  directory={buttonLink}
+                />
               </Grid>
-            )
+            );
           })}
         </Grid>
 

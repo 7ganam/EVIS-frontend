@@ -1,11 +1,11 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box } from "@mui/material";
-import BazarButton from "components/BazarButton";
-import BazarRating from "components/BazarRating";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import HoverBox from "components/HoverBox";
-import LazyImage from "components/LazyImage";
-import { H4 } from "components/Typography";
+import BazarButton from "src/components/BazarButton";
+import BazarRating from "src/components/BazarRating";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
+import HoverBox from "src/components/HoverBox";
+import LazyImage from "src/components/LazyImage";
+import { H4 } from "src/components/Typography";
 import Link from "next/link";
 import React, { useState } from "react"; // ========================================================
 

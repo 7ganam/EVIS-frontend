@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import TwoColumnBoxV2 from "components/EvComponents/TwoColumnBoxV2";
+import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
 import { Container, Grid, Box, useTheme } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import { Paragraph } from "components/EvComponents/Typography";
-import RectangularInfoImage from "components/EvComponents/RectangularInfoImage";
-import ModifiedRoundedImage from "components/EvComponents/ModifiedRoundedImage";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import { Paragraph } from "src/components/EvComponents/Typography";
+import RectangularInfoImage from "src/components/EvComponents/RectangularInfoImage";
+import ModifiedRoundedImage from "src/components/EvComponents/ModifiedRoundedImage";
 import { Button } from "@mui/material";
 
 let imagesData = [

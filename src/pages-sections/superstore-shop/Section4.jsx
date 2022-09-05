@@ -1,10 +1,10 @@
 import { Box, Container, Grid } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import CategorySectionHeader from "components/CategorySectionHeader";
-import DottedStar from "components/icons/DottedStar";
-import RankBadge from "components/icons/RankBadge";
-import ProductCard4 from "components/product-cards/ProductCard4";
-import ProductCard5 from "components/product-cards/ProductCard5";
+import BazarCard from "src/components/BazarCard";
+import CategorySectionHeader from "src/components/CategorySectionHeader";
+import DottedStar from "src/components/icons/DottedStar";
+import RankBadge from "src/components/icons/RankBadge";
+import ProductCard4 from "src/components/product-cards/ProductCard4";
+import ProductCard5 from "src/components/product-cards/ProductCard5";
 import Link from "next/link";
 
 // ==========================================================

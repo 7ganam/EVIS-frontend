@@ -1,8 +1,8 @@
 import { Box, Container, styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import NavLink2 from "components/nav-link/NavLink2";
-import { H2, Paragraph } from "components/Typography";
-import BazarButton from "components/BazarButton";
+import BazarCard from "src/components/BazarCard";
+import NavLink2 from "src/components/nav-link/NavLink2";
+import { H2, Paragraph } from "src/components/Typography";
+import BazarButton from "src/components/BazarButton";
 
 // styled component
 const StyledCard = styled(BazarCard)(({ theme, feature }) => ({
@@ -46,7 +46,7 @@ const Event = ({ feature }) => {
           >
             {feature.text}
           </Paragraph>
-            <BazarButton
+          <BazarButton
             color="primary"
             disableElevation
             variant="contained"
@@ -57,8 +57,8 @@ const Event = ({ feature }) => {
               borderRadius: "8px",
               mr: "1rem",
             }}
-            >
-          <NavLink2 title={feature.buttonText} url="#" />
+          >
+            <NavLink2 title={feature.buttonText} url="#" />
           </BazarButton>
         </Box>
       </StyledCard>

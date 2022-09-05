@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import LazyImage from "components/LazyImage";
-import { H5 } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import LazyImage from "src/components/LazyImage";
+import { H5 } from "src/components/Typography";
 import Link from "next/link";
 import React from "react";
 const StyledCard = styled(BazarCard)(({ theme }) => ({

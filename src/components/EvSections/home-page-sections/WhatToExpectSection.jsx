@@ -1,9 +1,9 @@
 import { Box, Grid, useTheme, Card } from "@mui/material";
 
-import { SectionTitle } from "components/StyledTypography";
+import { SectionTitle } from "src/components/StyledTypography";
 import { Container } from "@mui/material";
 import React from "react";
-import Image from "components/BazarImage";
+import Image from "src/components/BazarImage";
 
 // ===============================================================
 const WhatToExpectSection = ({ serviceList }) => {

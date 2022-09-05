@@ -1,6 +1,6 @@
 import { Avatar, Box, useMediaQuery } from "@mui/material";
-import { FlexBetween } from "components/flex-box";
-import Scrollbar from "components/Scrollbar";
+import { FlexBetween } from "src/components/flex-box";
+import Scrollbar from "src/components/Scrollbar";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";

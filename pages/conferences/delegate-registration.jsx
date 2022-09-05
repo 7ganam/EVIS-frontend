@@ -1,11 +1,11 @@
 import { Container } from "@mui/material";
 
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import Section2 from "components/EvSections/DelegateRegistrationSections/Section2";
-import Section3 from "components/EvSections/DelegateRegistrationSections/Section3";
-import Section1Table from "components/EvSections/DelegateRegistrationSections/Section1Table";
-// import Table from "components/EvSections/conference-page-sections/Table";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import Section2 from "src/components/EvSections/DelegateRegistrationSections/Section2";
+import Section3 from "src/components/EvSections/DelegateRegistrationSections/Section3";
+import Section1Table from "src/components/EvSections/DelegateRegistrationSections/Section1Table";
+// import Table from "src/components/EvSections/conference-page-sections/Table";
 // ======================================================
 // ======================================================
 const generalPage = (props) => {

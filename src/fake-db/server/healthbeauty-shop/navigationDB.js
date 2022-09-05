@@ -1,4 +1,4 @@
-import Mock from "fake-db/mock";
+import Mock from "src/fake-db/mock";
 import { healthBeautyNavigation } from "./healthBeautyData";
 Mock.onGet("/api/healthbeauty/navigation").reply(() => {
   try {

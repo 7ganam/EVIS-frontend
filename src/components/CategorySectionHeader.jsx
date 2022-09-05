@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
-import useSettings from "hooks/useSettings";
+import useSettings from "src/hooks/useSettings";
 import Link from "next/link";
 import React from "react";
 import { FlexBetween, FlexBox } from "./flex-box";

@@ -1,12 +1,12 @@
 import { Container } from "@mui/material";
 
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import LandingText from "components/EvSections/agenda-page-sections/LandingText";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import TestimonialVideo from "components/EvComponents/TestimonialVideo";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import LandingText from "src/components/EvSections/agenda-page-sections/LandingText";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import TestimonialVideo from "src/components/EvComponents/TestimonialVideo";
 import { Box, Grid, styled, useTheme } from "@mui/material";
-import PageHeader from "components/EvComponents/PageHeader";
+import PageHeader from "src/components/EvComponents/PageHeader";
 
 // ======================================================
 // ======================================================

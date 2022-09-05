@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, Box } from "@mui/material";
-import { BlockTitle } from "components/EvComponents/StyledTypography";
-import { Paragraph } from "components/EvComponents/Typography";
-import Image from "components/BazarImage";
+import { BlockTitle } from "src/components/EvComponents/StyledTypography";
+import { Paragraph } from "src/components/EvComponents/Typography";
+import Image from "src/components/BazarImage";
 
 // const item = {
 //   img: "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/1200x0/MTYzMTc5NzcxODYxNDM0MWQ2M2VhYWQ=.jpeg",

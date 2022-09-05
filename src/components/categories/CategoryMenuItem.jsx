@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { Box, MenuItem, styled } from "@mui/material";
-import useSettings from "hooks/useSettings";
+import useSettings from "src/hooks/useSettings";
 import Link from "next/link";
 //styled component
 const Wrapper = styled(Box)(({ theme }) => ({

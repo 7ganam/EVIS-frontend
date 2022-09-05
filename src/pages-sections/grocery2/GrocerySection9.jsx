@@ -1,10 +1,10 @@
 import { Grid, styled } from "@mui/material";
-import BazarAvatar from "components/BazarAvatar";
-import BazarCard from "components/BazarCard";
-import Carousel from "components/carousel/Carousel";
-import { FlexBox } from "components/flex-box";
-import Quote from "components/icons/Quote";
-import { H5, Paragraph } from "components/Typography";
+import BazarAvatar from "src/components/BazarAvatar";
+import BazarCard from "src/components/BazarCard";
+import Carousel from "src/components/carousel/Carousel";
+import { FlexBox } from "src/components/flex-box";
+import Quote from "src/components/icons/Quote";
+import { H5, Paragraph } from "src/components/Typography";
 import React from "react"; // styled components
 
 const StyledBazarCard = styled(BazarCard)(({ theme }) => ({

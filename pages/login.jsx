@@ -1,5 +1,5 @@
-import { FlexRowCenter } from "components/flex-box";
-import Login from "pages-sections/sessions/Login";
+import { FlexRowCenter } from "src/components/flex-box";
+import Login from "src/pages-sections/sessions/Login";
 import React from "react";
 
 const LoginPage = () => {

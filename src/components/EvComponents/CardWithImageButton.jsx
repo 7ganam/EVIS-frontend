@@ -1,9 +1,9 @@
 import { Box } from "@mui/system";
 import React from "react";
-import Image from "components/BazarImage";
-import { Paragraph } from "components/EvComponents/Typography";
-import { H1, H2, H3, H4 } from "components/EvComponents/Typography";
-import { BlockTitle } from "components/EvComponents/StyledTypography";
+import Image from "src/components/BazarImage";
+import { Paragraph } from "src/components/EvComponents/Typography";
+import { H1, H2, H3, H4 } from "src/components/EvComponents/Typography";
+import { BlockTitle } from "src/components/EvComponents/StyledTypography";
 import { useTheme } from "@emotion/react";
 function CardWithImageButton({ text, img, buttonText, buttonURL, title }) {
   const theme = useTheme();

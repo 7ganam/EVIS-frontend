@@ -3,11 +3,11 @@ import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteIcon from "@mui/icons-material/FavoriteBorder";
 import PreviewIcon from "@mui/icons-material/RemoveRedEye";
 import { Box, Chip, Divider, styled, useTheme } from "@mui/material";
-import BazarRating from "components/BazarRating";
-import { FlexBetween, FlexRowCenter } from "components/flex-box";
-import LazyImage from "components/LazyImage";
-import { H3, Span } from "components/Typography";
-import { useAppContext } from "contexts/AppContext";
+import BazarRating from "src/components/BazarRating";
+import { FlexBetween, FlexRowCenter } from "src/components/flex-box";
+import LazyImage from "src/components/LazyImage";
+import { H3, Span } from "src/components/Typography";
+import { useAppContext } from "src/contexts/AppContext";
 import Link from "next/link";
 import React, { useCallback } from "react";
 const StyledCard = styled(Box)(({ theme }) => ({

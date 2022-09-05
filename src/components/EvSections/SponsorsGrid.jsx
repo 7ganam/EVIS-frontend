@@ -1,6 +1,5 @@
 import { Box, Button, Grid, styled, useTheme } from "@mui/material";
-import { H5 } from "components/EvComponents/Typography";
-
+import { H5 } from "src/components/EvComponents/Typography";
 
 const StyledImage = (props) => {
   return <img src={props.Src} width="170" style={{ margin: "10px" }} />;

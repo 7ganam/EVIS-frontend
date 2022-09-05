@@ -1,9 +1,9 @@
 import { CallOutlined, MailOutline } from "@mui/icons-material";
 import { Box, Container, styled } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import NavLink from "components/nav-link/NavLink";
-import { Span } from "components/Typography";
-import { layoutConstant } from "utils/constants";
+import { FlexBox } from "src/components/flex-box";
+import NavLink from "src/components/nav-link/NavLink";
+import { Span } from "src/components/Typography";
+import { layoutConstant } from "src/utils/constants";
 const TopbarWrapper = styled(Box)(({ theme }) => ({
   fontSize: 12,
   height: layoutConstant.topbarHeight,

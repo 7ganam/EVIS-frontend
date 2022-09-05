@@ -1,7 +1,7 @@
 import { Box, Grid, styled, useTheme } from "@mui/material";
-import { H1 } from "components/Typography";
+import { H1 } from "src/components/Typography";
 import React from "react";
-import YoutubeEmbed from "components/YoutubeEmbed";
+import YoutubeEmbed from "src/components/YoutubeEmbed";
 
 const TitleBox = styled(Box)(({ theme }) => ({
   textAlign: "center",

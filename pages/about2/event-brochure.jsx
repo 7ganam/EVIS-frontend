@@ -1,8 +1,8 @@
 import { Container } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import MainSection from "components/EvSections/event-brochure-sections/MainSection";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import MainSection from "src/components/EvSections/event-brochure-sections/MainSection";
 import { Box } from "@mui/system";
 // ======================================================
 // ======================================================

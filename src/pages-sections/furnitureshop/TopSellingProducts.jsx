@@ -1,8 +1,8 @@
 import { Box, useTheme } from "@mui/material";
-import Carousel from "components/carousel/Carousel";
-import ProductCard17 from "components/product-cards/ProductCard17";
-import { H1, Paragraph } from "components/Typography";
-import useWindowSize from "hooks/useWindowSize";
+import Carousel from "src/components/carousel/Carousel";
+import ProductCard17 from "src/components/product-cards/ProductCard17";
+import { H1, Paragraph } from "src/components/Typography";
+import useWindowSize from "src/hooks/useWindowSize";
 import React, { useEffect, useState } from "react"; // ===================================================================
 
 // ===================================================================

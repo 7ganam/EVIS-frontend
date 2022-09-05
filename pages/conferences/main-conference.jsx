@@ -1,12 +1,12 @@
 import { Container } from "@mui/material";
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import Landing from "components/EvSections/conference-page-sections/Landing";
-import LandingText from "components/EvSections/conference-page-sections/LandingText";
-import SummitThemes from "components/EvSections/conference-page-sections/SummitThemes";
-import Speakers from "components/EvSections/conference-page-sections/Speakers";
-import Table from "components/EvSections/conference-page-sections/Table";
-import Footer from "components/EvSections/why-exhibit-sections/Footer";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import Landing from "src/components/EvSections/conference-page-sections/Landing";
+import LandingText from "src/components/EvSections/conference-page-sections/LandingText";
+import SummitThemes from "src/components/EvSections/conference-page-sections/SummitThemes";
+import Speakers from "src/components/EvSections/conference-page-sections/Speakers";
+import Table from "src/components/EvSections/conference-page-sections/Table";
+import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
 
 // ======================================================
 // ======================================================
@@ -78,37 +78,44 @@ const themes = [
   {
     img: "/assets/images/conference-overview/1.png",
     title: "NEW ENERGY VEHICLES",
-    ps :[ "​​​​Passenger Battery Electric Vehicles (BEV)",
-    "Hydrogen Fuel Cell Vehicles (FCEV)",
-     "Two & Three Wheeler Electric Vehicles",
-    "Electric Planes"],
+    ps: [
+      "​​​​Passenger Battery Electric Vehicles (BEV)",
+      "Hydrogen Fuel Cell Vehicles (FCEV)",
+      "Two & Three Wheeler Electric Vehicles",
+      "Electric Planes",
+    ],
     direction: "left",
   },
   {
     img: "/assets/images/conference-overview/2.png",
     title: "ENERGY & INFRASTRUCTURE",
-    ps: [ "EV Charging Infrastructure",
-     "EV Charging Point Management Systems (CPMS)",
-     "Smart Charging and Cybersecurity",
-     "Grid Integration"],
+    ps: [
+      "EV Charging Infrastructure",
+      "EV Charging Point Management Systems (CPMS)",
+      "Smart Charging and Cybersecurity",
+      "Grid Integration",
+    ],
     direction: "right",
   },
   {
     img: "/assets/images/conference-overview/3.png",
     title: "POWERTRAIN",
-    ps:[ "​​​​Technology Developments",
-     "Motors and E-Drive Systems",
-     "Battery Management Systems (BMS)",
+    ps: [
+      "​​​​Technology Developments",
+      "Motors and E-Drive Systems",
+      "Battery Management Systems (BMS)",
     ],
     direction: "left",
   },
   {
     img: "/assets/images/conference-overview/4.png",
     title: "BATTERIES",
-    ps: ["​​​Battery Technology & Development",
-     "Second Life Batteries",
-     "Disposal & Recycling",
-     "Sustainable & Green Batteries"],
+    ps: [
+      "​​​Battery Technology & Development",
+      "Second Life Batteries",
+      "Disposal & Recycling",
+      "Sustainable & Green Batteries",
+    ],
     direction: "right",
   },
 ];

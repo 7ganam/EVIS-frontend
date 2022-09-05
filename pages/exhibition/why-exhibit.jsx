@@ -1,12 +1,12 @@
 import { Container } from "@mui/material";
-import WhyExhibit from "components/EvSections/why-exhibit-sections/WhyExhibit";
-import ExhibitionFeatures from "components/EvSections/why-exhibit-sections/ExhibitionFeatures";
-import ByExhibit from "components/EvSections/why-exhibit-sections/ByExhibit";
-import ExpectMeet from "components/EvSections/why-exhibit-sections/ExpectMeet";
-import Footer from "components/EvSections/why-exhibit-sections/Footer";
+import WhyExhibit from "src/components/EvSections/why-exhibit-sections/WhyExhibit";
+import ExhibitionFeatures from "src/components/EvSections/why-exhibit-sections/ExhibitionFeatures";
+import ByExhibit from "src/components/EvSections/why-exhibit-sections/ByExhibit";
+import ExpectMeet from "src/components/EvSections/why-exhibit-sections/ExpectMeet";
+import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
 
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
 // ======================================================
 // ======================================================
 

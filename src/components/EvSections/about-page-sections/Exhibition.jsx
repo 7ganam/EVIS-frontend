@@ -1,7 +1,7 @@
 import React from "react";
-import TwoColumnBoxV2 from "components/EvComponents/TwoColumnBoxV2";
+import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
 import { Box } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 const Exhibition = (props) => {
   const item = props.item;

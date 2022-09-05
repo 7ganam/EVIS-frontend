@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { useTheme } from "@mui/material";
-import { H4 } from "components/EvComponents/Typography";
+import { H4 } from "src/components/EvComponents/Typography";
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 import { styled } from "@mui/material/styles";
 const StyledButton1 = styled(Button)({

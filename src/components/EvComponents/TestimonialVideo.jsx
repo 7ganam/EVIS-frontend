@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, Box } from "@mui/material";
-import { H2, H3, H4, H5 } from "components/EvComponents/Typography";
+import { H2, H3, H4, H5 } from "src/components/EvComponents/Typography";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import YoutubeEmbed from "components/YoutubeEmbed";
+import YoutubeEmbed from "src/components/YoutubeEmbed";
 
 const TestimonialVideo = (props) => {
   const { text, name, title, company, videoId } = props.testimonial;

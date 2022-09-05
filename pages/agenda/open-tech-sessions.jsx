@@ -1,9 +1,9 @@
 import { Container } from "@mui/material";
 
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import LandingText from "components/EvSections/agenda-page-sections/LandingText";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import LandingText from "src/components/EvSections/agenda-page-sections/LandingText";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 // ======================================================
 // ======================================================

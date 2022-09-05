@@ -1,8 +1,8 @@
 import { Button, Grid, styled } from "@mui/material";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import { FlexRowCenter } from "components/flex-box";
-import ProductCard14 from "components/product-cards/ProductCard14";
-import { Paragraph } from "components/Typography";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import { FlexRowCenter } from "src/components/flex-box";
+import ProductCard14 from "src/components/product-cards/ProductCard14";
+import { Paragraph } from "src/components/Typography";
 import React from "react"; // styled component
 
 const SubTitle = styled(Paragraph)(({ theme }) => ({

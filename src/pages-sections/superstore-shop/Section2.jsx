@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-import Carousel from "components/carousel/Carousel";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import Light from "components/icons/Light";
-import ProductCard1 from "components/product-cards/ProductCard1";
-import useWindowSize from "hooks/useWindowSize";
+import Carousel from "src/components/carousel/Carousel";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import Light from "src/components/icons/Light";
+import ProductCard1 from "src/components/product-cards/ProductCard1";
+import useWindowSize from "src/hooks/useWindowSize";
 import { useEffect, useState } from "react"; // =============================================================
 
 // =============================================================

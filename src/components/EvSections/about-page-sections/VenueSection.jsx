@@ -1,8 +1,8 @@
 import React from "react";
-import TwoColumnBoxV2 from "components/EvComponents/TwoColumnBoxV2";
+import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
 import { Grid, Box, useTheme } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import { Paragraph } from "components/EvComponents/Typography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import { Paragraph } from "src/components/EvComponents/Typography";
 
 const VenueSection = (props) => {
   const theme = useTheme();

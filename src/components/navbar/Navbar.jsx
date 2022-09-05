@@ -6,15 +6,15 @@ import {
 } from "@mui/icons-material";
 import ArrowRight from "@mui/icons-material/ArrowRight";
 import { Box, Container, MenuItem, styled } from "@mui/material";
-import BazarButton from "components/BazarButton";
-import BazarCard from "components/BazarCard";
-import CategoryMenu from "components/categories/CategoryMenu";
-import { FlexBox } from "components/flex-box";
-import Category from "components/icons/Category";
-import NavLink from "components/nav-link/NavLink";
-import { Paragraph } from "components/Typography";
-import navbarNavigations from "data/navbarNavigations";
-import useSettings from "hooks/useSettings";
+import BazarButton from "src/components/BazarButton";
+import BazarCard from "src/components/BazarCard";
+import CategoryMenu from "src/components/categories/CategoryMenu";
+import { FlexBox } from "src/components/flex-box";
+import Category from "src/components/icons/Category";
+import NavLink from "src/components/nav-link/NavLink";
+import { Paragraph } from "src/components/Typography";
+import navbarNavigations from "src/data/navbarNavigations";
+import useSettings from "src/hooks/useSettings";
 import MegaMenu from "./MegaMenu";
 import MegaMenu2 from "./MegaMenu2"; // NavList props interface
 

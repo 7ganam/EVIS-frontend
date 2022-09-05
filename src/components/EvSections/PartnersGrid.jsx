@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { H5 } from "components/EvComponents/Typography";
-
+import { H5 } from "src/components/EvComponents/Typography";
 
 const StyledImage = (props) => {
   return <img src={props.Src} width="170" style={{ marginBottom: "10px" }} />;
@@ -40,7 +39,7 @@ const PartnersGrid = () => {
       <Typography variant="h5" component="h5">
         KNOWLEDGE PARTNERS
       </Typography>
-      <Grid container sx={{ textAlign: "center", placeItems: "center" }} mt = {3}>
+      <Grid container sx={{ textAlign: "center", placeItems: "center" }} mt={3}>
         {imagesData.map(({ source, text }) => {
           return (
             <Grid item xs={12} sm={4} md={2} key={source}>

@@ -1,10 +1,10 @@
 import React from "react";
-import {  Box, Container } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import { Paragraph , H2 } from "components/EvComponents/Typography";
+import { Box, Container } from "@mui/material";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import { Paragraph, H2 } from "src/components/EvComponents/Typography";
 
 const ShadedTextContainer = (props) => {
-    const { title , text } = props.data;
+  const { title, text } = props.data;
   return (
     <Box
       bgcolor="grey.300"
@@ -15,9 +15,7 @@ const ShadedTextContainer = (props) => {
     >
       <Container sx={{ md: 6, pt: 2 }}>
         <SectionTitle> {title} </SectionTitle>
-        <Paragraph>
-            {text}
-        </Paragraph>
+        <Paragraph>{text}</Paragraph>
       </Container>
     </Box>
   );

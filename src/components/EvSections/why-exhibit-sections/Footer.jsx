@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import ImgGrid from "components/EvSections/why-exhibit-sections/ImgGrid";
-import { BlockTitle } from "components/EvComponents/StyledTypography";
+import ImgGrid from "src/components/EvSections/why-exhibit-sections/ImgGrid";
+import { BlockTitle } from "src/components/EvComponents/StyledTypography";
 
 const Footer = (props) => {
   const footer1 = props.footer1;

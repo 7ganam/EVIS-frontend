@@ -1,8 +1,8 @@
 import { Card } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import BazarButton from "components/BazarButton";
-import BazarTextField from "components/BazarTextField";
-import { H3, Small } from "components/Typography";
+import BazarButton from "src/components/BazarButton";
+import BazarTextField from "src/components/BazarTextField";
+import { H3, Small } from "src/components/Typography";
 import { useFormik } from "formik";
 import React, { useCallback, useState } from "react";
 import * as yup from "yup";
