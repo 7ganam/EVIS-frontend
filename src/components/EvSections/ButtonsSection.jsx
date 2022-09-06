@@ -15,7 +15,7 @@ function ButtonsSection() {
       <Box sx={{ border: "1px solid black", p: "10px" }}>
         <Box sx={{ mt: "10px" }}>
           {" "}
-          <BigButton text={"This is a Big Button"} />
+          <BigButton content={"This is a Big Button"} />
         </Box>
         <Box sx={{ mt: "10px" }}>
           {" "}

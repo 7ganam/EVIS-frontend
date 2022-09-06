@@ -1,4 +1,4 @@
-import { Container, Stack } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 
 import EvLayout from "src/components/layouts/EvLayout";
 
@@ -214,8 +214,9 @@ const EvHome = (props) => {
       >
         <DownloadSection ButtonsData={buttonsData} />
         <FeaturesSection cardsData={FeaturesData}></FeaturesSection>
-        <CountDownSection></CountDownSection>
-
+        <Box sx={{ mt: "60px" }}>
+          <CountDownSection></CountDownSection>
+        </Box>
         <VideosSection videosList={videosList} />
         <SubscribeSection />
       </Container>

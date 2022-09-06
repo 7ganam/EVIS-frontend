@@ -93,7 +93,7 @@ const TopicsSection = () => {
                 }}
               >
                 {" "}
-                <BigButton text={"Register now!"} />
+                <BigButton content={"Register now!"} />
               </Box>
             </Box>
           </Container>

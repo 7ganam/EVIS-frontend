@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { Box } from "@mui/system";
+import { styled } from "@mui/material/styles";
+
+const CoutnerBox = styled("span")(({ theme }) => ({
+  border: "1px solid black",
+  borderRadius: "10px",
+  padding: "10px",
+  margin: "5px",
+  backgroundColor: "black",
+  color: "white",
+}));
 
 const targetTime = moment("2023-01-01");
 
@@ -20,15 +30,15 @@ export const CountdownMonths = (props) => {
     <>
       <Box {...props}>
         {/* <span>{timeBetween.years()}yr </span> */}
-        <span>{timeBetween.months()}m </span>
-        <span>{" : "}</span>
-        <span>{timeBetween.days()}d </span>
-        <span>{" : "}</span>
-        <span>{timeBetween.hours()}h </span>
-        <span>{" : "}</span>
-        <span>{timeBetween.minutes()}min </span>
-        <span>{" : "}</span>
-        <span>{timeBetween.seconds()}s </span>
+        <CoutnerBox>{timeBetween.months()}m</CoutnerBox>
+        <span>{":"}</span>
+        <CoutnerBox>{timeBetween.days()}d</CoutnerBox>
+        <span>{":"}</span>
+        <CoutnerBox>{timeBetween.hours()}h</CoutnerBox>
+        <span>{":"}</span>
+        <CoutnerBox>{timeBetween.minutes()}min</CoutnerBox>
+        <span>{":"}</span>
+        <CoutnerBox>{timeBetween.seconds()}s</CoutnerBox>
       </Box>
     </>
   );

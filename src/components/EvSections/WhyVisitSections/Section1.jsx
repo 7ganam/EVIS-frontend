@@ -51,7 +51,7 @@ const Section1 = () => {
               margin: "60px auto",
             }}
           >
-            <BigButton text={"REGISTER NOW"} />
+            <BigButton content={"REGISTER NOW"} />
           </Box>
         </Grid>
         <Grid item xs={12} sm={6} md={6}>

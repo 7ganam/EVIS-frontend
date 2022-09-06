@@ -9,20 +9,20 @@ const StyledButton1 = styled(Button)({
   minHeight: 0,
 });
 
-export function BigButton({ text }) {
+export function BigButton({ content }) {
   return (
     <Button
       variant="contained"
       sx={{
         textTransform: "uppercase",
-        height: "70px",
+        minHeight: "70px",
         fontSize: "25px",
         wordSpacing: "0px",
         px: "40px",
         fontWeight: "700",
       }}
     >
-      {text}
+      {content}
     </Button>
   );
 }

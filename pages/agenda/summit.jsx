@@ -6,13 +6,17 @@ import LandingText from "src/components/EvSections/agenda-page-sections/LandingT
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import PageHeader from "src/components/EvComponents/PageHeader";
 import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
-import { BlockTitle } from "src/components/EvComponents/StyledTypography";
 import TopicsSection from "src/components/EvSections/agenda-page-sections/TopicsSection";
-import { H1, H2, Paragraph } from "@/components/Typography";
-import { useTheme } from "@emotion/react";
-import { BigButton } from "src/components/EvComponents/Buttons";
-import { Card } from "@mui/material";
+import React from "react"; // styled component
+import CarouselSection from "@/components/EvSections/agenda-page-sections/CarouselSection";
+import { BigButton } from "@/components/EvComponents/Buttons";
+import DownloadingIcon from "@mui/icons-material/Downloading";
 
+const images = [
+  "/assets/images/summit-1.jpg",
+  "/assets/images/summit-2.jpg",
+  "/assets/images/summit-3.jpg",
+];
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -22,8 +26,9 @@ const pageHeaderData = {
   image: "/assets/images/summit.png",
 };
 const section = {
-  text: `The summit runs over 2 consecutive days and features more than 10-panel discussions, 10 keynote presentations, speeches, and thought leadership sessions from the top industry leaders and experts from across the e-mobility value chain from all over the world, including leading electric vehicle manufacturers (OEMs), charging point operations (CPOs), E-Mobility Services Providers (MSP), dealerships, banks, government entities, investment firms, insurance companies, research institutions, think tanks and more. 
-`,
+  text: `The EVIS conference will provide a world-class conference experience for our delegates by bringing together the brightest minds of the industry as speakers at a state-of-the-art venue to share their expertise. 
+
+Each conference day kicks off with a notable keynote address followed by a series of panel discussions with top industry leaders discussing the most important market disruptors of the last year and what they expect to see in the years to come.`,
 };
 const itemData1 = {
   img: "/assets/images/ev-home/speaker.jpg",
@@ -41,6 +46,7 @@ const GeneralPage = () => {
         buttonLink={pageHeaderData.buttonLink}
         image={pageHeaderData.image}
       ></PageHeader>
+
       <Container
         sx={{
           mb: 6,
@@ -49,11 +55,39 @@ const GeneralPage = () => {
         <Box sx={{ mt: "40px" }}>
           <LandingText id={"summit"} section={section} />
         </Box>
-        <Box sx={{ mt: "40px" }}>
-          <TwoColumnBoxV2 item={itemData1} imgPosition="left"></TwoColumnBoxV2>
+        <SectionTitle> Agenda </SectionTitle>
+        <Box sx={{ width: "80%", margin: "auto" }}>
+          <CarouselSection images={images}></CarouselSection>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center ",
+            mt: "40px",
+          }}
+        >
+          <a href="/summit-agenda.pdf" download>
+            <BigButton
+              content={
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: { md: "row", xs: "column" },
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "10px",
+                  }}
+                >
+                  <span>Download Agenda!</span>
+                  <DownloadingIcon
+                    sx={{ height: "40px", width: "40px", ml: 2 }}
+                  ></DownloadingIcon>
+                </Box>
+              }
+            />
+          </a>
         </Box>
       </Container>
-      <TopicsSection></TopicsSection>
     </EvLayout>
   );
 };

@@ -1,4 +1,5 @@
 import { Box, styled, Button } from "@mui/material";
+import { useTheme } from "@emotion/react";
 import React from "react";
 import { H1 } from "src/components/Typography";
 const StyledButton = styled(Button)(() => ({
@@ -7,15 +8,17 @@ const StyledButton = styled(Button)(() => ({
   fontSize: "16px",
 }));
 import Link from "next/link";
-
 function PageHeader({ text, buttonText, buttonLink, image }) {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
         width: "100%",
-        height: "350px",
+        height: "450px",
         background: `linear-gradient(rgba(0, 0, 0, 0.531), rgba(0, 0, 0, 0.381)),url(${image})`,
         backgroundSize: "cover",
+        borderBottom: `10px solid ${theme.palette.primary.main}`,
       }}
     >
       <Box
@@ -27,8 +30,8 @@ function PageHeader({ text, buttonText, buttonLink, image }) {
           color: "white",
         }}
       >
-        <Box sx={{ maxWidth: "530px", textAlign: "center" }}>
-          {text && <H1 sx={{ fontSize: "35px" }}>{text}</H1>}
+        <Box sx={{ maxWidth: "730px", textAlign: "center" }}>
+          {text && <H1 sx={{ fontSize: "55px" }}>{text}</H1>}
           {buttonText && buttonLink && (
             <Box ml={2.5} p={1.25}>
               <Link href={buttonLink}>
