@@ -1,23 +1,10 @@
-import { Container } from "@mui/material";
-
-import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
-import LandingText from "src/components/EvSections/agenda-page-sections/LandingText";
+import React from "react";
+import { Box, Container, Grid } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
-import TestimonialVideo from "src/components/EvComponents/TestimonialVideo";
-import { Box, Grid, styled, useTheme } from "@mui/material";
-import PageHeader from "src/components/EvComponents/PageHeader";
-import TestimonialCard from "src/components/EvComponents/TestimonialCard";
 
 
-// ======================================================
-// ======================================================
-const pageHeaderData = {
-  text: "Testimonials",
-  //   buttonText: "Save The Date",
-  //   buttonLink: "/",
-  image: "/assets/images/ev-home/carousel2.jpeg",
-};
+import TestimonialCard from "../EvComponents/TestimonialCard";
+
 const testimonial = [
   {
     text: "The objectives for CHARIN as a global association to be at EVIS is to understand the market and to get in contact with the political stakeholders in the region, and meet the industry representatives, and figure out what is the challenge and requirements of charging and how we can support that with our global knowledge footprint of technology. Our booth here at EVIS is the central contact point for joining new members, to answer any questions, and to broaden our portfolio of membership.",
@@ -69,21 +56,11 @@ const testimonial = [
   },
 ];
 
-const generalPage = () => {
+const TestimonialCardSection = () => {
   return (
-    <EvLayout showNavbar={true}>
-      <PageHeader
-        text={pageHeaderData.text}
-        buttonText={pageHeaderData.buttonText}
-        buttonLink={pageHeaderData.buttonLink}
-        image={pageHeaderData.image}
-      ></PageHeader>
-      <Container
-        sx={{
-          my: 6,
-        }}
-      >
-        
+    <Box>
+      <Container mb={6}>
+        <SectionTitle> Testimonial Cards</SectionTitle>
         <Grid container>
           {testimonial.map((entry, index) => {
             return (
@@ -93,22 +70,9 @@ const generalPage = () => {
             );
           })}
         </Grid>
-
       </Container>
-    </EvLayout>
+    </Box>
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
-  return {
-    props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
-    },
-  };
-}
-export default generalPage;
+export default TestimonialCardSection;

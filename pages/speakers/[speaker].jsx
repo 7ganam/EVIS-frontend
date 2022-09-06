@@ -1,4 +1,4 @@
-import EvLayout from "components/layouts/EvLayout";
+import EvLayout from "src/components/layouts/EvLayout";
 import { useRouter } from "next/router";
 import { Container, Grid, Box } from "@mui/material";
 import { H2, H4, H5 } from "src/components/EvComponents/Typography";
