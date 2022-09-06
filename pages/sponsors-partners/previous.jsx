@@ -1,6 +1,7 @@
 import React from "react";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { Grid, Container } from "@mui/material";
+import { H4 } from "src/components/EvComponents/Typography";
 
 import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/grocery3-shop";
@@ -14,66 +15,82 @@ const StyledImage = (props) => {
 const keyPartners = [
   {
     source: "/assets/images/organizers/Masdar.png",
+    text: "Partner",
   },
   {
     source: "/assets/images/organizers/ADNEC.png",
+    text: "Partner",
   },
   {
     source: "/assets/images/organizers/AbuDhabi.png",
+    text: "Partner",
   },
   {
     source: "/assets/images/organizers/Nirvana.png",
+    text: "Partner",
   },
 ];
 
 const sponsors = [
   {
     source: "/assets/images/organizers/Audi.png",
+    text: "Sponsor",
   },
   {
     source: "/assets/images/organizers/BritishVolt.png",
+    text: "Sponsor",
   },
   {
     source: "/assets/images/associations/Totalenergies.png",
+    text: "Sponsor",
   },
 ];
 
 const internationalMediaPartners = [
   {
     source: "/assets/images/associations/Skynews.png",
+    text: "Partner",
   },
 ];
 
 const knowledgePartners = [
   {
     source: "/assets/images/partners/CEBC.png",
+    text: "Partner",
   },
   {
     source: "/assets/images/partners/CHARIN.png",
+    text: "Partner",
   },
   {
     source: "/assets/images/partners/GEEE.png",
+    text: "Partner",
   },
   {
     source: "/assets/images/partners/ISF.png",
+    text: "Partner",
   },
   {
     source: "/assets/images/partners/AVERE.png",
+    text: "Partner",
   },
 ];
 
 const researchPartners = [
   {
     source: "/assets/images/partners/Oxford.png",
+    text : "Partner"
   },
 ];
 
 const mediaPartners = [
   {
     source: "/assets/images/associations/Nationshield.png",
+    text: "Partner",
   },
   {
     source: "/assets/images/associations/Petrofinder.png",
+    text: "Partner",
   },
 ];
 
@@ -100,9 +117,10 @@ const generalPage = (props) => {
             marginTop: "40px",
           }}
         >
-          {keyPartners.map(({ source }) => {
+          {keyPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={6} md={3} key={source}>
+                <H4>{text}</H4>
                 <StyledImage Src={source} />
               </Grid>
             );
@@ -119,9 +137,11 @@ const generalPage = (props) => {
             marginTop: "40px",
           }}
         >
-          {sponsors.map(({ source }) => {
+          {sponsors.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={4} key={source}>
+                <H4>{text}</H4>
+
                 <StyledImage Src={source} />
               </Grid>
             );
@@ -133,9 +153,11 @@ const generalPage = (props) => {
           container
           sx={{ textAlign: "center", placeItems: "center", marginTop: "40px" }}
         >
-          {internationalMediaPartners.map(({ source }) => {
+          {internationalMediaPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} key={source}>
+                <H4>{text}</H4>
+
                 <StyledImage Src={source} />
               </Grid>
             );
@@ -153,9 +175,11 @@ const generalPage = (props) => {
             marginTop: "40px",
           }}
         >
-          {knowledgePartners.map(({ source }) => {
+          {knowledgePartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={4} md={2} key={source}>
+                <H4>{text}</H4>
+
                 <StyledImage Src={source} />
               </Grid>
             );
@@ -167,9 +191,11 @@ const generalPage = (props) => {
           container
           sx={{ textAlign: "center", placeItems: "center", marginTop: "40px" }}
         >
-          {researchPartners.map(({ source }) => {
+          {researchPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} key={source}>
+                <H4>{text}</H4>
+
                 <StyledImage Src={source} />
               </Grid>
             );
@@ -186,9 +212,10 @@ const generalPage = (props) => {
             marginTop: "40px",
           }}
         >
-          {mediaPartners.map(({ source }) => {
+          {mediaPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={6} key={source}>
+                <H4>{text}</H4>
                 <StyledImage Src={source} />
               </Grid>
             );
