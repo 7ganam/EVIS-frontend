@@ -16,11 +16,7 @@ const SpeakersSection = (props) => {
   return (
     <Box id={"advisory-board"} sx={{ scrollMarginTop: "250px" }}>
       <SectionTitle>{title}</SectionTitle>
-      <Box>
-        {/* <Paragraph>
-          <Box sx={{ whiteSpace: "pre-wrap" }}>{item?.text}</Box>
-        </Paragraph> */}
-      </Box>
+      <Box></Box>
       <Container
         maxWidth="false"
         sx={{
