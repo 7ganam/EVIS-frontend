@@ -1,4 +1,4 @@
-import { Container, Box } from "@mui/material";
+import { Container } from "@mui/material";
 import CardsSection from "src/components/EvSections/CardsSection";
 import FontsSections from "src/components/EvSections/FontsSections";
 import TextSection from "src/components/EvSections/TextSection";

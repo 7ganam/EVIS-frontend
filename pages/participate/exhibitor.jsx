@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
+// import api from "src/utils/api/grocery3-shop";
 import MainSection from "src/components/EvSections/book-your-stand-sections/MainSection";
 import { Box } from "@mui/system";
 // ======================================================
@@ -34,7 +34,7 @@ const sponsorsData = [
   },
 ];
 
-const generalPage = (props) => {
+const generalPage = () => {
   // const { offerProducts, allProducts, topSailedProducts } = props;
 
   return (
