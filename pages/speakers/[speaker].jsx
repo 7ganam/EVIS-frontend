@@ -1,3 +1,4 @@
+import EvLayout from "components/layouts/EvLayout";
 import { useRouter } from "next/router";
 import { Container, Grid, Box } from "@mui/material";
 import { H2, H4, H5 } from "components/EvComponents/Typography";
@@ -485,8 +486,9 @@ const SpeakerPage = () => {
   // console.log(nameData);
 
   return (
-    <Box py={15}>
-      <Container mb={6}>
+    <EvLayout showNavbar={true} title = {nameData.name}>
+    <Box pt={5}>
+      <Container>
         <Grid
           container
           sx={{
@@ -588,6 +590,7 @@ const SpeakerPage = () => {
         </Grid>
       </Container>
     </Box>
+    </EvLayout>
   );
 };
 
