@@ -1,4 +1,4 @@
-import EvLayout from "components/layouts/EvLayout";
+import EvLayout from "src/components/layouts/EvLayout";
 import { useRouter } from "next/router";
 import { Container, Grid, Box } from "@mui/material";
 import { H2, H4, H5 } from "src/components/EvComponents/Typography";
@@ -486,110 +486,110 @@ const SpeakerPage = () => {
   // console.log(nameData);
 
   return (
-    <EvLayout showNavbar={true} title = {nameData.name}>
-    <Box pt={5}>
-      <Container>
-        <Grid
-          container
-          sx={{
-            boxShadow: "1px 1px 5px 1px gray",
-          }}
-        >
+    <EvLayout showNavbar={true} title={nameData.name}>
+      <Box pt={5}>
+        <Container>
           <Grid
-            item
-            xs={12}
-            sm={6}
-            md={2}
+            container
             sx={{
-              backgroundColor: "#f0f0f0",
-              borderRight: " solid 1px #d9d9d9",
+              boxShadow: "1px 1px 5px 1px gray",
             }}
           >
-            <Box
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={2}
               sx={{
-                my: "1em",
-                mx: "1em",
+                backgroundColor: "#f0f0f0",
+                borderRight: " solid 1px #d9d9d9",
               }}
             >
-              <Image
+              <Box
                 sx={{
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                  // padding: "30px 60px"
-                  //   width: "120px",
-                  //   height: "120px",
-                  margin: "auto",
+                  my: "1em",
+                  mx: "1em",
                 }}
-                alt="rounded image"
-                src={nameData.imageSrc}
-                width={"100%"}
-                height={"100%"}
-              />
-            </Box>
+              >
+                <Image
+                  sx={{
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    // padding: "30px 60px"
+                    //   width: "120px",
+                    //   height: "120px",
+                    margin: "auto",
+                  }}
+                  alt="rounded image"
+                  src={nameData.imageSrc}
+                  width={"100%"}
+                  height={"100%"}
+                />
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={10}
+              sx={{
+                backgroundColor: "#f0f0f0",
+              }}
+            >
+              <Box ml={3} my={3} sx={{}}>
+                <H2>{nameData.name}</H2>
+                <H4
+                  sx={{
+                    color: "gray",
+                  }}
+                >
+                  {nameData.title}
+                </H4>
+                <H4
+                  sx={{
+                    color: "gray",
+                  }}
+                >
+                  {nameData.company}
+                </H4>
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={12}
+              sx={{
+                borderTop: "solid 1px #d9d9d9",
+              }}
+            >
+              <Box mx={2} my={2}>
+                <H2
+                  sx={{
+                    color: "#4d4d4d",
+                  }}
+                >
+                  About
+                </H2>
+                <H5
+                  sx={{
+                    color: "#4d4d4d",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet. Quo veritatis unde aut sunt
+                  blanditiis sed veritatis tempore non reiciendis explicabo est
+                  tenetur consequuntur rem assumenda porro ea incidunt
+                  consectetur. Et rerum voluptates et tempora impedit qui nulla
+                  quod. Et quae quod aut minus nulla non corrupti voluptas! At
+                  earum nihil ut dolorem omnis et aliquid excepturi a fuga nulla
+                  aut sint iure et doloremque quo veniam consequatur. Est
+                  voluptatem voluptas et debitis omnis et blanditiis alias aut
+                  distinctio quia.
+                </H5>
+              </Box>
+            </Grid>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={10}
-            sx={{
-              backgroundColor: "#f0f0f0",
-            }}
-          >
-            <Box ml={3} my={3} sx={{}}>
-              <H2>{nameData.name}</H2>
-              <H4
-                sx={{
-                  color: "gray",
-                }}
-              >
-                {nameData.title}
-              </H4>
-              <H4
-                sx={{
-                  color: "gray",
-                }}
-              >
-                {nameData.company}
-              </H4>
-            </Box>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={12}
-            sx={{
-              borderTop: "solid 1px #d9d9d9",
-            }}
-          >
-            <Box mx={2} my={2}>
-              <H2
-                sx={{
-                  color: "#4d4d4d",
-                }}
-              >
-                About
-              </H2>
-              <H5
-                sx={{
-                  color: "#4d4d4d",
-                }}
-              >
-                Lorem ipsum dolor sit amet. Quo veritatis unde aut sunt
-                blanditiis sed veritatis tempore non reiciendis explicabo est
-                tenetur consequuntur rem assumenda porro ea incidunt
-                consectetur. Et rerum voluptates et tempora impedit qui nulla
-                quod. Et quae quod aut minus nulla non corrupti voluptas! At
-                earum nihil ut dolorem omnis et aliquid excepturi a fuga nulla
-                aut sint iure et doloremque quo veniam consequatur. Est
-                voluptatem voluptas et debitis omnis et blanditiis alias aut
-                distinctio quia.
-              </H5>
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
     </EvLayout>
   );
 };

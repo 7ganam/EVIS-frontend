@@ -1,5 +1,5 @@
 import React from "react";
-import ShadedTextContainer from "components/EvComponents/ShadedTextContainer";
+import ShadedTextContainer from "src/components/EvComponents/ShadedTextContainer";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { Box } from "@mui/material";
 
