@@ -472,7 +472,6 @@ const AdvisoryBoardSection = (props) => {
   const item = props.item;
   return (
     <Box id={"advisory-board"} sx={{ scrollMarginTop: "250px" }}>
-      <SectionTitle>Advisory Board</SectionTitle>
       <Box>
         {/* <Paragraph>
           <Box sx={{ whiteSpace: "pre-wrap" }}>{item?.text}</Box>
@@ -481,12 +480,16 @@ const AdvisoryBoardSection = (props) => {
       <Container
         maxWidth="false"
         sx={{
+          mt: "80px",
+          pt: "10px",
           backgroundColor: theme.palette.primary.main,
-          margin: "0",
           textAlign: "center",
         }}
       >
-        <Box padding="80px">
+        <Box sx={{ mt: "30px" }}>
+          <SectionTitle>Advisory Board</SectionTitle>
+        </Box>
+        <Box pb="80px">
           <Container>
             <Grid
               container

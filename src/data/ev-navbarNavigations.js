@@ -1,14 +1,8 @@
 const evNavbarNavigations = [
-  // {
-  //   title: "HOME ",
-  //   megaMenu: false,
-  //   megaMenuWithSub: false,
-  //   url: "/",
-  // },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "ABOUT",
+    title: "About",
 
     child: [
       {
@@ -39,11 +33,11 @@ const evNavbarNavigations = [
     title: "Agenda",
     child: [
       {
-        title: "Summit",
+        title: "Summit Agenda",
         url: "/agenda/summit",
       },
       {
-        title: "Open Tech Sessions",
+        title: "Open Tech Sessions Agenda",
         url: "/agenda/open-tech-sessions",
       },
     ],

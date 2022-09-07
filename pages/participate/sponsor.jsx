@@ -46,7 +46,6 @@ const generalPage = () => {
         }}
       >
         <Box sx={{ mb: "20px" }}>
-          {" "}
           <SectionTitle>Enquire About Sponsorship Opportunities</SectionTitle>
         </Box>
         <MainSection sponsors={sponsorsData} />

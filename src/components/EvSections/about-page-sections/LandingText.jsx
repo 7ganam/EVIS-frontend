@@ -6,8 +6,10 @@ import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 const LandingText = (props) => {
   const { p1, p2, p3 } = props.section;
   return (
-    <Box sx={{ mt: "10px" }}>
-      <SectionTitle>About EVIS</SectionTitle>
+    <Box sx={{ mt: "35px" }}>
+      <Box sx={{ mb: "15px" }}>
+        <SectionTitle>About EVIS</SectionTitle>
+      </Box>
       <Grid container spacing={3} sx={{ pt: 1 }}>
         <Grid item xs={12} sm={12} md={12}>
           <Box>

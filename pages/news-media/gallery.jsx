@@ -195,51 +195,9 @@ const EvHome = () => {
 
   return (
     <EvLayout showNavbar={true} title={"Home"}>
-      <Box
-        sx={{
-          boxShadow: 5,
-          width: "250px",
-          margin: "20px auto 40px",
-          padding: "1px 10px",
-          borderRadius: "10px",
-        }}
-      >
+      <Box mt={"30px"}>
         <SectionTitle>Gallery</SectionTitle>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            margin: "-13px 18px 17px",
-          }}
-        >
-          <Divider
-            sx={{
-              border: "1px solid #bbc4c7",
-              margin: "0",
-              width: "40%",
-              height: "1px",
-            }}
-          />
-          <Divider
-            sx={{
-              border: "1px solid #55b4d4",
-              margin: "0",
-              width: "20%",
-              height: "3px",
-              backgroundColor: theme.palette.secondary.main,
-            }}
-          />
-          <Divider
-            sx={{
-              border: "1px solid #bbc4c7",
-              margin: "0",
-              width: "40%",
-              height: "2px",
-            }}
-          />
-        </Box>
       </Box>
-
       <Box
         sx={{
           display: "flex",

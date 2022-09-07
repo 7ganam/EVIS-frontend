@@ -46,7 +46,9 @@ const generalPage = () => {
       >
         <Box sx={{ mb: "20px" }}>
           {" "}
-          <SectionTitle>Attend as Delegate</SectionTitle>
+          <Box mt={"30px"}>
+            <SectionTitle>Attend as Delegate</SectionTitle>
+          </Box>
         </Box>
         <MainSection sponsors={sponsorsData} />
       </Container>

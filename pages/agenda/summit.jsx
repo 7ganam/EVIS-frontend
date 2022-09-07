@@ -5,8 +5,6 @@ import api from "src/utils/api/grocery3-shop";
 import LandingText from "src/components/EvSections/agenda-page-sections/LandingText";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import PageHeader from "src/components/EvComponents/PageHeader";
-import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
-import TopicsSection from "src/components/EvSections/agenda-page-sections/TopicsSection";
 import React from "react"; // styled component
 import CarouselSection from "@/components/EvSections/agenda-page-sections/CarouselSection";
 import { BigButton } from "@/components/EvComponents/Buttons";
@@ -30,13 +28,7 @@ const section = {
 
 Each conference day kicks off with a notable keynote address followed by a series of panel discussions with top industry leaders discussing the most important market disruptors of the last year and what they expect to see in the years to come.`,
 };
-const itemData1 = {
-  img: "/assets/images/ev-home/speaker.jpg",
-  title: "",
-  ps: [
-    "The summit runs over 2 consecutive days and features more than 10-panel discussions, 10 keynote presentations, speeches, and thought leadership sessions from the top industry leaders and experts from across the e-mobility value chain from all over the world, including leading electric vehicle manufacturers (OEMs), charging point operations (CPOs), E-Mobility Services Providers (MSP), dealerships, banks, government entities, investment firms, insurance companies, research institutions, think tanks and more.EVIS 2022 features speakers from leading organizations such as BMW Group, ABB, Siemens, Audi, Renault, Transport for London, CharIN, The Economist, TotalEnergies, Uber, BP Ventures, Stellantis, Hager Group, Bridgestone, BritishVolt, and more. ",
-  ],
-};
+
 const GeneralPage = () => {
   return (
     <EvLayout showNavbar={true}>
@@ -55,7 +47,9 @@ const GeneralPage = () => {
         <Box sx={{ mt: "40px" }}>
           <LandingText id={"summit"} section={section} />
         </Box>
-        <SectionTitle> Agenda </SectionTitle>
+        <Box sx={{ mt: "40px", mb: "20px" }}>
+          <SectionTitle> Agenda </SectionTitle>
+        </Box>
         <Box sx={{ width: "80%", margin: "auto" }}>
           <CarouselSection images={images}></CarouselSection>
         </Box>

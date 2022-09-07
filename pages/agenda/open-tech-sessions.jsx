@@ -45,7 +45,9 @@ const GeneralPage = () => {
         <Box sx={{ mt: "40px" }}>
           <LandingText id={"summit"} section={section} />
         </Box>
-        <SectionTitle> Agenda </SectionTitle>
+        <Box sx={{ mt: "40px", mb: "20px" }}>
+          <SectionTitle> Agenda </SectionTitle>
+        </Box>
         <Box sx={{ width: "80%", margin: "auto" }}>
           <CarouselSection images={images}></CarouselSection>
         </Box>

@@ -8,7 +8,10 @@ function CardsSection({ cardsData }) {
 
   return (
     <Box sx={{}}>
-      <SectionTitle>Event Features</SectionTitle>
+      <Box sx={{ mb: "30px" }}>
+        {" "}
+        <SectionTitle>Event Features</SectionTitle>
+      </Box>
       <Grid container columns={12} spacing={3}>
         {cardsData.map((card, ind) => {
           return (

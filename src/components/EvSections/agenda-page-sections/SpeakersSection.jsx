@@ -15,7 +15,9 @@ const SpeakersSection = (props) => {
   const title = props.title;
   return (
     <Box id={"advisory-board"} sx={{ scrollMarginTop: "250px" }}>
-      <SectionTitle>{title}</SectionTitle>
+      <Box sx={{ mt: "40px", mb: "20px" }}>
+        <SectionTitle> {title} </SectionTitle>
+      </Box>
       <Box></Box>
       <Container
         maxWidth="false"
@@ -41,8 +43,9 @@ const SpeakersSection = (props) => {
               {data?.slice(0, 8).map(({ imageSrc, name, title, company }) => {
                 return (
                   <Grid item xs={12} sm={4} md={3} key={name}>
-                    <AnimationWrapper>
-                      <div
+                    <AnimationWrapper style={{ height: "100%" }}>
+                      <Box
+                        sx={{ height: "100%" }}
                         onClick={() => {
                           router.push(`/speakers/${name}`);
                         }}
@@ -54,7 +57,7 @@ const SpeakersSection = (props) => {
                           Company={company}
                           bgColor={theme.palette.paste.contrastText}
                         />
-                      </div>
+                      </Box>
                     </AnimationWrapper>
                   </Grid>
                 );

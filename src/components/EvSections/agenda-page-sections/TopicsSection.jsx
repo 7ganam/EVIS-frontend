@@ -1,6 +1,9 @@
 import React from "react";
 import ShadedTextContainer from "src/components/EvComponents/ShadedTextContainer";
-import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import {
+  SectionTitle,
+  SectionTitle2,
+} from "src/components/EvComponents/StyledTypography";
 import { Box, Grid, Card } from "@mui/material";
 import { Container } from "@mui/material";
 import { Paragraph, H2 } from "src/components/EvComponents/Typography";
@@ -43,9 +46,11 @@ const TopicsSection = () => {
         }}
       >
         <Container sx={{ md: 6, pt: 2 }}>
-          <SectionTitle>
-            {"EVIS 2023 summit will cover many topics such as: "}{" "}
-          </SectionTitle>
+          <Box sx={{ mb: "40px", mt: "20px" }}>
+            <SectionTitle2>
+              {"EVIS 2023 summit will cover many topics such as: "}
+            </SectionTitle2>
+          </Box>
           <Grid container spacing={"40px"} justifyContent="center">
             {topics.map((topic, index) => (
               <Grid key={index} item xs={12} md={4} spacing={"10px"}>

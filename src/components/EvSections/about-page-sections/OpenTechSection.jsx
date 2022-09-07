@@ -10,7 +10,10 @@ const OpenTechSection = (props) => {
   const item = props.item;
   return (
     <Box id={"open-tech"} sx={{ scrollMarginTop: "250px" }}>
-      <SectionTitle>Open Tech Sessions</SectionTitle>
+      <Box sx={{ mt: "40px", mb: "20px" }}>
+        {" "}
+        <SectionTitle>Open Tech Sessions</SectionTitle>
+      </Box>
       <Box>
         <Paragraph>
           <Box sx={{ whiteSpace: "pre-wrap" }}>{item.text}</Box>

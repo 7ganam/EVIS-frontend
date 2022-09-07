@@ -9,7 +9,10 @@ const VenueSection = (props) => {
   const data = props.data;
   return (
     <Box id={"venue"} sx={{ scrollMarginTop: "250px" }}>
-      <SectionTitle>Venue</SectionTitle>
+      <Box sx={{ mt: "30px", mb: "20px" }}>
+        {" "}
+        <SectionTitle>Venue</SectionTitle>
+      </Box>
       <Box>
         <Paragraph>
           <Box sx={{ whiteSpace: "pre-wrap" }}>{data.text}</Box>
