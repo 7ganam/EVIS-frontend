@@ -8,8 +8,7 @@ function CardsSection({ cardsData }) {
 
   return (
     <Box sx={{}}>
-      <Box sx={{ mb: "30px" }}>
-        {" "}
+      <Box sx={{ mb: "20px", mt: "30px" }}>
         <SectionTitle>Event Features</SectionTitle>
       </Box>
       <Grid container columns={12} spacing={3}>

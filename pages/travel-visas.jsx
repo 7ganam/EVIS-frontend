@@ -49,7 +49,7 @@ const generalPage = (props) => {
           mb: 6,
         }}
       >
-        <Box sx={{ mb: "20px" }}>
+        <Box sx={{ mb: "20px", mt: "30px" }}>
           {" "}
           <SectionTitle>Travel & Visas</SectionTitle>
         </Box>

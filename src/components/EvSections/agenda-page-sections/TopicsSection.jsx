@@ -9,12 +9,16 @@ import { Container } from "@mui/material";
 import { Paragraph, H2 } from "src/components/EvComponents/Typography";
 import { useTheme } from "@emotion/react";
 import { BigButton } from "src/components/EvComponents/Buttons";
+import { styled } from "@mui/material/styles";
 
-const data = {
-  title: "EVIS 2023 summit will cover many topics such as: ",
-  text: "The motto for the Summit is “Smart Vehicle Mobility” with four themes (concentrations) that are in perfect synergy with Abu Dhabi, which is witnessing an overwhelming energy greening and sustainability awareness trends. Abu Dhabi has proven to be one of the fastest growing smart cities worldwide adopting the latest green technologies after the successful establishment of Masdar City, the first of its kind worldwide.",
-};
-
+const HoverCard = styled(({ hoverEffect, children, ...rest }) => (
+  <Card {...rest}>{children}</Card>
+))(({ theme, hoverEffect }) => ({
+  "&:hover": {
+    boxShadow: hoverEffect ? theme.shadows[2] : "",
+    color: theme.palette.primary.main,
+  },
+}));
 const topics = [
   "Policies to accelerate the transition to zero-emission vehicles (ZEV).",
   "Technology development and challenges in the vehicle powertrain and alternative fuels. ",
@@ -51,23 +55,24 @@ const TopicsSection = () => {
               {"EVIS 2023 summit will cover many topics such as: "}
             </SectionTitle2>
           </Box>
-          <Grid container spacing={"40px"} justifyContent="center">
+          <Grid container spacing={"20px"} justifyContent="center">
             {topics.map((topic, index) => (
-              <Grid key={index} item xs={12} md={4} spacing={"10px"}>
-                <Card
+              <Grid key={index} item xs={12} md={12} spacing={"5px"}>
+                <HoverCard
+                  hoverEffect
                   sx={{
                     width: "100%",
                     p: "20px",
-                    fontSize: "18px",
                     height: "100%",
                     textAlign: "center",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    fontSize: "25px",
                   }}
                 >
                   {topic}
-                </Card>
+                </HoverCard>
               </Grid>
             ))}
           </Grid>

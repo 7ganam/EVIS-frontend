@@ -1,7 +1,5 @@
-import { Box, Container, Stack } from "@mui/material";
-
+import { Box, Container, Stack, styled, Button } from "@mui/material";
 import EvLayout from "src/components/layouts/EvLayout";
-
 import WhatToExpectSection from "src/components/EvSections/home-page-sections/WhatToExpectSection";
 import SubscribeSection from "src/pages-sections/ev-home/SubscribeSection";
 import EventSection from "src/pages-sections/ev-home/EventSection";
@@ -12,59 +10,25 @@ import FactsSection from "src/components/EvSections/home-page-sections/FactsSect
 import FeaturesSection from "src/components/EvSections/home-page-sections/FeaturesSection";
 import CountDownSection from "src/components/EvSections/home-page-sections/CountDownSection";
 import DownloadSection from "src/components/EvSections/home-page-sections/DownloadSection";
+import { H1 } from "src/components/Typography";
 
 import api from "src/utils/api/grocery3-shop";
-
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  fontWeight: 400,
+  fontSize: "16px",
+}));
+import Link from "next/link";
 // ======================================================
 // ======================================================
 
 const pageHeaderData = {
-  text: "MENA Region largest electric vehicle tech conference",
+  text: "The MENA’s First and Largest EV Tech Conference and Exhibition",
   buttonText: "Save The Date",
   buttonLink: "/",
   image: "/assets/images/ev-home/carousel2.jpeg",
 };
 const EvHome = (props) => {
-  const { offerProducts, allProducts, topSailedProducts } = props;
-
-  const carouselCardList = [
-    {
-      title: "Powertrain",
-      subtitle:
-        "Covering latest engine technology industry news for automotive engineers ",
-      imgUrl: "/assets/images/ev-home/carousel1.jpeg",
-      shopUrl: "/",
-    },
-    {
-      title: "New Energy Vehicles",
-      subtitle:
-        "Recent announcements by vehicle manufacturers intending to electrify the car and buses markets",
-      imgUrl: "/assets/images/ev-home/carousel2.jpeg",
-      shopUrl: "/",
-    },
-    {
-      title: "Energy and Infrastructure",
-      subtitle:
-        "Utilities, charging point operators, charging hardware manufacturers and other power sector shareholders are also boosting investments in charging infrastructures. ",
-      imgUrl: "/assets/images/ev-home/carousel3.jpeg",
-      shopUrl: "/",
-    },
-    {
-      title: "Batteries",
-      subtitle:
-        "Battery manufacturing is undergoing important transitions, including major investments to expand production.",
-      imgUrl: "/assets/images/ev-home/carousel4.png",
-      shopUrl: "/",
-    },
-  ];
-  const aboutSectionData = {
-    text: `As is true for many emerging technologies, vehicle electrification is experiencing rapid innovation. The Middle East & Africa Electric Vehicle Market is expected to witness substantial growth & business opportunities over the next decade. Governments are focusing on renewable energy and clean transportation technologies along with the implementation of economic and energy diversification plans.
-    EVIS is unique by integrating inter-related technologies at one event, allowing attendees to network across the value chains and exploit new opportunities at the intersection of EV technologies.
-    The Electric Vehicles are continually evolving for a future of mobility and more efficient modes of transportation, bringing together key players and influential business leaders who works together on electric vehicles, energy and charging infrastructure, information technology to explore more advanced systems. 
-    Bringing together all the stakeholders, experts, thought leaders, influencers, manufacturers, and regulation experts has generated a great opportunity to get an exposure on the latest trends and innovations in the EV and transport industries.
-.`,
-    youtube: "x2CDpB6mrp4",
-  };
   const serviceList = [
     {
       image: "/assets/images/ev-home/why-attendees-d.png",
@@ -85,29 +49,7 @@ const EvHome = (props) => {
       image: "/assets/images/ev-home/why-speakers-d.png",
     },
   ];
-  const featureList = [
-    {
-      title: "Exhibition Area",
-      text: "With over 6,000 square meters of display space, Electric Vehicle Innovation Summit brings in the biggest and best brands from all over the world to present their latest products and innovations in the industry.",
-      image: "/assets/images/ev-home/exh2-gradient.png",
-      buttonText: "EXHIBIT AT EVIS",
-      buttonLink: "/",
-    },
-    {
-      title: "networking opportunities",
-      text: "The Electric Vehicle Innovation Summit fosters individual engagement and community interaction through networking opportunities and customized experiences including new technology, sharing economy activities, personalized meet ups and attendee personalized networking. ",
-      image: "/assets/images/ev-home/exh4-gradient.png",
-      buttonText: "ATTEND EVIS",
-      buttonLink: "/",
-    },
-    {
-      title: "high standards",
-      text: "The Electric Vehicle Innovation Summit is to be held in accordance with the highest standards governing such professional specialized conferences addressing advanced subject of interest to the specialized experts yet appealing to the public at large. ",
-      image: "/assets/images/ev-home/speaker-gradient.png",
-      buttonText: "ATTEND EVIS",
-      buttonLink: "/",
-    },
-  ];
+
   const videosList = [
     { youtube: "FnU_SEdn3d4" },
     { youtube: "0HfcbVQzXFc" },
@@ -117,7 +59,7 @@ const EvHome = (props) => {
     { youtube: "CAKf5hgSZyU" },
   ];
   const itemData1 = {
-    img: "/assets/images/ev-home/exh2-gradient.png",
+    img: "/assets/images/ev-home/DSC07429.jpg",
     title: "Electric Vehicle Innovation Summit",
     ps: [
       "As is true for many emerging technologies, vehicle electrification is experiencing rapid innovation. The Middle East & Africa Electric Vehicle Market is expected to witness substantial growth & business opportunities over the next decade. Governments are focusing on renewable energy and clean transportation technologies along with the implementation of economic and energy diversification plans.",
@@ -132,20 +74,6 @@ const EvHome = (props) => {
       "The Electric Vehicles are continually evolving for a future of mobility and more efficient modes of transportation, bringing together key players and influential business leaders who works together on electric vehicles, energy and charging infrastructure, information technology to explore more advanced systems.",
     ],
   };
-  const factsData = [
-    {
-      title: "5000+",
-      text: <h1>Attendees</h1>,
-    },
-    {
-      title: "6%",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nisi consectetur nisi, euismod consectetur nisi nisi vitae nisi.",
-    },
-    {
-      title: "10%",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nisi consectetur nisi, euismod consectetur nisi nisi vitae nisi.",
-    },
-  ];
   const FeaturesData = [
     {
       img: "/assets/images/ev-home/exh2.jpg",
@@ -171,19 +99,22 @@ const EvHome = (props) => {
   ];
   const buttonsData = [
     {
-      text: "Download Sales Brochure",
+      text: "BOOK YOUR STAND",
     },
     {
-      text: "Download Post Show Report",
+      text: "BECOME A SPONSOR",
     },
     {
-      text: "Book Your Stand NO",
+      text: "DELEGATE REGISTRATION",
     },
     {
-      text: "Register your interest to visit",
+      text: "VISITOR REGISTRATION",
     },
     {
-      text: "Delegate Registration",
+      text: "DOWNLOAD EVENT BROCHURE",
+    },
+    {
+      text: "DOWNLOAD POST SHOW REPORT",
     },
   ];
   return (
@@ -193,7 +124,65 @@ const EvHome = (props) => {
         buttonText={pageHeaderData.buttonText}
         buttonLink={pageHeaderData.buttonLink}
         image={pageHeaderData.image}
-      ></PageHeader>
+      >
+        <Box sx={{ maxWidth: "730px", textAlign: "center" }}>
+          {pageHeaderData.text && (
+            <H1 sx={{ fontSize: { xs: "40px", md: "55px" } }}>
+              {pageHeaderData.text}
+            </H1>
+          )}
+          {pageHeaderData.buttonText && pageHeaderData.buttonLink && (
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+                justifyContent: "center",
+                flexDirection: { xs: "column", md: "row" },
+              }}
+            >
+              <Box mx={"0px"} p={1.25}>
+                <Link href={pageHeaderData.buttonLink}>
+                  <a>
+                    <StyledButton
+                      minWidth={"250px"}
+                      variant="outlined"
+                      color="primary"
+                      sx={{
+                        width: "250px",
+                        px: "30px",
+                        py: "15px",
+                        fontWeight: "700",
+                        border: "1px white solid",
+                      }}
+                    >
+                      {pageHeaderData.buttonText}
+                    </StyledButton>
+                  </a>
+                </Link>
+              </Box>
+              <Box mx={"0px"} p={1.25}>
+                <Link href={pageHeaderData.buttonLink}>
+                  <a>
+                    <StyledButton
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        width: "250px",
+                        px: "30px",
+                        py: "15px",
+                        fontWeight: "700",
+                        border: "1px white solid",
+                      }}
+                    >
+                      {"Book your stand now"}
+                    </StyledButton>
+                  </a>
+                </Link>
+              </Box>
+            </Box>
+          )}
+        </Box>
+      </PageHeader>
       <Container
         sx={{
           my: 6,
@@ -214,9 +203,9 @@ const EvHome = (props) => {
       >
         <DownloadSection ButtonsData={buttonsData} />
         <FeaturesSection cardsData={FeaturesData}></FeaturesSection>
-        <Box sx={{ mt: "60px" }}>
+        {/* <Box sx={{ mt: "60px" }}>
           <CountDownSection></CountDownSection>
-        </Box>
+        </Box> */}
         <VideosSection videosList={videosList} />
         <SubscribeSection />
       </Container>

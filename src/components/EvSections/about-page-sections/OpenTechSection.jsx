@@ -11,13 +11,13 @@ const OpenTechSection = (props) => {
   return (
     <Box id={"open-tech"} sx={{ scrollMarginTop: "250px" }}>
       <Box sx={{ mt: "40px", mb: "20px" }}>
-        {" "}
         <SectionTitle>Open Tech Sessions</SectionTitle>
       </Box>
-      <Box>
-        <Paragraph>
-          <Box sx={{ whiteSpace: "pre-wrap" }}>{item.text}</Box>
-        </Paragraph>
+      <Box sx={{ mb: "40px" }}>
+        <TwoColumnBoxV2
+          item={{ title: "", ps: item.text, img: item.img }}
+          imgPosition="left"
+        ></TwoColumnBoxV2>
       </Box>
       <Box mt={5}>
         <Grid container mb={-0.5} spacing={3}>

@@ -18,7 +18,7 @@ const images = [
 // ======================================================
 // ======================================================
 const pageHeaderData = {
-  text: "Summit",
+  text: "Conference",
   //   buttonText: "Save The Date",
   //   buttonLink: "/",
   image: "/assets/images/summit.png",
@@ -45,7 +45,7 @@ const GeneralPage = () => {
         }}
       >
         <Box sx={{ mt: "40px" }}>
-          <LandingText id={"summit"} section={section} />
+          <LandingText section={section} />
         </Box>
         <Box sx={{ mt: "40px", mb: "20px" }}>
           <SectionTitle> Agenda </SectionTitle>

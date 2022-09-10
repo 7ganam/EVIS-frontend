@@ -8,7 +8,7 @@ const StyledButton = styled(Button)(() => ({
   fontSize: "16px",
 }));
 import Link from "next/link";
-function PageHeader({ text, buttonText, buttonLink, image }) {
+function PageHeader({ text, buttonText, buttonLink, image, children }) {
   const theme = useTheme();
 
   return (
@@ -30,29 +30,39 @@ function PageHeader({ text, buttonText, buttonLink, image }) {
           color: "white",
         }}
       >
-        <Box sx={{ maxWidth: "730px", textAlign: "center" }}>
-          {text && <H1 sx={{ fontSize: "55px" }}>{text}</H1>}
-          {buttonText && buttonLink && (
-            <Box ml={2.5} p={1.25}>
-              <Link href={buttonLink}>
-                <a>
-                  <StyledButton
-                    variant="contained"
-                    color="primary"
-                    sx={{
-                      px: "30px",
-                      py: "15px",
-                      fontWeight: "700",
-                      border: "1px white solid",
-                    }}
-                  >
-                    {buttonText}
-                  </StyledButton>
-                </a>
-              </Link>
-            </Box>
-          )}
-        </Box>
+        {children ? (
+          children
+        ) : (
+          <Box sx={{ maxWidth: "730px", textAlign: "center" }}>
+            {text && (
+              <H1
+                sx={{ fontSize: { xs: "50px", md: "90px" }, fontWeight: "500" }}
+              >
+                {text}
+              </H1>
+            )}
+            {buttonText && buttonLink && (
+              <Box ml={2.5} p={1.25}>
+                <Link href={buttonLink}>
+                  <a>
+                    <StyledButton
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        px: "30px",
+                        py: "15px",
+                        fontWeight: "700",
+                        border: "1px white solid",
+                      }}
+                    >
+                      {buttonText}
+                    </StyledButton>
+                  </a>
+                </Link>
+              </Box>
+            )}
+          </Box>
+        )}
       </Box>
     </Box>
   );

@@ -2,13 +2,9 @@ import { Container } from "@mui/material";
 
 import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/grocery3-shop";
-import LandingText from "src/components/EvSections/agenda-page-sections/LandingText";
-import { SectionTitle } from "src/components/EvComponents/StyledTypography";
-import TestimonialVideo from "src/components/EvComponents/TestimonialVideo";
-import { Box, Grid, styled, useTheme } from "@mui/material";
+import { Grid } from "@mui/material";
 import PageHeader from "src/components/EvComponents/PageHeader";
 import TestimonialCard from "src/components/EvComponents/TestimonialCard";
-
 
 // ======================================================
 // ======================================================
@@ -26,6 +22,7 @@ const testimonial = [
     company: "CharIN",
     videoId: "H46B4X57JiM",
     pos: "left",
+    img: "/assets/images/testimonials/Bracklo.jpg",
   },
   {
     text: "It’s great to be here and see the excitement, to see all the new vehicles that are coming including some made right here in the UAE. At Masdar, we’ve been pioneering in terms of transportation since 2008. We’ve had the first electric vehicles in the country, we’ve had PRT, we’ve had Tesla, we’ve had NAVIA, and it’s great to see the new service offerings that are coming out in this region. We’ve done a great job at bringing in renewable energy, we’ve done a good job of bringing in sustainability and really implementing Estidama standards, and now its time to take on surface transportation. And this Electric Vehicle Innovation Summit is all about that – how do we take the carbon out of surface transportation? So many examples of what’s going on here – from the manufacturers to the charging infrastructure, to the regulatory environment, and that’s why Masdar is excited to be here as the Sustainability Partner. ",
@@ -34,6 +31,7 @@ const testimonial = [
     company: "Masdar City ",
     videoId: "Rk6kFel9nEw",
     pos: "right",
+    img: "/assets/images/testimonials/Severance.jpg",
   },
   {
     text: "As the chairwoman and the founder of M glory and Al Damani manufacturing company –the first EV car factory to be established in the MENA, we tried to introduce ourselves to the local market and to tell them we are capable to produce the EV car. and we are starting to compete with other OEMs to produce EVs… EVIS is actually the main important exhibition that supports sustainable energy and sustainable environment to reduce the emissions of co2. Here, we managed to gather the private sector along with the governmental sector to take certain action that will improve our environment and our future. I’m so glad to be part of this great exhibition and we love we are loving to be a part of this transformed idea of the future - thanks a lot for the organizer who is having that idea and really make it so successful here in ADNEC in Abu Dhabi.",
@@ -42,6 +40,7 @@ const testimonial = [
     company: "M Glory",
     videoId: "2lQwm_Dx2p0",
     pos: "left",
+    img: "/assets/images/testimonials/Alazazi.jpg",
   },
   {
     text: "EVIS is the first time that the whole EV ecosystem is getting together in the Middle East. It’s fantastic for bp to be part of this event because it helps us get to know some of the movers and the shakers who are already starting to make a difference in the middle east with respect to growing and building the e-mobility ecosystem here. So, for MENA, what we see in the other regions is that until and unless the ecosystem comes together and figure out how to collaborate, it is very difficult for any one company, or any one industry to really develop the e-mobility ecosystem. So, coming together in events like this is very important because it encourages us to work together.",
@@ -83,8 +82,7 @@ const generalPage = () => {
           my: 6,
         }}
       >
-        
-        <Grid container>
+        <Grid container spacing={"50px"}>
           {testimonial.map((entry, index) => {
             return (
               <Grid item key={index}>
@@ -93,7 +91,6 @@ const generalPage = () => {
             );
           })}
         </Grid>
-
       </Container>
     </EvLayout>
   );

@@ -46,7 +46,7 @@ const generalPage = () => {
       >
         <Box sx={{ mb: "20px" }}>
           <Box mt={"30px"}>
-            <SectionTitle>Attend as Attendee</SectionTitle>{" "}
+            <SectionTitle>Attend as Visitor</SectionTitle>{" "}
           </Box>
         </Box>
         <MainSection sponsors={sponsorsData} />

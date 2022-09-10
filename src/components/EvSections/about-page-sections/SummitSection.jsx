@@ -23,10 +23,9 @@ const SummitSection = (props) => {
   const theme = useTheme();
 
   return (
-    <Box id={"summit"} sx={{ scrollMarginTop: "250px" }}>
+    <Box id={"conference"} sx={{ scrollMarginTop: "250px" }}>
       <Box sx={{ mt: "30px" }}>
-        {" "}
-        <SectionTitle>Summit</SectionTitle>
+        <SectionTitle>Conference</SectionTitle>
       </Box>
       <Container
         sx={{

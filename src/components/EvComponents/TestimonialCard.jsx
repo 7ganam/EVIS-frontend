@@ -1,9 +1,10 @@
 import React from "react";
 import { Box, Container, Grid, useTheme } from "@mui/material";
-import { H4, H6 } from "src/components/EvComponents/Typography";
+import { H4, H6, H3, H2 } from "src/components/EvComponents/Typography";
 import YoutubeEmbed from "src/components/YoutubeEmbed";
 import { Button } from "@mui/material";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+import Image from "src/components/BazarImage";
 
 const TestimonialCard = (props) => {
   const data = props.data;
@@ -33,43 +34,50 @@ const TestimonialCard = (props) => {
       >
         <Grid container>
           <Grid item xs={12} sm={12} md={6} px={3} order={{ xs: 2, md: g1 }}>
-            <Box
-              sx={{
-                borderLeft: `solid 3px ${primary}`,
-              }}
-            >
-              <H4
-                ml={2}
+            <Box pt={3}>
+              <Box
                 sx={{
-                  color: "#666666",
+                  borderLeft: `solid 3px ${primary}`,
                 }}
               >
-                {data.text}
-              </H4>
-            </Box>
-            <Grid item mt={2} md={12}>
-              <Grid container>
-                <Grid item xs={12} sm={12} md={4}>
-                  <H4>{data.name}</H4>
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sm={12}
-                  md={8}
+                <H4
+                  ml={2}
                   sx={{
-                    marginTop: "3px",
-                    color: "#8c8c8c",
+                    color: "#666666",
                   }}
                 >
+                  {data.text}
+                </H4>
+              </Box>
+
+              <Box sx={{ display: "flex", flexDirection: "row", mt: 1 }}>
+                <Box
+                  sx={{
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    width: "50px",
+                    height: "50px",
+                    mt: "15px",
+                    ml: "10px",
+                  }}
+                >
+                  <Image
+                    sx={{
+                      borderRadius: "100%",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                    src={data?.img ?? "/assets/images/testimonials/profile.jpg"}
+                    alt="profile"
+                  />
+                </Box>
+                <Box pt={1} pl={2}>
+                  <H2 sx={{ fontWeight: "600" }}>{data.name}</H2>
                   <H6>{joinedText}</H6>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Button fullWidth={true}>
-              <H4> Watch Video Now </H4>
-              <TrendingFlatIcon/>
-            </Button>
+                </Box>
+              </Box>
+            </Box>
           </Grid>
           <Grid
             item
@@ -80,7 +88,16 @@ const TestimonialCard = (props) => {
             order={{ xs: 1, md: g2 }}
             mt={1}
           >
-            <YoutubeEmbed embedId={data.videoId} />
+            <Box
+              sx={{
+                borderRadius: "5px",
+                overflow: "hidden",
+                boxShadow: "-4px 6px 12px 0px #00000075",
+              }}
+            >
+              {" "}
+              <YoutubeEmbed embedId={data.videoId} />
+            </Box>
           </Grid>
         </Grid>
       </Container>

@@ -27,7 +27,7 @@ const SpeakersSection = (props) => {
           textAlign: "center",
         }}
       >
-        <Box padding="80px">
+        <Box py="80px">
           <Container>
             <Grid
               container
@@ -43,9 +43,31 @@ const SpeakersSection = (props) => {
               {data?.slice(0, 8).map(({ imageSrc, name, title, company }) => {
                 return (
                   <Grid item xs={12} sm={4} md={3} key={name}>
-                    <AnimationWrapper style={{ height: "100%" }}>
+                    <AnimationWrapper
+                      reset
+                      style={{
+                        height: "100%",
+                        position: "relative",
+                        borderRadius: "7px",
+                        cursor: "pointer",
+                      }}
+                      config={{
+                        left: {
+                          initial: "0px",
+                          onHover: "10px",
+                        },
+                        top: {
+                          initial: "0px",
+                          onHover: "-10px",
+                        },
+                        boxShadow: {
+                          initial: "0px 0px rgb(0 0 0 / 32%)",
+                          onHover: "-10px 10px rgb(0 0 0 / 32%)",
+                        },
+                      }}
+                    >
                       <Box
-                        sx={{ height: "100%" }}
+                        sx={{ height: "100%", borderRadius: "30px" }}
                         onClick={() => {
                           router.push(`/speakers/${name}`);
                         }}

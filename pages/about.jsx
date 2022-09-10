@@ -35,6 +35,7 @@ You can preview new and improved solutions for your applications during the new 
 };
 
 const OpenTechData = {
+  img: "/assets/images/about-page/DSC08151.jpg",
   text: `Explore the latest technical content and developments in the industry through presentations, panel discussions and case studies shared by our brilliant Open Tech speakers, all in the show floor and free to attend for everyone. EVIS is committed to accelerating e mobility adoption and is continually working towards shaping the future of mobility by bringing together key players and influential business leaders who works together on electric vehicles, energy and charging infrastructure, information technology to explore more advanced systems.
 
 Take a look at the Open Tech Sessions from the first edition of EVIS.

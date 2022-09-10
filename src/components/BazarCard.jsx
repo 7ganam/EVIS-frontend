@@ -8,7 +8,7 @@ const BazarCard = styled(({ hoverEffect, children, ...rest }) => (
   overflow: "unset",
   transition: "all 250ms ease-in-out",
   "&:hover": {
-    boxShadow: hoverEffect ? theme.shadows[3] : "",
+    boxShadow: hoverEffect ? theme.shadows[2] : "",
   },
 }));
 BazarCard.defaultProps = {

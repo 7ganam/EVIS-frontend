@@ -6,8 +6,8 @@ const evNavbarNavigations = [
 
     child: [
       {
-        title: "Summit",
-        url: "/about#summit",
+        title: "Conference",
+        url: "/about#conference",
       },
       {
         title: "Exhibition",
@@ -30,30 +30,58 @@ const evNavbarNavigations = [
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "Agenda",
+    title: "Exhibit",
+
     child: [
       {
-        title: "Summit Agenda",
-        url: "/agenda/summit",
+        title: "Why Exhibit",
+        url: "exhibition/why-exhibit",
       },
       {
-        title: "Open Tech Sessions Agenda",
-        url: "/agenda/open-tech-sessions",
+        title: "2022 Exhibitors",
+        url: "/coming-soon",
+      },
+      {
+        title: "2023 Exhibitors",
+        url: "/coming-soon",
+      },
+      {
+        title: "Book your stand",
+        url: "exhibition/book-your-stand",
       },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "Speakers",
+    title: "Conference",
+
     child: [
       {
-        title: "EVIS2023 Speakers",
-        url: "/speakers/2023",
+        title: "Agenda",
+        child: [
+          {
+            title: "Conference Agenda",
+            url: "/agenda/conference",
+          },
+          {
+            title: "Open Tech Sessions Agenda",
+            url: "/agenda/open-tech-sessions",
+          },
+        ],
       },
       {
-        title: "Previous Speakers",
-        url: "/speakers/previous",
+        title: "Speakers",
+        child: [
+          {
+            title: "2023 speakers",
+            url: "/coming-soon",
+          },
+          {
+            title: "2022 speakers",
+            url: "/speakers/previous",
+          },
+        ],
       },
     ],
   },
@@ -64,15 +92,11 @@ const evNavbarNavigations = [
     child: [
       {
         title: "EVIS2023 Sponsors & Exhibitors & Partners",
-        url: "/sponsors-partners/2023",
+        url: "/coming-soon",
       },
       {
         title: "Previous Sponsors & Exhibitors & Partners",
         url: "/sponsors-partners/previous",
-      },
-      {
-        title: "Testimonials",
-        url: "/sponsors-partners/Testimonials",
       },
     ],
   },
@@ -89,16 +113,24 @@ const evNavbarNavigations = [
         title: "Media/Gallery",
         url: "/news-media/gallery",
       },
+      {
+        title: "Testimonials",
+        url: "/news-media/Testimonials",
+      },
+      {
+        title: "EVIS activities",
+        url: "/coming-soon",
+      },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "Participate ",
+    title: "Register with us",
     child: [
       {
-        title: "Attendee",
-        url: "/participate/attendee",
+        title: "Visitor",
+        url: "/participate/visitor",
       },
       {
         title: "Delegate",
@@ -114,7 +146,17 @@ const evNavbarNavigations = [
       },
     ],
   },
-
+  {
+    megaMenu: false,
+    megaMenuWithSub: false,
+    title: "Contact us",
+    child: [
+      {
+        title: "Travel & Visa",
+        url: "/travel-visas",
+      },
+    ],
+  },
   // {
   //   title: "ALL SHOWS",
   //   megaMenu: false,

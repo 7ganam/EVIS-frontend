@@ -33,28 +33,29 @@ const TwoColumnBoxV2 = ({ item, imgPosition }) => {
         }}
       >
         <Grid item md={6} sm={12} xs={12} sx={{ overflow: "hidden" }}>
-          <Box>
+          <Box sx={{ pb: 2 }}>
             <Image
               width={"100%"}
               mb={0}
               src={img}
               alt="logo"
-              sx={{ objectFit: "cover", aspectRatio: " 16 / 10" }}
+              sx={{
+                boxShadow: "-4px 6px 12px 0px #00000075",
+                objectFit: "cover",
+                aspectRatio: " 16 / 10",
+                borderRadius: "5px",
+              }}
             />
           </Box>
         </Grid>
         <Grid item md={6} sm={12} xs={12}>
           <Box>
             <BlockTitle> {title} </BlockTitle>
-            {ps?.map((item, index) => {
-              return (
-                <Box sx={{ pt: 1 }} key={index}>
-                  <Paragraph>
-                    <Box sx={{ whiteSpace: "pre-wrap" }}>{item}</Box>
-                  </Paragraph>
-                </Box>
-              );
-            })}
+            {ps && (
+              <Paragraph>
+                <Box sx={{ whiteSpace: "pre-wrap" }}>{ps}</Box>
+              </Paragraph>
+            )}
           </Box>
         </Grid>
       </Grid>
