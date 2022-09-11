@@ -1,5 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "gallery_styles.css";
 // import RTL from "src/components/RTL";
 import { AppProvider } from "src/contexts/AppContext";
 import SettingsProvider from "src/contexts/SettingContext";
