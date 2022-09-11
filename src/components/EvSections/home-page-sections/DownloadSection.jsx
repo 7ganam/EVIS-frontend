@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import React from "react";
-import { Grid } from "@mui/material";
+import { Grid, styled } from "@mui/material";
 import SponsorImage from "src/components/EvComponents/SponsorImage";
 import {
   SectionTitle,
@@ -14,6 +14,13 @@ import Image from "src/components/BazarImage";
 import RoundedImage from "src/components/EvComponents/RoundedImage";
 import { useTheme } from "@mui/material";
 import Card1 from "@/components/Card1";
+
+const leftImg = "/assets/images/png_bg.png";
+
+const StyledCard1 = styled(Card1)(({ theme }) => ({
+  // backgroundImage: `url('${leftImg}')`,
+  // backgroundSize: "contain",
+}));
 const DownloadSection = (props) => {
   return (
     <Box>
@@ -21,7 +28,7 @@ const DownloadSection = (props) => {
         {" "}
         <SectionTitle>Participate</SectionTitle>
       </Box>
-      <Card1 sx={{ mt: "30px", p: "60px" }} elevation={2}>
+      <StyledCard1 sx={{ mt: "30px", p: "60px" }} elevation={2}>
         {" "}
         <Grid
           container
@@ -52,7 +59,7 @@ const DownloadSection = (props) => {
             );
           })}
         </Grid>
-      </Card1>
+      </StyledCard1>
     </Box>
   );
 };

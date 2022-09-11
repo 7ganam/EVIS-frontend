@@ -72,6 +72,7 @@ export function SectionTitle({ children }) {
           <Divider
             sx={{
               border: "1px solid #bbc4c7",
+              backgroundColor: "#bbc4c7",
               margin: "0",
               width: "40%",
               height: "2px",

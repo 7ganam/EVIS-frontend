@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
-import { Grid, Container } from "@mui/material";
+import { Grid, Container, Box } from "@mui/material";
 import { H4 } from "src/components/EvComponents/Typography";
 
 import EvLayout from "src/components/layouts/EvLayout";
@@ -79,7 +79,7 @@ const knowledgePartners = [
 const researchPartners = [
   {
     source: "/assets/images/partners/Oxford.png",
-    text : "Partner"
+    text: "Partner",
   },
 ];
 
@@ -107,7 +107,9 @@ const generalPage = (props) => {
           alignItems: "center",
         }}
       >
-        <SectionTitle>KEY PARTNERS</SectionTitle>
+        <Box sx={{ mt: "30px" }}>
+          <SectionTitle>KEY PARTNERS</SectionTitle>
+        </Box>
         <Grid
           container
           sx={{
@@ -126,7 +128,6 @@ const generalPage = (props) => {
             );
           })}
         </Grid>
-
         <SectionTitle>SPONSORS</SectionTitle>
         <Grid
           container
@@ -147,7 +148,6 @@ const generalPage = (props) => {
             );
           })}
         </Grid>
-
         <SectionTitle>INTERNATIONAL MEDIA PARTNER</SectionTitle>
         <Grid
           container
@@ -163,7 +163,6 @@ const generalPage = (props) => {
             );
           })}
         </Grid>
-
         <SectionTitle>KNOWLEDGE PARTNERS</SectionTitle>
         <Grid
           container
@@ -185,7 +184,6 @@ const generalPage = (props) => {
             );
           })}
         </Grid>
-
         <SectionTitle>RESEARCH PARTNER</SectionTitle>
         <Grid
           container
@@ -201,7 +199,6 @@ const generalPage = (props) => {
             );
           })}
         </Grid>
-
         <SectionTitle>MEDIA PARTNERS</SectionTitle>
         <Grid
           container

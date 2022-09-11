@@ -9,18 +9,7 @@ const TopbarForm = () => {
   const initialValues = {
     phone: "12345678910",
     email: "ui.lib.drive@gmail.com",
-    links: [
-      {
-        id: 1,
-        name: "Theme FAQ's",
-        link: "https://www.themefaqs.com",
-      },
-      {
-        id: 2,
-        name: "Help",
-        link: "https://www.help.com",
-      },
-    ],
+    links: [],
   };
 
   const handleFormSubmit = async (values) => {

@@ -71,23 +71,23 @@ const EvTopbar = () => {
         <FlexBox className="topbarLeft" alignItems="center">
           <FlexBox alignItems="center">
             <CallOutlined fontSize="small" />
-            <Span className="title">+05402 1111 1111</Span>
+            <Span className="title">+97150 686 3956 </Span>
           </FlexBox>
 
           <FlexBox alignItems="center" ml={2.5}>
             <MailOutline fontSize="small" />
-            <Span className="title">support@evis.com</Span>
+            <Span className="title">evis@nirvanaholding.com</Span>
           </FlexBox>
         </FlexBox>
 
         <FlexBox className="topbarRight" alignItems="center">
-          <NavLink className="link" href="/faq">
+          {/* <NavLink className="link" href="/faq">
             FAQ&quot;s
           </NavLink>
 
           <NavLink className="link" href="/help">
             Need Help?
-          </NavLink>
+          </NavLink> */}
         </FlexBox>
       </Container>
     </TopbarWrapper>

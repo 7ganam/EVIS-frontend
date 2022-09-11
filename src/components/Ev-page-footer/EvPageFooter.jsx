@@ -51,6 +51,19 @@ const SectionTitle = styled("div")(({ theme }) => ({
   marginTop: "10px",
 })); // =================================================================
 
+const quickLinks = [
+  { label: "about", link: "/about" },
+  { label: "exhibit", link: "/exhibition/why-exhibit" },
+  { label: "Sponsors & partners", link: "/sponsors-partners/previous" },
+  { label: "CONFERENCE", link: "/agenda/conference" },
+  { label: "NEWS", link: "/news-media/news" },
+  { label: "TRAVEL & VISAS", link: "/travel-visas" },
+  { label: "EVIS2023 ACTIVITIES ", link: "#" },
+  { label: "Book Your Stand NOW", link: "/participate/exhibitor" },
+  { label: "Delegate Registration", link: "/participate/delegate" },
+  { label: "Register your interest to visit", link: "/participate/visitor" },
+];
+
 // =================================================================
 const PageFooter = ({ sx, id, bgcolor }) => {
   return (
@@ -89,9 +102,11 @@ const PageFooter = ({ sx, id, bgcolor }) => {
           <Grid item md={3} sm={6} xs={12}>
             <Box>
               <SectionTitle>{`QUICK LINKS`}</SectionTitle>
-              {customerCareLinks.map((item, ind) => (
-                <Link href="/" key={ind} passHref>
-                  <StyledLink>{item}</StyledLink>
+              {quickLinks.map((item, ind) => (
+                <Link href={item.link} key={ind} passHref>
+                  <StyledLink sx={{ textTransform: "uppercase" }}>
+                    {item.label}
+                  </StyledLink>
                 </Link>
               ))}
             </Box>
@@ -103,7 +118,7 @@ const PageFooter = ({ sx, id, bgcolor }) => {
               <FlexBox alignItems="center">
                 <MailOutline fontSize="small" mr={2.5} />
                 <Span ml={1.5} className="title">
-                  support@evis.com
+                  evis@nirvanaholding.com
                 </Span>
               </FlexBox>
             </SectionElement>
@@ -112,11 +127,115 @@ const PageFooter = ({ sx, id, bgcolor }) => {
               <FlexBox alignItems="center">
                 <CallOutlined fontSize="small" />
                 <Span ml={1.5} className="title">
-                  +05402 1111 1111
+                  +97150 686 3956
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span
+                  ml={1.5}
+                  className="title"
+                  sx={{ fontWeight: "700", textDecoration: "underline" }}
+                >
+                  EXHIBITION & SPONSORSHIP:
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title" sx={{ fontWeight: "700" }}>
+                  Zayid Ahmed
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  M:+97150 686 3956
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              {" "}
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  zayid.ahamed@nirvanatls.com
                 </Span>
               </FlexBox>
             </SectionElement>
 
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span
+                  ml={1.5}
+                  className="title"
+                  sx={{ fontWeight: "700", textDecoration: "underline" }}
+                >
+                  CONFERENCE & DELEGATES:
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title" sx={{ fontWeight: "700" }}>
+                  Zayid Ahmed
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  M:+97150 686 3956
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              {" "}
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  zayid.ahamed@nirvanatls.com
+                </Span>
+              </FlexBox>
+            </SectionElement>
+
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span
+                  ml={1.5}
+                  className="title"
+                  sx={{ fontWeight: "700", textDecoration: "underline" }}
+                >
+                  MARKETING & MEDIA
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  evis@nirvanaholding.com
+                </Span>
+              </FlexBox>
+            </SectionElement>
+
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span
+                  ml={1.5}
+                  className="title"
+                  sx={{ fontWeight: "700", textDecoration: "underline" }}
+                >
+                  OPERATIONS
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  evis@nirvanaholding.com
+                </Span>
+              </FlexBox>
+            </SectionElement>
             <FlexBox className="flex" mx={-0.625} mt={2}>
               {iconList.map((item, ind) => (
                 <a
@@ -139,16 +258,13 @@ const PageFooter = ({ sx, id, bgcolor }) => {
           </Grid>
 
           <Grid item md={3} sm={6} xs={12}>
-            <SectionTitle>{`OPENING TIMES`}</SectionTitle>
+            <SectionTitle>{`Event Info`}</SectionTitle>
+            <SectionElement>{"When: 29 – 31 May 2023"}</SectionElement>
+            <SectionElement>{"Timings: 9am - 5pm"}</SectionElement>
             <SectionElement>
-              {"Mon, 23 May, 2022 - 9:00 AM to 5:00 PM"}
+              {"Venue: Abu Dhabi National Exhibition Centre, UAE"}
             </SectionElement>
-            <SectionElement>
-              {"Tue , 24 May, 2022 - 9:00 AM to 5:00 PM"}
-            </SectionElement>
-            <SectionElement>
-              {"Wed, 25 May, 2022 - 9:00 AM to 5:00 PM"}
-            </SectionElement>
+            <SectionElement>{"Email: evis@nirvanaholding.com"}</SectionElement>
           </Grid>
         </Grid>
       </Container>
@@ -156,12 +272,6 @@ const PageFooter = ({ sx, id, bgcolor }) => {
   );
 };
 
-const customerCareLinks = [
-  "Help Center",
-  "Track Your Order",
-  "Corporate & Bulk Purchasing",
-  "Returns & Refunds",
-];
 const iconList = [
   {
     icon: Facebook,

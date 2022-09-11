@@ -77,7 +77,7 @@ const GalleryCard = (props) => {
           variant="outlined"
           sx={{ width: "100%" }}
         >
-          Know More
+          Learn More
         </Button>
       </Box>
     </Box>

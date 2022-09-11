@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
-import { Grid, Container } from "@mui/material";
+import { Grid, Container, Box } from "@mui/material";
 
 import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/grocery3-shop";
@@ -90,7 +90,10 @@ const generalPage = (props) => {
           alignItems: "center",
         }}
       >
-        <SectionTitle>KEY PARTNERS</SectionTitle>
+        <Box sx={{ mt: "30px" }}>
+          {" "}
+          <SectionTitle>KEY PARTNERS</SectionTitle>
+        </Box>
         <Grid
           container
           sx={{

@@ -10,7 +10,35 @@ import NewsCard from "src/components/EvComponents/NewsCard";
 import Divider from "@mui/material/Divider";
 import { useTheme } from "@emotion/react";
 import { H3 } from "src/components/EvComponents/Typography";
+import EvisInNewsSection from "@/components/EvSections/new-page-sections/EvisInNewsSection";
 
+const evisInNewsData = [
+  {
+    title: "Sky News Morning Show coverage",
+    link: "https://youtu.be/b1HNKh4eU18",
+    img: "/assets/images/news-page/inNews/1.jpg",
+  },
+  {
+    title: `AD TV -OloomAl Dar`,
+    link: "https://www.youtube.com/watch?v=thzikNydA80&ab_channel=Oloomaldaar%D8%B9%D9%84%D9%88%D9%85%D8%A7%D9%84%D8%AF%D8%A7%D8%B1",
+    img: "/assets/images/news-page/inNews/2.jpg",
+  },
+  {
+    title: `Dubai TVr`,
+    link: "https://www.youtube.com/watch?v=bxKhcfhiLXo&ab_channel=DubaiTVI%D8%AA%D9%84%D9%81%D8%B2%D9%8A%D9%88%D9%86%D8%AF%D8%A8%D9%8A",
+    img: "/assets/images/news-page/inNews/3.jpg",
+  },
+  {
+    title: `ERAM Channel`,
+    link: "https://youtu.be/KB9GENQflOo",
+    img: "/assets/images/news-page/inNews/4.jpg",
+  },
+  {
+    title: `Sky News –Our Planet `,
+    link: "https://www.skynewsarabia.com/program/kawkabona-%D9%83%D9%88%D9%83%D8%A8%D9%86%D8%A7",
+    img: "/assets/images/news-page/inNews/5.jpg",
+  },
+];
 const featureList = [
   {
     img: "/assets/images/news-page/2.png",
@@ -95,8 +123,9 @@ const EvHome = () => {
 
   return (
     <EvLayout showNavbar={true} title={"Home"}>
+      <EvisInNewsSection data={evisInNewsData}></EvisInNewsSection>
       <Box mt={"30px"}>
-        <SectionTitle>LATEST NEWS</SectionTitle>
+        <SectionTitle>Articles</SectionTitle>
       </Box>
       <Box
         sx={{
@@ -159,7 +188,14 @@ const EvHome = () => {
         >
           {featureList.map(({ img, title, date, buttonLink }) => {
             return (
-              <Grid item xs={12} sm={4} md={3} key={title}>
+              <Grid
+                item
+                xs={12}
+                sm={4}
+                md={3}
+                key={title}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
                 <NewsCard
                   srcImage={img}
                   header={title}
