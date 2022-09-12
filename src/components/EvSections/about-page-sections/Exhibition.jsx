@@ -7,8 +7,10 @@ const Exhibition = (props) => {
   const item = props.item;
   return (
     <Box id={"exhibition"} sx={{ scrollMarginTop: "250px" }}>
-      <SectionTitle>Exhibition</SectionTitle>
-      <Box sx={{ mt: "20px" }}>
+      <Box sx={{ mt: "30px", mb: "20px" }}>
+        <SectionTitle>Exhibition</SectionTitle>
+      </Box>
+      <Box>
         {" "}
         <TwoColumnBoxV2 item={item} />
       </Box>

@@ -173,7 +173,7 @@ const Navbar = ({ elevation, isFixed }) => {
         if (nav.url) {
           return (
             <NavLink href={nav.url} key={nav.title}>
-              <MenuItem>{nav.title}</MenuItem>
+              <MenuItem sx={{ fontSize: "20px" }}>{nav.title}</MenuItem>
             </NavLink>
           );
         }
@@ -182,7 +182,7 @@ const Navbar = ({ elevation, isFixed }) => {
           return (
             <ParentNav position="relative" minWidth="230px" key={nav.title}>
               <MenuItem color="grey.700">
-                <Box flex="1 1 0" component="span">
+                <Box flex="1 1 0" component="span" sx={{ fontSize: "20px" }}>
                   {nav.title}
                 </Box>
 

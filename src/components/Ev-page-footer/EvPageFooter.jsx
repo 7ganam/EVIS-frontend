@@ -275,23 +275,19 @@ const PageFooter = ({ sx, id, bgcolor }) => {
 const iconList = [
   {
     icon: Facebook,
-    url: "https://www.facebook.com",
+    url: "https://www.facebook.com/EVInnovationSummit",
   },
   {
     icon: Twitter,
-    url: "/",
+    url: "https://twitter.com/EVISummit",
   },
   {
     icon: Youtube,
-    url: "https://www.youtube.com",
-  },
-  {
-    icon: Google,
-    url: "/",
+    url: "https://www.youtube.com/channel/UCIhPlRLKj1tUbbs9nuxTiyw",
   },
   {
     icon: Instagram,
-    url: "/",
+    url: "https://www.instagram.com/evinnovationsummit/",
   },
 ];
 export default PageFooter;

@@ -18,6 +18,8 @@ import FeedbackQuotesSection from "src/components/EvSections/FeedbackQuotesSecti
 import FullWidthCardsSection from "src/components/EvSections/FullWidthCardsSection";
 import PageHeader from "src/components/EvComponents/PageHeader";
 import TestimonialCardSection from "@/components/EvSections/TestimonialCardSection";
+import QuadImgSection from "src/components/EvSections/QuadImgSection";
+
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -55,9 +57,10 @@ const EvHome = () => {
         <PartnersGrid />
         <FeedbackQuotesSection />
         <FullWidthCardsSection />
-        <TestimonialCardSection/>
+        <TestimonialCardSection />
       </Container>
       <ShadedContainerSection />
+      <QuadImgSection />
     </EvLayout>
   );
 };
