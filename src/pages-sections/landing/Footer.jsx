@@ -4,7 +4,7 @@ import Instagram from "@mui/icons-material/Instagram";
 import Twitter from "@mui/icons-material/Twitter";
 import Youtube from "@mui/icons-material/YouTube";
 import { Container } from "@mui/material";
-import { FlexBox } from "components/flex-box";
+import { FlexBox } from "src/components/flex-box";
 import React from "react";
 
 const Footer = () => {

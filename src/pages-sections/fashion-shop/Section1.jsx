@@ -1,8 +1,8 @@
 import { Container, Grid } from "@mui/material";
-import CreditCardVerifiedIcon from "components/icons/CreditCardVerified";
-import FeedbackThumbsUpIcon from "components/icons/FeedbackThumbsUp";
-import Navbar from "components/navbar/Navbar";
-import Spacer from "components/Spacer";
+import CreditCardVerifiedIcon from "src/components/icons/CreditCardVerified";
+import FeedbackThumbsUpIcon from "src/components/icons/FeedbackThumbsUp";
+import Navbar from "src/components/navbar/Navbar";
+import Spacer from "src/components/Spacer";
 import React, { Fragment } from "react";
 import ShowcaseCard1 from "./showcase-cards/ShowcaseCard1";
 import ShowcaseCard2 from "./showcase-cards/ShowcaseCard2";

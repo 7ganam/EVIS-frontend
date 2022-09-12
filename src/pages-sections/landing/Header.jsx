@@ -11,9 +11,9 @@ import {
 import { styled } from "@mui/material/styles";
 import { keyframes } from "@mui/styled-engine";
 import clsx from "clsx";
-import Image from "components/BazarImage";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import Sidenav from "components/sidenav/Sidenav";
+import Image from "src/components/BazarImage";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
+import Sidenav from "src/components/sidenav/Sidenav";
 import debounce from "lodash/debounce";
 import Link from "next/link";
 import { Fragment, useCallback, useEffect, useState } from "react";

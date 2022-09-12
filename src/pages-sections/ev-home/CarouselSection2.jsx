@@ -1,6 +1,6 @@
 import { Button, Box, useTheme } from "@mui/material";
-import Carousel from "components/carousel/Carousel";
-import { H1, H4 } from "components/Typography";
+import Carousel from "src/components/carousel/Carousel";
+import { H1, H4 } from "src/components/Typography";
 import React from "react"; // styled component
 import DownloadingIcon from "@mui/icons-material/Downloading";
 

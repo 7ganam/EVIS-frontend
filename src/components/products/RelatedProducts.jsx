@@ -1,6 +1,6 @@
 import { Box, Grid } from "@mui/material";
-import ProductCard1 from "components/product-cards/ProductCard1";
-import { H3 } from "components/Typography";
+import ProductCard1 from "src/components/product-cards/ProductCard1";
+import { H3 } from "src/components/Typography";
 import React from "react"; // ===================================================
 
 // ===================================================

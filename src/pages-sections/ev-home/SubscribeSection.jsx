@@ -1,14 +1,14 @@
 import { Button, Card, Grid, TextField, Typography } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Card1 from "components/Card1";
-import countryList from "data/countryList";
+import Card1 from "src/components/Card1";
+import countryList from "src/data/countryList";
 import { Formik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import * as yup from "yup";
-import { SectionSubTitle } from "components/StyledTypography";
+import { SectionSubTitle } from "src/components/StyledTypography";
 
 const SubscribeSection = () => {
   const router = useRouter();
@@ -42,10 +42,8 @@ const SubscribeSection = () => {
       }) => (
         <form onSubmit={handleSubmit}>
           <Card
-            data-aos="fade-left"
-            data-aos-duration={1000}
             sx={{
-              mb: 4,
+              my: 4,
               px: 3,
               pb: 3,
             }}

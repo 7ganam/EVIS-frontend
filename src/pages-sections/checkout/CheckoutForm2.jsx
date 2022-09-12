@@ -13,11 +13,11 @@ import {
 import FormControlLabel from "@mui/material/FormControlLabel";
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
-import Card1 from "components/Card1";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import LazyImage from "components/LazyImage";
-import { H6, Paragraph } from "components/Typography";
-import { months, years } from "data/months-years";
+import Card1 from "src/components/Card1";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
+import LazyImage from "src/components/LazyImage";
+import { H6, Paragraph } from "src/components/Typography";
+import { months, years } from "src/data/months-years";
 import { format } from "date-fns";
 import { Formik } from "formik";
 import { useRouter } from "next/router";

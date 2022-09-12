@@ -1,8 +1,8 @@
 import { Delete, Edit, RemoveRedEye } from "@mui/icons-material";
 import { Avatar, Box } from "@mui/material";
-import BazarSwitch from "components/BazarSwitch";
-import { FlexBox } from "components/flex-box";
-import { Paragraph, Small } from "components/Typography";
+import BazarSwitch from "src/components/BazarSwitch";
+import { FlexBox } from "src/components/flex-box";
+import { Paragraph, Small } from "src/components/Typography";
 import currency from "currency.js";
 import { useRouter } from "next/router";
 import React, { useState } from "react";

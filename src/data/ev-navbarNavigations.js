@@ -1,152 +1,173 @@
 const evNavbarNavigations = [
   {
-    title: "HOME ",
     megaMenu: false,
     megaMenuWithSub: false,
-    url: "/",
-  },
-  {
-    megaMenu: false,
-    megaMenuWithSub: false,
-    title: "EXHIBITION",
+    title: "About",
+
     child: [
       {
-        title: "Book Your Stand",
-        url: "/exhibition/book-your-stand",
+        title: "Exhibition",
+        url: "/about/#exhibition",
       },
       {
-        title: "About EVIS",
-        url: "/exhibition/about",
+        title: "Conference",
+        url: "/about#conference",
+      },
+
+      {
+        title: "Open Tech Sessions",
+        url: "/about#open-tech",
       },
       {
-        title: " 	Why Exhibit",
-        url: "/exhibition/why-exhibit",
+        title: "Advisory Board",
+        url: "/about#advisory-board",
       },
       {
-        title: "Download Event Brochure",
-        url: "/exhibition/event-brochure",
-      },
-      {
-        title: "Download 2022 Post Show Report ",
-        url: "/exhibition/post-show-report",
-      },
-      {
-        title: "EXHIBITOR MANUAL",
-        url: "/exhibition/exhibitor-manual",
+        title: "Venue",
+        url: "/about#venue",
       },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "SPONSORSHIP",
+    title: "Exhibition",
+
     child: [
-      {
-        title: "Enquire About Sponsorship Opportunities",
-        url: "/sponsorship/sponsorship-opportunities",
-      },
-      {
-        title: "Sponsorship And Branding Opportunities",
-        url: "/sponsorship/sponsorship-branding",
-      },
       {
         title: "Why Exhibit",
-        url: "/sponsorship/why-exhibit",
+        url: "exhibition/why-exhibit",
+      },
+      {
+        title: "2022 Exhibitors",
+        url: "/coming-soon",
+      },
+      {
+        title: "2023 Exhibitors",
+        url: "/coming-soon",
+      },
+      {
+        title: "Book your stand",
+        url: "exhibition/book-your-stand",
       },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "VISIT",
+    title: "Sponsors & Partners",
     child: [
       {
-        title: "Why Visit",
-        url: "/visit/why-visit",
+        title: "2023 Sponsors & Exhibitors & Partners",
+        url: "/coming-soon",
       },
       {
-        title: "Register Your Interest To Visit",
-        url: "/visit/register-visit",
-      },
-      {
-        title: "Exhibitors List  ",
-        url: "/visit/exhibitors",
-      },
-      {
-        title: "Why Abu Dhabi",
-        url: "/visit/why-abu-dhabi",
+        title: "2022 Sponsors & Exhibitors & Partners",
+        url: "/sponsors-partners/previous",
       },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "CONFERENCES ",
+    title: "Conference",
+
     child: [
       {
-        title: "Main Conference",
-        url: "/conferences/main-conference",
+        title: "Agenda",
+        child: [
+          {
+            title: "Conference Agenda",
+            url: "/agenda/conference",
+          },
+          {
+            title: "Open Tech Sessions Agenda",
+            url: "/agenda/open-tech-sessions",
+          },
+        ],
       },
       {
         title: "Speakers",
-        url: "/conferences/speakers",
-      },
-      {
-        title: "Delegate Registration / Passes And Pricing",
-        url: "/conferences/delegate-registration",
+        child: [
+          {
+            title: "2023 speakers",
+            url: "/coming-soon",
+          },
+          {
+            title: "2022 speakers",
+            url: "/speakers/previous",
+          },
+        ],
       },
     ],
   },
+
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "MEDIA CENTRE",
+    title: "News & Media",
     child: [
       {
-        title: "PRESS/MEDIA REGISTRATION",
-        url: "/media-center/media-registration",
+        title: "News",
+        url: "/news-media/news",
       },
       {
-        title: "MEDIA PARTNERS",
-        url: "/media-center/partners",
+        title: "Media/Gallery",
+        url: "/news-media/gallery",
       },
       {
-        title: "SUPPORTING ASSOCIATIONS ",
-        url: "/media-center/support-associations",
+        title: "Testimonials",
+        url: "/news-media/Testimonials",
       },
       {
-        title: "NEWS/PRESS RELEASES",
-        url: "/media-center/press-releases",
-      },
-      {
-        title: "POLICY DIALOGUES",
-        url: "/media-center/policy-dialogues",
+        title: "EVIS activities",
+        url: "/coming-soon",
       },
     ],
   },
   {
-    title: "CONTACT US ",
     megaMenu: false,
     megaMenuWithSub: false,
-    url: "/contact-us",
+    title: "Register with us",
+    child: [
+      {
+        title: "Sponsor",
+        url: "/participate/sponsor",
+      },
+      {
+        title: "Exhibitor",
+        url: "/participate/exhibitor",
+      },
+      {
+        title: "Delegate",
+        url: "/participate/delegate",
+      },
+      {
+        title: "Visitor",
+        url: "/participate/visitor",
+      },
+      {
+        title: "Media",
+        url: "/participate/media",
+      },
+    ],
   },
   {
-    title: "NEWS",
     megaMenu: false,
     megaMenuWithSub: false,
-    url: "/news",
+    title: "Contact us",
+    child: [
+      {
+        title: "Travel & Visa",
+        url: "/travel-visas",
+      },
+    ],
   },
-  {
-    title: "TRAVEL & VISAS",
-    megaMenu: false,
-    megaMenuWithSub: false,
-    url: "/travel-visas",
-  },
-  {
-    title: "ALL SHOWS",
-    megaMenu: false,
-    megaMenuWithSub: false,
-    url: "/all-shows",
-  },
+  // {
+  //   title: "ALL SHOWS",
+  //   megaMenu: false,
+  //   megaMenuWithSub: false,
+  //   url: "/all-shows",
+  // },
 ];
 export default evNavbarNavigations;

@@ -1,8 +1,8 @@
 import { Grid, Pagination } from "@mui/material";
-import { FlexBetween } from "components/flex-box";
-import ProductCard1 from "components/product-cards/ProductCard1";
-import { Span } from "components/Typography";
-import productDatabase from "data/product-database";
+import { FlexBetween } from "src/components/flex-box";
+import ProductCard1 from "src/components/product-cards/ProductCard1";
+import { Span } from "src/components/Typography";
+import productDatabase from "src/data/product-database";
 import React, { Fragment } from "react"; // ========================================================
 
 // ========================================================

@@ -1,8 +1,8 @@
 import { styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import BazarImage from "components/BazarImage";
-import { FlexBox } from "components/flex-box";
-import { H2, Paragraph, Small } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import BazarImage from "src/components/BazarImage";
+import { FlexBox } from "src/components/flex-box";
+import { H2, Paragraph, Small } from "src/components/Typography";
 import Link from "next/link";
 // styled components
 const ContentWrapper = styled(BazarCard)(({ theme }) => ({

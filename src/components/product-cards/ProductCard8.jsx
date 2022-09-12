@@ -1,8 +1,8 @@
-import BazarCard from "components/BazarCard";
-import { FlexBox } from "components/flex-box";
-import HoverBox from "components/HoverBox";
-import LazyImage from "components/LazyImage";
-import { H6, Span } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import { FlexBox } from "src/components/flex-box";
+import HoverBox from "src/components/HoverBox";
+import LazyImage from "src/components/LazyImage";
+import { H6, Span } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // =======================================================
 

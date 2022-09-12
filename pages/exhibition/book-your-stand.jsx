@@ -1,8 +1,8 @@
 import { Container } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import MainSection from "components/EvSections/book-your-stand-sections/MainSection";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import MainSection from "src/components/EvSections/book-your-stand-sections/MainSection";
 import { Box } from "@mui/system";
 // ======================================================
 // ======================================================
@@ -38,8 +38,7 @@ const generalPage = (props) => {
           mb: 6,
         }}
       >
-        <Box sx={{ mb: "20px" }}>
-          {" "}
+        <Box sx={{ mb: "20px", mt: "30px" }}>
           <SectionTitle>Book Your Stand</SectionTitle>
         </Box>
         <MainSection sponsors={sponsorsData} />

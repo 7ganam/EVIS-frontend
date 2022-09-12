@@ -1,7 +1,7 @@
 import { Box, Grid, styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import LazyImage from "components/LazyImage";
-import { H3, H5, Tiny } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import LazyImage from "src/components/LazyImage";
+import { H3, H5, Tiny } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // styled component
 

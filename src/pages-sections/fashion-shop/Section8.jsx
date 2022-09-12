@@ -1,8 +1,8 @@
 import { Container, TextField } from "@mui/material";
-import BazarButton from "components/BazarButton";
-import { FlexRowCenter } from "components/flex-box";
-import Telegram from "components/icons/Telegram";
-import { H2, H5 } from "components/Typography";
+import BazarButton from "src/components/BazarButton";
+import { FlexRowCenter } from "src/components/flex-box";
+import Telegram from "src/components/icons/Telegram";
+import { H2, H5 } from "src/components/Typography";
 import React from "react";
 
 const Section8 = () => {

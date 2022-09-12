@@ -2,11 +2,11 @@
 import { Add, Favorite, Remove } from "@mui/icons-material";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import { Box, Button, Chip, IconButton, styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import BazarRating from "components/BazarRating";
-import LazyImage from "components/LazyImage";
-import { H3, Span } from "components/Typography";
-import { useAppContext } from "contexts/AppContext";
+import BazarCard from "src/components/BazarCard";
+import BazarRating from "src/components/BazarRating";
+import LazyImage from "src/components/LazyImage";
+import { H3, Span } from "src/components/Typography";
+import { useAppContext } from "src/contexts/AppContext";
 import Link from "next/link";
 import React, { Fragment, useCallback, useState } from "react";
 import { FlexBox } from "../flex-box";

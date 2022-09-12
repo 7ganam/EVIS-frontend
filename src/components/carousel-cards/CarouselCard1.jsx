@@ -1,7 +1,7 @@
 import { Button, Grid, styled } from "@mui/material";
-import BazarImage from "components/BazarImage";
-import { FlexBetween } from "components/flex-box";
-import { Paragraph } from "components/Typography";
+import BazarImage from "src/components/BazarImage";
+import { FlexBetween } from "src/components/flex-box";
+import { Paragraph } from "src/components/Typography";
 // styled component
 const StyledBox = styled(FlexBetween)(({ theme }) => ({
   ".title": {

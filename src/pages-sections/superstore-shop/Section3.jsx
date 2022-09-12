@@ -1,9 +1,9 @@
-import BazarCard from "components/BazarCard";
-import Carousel from "components/carousel/Carousel";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import Category from "components/icons/Category";
-import ProductCard6 from "components/product-cards/ProductCard6";
-import useWindowSize from "hooks/useWindowSize";
+import BazarCard from "src/components/BazarCard";
+import Carousel from "src/components/carousel/Carousel";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import Category from "src/components/icons/Category";
+import ProductCard6 from "src/components/product-cards/ProductCard6";
+import useWindowSize from "src/hooks/useWindowSize";
 import Link from "next/link";
 import { useEffect, useState } from "react"; // =====================================================
 

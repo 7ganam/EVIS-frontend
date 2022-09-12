@@ -1,6 +1,6 @@
-import HoverBox from "components/HoverBox";
-import LazyImage from "components/LazyImage";
-import { H4 } from "components/Typography";
+import HoverBox from "src/components/HoverBox";
+import LazyImage from "src/components/LazyImage";
+import { H4 } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // ==========================================================
 

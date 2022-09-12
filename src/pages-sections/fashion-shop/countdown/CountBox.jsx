@@ -1,4 +1,4 @@
-import { H3, Span } from "components/Typography";
+import { H3, Span } from "src/components/Typography";
 import React from "react"; // component props interface
 
 const CountBox = ({ digit, title }) => {

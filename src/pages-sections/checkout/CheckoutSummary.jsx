@@ -1,6 +1,6 @@
 import { Button, Divider, TextField, Typography } from "@mui/material";
-import Card1 from "components/Card1";
-import { FlexBetween, FlexBox } from "components/flex-box";
+import Card1 from "src/components/Card1";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
 import React from "react";
 
 const CheckoutSummary = () => {

@@ -1,7 +1,7 @@
 import React from "react";
-import CardWithImageButton from "components/EvComponents/CardWithImageButton";
+import CardWithImageButton from "src/components/EvComponents/CardWithImageButton";
 import { Grid, Box } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 function CardsSection(props) {
   const cardData = {
     img: "/assets/images/badges/hot.svg",
@@ -13,11 +13,11 @@ function CardsSection(props) {
   // const cardData =  props.data
 
   return (
-    <Box sx={{ pt: "100px" , px : 6 }}>
+    <Box sx={{ pt: "100px", px: 6 }}>
       <SectionTitle>Cards Section</SectionTitle>
 
-       <Grid container columns={12} spacing={3}>
-{/*
+      <Grid container columns={12} spacing={3}>
+        {/*
         {cardData.map((card, ind) => {
           return(
             <Grid item xs={12} sm={6} md={4} key={ind}>

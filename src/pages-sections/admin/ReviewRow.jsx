@@ -1,8 +1,8 @@
 import { Delete } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
-import BazarSwitch from "components/BazarSwitch";
-import { FlexBox } from "components/flex-box";
-import { Paragraph, Small } from "components/Typography";
+import BazarSwitch from "src/components/BazarSwitch";
+import { FlexBox } from "src/components/flex-box";
+import { Paragraph, Small } from "src/components/Typography";
 import React, { useState } from "react";
 import {
   StyledIconButton,

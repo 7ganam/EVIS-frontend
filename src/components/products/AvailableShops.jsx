@@ -1,7 +1,7 @@
 import { Box, Card, Grid } from "@mui/material";
-import BazarAvatar from "components/BazarAvatar";
-import { FlexRowCenter } from "components/flex-box";
-import { H3, H4 } from "components/Typography";
+import BazarAvatar from "src/components/BazarAvatar";
+import { FlexRowCenter } from "src/components/flex-box";
+import { H3, H4 } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // ====================================================
 

@@ -2,8 +2,8 @@
 // YOU NEED TO BUILD YOUR OWN SERVER
 // IF YOU NEED HELP ABOUT SERVER SIDE IMPLEMENTATION
 // CONTACT US AT support@ui-lib.com
-import Mock from "fake-db/mock";
-import bazarReactDatabase from "data/bazar-react-database";
+import Mock from "src/fake-db/mock";
+import bazarReactDatabase from "src/data/bazar-react-database";
 import { testimonialList } from "./grocery-data";
 const section4Data = bazarReactDatabase.slice(179, 188);
 Mock.onGet("/api/grocery-section4/products").reply(async () => {

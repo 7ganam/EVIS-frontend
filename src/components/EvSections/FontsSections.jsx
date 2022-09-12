@@ -7,13 +7,13 @@ import {
   H5,
   H6,
   Paragraph,
-} from "components/EvComponents/Typography";
+} from "src/components/EvComponents/Typography";
 import { Box } from "@mui/material";
 
 import {
   SectionTitle,
   BlockTitle,
-} from "components/EvComponents/StyledTypography";
+} from "src/components/EvComponents/StyledTypography";
 
 function FontsSections() {
   return (

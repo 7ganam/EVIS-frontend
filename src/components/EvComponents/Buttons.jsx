@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { useTheme } from "@mui/material";
-import { H4 } from "components/EvComponents/Typography";
+import { H4 } from "src/components/EvComponents/Typography";
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 import { styled } from "@mui/material/styles";
 const StyledButton1 = styled(Button)({
@@ -9,20 +9,22 @@ const StyledButton1 = styled(Button)({
   minHeight: 0,
 });
 
-export function BigButton({ text }) {
+export function BigButton({ content, sx = {} }) {
   return (
     <Button
       variant="contained"
       sx={{
+        ...sx,
         textTransform: "uppercase",
-        height: "70px",
+        minHeight: "70px",
         fontSize: "25px",
         wordSpacing: "0px",
         px: "40px",
         fontWeight: "700",
+        boxShadow: "-2px 3px 4px #00000078",
       }}
     >
-      {text}
+      {content}
     </Button>
   );
 }

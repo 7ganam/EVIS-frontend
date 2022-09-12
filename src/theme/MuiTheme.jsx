@@ -4,7 +4,7 @@ import {
   responsiveFontSizes,
   ThemeProvider,
 } from "@mui/material/styles";
-import useSettings from "hooks/useSettings";
+import useSettings from "src/hooks/useSettings";
 import { merge } from "merge";
 import getConfig from "next/config";
 import { useRouter } from "next/router";

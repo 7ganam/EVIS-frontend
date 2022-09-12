@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
-import BazarImage from "components/BazarImage";
-import { FlexBox } from "components/flex-box";
+import BazarImage from "src/components/BazarImage";
+import { FlexBox } from "src/components/flex-box";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";

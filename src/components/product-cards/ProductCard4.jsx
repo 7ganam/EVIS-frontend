@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-import BazarRating from "components/BazarRating";
-import { FlexRowCenter } from "components/flex-box";
-import HoverBox from "components/HoverBox";
-import LazyImage from "components/LazyImage";
-import { H4, Small } from "components/Typography";
+import BazarRating from "src/components/BazarRating";
+import { FlexRowCenter } from "src/components/flex-box";
+import HoverBox from "src/components/HoverBox";
+import LazyImage from "src/components/LazyImage";
+import { H4, Small } from "src/components/Typography";
 import React from "react";
 
 const ProductCard4 = ({ imgUrl, rating, title, price, reviewCount = 0 }) => {

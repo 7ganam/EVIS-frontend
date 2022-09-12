@@ -2,14 +2,14 @@
 import { Add, Close, Remove } from "@mui/icons-material";
 import { Box, Divider } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import BazarAvatar from "components/BazarAvatar";
-import BazarButton from "components/BazarButton";
-import BazarIconButton from "components/BazarIconButton";
-import { FlexBox } from "components/flex-box";
-import ShoppingBagOutlined from "components/icons/ShoppingBagOutlined";
-import LazyImage from "components/LazyImage";
-import { H5, Tiny } from "components/Typography";
-import { useAppContext } from "contexts/AppContext";
+import BazarAvatar from "src/components/BazarAvatar";
+import BazarButton from "src/components/BazarButton";
+import BazarIconButton from "src/components/BazarIconButton";
+import { FlexBox } from "src/components/flex-box";
+import ShoppingBagOutlined from "src/components/icons/ShoppingBagOutlined";
+import LazyImage from "src/components/LazyImage";
+import { H5, Tiny } from "src/components/Typography";
+import { useAppContext } from "src/contexts/AppContext";
 import Link from "next/link";
 import React, { useCallback } from "react"; // =========================================================
 

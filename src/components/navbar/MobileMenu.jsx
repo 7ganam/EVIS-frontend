@@ -6,10 +6,10 @@ import {
   Drawer,
   IconButton,
 } from "@mui/material";
-import NavLink from "components/nav-link/NavLink";
-import Scrollbar from "components/Scrollbar";
-import { H6 } from "components/Typography";
-import navbarNavigations from "data/navbarNavigations";
+import NavLink from "src/components/nav-link/NavLink";
+import Scrollbar from "src/components/Scrollbar";
+import { H6 } from "src/components/Typography";
+import navbarNavigations from "src/data/ev-navbarNavigations";
 import { Fragment, useState } from "react";
 
 const MobileMenu = () => {

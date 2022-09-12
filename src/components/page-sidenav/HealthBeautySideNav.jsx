@@ -1,12 +1,12 @@
 import { Box, styled } from "@mui/material";
-import Accordion from "components/accordion/Accordion";
-import AccordionHeader from "components/accordion/AccordionHeader";
-import BazarCard from "components/BazarCard";
-import { FlexBox } from "components/flex-box";
-import appIcons from "components/icons";
-import NavLink from "components/nav-link/NavLink";
-import Scrollbar from "components/Scrollbar";
-import { H4, Span } from "components/Typography";
+import Accordion from "src/components/accordion/Accordion";
+import AccordionHeader from "src/components/accordion/AccordionHeader";
+import BazarCard from "src/components/BazarCard";
+import { FlexBox } from "src/components/flex-box";
+import appIcons from "src/components/icons";
+import NavLink from "src/components/nav-link/NavLink";
+import Scrollbar from "src/components/Scrollbar";
+import { H4, Span } from "src/components/Typography";
 import React from "react";
 const NavbarRoot = styled(BazarCard)(({ theme }) => ({
   height: "100%",

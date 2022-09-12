@@ -1,7 +1,7 @@
 import { Box, Grid, styled, useTheme } from "@mui/material";
-import { H1 } from "components/Typography";
+import { H1 } from "src/components/Typography";
 import React from "react";
-import YoutubeEmbed from "components/YoutubeEmbed";
+import YoutubeEmbed from "src/components/YoutubeEmbed";
 
 const TitleBox = styled(Box)(({ theme }) => ({
   textAlign: "center",
@@ -21,10 +21,7 @@ const TitleBox = styled(Box)(({ theme }) => ({
 const VideosSection = ({ videosList }) => {
   const theme = useTheme();
   return (
-    <Box mt={11}>
-      <TitleBox my={4}>
-        <Box />
-      </TitleBox>
+    <Box mt={5}>
       <Grid container mb={-0.5} spacing={3}>
         {videosList.map((item, ind) => (
           <Grid key={ind} item md={4} sm={6} xs={12}>
@@ -37,8 +34,6 @@ const VideosSection = ({ videosList }) => {
             >
               <Box
                 hoverEffect
-                data-aos="fade-up"
-                data-aos-duration={(ind + 1) * 300}
                 sx={{
                   borderRadius: "10px",
                   overflow: "hidden",

@@ -1,5 +1,5 @@
 import { Box, Button, Card, Grid, styled, useTheme } from "@mui/material";
-import { H3, H6, Paragraph } from "components/Typography";
+import { H3, H6, Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import React from "react";
 const boxStyle = {

@@ -1,8 +1,8 @@
 import { Box, Divider } from "@mui/material";
-import BazarButton from "components/BazarButton";
-import Image from "components/BazarImage";
-import { FlexBox, FlexRowCenter } from "components/flex-box";
-import { H6 } from "components/Typography";
+import BazarButton from "src/components/BazarButton";
+import Image from "src/components/BazarImage";
+import { FlexBox, FlexRowCenter } from "src/components/flex-box";
+import { H6 } from "src/components/Typography";
 import Link from "next/link";
 import React, { Fragment } from "react";
 

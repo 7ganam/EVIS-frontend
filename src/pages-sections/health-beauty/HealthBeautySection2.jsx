@@ -1,7 +1,7 @@
 import { Box, Button, Card, Grid, styled } from "@mui/material";
-import Image from "components/BazarImage";
-import { FlexRowCenter } from "components/flex-box";
-import { H4, Paragraph } from "components/Typography";
+import Image from "src/components/BazarImage";
+import { FlexRowCenter } from "src/components/flex-box";
+import { H4, Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";

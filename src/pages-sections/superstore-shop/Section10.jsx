@@ -1,8 +1,8 @@
 import { Box, Container, Grid, styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import CategorySectionHeader from "components/CategorySectionHeader";
-import Category from "components/icons/Category";
-import LazyImage from "components/LazyImage";
+import BazarCard from "src/components/BazarCard";
+import CategorySectionHeader from "src/components/CategorySectionHeader";
+import Category from "src/components/icons/Category";
+import LazyImage from "src/components/LazyImage";
 import Link from "next/link";
 const StyledBazarCard = styled(BazarCard)(({ theme }) => ({
   display: "flex",

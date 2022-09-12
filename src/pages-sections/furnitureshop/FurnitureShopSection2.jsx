@@ -1,5 +1,5 @@
 import { Box, Button, Grid, styled, useTheme } from "@mui/material";
-import { H1, H3, H6, Paragraph } from "components/Typography";
+import { H1, H3, H6, Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { Fragment } from "react";

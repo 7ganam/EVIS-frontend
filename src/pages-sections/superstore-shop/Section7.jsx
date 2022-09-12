@@ -1,9 +1,9 @@
 import { Box, Container, Grid } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import CategorySectionHeader from "components/CategorySectionHeader";
-import { FlexBox } from "components/flex-box";
-import ProductCard1 from "components/product-cards/ProductCard1";
-import { H3 } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import CategorySectionHeader from "src/components/CategorySectionHeader";
+import { FlexBox } from "src/components/flex-box";
+import ProductCard1 from "src/components/product-cards/ProductCard1";
+import { H3 } from "src/components/Typography";
 import { useEffect, useState } from "react";
 import ProductCategoryItem from "./ProductCategoryItem";
 

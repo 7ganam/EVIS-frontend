@@ -1,6 +1,6 @@
 import { Delete, Edit, RemoveRedEye } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
-import BazarSwitch from "components/BazarSwitch";
+import BazarSwitch from "src/components/BazarSwitch";
 import React, { useState } from "react";
 import {
   CategoryWrapper,

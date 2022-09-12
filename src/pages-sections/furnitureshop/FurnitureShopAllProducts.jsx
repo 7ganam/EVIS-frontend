@@ -1,6 +1,6 @@
 import { Box, Button, Grid } from "@mui/material";
-import ProductCard17 from "components/product-cards/ProductCard17";
-import { H1, Paragraph } from "components/Typography";
+import ProductCard17 from "src/components/product-cards/ProductCard17";
+import { H1, Paragraph } from "src/components/Typography";
 import React from "react";
 
 const FurnitureShopAllProducts = ({ productsData }) => {

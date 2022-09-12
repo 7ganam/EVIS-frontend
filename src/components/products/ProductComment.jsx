@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-import BazarAvatar from "components/BazarAvatar";
-import BazarRating from "components/BazarRating";
-import { FlexBox } from "components/flex-box";
-import { H5, H6, Paragraph, Span } from "components/Typography";
-import { getDateDifference } from "utils/utils"; // ===========================================================
+import BazarAvatar from "src/components/BazarAvatar";
+import BazarRating from "src/components/BazarRating";
+import { FlexBox } from "src/components/flex-box";
+import { H5, H6, Paragraph, Span } from "src/components/Typography";
+import { getDateDifference } from "src/utils/utils"; // ===========================================================
 
 // ===========================================================
 const ProductComment = (props) => {

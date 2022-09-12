@@ -9,7 +9,7 @@ import {
   styled,
   Tooltip,
 } from "@mui/material";
-import useSettings from "hooks/useSettings";
+import useSettings from "src/hooks/useSettings";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { FlexBox } from "./flex-box";

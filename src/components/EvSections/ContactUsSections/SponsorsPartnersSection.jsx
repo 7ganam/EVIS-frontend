@@ -64,7 +64,7 @@ const SponsorsPartnersSection = () => {
             </Grid>
 
             <Box sx={{ textAlign: "center", paddingBottom: "3rem" }}>
-                <Typography variant="h5" component="h5">KNOWLEDGE PARTNERS</Typography>
+                <Typography variant="h6" component="h6">KNOWLEDGE PARTNERS</Typography>
                 <Grid container
                     sx={{ textAlign: "center", placeItems: "center", }}
                 >

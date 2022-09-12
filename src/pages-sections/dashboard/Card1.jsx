@@ -1,7 +1,7 @@
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import { Card } from "@mui/material";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import { H3, H6, Paragraph } from "components/Typography";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
+import { H3, H6, Paragraph } from "src/components/Typography";
 import React from "react"; // ========================================================
 
 // ========================================================

@@ -1,14 +1,14 @@
 import { Box, Grid, styled } from "@mui/material";
-import AppStore from "components/AppStore";
-import BazarIconButton from "components/BazarIconButton";
-import BazarImage from "components/BazarImage";
-import { FlexBox } from "components/flex-box";
-import Facebook from "components/icons/Facebook";
-import Google from "components/icons/Google";
-import Instagram from "components/icons/Instagram";
-import Twitter from "components/icons/Twitter";
-import Youtube from "components/icons/Youtube";
-import { Paragraph } from "components/Typography";
+import AppStore from "src/components/AppStore";
+import BazarIconButton from "src/components/BazarIconButton";
+import BazarImage from "src/components/BazarImage";
+import { FlexBox } from "src/components/flex-box";
+import Facebook from "src/components/icons/Facebook";
+import Google from "src/components/icons/Google";
+import Instagram from "src/components/icons/Instagram";
+import Twitter from "src/components/icons/Twitter";
+import Youtube from "src/components/icons/Youtube";
+import { Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // styled components
 

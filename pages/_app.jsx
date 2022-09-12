@@ -1,8 +1,9 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import RTL from "components/RTL";
-import { AppProvider } from "contexts/AppContext";
-import SettingsProvider from "contexts/SettingContext";
+import "gallery_styles.css";
+// import RTL from "src/components/RTL";
+import { AppProvider } from "src/contexts/AppContext";
+import SettingsProvider from "src/contexts/SettingContext";
 import Head from "next/head";
 import Router from "next/router";
 import nProgress from "nprogress";
@@ -10,9 +11,9 @@ import "nprogress/nprogress.css";
 import { Fragment, useEffect } from "react";
 import "react-quill/dist/quill.snow.css";
 import "simplebar/dist/simplebar.min.css";
-import MuiTheme from "theme/MuiTheme";
-import GoogleAnalytics from "utils/GoogleAnalytics";
-import OpenGraphTags from "utils/OpenGraphTags";
+import MuiTheme from "src/theme/MuiTheme";
+import GoogleAnalytics from "src/utils/GoogleAnalytics";
+import OpenGraphTags from "src/utils/OpenGraphTags";
 import "../src/fake-db";
 //Binding events.
 Router.events.on("routeChangeStart", () => nProgress.start());

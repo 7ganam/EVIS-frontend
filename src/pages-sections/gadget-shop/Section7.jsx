@@ -1,6 +1,6 @@
 import { Container, Grid } from "@mui/material";
-import BlogCard1 from "components/blog-cards/BlogCard1";
-import CategorySectionHeader from "components/CategorySectionHeader";
+import BlogCard1 from "src/components/blog-cards/BlogCard1";
+import CategorySectionHeader from "src/components/CategorySectionHeader";
 
 // ================================================
 const Section7 = ({ blogLists }) => {

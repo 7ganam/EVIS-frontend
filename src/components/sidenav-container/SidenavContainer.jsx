@@ -2,7 +2,7 @@
 import { Box, Container, styled } from "@mui/material";
 import clsx from "clsx";
 import { useCallback, useEffect, useState } from "react";
-import { layoutConstant } from "utils/constants";
+import { layoutConstant } from "src/utils/constants";
 const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: 24,
   display: "flex",

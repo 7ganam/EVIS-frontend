@@ -1,19 +1,18 @@
 import { ArrowLeft, KeyboardArrowDown } from "@mui/icons-material";
 import ArrowRight from "@mui/icons-material/ArrowRight";
 import { Box, MenuItem, styled, Button } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import { FlexBox } from "components/flex-box";
-import NavLink from "components/nav-link/NavLink";
-import evNavbarNavigations from "data/ev-navbarNavigations";
-import useSettings from "hooks/useSettings";
+import BazarCard from "src/components/BazarCard";
+import { FlexBox } from "src/components/flex-box";
+import NavLink from "src/components/nav-link/NavLink";
+import evNavbarNavigations from "src/data/ev-navbarNavigations";
+import useSettings from "src/hooks/useSettings";
 import MegaMenu from "./MegaMenu";
 import MegaMenu2 from "./MegaMenu2"; // NavList props interface
 import Link from "next/link";
-import Image from "components/BazarImage";
+import Image from "src/components/BazarImage";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useState } from "react";
-import MobileMenu from "components/navbar/MobileMenu";
+import MobileMenu from "src/components/navbar/MobileMenu";
 
 // const common css style
 const navLinkStyle = {
@@ -110,8 +109,7 @@ const Navbar = ({ elevation, isFixed }) => {
                 alignItems: "center",
                 px: "10px",
                 height: "55px",
-                fontWeight: "600",
-                fontSize: "17px",
+                fontWeight: "400",
               }}
             >
               {nav.title}
@@ -128,7 +126,7 @@ const Navbar = ({ elevation, isFixed }) => {
               flexDirection="column"
               sx={{
                 height: "55px",
-                fontWeight: "600",
+                fontWeight: "400",
                 "&:hover": {
                   "& > .child-nav-item": {
                     display: "block",
@@ -145,7 +143,6 @@ const Navbar = ({ elevation, isFixed }) => {
                   alignItems: "center",
                   height: "100%",
                   px: "10px",
-                  fontSize: "17px",
                 }}
               >
                 {nav.title}{" "}
@@ -176,7 +173,7 @@ const Navbar = ({ elevation, isFixed }) => {
         if (nav.url) {
           return (
             <NavLink href={nav.url} key={nav.title}>
-              <MenuItem>{nav.title}</MenuItem>
+              <MenuItem sx={{ fontSize: "20px" }}>{nav.title}</MenuItem>
             </NavLink>
           );
         }
@@ -185,7 +182,7 @@ const Navbar = ({ elevation, isFixed }) => {
           return (
             <ParentNav position="relative" minWidth="230px" key={nav.title}>
               <MenuItem color="grey.700">
-                <Box flex="1 1 0" component="span">
+                <Box flex="1 1 0" component="span" sx={{ fontSize: "20px" }}>
                   {nav.title}
                 </Box>
 
@@ -240,11 +237,11 @@ const Navbar = ({ elevation, isFixed }) => {
           <Link href="/">
             <a>
               <Image
-                height={isFixed ? "70" : "90"}
+                // height={{ xs: "50", md: isFixed ? "70" : "90" }}
                 mb={0}
-                src="/assets/images/EvLogo.png"
+                src="/assets/images/EvLogo_MENA.png"
                 alt="logo"
-                // sx={{ height: "10%" }}
+                sx={{ height: { xs: "60px", md: isFixed ? "70px" : "120px" } }}
               />
             </a>
           </Link>
@@ -263,28 +260,22 @@ const Navbar = ({ elevation, isFixed }) => {
             sx={{
               display: downMd || isFixed ? "none" : "flex",
               justifyContent: "end",
-              py: "1px",
+
               minHeight: "70px",
               // bgcolor: "orange",
             }}
           >
-            <Box component={Button}>
-              <Link href={`/gallery`}>
-                <a>
-                  {" "}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    sx={{
-                      px: "30px",
-                      py: "6px",
-                    }}
-                  >
-                    Book A Stand
-                  </Button>
-                </a>
-              </Link>
-            </Box>
+            {/* <Link href="/">
+              <a>
+                <Image
+                  height={70}
+                  mb={0}
+                  src="/assets/images/NirvanaLogo.png"
+                  alt="logo"
+                  // sx={{ height: "10%" }}
+                />
+              </a>
+            </Link> */}
           </Box>
           <InnerContainer
             sx={{
@@ -302,7 +293,9 @@ const Navbar = ({ elevation, isFixed }) => {
                 flexWrap: "wrap",
                 pb: "20px",
                 pt: isFixed ? "20px" : "0",
-                justifyContent: "end",
+                justifyContent: "center",
+                fontSize: "20px",
+                fontWeight: "500",
               }}
             >
               {renderNestedNav(evNavbarNavigations, true)}

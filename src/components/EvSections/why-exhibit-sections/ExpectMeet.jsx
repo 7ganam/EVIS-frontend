@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Container, useTheme, Card } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import { H5 } from "components/Typography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import { H5 } from "src/components/Typography";
 const ExpectMeet = (props) => {
   const theme = useTheme();
 

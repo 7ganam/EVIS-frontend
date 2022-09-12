@@ -1,6 +1,6 @@
 import { Box, Container, styled } from "@mui/material";
-import CarouselCard2 from "components/carousel-cards/CarouselCard2";
-import Carousel from "components/carousel/Carousel";
+import CarouselCard2 from "src/components/carousel-cards/CarouselCard2";
+import Carousel from "src/components/carousel/Carousel";
 import Image from "next/image";
 import React from "react";
 import { arrowButtonStyle } from "./Section2"; // styled components

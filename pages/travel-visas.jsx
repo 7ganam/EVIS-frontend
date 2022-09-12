@@ -1,9 +1,9 @@
 import { Container, Stack } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import MainSection from "components/EvSections/travel-visa-sections/FormSection";
-import IntroSection from "components/EvSections/travel-visa-sections/IntroSection";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
+import MainSection from "src/components/EvSections/travel-visa-sections/FormSection";
+import IntroSection from "src/components/EvSections/travel-visa-sections/IntroSection";
 
 import { Box } from "@mui/system";
 // ======================================================
@@ -49,7 +49,7 @@ const generalPage = (props) => {
           mb: 6,
         }}
       >
-        <Box sx={{ mb: "20px" }}>
+        <Box sx={{ mb: "20px", mt: "30px" }}>
           {" "}
           <SectionTitle>Travel & Visas</SectionTitle>
         </Box>

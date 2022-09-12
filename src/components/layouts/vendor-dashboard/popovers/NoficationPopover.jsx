@@ -11,11 +11,11 @@ import {
   styled,
   Tab,
 } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import CartCheck from "components/icons/CartCheck";
-import CartX from "components/icons/CartX";
-import TruckFast from "components/icons/TruckFast";
-import { H6, Paragraph } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import CartCheck from "src/components/icons/CartCheck";
+import CartX from "src/components/icons/CartX";
+import TruckFast from "src/components/icons/TruckFast";
+import { H6, Paragraph } from "src/components/Typography";
 import { formatDistance } from "date-fns";
 import { useState } from "react"; // dummy  data
 

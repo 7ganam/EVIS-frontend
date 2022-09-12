@@ -5,8 +5,8 @@ import { Box, Card, MenuItem, TextField } from "@mui/material";
 import TouchRipple from "@mui/material/ButtonBase";
 import { styled } from "@mui/material/styles";
 import { debounce } from "@mui/material/utils";
-import BazarMenu from "components/BazarMenu";
-import { FlexBox } from "components/flex-box";
+import BazarMenu from "src/components/BazarMenu";
+import { FlexBox } from "src/components/flex-box";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react"; // styled components
 // also used in the GrocerySearchBox component

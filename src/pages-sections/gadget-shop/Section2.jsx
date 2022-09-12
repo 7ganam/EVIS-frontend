@@ -1,5 +1,5 @@
 import { Container, Grid } from "@mui/material";
-import CategorySectionHeader from "components/CategorySectionHeader";
+import CategorySectionHeader from "src/components/CategorySectionHeader";
 import React from "react";
 import HomeFourCard2 from "./homeFour-cards/HomeFourCard2";
 

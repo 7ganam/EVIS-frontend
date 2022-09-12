@@ -1,4 +1,4 @@
-import Mock from "fake-db/mock";
+import Mock from "src/fake-db/mock";
 import { brands } from "./brand";
 import { categories } from "./categories";
 import { customers } from "./customers";

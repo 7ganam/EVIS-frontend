@@ -1,5 +1,5 @@
 import { Container, Grid } from "@mui/material";
-import LazyImage from "components/LazyImage";
+import LazyImage from "src/components/LazyImage";
 import Link from "next/link";
 import React from "react";
 

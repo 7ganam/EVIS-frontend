@@ -1,9 +1,9 @@
 import { CallOutlined, MailOutline } from "@mui/icons-material";
 import { Box, Container, styled } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import NavLink from "components/nav-link/NavLink";
-import { Span } from "components/Typography";
-import { layoutConstant } from "utils/constants";
+import { FlexBox } from "src/components/flex-box";
+import NavLink from "src/components/nav-link/NavLink";
+import { Span } from "src/components/Typography";
+import { layoutConstant } from "src/utils/constants";
 const TopbarWrapper = styled(Box)(({ theme }) => ({
   fontSize: 12,
   height: layoutConstant.topbarHeight,
@@ -71,23 +71,23 @@ const EvTopbar = () => {
         <FlexBox className="topbarLeft" alignItems="center">
           <FlexBox alignItems="center">
             <CallOutlined fontSize="small" />
-            <Span className="title">+05402 1111 1111</Span>
+            <Span className="title">+97150 686 3956 </Span>
           </FlexBox>
 
           <FlexBox alignItems="center" ml={2.5}>
             <MailOutline fontSize="small" />
-            <Span className="title">support@evis.com</Span>
+            <Span className="title">evis@nirvanaholding.com</Span>
           </FlexBox>
         </FlexBox>
 
         <FlexBox className="topbarRight" alignItems="center">
-          <NavLink className="link" href="/faq">
+          {/* <NavLink className="link" href="/faq">
             FAQ&quot;s
           </NavLink>
 
           <NavLink className="link" href="/help">
             Need Help?
-          </NavLink>
+          </NavLink> */}
         </FlexBox>
       </Container>
     </TopbarWrapper>

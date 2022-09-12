@@ -1,7 +1,7 @@
 import { Button, Grid, styled } from "@mui/material";
-import Carousel from "components/carousel/Carousel";
-import LazyImage from "components/LazyImage";
-import { H3, H5 } from "components/Typography";
+import Carousel from "src/components/carousel/Carousel";
+import LazyImage from "src/components/LazyImage";
+import { H3, H5 } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // styled component
 

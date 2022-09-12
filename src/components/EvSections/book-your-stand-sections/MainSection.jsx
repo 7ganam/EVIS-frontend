@@ -1,11 +1,12 @@
 import { Formik } from "formik";
-import { Button, Grid, Stack, TextField } from "@mui/material";
+import { Button, Grid, Stack, TextField, Box } from "@mui/material";
+import { H4 } from "src/components/EvComponents/Typography";
 import Autocomplete from "@mui/material/Autocomplete";
-import Card1 from "components/Card1";
-import countryList from "data/countryList";
+import Card1 from "src/components/Card1";
+import countryList from "src/data/countryList";
 
 import * as yup from "yup";
-import Image from "components/BazarImage";
+import Image from "src/components/BazarImage";
 
 const initialValues = {
   first_name: "",
@@ -277,13 +278,18 @@ function MainSection({ sponsors }) {
             <Stack>
               {sponsors.map((sponsor) => {
                 return (
-                  <Image
-                    key={sponsor.source}
-                    src={sponsor.source}
-                    alt="sponsor logo"
-                    width={"80%"}
-                    sx={{ margin: "auto" }}
-                  ></Image>
+                  <Box key = {sponsor.source} sx = {{
+                    textAlign : "center"
+                  }}>
+                    <H4>{sponsor.text}</H4>
+                    <Image
+                      key={sponsor.source}
+                      src={sponsor.source}
+                      alt="sponsor logo"
+                      width={"80%"}
+                      sx={{ margin: "auto" }}
+                    ></Image>
+                  </Box>
                 );
               })}
             </Stack>

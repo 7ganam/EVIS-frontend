@@ -1,7 +1,7 @@
 import East from "@mui/icons-material/East";
 import { Box, Chip, IconButton, Typography } from "@mui/material";
-import TableRow from "components/TableRow";
-import { H5 } from "components/Typography";
+import TableRow from "src/components/TableRow";
+import { H5 } from "src/components/Typography";
 import { format } from "date-fns";
 import Link from "next/link";
 

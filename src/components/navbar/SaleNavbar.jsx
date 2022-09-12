@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Box, Container, styled } from "@mui/material";
-import { FlexRowCenter } from "components/flex-box";
-import Scrollbar from "components/Scrollbar";
+import { FlexRowCenter } from "src/components/flex-box";
+import Scrollbar from "src/components/Scrollbar";
 import { useCallback, useState } from "react";
 import { H5 } from "../Typography"; // ==========================================================================
 
