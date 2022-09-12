@@ -26,10 +26,11 @@ const StyledLink = styled("a")(({ theme }) => ({
   display: "block",
   cursor: "pointer",
   position: "relative",
-  padding: "0.3rem 0rem",
+  padding: "0.3rem 0.3rem",
   color: theme.palette.grey[300],
   "&:hover": {
-    color: theme.palette.grey[100],
+    color: theme.palette.grey[700],
+    backgroundColor: theme.palette.grey[100],
   },
 }));
 const SectionElement = styled("a")(({ theme }) => ({
@@ -53,7 +54,7 @@ const SectionTitle = styled("div")(({ theme }) => ({
 
 const quickLinks = [
   { label: "about", link: "/about" },
-  { label: "exhibit", link: "/exhibition/why-exhibit" },
+  { label: "exhibition", link: "/exhibition/why-exhibit" },
   { label: "Sponsors & partners", link: "/sponsors-partners/previous" },
   { label: "CONFERENCE", link: "/agenda/conference" },
   { label: "NEWS", link: "/news-media/news" },
@@ -236,6 +237,16 @@ const PageFooter = ({ sx, id, bgcolor }) => {
                 </Span>
               </FlexBox>
             </SectionElement>
+          </Grid>
+
+          <Grid item md={3} sm={6} xs={12}>
+            <SectionTitle>{`Event Info`}</SectionTitle>
+            <SectionElement>{"When: 29 – 31 May 2023"}</SectionElement>
+            <SectionElement>{"Timings: 9am - 5pm"}</SectionElement>
+            <SectionElement>
+              {"Venue: Abu Dhabi National Exhibition Centre, UAE"}
+            </SectionElement>
+            <SectionElement>{"Email: evis@nirvanaholding.com"}</SectionElement>
             <FlexBox className="flex" mx={-0.625} mt={2}>
               {iconList.map((item, ind) => (
                 <a
@@ -255,16 +266,6 @@ const PageFooter = ({ sx, id, bgcolor }) => {
                 </a>
               ))}
             </FlexBox>
-          </Grid>
-
-          <Grid item md={3} sm={6} xs={12}>
-            <SectionTitle>{`Event Info`}</SectionTitle>
-            <SectionElement>{"When: 29 – 31 May 2023"}</SectionElement>
-            <SectionElement>{"Timings: 9am - 5pm"}</SectionElement>
-            <SectionElement>
-              {"Venue: Abu Dhabi National Exhibition Centre, UAE"}
-            </SectionElement>
-            <SectionElement>{"Email: evis@nirvanaholding.com"}</SectionElement>
           </Grid>
         </Grid>
       </Container>

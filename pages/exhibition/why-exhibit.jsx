@@ -129,7 +129,7 @@ const footer2 = [
 ];
 
 const whyExhibit = {
-  img: "/assets/images/why-exhibit/charger.png",
+  img: "/assets/images/why-exhibit/DSC08355.jpg",
   title: " ",
   ps: [
     `As is true for many emerging technologies, vehicle electrification is experiencing rapid innovation. The Middle East & Africa Electric Vehicle Market is expected to witness substantial growth & business opportunities over the next decade. Governments are focusing on renewable energy and clean transportation technologies along with the implementation of economic and energy diversification plans.

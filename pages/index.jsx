@@ -31,32 +31,56 @@ const pageHeaderData = {
 const EvHome = (props) => {
   const serviceList = [
     {
-      image: "/assets/images/ev-home/why-attendees-d.png",
+      image: "/assets/images/ev-home/0.jpeg",
     },
     {
-      image: "/assets/images/ev-home/why-sqm-d.png",
+      image: "/assets/images/ev-home/1.jpeg",
     },
     {
-      image: "/assets/images/ev-home/why-exhibitions-d.png",
+      image: "/assets/images/ev-home/2.jpeg",
     },
     {
-      image: "/assets/images/ev-home/why-delegates-d.png",
+      image: "/assets/images/ev-home/3.jpeg",
     },
     {
-      image: "/assets/images/ev-home/why-conference-d.png",
+      image: "/assets/images/ev-home/4.jpeg",
     },
     {
-      image: "/assets/images/ev-home/why-speakers-d.png",
+      image: "/assets/images/ev-home/5.jpeg",
+    },
+    {
+      image: "/assets/images/ev-home/6.jpeg",
+    },
+    {
+      image: "/assets/images/ev-home/7.jpeg",
+    },
+    {
+      image: "/assets/images/ev-home/8.jpeg",
     },
   ];
 
   const videosList = [
-    { youtube: "FnU_SEdn3d4" },
-    { youtube: "0HfcbVQzXFc" },
-    { youtube: "Q-NqQ_LyGdQ" },
-    { youtube: "tKfOCjdwaJ0" },
-    { youtube: "Jw_MFPnYn7s" },
-    { youtube: "CAKf5hgSZyU" },
+    {
+      youtube:
+        "https://www.youtube.com/watch?v=pH-S5T4v000&feature=emb_logo&ab_channel=EVIS",
+    },
+    {
+      youtube:
+        "https://www.youtube.com/watch?v=9QsM34soYg0&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=3&ab_channel=EVIS",
+    },
+    {
+      youtube:
+        "https://www.youtube.com/watch?v=hFxiyLbi2Sg&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=4&ab_channel=EVIS",
+    },
+    {
+      youtube:
+        "https://www.youtube.com/watch?v=BzT8e_IFVPs&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=5&ab_channel=EVIS",
+    },
+    {
+      youtube:
+        "https://www.youtube.com/watch?v=VSiDveJb23w&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=6&ab_channel=EVIS",
+    },
+    { youtube: "https://www.youtube.com/watch?v=x2CDpB6mrp4&ab_channel=EVIS" },
   ];
   const itemData1 = {
     img: "/assets/images/ev-home/DSC07429.jpg",

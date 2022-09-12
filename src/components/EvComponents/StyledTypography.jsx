@@ -22,10 +22,10 @@ const BlockTitleBox = styled(Box)(({ theme }) => ({
   color: theme.palette.primary.main,
 }));
 
-export function SectionTitle2({ children }) {
+export function SectionTitle2({ children, sx = {} }) {
   return (
     <TitleBox my={3}>
-      <H1>{children}</H1>
+      <H1 sx={{ ...sx }}>{children}</H1>
     </TitleBox>
   );
 }

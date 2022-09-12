@@ -19,7 +19,7 @@ const NewsCard = ({ title, img, link }) => {
   const router = useRouter();
 
   return (
-    <a href={link}>
+    <a href={link} target="_blank" rel="noreferrer">
       <Box
         sx={{
           display: "flex",

@@ -1,27 +1,24 @@
 import { Box, Grid, styled, useTheme } from "@mui/material";
-import { H1 } from "src/components/Typography";
 import React from "react";
 import YoutubeEmbed from "src/components/YoutubeEmbed";
 
-const TitleBox = styled(Box)(({ theme }) => ({
-  textAlign: "center",
-  "& h1": {
-    fontSize: 40,
-    fontWeight: 600,
-    marginBottom: "10px",
-  },
-  "& div": {
-    width: 200,
-    height: "2px",
-    margin: "auto",
-    background: theme.palette.primary.main,
-  },
-}));
+function extract_yt_id(url) {
+  var video_id = url.split("v=")[1];
+  if (video_id) {
+    var ampersandPosition = video_id.indexOf("&");
+    if (ampersandPosition != -1) {
+      video_id = video_id.substring(0, ampersandPosition);
+    }
+    return video_id;
+  }
+}
 
 const VideosSection = ({ videosList }) => {
+  videosList.forEach((item) => console.log(extract_yt_id(item.youtube)));
+
   const theme = useTheme();
   return (
-    <Box mt={5}>
+    <Box mt={6}>
       <Grid container mb={-0.5} spacing={3}>
         {videosList.map((item, ind) => (
           <Grid key={ind} item md={4} sm={6} xs={12}>
@@ -34,12 +31,14 @@ const VideosSection = ({ videosList }) => {
             >
               <Box
                 hoverEffect
+                // data-aos="fade-up"
+                // data-aos-duration={(ind + 1) * 300}
                 sx={{
                   borderRadius: "10px",
                   overflow: "hidden",
                 }}
               >
-                <YoutubeEmbed embedId={item.youtube} />
+                <YoutubeEmbed embedId={extract_yt_id(item.youtube)} />
               </Box>
             </Box>
           </Grid>
