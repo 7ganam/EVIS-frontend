@@ -11,7 +11,7 @@ const WhatToExpectSection = ({ serviceList }) => {
   return (
     <Box>
       <Box sx={{ mb: "20px" }}>
-        <SectionTitle>What to Expect</SectionTitle>
+        <SectionTitle>2023 HIGHLIGHTS</SectionTitle>
       </Box>
       <Box
         sx={{
