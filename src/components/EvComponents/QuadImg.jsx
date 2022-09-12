@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
-import { H2, H6 } from "components/EvComponents/Typography";
+import { H2, H6 } from "src/components/EvComponents/Typography";
 
 const Content = (item, index) => {
   if (item.direction === "right") {
@@ -18,10 +18,10 @@ const Content = (item, index) => {
         }}
       >
         <Grid container>
-          <Grid item  xs= {12} sm={6} order={{ sm: 2 }}></Grid>
+          <Grid item xs={12} sm={6} order={{ sm: 2 }}></Grid>
           <Grid
             item
-            xs = {12}
+            xs={12}
             sm={6}
             order={{ sm: 1 }}
             sx={{
@@ -30,10 +30,12 @@ const Content = (item, index) => {
               height: "500px",
             }}
           >
-            <Box sx={{ 
-                px: 3, 
-                py : 4,
-                }}>
+            <Box
+              sx={{
+                px: 3,
+                py: 4,
+              }}
+            >
               <H2> {item.title} </H2>
               {item.ps?.map((item, index) => {
                 return (
@@ -64,10 +66,10 @@ const Content = (item, index) => {
         }}
       >
         <Grid container>
-          <Grid item xs = {12} sm={6} order={{ sm: 1 }}></Grid>
+          <Grid item xs={12} sm={6} order={{ sm: 1 }}></Grid>
           <Grid
             item
-            xs = {12}
+            xs={12}
             sm={6}
             order={{ sm: 2 }}
             sx={{
@@ -76,7 +78,7 @@ const Content = (item, index) => {
               height: "500px",
             }}
           >
-            <Box sx={{ px: 3 , py : 3 }}>
+            <Box sx={{ px: 3, py: 3 }}>
               <H2> {item.title} </H2>
               {item.ps?.map((item, index) => {
                 return (
@@ -93,16 +95,15 @@ const Content = (item, index) => {
   }
 };
 
-
 const QuadImg = (props) => {
   const data = props.data;
   return (
     <Box>
       <Grid
         container
-        sx={{          
+        sx={{
           mb: 6,
-          pt : 3
+          pt: 3,
         }}
       >
         {data.map((item, index) => {

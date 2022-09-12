@@ -18,7 +18,7 @@ import FeedbackQuotesSection from "src/components/EvSections/FeedbackQuotesSecti
 import FullWidthCardsSection from "src/components/EvSections/FullWidthCardsSection";
 import PageHeader from "src/components/EvComponents/PageHeader";
 import TestimonialCardSection from "@/components/EvSections/TestimonialCardSection";
-import QuadImgSection from "components/EvSections/QuadImgSection";
+import QuadImgSection from "src/components/EvSections/QuadImgSection";
 
 // ======================================================
 // ======================================================
