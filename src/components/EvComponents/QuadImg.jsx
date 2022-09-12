@@ -98,7 +98,7 @@ const Content = (item, index) => {
 const QuadImg = (props) => {
   const data = props.data;
   return (
-    <Box>
+    <Box sx={{ boxShadow: "-2px 5px 4px #00000078" }}>
       <Grid
         container
         sx={{

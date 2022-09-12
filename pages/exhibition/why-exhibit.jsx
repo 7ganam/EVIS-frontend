@@ -7,6 +7,8 @@ import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
 import CoreSection from "@/components/EvSections/why-exhibit-sections/CoreSection";
 import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/grocery3-shop";
+import QuadImgSection from "src/components/EvSections/QuadImgSection";
+
 // ======================================================
 // ======================================================
 
