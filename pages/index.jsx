@@ -23,8 +23,8 @@ import Link from "next/link";
 // ======================================================
 
 const pageHeaderData = {
-  text: "The MENA’s First and Largest EV Tech Conference and Exhibition",
-  buttonText: "Save The Date",
+  text: "The MENA’s First Electric Vehicles Exhibition and Conference",
+  buttonText: "Become A Sponsor",
   buttonLink: "/",
   image: "/assets/images/ev-home/carousel2.jpeg",
 };
@@ -87,14 +87,14 @@ const EvHome = (props) => {
       content: `The Electric Vehicle Innovation Summit fosters individual engagement and community interaction through networking opportunities and customized experiences including new technology, sharing economy activities, personalized meet ups and attendee personalized networking.`,
       buttonText: "ATTEND EVIS",
       buttonLink: "/",
-      title: "networking opportunities",
+      title: "Networking Opportunities",
     },
     {
       img: "/assets/images/ev-home/DSC01808.jpg",
       content: `The Electric Vehicle Innovation Summit is to be held in accordance with the highest standards governing such professional specialized conferences addressing advanced subject of interest to the specialized experts yet appealing to the public at large.`,
       buttonText: "ATTEND EVIS",
       buttonLink: "/",
-      title: "high standards",
+      title: "High Standards",
     },
   ];
   const buttonsData = [
@@ -125,7 +125,7 @@ const EvHome = (props) => {
         buttonLink={pageHeaderData.buttonLink}
         image={pageHeaderData.image}
       >
-        <Box sx={{ maxWidth: "730px", textAlign: "center" }}>
+        <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
           {pageHeaderData.text && (
             <H1 sx={{ fontSize: { xs: "40px", md: "55px" } }}>
               {pageHeaderData.text}
@@ -145,7 +145,7 @@ const EvHome = (props) => {
                   <a>
                     <StyledButton
                       minWidth={"250px"}
-                      variant="outlined"
+                      variant="contained"
                       color="primary"
                       sx={{
                         width: "250px",

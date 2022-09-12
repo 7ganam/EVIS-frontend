@@ -6,13 +6,14 @@ const evNavbarNavigations = [
 
     child: [
       {
-        title: "Conference",
-        url: "/about#conference",
-      },
-      {
         title: "Exhibition",
         url: "/about/#exhibition",
       },
+      {
+        title: "Conference",
+        url: "/about#conference",
+      },
+
       {
         title: "Open Tech Sessions",
         url: "/about#open-tech",
@@ -30,7 +31,7 @@ const evNavbarNavigations = [
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "Exhibit",
+    title: "Exhibition",
 
     child: [
       {
@@ -48,6 +49,21 @@ const evNavbarNavigations = [
       {
         title: "Book your stand",
         url: "exhibition/book-your-stand",
+      },
+    ],
+  },
+  {
+    megaMenu: false,
+    megaMenuWithSub: false,
+    title: "Sponsors & Partners",
+    child: [
+      {
+        title: "2023 Sponsors & Exhibitors & Partners",
+        url: "/coming-soon",
+      },
+      {
+        title: "2022 Sponsors & Exhibitors & Partners",
+        url: "/sponsors-partners/previous",
       },
     ],
   },
@@ -85,21 +101,7 @@ const evNavbarNavigations = [
       },
     ],
   },
-  {
-    megaMenu: false,
-    megaMenuWithSub: false,
-    title: "Sponsors & Partners",
-    child: [
-      {
-        title: "EVIS2023 Sponsors & Exhibitors & Partners",
-        url: "/coming-soon",
-      },
-      {
-        title: "Previous Sponsors & Exhibitors & Partners",
-        url: "/sponsors-partners/previous",
-      },
-    ],
-  },
+
   {
     megaMenu: false,
     megaMenuWithSub: false,
@@ -129,20 +131,24 @@ const evNavbarNavigations = [
     title: "Register with us",
     child: [
       {
-        title: "Visitor",
-        url: "/participate/visitor",
-      },
-      {
-        title: "Delegate",
-        url: "/participate/delegate",
+        title: "Sponsor",
+        url: "/participate/sponsor",
       },
       {
         title: "Exhibitor",
         url: "/participate/exhibitor",
       },
       {
-        title: "Sponsor",
-        url: "/participate/sponsor",
+        title: "Delegate",
+        url: "/participate/delegate",
+      },
+      {
+        title: "Visitor",
+        url: "/participate/visitor",
+      },
+      {
+        title: "Media",
+        url: "/participate/media",
       },
     ],
   },

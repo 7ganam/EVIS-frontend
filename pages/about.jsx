@@ -146,9 +146,11 @@ const generalPage = () => {
       <Container>
         <LandingText id={"summit"} section={section} />
       </Container>
-      <SummitSection></SummitSection>
       <Container>
         <Exhibition item={ExhibitionItem} />
+      </Container>
+      <SummitSection></SummitSection>
+      <Container>
         <OpenTechSection item={OpenTechData}></OpenTechSection>
       </Container>
       <AdvisoryBoardSection data={AdvisoryBoardData}></AdvisoryBoardSection>
