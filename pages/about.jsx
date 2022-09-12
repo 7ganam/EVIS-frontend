@@ -23,7 +23,7 @@ const section = {
 };
 
 const ExhibitionItem = {
-  img: "/assets/images/about-page/1.jpeg",
+  img: "/assets/images/why-exhibit/DSC08355.jpg",
   title: "",
   ps: [
     `The exhibition will provide a high-quality environment for the EV industry to showcase their latest solutions to an audience who matters, including financiers and investors, engineers, R&D & government officials. More than 5,000 professionals representing leading companies in the EV industry will be in Abu Dhabi with the goal of networking and sourcing the latest technologies across the 3 days of exhibition. Exhibitors include EV-related Manufacturers and Distributors, Fleet owners, Integrated Energy Companies, Banks, Finance and Investment Firms, R & D Companies, Environmental Agencies, Government organizations, Municipalities, Public Transport Operators etc.
