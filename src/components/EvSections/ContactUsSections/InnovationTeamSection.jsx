@@ -20,7 +20,7 @@ const data = [
   {
     Src: "/assets/images/contact-us/ZayidAhamed.jpeg",
     Name: "Zayid Ahamed",
-    Position: "Exhibition Enquiries - Sales Executive",
+    Position: "Exhibition and Sponsorship Sales Enquiries",
     Mobile: "+971 2 304 3352 / +971 50 686 3956",
     Email: "zayid.ahamed@nirvanatls.com",
     EmailTo: "mailto:zayid.ahamed@nirvanatls.com",
@@ -28,7 +28,7 @@ const data = [
   {
     Src: "/assets/images/contact-us/JessySuraj.jpeg",
     Name: "Jessy Suraj",
-    Position: "Exhibition Enquiries - Sales Team",
+    Position: "Operation Enquiries - Sales Team",
     Mobile: "+971 2 304 3322 / +971 50 686 3769",
     Email: "jessy.suraj@nirvanatls.com",
     EmailTo: "mailto:jessy.suraj@nirvanatls.com",
