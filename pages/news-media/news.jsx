@@ -19,12 +19,12 @@ const evisInNewsData = [
     img: "/assets/images/news-page/inNews/1.jpg",
   },
   {
-    title: `AD TV -OloomAl Dar`,
+    title: `AD TV -Oloom Al Dar`,
     link: "https://www.youtube.com/watch?v=thzikNydA80&ab_channel=Oloomaldaar%D8%B9%D9%84%D9%88%D9%85%D8%A7%D9%84%D8%AF%D8%A7%D8%B1",
     img: "/assets/images/news-page/inNews/2.jpg",
   },
   {
-    title: `Dubai TVr`,
+    title: `Dubai TV`,
     link: "https://www.youtube.com/watch?v=bxKhcfhiLXo&ab_channel=DubaiTVI%D8%AA%D9%84%D9%81%D8%B2%D9%8A%D9%88%D9%86%D8%AF%D8%A8%D9%8A",
     img: "/assets/images/news-page/inNews/3.jpg",
   },
