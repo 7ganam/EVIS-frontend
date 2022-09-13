@@ -2,39 +2,50 @@ import { Box, Grid } from "@mui/material";
 import { H5 } from "src/components/EvComponents/Typography";
 
 const StyledImage = (props) => {
-  return <img src={props.Src} width="170" style={{ margin: "10px" }} alt = {props.Src} />;
+  return (
+    <img
+      src={props.Src}
+      width="170"
+      style={{ margin: "10px" }}
+      alt={props.Src}
+    />
+  );
 };
 
 const imagesData = [
   {
-    source: "/assets/images/organizers/Masdar.png",
+    source: "/assets/images/organizations/Masdar.jpg",
     text: "Sustainability Partner",
   },
   {
-    source: "/assets/images/organizers/ADNEC.png",
+    source: "/assets/images/organizations/ADNEC.png",
     text: "Venue Partner",
   },
   {
-    source: "/assets/images/organizers/AbuDhabi.png",
+    source: "/assets/images/organizations/AbuDhabi.png",
     text: "Host City",
   },
   {
-    source: "/assets/images/organizers/Nirvana.png",
+    source: "/assets/images/organizations/Nirvana.png",
     text: "Organized By",
   },
-  {
-    source: "/assets/images/organizers/Audi.png",
-    text: "Gold Sponsor",
-  },
-  {
-    source: "/assets/images/organizers/BritishVolt.png",
-    text: "Silver Sponsor",
-  },
+  // {
+  //   source: "/assets/images/organizations/Audi.png",
+  //   text: "Gold Sponsor",
+  // },
+  // {
+  //   source: "/assets/images/organizations/BritishVolt.png",
+  //   text: "Silver Sponsor",
+  // },
 ];
 
 const SponsorsGrid = () => {
   return (
-    <Grid container sx={{ textAlign: "center", placeItems: "center" }}>
+    <Grid
+      container
+      sx={{ textAlign: "center", placeItems: "center" }}
+      justifyContent={"center"}
+    >
       {imagesData.map(({ source, text }) => {
         return (
           <Grid item xs={12} sm={4} md={2} key={source}>

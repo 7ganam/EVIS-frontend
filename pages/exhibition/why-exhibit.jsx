@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import WhyExhibit from "src/components/EvSections/why-exhibit-sections/WhyExhibit";
 import ExhibitionFeatures from "src/components/EvSections/why-exhibit-sections/ExhibitionFeatures";
 import ByExhibit from "src/components/EvSections/why-exhibit-sections/ByExhibit";
@@ -8,7 +8,8 @@ import CoreSection from "@/components/EvSections/why-exhibit-sections/CoreSectio
 import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/grocery3-shop";
 import QuadImgSection from "src/components/EvSections/QuadImgSection";
-
+import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
+import PartnersGrid from "src/components/EvSections/PartnersGrid";
 // ======================================================
 // ======================================================
 
@@ -169,7 +170,13 @@ const generalPage = () => {
         <ExhibitionFeatures data={featureList} />
         <ByExhibit data={serviceList} />
         <ExpectMeet data={peopleList} />
-        <Footer footer1={footer1} footer2={footer2} />
+      </Container>
+
+      <Container>
+        <Box sx={{ mt: "100px" }}>
+          <SponsorsGrid />
+          <PartnersGrid sx={{ mt: 5 }} />
+        </Box>
       </Container>
     </EvLayout>
   );

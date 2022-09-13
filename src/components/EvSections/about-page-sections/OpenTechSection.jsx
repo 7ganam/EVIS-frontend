@@ -11,7 +11,7 @@ const OpenTechSection = (props) => {
   return (
     <Box id={"open-tech"} sx={{ scrollMarginTop: "250px" }}>
       <Box sx={{ mt: "40px", mb: "20px" }}>
-        <SectionTitle>Open Tech Sessions</SectionTitle>
+        <SectionTitle>Open Tech Videos</SectionTitle>
       </Box>
       <Box sx={{ mb: "40px" }}>
         <TwoColumnBoxV2

@@ -30,10 +30,10 @@ export function SectionTitle2({ children, sx = {} }) {
   );
 }
 
-export function SectionTitle({ children }) {
+export function SectionTitle({ children, sx }) {
   const theme = useTheme();
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", ...sx }}>
       <Box
         sx={{
           minWidth: "250px",

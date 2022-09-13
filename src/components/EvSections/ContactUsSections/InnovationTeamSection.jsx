@@ -16,22 +16,7 @@ const data = [
     Email: "naser.ali@nirvanatls.com",
     EmailTo: "mailto:naser.ali@nirvanatls.com",
   },
-  {
-    Src: "/assets/images/contact-us/SarahSalera.jpeg",
-    Name: "Sarah Salera",
-    Position: "Conference Manager",
-    Mobile: "+971 2 304 3353 / +971 50 452 1237",
-    Email: "sara.salera@nirvanatls.com",
-    EmailTo: "mailto:sara.salera@nirvanatls.com",
-  },
-  {
-    Src: "/assets/images/contact-us/CorinaSharayah.jpeg",
-    Name: "Corina Sharayah",
-    Position: "Operations Manager",
-    Mobile: "+971 2 304 3354 / +971 56 111 0272",
-    Email: "corina.sh@nirvanatls.com ",
-    EmailTo: "mailto:corina.sh@nirvanatls.com ",
-  },
+
   {
     Src: "/assets/images/contact-us/ZayidAhamed.jpeg",
     Name: "Zayid Ahamed",
@@ -48,14 +33,7 @@ const data = [
     Email: "jessy.suraj@nirvanatls.com",
     EmailTo: "mailto:jessy.suraj@nirvanatls.com",
   },
-  {
-    Src: "/assets/images/contact-us/VilmaDucay.jpeg",
-    Name: "Vilma Ducay",
-    Position: "Conference Enquiries - Sales Team",
-    Mobile: "+971 2 304 3322 / +971 50 686 3740",
-    Email: "vilma.ducay@nirvanatls.com ",
-    EmailTo: "mailto:vilma.ducay@nirvanatls.com ",
-  },
+
   {
     Src: "/assets/images/contact-us/NasryAbouZaki.jpeg",
     Name: "Nasry Abou Zaki",

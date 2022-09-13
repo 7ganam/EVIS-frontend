@@ -14,7 +14,7 @@ const StyledImage = (props) => {
 
 const keyPartners = [
   {
-    source: "/assets/images/organizers/Masdar.png",
+    source: "/assets/images/organizations/Masdar.jpg",
     text: "Partner",
   },
   {

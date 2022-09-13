@@ -7,46 +7,62 @@ const StyledImage = (props) => {
 
 const imagesData = [
   {
-    source: "/assets/images/partners/CEBC.png",
+    source: "/assets/images/organizations/CEBC.png",
     text: "Sustainability Partner",
   },
-  {
-    source: "/assets/images/partners/CHARIN.png",
-    text: "Venue Partner",
-  },
-  {
-    source: "/assets/images/partners/GEEE.png",
-    text: "Host City",
-  },
-  {
-    source: "/assets/images/partners/ISF.png",
-    text: "Organized By",
-  },
-  {
-    source: "/assets/images/partners/AVERE.png",
-    text: "Gold Sponsor",
-  },
-  {
-    source: "/assets/images/partners/Oxford.png",
-    text: "Silver Sponsor",
-  },
+  // {
+  //   source: "/assets/images/organizations/CHARIN.png",
+  //   text: "Venue Partner",
+  // },
+  // {
+  //   source: "/assets/images/organizations/GEEE.png",
+  //   text: "Host City",
+  // },
+  // {
+  //   source: "/assets/images/organizations/ISF.png",
+  //   text: "Organized By",
+  // },
+  // {
+  //   source: "/assets/images/organizations/AVERE.png",
+  //   text: "Gold Sponsor",
+  // },
+  // {
+  //   source: "/assets/images/organizations/Oxford.jpg",
+  //   text: "Silver Sponsor",
+  // },
 ];
 
-const PartnersGrid = () => {
+const PartnersGrid = ({ sx }) => {
   return (
-    <Box sx={{ textAlign: "center", paddingBottom: "3rem" }}>
+    <Box sx={{ ...sx, textAlign: "center", paddingBottom: "3rem" }}>
       {/* <h6>KNOWLEDGE PARTNERS</h6>, */}
       <Typography variant="h5" component="h5">
         KNOWLEDGE PARTNERS
       </Typography>
-      <Grid container sx={{ textAlign: "center", placeItems: "center" }} mt={3}>
+      <Grid
+        container
+        sx={{ textAlign: "center", placeItems: "center" }}
+        mt={3}
+        justifyContent="center"
+      >
         {imagesData.map(({ source, text }) => {
           return (
             <Grid item xs={12} sm={4} md={2} key={source}>
-              <Box>
-                <H5>{text}</H5>
+              <Box sx={{ height: "200px" }}>
+                <Box>
+                  <H5>{text}</H5>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                  }}
+                >
+                  <StyledImage Src={source} />
+                </Box>
               </Box>
-              <StyledImage Src={source} />
             </Grid>
           );
         })}

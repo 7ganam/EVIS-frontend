@@ -16,7 +16,7 @@ const ByExhibit = (props) => {
         py: "10px",
       }}
     >
-      <SectionTitle>BY EXHIBITING, YOU CAN</SectionTitle>
+      <SectionTitle sx={{ mb: "20px" }}>BY EXHIBITING, YOU CAN</SectionTitle>
 
       <Container
         sx={{

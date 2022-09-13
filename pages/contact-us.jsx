@@ -1,10 +1,12 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/grocery3-shop";
 import FindUsSection from "src/components/EvSections/ContactUsSections/FindUsSection";
 import InnovationTeamSection from "src/components/EvSections/ContactUsSections/InnovationTeamSection";
 import AboutNirvana from "src/components/EvSections/ContactUsSections/AboutNirvana";
 import SponsorsPartnersSection from "src/components/EvSections/ContactUsSections/SponsorsPartnersSection";
+import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
+import PartnersGrid from "src/components/EvSections/PartnersGrid";
 // ======================================================
 // ======================================================
 
@@ -21,7 +23,10 @@ const EvContactUs = () => {
       </Container>
       <AboutNirvana />
       <Container>
-        <SponsorsPartnersSection />
+        <Box sx={{ mt: "100px" }}>
+          <SponsorsGrid />
+          <PartnersGrid sx={{ mt: 5 }} />
+        </Box>
       </Container>
     </EvLayout>
   );

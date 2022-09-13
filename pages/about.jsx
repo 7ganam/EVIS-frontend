@@ -160,7 +160,7 @@ const generalPage = () => {
 
         <Box sx={{ mt: "100px" }}>
           <SponsorsGrid />
-          <PartnersGrid />
+          <PartnersGrid sx={{ mt: 5 }} />
         </Box>
       </Container>
     </EvLayout>

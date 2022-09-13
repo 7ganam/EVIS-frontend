@@ -158,6 +158,10 @@ const evNavbarNavigations = [
     title: "Contact us",
     child: [
       {
+        title: "Contact",
+        url: "/contact-us",
+      },
+      {
         title: "Travel & Visa",
         url: "/travel-visas",
       },
