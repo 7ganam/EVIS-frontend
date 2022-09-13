@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
 import { H2, H6 } from "src/components/EvComponents/Typography";
+import { H4, H5 } from "../Typography";
 
 const Content = (item, index) => {
   if (item.direction === "right") {
@@ -25,7 +26,7 @@ const Content = (item, index) => {
             sm={6}
             order={{ sm: 1 }}
             sx={{
-              bgcolor: "rgba(0,0,0,0.3)",
+              bgcolor: "rgba(0,0,0,0.6)",
               color: "white",
               height: "500px",
             }}
@@ -40,7 +41,7 @@ const Content = (item, index) => {
               {item.ps?.map((item, index) => {
                 return (
                   <Box sx={{ pt: 1 }} key={index}>
-                    <H6>{item}</H6>
+                    <H4>{item}</H4>
                   </Box>
                 );
               })}
@@ -73,7 +74,7 @@ const Content = (item, index) => {
             sm={6}
             order={{ sm: 2 }}
             sx={{
-              bgcolor: "rgba(0,0,0,0.3)",
+              bgcolor: "rgba(0,0,0,0.6)",
               color: "white",
               height: "500px",
             }}
@@ -83,7 +84,7 @@ const Content = (item, index) => {
               {item.ps?.map((item, index) => {
                 return (
                   <Box sx={{ pt: 1 }} key={index}>
-                    <H6>{item}</H6>
+                    <H4>{item}</H4>
                   </Box>
                 );
               })}

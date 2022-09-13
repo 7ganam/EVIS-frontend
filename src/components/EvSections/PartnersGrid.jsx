@@ -8,7 +8,7 @@ const StyledImage = (props) => {
 const imagesData = [
   {
     source: "/assets/images/organizations/CEBC.png",
-    text: "Sustainability Partner",
+    text: "",
   },
   // {
   //   source: "/assets/images/organizations/CHARIN.png",

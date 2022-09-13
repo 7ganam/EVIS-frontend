@@ -18,6 +18,10 @@ const imagesData = [
     text: "Sustainability Partner",
   },
   {
+    source: "/assets/images/organizations/DCT.png",
+    text: "Destination Partner",
+  },
+  {
     source: "/assets/images/organizations/ADNEC.png",
     text: "Venue Partner",
   },
@@ -26,7 +30,7 @@ const imagesData = [
     text: "Host City",
   },
   {
-    source: "/assets/images/organizations/Nirvana.png",
+    source: "/assets/images/NirvanaLogo.png",
     text: "Organized By",
   },
   // {
@@ -49,10 +53,21 @@ const SponsorsGrid = () => {
       {imagesData.map(({ source, text }) => {
         return (
           <Grid item xs={12} sm={4} md={2} key={source}>
-            <Box>
-              <H5>{text}</H5>
+            <Box sx={{ height: "200px" }}>
+              <Box>
+                <H5>{text}</H5>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                }}
+              >
+                <StyledImage Src={source} />
+              </Box>
             </Box>
-            <StyledImage Src={source} />
           </Grid>
         );
       })}

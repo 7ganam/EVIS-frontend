@@ -214,7 +214,7 @@ const PageFooter = ({ sx, id, bgcolor }) => {
             <SectionElement>
               <FlexBox alignItems="center">
                 <Span ml={1.5} className="title">
-                  evis@nirvanaholding.com
+                  theanleoua.chu@nirvanatls.com
                 </Span>
               </FlexBox>
             </SectionElement>

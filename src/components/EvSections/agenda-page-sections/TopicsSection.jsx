@@ -10,7 +10,7 @@ import { Paragraph, H2 } from "src/components/EvComponents/Typography";
 import { useTheme } from "@emotion/react";
 import { BigButton } from "src/components/EvComponents/Buttons";
 import { styled } from "@mui/material/styles";
-
+import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
 const HoverCard = styled(({ hoverEffect, children, ...rest }) => (
   <Card {...rest}>{children}</Card>
 ))(({ theme, hoverEffect }) => ({
@@ -64,13 +64,16 @@ const TopicsSection = () => {
                     width: "100%",
                     p: "20px",
                     height: "100%",
-                    textAlign: "center",
+                    // textAlign: "center",
                     display: "flex",
-                    justifyContent: "center",
+                    // justifyContent: "center",
                     alignItems: "center",
                     fontSize: "25px",
                   }}
                 >
+                  <FormatAlignJustifyIcon
+                    sx={{ mr: "15px" }}
+                  ></FormatAlignJustifyIcon>
                   {topic}
                 </HoverCard>
               </Grid>

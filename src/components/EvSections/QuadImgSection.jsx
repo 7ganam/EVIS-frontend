@@ -3,7 +3,7 @@ import QuadImg from "src/components/EvComponents/QuadImg";
 
 const itemsData = [
   {
-    img: "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/1200x0/MTYzMTc5NzcxODYxNDM0MWQ2M2VhYWQ=.jpeg",
+    img: "/assets/images/quadImage/ev.png",
     title: "New Energy Vehicles",
     ps: [
       "Electric Passenger Vehicles",
@@ -18,7 +18,7 @@ const itemsData = [
     direction: "left",
   },
   {
-    img: "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/1200x0/MTYzMTc5Nzc1NDYxNDM0MWZhZGY1NTU=.jpeg",
+    img: "/assets/images/quadImage/infra2.jpg",
     title: "Energy & Infrastructure",
     ps: [
       "Electric Energy Suppliers",
@@ -36,7 +36,7 @@ const itemsData = [
     direction: "right",
   },
   {
-    img: "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/1200x0/MTYzMTc5Nzc5NzYxNDM0MjI1YmJhMGU=.jpeg",
+    img: "/assets/images/quadImage/patteries.jpg",
     title: "Batteries",
     ps: [
       "Lithium Batteries, Lead-acid Batteries, Nickel",
@@ -45,8 +45,7 @@ const itemsData = [
       "Battery Charging Systems",
       "Testing Systems & Testing Equipment",
       "Capacitors",
-      "Fuel Cell Technology, Fuel Cell Systems & Fuel Cell",
-      "Management",
+      "Fuel Cell Technology & Fuel Cell Systems",
       "Hydrogen Tank & Hydrogen Refueling",
       "Battery Manufacturing Equipment",
       "Raw Materials",
@@ -55,7 +54,7 @@ const itemsData = [
     direction: "left",
   },
   {
-    img: "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/1200x0/MTYzMTc5Nzg2NTYxNDM0MjY5NmU3YzI=.jpeg",
+    img: "/assets/images/quadImage/power.jpg",
     title: "Powertrain",
     ps: [
       "General Motors",
