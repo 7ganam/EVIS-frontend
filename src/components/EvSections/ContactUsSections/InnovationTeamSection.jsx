@@ -28,7 +28,7 @@ const data = [
   {
     Src: "/assets/images/contact-us/JessySuraj.jpeg",
     Name: "Jessy Suraj",
-    Position: "Operation Enquiries - Sales Team",
+    Position: "Operation Enquiries",
     Mobile: "+971 2 304 3322 / +971 50 686 3769",
     Email: "jessy.suraj@nirvanatls.com",
     EmailTo: "mailto:jessy.suraj@nirvanatls.com",
