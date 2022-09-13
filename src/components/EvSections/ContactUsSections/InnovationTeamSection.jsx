@@ -16,6 +16,22 @@ const data = [
     Email: "naser.ali@nirvanatls.com",
     EmailTo: "mailto:naser.ali@nirvanatls.com",
   },
+  {
+    Src: "/assets/images/contact-us/HeshamAlbahri.jpeg",
+    Name: "Hesham Albahri",
+    Position: "Member of Organizing Committee - US Market Executive Manager ",
+    Mobile: "+18185817431",
+    Email: "hesham@leadingeventsusa.com",
+    EmailTo: "mhesham@leadingeventsusa.com",
+  },
+  {
+    Src: "/assets/images/contact-us/NasryAbouZaki.jpeg",
+    Name: "Nasry Abou Zaki",
+    Position: "PR Manager",
+    Mobile: "+971 2 4444 788 / +971 56 998 9252",
+    Email: "nasry.zaki@9yards.ae",
+    EmailTo: "mailto:nasry.zaki@9yards.ae",
+  },
 
   {
     Src: "/assets/images/contact-us/ZayidAhamed.jpeg",
@@ -24,6 +40,14 @@ const data = [
     Mobile: "+971 2 304 3352 / +971 50 686 3956",
     Email: "zayid.ahamed@nirvanatls.com",
     EmailTo: "mailto:zayid.ahamed@nirvanatls.com",
+  },
+  {
+    Src: "/assets/images/contact-us/TheanleouaChu.jpeg",
+    Name: "Theanleoua Chu",
+    Position: "Marketing & Media Enquiries",
+    Mobile: "+971 2 304 3333 / +971 503833859",
+    Email: "theanleoua.chu@nirvanatls.com",
+    EmailTo: "mailto:theanleoua.chu@nirvanatls.com",
   },
   {
     Src: "/assets/images/contact-us/JessySuraj.jpeg",
@@ -35,36 +59,12 @@ const data = [
   },
 
   {
-    Src: "/assets/images/contact-us/NasryAbouZaki.jpeg",
-    Name: "Nasry Abou Zaki",
-    Position: "PR Manager",
-    Mobile: "+971 2 4444 788 / +971 56 998 9252",
-    Email: "nasry.zaki@9yards.ae",
-    EmailTo: "mailto:nasry.zaki@9yards.ae",
-  },
-  {
     Src: "/assets/images/contact-us/HadhiaShaju.jpeg",
     Name: "Hadhia Shaju",
-    Position: "Marketing & Media Enquiries - Digital Marketing Specialist",
+    Position: "Digital Marketing",
     Mobile: "+971 2 304 3322 / +971 50 686 3137",
     Email: "hadhia.shaju@nirvanatls.com",
     EmailTo: "mailto:hadhia.shaju@nirvanatls.com",
-  },
-  {
-    Src: "/assets/images/contact-us/HeshamAlbahri.jpeg",
-    Name: "Hesham Albahri",
-    Position: "Member of Organizing Committee - US Market Executive Manager ",
-    Mobile: "+18185817431",
-    Email: "hesham@leadingeventsusa.com",
-    EmailTo: "mhesham@leadingeventsusa.com",
-  },
-  {
-    Src: "/assets/images/contact-us/TheanleouaChu.jpeg",
-    Name: "Theanleoua Chu",
-    Position: "Marketing & Media Enquiries",
-    Mobile: "+971 2 304 3333 / +971 503833859",
-    Email: "theanleoua.chu@nirvanatls.com",
-    EmailTo: "mailto:theanleoua.chu@nirvanatls.com",
   },
 ];
 
