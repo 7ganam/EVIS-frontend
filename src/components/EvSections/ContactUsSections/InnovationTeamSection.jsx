@@ -61,7 +61,7 @@ const data = [
   {
     Src: "/assets/images/contact-us/TheanleouaChu.jpeg",
     Name: "Theanleoua Chu",
-    Position: "Sales & Marketing Executive",
+    Position: "Marketing & Media Enquiries",
     Mobile: "+971 2 304 3333 / +971 503833859",
     Email: "theanleoua.chu@nirvanatls.com",
     EmailTo: "mailto:theanleoua.chu@nirvanatls.com",
