@@ -15,30 +15,30 @@ const StyledImage = (props) => {
 const keyPartners = [
   {
     source: "/assets/images/organizations/Masdar.jpg",
-    text: "Partner",
+    text: "Sustainability Partner",
   },
   {
     source: "/assets/images/organizers/ADNEC.png",
-    text: "Partner",
+    text: "Venue Partner",
   },
   {
     source: "/assets/images/organizers/AbuDhabi.png",
-    text: "Partner",
+    text: "Host City",
   },
   {
     source: "/assets/images/organizers/Nirvana.png",
-    text: "Partner",
+    text: "Organized by",
   },
 ];
 
 const sponsors = [
   {
     source: "/assets/images/organizers/Audi.png",
-    text: "Sponsor",
+    text: "Gold Sponsor",
   },
   {
     source: "/assets/images/organizers/BritishVolt.png",
-    text: "Sponsor",
+    text: "Silver Sponsor",
   },
   {
     source: "/assets/images/associations/Totalenergies.png",
@@ -49,48 +49,48 @@ const sponsors = [
 const internationalMediaPartners = [
   {
     source: "/assets/images/associations/Skynews.png",
-    text: "Partner",
+    text: "International News Partner",
   },
 ];
 
 const knowledgePartners = [
   {
     source: "/assets/images/partners/CEBC.png",
-    text: "Partner",
+    text: "Knowledge Partner",
   },
   {
     source: "/assets/images/partners/CHARIN.png",
-    text: "Partner",
+    text: "Knowledge Partner",
   },
   {
     source: "/assets/images/partners/GEEE.png",
-    text: "Partner",
+    text: "Knowledge Partner",
   },
   {
     source: "/assets/images/partners/ISF.png",
-    text: "Partner",
+    text: "Knowledge Partner",
   },
   {
     source: "/assets/images/partners/AVERE.png",
-    text: "Partner",
+    text: "Knowledge Partner",
   },
 ];
 
 const researchPartners = [
   {
     source: "/assets/images/partners/Oxford.png",
-    text: "Partner",
+    text: "Research Partner",
   },
 ];
 
 const mediaPartners = [
   {
     source: "/assets/images/associations/Nationshield.png",
-    text: "Partner",
+    text: "Media Partner",
   },
   {
     source: "/assets/images/associations/Petrofinder.png",
-    text: "Partner",
+    text: "Media Partner",
   },
 ];
 
