@@ -7,6 +7,7 @@ import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/grocery3-shop";
 import { H2, H5 } from "@/components/Typography";
 import PageHeader from "src/components/EvComponents/PageHeader";
+import LogoWithTitle from "@/components/EvComponents/LogoWithTitle";
 
 // ======================================================
 // ======================================================
@@ -45,43 +46,43 @@ const sponsors = [
   },
   {
     source: "/assets/images/associations/Totalenergies.png",
-    text: "Sponsor",
+    text: "Delegate Host Sponsor",
   },
 ];
 
 const internationalMediaPartners = [
   {
     source: "/assets/images/associations/Skynews.png",
-    text: "International News Partner",
+    text: "International Media Partner",
   },
 ];
 
 const knowledgePartners = [
   {
     source: "/assets/images/partners/CEBC.png",
-    text: "Knowledge Partner",
+    text: "",
   },
   {
     source: "/assets/images/partners/CHARIN.png",
-    text: "Knowledge Partner",
+    text: "",
   },
   {
     source: "/assets/images/partners/GEEE.png",
-    text: "Knowledge Partner",
+    text: "",
   },
   {
     source: "/assets/images/partners/ISF.png",
-    text: "Knowledge Partner",
+    text: "",
   },
   {
     source: "/assets/images/partners/AVERE.png",
-    text: "Knowledge Partner",
+    text: "",
   },
 ];
 
 const researchPartners = [
   {
-    source: "/assets/images/partners/Oxford.png",
+    source: "/assets/images/organizations/Oxford.jpg",
     text: "Research Partner",
   },
 ];
@@ -89,15 +90,15 @@ const researchPartners = [
 const mediaPartners = [
   {
     source: "/assets/images/associations/Nationshield.png",
-    text: "Media Partner",
+    text: "",
   },
   {
     source: "/assets/images/associations/Petrofinder.png",
-    text: "Media Partner",
+    text: "",
   },
 ];
 const pageHeaderData = {
-  text: "THANK YOU TO OUR 2022 SUPPORTER, PARTNERS AND SPONSORS!",
+  text: "THANK YOU TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
   //   buttonText: "Save The Date",
   //   buttonLink: "/",
   image: "/assets/images/summit.png",
@@ -150,21 +151,7 @@ const generalPage = (props) => {
           {keyPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={6} md={3} key={source}>
-                <Box sx={{ height: "200px" }}>
-                  <Box>
-                    <H5>{text}</H5>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <StyledImage Src={source} />
-                  </Box>
-                </Box>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}
@@ -182,21 +169,7 @@ const generalPage = (props) => {
           {sponsors.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={4} key={source}>
-                <Box sx={{ height: "200px" }}>
-                  <Box>
-                    <H5>{text}</H5>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <StyledImage Src={source} />
-                  </Box>
-                </Box>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}
@@ -209,21 +182,7 @@ const generalPage = (props) => {
           {internationalMediaPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} key={source}>
-                <Box sx={{ height: "200px" }}>
-                  <Box>
-                    <H5>{text}</H5>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <StyledImage Src={source} />
-                  </Box>
-                </Box>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}
@@ -242,21 +201,7 @@ const generalPage = (props) => {
           {knowledgePartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={4} md={2} key={source}>
-                <Box sx={{ height: "200px" }}>
-                  <Box>
-                    <H5>{text}</H5>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <StyledImage Src={source} />
-                  </Box>
-                </Box>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}
@@ -269,21 +214,7 @@ const generalPage = (props) => {
           {researchPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} key={source}>
-                <Box sx={{ height: "200px" }}>
-                  <Box>
-                    <H5>{text}</H5>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <StyledImage Src={source} />
-                  </Box>
-                </Box>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}
@@ -301,21 +232,7 @@ const generalPage = (props) => {
           {mediaPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={6} key={source}>
-                <Box sx={{ height: "200px" }}>
-                  <Box>
-                    <H5>{text}</H5>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <StyledImage Src={source} />
-                  </Box>
-                </Box>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}

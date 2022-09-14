@@ -1,5 +1,7 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { H5 } from "src/components/EvComponents/Typography";
+import LogoWithTitle from "../EvComponents/LogoWithTitle";
+import { H4 } from "../Typography";
 
 const StyledImage = (props) => {
   return <img src={props.Src} width="170" style={{ marginBottom: "10px" }} />;
@@ -48,21 +50,7 @@ const PartnersGrid = ({ sx }) => {
         {imagesData.map(({ source, text }) => {
           return (
             <Grid item xs={12} sm={4} md={2} key={source}>
-              <Box sx={{ height: "200px" }}>
-                <Box>
-                  <H5>{text}</H5>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100%",
-                  }}
-                >
-                  <StyledImage Src={source} />
-                </Box>
-              </Box>
+              <LogoWithTitle source={source} text={text} />
             </Grid>
           );
         })}

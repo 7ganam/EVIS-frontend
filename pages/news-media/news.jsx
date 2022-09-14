@@ -11,6 +11,7 @@ import Divider from "@mui/material/Divider";
 import { useTheme } from "@emotion/react";
 import { H3 } from "src/components/EvComponents/Typography";
 import EvisInNewsSection from "@/components/EvSections/new-page-sections/EvisInNewsSection";
+import { H2 } from "@/components/Typography";
 
 const evisInNewsData = [
   {
@@ -188,7 +189,7 @@ const EvHome = () => {
         }}
       >
         <Box sx={{ mb: "30px" }}>
-          <H3>{newsList[0].date.slice(0, 4)}</H3>
+          <H2>2022</H2>
         </Box>
         <Box
           sx={{

@@ -6,6 +6,7 @@ import NewsCard2 from "src/components/EvComponents/NewsCard2";
 import Divider from "@mui/material/Divider";
 import { useTheme } from "@emotion/react";
 import { H3 } from "src/components/EvComponents/Typography";
+import { H2 } from "@/components/Typography";
 
 const EvisInNewsSection = ({ data }) => {
   const theme = useTheme();
@@ -24,7 +25,7 @@ const EvisInNewsSection = ({ data }) => {
         }}
       >
         <Box sx={{ mb: "30px" }}>
-          <H3>2022</H3>
+          <H2>2022</H2>
         </Box>
         <Box
           sx={{

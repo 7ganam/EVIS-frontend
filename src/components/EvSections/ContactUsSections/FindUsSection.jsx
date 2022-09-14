@@ -2,6 +2,7 @@ import * as React from "react";
 import { Container, Box, Link } from "@mui/material";
 import { H5, Paragraph } from "src/components/EvComponents/Typography";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import { H2, H3 } from "@/components/Typography";
 
 const data = {
   Title: "FIND US AT",
@@ -35,9 +36,9 @@ const FindUsSection = () => {
       {data.Paragraph.map(({ body }) => {
         return <Paragraph key={body}>{body}</Paragraph>;
       })}
-      <H5 margin="50px 0 20px">
+      <H2 margin="50px 0 20px">
         Email: <Link href={data.EmailTo}>{data.Email}</Link>
-      </H5>
+      </H2>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d232406.6567360958!2d54.324372!3d24.473188000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd3ec9c9737756f30!2sNirvana%20Travel%20%26%20Tourism!5e0!3m2!1sen!2sae!4v1659829234637!5m2!1sen!2sae"
         width="600"
