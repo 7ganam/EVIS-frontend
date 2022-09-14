@@ -39,7 +39,7 @@ const RectangularInfoImage = (props) => {
           width={"100%"}
           height={"100%"}
           mb={0}
-          src={props.imageSrc}
+          src={props.src}
           alt="logo"
           sx={{ objectFit: "cover" }}
         />

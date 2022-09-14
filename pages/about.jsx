@@ -50,86 +50,66 @@ Take a look at the Open Tech Sessions from the first edition of EVIS.
   ],
 };
 
-const AdvisoryBoardData = [
+const advisoryBoardData = [
   {
-    Src: "/assets/images/contact-us/NaserAlbahri.jpeg",
-    Name: "Eng. Naser Albahri",
-    Position: "Head of Organizing Committee",
-    Mobile: "+971 2 304 3321 / +971 50 211 1583",
-    Email: "naser.ali@nirvanatls.com",
-    EmailTo: "mailto:naser.ali@nirvanatls.com",
+    src: "/assets/images/board/Ahmed_Samir_Elbermbali.jpg",
+    name: "Ahmed Samir Elbermbali",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/SarahSalera.jpeg",
-    Name: "Sarah Salera",
-    Position: "Conference Manager",
-    Mobile: "+971 2 304 3353 / +971 50 452 1237",
-    Email: "sara.salera@nirvanatls.com",
-    EmailTo: "mailto:sara.salera@nirvanatls.com",
+    src: "/assets/images/board/Shadie-Bisharat IAB.png",
+    name: "Shadie-Bisharat IAB",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/CorinaSharayah.jpeg",
-    Name: "Corina Sharayah",
-    Position: "Operations Manager",
-    Mobile: "+971 2 304 3354 / +971 56 111 0272",
-    Email: "corina.sh@nirvanatls.com ",
-    EmailTo: "mailto:corina.sh@nirvanatls.com ",
+    src: "/assets/images/board/dr elias.png",
+    name: "Dr Elias",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/ZayidAhamed.jpeg",
-    Name: "Zayid Ahamed",
-    Position: "Exhibition Enquiries - Sales Executive",
-    Mobile: "+971 2 304 3352 / +971 50 686 3956",
-    Email: "zayid.ahamed@nirvanatls.com",
-    EmailTo: "mailto:zayid.ahamed@nirvanatls.com",
+    src: "/assets/images/board/prof nizar al holou.png",
+    name: "Prof Nizar Al Holou",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/JessySuraj.jpeg",
-    Name: "Jessy Suraj",
-    Position: "Exhibition Enquiries - Sales Team",
-    Mobile: "+971 2 304 3322 / +971 50 686 3769",
-    Email: "jessy.suraj@nirvanatls.com",
-    EmailTo: "mailto:jessy.suraj@nirvanatls.com",
+    src: "/assets/images/board/eng. kamal malas.jpg",
+    name: "Eng. kamal Malas",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/VilmaDucay.jpeg",
-    Name: "Vilma Ducay",
-    Position: "Conference Enquiries - Sales Team",
-    Mobile: "+971 2 304 3322 / +971 50 686 3740",
-    Email: "vilma.ducay@nirvanatls.com ",
-    EmailTo: "mailto:vilma.ducay@nirvanatls.com ",
+    src: "/assets/images/board/prof sabouni.jpg",
+    name: "prof Sabouni",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/NasryAbouZaki.jpeg",
-    Name: "Nasry Abou Zaki",
-    Position: "PR Manager",
-    Mobile: "+971 2 4444 788 / +971 56 998 9252",
-    Email: "nasry.zaki@9yards.ae",
-    EmailTo: "mailto:nasry.zaki@9yards.ae",
+    src: "/assets/images/board/salim hariri.jpg",
+    name: "Salim hariri",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/HadhiaShaju.jpeg",
-    Name: "Hadhia Shaju",
-    Position: "Marketing & Media Enquiries - Digital Marketing Specialist",
-    Mobile: "+971 2 304 3322 / +971 50 686 3137",
-    Email: "hadhia.shaju@nirvanatls.com",
-    EmailTo: "mailto:hadhia.shaju@nirvanatls.com",
+    src: "/assets/images/board/dr_mohd_kafafy.jpg",
+    name: "Dr Mohd Kafafy",
+    title: "Conference Manager",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/HeshamAlbahri.jpeg",
-    Name: "Hesham Albahri",
-    Position: "Member of Organizing Committee - US Market Executive Manager ",
-    Mobile: "+18185817431",
-    Email: "hesham@leadingeventsusa.com",
-    EmailTo: "mhesham@leadingeventsusa.com",
+    src: "/assets/images/board/dr_ rami_sabouni.jpg",
+    name: "Dr Rami Sabouni",
+    title: "Operations Manager",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/TheanleouaChu.jpeg",
-    Name: "Theanleoua Chu",
-    Position: "Sales & Marketing Executive",
-    Mobile: "+971 2 304 3333 / +971 503833859",
-    Email: "theanleoua.chu@nirvanatls.com",
-    EmailTo: "mailto:theanleoua.chu@nirvanatls.com",
+    src: "/assets/images/board/dr rawa adla.jpg",
+    name: "Dr Rawa Adla",
+    title: "Operations Manager",
+    company: "",
   },
 ];
 
@@ -140,7 +120,8 @@ The Emirate also has easy access to developing markets, with more than 200 air r
 `,
 };
 
-const generalPage = () => {
+const GeneralPage = ({ global }) => {
+  console.log("global :>> ", global);
   return (
     <EvLayout showNavbar={true}>
       <Container>
@@ -153,11 +134,11 @@ const generalPage = () => {
       <Container>
         <OpenTechSection item={OpenTechData}></OpenTechSection>
       </Container>
-      <AdvisoryBoardSection data={AdvisoryBoardData}></AdvisoryBoardSection>
+      <AdvisoryBoardSection
+        advisoryBoardData={global.advisoryBoard}
+      ></AdvisoryBoardSection>
       <Container>
         <VenueSection data={VenueSectionData}> </VenueSection>
-        {/* <Footer footer1={footer1} footer2={footer2} /> */}
-
         <Box sx={{ mt: "100px" }}>
           <SponsorsGrid />
           <PartnersGrid sx={{ mt: 5 }} />
@@ -179,4 +160,4 @@ export async function getStaticProps() {
     },
   };
 }
-export default generalPage;
+export default GeneralPage;

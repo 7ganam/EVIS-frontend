@@ -23,10 +23,9 @@ const EvisInNewsSection = ({ data }) => {
           textAlign: "center",
         }}
       >
-        <Box>
+        <Box sx={{ mb: "30px" }}>
           <H3>2022</H3>
         </Box>
-        <br />
         <Box
           sx={{
             display: "flex",

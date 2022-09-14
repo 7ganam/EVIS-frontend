@@ -37,12 +37,7 @@ const FullWidthCard = (props) => {
           textAlign: "center",
         }}
       >
-        <Image
-          src={props.ImageSrc}
-          width={"80%"}
-          height={"auto"}
-          alt="card image"
-        />
+        <Image src={props.src} width={"80%"} height={"auto"} alt="card image" />
       </Grid>
 
       <Grid

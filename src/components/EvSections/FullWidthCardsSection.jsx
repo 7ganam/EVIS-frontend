@@ -32,7 +32,7 @@ const FullWidthCardsSection = () => {
         return (
           <FullWidthCard
             key={author}
-            ImageSrc={imageSource}
+            src={imageSource}
             Author={author}
             Title={title}
             Content={content}

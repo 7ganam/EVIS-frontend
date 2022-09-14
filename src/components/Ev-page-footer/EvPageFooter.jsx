@@ -240,7 +240,7 @@ const PageFooter = ({ sx, id, bgcolor }) => {
           </Grid>
 
           <Grid item md={3} sm={6} xs={12}>
-            <SectionTitle>{`Event Info`}</SectionTitle>
+            <SectionTitle>{`EVENT INFO`}</SectionTitle>
             <SectionElement>{"When: 29 – 31 May 2023"}</SectionElement>
             <SectionElement>{"Timings: 9am - 5pm"}</SectionElement>
             <SectionElement>

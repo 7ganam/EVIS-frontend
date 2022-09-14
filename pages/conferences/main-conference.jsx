@@ -122,18 +122,18 @@ const themes = [
 
 const imagesData = [
   {
-    imageSrc: "/assets/images/speakers/1.png",
+    src: "/assets/images/speakers/1.png",
     name: "Alex Gilbert",
     title:
       "Head of Energy & Electrification - Commercial Development Transport for London (TfL)",
   },
   {
-    imageSrc: "/assets/images/speakers/2.png",
+    src: "/assets/images/speakers/2.png",
     name: "Claas Bracklo",
     title: "Head of Electromobility at BMW Group & Chairman at CharIN",
   },
   {
-    imageSrc: "/assets/images/speakers/3.png",
+    src: "/assets/images/speakers/3.png",
     name: "Dr. Nasser Saidi",
     title: "Chairman Clean Energy Business Council (CEBC)",
   },

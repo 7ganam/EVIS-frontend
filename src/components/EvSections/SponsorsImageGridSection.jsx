@@ -74,7 +74,7 @@ const SponsorsImageGrid = () => {
                 justifyContent: "center",
               }}
             >
-              <SponsorImage imageSrc={source} />
+              <SponsorImage src={source} />
             </Grid>
           );
         })}

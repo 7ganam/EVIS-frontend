@@ -27,7 +27,7 @@ const ImgGrid = (props) => {
                 justifyContent: "center",
               }}
             >
-              <SponsorImage imageSrc={source} />
+              <SponsorImage src={source} />
             </Grid>
           );
         })}

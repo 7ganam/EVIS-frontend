@@ -16,7 +16,7 @@ const SponsorImage = (props) => {
       }}
     >
       <Image
-        src={props.imageSrc}
+        src={props.src}
         width={"100%"}
         height={"auto"}
         alt="sponsor logo"

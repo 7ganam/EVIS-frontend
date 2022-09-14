@@ -1,13 +1,11 @@
-import { Container } from "@mui/material";
-
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
-import SpeakersSection from "src/components/EvSections/agenda-page-sections/SpeakersSection";
-import { Box } from "@mui/system";
-// ======================================================
-// ======================================================
+import { useRouter } from "next/router";
+import { Container, Grid, Box } from "@mui/material";
+import { H2, H4, H5 } from "src/components/EvComponents/Typography";
 
-const speakersData = [
+import Image from "src/components/BazarImage";
+
+let data = [
   {
     src: "/assets/images/speakers/AhmedAbdu.png",
     name: "Ahmed Abdu",
@@ -465,34 +463,128 @@ const speakersData = [
   },
 ];
 
-const generalPage = () => {
+const MemberPage = ({ global: { advisoryBoard } }) => {
+  console.log("advisoryBoard :>> ", advisoryBoard);
+  const router = useRouter();
+  const filterName = router.query.member;
+  const member = advisoryBoard.filter((item) => item.name === filterName)[0];
+  if (!member) {
+    return (
+      <Box pt={20}>
+        <Container mb={6}>
+          <Box
+            sx={{
+              textAlign: "center",
+            }}
+          >
+            <H2>Loading ...</H2>
+          </Box>
+        </Container>
+      </Box>
+    );
+  }
+
+  // console.log(member);
+
   return (
-    <EvLayout showNavbar={true}>
-      <Container></Container>
-      <Box
-        sx={{
-          mb: 6,
-        }}
-      >
-        <SpeakersSection
-          title={"Previous Speakers"}
-          data={speakersData}
-        ></SpeakersSection>
+    <EvLayout showNavbar={true} title={member.name}>
+      <Box pt={5}>
+        <Container>
+          <Grid
+            container
+            sx={{
+              boxShadow: "1px 1px 5px 1px gray",
+            }}
+          >
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={2}
+              sx={{
+                backgroundColor: "#f0f0f0",
+                borderRight: " solid 1px #d9d9d9",
+              }}
+            >
+              <Box
+                sx={{
+                  my: "1em",
+                  mx: "1em",
+                }}
+              >
+                <Image
+                  sx={{
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    // padding: "30px 60px"
+                    //   width: "120px",
+                    //   height: "120px",
+                    margin: "auto",
+                  }}
+                  alt="rounded image"
+                  src={member.src}
+                  width={"100%"}
+                  height={"100%"}
+                />
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={10}
+              sx={{
+                backgroundColor: "#f0f0f0",
+              }}
+            >
+              <Box ml={3} my={3} sx={{}}>
+                <H2>{member.name}</H2>
+                <H4
+                  sx={{
+                    color: "gray",
+                  }}
+                >
+                  {member.title}
+                </H4>
+                <H4
+                  sx={{
+                    color: "gray",
+                  }}
+                >
+                  {member.company}
+                </H4>
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={12}
+              sx={{
+                borderTop: "solid 1px #d9d9d9",
+              }}
+            >
+              <Box mx={2} my={2}>
+                <H2
+                  sx={{
+                    color: "#4d4d4d",
+                  }}
+                >
+                  About
+                </H2>
+                <H5
+                  sx={{
+                    color: "#4d4d4d",
+                  }}
+                >
+                  {member?.about ? member.about : "No data"}
+                </H5>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
       </Box>
     </EvLayout>
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
-  return {
-    props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
-    },
-  };
-}
-export default generalPage;
+export default MemberPage;

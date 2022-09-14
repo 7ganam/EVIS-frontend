@@ -88,7 +88,7 @@ const InnovationTeamSection = () => {
           return (
             <Grid item xs={12} sm={6} md={4} key={Name}>
               <RectangularInfoImage
-                imageSrc={Src}
+                src={Src}
                 title={Position}
                 name={Name}
                 tel={Mobile}

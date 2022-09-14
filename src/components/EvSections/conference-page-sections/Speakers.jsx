@@ -10,10 +10,10 @@ const Speakers = (props) => {
     <Box sx={{ px: 6 }}>
       <SectionTitle>2022 Speakers</SectionTitle>
       <Grid container spacing={4} sx={{ pt: 6 }}>
-        {data.map(({ imageSrc, name, title }) => {
+        {data.map(({ src, name, title }) => {
           return (
             <Grid item xs={12} sm={6} md={4} key={name}>
-              <RoundedImage Src={imageSrc} Name={name} Title={title} />
+              <RoundedImage Src={src} Name={name} Title={title} />
             </Grid>
           );
         })}
