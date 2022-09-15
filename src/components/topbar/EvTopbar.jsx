@@ -76,7 +76,11 @@ const EvTopbar = () => {
 
           <FlexBox alignItems="center" ml={2.5}>
             <MailOutline fontSize="small" />
-            <Span className="title">evis@nirvanaholding.com</Span>
+            <Span className="title">
+              <a href="mailto: evis@nirvanaholding.com">
+                evis@nirvanaholding.com
+              </a>
+            </Span>
           </FlexBox>
         </FlexBox>
 

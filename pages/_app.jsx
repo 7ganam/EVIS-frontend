@@ -54,7 +54,7 @@ Pennsylvania, USA.`,
     src: "/assets/images/board/dr elias.png",
     name: "Dr. Elias Boutros Sayah",
     title: "President and Founder",
-    company: "Sayah Engineering MENA,",
+    company: "Sayah Engineering MENA",
     about: `President and Founder at Sayah Engineering MENA,
 GEFCO Trading &amp; LIWA Petroleum Technology
 
@@ -152,7 +152,7 @@ Official Sites:  www.HRMI.org / www.WGECO.org / www.GQCO.org`,
     src: "/assets/images/board/dr_ rami_sabouni.jpg",
     name: "Dr. Rami Sabouni",
     title: `Adjunct Professor`,
-    company: "Carleton University, Ottawa, Canada.",
+    company: "Carleton University, Ottawa, Canada",
     about: `Dr. Rami Sabouni is Adjunct Professor at Carleton University, Ottawa, Canada. He holds a PhD degree and
 Master of Science degree from Carleton University in Systems and Computer Engineering and Master of
 Engineering degree from University of Detroit Mercy in Electrical and Computer Engineering. He has
@@ -174,9 +174,9 @@ Engineering, University of Detroit Mercy, MSc Thesis, USA, August 2008.`,
   {
     src: "/assets/images/board/dr rawa adla.jpg",
     name: "Dr. Rawa Adla",
-    title: "assistant professor",
+    title: "Assistant Professor",
     company: `Department of Electrical and Computer
-Engineering at Florida Polytechnic University,`,
+Engineering at Florida Polytechnic University`,
     about: `Dr. Rawa Adla is an assistant professor at the Department of Electrical and Computer
 Engineering at Florida Polytechnic University, FL, USA. Previously she held multi
 positions at different academic and industrial institutes. She was an assistant professor

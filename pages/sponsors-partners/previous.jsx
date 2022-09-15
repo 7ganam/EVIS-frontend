@@ -1,13 +1,14 @@
 import React from "react";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { Grid, Container, Box } from "@mui/material";
-import { H4 } from "src/components/EvComponents/Typography";
+import { H1, H4 } from "src/components/EvComponents/Typography";
 
 import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/grocery3-shop";
 import { H2, H5 } from "@/components/Typography";
 import PageHeader from "src/components/EvComponents/PageHeader";
 import LogoWithTitle from "@/components/EvComponents/LogoWithTitle";
+import { useTheme } from "@emotion/react";
 
 // ======================================================
 // ======================================================
@@ -53,7 +54,7 @@ const sponsors = [
 const internationalMediaPartners = [
   {
     source: "/assets/images/associations/Skynews.png",
-    text: "International Media Partner",
+    text: "",
   },
 ];
 
@@ -83,7 +84,7 @@ const knowledgePartners = [
 const researchPartners = [
   {
     source: "/assets/images/organizations/Oxford.jpg",
-    text: "Research Partner",
+    text: "",
   },
 ];
 
@@ -98,12 +99,13 @@ const mediaPartners = [
   },
 ];
 const pageHeaderData = {
-  text: "THANK YOU TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
+  text: "TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
   //   buttonText: "Save The Date",
   //   buttonLink: "/",
-  image: "/assets/images/summit.png",
+  image: "/assets/images/png_bg.png",
 };
-const generalPage = (props) => {
+const GeneralPage = (props) => {
+  const theme = useTheme();
   return (
     <EvLayout showNavbar={true}>
       <PageHeader
@@ -112,18 +114,42 @@ const generalPage = (props) => {
         buttonLink={pageHeaderData.buttonLink}
         image={pageHeaderData.image}
       >
-        <H2
+        <Box
           sx={{
-            fontSize: {
-              xs: "30px",
-              md: "50px",
-              maxWidth: "80%",
-              textAlign: "center",
-            },
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          {pageHeaderData.text}
-        </H2>
+          <Box
+            sx={{
+              fontSize: {
+                xs: "60px",
+                md: "120px",
+              },
+              maxWidth: "80%",
+              textAlign: "center",
+              fontWeight: "800",
+              color: theme.palette.primary.light,
+            }}
+          >
+            THANK YOU
+          </Box>
+          <H2
+            sx={{
+              fontSize: {
+                xs: "40px",
+                md: "50px",
+                maxWidth: "80%",
+                textAlign: "center",
+              },
+            }}
+          >
+            {pageHeaderData.text}
+          </H2>
+        </Box>
       </PageHeader>
       <Container
         sx={{
@@ -254,4 +280,4 @@ export async function getStaticProps() {
     },
   };
 }
-export default generalPage;
+export default GeneralPage;

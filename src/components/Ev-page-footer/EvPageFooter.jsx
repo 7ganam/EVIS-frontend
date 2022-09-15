@@ -119,7 +119,9 @@ const PageFooter = ({ sx, id, bgcolor }) => {
               <FlexBox alignItems="center">
                 <MailOutline fontSize="small" mr={2.5} />
                 <Span ml={1.5} className="title">
-                  evis@nirvanaholding.com
+                  <a href="mailto: evis@nirvanaholding.com">
+                    evis@nirvanaholding.com
+                  </a>
                 </Span>
               </FlexBox>
             </SectionElement>
@@ -161,7 +163,9 @@ const PageFooter = ({ sx, id, bgcolor }) => {
               {" "}
               <FlexBox alignItems="center">
                 <Span ml={1.5} className="title">
-                  zayid.ahamed@nirvanatls.com
+                  <a href="mailto: zayid.ahamed@nirvanatls.com">
+                    zayid.ahamed@nirvanatls.com
+                  </a>
                 </Span>
               </FlexBox>
             </SectionElement>
@@ -195,7 +199,9 @@ const PageFooter = ({ sx, id, bgcolor }) => {
               {" "}
               <FlexBox alignItems="center">
                 <Span ml={1.5} className="title">
-                  zayid.ahamed@nirvanatls.com
+                  <a href="mailto: zayid.ahamed@nirvanatls.com">
+                    zayid.ahamed@nirvanatls.com
+                  </a>
                 </Span>
               </FlexBox>
             </SectionElement>
@@ -214,7 +220,9 @@ const PageFooter = ({ sx, id, bgcolor }) => {
             <SectionElement>
               <FlexBox alignItems="center">
                 <Span ml={1.5} className="title">
-                  theanleoua.chu@nirvanatls.com
+                  <a href="mailto: theanleoua.chu@nirvanatls.com">
+                    theanleoua.chu@nirvanatls.com
+                  </a>
                 </Span>
               </FlexBox>
             </SectionElement>
@@ -233,7 +241,9 @@ const PageFooter = ({ sx, id, bgcolor }) => {
             <SectionElement>
               <FlexBox alignItems="center">
                 <Span ml={1.5} className="title">
-                  evis@nirvanaholding.com
+                  <a href="mailto: evis@nirvanaholding.com">
+                    evis@nirvanaholding.com
+                  </a>
                 </Span>
               </FlexBox>
             </SectionElement>
@@ -246,7 +256,13 @@ const PageFooter = ({ sx, id, bgcolor }) => {
             <SectionElement>
               {"Venue: Abu Dhabi National Exhibition Centre, UAE"}
             </SectionElement>
-            <SectionElement>{"Email: evis@nirvanaholding.com"}</SectionElement>
+            <SectionElement>
+              {"Email: "}
+
+              <a href="mailto: evis@nirvanaholding.com">
+                evis@nirvanaholding.com
+              </a>
+            </SectionElement>
             <FlexBox className="flex" mx={-0.625} mt={2}>
               {iconList.map((item, ind) => (
                 <a

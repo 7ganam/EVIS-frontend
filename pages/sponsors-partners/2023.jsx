@@ -49,7 +49,7 @@ const sponsors = [
 const internationalMediaPartners = [
   {
     source: "/assets/images/associations/Skynews.png",
-    text: "International News Partner",
+    text: "",
   },
 ];
 
