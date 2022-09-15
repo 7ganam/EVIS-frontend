@@ -36,7 +36,7 @@ const evNavbarNavigations = [
     child: [
       {
         title: "Why Exhibit",
-        url: "exhibition/why-exhibit",
+        url: "/exhibition/why-exhibit",
       },
       {
         title: "2022 Exhibitors",
@@ -48,7 +48,7 @@ const evNavbarNavigations = [
       },
       {
         title: "Book your stand",
-        url: "exhibition/book-your-stand",
+        url: "/exhibition/book-your-stand",
       },
     ],
   },
