@@ -4,6 +4,23 @@
     "javascript"
   ],
   "workbench.colorCustomizations": {
-    "activityBar.activeBorder": "#d744db"
+    "activityBar.activeBorder": "#d744db",
+    "activityBar.activeBackground": "#3cd9d5",
+    "activityBar.background": "#3cd9d5",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#d744db",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#3cd9d5",
+    "statusBar.background": "#25bdb9",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#1d928f",
+    "statusBarItem.remoteBackground": "#25bdb9",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#25bdb9",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#25bdb999",
+    "titleBar.inactiveForeground": "#15202b99"
   }
 }
