@@ -498,21 +498,29 @@ const GeneralPage = (props) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps(context) {
   let allSpeakers = null;
   let allSpeakersError = null;
+
   try {
     allSpeakers = await api.getSpeakers();
-    allSpeakers = JSON.stringify(allSpeakers);
-  } catch (error) {
-    allSpeakersError = JSON.stringify(error);
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    allSpeakersError = dev_error;
+  }
+
+  if (!allSpeakers) {
+    return {
+      notFound: true,
+    };
   }
 
   return {
     props: {
-      allSpeakers,
-      allSpeakersError,
+      allSpeakers: JSON.stringify(allSpeakers),
+      allSpeakersError: JSON.stringify(allSpeakersError),
     },
+    revalidate: 10, // In seconds
   };
 }
 export default GeneralPage;
