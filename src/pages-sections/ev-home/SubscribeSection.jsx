@@ -9,20 +9,31 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import * as yup from "yup";
 import { SectionSubTitle } from "src/components/StyledTypography";
+import axios from "axios";
+import Alert from "@mui/material/Alert";
 
 const SubscribeSection = () => {
-  const router = useRouter();
-  const [sameAsShipping, setSameAsShipping] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
 
   const handleFormSubmit = async (values) => {
-    router.push("/payment");
-  };
-
-  const handleCheckboxChange = (values, setFieldValue) => (e, _) => {
-    const checked = e.currentTarget.checked;
-    setSameAsShipping(checked);
-    setFieldValue("same_as_shipping", checked);
-    setFieldValue("billing_name", checked ? values.shipping_name : "");
+    axios
+      .post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/application-for-newsletters`,
+        {
+          data: {
+            ...values,
+          },
+        }
+      )
+      .then(function (response) {
+        setSuccess(true);
+        setFailure(false);
+      })
+      .catch(function (error) {
+        setSuccess(false);
+        setFailure(true);
+      });
   };
 
   return (
@@ -38,7 +49,6 @@ const SubscribeSection = () => {
         handleChange,
         handleBlur,
         handleSubmit,
-        setFieldValue,
       }) => (
         <form onSubmit={handleSubmit}>
           <Card
@@ -58,12 +68,12 @@ const SubscribeSection = () => {
                     mb: 2,
                   }}
                   label="First Name"
-                  name="billing_name"
+                  name="first_name"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.billing_name}
-                  error={!!touched.billing_name && !!errors.billing_name}
-                  helperText={touched.billing_name && errors.billing_name}
+                  value={values.first_name}
+                  error={!!touched.first_name && !!errors.first_name}
+                  helperText={touched.first_name && errors.first_name}
                 />
               </Grid>
               <Grid item sm={4} xs={12}>
@@ -74,11 +84,11 @@ const SubscribeSection = () => {
                   }}
                   onBlur={handleBlur}
                   label="Last Name"
-                  name="billing_contact"
+                  name="last_name"
                   onChange={handleChange}
-                  value={values.billing_contact}
-                  error={!!touched.billing_contact && !!errors.billing_contact}
-                  helperText={touched.billing_contact && errors.billing_contact}
+                  value={values.last_name}
+                  error={!!touched.last_name && !!errors.last_name}
+                  helperText={touched.last_name && errors.last_name}
                 />
               </Grid>
               <Grid item sm={4} xs={12}>
@@ -87,14 +97,10 @@ const SubscribeSection = () => {
                   label="Email"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  name="billing_address1"
-                  value={values.billing_address1}
-                  error={
-                    !!touched.billing_address1 && !!errors.billing_address1
-                  }
-                  helperText={
-                    touched.billing_address1 && errors.billing_address1
-                  }
+                  name="email"
+                  value={values.email}
+                  error={!!touched.email && !!errors.email}
+                  helperText={touched.email && errors.email}
                 />
               </Grid>
             </Grid>
@@ -110,6 +116,17 @@ const SubscribeSection = () => {
                 </Button>
               </Grid>
             </Grid>
+
+            {failure && (
+              <Alert sx={{ my: "30px" }} severity="error">
+                Failed to submit form
+              </Alert>
+            )}
+            {success && (
+              <Alert sx={{ my: "30px" }} severity="success">
+                form submitted successfully
+              </Alert>
+            )}
           </Card>
         </form>
       )}
@@ -118,36 +135,13 @@ const SubscribeSection = () => {
 };
 
 const initialValues = {
-  shipping_zip: "",
-  shipping_name: "",
-  shipping_email: "",
-  shipping_contact: "",
-  shipping_company: "",
-  shipping_address1: "",
-  shipping_address2: "",
-  shipping_country: countryList[229],
-  billing_zip: "",
-  billing_name: "",
-  billing_email: "",
-  billing_contact: "",
-  billing_company: "",
-  billing_address1: "",
-  billing_address2: "",
-  billing_country: countryList[229],
+  first_name: "",
+  last_name: "",
+  email: "",
 }; // uncomment these fields below for from validation
-
 const checkoutSchema = yup.object().shape({
-  // shipping_name: yup.string().required("required"),
-  // shipping_email: yup.string().email("invalid email").required("required"),
-  // shipping_contact: yup.string().required("required"),
-  // shipping_zip: yup.string().required("required"),
-  // shipping_country: yup.object().required("required"),
-  // shipping_address1: yup.string().required("required"),
-  // billing_name: yup.string().required("required"),
-  // billing_email: yup.string().required("required"),
-  // billing_contact: yup.string().required("required"),
-  // billing_zip: yup.string().required("required"),
-  // billing_country: yup.object().required("required"),
-  // billing_address1: yup.string().required("required"),
+  first_name: yup.string().required("required"),
+  last_name: yup.string().required("required"),
+  email: yup.string().required("required"),
 });
 export default SubscribeSection;

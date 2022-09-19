@@ -5,9 +5,10 @@ import Autocomplete from "@mui/material/Autocomplete";
 import Card1 from "src/components/Card1";
 import countryList from "src/data/countryList";
 import axios from "axios";
-
+import { useState } from "react";
 import * as yup from "yup";
 import Image from "src/components/BazarImage";
+import Alert from "@mui/material/Alert";
 
 const initialValues = {
   first_name: "",
@@ -32,9 +33,10 @@ const checkoutSchema = yup.object().shape({
   // website: yup.string().required("required"),
 });
 function MainForm({ sponsors, endpoint }) {
-  const handleFormSubmit = async (values) => {
-    console.log(values);
+  const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
 
+  const handleFormSubmit = async (values) => {
     axios
       .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/${endpoint}`, {
         data: {
@@ -43,10 +45,12 @@ function MainForm({ sponsors, endpoint }) {
         },
       })
       .then(function (response) {
-        console.log(response);
+        setSuccess(true);
+        setFailure(false);
       })
       .catch(function (error) {
-        console.log(error);
+        setSuccess(false);
+        setFailure(true);
       });
   };
 
@@ -250,6 +254,17 @@ function MainForm({ sponsors, endpoint }) {
                       />
                     </Grid>
                   </Grid>
+
+                  {failure && (
+                    <Alert sx={{ my: "30px" }} severity="error">
+                      Failed to submit form
+                    </Alert>
+                  )}
+                  {success && (
+                    <Alert sx={{ my: "30px" }} severity="success">
+                      form submitted successfully
+                    </Alert>
+                  )}
                 </Card1>
 
                 <Grid container spacing={6}>

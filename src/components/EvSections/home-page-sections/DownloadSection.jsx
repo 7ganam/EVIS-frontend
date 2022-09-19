@@ -14,6 +14,7 @@ import Image from "src/components/BazarImage";
 import RoundedImage from "src/components/EvComponents/RoundedImage";
 import { useTheme } from "@mui/material";
 import Card1 from "@/components/Card1";
+import Link from "next/link";
 
 const leftImg = "/assets/images/png_bg.png";
 
@@ -41,7 +42,7 @@ const DownloadSection = (props) => {
             justifyContent: "center",
           }}
         >
-          {props.ButtonsData.map(({ text }) => {
+          {props.ButtonsData.map(({ text, url, type }) => {
             return (
               <Grid
                 item
@@ -51,10 +52,32 @@ const DownloadSection = (props) => {
                 key={text}
                 sx={{ width: "100%" }}
               >
-                <BigButton
-                  sx={{ padding: "10px 40px", height: "80px", width: "100%" }}
-                  content={text}
-                ></BigButton>
+                {type === "internalLink" && (
+                  <Link href={url}>
+                    <a>
+                      <BigButton
+                        sx={{
+                          padding: "10px 40px",
+                          height: "80px",
+                          width: "100%",
+                        }}
+                        content={text}
+                      ></BigButton>
+                    </a>
+                  </Link>
+                )}
+                {type === "download" && (
+                  <a href={url} download>
+                    <BigButton
+                      sx={{
+                        padding: "10px 40px",
+                        height: "80px",
+                        width: "100%",
+                      }}
+                      content={text}
+                    ></BigButton>
+                  </a>
+                )}
               </Grid>
             );
           })}

@@ -11,6 +11,7 @@ import FeaturesSection from "src/components/EvSections/home-page-sections/Featur
 import CountDownSection from "src/components/EvSections/home-page-sections/CountDownSection";
 import DownloadSection from "src/components/EvSections/home-page-sections/DownloadSection";
 import { H1 } from "src/components/Typography";
+import Link from "next/link";
 
 import api from "src/utils/api/grocery3-shop";
 const StyledButton = styled(Button)(() => ({
@@ -18,14 +19,13 @@ const StyledButton = styled(Button)(() => ({
   fontWeight: 400,
   fontSize: "16px",
 }));
-import Link from "next/link";
 // ======================================================
 // ======================================================
 
 const pageHeaderData = {
   text: "The MENA’s First Electric Vehicles Exhibition and Conference",
   buttonText: "Become A Sponsor",
-  buttonLink: "/",
+  buttonLink: "/participate/sponsor",
   image: "/assets/images/ev-home/carousel2.jpeg",
 };
 const EvHome = (props) => {
@@ -124,21 +124,33 @@ const EvHome = (props) => {
   const buttonsData = [
     {
       text: "BOOK YOUR STAND",
+      url: "/participate/exhibitor",
+      type: "internalLink",
     },
     {
       text: "BECOME A SPONSOR",
+      url: "/participate/sponsor",
+      type: "internalLink",
     },
     {
       text: "DELEGATE REGISTRATION",
+      url: "/participate/delegate",
+      type: "internalLink",
     },
     {
       text: "VISITOR REGISTRATION",
+      url: "/participate/visitor",
+      type: "internalLink",
     },
     {
       text: "DOWNLOAD EVENT BROCHURE",
+      url: "/assets/images/summit-agenda.pdf",
+      type: "download",
     },
     {
       text: "DOWNLOAD POST SHOW REPORT",
+      url: "/assets/images/summit-agenda.pdf",
+      type: "download",
     },
   ];
   return (
@@ -185,7 +197,7 @@ const EvHome = (props) => {
                 </Link>
               </Box>
               <Box mx={"0px"} p={1.25}>
-                <Link href={pageHeaderData.buttonLink}>
+                <Link href={"/participate/exhibitor"}>
                   <a>
                     <StyledButton
                       variant="contained"
