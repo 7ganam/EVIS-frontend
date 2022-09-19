@@ -1,5 +1,4 @@
 import EvLayout from "src/components/layouts/EvLayout";
-import { useRouter } from "next/router";
 import { Container, Grid, Box } from "@mui/material";
 import { H2, H4, H5 } from "src/components/EvComponents/Typography";
 
@@ -472,26 +471,6 @@ const SpeakerPage = (props) => {
     let speaker = JSON.parse(props.speaker)?.data[0].attributes ?? null;
     return speaker;
   }, [props.speaker]);
-
-  console.log("speakerData", speakerData);
-  const router = useRouter();
-  const filterName = router.query.slut;
-  // const member = advisoryBoard.filter((item) => item.name === filterName)[0];
-  // if (!member) {
-  //   return (
-  //     <Box pt={20}>
-  //       <Container mb={6}>
-  //         <Box
-  //           sx={{
-  //             textAlign: "center",
-  //           }}
-  //         >
-  //           <H2>Loading ...</H2>
-  //         </Box>
-  //       </Container>
-  //     </Box>
-  //   );
-  // }
 
   return (
     <EvLayout showNavbar={true} title={speakerData?.name ?? ""}>

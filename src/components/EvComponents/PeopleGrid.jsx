@@ -1,5 +1,6 @@
 import { useTheme } from "@emotion/react";
 import { Box, Container, Grid, Button } from "@mui/material";
+import Link from "next/link";
 import { Router, useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useState } from "react";
@@ -60,22 +61,26 @@ function PeopleGrid({ data }) {
                     },
                   }}
                 >
-                  <Box
-                    sx={{ height: "100%", borderRadius: "30px" }}
-                    onClick={() => {
-                      if (link) {
-                        router.push(link);
-                      }
-                    }}
-                  >
-                    <ModifiedRoundedImage
-                      Src={src}
-                      Name={name}
-                      Title={title}
-                      Company={company}
-                      bgColor={theme.palette.paste.contrastText}
-                    />
-                  </Box>
+                  <Link href={link ?? ""}>
+                    <a>
+                      <Box
+                        sx={{ height: "100%", borderRadius: "30px" }}
+                        // onClick={() => {
+                        //   if (link) {
+                        //     router.push(link);
+                        //   }
+                        // }}
+                      >
+                        <ModifiedRoundedImage
+                          Src={src}
+                          Name={name}
+                          Title={title}
+                          Company={company}
+                          bgColor={theme.palette.paste.contrastText}
+                        />
+                      </Box>
+                    </a>
+                  </Link>
                 </AnimationWrapper>
               </Grid>
             );
