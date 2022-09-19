@@ -464,7 +464,6 @@ let data = [
 ];
 
 const MemberPage = ({ global: { advisoryBoard } }) => {
-  console.log("advisoryBoard :>> ", advisoryBoard);
   const router = useRouter();
   const filterName = router.query.member;
   const member = advisoryBoard.filter((item) => item.name === filterName)[0];
@@ -483,8 +482,6 @@ const MemberPage = ({ global: { advisoryBoard } }) => {
       </Box>
     );
   }
-
-  // console.log(member);
 
   return (
     <EvLayout showNavbar={true} title={member.name}>

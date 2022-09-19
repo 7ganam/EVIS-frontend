@@ -14,8 +14,6 @@ function extract_yt_id(url) {
 }
 
 const Videos = ({ videosList }) => {
-  videosList.forEach((item) => console.log(extract_yt_id(item.youtube)));
-
   const theme = useTheme();
   return (
     <Box mt={6}>

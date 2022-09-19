@@ -4,6 +4,7 @@ import { H4 } from "src/components/EvComponents/Typography";
 import Autocomplete from "@mui/material/Autocomplete";
 import Card1 from "src/components/Card1";
 import countryList from "src/data/countryList";
+import axios from "axios";
 
 import * as yup from "yup";
 import Image from "src/components/BazarImage";
@@ -14,28 +15,39 @@ const initialValues = {
   job_title: "",
   city: "",
   country: countryList[229],
-  shipping_contact: "",
+  phone_number: "",
   address: "",
   website: "",
   email: "",
 }; // uncomment these fields below for from validation
 const checkoutSchema = yup.object().shape({
-  // shipping_name: yup.string().required("required"),
-  // shipping_email: yup.string().email("invalid email").required("required"),
-  // shipping_contact: yup.string().required("required"),
-  // shipping_zip: yup.string().required("required"),
-  // shipping_country: yup.object().required("required"),
-  // shipping_address1: yup.string().required("required"),
-  // billing_name: yup.string().required("required"),
-  // billing_email: yup.string().required("required"),
-  // billing_contact: yup.string().required("required"),
-  // billing_zip: yup.string().required("required"),
-  // billing_country: yup.object().required("required"),
-  // billing_address1: yup.string().required("required"),
+  first_name: yup.string().required("required"),
+  second_name: yup.string().required("required"),
+  job_title: yup.string().required("required"),
+  country: yup.object().required("required"),
+  // city: yup.string().required("required"),
+  email: yup.string().required("required"),
+  phone_number: yup.string().required("required"),
+  // address: yup.string().required("required"),
+  // website: yup.string().required("required"),
 });
-function MainSection({ sponsors }) {
+function MainForm({ sponsors, endpoint }) {
   const handleFormSubmit = async (values) => {
     console.log(values);
+
+    axios
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/${endpoint}`, {
+        data: {
+          ...values,
+          country: values.country.label,
+        },
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -137,15 +149,10 @@ function MainSection({ sponsors }) {
                         onBlur={handleBlur}
                         label="Phone Number"
                         onChange={handleChange}
-                        name="shipping_contact"
-                        value={values.shipping_contact}
-                        error={
-                          !!touched.shipping_contact &&
-                          !!errors.shipping_contact
-                        }
-                        helperText={
-                          touched.shipping_contact && errors.shipping_contact
-                        }
+                        name="phone_number"
+                        value={values.phone_number}
+                        error={!!touched.phone_number && !!errors.phone_number}
+                        helperText={touched.phone_number && errors.phone_number}
                       />
                     </Grid>{" "}
                     <Grid item sm={6} xs={12}>
@@ -171,24 +178,19 @@ function MainSection({ sponsors }) {
                           mb: 2,
                         }}
                         options={countryList}
-                        value={values.shipping_country}
+                        value={values.country}
                         getOptionLabel={(option) => option.label}
-                        onChange={(_, value) =>
-                          setFieldValue("shipping_country", value)
-                        }
+                        onChange={(_, value) => {
+                          console.log(value);
+                          setFieldValue("country", value);
+                        }}
                         renderInput={(params) => (
                           <TextField
                             label="Country"
                             variant="outlined"
                             placeholder="Select Country"
-                            error={
-                              !!touched.shipping_country &&
-                              !!errors.shipping_country
-                            }
-                            helperText={
-                              touched.shipping_country &&
-                              errors.shipping_country
-                            }
+                            error={!!touched.country && !!errors.country}
+                            helperText={touched.country && errors.country}
                             {...params}
                           />
                         )}
@@ -208,17 +210,16 @@ function MainSection({ sponsors }) {
                     <Grid item sm={6} xs={12}>
                       <TextField
                         fullWidth
-                        type="number"
                         sx={{
                           mb: 2,
                         }}
                         label="Zip Code"
-                        name="shipping_zip"
+                        name="zip_code"
                         onBlur={handleBlur}
                         onChange={handleChange}
-                        value={values.shipping_zip}
-                        error={!!touched.shipping_zip && !!errors.shipping_zip}
-                        helperText={touched.shipping_zip && errors.shipping_zip}
+                        value={values.zip_code}
+                        error={!!touched.zip_code && !!errors.zip_code}
+                        helperText={touched.zip_code && errors.zip_code}
                       />
                     </Grid>{" "}
                     <Grid item sm={6} xs={12}>
@@ -278,9 +279,12 @@ function MainSection({ sponsors }) {
             <Stack>
               {sponsors.map((sponsor) => {
                 return (
-                  <Box key = {sponsor.source} sx = {{
-                    textAlign : "center"
-                  }}>
+                  <Box
+                    key={sponsor.source}
+                    sx={{
+                      textAlign: "center",
+                    }}
+                  >
                     <H4>{sponsor.text}</H4>
                     <Image
                       key={sponsor.source}
@@ -300,4 +304,4 @@ function MainSection({ sponsors }) {
   );
 }
 
-export default MainSection;
+export default MainForm;

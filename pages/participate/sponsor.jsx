@@ -2,8 +2,7 @@ import { Container } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import EvLayout from "src/components/layouts/EvLayout";
 // import api from "src/utils/api/grocery3-shop";
-// import MainSection from "src/components/EvSections/sponsorship-opportunities-sections/MainSection";
-import MainSection from "src/components/EvSections/book-your-stand-sections/MainSection";
+import MainForm from "src/components/MainForm";
 import { Box } from "@mui/system";
 // ======================================================
 // ======================================================
@@ -38,9 +37,14 @@ const generalPage = () => {
         }}
       >
         <Box sx={{ mb: "20px" }}>
-          <SectionTitle>Enquire About Sponsorship Opportunities</SectionTitle>
+          <Box mt={"30px"}>
+            <SectionTitle>Enquire About Sponsorship Opportunities</SectionTitle>
+          </Box>
         </Box>
-        <MainSection sponsors={sponsorsData} />
+        <MainForm
+          sponsors={sponsorsData}
+          endpoint={"application-for-sponsors"}
+        />
       </Container>
     </EvLayout>
   );

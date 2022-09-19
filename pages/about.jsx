@@ -121,7 +121,6 @@ The Emirate also has easy access to developing markets, with more than 200 air r
 };
 
 const GeneralPage = ({ global }) => {
-  console.log("global :>> ", global);
   return (
     <EvLayout showNavbar={true}>
       <Container>
