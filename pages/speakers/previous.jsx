@@ -4,6 +4,7 @@ import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/evis-api";
 import SpeakersSection from "src/components/EvSections/agenda-page-sections/SpeakersSection";
 import { Box } from "@mui/system";
+import { useMemo } from "react";
 // ======================================================
 // ======================================================
 
@@ -466,7 +467,22 @@ const speakersData = [
 ];
 
 const GeneralPage = (props) => {
-  console.log("previous speakers props :>> ", props);
+  let speakersData2 = useMemo(() => {
+    let allSpeakers = JSON.parse(props.allSpeakers)?.data ?? [];
+    console.log(" speakers props :>> ", allSpeakers);
+
+    return allSpeakers.map((speaker) => {
+      return {
+        src: speaker?.attributes?.image?.data?.attributes?.url ?? "",
+        name: speaker?.attributes?.name ?? "",
+        title: speaker?.attributes?.title ?? "",
+        company: speaker?.attributes?.organization ?? "",
+      };
+    });
+  }, [props.allSpeakers]);
+
+  console.log("speakersData2 :>> ", speakersData2);
+
   return (
     <EvLayout showNavbar={true}>
       <Container></Container>
@@ -477,7 +493,7 @@ const GeneralPage = (props) => {
       >
         <SpeakersSection
           title={"Previous Speakers"}
-          data={speakersData}
+          data={speakersData2}
         ></SpeakersSection>
       </Box>
     </EvLayout>
