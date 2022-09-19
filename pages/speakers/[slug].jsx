@@ -4,6 +4,8 @@ import { Container, Grid, Box } from "@mui/material";
 import { H2, H4, H5 } from "src/components/EvComponents/Typography";
 
 import Image from "src/components/BazarImage";
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
 
 let data = [
   {
@@ -463,30 +465,36 @@ let data = [
   },
 ];
 
-const SpeakerPage = () => {
-  const router = useRouter();
-  const filterName = router.query.speaker;
-  const nameData = data.filter((item) => item.name === filterName)[0];
-  if (!nameData) {
-    return (
-      <Box pt={20}>
-        <Container mb={6}>
-          <Box
-            sx={{
-              textAlign: "center",
-            }}
-          >
-            <H2>Loading ...</H2>
-          </Box>
-        </Container>
-      </Box>
-    );
-  }
+const SpeakerPage = (props) => {
+  console.log("props :>> ", props);
 
-  // console.log(nameData);
+  let speakerData = useMemo(() => {
+    let speaker = JSON.parse(props.speaker)?.data[0].attributes ?? null;
+    return speaker;
+  }, [props.speaker]);
+
+  console.log("speakerData", speakerData);
+  const router = useRouter();
+  const filterName = router.query.slut;
+  // const member = advisoryBoard.filter((item) => item.name === filterName)[0];
+  // if (!member) {
+  //   return (
+  //     <Box pt={20}>
+  //       <Container mb={6}>
+  //         <Box
+  //           sx={{
+  //             textAlign: "center",
+  //           }}
+  //         >
+  //           <H2>Loading ...</H2>
+  //         </Box>
+  //       </Container>
+  //     </Box>
+  //   );
+  // }
 
   return (
-    <EvLayout showNavbar={true} title={nameData.name}>
+    <EvLayout showNavbar={true} title={speakerData?.name ?? ""}>
       <Box pt={5}>
         <Container>
           <Grid
@@ -498,7 +506,7 @@ const SpeakerPage = () => {
             <Grid
               item
               xs={12}
-              sm={6}
+              sm={4}
               md={2}
               sx={{
                 backgroundColor: "#f0f0f0",
@@ -521,7 +529,7 @@ const SpeakerPage = () => {
                     margin: "auto",
                   }}
                   alt="rounded image"
-                  src={nameData.src}
+                  src={speakerData?.image?.data?.attributes?.url}
                   width={"100%"}
                   height={"100%"}
                 />
@@ -530,27 +538,27 @@ const SpeakerPage = () => {
             <Grid
               item
               xs={12}
-              sm={6}
+              sm={8}
               md={10}
               sx={{
                 backgroundColor: "#f0f0f0",
               }}
             >
               <Box ml={3} my={3} sx={{}}>
-                <H2>{nameData.name}</H2>
+                <H2>{speakerData?.name ?? ""}</H2>
                 <H4
                   sx={{
                     color: "gray",
                   }}
                 >
-                  {nameData.title}
+                  {speakerData?.title ?? ""}
                 </H4>
                 <H4
                   sx={{
                     color: "gray",
                   }}
                 >
-                  {nameData.company}
+                  {speakerData?.company ?? ""}
                 </H4>
               </Box>
             </Grid>
@@ -575,15 +583,7 @@ const SpeakerPage = () => {
                     color: "#4d4d4d",
                   }}
                 >
-                  Lorem ipsum dolor sit amet. Quo veritatis unde aut sunt
-                  blanditiis sed veritatis tempore non reiciendis explicabo est
-                  tenetur consequuntur rem assumenda porro ea incidunt
-                  consectetur. Et rerum voluptates et tempora impedit qui nulla
-                  quod. Et quae quod aut minus nulla non corrupti voluptas! At
-                  earum nihil ut dolorem omnis et aliquid excepturi a fuga nulla
-                  aut sint iure et doloremque quo veniam consequatur. Est
-                  voluptatem voluptas et debitis omnis et blanditiis alias aut
-                  distinctio quia.
+                  {speakerData?.about ? speakerData.about : "No data"}
                 </H5>
               </Box>
             </Grid>
@@ -593,5 +593,23 @@ const SpeakerPage = () => {
     </EvLayout>
   );
 };
+export async function getServerSideProps(context) {
+  let slug = context?.params?.slug ?? "";
+  let speaker = null;
+  let speakerError = null;
+  try {
+    speaker = await api.getSpeaker(slug);
+    speaker = JSON.stringify(speaker);
+  } catch (error) {
+    speakerError = JSON.stringify(error);
+  }
+
+  return {
+    props: {
+      speaker,
+      speakerError,
+    },
+  };
+}
 
 export default SpeakerPage;

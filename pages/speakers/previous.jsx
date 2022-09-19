@@ -8,7 +8,7 @@ import { useMemo } from "react";
 // ======================================================
 // ======================================================
 
-const speakersData = [
+const speakersData2 = [
   {
     src: "/assets/images/speakers/AhmedAbdu.png",
     name: "Ahmed Abdu",
@@ -467,12 +467,12 @@ const speakersData = [
 ];
 
 const GeneralPage = (props) => {
-  let speakersData2 = useMemo(() => {
+  let speakersData = useMemo(() => {
     let allSpeakers = JSON.parse(props.allSpeakers)?.data ?? [];
-    console.log(" speakers props :>> ", allSpeakers);
 
     return allSpeakers.map((speaker) => {
       return {
+        link: `/speakers/${speaker?.attributes?.slug ?? ""}`,
         src: speaker?.attributes?.image?.data?.attributes?.url ?? "",
         name: speaker?.attributes?.name ?? "",
         title: speaker?.attributes?.title ?? "",
@@ -480,8 +480,6 @@ const GeneralPage = (props) => {
       };
     });
   }, [props.allSpeakers]);
-
-  console.log("speakersData2 :>> ", speakersData2);
 
   return (
     <EvLayout showNavbar={true}>
@@ -493,7 +491,7 @@ const GeneralPage = (props) => {
       >
         <SpeakersSection
           title={"Previous Speakers"}
-          data={speakersData2}
+          data={speakersData}
         ></SpeakersSection>
       </Box>
     </EvLayout>
