@@ -469,9 +469,9 @@ const SpeakerPage = (props) => {
 
   let speakerData = useMemo(() => {
     let speaker = JSON.parse(props.speaker)?.data[0].attributes ?? null;
+
     return speaker;
   }, [props.speaker]);
-
   return (
     <EvLayout showNavbar={true} title={speakerData?.name ?? ""}>
       <Box pt={5}>
@@ -560,6 +560,7 @@ const SpeakerPage = (props) => {
                 <H5
                   sx={{
                     color: "#4d4d4d",
+                    whiteSpace: "pre-wrap",
                   }}
                 >
                   {speakerData?.about ? speakerData.about : "No data"}
@@ -572,22 +573,60 @@ const SpeakerPage = (props) => {
     </EvLayout>
   );
 };
-export async function getServerSideProps(context) {
+
+export async function getStaticPaths() {
+  let allSpeakers = null;
+  let allSpeakersError = null;
+
+  try {
+    allSpeakers = await api.getSpeakers();
+    console.log("allSpeakers", JSON.stringify(allSpeakers, null, 2));
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    allSpeakersError = dev_error;
+  }
+
+  if (!allSpeakers) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const paths = allSpeakers.data.map((speaker) => ({
+    params: { slug: speaker?.attributes?.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false, // See the "fallback" section below
+  };
+}
+
+export async function getStaticProps(context) {
   let slug = context?.params?.slug ?? "";
   let speaker = null;
   let speakerError = null;
   try {
     speaker = await api.getSpeaker(slug);
-    speaker = JSON.stringify(speaker);
-  } catch (error) {
-    speakerError = JSON.stringify(error);
+  } catch (dev_error) {
+    speakerError = dev_error;
+    console.log(`dev_error`, dev_error);
+    return {
+      notFound: true,
+    };
+  }
+
+  if (!speaker) {
+    return {
+      notFound: true,
+    };
   }
 
   return {
     props: {
-      speaker,
-      speakerError,
-    },
+      speaker: JSON.stringify(speaker),
+      speakerError: JSON.stringify(speakerError),
+    }, // will be passed to the page component as props
   };
 }
 

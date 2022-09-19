@@ -1,6 +1,7 @@
 import axios from "axios";
 
-let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+// let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+let baseUrl = "https://evis-backend.onrender.com";
 const getSpeakers = async () => {
   const response = await axios.get(`${baseUrl}/api/speakers?populate=*`);
   return response.data;
