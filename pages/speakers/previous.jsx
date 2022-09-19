@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
+import api from "src/utils/api/evis-api";
 import SpeakersSection from "src/components/EvSections/agenda-page-sections/SpeakersSection";
 import { Box } from "@mui/system";
 // ======================================================
@@ -465,7 +465,8 @@ const speakersData = [
   },
 ];
 
-const generalPage = () => {
+const GeneralPage = (props) => {
+  console.log("previous speakers props :>> ", props);
   return (
     <EvLayout showNavbar={true}>
       <Container></Container>
@@ -483,16 +484,21 @@ const generalPage = () => {
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+export async function getServerSideProps() {
+  let allSpeakers = null;
+  let allSpeakersError = null;
+  try {
+    allSpeakers = await api.getSpeakers();
+    allSpeakers = JSON.stringify(allSpeakers);
+  } catch (error) {
+    allSpeakersError = JSON.stringify(error);
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      allSpeakers,
+      allSpeakersError,
     },
   };
 }
-export default generalPage;
+export default GeneralPage;
