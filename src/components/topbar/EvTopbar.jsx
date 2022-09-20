@@ -2,7 +2,7 @@ import { CallOutlined, MailOutline } from "@mui/icons-material";
 import { Box, Container, styled } from "@mui/material";
 import { FlexBox } from "src/components/flex-box";
 import NavLink from "src/components/nav-link/NavLink";
-import { Span } from "src/components/Typography";
+import { H2, H3, H4, Span } from "src/components/Typography";
 import { layoutConstant } from "src/utils/constants";
 const TopbarWrapper = styled(Box)(({ theme }) => ({
   fontSize: 12,
@@ -68,35 +68,20 @@ const EvTopbar = () => {
           justifyContent: "space-between",
         }}
       >
-        <FlexBox className="topbarLeft" alignItems="center">
-          <FlexBox alignItems="center">
+        <FlexBox
+          className="topbarLeft"
+          alignItems="center"
+          sx={{ justifyContent: "center", width: "100%" }}
+        >
+          <H2
+            alignItems="center"
+            justifyContent="center"
+            sx={{ textAlign: "center" }}
+          >
             {
               "Under the Patronage of HE Suhail Al Mazroui, UAE Minister of Energy & Infrastructure"
             }
-          </FlexBox>
-          <FlexBox alignItems="center">
-            {/* <CallOutlined fontSize="small" /> */}
-            {/* <Span className="title">+97150 686 3956 </Span> */}
-          </FlexBox>
-
-          <FlexBox alignItems="center" ml={2.5}>
-            {/* <MailOutline fontSize="small" /> */}
-            {/* <Span className="title">
-              <a href="mailto: evis@nirvanaholding.com">
-                evis@nirvanaholding.com
-              </a>
-            </Span> */}
-          </FlexBox>
-        </FlexBox>
-
-        <FlexBox className="topbarRight" alignItems="center">
-          {/* <NavLink className="link" href="/faq">
-            FAQ&quot;s
-          </NavLink>
-
-          <NavLink className="link" href="/help">
-            Need Help?
-          </NavLink> */}
+          </H2>
         </FlexBox>
       </Container>
     </TopbarWrapper>
