@@ -465,7 +465,6 @@ let data = [
 ];
 
 const SpeakerPage = (props) => {
-  console.log("props :>> ", props);
   const router = useRouter();
 
   let speakerData = useMemo(() => {
@@ -604,7 +603,6 @@ export async function getStaticPaths() {
 
   try {
     allSpeakers = await api.getSpeakers();
-    console.log("allSpeakers", JSON.stringify(allSpeakers, null, 2));
   } catch (dev_error) {
     console.log(`error fetching`, dev_error);
     allSpeakersError = dev_error;

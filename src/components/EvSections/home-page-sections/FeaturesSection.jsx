@@ -12,7 +12,7 @@ function CardsSection({ cardsData }) {
         <SectionTitle>Event Features</SectionTitle>
       </Box>
       <Grid container columns={12} spacing={3}>
-        {cardsData.map((card, ind) => {
+        {cardsData?.map((card, ind) => {
           return (
             <Grid item xs={12} sm={6} md={4} key={ind}>
               <CardWithImageButton
