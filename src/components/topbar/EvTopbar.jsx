@@ -21,7 +21,7 @@ const TopbarWrapper = styled(Box)(({ theme }) => ({
         display: "block",
       },
       "& > *:not(.logo)": {
-        display: "none",
+        display: "block",
       },
     },
   },
@@ -73,15 +73,18 @@ const EvTopbar = () => {
           alignItems="center"
           sx={{ justifyContent: "center", width: "100%" }}
         >
-          <H2
+          <Box
             alignItems="center"
             justifyContent="center"
-            sx={{ textAlign: "center" }}
+            sx={{
+              textAlign: "center",
+              fontSize: { xs: "10px", sm: "15px", md: "25px" },
+            }}
           >
             {
               "Under the Patronage of HE Suhail Al Mazroui, UAE Minister of Energy & Infrastructure"
             }
-          </H2>
+          </Box>
         </FlexBox>
       </Container>
     </TopbarWrapper>
