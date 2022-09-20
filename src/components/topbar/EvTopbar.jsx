@@ -70,6 +70,11 @@ const EvTopbar = () => {
       >
         <FlexBox className="topbarLeft" alignItems="center">
           <FlexBox alignItems="center">
+            {
+              "Under the Patronage of HE Suhail Al Mazroui, UAE Minister of Energy & Infrastructure"
+            }
+          </FlexBox>
+          <FlexBox alignItems="center">
             {/* <CallOutlined fontSize="small" /> */}
             {/* <Span className="title">+97150 686 3956 </Span> */}
           </FlexBox>
