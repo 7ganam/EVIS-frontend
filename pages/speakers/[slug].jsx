@@ -5,7 +5,7 @@ import { H2, H4, H5 } from "src/components/EvComponents/Typography";
 import Image from "src/components/BazarImage";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
-
+import { useRouter } from "next/router";
 let data = [
   {
     src: "/assets/images/speakers/AhmedAbdu.png",
@@ -466,12 +466,36 @@ let data = [
 
 const SpeakerPage = (props) => {
   console.log("props :>> ", props);
+  const router = useRouter();
 
   let speakerData = useMemo(() => {
-    let speaker = JSON.parse(props.speaker)?.data[0].attributes ?? null;
+    if (props?.speaker) {
+      let speaker = JSON.parse(props.speaker)?.data[0].attributes ?? null;
+      return speaker;
+    }
 
-    return speaker;
-  }, [props.speaker]);
+    return {};
+  }, [props?.speaker]);
+
+  if (router.isFallback) {
+    return (
+      <EvLayout showNavbar={true}>
+        <Box pt={5}>
+          <Container>
+            <Grid
+              container
+              sx={{
+                boxShadow: "1px 1px 5px 1px gray",
+              }}
+            >
+              Loading ...
+            </Grid>
+          </Container>
+        </Box>
+      </EvLayout>
+    );
+  }
+
   return (
     <EvLayout showNavbar={true} title={speakerData?.name ?? ""}>
       <Box pt={5}>
@@ -598,7 +622,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false, // See the "fallback" section below
+    fallback: true, // See the "fallback" section below
   };
 }
 
