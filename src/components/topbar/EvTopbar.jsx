@@ -70,17 +70,17 @@ const EvTopbar = () => {
       >
         <FlexBox className="topbarLeft" alignItems="center">
           <FlexBox alignItems="center">
-            <CallOutlined fontSize="small" />
-            <Span className="title">+97150 686 3956 </Span>
+            {/* <CallOutlined fontSize="small" /> */}
+            {/* <Span className="title">+97150 686 3956 </Span> */}
           </FlexBox>
 
           <FlexBox alignItems="center" ml={2.5}>
-            <MailOutline fontSize="small" />
-            <Span className="title">
+            {/* <MailOutline fontSize="small" /> */}
+            {/* <Span className="title">
               <a href="mailto: evis@nirvanaholding.com">
                 evis@nirvanaholding.com
               </a>
-            </Span>
+            </Span> */}
           </FlexBox>
         </FlexBox>
 
