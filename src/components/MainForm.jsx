@@ -291,7 +291,7 @@ function MainForm({ sponsors, endpoint }) {
             }}
             elevation={2}
           >
-            <Stack>
+            <Stack spacing={"30px"}>
               {sponsors.map((sponsor) => {
                 return (
                   <Box
@@ -300,14 +300,16 @@ function MainForm({ sponsors, endpoint }) {
                       textAlign: "center",
                     }}
                   >
-                    <H4>{sponsor.text}</H4>
-                    <Image
-                      key={sponsor.source}
-                      src={sponsor.source}
-                      alt="sponsor logo"
-                      width={"80%"}
-                      sx={{ margin: "auto" }}
-                    ></Image>
+                    <Card1>
+                      <H4>{sponsor.text}</H4>
+                      <Image
+                        key={sponsor.source}
+                        src={sponsor.source}
+                        alt="sponsor logo"
+                        width={"80%"}
+                        sx={{ margin: "auto" }}
+                      ></Image>
+                    </Card1>
                   </Box>
                 );
               })}

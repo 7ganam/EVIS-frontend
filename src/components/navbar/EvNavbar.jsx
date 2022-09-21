@@ -239,9 +239,9 @@ const Navbar = ({ elevation, isFixed }) => {
               <Image
                 // height={{ xs: "50", md: isFixed ? "70" : "90" }}
                 mb={0}
-                src="/assets/images/EvLogo_MENA2.png"
+                src="/assets/images/EvLogo_MENA3.jpg"
                 alt="logo"
-                sx={{ height: { xs: "60px", md: isFixed ? "70px" : "170px" } }}
+                sx={{ height: { xs: "60px", md: isFixed ? "70px" : "140px" } }}
               />
             </a>
           </Link>
@@ -313,6 +313,31 @@ const Navbar = ({ elevation, isFixed }) => {
             {" "}
             {downMd && <MobileMenu />}
           </Box>
+        </Box>
+        <Box
+          sx={{
+            flexGrow: "1",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "70%",
+            maxWidth: "400px",
+            pr: "30px",
+            // bgcolor: "blue",
+            // minWidth: "300px",
+          }}
+        >
+          <Link href="/">
+            <a>
+              <Image
+                // height={{ xs: "50", md: isFixed ? "70" : "90" }}
+                mb={0}
+                src="/assets/images/MOEI.jpeg"
+                alt="logo"
+                sx={{ height: { xs: "60px", md: isFixed ? "70px" : "140px" } }}
+              />
+            </a>
+          </Link>
         </Box>
       </Box>
     </NavBarWrapper>
