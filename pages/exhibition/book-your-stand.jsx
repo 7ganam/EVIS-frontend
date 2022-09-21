@@ -9,22 +9,24 @@ import { Box } from "@mui/system";
 
 const sponsorsData = [
   {
-    source: "/assets/images/organizers/Masdar.png",
+    source: "/assets/images/organizations/DCT.png",
+    text: "Destination Partner",
   },
   {
     source: "/assets/images/organizers/ADNEC.png",
+    text: "Venue Partner",
   },
   {
     source: "/assets/images/organizers/AbuDhabi.png",
+    text: "Host City",
   },
   {
     source: "/assets/images/organizers/Nirvana.png",
+    text: "Organized By",
   },
   {
-    source: "/assets/images/organizers/Audi.png",
-  },
-  {
-    source: "/assets/images/organizers/BritishVolt.png",
+    source: "/assets/images/organizations/CEBC.png",
+    text: "Knowledge Partner",
   },
 ];
 
