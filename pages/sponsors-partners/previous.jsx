@@ -39,7 +39,7 @@ const keyPartners = [
 const sponsors = [
   {
     source: "/assets/images/organizers/Audi.png",
-    text: "Gold Sponsor",
+    text: "Knowledge Partner",
   },
   {
     source: "/assets/images/organizers/BritishVolt.png",

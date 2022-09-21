@@ -37,7 +37,7 @@ const imagesData = [
   },
   // {
   //   source: "/assets/images/organizations/Audi.png",
-  //   text: "Gold Sponsor",
+  //   text: "Knowledge Partner",
   // },
   // {
   //   source: "/assets/images/organizations/BritishVolt.png",

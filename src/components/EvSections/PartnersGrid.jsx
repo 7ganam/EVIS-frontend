@@ -26,7 +26,7 @@ const imagesData = [
   // },
   // {
   //   source: "/assets/images/organizations/AVERE.png",
-  //   text: "Gold Sponsor",
+  //   text: "Knowledge Partner",
   // },
   // {
   //   source: "/assets/images/organizations/Oxford.jpg",

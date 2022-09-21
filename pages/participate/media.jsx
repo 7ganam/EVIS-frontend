@@ -9,6 +9,10 @@ import { Box } from "@mui/system";
 
 const sponsorsData = [
   {
+    source: "/assets/images/organizations/DCT.png",
+    text: "Destination Partner",
+  },
+  {
     source: "/assets/images/organizers/ADNEC.png",
     text: "Venue Partner",
   },
@@ -22,7 +26,7 @@ const sponsorsData = [
   },
   {
     source: "/assets/images/organizations/CEBC.png",
-    text: "Gold Sponsor",
+    text: "Knowledge Partner",
   },
 ];
 
