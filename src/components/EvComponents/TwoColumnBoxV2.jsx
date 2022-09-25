@@ -51,11 +51,13 @@ const TwoColumnBoxV2 = ({ item, imgPosition }) => {
         <Grid item md={6} sm={12} xs={12}>
           <Box>
             <BlockTitle> {title} </BlockTitle>
-            {ps && (
-              <Paragraph>
-                <Box sx={{ whiteSpace: "pre-wrap" }}>{ps}</Box>
-              </Paragraph>
-            )}
+            {ps?.map((p, index) => {
+              return (
+                <Box key={index} sx={{ whiteSpace: "pre-wrap", mb: 3 }}>
+                  <Paragraph>{p}</Paragraph>
+                </Box>
+              );
+            })}
           </Box>
         </Grid>
       </Grid>

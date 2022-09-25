@@ -123,7 +123,6 @@ const EvHome = (props) => {
   }, [props?.homePage]);
   console.log("homePageData", homePageData);
   console.log("videosData", videosData);
-
   return (
     <EvLayout showNavbar={true} title={"Home"}>
       <PageHeader

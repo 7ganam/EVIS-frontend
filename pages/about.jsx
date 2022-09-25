@@ -1,7 +1,6 @@
 import { Box, Container } from "@mui/material";
 
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
 import LandingText from "src/components/EvSections/about-page-sections/LandingText";
 import Exhibition from "src/components/EvSections/about-page-sections/Exhibition";
 import SummitSection from "src/components/EvSections/about-page-sections/SummitSection";
@@ -10,6 +9,9 @@ import AdvisoryBoardSection from "src/components/EvSections/about-page-sections/
 import VenueSection from "src/components/EvSections/about-page-sections/VenueSection";
 import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
 import PartnersGrid from "src/components/EvSections/PartnersGrid";
+
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
 
 // import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
 
@@ -120,43 +122,213 @@ The Emirate also has easy access to developing markets, with more than 200 air r
 `,
 };
 
-const GeneralPage = ({ global }) => {
+const GeneralPage = (props) => {
+  let sponsors = useMemo(() => {
+    if (!props?.sponsors) {
+      return {};
+    }
+
+    let data = JSON.parse(props.sponsors).data[0].attributes ?? null;
+
+    const sponsors = data?.sponsor.map((sponsor) => {
+      return {
+        text: sponsor?.title ?? "",
+        source: sponsor?.image?.data?.attributes?.url ?? "",
+      };
+    });
+
+    return sponsors;
+  }, [props?.sponsors]);
+
+  let partners = useMemo(() => {
+    if (!props?.partners) {
+      return {};
+    }
+
+    let data = JSON.parse(props.partners).data[0].attributes ?? null;
+
+    const partners = data?.partner.map((partner) => {
+      return {
+        text: partner?.title ?? "",
+        source: partner?.image?.data?.attributes?.url ?? "",
+      };
+    });
+
+    return partners;
+  }, [props?.partners]);
+
+  let {
+    aboutEvis,
+    conference,
+    exhibition,
+    speakers,
+    topics,
+    venue,
+    mapContent,
+    sessions,
+    videos,
+  } = useMemo(() => {
+    if (!props?.aboutPage) {
+      return {};
+    }
+
+    let data = JSON.parse(props.aboutPage).data?.attributes ?? null;
+    const aboutEvis = {
+      title: data?.aboutEvis?.title ?? "",
+      paragraphs: data?.aboutEvis?.paragraphs.map((p) => {
+        return p.text;
+      }),
+    };
+    const conference = {
+      title: "",
+      ps: data?.conference?.paragraphs.map((p) => {
+        return p.text;
+      }),
+      img: data?.conference?.image?.data?.attributes?.url,
+    };
+    const exhibition = {
+      title: "",
+      ps: data?.exhibition?.paragraphs.map((p) => {
+        return p.text;
+      }),
+      img: data?.exhibition?.image?.data?.attributes?.url,
+    };
+    const speakers = data?.speakers?.map((speaker) => {
+      return {
+        name: speaker?.name ?? "",
+        title: speaker?.title ?? "",
+        src: speaker?.image?.data?.attributes?.url ?? "",
+        company: speaker?.company ?? "",
+      };
+    });
+    const topics = data?.topics?.map((topic) => {
+      return topic.text;
+    });
+    const venue = {
+      title: data?.venue?.title ?? "",
+      text: data?.venue?.paragraphs.map((p) => {
+        return p.text;
+      }),
+    };
+    const mapContent = {
+      text: data?.mapContent?.text,
+    };
+    const sessions = {
+      title: "",
+      ps: data?.sessions?.paragraphs.map((p) => {
+        return p.text;
+      }),
+      img: data?.sessions?.image?.data?.attributes?.url,
+    };
+
+    const videos = data?.videos?.map((video) => {
+      return {
+        youtube: video?.youtube_link ?? "",
+      };
+    });
+
+    return {
+      aboutEvis,
+      conference,
+      exhibition,
+      speakers,
+      topics,
+      sessions,
+      venue,
+      mapContent,
+      videos,
+    };
+  }, [props?.aboutPage]);
+
   return (
     <EvLayout showNavbar={true}>
       <Container>
-        <LandingText id={"summit"} section={section} />
+        <LandingText
+          id={"summit"}
+          paragraphs={aboutEvis.paragraphs}
+          topic={aboutEvis.title}
+        />
       </Container>
       <Container>
-        <Exhibition item={ExhibitionItem} />
+        <Exhibition item={exhibition} />
       </Container>
-      <SummitSection></SummitSection>
+      <SummitSection item={conference} topics={topics}></SummitSection>
       <Container>
-        <OpenTechSection item={OpenTechData}></OpenTechSection>
+        <OpenTechSection item={sessions} videos={videos}></OpenTechSection>
       </Container>
-      <AdvisoryBoardSection
-        advisoryBoardData={global.advisoryBoard}
-      ></AdvisoryBoardSection>
+      <AdvisoryBoardSection advisoryBoardData={speakers}></AdvisoryBoardSection>
       <Container>
-        <VenueSection data={VenueSectionData}> </VenueSection>
+        <VenueSection data={venue} map={mapContent.text}>
+          {" "}
+        </VenueSection>
         <Box sx={{ mt: "100px" }}>
-          <SponsorsGrid />
-          <PartnersGrid sx={{ mt: 5 }} />
+          <SponsorsGrid sponsors={sponsors} />
+          <PartnersGrid sx={{ mt: 5 }} partners={partners} />
         </Box>
       </Container>
     </EvLayout>
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+export async function getStaticProps(context) {
+  let aboutPage = null;
+  let aboutPageError = null;
+
+  let sponsors = null;
+  let sponsorsError = null;
+
+  let partners = null;
+  let partnersError = null;
+
+  try {
+    aboutPage = await api.getAboutPage();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    aboutPageError = dev_error;
+  }
+
+  if (!aboutPage) {
+    return {
+      notFound: true,
+    };
+  }
+
+  try {
+    sponsors = await api.getSponsor();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    sponsorsError = dev_error;
+  }
+
+  if (!sponsors) {
+    return {
+      notFound: true,
+    };
+  }
+
+  try {
+    partners = await api.getPartner();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    partnersError = dev_error;
+  }
+
+  if (!partners) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      aboutPage: JSON.stringify(aboutPage),
+      aboutPageError: JSON.stringify(aboutPageError),
+      sponsors: JSON.stringify(sponsors),
+      sponsorsError: JSON.stringify(sponsorsError),
+      partners: JSON.stringify(partners),
+      partnersError: JSON.stringify(partnersError),
     },
+    revalidate: 10, // In seconds
   };
 }
 export default GeneralPage;
