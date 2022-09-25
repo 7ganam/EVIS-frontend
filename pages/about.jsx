@@ -258,9 +258,7 @@ const GeneralPage = (props) => {
       </Container>
       <AdvisoryBoardSection advisoryBoardData={speakers}></AdvisoryBoardSection>
       <Container>
-        <VenueSection data={venue} map={mapContent.text}>
-          {" "}
-        </VenueSection>
+        <VenueSection data={venue} map={mapContent.text}></VenueSection>
         <Box sx={{ mt: "100px" }}>
           <SponsorsGrid sponsors={sponsors} />
           <PartnersGrid sx={{ mt: 5 }} partners={partners} />
