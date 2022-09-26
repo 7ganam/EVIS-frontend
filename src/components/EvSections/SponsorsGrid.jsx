@@ -53,7 +53,7 @@ const SponsorsGrid = (props) => {
       sx={{ textAlign: "center", placeItems: "center" }}
       justifyContent={"center"}
     >
-      {sponsors.map(({ source, text }) => {
+      {sponsors?.map(({ source, text }) => {
         return (
           <Grid item xs={12} sm={4} md={2} key={source}>
             <LogoWithTitle source={source} text={text} />
