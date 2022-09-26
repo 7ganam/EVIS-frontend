@@ -123,6 +123,32 @@ The Emirate also has easy access to developing markets, with more than 200 air r
 };
 
 const GeneralPage = (props) => {
+
+  let speakers = useMemo(() => {
+    if (!props?.speakers) {
+      return {};
+    }
+
+    let data = JSON.parse(props.speakers)?.data ?? null;
+    // const speakers = data;
+
+
+    const speakers = data?.map((speaker) => {
+      return {
+        name : speaker?.attributes?.name ?? "",
+        title : speaker?.attributes?.title ?? "",
+        company : speaker?.attributes?.company ?? "",
+        year : speaker?.attributes?.year ?? "",
+        src : speaker?.attributes?.image?.data?.attributes?.url ?? "",
+        phoneNumber : speaker?.attributes?.phone_number ?? "",
+        slug : speaker?.attributes?.slug ?? "",
+        about : speaker?.attributes?.about ?? ""
+      };
+    });
+
+    return speakers;
+  }, [props?.speakers]);
+
   let sponsors = useMemo(() => {
     if (!props?.sponsors) {
       return {};
@@ -237,7 +263,7 @@ const GeneralPage = (props) => {
       <Container>
         <OpenTechSection item={sessions} videos={videos}></OpenTechSection>
       </Container>
-      <AdvisoryBoardSection advisoryBoardData={advisoryBoardData}></AdvisoryBoardSection>
+      <AdvisoryBoardSection advisoryBoardData={speakers}></AdvisoryBoardSection>
       <Container>
         <VenueSection data={venue} map={mapContent.text}></VenueSection>
         <Box sx={{ mt: "100px" }}>
@@ -258,6 +284,9 @@ export async function getStaticProps(context) {
 
   let partners = null;
   let partnersError = null;
+
+  let speakers = null;
+  let speakersError = null;
 
   try {
     aboutPage = await api.getAboutPage();
@@ -298,6 +327,20 @@ export async function getStaticProps(context) {
     };
   }
 
+  try {
+    speakers = await api.getSpeakers();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    speakersError = dev_error;
+  }
+
+  if (!speakers) {
+    return {
+      notFound: true,
+    };
+  }
+
+
   return {
     props: {
       aboutPage: JSON.stringify(aboutPage),
@@ -306,6 +349,8 @@ export async function getStaticProps(context) {
       sponsorsError: JSON.stringify(sponsorsError),
       partners: JSON.stringify(partners),
       partnersError: JSON.stringify(partnersError),
+      speakers: JSON.stringify(speakers),
+      speakersError: JSON.stringify(speakersError),
     },
     revalidate: 10, // In seconds
   };
