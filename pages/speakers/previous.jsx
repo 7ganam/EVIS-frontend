@@ -503,7 +503,7 @@ export async function getStaticProps(context) {
   let allSpeakersError = null;
 
   try {
-    allSpeakers = await api.getSpeakers();
+    allSpeakers = await api.getYearSpeakers(22);
   } catch (dev_error) {
     console.log(`error fetching`, dev_error);
     allSpeakersError = dev_error;
