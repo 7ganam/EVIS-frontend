@@ -30,12 +30,12 @@ const getAboutPage = async () => {
   return response.data;
 };
 
-const getSponsor = async () => {
+const getSponsors = async () => {
   const response = await axios.get(`${baseUrl}/api/sponsors?populate=deep`);
   return response.data;
 };
 
-const getPartner = async () => {
+const getPartners = async () => {
   const response = await axios.get(`${baseUrl}/api/partners?populate=deep`);
   return response.data;
 };
@@ -45,8 +45,8 @@ const api = {
   getSpeaker,
   getHomePage,
   getAboutPage,
-  getSponsor,
-  getPartner
+  getSponsors,
+  getPartners
 };
 
 export default api;
