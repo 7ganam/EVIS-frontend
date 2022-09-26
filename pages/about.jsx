@@ -161,7 +161,6 @@ const GeneralPage = (props) => {
     aboutEvis,
     conference,
     exhibition,
-    speakers,
     topics,
     venue,
     mapContent,
@@ -175,49 +174,31 @@ const GeneralPage = (props) => {
     let data = JSON.parse(props.aboutPage).data?.attributes ?? null;
     const aboutEvis = {
       title: data?.aboutEvis?.title ?? "",
-      paragraphs: data?.aboutEvis?.paragraphs.map((p) => {
-        return p.text;
-      }),
+      paragraph: data?.aboutEvis?.paragraph ?? "",
     };
     const conference = {
       title: "",
-      ps: data?.conference?.paragraphs.map((p) => {
-        return p.text;
-      }),
+      ps: data?.conference?.paragraph ?? "",
       img: data?.conference?.image?.data?.attributes?.url,
     };
     const exhibition = {
       title: "",
-      ps: data?.exhibition?.paragraphs.map((p) => {
-        return p.text;
-      }),
+      ps: data?.exhibition?.paragraph ?? "",
       img: data?.exhibition?.image?.data?.attributes?.url,
     };
-    const speakers = data?.speakers?.map((speaker) => {
-      return {
-        name: speaker?.name ?? "",
-        title: speaker?.title ?? "",
-        src: speaker?.image?.data?.attributes?.url ?? "",
-        company: speaker?.company ?? "",
-      };
-    });
     const topics = data?.topics?.map((topic) => {
-      return topic.text;
+      return topic?.text;
     });
     const venue = {
       title: data?.venue?.title ?? "",
-      text: data?.venue?.paragraphs.map((p) => {
-        return p.text;
-      }),
+      text: data?.venue?.paragraph ?? "",
     };
     const mapContent = {
       text: data?.mapContent?.text,
     };
     const sessions = {
       title: "",
-      ps: data?.sessions?.paragraphs.map((p) => {
-        return p.text;
-      }),
+      ps: data?.sessions?.paragraph ?? "",
       img: data?.sessions?.image?.data?.attributes?.url,
     };
 
@@ -231,7 +212,6 @@ const GeneralPage = (props) => {
       aboutEvis,
       conference,
       exhibition,
-      speakers,
       topics,
       sessions,
       venue,
@@ -240,12 +220,13 @@ const GeneralPage = (props) => {
     };
   }, [props?.aboutPage]);
 
+
   return (
     <EvLayout showNavbar={true}>
       <Container>
         <LandingText
           id={"summit"}
-          paragraphs={aboutEvis.paragraphs}
+          paragraph={aboutEvis.paragraph}
           topic={aboutEvis.title}
         />
       </Container>
@@ -256,7 +237,7 @@ const GeneralPage = (props) => {
       <Container>
         <OpenTechSection item={sessions} videos={videos}></OpenTechSection>
       </Container>
-      <AdvisoryBoardSection advisoryBoardData={speakers}></AdvisoryBoardSection>
+      <AdvisoryBoardSection advisoryBoardData={advisoryBoardData}></AdvisoryBoardSection>
       <Container>
         <VenueSection data={venue} map={mapContent.text}></VenueSection>
         <Box sx={{ mt: "100px" }}>
