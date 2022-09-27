@@ -156,7 +156,7 @@ const GeneralPage = (props) => {
 
     let data = JSON.parse(props.sponsors).data[0].attributes ?? null;
 
-    const sponsors = data?.sponsor.map((sponsor) => {
+    const sponsors = data?.sponsor?.map((sponsor) => {
       return {
         text: sponsor?.title ?? "",
         source: sponsor?.image?.data?.attributes?.url ?? "",
@@ -173,7 +173,7 @@ const GeneralPage = (props) => {
 
     let data = JSON.parse(props.partners).data[0].attributes ?? null;
 
-    const partners = data?.partner.map((partner) => {
+    const partners = data?.partner?.map((partner) => {
       return {
         text: partner?.title ?? "",
         source: partner?.image?.data?.attributes?.url ?? "",
