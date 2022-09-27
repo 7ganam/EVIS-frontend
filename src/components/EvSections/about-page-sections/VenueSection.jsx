@@ -7,6 +7,7 @@ import { Paragraph } from "src/components/EvComponents/Typography";
 const VenueSection = (props) => {
   const theme = useTheme();
   const data = props.data;
+  const mapContent = props.map;
   return (
     <Box id={"venue"} sx={{ scrollMarginTop: "250px" }}>
       <Box sx={{ mt: "30px", mb: "20px" }}>
@@ -31,13 +32,7 @@ const VenueSection = (props) => {
         </Grid>
         <Grid item md={6} sm={12} xs={12} sx={{ padding: "20px" }}>
           <Box>
-            <Paragraph>
-              EVIS 2023 will take place at ADNEC Hall 3 & 4 with 6,686 sqm of
-              exhibition space. Located in the capital of the United Arab
-              Emirates, our Venue Partner ADNEC is a multi-award-winning venue,
-              with state-of-the-art facilities to provide our attendees the best
-              experience.{" "}
-            </Paragraph>
+            <Paragraph>{mapContent}</Paragraph>
           </Box>
         </Grid>
       </Grid>
