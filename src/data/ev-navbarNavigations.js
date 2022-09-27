@@ -91,7 +91,7 @@ const evNavbarNavigations = [
         child: [
           {
             title: "2023 speakers",
-            url: "/coming-soon",
+            url: "/speakers/2023",
           },
           {
             title: "2022 speakers",

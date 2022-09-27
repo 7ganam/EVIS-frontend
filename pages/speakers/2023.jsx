@@ -1,13 +1,14 @@
 import { Container } from "@mui/material";
 
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
+import api from "src/utils/api/evis-api";
 import SpeakersSection from "src/components/EvSections/agenda-page-sections/SpeakersSection";
 import { Box } from "@mui/system";
+import { useMemo } from "react";
 // ======================================================
 // ======================================================
 
-const speakersData = [
+const speakersData2 = [
   {
     src: "/assets/images/speakers/AhmedAbdu.png",
     name: "Ahmed Abdu",
@@ -465,7 +466,21 @@ const speakersData = [
   },
 ];
 
-const generalPage = () => {
+const GeneralPage = (props) => {
+  let speakersData = useMemo(() => {
+    let allSpeakers = JSON.parse(props.allSpeakers)?.data ?? [];
+
+    return allSpeakers.map((speaker) => {
+      return {
+        link: `/speakers/${speaker?.attributes?.slug ?? ""}`,
+        src: speaker?.attributes?.image?.data?.attributes?.url ?? "",
+        name: speaker?.attributes?.name ?? "",
+        title: speaker?.attributes?.title ?? "",
+        company: speaker?.attributes?.organization ?? "",
+      };
+    });
+  }, [props.allSpeakers]);
+
   return (
     <EvLayout showNavbar={true}>
       <Container></Container>
@@ -483,16 +498,29 @@ const generalPage = () => {
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+export async function getStaticProps(context) {
+  let allSpeakers = null;
+  let allSpeakersError = null;
+
+  try {
+    allSpeakers = await api.getYearSpeakers(23);
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    allSpeakersError = dev_error;
+  }
+
+  if (!allSpeakers) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      allSpeakers: JSON.stringify(allSpeakers),
+      allSpeakersError: JSON.stringify(allSpeakersError),
     },
+    revalidate: 10, // In seconds
   };
 }
-export default generalPage;
+export default GeneralPage;

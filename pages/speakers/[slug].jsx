@@ -470,6 +470,7 @@ const SpeakerPage = (props) => {
   let speakerData = useMemo(() => {
     if (props?.speaker) {
       let speaker = JSON.parse(props.speaker)?.data[0].attributes ?? null;
+      console.log(speaker);
       return speaker;
     }
 
@@ -619,7 +620,7 @@ export async function getStaticPaths() {
   }));
 
   return {
-    paths,
+    paths : [...paths],
     fallback: true, // See the "fallback" section below
   };
 }
