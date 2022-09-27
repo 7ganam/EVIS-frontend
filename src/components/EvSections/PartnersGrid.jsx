@@ -34,7 +34,7 @@ const imagesData = [
   // },
 ];
 
-const PartnersGrid = ({ sx }) => {
+const PartnersGrid = ({ sx, partners }) => {
   return (
     <Box sx={{ ...sx, textAlign: "center", paddingBottom: "3rem" }}>
       {/* <h6>KNOWLEDGE PARTNERS</h6>, */}
@@ -47,7 +47,7 @@ const PartnersGrid = ({ sx }) => {
         mt={3}
         justifyContent="center"
       >
-        {imagesData.map(({ source, text }) => {
+        {partners?.map(({ source, text }) => {
           return (
             <Grid item xs={12} sm={4} md={2} key={source}>
               <LogoWithTitle source={source} text={text} />

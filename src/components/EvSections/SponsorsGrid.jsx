@@ -45,14 +45,15 @@ const imagesData = [
   // },
 ];
 
-const SponsorsGrid = () => {
+const SponsorsGrid = (props) => {
+  const sponsors = props.sponsors;
   return (
     <Grid
       container
       sx={{ textAlign: "center", placeItems: "center" }}
       justifyContent={"center"}
     >
-      {imagesData.map(({ source, text }) => {
+      {sponsors?.map(({ source, text }) => {
         return (
           <Grid item xs={12} sm={4} md={2} key={source}>
             <LogoWithTitle source={source} text={text} />

@@ -34,6 +34,7 @@ const videosList = [
 const OpenTechSection = (props) => {
   const theme = useTheme();
   const item = props.item;
+  const videos = props.videos;
   return (
     <Box id={"open-tech"} sx={{ scrollMarginTop: "250px" }}>
       <Box sx={{ mt: "40px", mb: "20px" }}>
@@ -41,12 +42,12 @@ const OpenTechSection = (props) => {
       </Box>
       <Box sx={{ mb: "40px" }}>
         <TwoColumnBoxV2
-          item={{ title: "", ps: item.text, img: item.img }}
+          item={item}
           imgPosition="left"
         ></TwoColumnBoxV2>
       </Box>
       <Box mt={5}>
-        <Videos videosList={videosList} />
+        <Videos videosList={videos} />
       </Box>
     </Box>
   );
