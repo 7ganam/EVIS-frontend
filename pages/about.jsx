@@ -123,7 +123,6 @@ The Emirate also has easy access to developing markets, with more than 200 air r
 };
 
 const GeneralPage = (props) => {
-
   let speakers = useMemo(() => {
     if (!props?.speakers) {
       return {};
@@ -132,17 +131,16 @@ const GeneralPage = (props) => {
     let data = JSON.parse(props.speakers)?.data ?? null;
     // const speakers = data;
 
-
     const speakers = data?.map((speaker) => {
       return {
-        name : speaker?.attributes?.name ?? "",
-        title : speaker?.attributes?.title ?? "",
-        company : speaker?.attributes?.company ?? "",
-        year : speaker?.attributes?.year ?? "",
-        src : speaker?.attributes?.image?.data?.attributes?.url ?? "",
-        phoneNumber : speaker?.attributes?.phone_number ?? "",
-        slug : speaker?.attributes?.slug ?? "",
-        about : speaker?.attributes?.about ?? ""
+        name: speaker?.attributes?.name ?? "",
+        title: speaker?.attributes?.title ?? "",
+        company: speaker?.attributes?.company ?? "",
+        year: speaker?.attributes?.year ?? "",
+        src: speaker?.attributes?.image?.data?.attributes?.url ?? "",
+        phoneNumber: speaker?.attributes?.phone_number ?? "",
+        slug: speaker?.attributes?.slug ?? "",
+        about: speaker?.attributes?.about ?? "",
       };
     });
 
@@ -248,7 +246,6 @@ const GeneralPage = (props) => {
     };
   }, [props?.aboutPage]);
 
-
   return (
     <EvLayout showNavbar={true}>
       <Container>
@@ -341,7 +338,6 @@ export async function getStaticProps(context) {
       notFound: true,
     };
   }
-
 
   return {
     props: {
