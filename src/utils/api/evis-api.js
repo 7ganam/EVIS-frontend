@@ -1,7 +1,7 @@
 import axios from "axios";
 
-let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
-// let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL2;
+// let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL2;
 const getSpeakers = async () => {
   const response = await axios.get(`${baseUrl}/api/speakers?populate=*`);
   return response.data;
@@ -64,7 +64,12 @@ const getPartners = async () => {
 const getAgenda = async () => {
   const response = await axios.get(`${baseUrl}/api/agenda-page?populate=deep`);
   return response.data;
-}
+};
+
+const getOpenTech = async () => {
+  const response = await axios.get(`${baseUrl}/api/open-tech-session-page?populate=deep`);
+  return response.data;
+};
 
 const api = {
   getSpeakers,
@@ -75,6 +80,7 @@ const api = {
   getSponsors,
   getPartners,
   getAgenda,
+  getOpenTech,
 };
 
 export default api;
