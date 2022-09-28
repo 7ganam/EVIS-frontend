@@ -154,12 +154,13 @@ const GeneralPage = (props) => {
       return {};
     }
 
-    let data = JSON.parse(props.sponsors).data[0].attributes ?? null;
+    let data = JSON.parse(props.sponsors)?.data ?? null;
+    // const sponsors = data;
 
-    const sponsors = data?.sponsor?.map((sponsor) => {
+    const sponsors = data?.map((sponsor) => {
       return {
-        text: sponsor?.title ?? "",
-        source: sponsor?.image?.data?.attributes?.url ?? "",
+        text: sponsor?.attributes?.title ?? "",
+        source: sponsor?.attributes?.image?.data?.attributes?.url ?? "",
       };
     });
 
@@ -171,12 +172,13 @@ const GeneralPage = (props) => {
       return {};
     }
 
-    let data = JSON.parse(props.partners).data[0].attributes ?? null;
+    let data = JSON.parse(props.partners)?.data ?? null;
+    // const partners = data;
 
-    const partners = data?.partner?.map((partner) => {
+    const partners = data?.map((partner) => {
       return {
-        text: partner?.title ?? "",
-        source: partner?.image?.data?.attributes?.url ?? "",
+        text: partner?.attributes?.title ?? "",
+        source: partner?.attributes?.image?.data?.attributes?.url ?? "",
       };
     });
 
