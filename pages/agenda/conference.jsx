@@ -1,7 +1,5 @@
 import { Box, Container } from "@mui/material";
-
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
 import LandingText from "src/components/EvSections/agenda-page-sections/LandingText";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import PageHeader from "src/components/EvComponents/PageHeader";
@@ -9,31 +7,59 @@ import React from "react"; // styled component
 import CarouselSection from "@/components/EvSections/agenda-page-sections/CarouselSection";
 import { BigButton } from "@/components/EvComponents/Buttons";
 import DownloadingIcon from "@mui/icons-material/Downloading";
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
 
-const images = [
-  "/assets/images/summit-1.jpg",
-  "/assets/images/summit-2.jpg",
-  "/assets/images/summit-3.jpg",
-];
 // ======================================================
 // ======================================================
 const pageHeaderData = {
-  text: "Conference",
+  // text: "Conference",
   //   buttonText: "Save The Date",
   //   buttonLink: "/",
   image: "/assets/images/summit.png",
 };
-const section = {
-  text: `The EVIS conference will provide a world-class conference experience for our delegates by bringing together the brightest minds of the industry as speakers at a state-of-the-art venue to share their expertise. 
 
-Each conference day kicks off with a notable keynote address followed by a series of panel discussions with top industry leaders discussing the most important market disruptors of the last year and what they expect to see in the years to come.`,
-};
+const GeneralPage = (props) => {
+  // console.log(props);
+  let {
+    conferencePageData,
+    agendaTitle,
+    firstBody,
+    secondBody,
+    firstAndSecondBody,
+    downloadLink,
+    mainImage,
+    scheduleImages,
+  } = useMemo(() => {
+    if (!props?.conferencePage) {
+      return {};
+    }
+    let conferencePageData = JSON.parse(props.conferencePage).data?.attributes ?? null;
+    const agendaTitle = conferencePageData?.agenda_title;
+    const firstBody = { text: conferencePageData?.first_body, };
+    const secondBody = { text: conferencePageData?.second_body, };
+    const downloadLink = conferencePageData?.download_link;
+    const mainImage = conferencePageData?.main_Image;
+    const scheduleImages = conferencePageData?.schedule_images?.data?.map((highlight) => {
+      return highlight?.attributes?.url;
+    });
 
-const GeneralPage = () => {
+    return {
+      conferencePageData,
+      agendaTitle,
+      firstBody,
+      secondBody,
+      firstAndSecondBody,
+      downloadLink,
+      mainImage,
+      scheduleImages,
+    };
+  }, [props?.conferencePage]);
+
   return (
     <EvLayout showNavbar={true}>
       <PageHeader
-        text={pageHeaderData.text}
+        text={agendaTitle}
         buttonText={pageHeaderData.buttonText}
         buttonLink={pageHeaderData.buttonLink}
         image={pageHeaderData.image}
@@ -45,13 +71,14 @@ const GeneralPage = () => {
         }}
       >
         <Box sx={{ mt: "40px" }}>
-          <LandingText section={section} />
+          <LandingText section={firstBody} />
+          <LandingText section={secondBody} />
         </Box>
         <Box sx={{ mt: "40px", mb: "20px" }}>
           <SectionTitle> Agenda </SectionTitle>
         </Box>
         <Box sx={{ width: "80%", margin: "auto" }}>
-          <CarouselSection images={images}></CarouselSection>
+          <CarouselSection images={scheduleImages}></CarouselSection>
         </Box>
         <Box
           sx={{
@@ -60,7 +87,7 @@ const GeneralPage = () => {
             mt: "40px",
           }}
         >
-          <a href="/summit-agenda.pdf" download>
+          <a href={downloadLink} download>
             <BigButton
               content={
                 <Box
@@ -87,15 +114,28 @@ const GeneralPage = () => {
 };
 
 export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+  let conferencePage = null;
+  let conferencePageError = null;
+
+  try {
+    conferencePage = await api.getAgenda();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    conferencePage = dev_error;
+  }
+
+  if (!conferencePage) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      conferencePage: JSON.stringify(conferencePage),
+      conferencePageError: JSON.stringify(conferencePageError),
     },
+    revalidate: 10, // In seconds
   };
 }
 export default GeneralPage;
