@@ -41,7 +41,6 @@ const itemData = {
 };
 
 const GeneralPage = (props) => {
-  
   let sponsors = useMemo(() => {
     if (!props?.sponsors) {
       return {};
@@ -57,7 +56,7 @@ const GeneralPage = (props) => {
         key_partner: sponsor?.attributes?.key_partner ?? null,
         sponsor: sponsor?.attributes?.sponsor ?? null,
         international_media_partner:
-        sponsor?.attributes?.international_media_partner ?? null,
+          sponsor?.attributes?.international_media_partner ?? null,
         knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
         research_partner: sponsor?.attributes?.research_partner ?? null,
         media_partner: sponsor?.attributes?.media_partner ?? null,
@@ -90,16 +89,29 @@ const GeneralPage = (props) => {
   );
 };
 
-// export async function getStaticProps() {
-//   const allProducts = await api.getGrocery3Products();
-//   const offerProducts = await api.getGrocery3offerProducts();
-//   const topSailedProducts = await api.getTopSailedProducts();
-//   return {
-//     props: {
-//       allProducts,
-//       offerProducts,
-//       topSailedProducts,
-//     },
-//   };
-// }
+export async function getStaticProps(context) {
+  let sponsors = null;
+  let sponsorsError = null;
+
+  try {
+    sponsors = await api.getSponsors();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    sponsorsError = dev_error;
+  }
+
+  if (!sponsors) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      sponsors: JSON.stringify(sponsors),
+      sponsorsError: JSON.stringify(sponsorsError),
+    },
+    revalidate: 10, // In seconds
+  };
+}
 export default GeneralPage;
