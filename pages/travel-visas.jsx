@@ -1,34 +1,35 @@
 import { Container, Stack } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
 import MainSection from "src/components/EvSections/travel-visa-sections/FormSection";
 import IntroSection from "src/components/EvSections/travel-visa-sections/IntroSection";
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
 
 import { Box } from "@mui/system";
 // ======================================================
 // ======================================================
 
-const sponsorsData = [
-  {
-    source: "/assets/images/organizers/Masdar.png",
-  },
-  {
-    source: "/assets/images/organizers/ADNEC.png",
-  },
-  {
-    source: "/assets/images/organizers/AbuDhabi.png",
-  },
-  {
-    source: "/assets/images/organizers/Nirvana.png",
-  },
-  {
-    source: "/assets/images/organizers/Audi.png",
-  },
-  {
-    source: "/assets/images/organizers/BritishVolt.png",
-  },
-];
+// const sponsorsData = [
+//   {
+//     source: "/assets/images/organizers/Masdar.png",
+//   },
+//   {
+//     source: "/assets/images/organizers/ADNEC.png",
+//   },
+//   {
+//     source: "/assets/images/organizers/AbuDhabi.png",
+//   },
+//   {
+//     source: "/assets/images/organizers/Nirvana.png",
+//   },
+//   {
+//     source: "/assets/images/organizers/Audi.png",
+//   },
+//   {
+//     source: "/assets/images/organizers/BritishVolt.png",
+//   },
+// ];
 
 const itemData = {
   img: "/assets/images/travel-visit/city.jpeg",
@@ -39,9 +40,36 @@ const itemData = {
   ],
 };
 
-const generalPage = (props) => {
-  // const { offerProducts, allProducts, topSailedProducts } = props;
+const GeneralPage = (props) => {
+  
+  let sponsors = useMemo(() => {
+    if (!props?.sponsors) {
+      return {};
+    }
 
+    let data = JSON.parse(props.sponsors)?.data ?? null;
+
+    const sponsors = data?.map((sponsor) => {
+      return {
+        text: sponsor?.attributes?.title ?? "",
+        source: sponsor?.attributes?.image?.data?.attributes?.url ?? "",
+        year: sponsor?.attributes?.year ?? "",
+        key_partner: sponsor?.attributes?.key_partner ?? null,
+        sponsor: sponsor?.attributes?.sponsor ?? null,
+        international_media_partner:
+        sponsor?.attributes?.international_media_partner ?? null,
+        knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
+        research_partner: sponsor?.attributes?.research_partner ?? null,
+        media_partner: sponsor?.attributes?.media_partner ?? null,
+      };
+    });
+
+    return sponsors;
+  }, [props?.sponsors]);
+
+  const key_partners = sponsors?.filter((sponsor) => {
+    return sponsor.key_partner === true;
+  });
   return (
     <EvLayout showNavbar={true}>
       <Container
@@ -55,39 +83,23 @@ const generalPage = (props) => {
         </Box>
         <Stack direction={"column"} spacing={3}>
           <IntroSection itemData={itemData}></IntroSection>
-          <MainSection sponsors={sponsorsData} />
+          <MainSection sponsors={key_partners} />
         </Stack>
       </Container>
     </EvLayout>
   );
 };
 
-export async function getStaticProps(context) {
-  let sponsors = null;
-  let sponsorsError = null;
-
-
-
-  try {
-    sponsors = await api.getSponsors(22);
-  } catch (dev_error) {
-    console.log(`error fetching`, dev_error);
-    sponsorsError = dev_error;
-  }
-
-  if (!sponsors) {
-    return {
-      notFound: true,
-    };
-  }
-
-
-  return {
-    props: {
-      sponsors: JSON.stringify(sponsors),
-      sponsorsError: JSON.stringify(sponsorsError),
-    },
-    revalidate: 10, // In seconds
-  };
-}
-export default generalPage;
+// export async function getStaticProps() {
+//   const allProducts = await api.getGrocery3Products();
+//   const offerProducts = await api.getGrocery3offerProducts();
+//   const topSailedProducts = await api.getTopSailedProducts();
+//   return {
+//     props: {
+//       allProducts,
+//       offerProducts,
+//       topSailedProducts,
+//     },
+//   };
+// }
+export default GeneralPage;
