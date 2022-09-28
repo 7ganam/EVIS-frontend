@@ -260,6 +260,14 @@ const GeneralPage = (props) => {
     };
   }, [props?.aboutPage]);
 
+
+  const key_partners = sponsors?.filter((sponsor) => {
+    return sponsor.key_partner === true;
+  });
+  const knowledgePartners = partners?.filter((partner) => {
+    return partner.knowledge_partner === true;
+  });
+
   return (
     <EvLayout showNavbar={true}>
       <Container>
@@ -280,8 +288,8 @@ const GeneralPage = (props) => {
       <Container>
         <VenueSection data={venue} map={mapContent.text}></VenueSection>
         <Box sx={{ mt: "100px" }}>
-          <SponsorsGrid sponsors={sponsors} />
-          <PartnersGrid sx={{ mt: 5 }} partners={partners} />
+          <SponsorsGrid sponsors={key_partners} />
+          <PartnersGrid sx={{ mt: 5 }} partners={knowledgePartners} />
         </Box>
       </Container>
     </EvLayout>
