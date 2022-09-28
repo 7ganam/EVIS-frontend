@@ -1,6 +1,6 @@
 import { Card, Chip, styled } from "@mui/material";
-import HoverBox from "components/HoverBox";
-import LazyImage from "components/LazyImage";
+import HoverBox from "src/components/HoverBox";
+import LazyImage from "src/components/LazyImage";
 import React from "react"; // styled components
 
 const StyledChip = styled(Chip)(() => ({

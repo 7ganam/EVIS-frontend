@@ -1,7 +1,7 @@
 import { Clear } from "@mui/icons-material";
 import { Box, Button, Grid, styled } from "@mui/material";
-import DropZone from "components/DropZone";
-import { FlexBox } from "components/flex-box";
+import DropZone from "src/components/DropZone";
+import { FlexBox } from "src/components/flex-box";
 import NextImage from "next/image";
 import React, { useState } from "react";
 const UploadBox = styled(Box)(() => ({

@@ -1,6 +1,6 @@
 import { Box, Button, Card, Grid, styled } from "@mui/material";
-import LazyImage from "components/LazyImage";
-import { H3, Paragraph } from "components/Typography";
+import LazyImage from "src/components/LazyImage";
+import { H3, Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react"; // styled components

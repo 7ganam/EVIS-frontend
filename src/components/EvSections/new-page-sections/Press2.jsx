@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Container, Card } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import { H4 } from "components/Typography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import { H4 } from "src/components/Typography";
 
 const Press2 = (props) => {
   const data = props.data;

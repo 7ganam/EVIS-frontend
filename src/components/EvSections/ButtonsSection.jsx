@@ -1,11 +1,11 @@
 import React from "react";
-import { BigButton } from "components/EvComponents/Buttons";
+import { BigButton } from "src/components/EvComponents/Buttons";
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import {
   SectionTitle,
   BlockTitle,
-} from "components/EvComponents/StyledTypography";
+} from "src/components/EvComponents/StyledTypography";
 
 function ButtonsSection() {
   return (
@@ -15,7 +15,7 @@ function ButtonsSection() {
       <Box sx={{ border: "1px solid black", p: "10px" }}>
         <Box sx={{ mt: "10px" }}>
           {" "}
-          <BigButton text={"This is a Big Button"} />
+          <BigButton content={"This is a Big Button"} />
         </Box>
         <Box sx={{ mt: "10px" }}>
           {" "}

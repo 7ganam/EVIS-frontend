@@ -10,8 +10,8 @@ import {
   MenuItem,
   TextField,
 } from "@mui/material";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import { H5, H6, Paragraph, Span } from "components/Typography";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
+import { H5, H6, Paragraph, Span } from "src/components/Typography";
 import React from "react"; // list data
 
 const products = [

@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
-import Header from "components/header/Header";
-import Navbar from "components/navbar/Navbar";
-import Sticky from "components/sticky/Sticky";
-import Topbar from "components/topbar/Topbar";
+import Header from "src/components/header/Header";
+import Navbar from "src/components/navbar/Navbar";
+import Sticky from "src/components/sticky/Sticky";
+import Topbar from "src/components/topbar/Topbar";
 import Head from "next/head";
 import React, { Fragment, useCallback, useState } from "react";
 /**

@@ -1,7 +1,7 @@
 import { Card, Container, Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import BazarImage from "components/BazarImage";
-import { H3, H4 } from "components/Typography"; // styled components
+import BazarImage from "src/components/BazarImage";
+import { H3, H4 } from "src/components/Typography"; // styled components
 
 const StyledContent = styled("div")(({ theme }) => ({
   position: "relative",

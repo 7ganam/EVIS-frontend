@@ -1,10 +1,10 @@
 import { Delete } from "@mui/icons-material";
 import { Button, Divider, Grid, IconButton, TextField } from "@mui/material";
-import DropZone from "components/DropZone";
-import { FlexBetween } from "components/flex-box";
-import ReactQuill from "components/ReactQuill"; // import ReactQuill from "components/ReactQuill";
+import DropZone from "src/components/DropZone";
+import { FlexBetween } from "src/components/flex-box";
+import ReactQuill from "src/components/ReactQuill"; // import ReactQuill from "src/components/ReactQuill";
 
-import { H4 } from "components/Typography";
+import { H4 } from "src/components/Typography";
 import { FieldArray, Formik } from "formik";
 import React, { Fragment } from "react";
 

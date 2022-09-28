@@ -1,15 +1,19 @@
 import React from "react";
-import TwoColumnBoxV2 from "components/EvComponents/TwoColumnBoxV2";
+import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
 import { Grid, Box, useTheme } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import { Paragraph } from "components/EvComponents/Typography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import { Paragraph } from "src/components/EvComponents/Typography";
 
 const VenueSection = (props) => {
   const theme = useTheme();
   const data = props.data;
+  const mapContent = props.map;
   return (
     <Box id={"venue"} sx={{ scrollMarginTop: "250px" }}>
-      <SectionTitle>Venue</SectionTitle>
+      <Box sx={{ mt: "30px", mb: "20px" }}>
+        {" "}
+        <SectionTitle>Venue</SectionTitle>
+      </Box>
       <Box>
         <Paragraph>
           <Box sx={{ whiteSpace: "pre-wrap" }}>{data.text}</Box>
@@ -18,7 +22,7 @@ const VenueSection = (props) => {
       <Grid container>
         <Grid item md={6} sm={12} xs={12} sx={{ padding: "20px" }}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d232406.6567360958!2d54.324372!3d24.473188000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd3ec9c9737756f30!2sNirvana%20Travel%20%26%20Tourism!5e0!3m2!1sen!2sae!4v1659829234637!5m2!1sen!2sae"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14531.667585283021!2d54.4369963!3d24.4189545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc2f73ba3f513d4b3!2sAbu%20Dhabi%20National%20Exhibition%20Centre!5e0!3m2!1sen!2seg!4v1662066790096!5m2!1sen!2seg"
             width="100%"
             height="400"
             border="0"
@@ -28,13 +32,7 @@ const VenueSection = (props) => {
         </Grid>
         <Grid item md={6} sm={12} xs={12} sx={{ padding: "20px" }}>
           <Box>
-            <Paragraph>
-              EVIS 2023 will take place at ADNEC Hall 3 & 4 with 6,686 sqm of
-              exhibition space. Located in the capital of the United Arab
-              Emirates, our Venue Partner ADNEC is a multi-award-winning venue,
-              with state-of-the-art facilities to provide our attendees the best
-              experience.{" "}
-            </Paragraph>
+            <Paragraph>{mapContent}</Paragraph>
           </Box>
         </Grid>
       </Grid>

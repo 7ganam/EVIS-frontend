@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
+import EvLayout from "src/components/layouts/EvLayout";
+import api from "src/utils/api/grocery3-shop";
 // ======================================================
 // ======================================================
 const generalPage = (props) => {

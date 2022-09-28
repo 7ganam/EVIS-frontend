@@ -1,5 +1,5 @@
 import { grocery2Navigations } from "./grocery-data";
-import Mock from "fake-db/mock";
+import Mock from "src/fake-db/mock";
 Mock.onGet("/api/grocery-navigation").reply(() => {
   try {
     return [200, grocery2Navigations];

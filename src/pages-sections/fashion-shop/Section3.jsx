@@ -1,7 +1,7 @@
-import Carousel from "components/carousel/Carousel";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import ProductCard3 from "components/product-cards/ProductCard3";
-import useWindowSize from "hooks/useWindowSize";
+import Carousel from "src/components/carousel/Carousel";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import ProductCard3 from "src/components/product-cards/ProductCard3";
+import useWindowSize from "src/hooks/useWindowSize";
 import React, { useEffect, useState } from "react";
 import { arrowButtonStyle } from "./Section2"; // ==========================================================
 

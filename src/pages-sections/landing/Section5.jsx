@@ -1,7 +1,7 @@
 import { Box, Button, Container, styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import { FlexBox } from "components/flex-box";
-import { H2, H3, Paragraph } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import { FlexBox } from "src/components/flex-box";
+import { H2, H3, Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import React from "react";
 const SectionWrapper = styled("div")(({ theme }) => ({

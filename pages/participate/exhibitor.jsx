@@ -1,34 +1,36 @@
 import { Container } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import MainSection from "components/EvSections/book-your-stand-sections/MainSection";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import EvLayout from "src/components/layouts/EvLayout";
+// import api from "src/utils/api/grocery3-shop";
+import MainForm from "src/components/MainForm";
 import { Box } from "@mui/system";
 // ======================================================
 // ======================================================
 
 const sponsorsData = [
   {
-    source: "/assets/images/organizers/Masdar.png",
+    source: "/assets/images/organizations/DCT.png",
+    text: "Destination Partner",
   },
   {
     source: "/assets/images/organizers/ADNEC.png",
+    text: "Venue Partner",
   },
   {
     source: "/assets/images/organizers/AbuDhabi.png",
+    text: "Host City",
   },
   {
     source: "/assets/images/organizers/Nirvana.png",
+    text: "Organized By",
   },
   {
-    source: "/assets/images/organizers/Audi.png",
-  },
-  {
-    source: "/assets/images/organizers/BritishVolt.png",
+    source: "/assets/images/organizations/CEBC.png",
+    text: "Knowledge Partner",
   },
 ];
 
-const generalPage = (props) => {
+const generalPage = () => {
   // const { offerProducts, allProducts, topSailedProducts } = props;
 
   return (
@@ -40,9 +42,14 @@ const generalPage = (props) => {
       >
         <Box sx={{ mb: "20px" }}>
           {" "}
-          <SectionTitle>Book Your Stand</SectionTitle>
+          <Box mt={"30px"}>
+            <SectionTitle>Book Your Stand</SectionTitle>
+          </Box>
         </Box>
-        <MainSection sponsors={sponsorsData} />
+        <MainForm
+          sponsors={sponsorsData}
+          endpoint={"application-for-exhibitors"}
+        />
       </Container>
     </EvLayout>
   );

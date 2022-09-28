@@ -5,20 +5,20 @@ import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import clsx from "clsx";
-import BazarButton from "components/BazarButton";
-import Image from "components/BazarImage";
-import CategoryMenu from "components/categories/CategoryMenu";
-import { FlexBox } from "components/flex-box";
-import Category from "components/icons/Category";
-import ShoppingBagOutlined from "components/icons/ShoppingBagOutlined";
-import MiniCart from "components/mini-cart/MiniCart";
-import MobileMenu from "components/navbar/MobileMenu";
-import GrocerySearchBox from "components/search-box/GrocerySearchBox";
-import { useAppContext } from "contexts/AppContext";
+import BazarButton from "src/components/BazarButton";
+import Image from "src/components/BazarImage";
+import CategoryMenu from "src/components/categories/CategoryMenu";
+import { FlexBox } from "src/components/flex-box";
+import Category from "src/components/icons/Category";
+import ShoppingBagOutlined from "src/components/icons/ShoppingBagOutlined";
+import MiniCart from "src/components/mini-cart/MiniCart";
+import MobileMenu from "src/components/navbar/MobileMenu";
+import GrocerySearchBox from "src/components/search-box/GrocerySearchBox";
+import { useAppContext } from "src/contexts/AppContext";
 import Link from "next/link";
-import Login from "pages-sections/sessions/Login";
+import Login from "src/pages-sections/sessions/Login";
 import { useState } from "react";
-import { layoutConstant } from "utils/constants";
+import { layoutConstant } from "src/utils/constants";
 import SearchBox from "../search-box/SearchBox"; // styled component
 
 export const HeaderWrapper = styled(Box)(({ theme }) => ({

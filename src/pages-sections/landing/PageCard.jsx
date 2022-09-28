@@ -1,8 +1,8 @@
 import { Visibility } from "@mui/icons-material";
 import { Box, Card, IconButton, styled } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import LazyImage from "components/LazyImage";
-import { H3, Span } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import LazyImage from "src/components/LazyImage";
+import { H3, Span } from "src/components/Typography";
 import Link from "next/link";
 import React, { Fragment } from "react"; // styled components
 

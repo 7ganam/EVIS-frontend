@@ -1,11 +1,10 @@
 import { Box, Grid, useTheme, Card } from "@mui/material";
 
-import { SectionTitle } from "components/StyledTypography";
+import { SectionTitle } from "src/components/StyledTypography";
 import { Container } from "@mui/material";
 import React from "react";
-import Image from "components/BazarImage";
-import { H5 } from "components/Typography";
-
+import Image from "src/components/BazarImage";
+import { H5 } from "src/components/Typography";
 
 // ===============================================================
 const WhatToExpect = ({ serviceList }) => {
@@ -27,10 +26,8 @@ const WhatToExpect = ({ serviceList }) => {
       >
         <SectionTitle text={"BY EXHIBITING, YOU CAN"} />
 
-        <Grid container spacing={3}
-            alignItems="center"
-        >
-          {serviceList.map((item ,ind) => {
+        <Grid container spacing={3} alignItems="center">
+          {serviceList.map((item, ind) => {
             return (
               <Grid item lg={2.4} md={3} xs={12} key={ind}>
                 <Card
@@ -44,21 +41,20 @@ const WhatToExpect = ({ serviceList }) => {
                     borderRadius: "8px",
                     alignItems: "center",
                     flexDirection: "column",
-                    textAlign:"center"
-
+                    textAlign: "center",
                   }}
                 >
                   <Image height={100} mb={0.5} src={item.image} alt="logo" />
 
-                    <H5
-                    width='190px'
-                    sx = {{
-                        color: 'black',
-                        mt : '10px',
+                  <H5
+                    width="190px"
+                    sx={{
+                      color: "black",
+                      mt: "10px",
                     }}
-                    >
+                  >
                     {item.text}
-                    </H5>
+                  </H5>
                 </Card>
               </Grid>
             );

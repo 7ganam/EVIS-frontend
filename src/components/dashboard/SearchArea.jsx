@@ -1,7 +1,7 @@
 import { Add } from "@mui/icons-material";
 import { Button, useMediaQuery } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import SearchInput from "components/SearchInput";
+import { FlexBox } from "src/components/flex-box";
+import SearchInput from "src/components/SearchInput";
 import React from "react"; // ===============================================================
 
 // ===============================================================

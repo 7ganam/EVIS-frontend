@@ -1,15 +1,19 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
-import EvLayout from "components/layouts/EvLayout";
-import api from "utils/api/grocery3-shop";
-import LandingText from "components/EvSections/about-page-sections/LandingText";
-import Exhibition from "components/EvSections/about-page-sections/Exhibition";
-import SummitSection from "components/EvSections/about-page-sections/SummitSection";
-import OpenTechSection from "components/EvSections/about-page-sections/OpenTechSection";
-import AdvisoryBoardSection from "components/EvSections/about-page-sections/AdvisoryBoardSection";
-import VenueSection from "components/EvSections/about-page-sections/VenueSection";
+import EvLayout from "src/components/layouts/EvLayout";
+import LandingText from "src/components/EvSections/about-page-sections/LandingText";
+import Exhibition from "src/components/EvSections/about-page-sections/Exhibition";
+import SummitSection from "src/components/EvSections/about-page-sections/SummitSection";
+import OpenTechSection from "src/components/EvSections/about-page-sections/OpenTechSection";
+import AdvisoryBoardSection from "src/components/EvSections/about-page-sections/AdvisoryBoardSection";
+import VenueSection from "src/components/EvSections/about-page-sections/VenueSection";
+import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
+import PartnersGrid from "src/components/EvSections/PartnersGrid";
 
-import Footer from "components/EvSections/why-exhibit-sections/Footer";
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
+
+// import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
 
 // ======================================================
 // ======================================================
@@ -20,62 +24,8 @@ const section = {
   p3: "Join industry leaders at EVIS2023 for 3 days from 29th to 31st May 2023 at Abu Dhabi National Exhibition Center, Abu Dhabi.",
 };
 
-const footer1 = [
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0MzI2NTQyODYxZjIzZDk0NjRmNjA=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0MzI2NTQ0ODYxZjIzZGE4N2NhZWM=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0MzI2NTQ3MzYxZjIzZGMxMDU2Mjc=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0MzI2NTQ4NTYxZjIzZGNkZTU0ODc=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0Njk4NTkyODYyMmIwMmM4OTk4YjE=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0Njk4NTk2MTYyMmIwMmU5OGQ3MjA=.png",
-  },
-];
-
-const footer2 = [
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0Mzk4MjE0MjYxZmQyZDNlNGE3OWY=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0Mzk4MjEzMjYxZmQyZDM0NWQ4MzE=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0Mzk4MjExMDYxZmQyZDFlNGVlMjY=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0Mzk4MjEyMzYxZmQyZDJiMGY1NTE=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0NjAyNjk5NTYyMWM2MGYzZTVhODE=.png",
-  },
-  {
-    source:
-      "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTY0NjAyNjk4NDYyMWM2MGU4ZGVhYjI=.png",
-  },
-];
-
 const ExhibitionItem = {
-  img: "/assets/images/about-page/1.jpeg",
+  img: "/assets/images/why-exhibit/DSC08355.jpg",
   title: "",
   ps: [
     `The exhibition will provide a high-quality environment for the EV industry to showcase their latest solutions to an audience who matters, including financiers and investors, engineers, R&D & government officials. More than 5,000 professionals representing leading companies in the EV industry will be in Abu Dhabi with the goal of networking and sourcing the latest technologies across the 3 days of exhibition. Exhibitors include EV-related Manufacturers and Distributors, Fleet owners, Integrated Energy Companies, Banks, Finance and Investment Firms, R & D Companies, Environmental Agencies, Government organizations, Municipalities, Public Transport Operators etc.
@@ -87,6 +37,7 @@ You can preview new and improved solutions for your applications during the new 
 };
 
 const OpenTechData = {
+  img: "/assets/images/about-page/DSC08151.jpg",
   text: `Explore the latest technical content and developments in the industry through presentations, panel discussions and case studies shared by our brilliant Open Tech speakers, all in the show floor and free to attend for everyone. EVIS is committed to accelerating e mobility adoption and is continually working towards shaping the future of mobility by bringing together key players and influential business leaders who works together on electric vehicles, energy and charging infrastructure, information technology to explore more advanced systems.
 
 Take a look at the Open Tech Sessions from the first edition of EVIS.
@@ -101,86 +52,66 @@ Take a look at the Open Tech Sessions from the first edition of EVIS.
   ],
 };
 
-const AdvisoryBoardData = [
+const advisoryBoardData = [
   {
-    Src: "/assets/images/contact-us/NaserAlbahri.jpeg",
-    Name: "Eng. Naser Albahri",
-    Position: "Head of Organizing Committee",
-    Mobile: "+971 2 304 3321 / +971 50 211 1583",
-    Email: "naser.ali@nirvanatls.com",
-    EmailTo: "mailto:naser.ali@nirvanatls.com",
+    src: "/assets/images/board/Ahmed_Samir_Elbermbali.jpg",
+    name: "Ahmed Samir Elbermbali",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/SarahSalera.jpeg",
-    Name: "Sarah Salera",
-    Position: "Conference Manager",
-    Mobile: "+971 2 304 3353 / +971 50 452 1237",
-    Email: "sara.salera@nirvanatls.com",
-    EmailTo: "mailto:sara.salera@nirvanatls.com",
+    src: "/assets/images/board/Shadie-Bisharat IAB.png",
+    name: "Shadie-Bisharat IAB",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/CorinaSharayah.jpeg",
-    Name: "Corina Sharayah",
-    Position: "Operations Manager",
-    Mobile: "+971 2 304 3354 / +971 56 111 0272",
-    Email: "corina.sh@nirvanatls.com ",
-    EmailTo: "mailto:corina.sh@nirvanatls.com ",
+    src: "/assets/images/board/dr elias.png",
+    name: "Dr Elias",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/ZayidAhamed.jpeg",
-    Name: "Zayid Ahamed",
-    Position: "Exhibition Enquiries - Sales Executive",
-    Mobile: "+971 2 304 3352 / +971 50 686 3956",
-    Email: "zayid.ahamed@nirvanatls.com",
-    EmailTo: "mailto:zayid.ahamed@nirvanatls.com",
+    src: "/assets/images/board/prof nizar al holou.png",
+    name: "Prof Nizar Al Holou",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/JessySuraj.jpeg",
-    Name: "Jessy Suraj",
-    Position: "Exhibition Enquiries - Sales Team",
-    Mobile: "+971 2 304 3322 / +971 50 686 3769",
-    Email: "jessy.suraj@nirvanatls.com",
-    EmailTo: "mailto:jessy.suraj@nirvanatls.com",
+    src: "/assets/images/board/eng. kamal malas.jpg",
+    name: "Eng. kamal Malas",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/VilmaDucay.jpeg",
-    Name: "Vilma Ducay",
-    Position: "Conference Enquiries - Sales Team",
-    Mobile: "+971 2 304 3322 / +971 50 686 3740",
-    Email: "vilma.ducay@nirvanatls.com ",
-    EmailTo: "mailto:vilma.ducay@nirvanatls.com ",
+    src: "/assets/images/board/prof sabouni.jpg",
+    name: "prof Sabouni",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/NasryAbouZaki.jpeg",
-    Name: "Nasry Abou Zaki",
-    Position: "PR Manager",
-    Mobile: "+971 2 4444 788 / +971 56 998 9252",
-    Email: "nasry.zaki@9yards.ae",
-    EmailTo: "mailto:nasry.zaki@9yards.ae",
+    src: "/assets/images/board/salim hariri.jpg",
+    name: "Salim hariri",
+    title: "Head of Organizing Committee",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/HadhiaShaju.jpeg",
-    Name: "Hadhia Shaju",
-    Position: "Marketing & Media Enquiries - Digital Marketing Specialist",
-    Mobile: "+971 2 304 3322 / +971 50 686 3137",
-    Email: "hadhia.shaju@nirvanatls.com",
-    EmailTo: "mailto:hadhia.shaju@nirvanatls.com",
+    src: "/assets/images/board/dr_mohd_kafafy.jpg",
+    name: "Dr Mohd Kafafy",
+    title: "Conference Manager",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/HeshamAlbahri.jpeg",
-    Name: "Hesham Albahri",
-    Position: "Member of Organizing Committee - US Market Executive Manager ",
-    Mobile: "+18185817431",
-    Email: "hesham@leadingeventsusa.com",
-    EmailTo: "mhesham@leadingeventsusa.com",
+    src: "/assets/images/board/dr_ rami_sabouni.jpg",
+    name: "Dr Rami Sabouni",
+    title: "Operations Manager",
+    company: "",
   },
   {
-    Src: "/assets/images/contact-us/TheanleouaChu.jpeg",
-    Name: "Theanleoua Chu",
-    Position: "Sales & Marketing Executive",
-    Mobile: "+971 2 304 3333 / +971 503833859",
-    Email: "theanleoua.chu@nirvanatls.com",
-    EmailTo: "mailto:theanleoua.chu@nirvanatls.com",
+    src: "/assets/images/board/dr rawa adla.jpg",
+    name: "Dr Rawa Adla",
+    title: "Operations Manager",
+    company: "",
   },
 ];
 
@@ -191,38 +122,237 @@ The Emirate also has easy access to developing markets, with more than 200 air r
 `,
 };
 
-const generalPage = () => {
+const GeneralPage = (props) => {
+
+  let speakers = useMemo(() => {
+    if (!props?.speakers) {
+      return {};
+    }
+
+    let data = JSON.parse(props.speakers)?.data ?? null;
+    // const speakers = data;
+
+
+    const speakers = data?.map((speaker) => {
+      return {
+        name : speaker?.attributes?.name ?? "",
+        title : speaker?.attributes?.title ?? "",
+        company : speaker?.attributes?.company ?? "",
+        year : speaker?.attributes?.year ?? "",
+        src : speaker?.attributes?.image?.data?.attributes?.url ?? "",
+        phoneNumber : speaker?.attributes?.phone_number ?? "",
+        slug : speaker?.attributes?.slug ?? "",
+        about : speaker?.attributes?.about ?? ""
+      };
+    });
+
+    return speakers;
+  }, [props?.speakers]);
+
+  let sponsors = useMemo(() => {
+    if (!props?.sponsors) {
+      return {};
+    }
+
+    let data = JSON.parse(props.sponsors).data[0].attributes ?? null;
+
+    const sponsors = data?.sponsor?.map((sponsor) => {
+      return {
+        text: sponsor?.title ?? "",
+        source: sponsor?.image?.data?.attributes?.url ?? "",
+      };
+    });
+
+    return sponsors;
+  }, [props?.sponsors]);
+
+  let partners = useMemo(() => {
+    if (!props?.partners) {
+      return {};
+    }
+
+    let data = JSON.parse(props.partners).data[0].attributes ?? null;
+
+    const partners = data?.partner?.map((partner) => {
+      return {
+        text: partner?.title ?? "",
+        source: partner?.image?.data?.attributes?.url ?? "",
+      };
+    });
+
+    return partners;
+  }, [props?.partners]);
+
+  let {
+    aboutEvis,
+    conference,
+    exhibition,
+    topics,
+    venue,
+    mapContent,
+    sessions,
+    videos,
+  } = useMemo(() => {
+    if (!props?.aboutPage) {
+      return {};
+    }
+
+    let data = JSON.parse(props.aboutPage).data?.attributes ?? null;
+    const aboutEvis = {
+      title: data?.aboutEvis?.title ?? "",
+      paragraph: data?.aboutEvis?.paragraph ?? "",
+    };
+    const conference = {
+      title: "",
+      ps: data?.conference?.paragraph ?? "",
+      img: data?.conference?.image?.data?.attributes?.url,
+    };
+    const exhibition = {
+      title: "",
+      ps: data?.exhibition?.paragraph ?? "",
+      img: data?.exhibition?.image?.data?.attributes?.url,
+    };
+    const topics = data?.topics?.map((topic) => {
+      return topic?.text;
+    });
+    const venue = {
+      title: data?.venue?.title ?? "",
+      text: data?.venue?.paragraph ?? "",
+    };
+    const mapContent = {
+      text: data?.mapContent?.text,
+    };
+    const sessions = {
+      title: "",
+      ps: data?.sessions?.paragraph ?? "",
+      img: data?.sessions?.image?.data?.attributes?.url,
+    };
+
+    const videos = data?.videos?.map((video) => {
+      return {
+        youtube: video?.youtube_link ?? "",
+      };
+    });
+
+    return {
+      aboutEvis,
+      conference,
+      exhibition,
+      topics,
+      sessions,
+      venue,
+      mapContent,
+      videos,
+    };
+  }, [props?.aboutPage]);
+
+
   return (
     <EvLayout showNavbar={true}>
-      <Container
-        sx={{
-          mb: 6,
-        }}
-      >
-        <LandingText id={"summit"} section={section} />
-        <SummitSection></SummitSection>
-        <Exhibition item={ExhibitionItem} />
-        <OpenTechSection item={OpenTechData}></OpenTechSection>
-      </Container>
-      <AdvisoryBoardSection data={AdvisoryBoardData}></AdvisoryBoardSection>
       <Container>
-        <VenueSection data={VenueSectionData}> </VenueSection>
-        <Footer footer1={footer1} footer2={footer2} />
+        <LandingText
+          id={"summit"}
+          paragraph={aboutEvis.paragraph}
+          topic={aboutEvis.title}
+        />
+      </Container>
+      <Container>
+        <Exhibition item={exhibition} />
+      </Container>
+      <SummitSection item={conference} topics={topics}></SummitSection>
+      <Container>
+        <OpenTechSection item={sessions} videos={videos}></OpenTechSection>
+      </Container>
+      <AdvisoryBoardSection advisoryBoardData={speakers}></AdvisoryBoardSection>
+      <Container>
+        <VenueSection data={venue} map={mapContent.text}></VenueSection>
+        <Box sx={{ mt: "100px" }}>
+          <SponsorsGrid sponsors={sponsors} />
+          <PartnersGrid sx={{ mt: 5 }} partners={partners} />
+        </Box>
       </Container>
     </EvLayout>
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+export async function getStaticProps(context) {
+  let aboutPage = null;
+  let aboutPageError = null;
+
+  let sponsors = null;
+  let sponsorsError = null;
+
+  let partners = null;
+  let partnersError = null;
+
+  let speakers = null;
+  let speakersError = null;
+
+  try {
+    aboutPage = await api.getAboutPage();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    aboutPageError = dev_error;
+  }
+
+  if (!aboutPage) {
+    return {
+      notFound: true,
+    };
+  }
+
+  try {
+    sponsors = await api.getSponsors();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    sponsorsError = dev_error;
+  }
+
+  if (!sponsors) {
+    return {
+      notFound: true,
+    };
+  }
+
+  try {
+    partners = await api.getPartners();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    partnersError = dev_error;
+  }
+
+  if (!partners) {
+    return {
+      notFound: true,
+    };
+  }
+
+  try {
+    speakers = await api.getSpeakers();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    speakersError = dev_error;
+  }
+
+  if (!speakers) {
+    return {
+      notFound: true,
+    };
+  }
+
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      aboutPage: JSON.stringify(aboutPage),
+      aboutPageError: JSON.stringify(aboutPageError),
+      sponsors: JSON.stringify(sponsors),
+      sponsorsError: JSON.stringify(sponsorsError),
+      partners: JSON.stringify(partners),
+      partnersError: JSON.stringify(partnersError),
+      speakers: JSON.stringify(speakers),
+      speakersError: JSON.stringify(speakersError),
     },
+    revalidate: 10, // In seconds
   };
 }
-export default generalPage;
+export default GeneralPage;

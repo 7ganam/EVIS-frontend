@@ -9,21 +9,21 @@ import {
   TextField,
 } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
-import Card1 from "components/Card1";
-import countryList from "data/countryList";
+import Card1 from "src/components/Card1";
+import countryList from "src/data/countryList";
 import { Typography } from "@mui/material";
 
 import * as yup from "yup";
-import Image from "components/BazarImage";
+import Image from "src/components/BazarImage";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { Box, Divider, Radio, styled } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import { H4, Paragraph } from "components/Typography";
-import useWindowSize from "hooks/useWindowSize";
+import { FlexBox } from "src/components/flex-box";
+import { H4, Paragraph } from "src/components/Typography";
+import useWindowSize from "src/hooks/useWindowSize";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { Fragment, useState } from "react";
-import CheckoutForm2 from "pages-sections/checkout/CheckoutForm2";
+import CheckoutForm2 from "src/pages-sections/checkout/CheckoutForm2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 

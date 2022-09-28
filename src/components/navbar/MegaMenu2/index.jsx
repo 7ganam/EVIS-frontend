@@ -1,10 +1,10 @@
 import { ChevronRight, KeyboardArrowDown } from "@mui/icons-material";
 import { Avatar, Box } from "@mui/material";
-import { FlexRowCenter } from "components/flex-box";
-import NavLink from "components/nav-link/NavLink";
-import Scrollbar from "components/Scrollbar";
-import { H6 } from "components/Typography";
-import useSettings from "hooks/useSettings";
+import { FlexRowCenter } from "src/components/flex-box";
+import NavLink from "src/components/nav-link/NavLink";
+import Scrollbar from "src/components/Scrollbar";
+import { H6 } from "src/components/Typography";
+import useSettings from "src/hooks/useSettings";
 import { useState } from "react";
 import {
   CategoryList,

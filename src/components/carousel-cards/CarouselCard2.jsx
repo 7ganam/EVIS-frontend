@@ -1,9 +1,9 @@
 import { Favorite } from "@mui/icons-material";
 import { Box, Grid, styled } from "@mui/material";
-import BazarButton from "components/BazarButton";
-import BazarImage from "components/BazarImage";
-import { H2, H3, H4, Paragraph } from "components/Typography";
-import Countdown from "pages-sections/fashion-shop/countdown";
+import BazarButton from "src/components/BazarButton";
+import BazarImage from "src/components/BazarImage";
+import { H2, H3, H4, Paragraph } from "src/components/Typography";
+import Countdown from "src/pages-sections/fashion-shop/countdown";
 // styled component
 const ContentWrapper = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {

@@ -1,7 +1,7 @@
 import React from "react";
-import TwoColumnBox from "components/EvComponents/TwoColumnBox";
+import TwoColumnBox from "src/components/EvComponents/TwoColumnBox";
 import { Box } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 const SummitThemes = (props) => {
   const data = props.data;

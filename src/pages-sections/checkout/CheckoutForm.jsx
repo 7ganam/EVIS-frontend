@@ -1,8 +1,8 @@
 import { Button, Checkbox, Grid, TextField, Typography } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Card1 from "components/Card1";
-import countryList from "data/countryList";
+import Card1 from "src/components/Card1";
+import countryList from "src/data/countryList";
 import { Formik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/router";

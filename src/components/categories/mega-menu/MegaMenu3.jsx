@@ -1,10 +1,10 @@
 import { Box, Grid } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import Image from "components/BazarImage";
-import { FlexBox } from "components/flex-box";
-import LazyImage from "components/LazyImage";
-import NavLink from "components/nav-link/NavLink";
-import { H3, Small } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import Image from "src/components/BazarImage";
+import { FlexBox } from "src/components/flex-box";
+import LazyImage from "src/components/LazyImage";
+import NavLink from "src/components/nav-link/NavLink";
+import { H3, Small } from "src/components/Typography";
 import Link from "next/link";
 import React from "react";
 import StyledMegaMenu from "./StyledMegaMenu"; // component props with nested interface

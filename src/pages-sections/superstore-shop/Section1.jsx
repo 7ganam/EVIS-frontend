@@ -1,6 +1,6 @@
 import { Box, Container } from "@mui/material";
-import CarouselCard1 from "components/carousel-cards/CarouselCard1";
-import Carousel from "components/carousel/Carousel";
+import CarouselCard1 from "src/components/carousel-cards/CarouselCard1";
+import Carousel from "src/components/carousel/Carousel";
 
 // ======================================================
 const Section1 = ({ carouselData }) => {

@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
 import { Box } from "@mui/system";
-import Image from "components/BazarImage";
-import { Paragraph } from "components/EvComponents/Typography";
-
+import Image from "src/components/BazarImage";
+import { Paragraph } from "src/components/EvComponents/Typography";
 
 const ImageWithTextBox = (props) => {
-    const {text , img} = props.data;
+  const { text, img } = props.data;
   return (
-<Box>
+    <Box>
       <Box sx={{ height: "150px", width: "100%" }}>
         <Image
           // height={60}
@@ -19,10 +18,11 @@ const ImageWithTextBox = (props) => {
           sx={{ objectFit: "cover" }}
         />
       </Box>
-      <Box sx = {{ textAlign : "center"}}>
+      <Box sx={{ textAlign: "center" }}>
         <Paragraph>{text}</Paragraph>
       </Box>
-    </Box>  )
-}
+    </Box>
+  );
+};
 
-export default ImageWithTextBox
+export default ImageWithTextBox;

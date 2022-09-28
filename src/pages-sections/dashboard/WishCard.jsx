@@ -1,5 +1,5 @@
 import { Box, Card } from "@mui/material";
-import { H3, H5, Paragraph } from "components/Typography";
+import { H3, H5, Paragraph } from "src/components/Typography";
 import NextImage from "next/image";
 import React from "react";
 

@@ -1,9 +1,9 @@
 import { Box, styled, useTheme } from "@mui/material";
-import Carousel from "components/carousel/Carousel";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import ProductCard14 from "components/product-cards/ProductCard14";
-import { Paragraph } from "components/Typography";
-import useWindowSize from "hooks/useWindowSize";
+import Carousel from "src/components/carousel/Carousel";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import ProductCard14 from "src/components/product-cards/ProductCard14";
+import { Paragraph } from "src/components/Typography";
+import useWindowSize from "src/hooks/useWindowSize";
 import { useEffect, useState } from "react"; // styled components
 
 const SubTitle = styled(Paragraph)(({ theme }) => ({

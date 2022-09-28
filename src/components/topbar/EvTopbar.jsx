@@ -1,9 +1,9 @@
 import { CallOutlined, MailOutline } from "@mui/icons-material";
 import { Box, Container, styled } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import NavLink from "components/nav-link/NavLink";
-import { Span } from "components/Typography";
-import { layoutConstant } from "utils/constants";
+import { FlexBox } from "src/components/flex-box";
+import NavLink from "src/components/nav-link/NavLink";
+import { H2, H3, H4, Span } from "src/components/Typography";
+import { layoutConstant } from "src/utils/constants";
 const TopbarWrapper = styled(Box)(({ theme }) => ({
   fontSize: 12,
   height: layoutConstant.topbarHeight,
@@ -21,7 +21,7 @@ const TopbarWrapper = styled(Box)(({ theme }) => ({
         display: "block",
       },
       "& > *:not(.logo)": {
-        display: "none",
+        display: "block",
       },
     },
   },
@@ -68,26 +68,23 @@ const EvTopbar = () => {
           justifyContent: "space-between",
         }}
       >
-        <FlexBox className="topbarLeft" alignItems="center">
-          <FlexBox alignItems="center">
-            <CallOutlined fontSize="small" />
-            <Span className="title">+05402 1111 1111</Span>
-          </FlexBox>
-
-          <FlexBox alignItems="center" ml={2.5}>
-            <MailOutline fontSize="small" />
-            <Span className="title">support@evis.com</Span>
-          </FlexBox>
-        </FlexBox>
-
-        <FlexBox className="topbarRight" alignItems="center">
-          <NavLink className="link" href="/faq">
-            FAQ&quot;s
-          </NavLink>
-
-          <NavLink className="link" href="/help">
-            Need Help?
-          </NavLink>
+        <FlexBox
+          className="topbarLeft"
+          alignItems="center"
+          sx={{ justifyContent: "center", width: "100%" }}
+        >
+          <Box
+            alignItems="center"
+            justifyContent="center"
+            sx={{
+              textAlign: "center",
+              fontSize: { xs: "10px", sm: "15px", md: "25px" },
+            }}
+          >
+            {
+              "Under the Patronage of HE Suhail Al Mazroui, UAE Minister of Energy & Infrastructure"
+            }
+          </Box>
         </FlexBox>
       </Container>
     </TopbarWrapper>

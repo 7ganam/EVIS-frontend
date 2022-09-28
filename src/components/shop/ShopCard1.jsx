@@ -8,8 +8,8 @@ import {
   Rating,
   styled,
 } from "@mui/material";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import { H3, Span } from "components/Typography";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
+import { H3, Span } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // ================================================================
 

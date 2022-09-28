@@ -1,9 +1,9 @@
 import { KeyboardArrowDown } from "@mui/icons-material";
 import { Box, Grid, List, ListItem, styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import { FlexRowCenter } from "components/flex-box";
-import NavLink from "components/nav-link/NavLink";
-import { H6 } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import { FlexRowCenter } from "src/components/flex-box";
+import NavLink from "src/components/nav-link/NavLink";
+import { H6 } from "src/components/Typography";
 // style components
 const Wrapper = styled(Box)(({ theme }) => ({
   cursor: "pointer",

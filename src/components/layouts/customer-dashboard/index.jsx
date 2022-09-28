@@ -1,6 +1,6 @@
 import { Container, Grid } from "@mui/material";
-import ShopLayout1 from "components/layouts/ShopLayout1";
-import Navbar from "components/navbar/Navbar";
+import ShopLayout1 from "src/components/layouts/ShopLayout1";
+import Navbar from "src/components/navbar/Navbar";
 import React from "react";
 import Navigations from "./Navigations";
 /**

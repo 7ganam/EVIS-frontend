@@ -1,16 +1,16 @@
 import { Box, Container, Grid, styled } from "@mui/material";
-import BazarIconButton from "components/BazarIconButton";
-import BazarImage from "components/BazarImage";
-import { FlexBox } from "components/flex-box";
-import Facebook from "components/icons/Facebook";
-import Google from "components/icons/Google";
-import Instagram from "components/icons/Instagram";
-import Twitter from "components/icons/Twitter";
-import Youtube from "components/icons/Youtube";
-import { Paragraph } from "components/Typography";
+import BazarIconButton from "src/components/BazarIconButton";
+import BazarImage from "src/components/BazarImage";
+import { FlexBox } from "src/components/flex-box";
+import Facebook from "src/components/icons/Facebook";
+import Google from "src/components/icons/Google";
+import Instagram from "src/components/icons/Instagram";
+import Twitter from "src/components/icons/Twitter";
+import Youtube from "src/components/icons/Youtube";
+import { Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import { CallOutlined, MailOutline } from "@mui/icons-material";
-import { Span } from "components/Typography";
+import { Span } from "src/components/Typography";
 
 // styled components
 const StyledFooter = styled("footer")(({ theme, bgcolor }) => ({
@@ -26,10 +26,11 @@ const StyledLink = styled("a")(({ theme }) => ({
   display: "block",
   cursor: "pointer",
   position: "relative",
-  padding: "0.3rem 0rem",
+  padding: "0.3rem 0.3rem",
   color: theme.palette.grey[300],
   "&:hover": {
-    color: theme.palette.grey[100],
+    color: theme.palette.grey[700],
+    backgroundColor: theme.palette.grey[100],
   },
 }));
 const SectionElement = styled("a")(({ theme }) => ({
@@ -50,6 +51,19 @@ const SectionTitle = styled("div")(({ theme }) => ({
   marginBottom: 10,
   marginTop: "10px",
 })); // =================================================================
+
+const quickLinks = [
+  { label: "about", link: "/about" },
+  { label: "exhibition", link: "/exhibition/why-exhibit" },
+  { label: "Sponsors & partners", link: "/sponsors-partners/previous" },
+  { label: "CONFERENCE", link: "/agenda/conference" },
+  { label: "NEWS", link: "/news-media/news" },
+  { label: "TRAVEL & VISAS", link: "/travel-visas" },
+  { label: "EVIS2023 ACTIVITIES ", link: "#" },
+  { label: "Book Your Stand NOW", link: "/participate/exhibitor" },
+  { label: "Delegate Registration", link: "/participate/delegate" },
+  { label: "Register your interest to visit", link: "/participate/visitor" },
+];
 
 // =================================================================
 const PageFooter = ({ sx, id, bgcolor }) => {
@@ -89,9 +103,11 @@ const PageFooter = ({ sx, id, bgcolor }) => {
           <Grid item md={3} sm={6} xs={12}>
             <Box>
               <SectionTitle>{`QUICK LINKS`}</SectionTitle>
-              {customerCareLinks.map((item, ind) => (
-                <Link href="/" key={ind} passHref>
-                  <StyledLink>{item}</StyledLink>
+              {quickLinks.map((item, ind) => (
+                <Link href={item.link} key={ind} passHref>
+                  <StyledLink sx={{ textTransform: "uppercase" }}>
+                    {item.label}
+                  </StyledLink>
                 </Link>
               ))}
             </Box>
@@ -103,7 +119,9 @@ const PageFooter = ({ sx, id, bgcolor }) => {
               <FlexBox alignItems="center">
                 <MailOutline fontSize="small" mr={2.5} />
                 <Span ml={1.5} className="title">
-                  support@evis.com
+                  <a href="mailto: evis@nirvanaholding.com">
+                    evis@nirvanaholding.com
+                  </a>
                 </Span>
               </FlexBox>
             </SectionElement>
@@ -112,11 +130,139 @@ const PageFooter = ({ sx, id, bgcolor }) => {
               <FlexBox alignItems="center">
                 <CallOutlined fontSize="small" />
                 <Span ml={1.5} className="title">
-                  +05402 1111 1111
+                  +97150 686 3956
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span
+                  ml={1.5}
+                  className="title"
+                  sx={{ fontWeight: "700", textDecoration: "underline" }}
+                >
+                  EXHIBITION & SPONSORSHIP:
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title" sx={{ fontWeight: "700" }}>
+                  Zayid Ahmed
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  M:+97150 686 3956
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              {" "}
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  <a href="mailto: zayid.ahamed@nirvanatls.com">
+                    zayid.ahamed@nirvanatls.com
+                  </a>
                 </Span>
               </FlexBox>
             </SectionElement>
 
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span
+                  ml={1.5}
+                  className="title"
+                  sx={{ fontWeight: "700", textDecoration: "underline" }}
+                >
+                  CONFERENCE & DELEGATES:
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title" sx={{ fontWeight: "700" }}>
+                  Zayid Ahmed
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  M:+97150 686 3956
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              {" "}
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  <a href="mailto: zayid.ahamed@nirvanatls.com">
+                    zayid.ahamed@nirvanatls.com
+                  </a>
+                </Span>
+              </FlexBox>
+            </SectionElement>
+
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span
+                  ml={1.5}
+                  className="title"
+                  sx={{ fontWeight: "700", textDecoration: "underline" }}
+                >
+                  MARKETING & MEDIA
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  <a href="mailto: theanleoua.chu@nirvanatls.com">
+                    theanleoua.chu@nirvanatls.com
+                  </a>
+                </Span>
+              </FlexBox>
+            </SectionElement>
+
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span
+                  ml={1.5}
+                  className="title"
+                  sx={{ fontWeight: "700", textDecoration: "underline" }}
+                >
+                  OPERATIONS
+                </Span>
+              </FlexBox>
+            </SectionElement>
+            <SectionElement>
+              <FlexBox alignItems="center">
+                <Span ml={1.5} className="title">
+                  <a href="mailto: evis@nirvanaholding.com">
+                    evis@nirvanaholding.com
+                  </a>
+                </Span>
+              </FlexBox>
+            </SectionElement>
+          </Grid>
+
+          <Grid item md={3} sm={6} xs={12}>
+            <SectionTitle>{`EVENT INFO`}</SectionTitle>
+            <SectionElement>{"When: 29 – 31 May 2023"}</SectionElement>
+            <SectionElement>{"Timings: 9am - 5pm"}</SectionElement>
+            <SectionElement>
+              {"Venue: Abu Dhabi National Exhibition Centre, UAE"}
+            </SectionElement>
+            <SectionElement>
+              {"Email: "}
+
+              <a href="mailto: evis@nirvanaholding.com">
+                evis@nirvanaholding.com
+              </a>
+            </SectionElement>
             <FlexBox className="flex" mx={-0.625} mt={2}>
               {iconList.map((item, ind) => (
                 <a
@@ -137,51 +283,28 @@ const PageFooter = ({ sx, id, bgcolor }) => {
               ))}
             </FlexBox>
           </Grid>
-
-          <Grid item md={3} sm={6} xs={12}>
-            <SectionTitle>{`OPENING TIMES`}</SectionTitle>
-            <SectionElement>
-              {"Mon, 23 May, 2022 - 9:00 AM to 5:00 PM"}
-            </SectionElement>
-            <SectionElement>
-              {"Tue , 24 May, 2022 - 9:00 AM to 5:00 PM"}
-            </SectionElement>
-            <SectionElement>
-              {"Wed, 25 May, 2022 - 9:00 AM to 5:00 PM"}
-            </SectionElement>
-          </Grid>
         </Grid>
       </Container>
     </StyledFooter>
   );
 };
 
-const customerCareLinks = [
-  "Help Center",
-  "Track Your Order",
-  "Corporate & Bulk Purchasing",
-  "Returns & Refunds",
-];
 const iconList = [
   {
     icon: Facebook,
-    url: "https://www.facebook.com",
+    url: "https://www.facebook.com/EVInnovationSummit",
   },
   {
     icon: Twitter,
-    url: "/",
+    url: "https://twitter.com/EVISummit",
   },
   {
     icon: Youtube,
-    url: "https://www.youtube.com",
-  },
-  {
-    icon: Google,
-    url: "/",
+    url: "https://www.youtube.com/channel/UCIhPlRLKj1tUbbs9nuxTiyw",
   },
   {
     icon: Instagram,
-    url: "/",
+    url: "https://www.instagram.com/evinnovationsummit/",
   },
 ];
 export default PageFooter;

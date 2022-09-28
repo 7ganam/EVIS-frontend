@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import ProductCard12 from "components/product-cards/ProductCard12";
-import ProductCard3 from "components/product-cards/ProductCard3";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import ProductCard12 from "src/components/product-cards/ProductCard12";
+import ProductCard3 from "src/components/product-cards/ProductCard3";
 import React from "react"; // =============================================================
 
 // =============================================================

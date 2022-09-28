@@ -5,13 +5,13 @@ import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import clsx from "clsx";
-import Image from "components/BazarImage";
-import { FlexBox } from "components/flex-box";
-import MobileMenu from "components/navbar/MobileMenu";
+import Image from "src/components/BazarImage";
+import { FlexBox } from "src/components/flex-box";
+import MobileMenu from "src/components/navbar/MobileMenu";
 import Link from "next/link";
-import Login from "pages-sections/sessions/Login";
+import Login from "src/pages-sections/sessions/Login";
 import { useState } from "react";
-import { layoutConstant } from "utils/constants";
+import { layoutConstant } from "src/utils/constants";
 import SearchBox from "../search-box/SearchBox"; // styled component
 
 export const HeaderWrapper = styled(Box)(({ theme }) => ({

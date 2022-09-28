@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Add, Remove } from "@mui/icons-material";
 import { Box, Grid } from "@mui/material";
-import BazarAvatar from "components/BazarAvatar";
-import BazarButton from "components/BazarButton";
-import BazarRating from "components/BazarRating";
-import LazyImage from "components/LazyImage";
-import { H1, H2, H3, H6 } from "components/Typography";
-import { useAppContext } from "contexts/AppContext";
+import BazarAvatar from "src/components/BazarAvatar";
+import BazarButton from "src/components/BazarButton";
+import BazarRating from "src/components/BazarRating";
+import LazyImage from "src/components/LazyImage";
+import { H1, H2, H3, H6 } from "src/components/Typography";
+import { useAppContext } from "src/contexts/AppContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";

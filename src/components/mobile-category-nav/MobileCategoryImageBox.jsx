@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
-import { FlexRowCenter } from "components/flex-box";
-import LazyImage from "components/LazyImage";
+import { FlexRowCenter } from "src/components/flex-box";
+import LazyImage from "src/components/LazyImage";
 
 // ==============================================================
 const MobileCategoryImageBox = ({ title, imgUrl, Icon }) => {

@@ -1,7 +1,7 @@
 import { Box, Card, Container, Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import LazyImage from "components/LazyImage";
-import { H3, H4 } from "components/Typography";
+import LazyImage from "src/components/LazyImage";
+import { H3, H4 } from "src/components/Typography";
 const StyledContent = styled("div")(({ theme }) => ({
   position: "relative",
   zIndex: 1,

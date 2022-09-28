@@ -1,6 +1,6 @@
 import { Box, Divider } from "@mui/material";
-import { FlexBetween } from "components/flex-box";
-import { Paragraph, Span } from "components/Typography";
+import { FlexBetween } from "src/components/flex-box";
+import { Paragraph, Span } from "src/components/Typography";
 import React from "react";
 
 const CheckoutSummary2 = () => {

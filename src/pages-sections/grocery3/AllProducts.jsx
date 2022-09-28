@@ -1,6 +1,6 @@
 import { Box, Button, Grid, styled } from "@mui/material";
-import ProductCard10 from "components/product-cards/ProductCard10";
-import { H1 } from "components/Typography";
+import ProductCard10 from "src/components/product-cards/ProductCard10";
+import { H1 } from "src/components/Typography";
 import React from "react";
 const TitleBox = styled(Box)(({ theme }) => ({
   textAlign: "center",

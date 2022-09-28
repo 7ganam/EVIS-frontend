@@ -1,7 +1,7 @@
 import { Box, Grid, useTheme, Card } from "@mui/material";
-import { H5 } from "components/Typography";
+import { H5 } from "src/components/Typography";
 
-import { SectionTitle } from "components/StyledTypography";
+import { SectionTitle } from "src/components/StyledTypography";
 import { Container } from "@mui/material";
 import React from "react";
 
@@ -9,15 +9,14 @@ const ExpectToMeet = ({ list }) => {
   const theme = useTheme();
   return (
     <Box sx={{ mt: "10px" }}>
-        <Container
-                sx={{
-                    mb: "70px",
-                  }}>
-      <SectionTitle text={"WHO YOU CAN EXPECT TO MEET"} />
-      <Grid container spacing={2}
-            alignItems="center"
-        >
-          {list.map((item ,ind) => {
+      <Container
+        sx={{
+          mb: "70px",
+        }}
+      >
+        <SectionTitle text={"WHO YOU CAN EXPECT TO MEET"} />
+        <Grid container spacing={2} alignItems="center">
+          {list.map((item, ind) => {
             return (
               <Grid item lg={2.4} md={3} xs={12} key={ind}>
                 <Card
@@ -32,26 +31,24 @@ const ExpectToMeet = ({ list }) => {
                     alignItems: "center",
                     flexDirection: "column",
                     bgcolor: theme.palette.primary.light,
-                    textAlign:"center"
-
+                    textAlign: "center",
                   }}
                 >
-
-                    <H5
-                    width='220px'
-                    sx = {{
-                        color: 'white',
-                        mt : '15px',
+                  <H5
+                    width="220px"
+                    sx={{
+                      color: "white",
+                      mt: "15px",
                     }}
-                    >
+                  >
                     {item}
-                    </H5>
+                  </H5>
                 </Card>
               </Grid>
             );
           })}
         </Grid>
-        </Container>
+      </Container>
     </Box>
   );
 };

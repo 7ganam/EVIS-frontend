@@ -1,24 +1,19 @@
 const evNavbarNavigations = [
-  // {
-  //   title: "HOME ",
-  //   megaMenu: false,
-  //   megaMenuWithSub: false,
-  //   url: "/",
-  // },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "ABOUT",
+    title: "About",
 
     child: [
-      {
-        title: "Summit",
-        url: "/about#summit",
-      },
       {
         title: "Exhibition",
         url: "/about/#exhibition",
       },
+      {
+        title: "Conference",
+        url: "/about#conference",
+      },
+
       {
         title: "Open Tech Sessions",
         url: "/about#open-tech",
@@ -36,30 +31,24 @@ const evNavbarNavigations = [
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "Agenda",
+    title: "Exhibition",
+
     child: [
       {
-        title: "Summit",
-        url: "/agenda/summit",
+        title: "Why Exhibit",
+        url: "/exhibition/why-exhibit",
       },
       {
-        title: "Open Tech Sessions",
-        url: "/agenda/open-tech-sessions",
-      },
-    ],
-  },
-  {
-    megaMenu: false,
-    megaMenuWithSub: false,
-    title: "Speakers",
-    child: [
-      {
-        title: "EVIS2023 Speakers",
-        url: "/speakers/2023",
+        title: "2022 Exhibitors",
+        url: "/coming-soon",
       },
       {
-        title: "Previous Speakers",
-        url: "/speakers/previous",
+        title: "2023 Exhibitors",
+        url: "/coming-soon",
+      },
+      {
+        title: "Book your stand",
+        url: "/exhibition/book-your-stand",
       },
     ],
   },
@@ -69,19 +58,50 @@ const evNavbarNavigations = [
     title: "Sponsors & Partners",
     child: [
       {
-        title: "EVIS2023 Sponsors & Exhibitors & Partners",
-        url: "/sponsors-partners/2023",
+        title: "2023 Sponsors & Exhibitors & Partners",
+        url: "/coming-soon",
       },
       {
-        title: "Previous Sponsors & Exhibitors & Partners",
+        title: "2022 Sponsors & Exhibitors & Partners",
         url: "/sponsors-partners/previous",
-      },
-      {
-        title: "Testimonials",
-        url: "/sponsors-partners/Testimonials",
       },
     ],
   },
+  {
+    megaMenu: false,
+    megaMenuWithSub: false,
+    title: "Conference",
+
+    child: [
+      {
+        title: "Agenda",
+        child: [
+          {
+            title: "Conference Agenda",
+            url: "/agenda/conference",
+          },
+          {
+            title: "Open Tech Sessions Agenda",
+            url: "/agenda/open-tech-sessions",
+          },
+        ],
+      },
+      {
+        title: "Speakers",
+        child: [
+          {
+            title: "2023 speakers",
+            url: "/speakers/2023",
+          },
+          {
+            title: "2022 speakers",
+            url: "/speakers/previous",
+          },
+        ],
+      },
+    ],
+  },
+
   {
     megaMenu: false,
     megaMenuWithSub: false,
@@ -95,32 +115,58 @@ const evNavbarNavigations = [
         title: "Media/Gallery",
         url: "/news-media/gallery",
       },
+      {
+        title: "Testimonials",
+        url: "/news-media/Testimonials",
+      },
+      {
+        title: "EVIS activities",
+        url: "/coming-soon",
+      },
     ],
   },
   {
     megaMenu: false,
     megaMenuWithSub: false,
-    title: "Participate ",
+    title: "Register with us",
     child: [
       {
-        title: "Attendee",
-        url: "/participate/attendee",
-      },
-      {
-        title: "Delegate",
-        url: "/participate/delegate",
+        title: "Sponsor",
+        url: "/participate/sponsor",
       },
       {
         title: "Exhibitor",
         url: "/participate/exhibitor",
       },
       {
-        title: "Sponsor",
-        url: "/participate/sponsor",
+        title: "Delegate",
+        url: "/participate/delegate",
+      },
+      {
+        title: "Visitor",
+        url: "/participate/visitor",
+      },
+      {
+        title: "Media",
+        url: "/participate/media",
       },
     ],
   },
-
+  {
+    megaMenu: false,
+    megaMenuWithSub: false,
+    title: "Contact us",
+    child: [
+      {
+        title: "Contact",
+        url: "/contact-us",
+      },
+      {
+        title: "Travel & Visa",
+        url: "/travel-visas",
+      },
+    ],
+  },
   // {
   //   title: "ALL SHOWS",
   //   megaMenu: false,

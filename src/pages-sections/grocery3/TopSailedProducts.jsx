@@ -1,8 +1,8 @@
 import { Box, styled, useTheme } from "@mui/material";
-import Carousel from "components/carousel/Carousel";
-import ProductCard10 from "components/product-cards/ProductCard10";
-import { H1 } from "components/Typography";
-import useWindowSize from "hooks/useWindowSize";
+import Carousel from "src/components/carousel/Carousel";
+import ProductCard10 from "src/components/product-cards/ProductCard10";
+import { H1 } from "src/components/Typography";
+import useWindowSize from "src/hooks/useWindowSize";
 import React, { useEffect, useState } from "react"; // styled components
 
 const TitleBox = styled(Box)(({ theme }) => ({

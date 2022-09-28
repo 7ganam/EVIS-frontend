@@ -1,9 +1,9 @@
 import { Box, Grid, Stack, useTheme } from "@mui/material";
 
-import { SectionTitle } from "components/StyledTypography";
+import { SectionTitle } from "src/components/StyledTypography";
 
 import React from "react";
-import EventFeature from "pages-sections/ev-home/EventFeature";
+import EventFeature from "src/pages-sections/ev-home/EventFeature";
 // ===============================================================
 const EventSection = ({ featureList }) => {
   const theme = useTheme();

@@ -1,22 +1,25 @@
-import { Container, Box } from "@mui/material";
-import CardsSection from "components/EvSections/CardsSection";
-import FontsSections from "components/EvSections/FontsSections";
-import TextSection from "components/EvSections/TextSection";
-import ImageCardsSection from "components/EvSections/ImageCardsSection";
-import ButtonsSection from "components/EvSections/ButtonsSection";
-import TwoColumnSection from "components/EvSections/TwoColumnSection";
-import FactBannerSection from "components/EvSections/FactBannerSection";
-import ShadedContainerSection from "components/EvSections/ShadedContainerSection";
-import FeedbackCardsSection from "components/EvSections/FeedbackCardsSection";
-import EvLayout from "components/layouts/EvLayout";
-import SponsorsImageGridSection from "components/EvSections/SponsorsImageGridSection";
-import api from "utils/api/grocery3-shop";
-import RoundedImagesSection from "components/EvSections/RoundedImagesSection";
-import SponsorsGrid from "components/EvSections/SponsorsGrid";
-import PartnersGrid from "components/EvSections/PartnersGrid";
-import FeedbackQuotesSection from "components/EvSections/FeedbackQuotesSection";
-import FullWidthCardsSection from "components/EvSections/FullWidthCardsSection";
-import PageHeader from "components/EvComponents/PageHeader";
+import { Container } from "@mui/material";
+import CardsSection from "src/components/EvSections/CardsSection";
+import FontsSections from "src/components/EvSections/FontsSections";
+import TextSection from "src/components/EvSections/TextSection";
+import ImageCardsSection from "src/components/EvSections/ImageCardsSection";
+import ButtonsSection from "src/components/EvSections/ButtonsSection";
+import TwoColumnSection from "src/components/EvSections/TwoColumnSection";
+import FactBannerSection from "src/components/EvSections/FactBannerSection";
+import ShadedContainerSection from "src/components/EvSections/ShadedContainerSection";
+import FeedbackCardsSection from "src/components/EvSections/FeedbackCardsSection";
+import EvLayout from "src/components/layouts/EvLayout";
+import SponsorsImageGridSection from "src/components/EvSections/SponsorsImageGridSection";
+import api from "src/utils/api/grocery3-shop";
+import RoundedImagesSection from "src/components/EvSections/RoundedImagesSection";
+import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
+import PartnersGrid from "src/components/EvSections/PartnersGrid";
+import FeedbackQuotesSection from "src/components/EvSections/FeedbackQuotesSection";
+import FullWidthCardsSection from "src/components/EvSections/FullWidthCardsSection";
+import PageHeader from "src/components/EvComponents/PageHeader";
+import TestimonialCardSection from "@/components/EvSections/TestimonialCardSection";
+import QuadImgSection from "src/components/EvSections/QuadImgSection";
+
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -54,8 +57,10 @@ const EvHome = () => {
         <PartnersGrid />
         <FeedbackQuotesSection />
         <FullWidthCardsSection />
+        <TestimonialCardSection />
       </Container>
       <ShadedContainerSection />
+      <QuadImgSection />
     </EvLayout>
   );
 };

@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
-import EvHeader from "components/header/EvHeader";
-import EvNavbar from "components/navbar/EvNavbar";
-import Sticky from "components/sticky/Sticky";
-import EvTopbar from "components/topbar/EvTopbar";
+import EvHeader from "src/components/header/EvHeader";
+import EvNavbar from "src/components/navbar/EvNavbar";
+import Sticky from "src/components/sticky/Sticky";
+import EvTopbar from "src/components/topbar/EvTopbar";
 import Head from "next/head";
-import EvPageFooter from "components/Ev-page-footer/EvPageFooter";
+import EvPageFooter from "src/components/Ev-page-footer/EvPageFooter";
 
 import React, { Fragment, useCallback, useState } from "react";
 

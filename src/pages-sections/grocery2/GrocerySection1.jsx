@@ -1,8 +1,8 @@
 import { Box, Grid, styled } from "@mui/material";
-import AppStore from "components/AppStore";
-import Carousel from "components/carousel/Carousel";
-import LazyImage from "components/LazyImage";
-import { H1, H5, H6 } from "components/Typography";
+import AppStore from "src/components/AppStore";
+import Carousel from "src/components/carousel/Carousel";
+import LazyImage from "src/components/LazyImage";
+import { H1, H5, H6 } from "src/components/Typography";
 import React from "react"; // styled components
 
 const StyledBox = styled(Box)(() => ({

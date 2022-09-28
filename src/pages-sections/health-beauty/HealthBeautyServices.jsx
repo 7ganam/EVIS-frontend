@@ -1,7 +1,7 @@
 import { Box, Grid, styled } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import appIcons from "components/icons";
-import { H4, Span } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import appIcons from "src/components/icons";
+import { H4, Span } from "src/components/Typography";
 import React from "react"; // styled components
 
 const Container = styled(Box)(() => ({

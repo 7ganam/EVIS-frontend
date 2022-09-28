@@ -1,7 +1,7 @@
 import { Container, styled } from "@mui/material";
-import { FlexBetween, FlexBox } from "components/flex-box";
-import appIcons from "components/icons/index";
-import { H3, Span } from "components/Typography";
+import { FlexBetween, FlexBox } from "src/components/flex-box";
+import appIcons from "src/components/icons/index";
+import { H3, Span } from "src/components/Typography";
 import React from "react"; // styled component
 
 const StyledFlexBox = styled(FlexBetween)(({ theme }) => ({

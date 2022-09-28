@@ -1,7 +1,7 @@
 import { Box, Container, styled } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import NavLink2 from "components/nav-link/NavLink2";
-import { H2, Paragraph } from "components/Typography";
+import BazarCard from "src/components/BazarCard";
+import NavLink2 from "src/components/nav-link/NavLink2";
+import { H2, Paragraph } from "src/components/Typography";
 // styled component
 const StyledCard = styled(BazarCard)(({ theme, feature }) => ({
   padding: "3rem 4rem",

@@ -4,9 +4,9 @@ import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
 import InputBase from "@mui/material/InputBase";
 import Toolbar from "@mui/material/Toolbar";
-import { FlexBox, FlexRowCenter } from "components/flex-box";
-import Globe from "components/icons/Globe";
-import Toggle from "components/icons/Toggle";
+import { FlexBox, FlexRowCenter } from "src/components/flex-box";
+import Globe from "src/components/icons/Globe";
+import Toggle from "src/components/icons/Toggle";
 import { useRouter } from "next/router";
 import AccountPopover from "./popovers/AccountPopover";
 import NotificationsPopover from "./popovers/NoficationPopover"; // custom styled components

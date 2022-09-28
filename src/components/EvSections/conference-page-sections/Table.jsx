@@ -7,8 +7,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useTheme, Box, Button } from "@mui/material";
-import { H3 } from "components/EvComponents/Typography";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
+import { H3 } from "src/components/EvComponents/Typography";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { styled } from "@mui/material/styles";
 
 function createData(name, first, second, full) {

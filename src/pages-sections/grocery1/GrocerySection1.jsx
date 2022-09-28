@@ -1,7 +1,7 @@
 import { Box, styled, TextField } from "@mui/material";
-import BazarButton from "components/BazarButton";
-import { SearchOutlinedIcon } from "components/search-box/SearchBox";
-import { H1 } from "components/Typography";
+import BazarButton from "src/components/BazarButton";
+import { SearchOutlinedIcon } from "src/components/search-box/SearchBox";
+import { H1 } from "src/components/Typography";
 const leftImg = "/assets/images/headers/Header BG1.png";
 const rightImg = "/assets/images/headers/Header BG2.png";
 const Container = styled(Box)(({ theme }) => ({

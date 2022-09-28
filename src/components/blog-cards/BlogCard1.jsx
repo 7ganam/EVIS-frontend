@@ -1,9 +1,9 @@
 import { AccessTime, CommentOutlined } from "@mui/icons-material";
 import { Box } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import LazyImage from "components/LazyImage";
-import NavLink2 from "components/nav-link/NavLink2";
-import { H3, Paragraph } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import LazyImage from "src/components/LazyImage";
+import NavLink2 from "src/components/nav-link/NavLink2";
+import { H3, Paragraph } from "src/components/Typography";
 import format from "date-fns/format";
 
 // ===========================================================

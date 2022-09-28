@@ -1,7 +1,7 @@
 import { Delete } from "@mui/icons-material";
 import { Button, Divider, Grid, IconButton, TextField } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import { H4 } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import { H4 } from "src/components/Typography";
 import { FieldArray, Formik } from "formik";
 import React, { Fragment } from "react";
 
@@ -9,18 +9,7 @@ const TopbarForm = () => {
   const initialValues = {
     phone: "12345678910",
     email: "ui.lib.drive@gmail.com",
-    links: [
-      {
-        id: 1,
-        name: "Theme FAQ's",
-        link: "https://www.themefaqs.com",
-      },
-      {
-        id: 2,
-        name: "Help",
-        link: "https://www.help.com",
-      },
-    ],
+    links: [],
   };
 
   const handleFormSubmit = async (values) => {

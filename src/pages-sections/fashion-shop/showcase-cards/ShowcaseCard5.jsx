@@ -1,6 +1,6 @@
 import { alpha, Grid, styled } from "@mui/material";
-import BazarImage from "components/BazarImage";
-import { H1, Paragraph, Span } from "components/Typography";
+import BazarImage from "src/components/BazarImage";
+import { H1, Paragraph, Span } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // styled component
 

@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
-import BazarCard from "components/BazarCard";
-import CategorySectionCreator from "components/CategorySectionCreator";
-import NewArrival from "components/icons/NewArrival";
-import ProductCard2 from "components/product-cards/ProductCard2";
+import BazarCard from "src/components/BazarCard";
+import CategorySectionCreator from "src/components/CategorySectionCreator";
+import NewArrival from "src/components/icons/NewArrival";
+import ProductCard2 from "src/components/product-cards/ProductCard2";
 import React from "react";
 
 const Section5 = ({ newArrivalsList }) => {

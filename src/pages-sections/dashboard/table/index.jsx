@@ -4,10 +4,10 @@ import Box from "@mui/material/Box";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
-import { FlexBox } from "components/flex-box";
-import Reload from "components/icons/Reload";
-import Scrollbar from "components/Scrollbar";
-import useMuiTable from "hooks/useMuiTable";
+import { FlexBox } from "src/components/flex-box";
+import Reload from "src/components/icons/Reload";
+import Scrollbar from "src/components/Scrollbar";
+import useMuiTable from "src/hooks/useMuiTable";
 import React from "react";
 import TableHeader from "./TableHeader"; // styled components
 

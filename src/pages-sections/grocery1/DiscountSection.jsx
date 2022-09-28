@@ -1,6 +1,6 @@
 import { Button, Card, Grid, styled } from "@mui/material";
-import Image from "components/BazarImage";
-import { H1, Paragraph } from "components/Typography";
+import Image from "src/components/BazarImage";
+import { H1, Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";

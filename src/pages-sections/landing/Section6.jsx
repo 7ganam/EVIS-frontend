@@ -1,6 +1,6 @@
 import { Avatar, Box, Container, Grid } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import { H2, Paragraph } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import { H2, Paragraph } from "src/components/Typography";
 import Router from "next/router";
 const list = [
   {

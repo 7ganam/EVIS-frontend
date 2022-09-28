@@ -1,7 +1,7 @@
 import { alpha, Box, styled } from "@mui/material";
-import LazyImage from "components/LazyImage";
-import NavLink2 from "components/nav-link/NavLink2";
-import { H3, Paragraph } from "components/Typography";
+import LazyImage from "src/components/LazyImage";
+import NavLink2 from "src/components/nav-link/NavLink2";
+import { H3, Paragraph } from "src/components/Typography";
 import Link from "next/link";
 import React from "react"; // styled component
 

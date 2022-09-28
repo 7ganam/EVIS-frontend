@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Badge, Box } from "@mui/material";
-import CategoryOutlined from "components/icons/CategoryOutline";
-import Home from "components/icons/Home";
-import ShoppingBagOutlined from "components/icons/ShoppingBagOutlined";
-import User2 from "components/icons/User2";
-import { useAppContext } from "contexts/AppContext";
-import useWindowSize from "hooks/useWindowSize";
+import CategoryOutlined from "src/components/icons/CategoryOutline";
+import Home from "src/components/icons/Home";
+import ShoppingBagOutlined from "src/components/icons/ShoppingBagOutlined";
+import User2 from "src/components/icons/User2";
+import { useAppContext } from "src/contexts/AppContext";
+import useWindowSize from "src/hooks/useWindowSize";
 import { useEffect, useState } from "react";
-import { layoutConstant } from "utils/constants";
+import { layoutConstant } from "src/utils/constants";
 import {
   iconStyle,
   StyledBox,

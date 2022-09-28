@@ -1,11 +1,12 @@
 import { Box } from "@mui/system";
 import React from "react";
-import Image from "components/BazarImage";
-import { Paragraph } from "components/EvComponents/Typography";
-import { H1, H2, H3, H4 } from "components/EvComponents/Typography";
-import { BlockTitle } from "components/EvComponents/StyledTypography";
+import Image from "src/components/BazarImage";
+import { Paragraph } from "src/components/EvComponents/Typography";
+import { H1, H2, H3, H4 } from "src/components/EvComponents/Typography";
+import { BlockTitle } from "src/components/EvComponents/StyledTypography";
 import { useTheme } from "@emotion/react";
-function CardWithImageButton({ text, img, buttonText, buttonURL, title }) {
+import Link from "next/link";
+function CardWithImageButton({ text, img, buttonText, buttonLink, title }) {
   const theme = useTheme();
   return (
     <Box>
@@ -32,7 +33,13 @@ function CardWithImageButton({ text, img, buttonText, buttonURL, title }) {
           textDecoration: "underline",
         }}
       >
-        <H4>{buttonText}</H4>
+        <H4>
+          {
+            <Link href={buttonLink} passHref>
+              {buttonText}
+            </Link>
+          }
+        </H4>
       </Box>
     </Box>
   );

@@ -1,8 +1,8 @@
 import { Box, Grid, Paper, useTheme } from "@mui/material";
 
-import { SectionTitle } from "components/StyledTypography";
-import { Paragraph } from "components/Typography";
-import YoutubeEmbed from "components/YoutubeEmbed";
+import { SectionTitle } from "src/components/StyledTypography";
+import { Paragraph } from "src/components/Typography";
+import YoutubeEmbed from "src/components/YoutubeEmbed";
 // ===============================================================
 const AboutSection = ({ text, youtube }) => {
   const theme = useTheme();

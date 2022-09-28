@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
-import { SectionTitle } from "components/EvComponents/StyledTypography";
-import CardWithImageButton from "components/EvComponents/CardWithImageButton";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
+import CardWithImageButton from "src/components/EvComponents/CardWithImageButton";
 
 const ExhibitionFeatures = (props) => {
   const data = props.data;

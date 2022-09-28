@@ -1,7 +1,7 @@
 import { Delete, Edit } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
-import { FlexBox } from "components/flex-box";
-import { Paragraph } from "components/Typography";
+import { FlexBox } from "src/components/flex-box";
+import { Paragraph } from "src/components/Typography";
 import currency from "currency.js";
 import React from "react";
 import {
