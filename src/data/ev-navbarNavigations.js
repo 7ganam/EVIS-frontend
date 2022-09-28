@@ -59,7 +59,7 @@ const evNavbarNavigations = [
     child: [
       {
         title: "2023 Sponsors & Exhibitors & Partners",
-        url: "/coming-soon",
+        url: "/sponsors-partners/2023",
       },
       {
         title: "2022 Sponsors & Exhibitors & Partners",

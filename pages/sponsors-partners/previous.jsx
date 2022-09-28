@@ -351,7 +351,7 @@ export async function getStaticProps(context) {
   let partnersError = null;
 
   try {
-    sponsors = await api.getSponsors();
+    sponsors = await api.getSponsors(22);
   } catch (dev_error) {
     console.log(`error fetching`, dev_error);
     sponsorsError = dev_error;
@@ -364,7 +364,7 @@ export async function getStaticProps(context) {
   }
 
   try {
-    partners = await api.getPartners();
+    partners = await api.getPartners(22);
   } catch (dev_error) {
     console.log(`error fetching`, dev_error);
     partnersError = dev_error;
