@@ -153,12 +153,19 @@ const GeneralPage = (props) => {
     }
 
     let data = JSON.parse(props.sponsors)?.data ?? null;
-    // const sponsors = data;
 
     const sponsors = data?.map((sponsor) => {
       return {
         text: sponsor?.attributes?.title ?? "",
         source: sponsor?.attributes?.image?.data?.attributes?.url ?? "",
+        year: sponsor?.attributes?.year ?? "",
+        key_partner: sponsor?.attributes?.key_partner ?? null,
+        sponsor: sponsor?.attributes?.sponsor ?? null,
+        international_media_partner:
+        sponsor?.attributes?.international_media_partner ?? null,
+        knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
+        research_partner: sponsor?.attributes?.research_partner ?? null,
+        media_partner: sponsor?.attributes?.media_partner ?? null,
       };
     });
 
@@ -171,12 +178,19 @@ const GeneralPage = (props) => {
     }
 
     let data = JSON.parse(props.partners)?.data ?? null;
-    // const partners = data;
 
     const partners = data?.map((partner) => {
       return {
         text: partner?.attributes?.title ?? "",
         source: partner?.attributes?.image?.data?.attributes?.url ?? "",
+        year: partner?.attributes?.year ?? "",
+        key_partner: partner?.attributes?.key_partner ?? null,
+        sponsor: partner?.attributes?.sponsor ?? null,
+        international_media_partner:
+          partner?.attributes?.international_media_partner ?? null,
+        knowledge_partner: partner?.attributes?.knowledge_partner ?? null,
+        research_partner: partner?.attributes?.research_partner ?? null,
+        media_partner: partner?.attributes?.media_partner ?? null,
       };
     });
 
