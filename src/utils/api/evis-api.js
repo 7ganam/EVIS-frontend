@@ -24,10 +24,16 @@ const getHomePage = async () => {
   return response.data;
 };
 
+const getSponsors = async () => {
+  const response = await axios.get(`${baseUrl}/api/sponsors?populate=deep`);
+  return response.data;
+};
+
 const api = {
   getSpeakers,
   getSpeaker,
   getHomePage,
+  getSponsors
 };
 
 export default api;
