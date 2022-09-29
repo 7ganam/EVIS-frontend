@@ -12,6 +12,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import Card1 from "src/components/Card1";
 import countryList from "src/data/countryList";
 import { Typography } from "@mui/material";
+import axios from "axios";
 
 import * as yup from "yup";
 import Image from "src/components/BazarImage";
@@ -26,6 +27,7 @@ import React, { Fragment, useState } from "react";
 import CheckoutForm2 from "src/pages-sections/checkout/CheckoutForm2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Alert from "@mui/material/Alert";
 
 const StyledDateView = styled(DatePicker)(({ theme }) => ({
   width: "100%",
@@ -40,28 +42,133 @@ const StyledDateView = styled(DatePicker)(({ theme }) => ({
 const initialValues = {
   first_name: "",
   second_name: "",
-  email: "",
-  ticketType: "",
-  flightClass: "",
-  departureDate: "",
+  Email: "",
+  leaving_from: "",
+  arriving_to: "",
+  ticket_type: "",
+  flight_class: "",
+  departure_date: "",
+  return_date: "",
+  flight_number_of_adults: "",
+  flight_number_of_children: "",
+  flight_number_of_infants: "",
+  staying_city: "",
+  check_in_date: "",
+  check_out_date: "",
+  occupancy: "",
+  meal_plan: "",
+  hotel_number_of_adults: "",
+  hotel_number_of_children_and_age: "",
+  hotel_number_of_infants_and_age: "",
+  pick_up_date: "",
+  pick_up_time: "",
+  pick_up_location: "",
+  drop_off_location: "",
+  number_of_passengers: "",
+  car_preferred: "",
+  preferred_tour_city: "",
+  tour_date: "",
+  tour_number_of_adults: "",
+  tour_number_of_children: "",
+  tour_type: "",
+  visa_type: "",
+  passport_name: "",
+  visa_phone_number: "",
+  visa_email: "",
 }; // uncomment these fields below for from validation
 const checkoutSchema = yup.object().shape({
-  // shipping_name: yup.string().required("required"),
-  // shipping_email: yup.string().email("invalid email").required("required"),
-  // shipping_contact: yup.string().required("required"),
-  // shipping_zip: yup.string().required("required"),
-  // shipping_country: yup.object().required("required"),
-  // shipping_address1: yup.string().required("required"),
-  // billing_name: yup.string().required("required"),
-  // billing_email: yup.string().required("required"),
-  // billing_contact: yup.string().required("required"),
-  // billing_zip: yup.string().required("required"),
-  // billing_country: yup.object().required("required"),
-  // billing_address1: yup.string().required("required"),
+  // first_name: yup.string().required("required"),
+  // second_name: yup.string().required("required"),
+  // Email: yup.string().required("required"),
+  // leaving_from: yup.string().required("required"),
+  // arriving_to: yup.string().required("required"),
+  // // ticket_type: yup.string().required("required"),
+  // // flight_class: yup.string().required("required"),
+  // departure_date: yup.string().required("required"),
+  // return_date: yup.string().required("required"),
+  // flight_number_of_adults: yup.string().required("required"),
+  // flight_number_of_children: yup.string().required("required"),
+  // flight_number_of_infants: yup.string().required("required"),
+  // staying_city: yup.string().required("required"),
+  // check_in_date: yup.string().required("required"),
+  // check_out_date: yup.string().required("required"),
+  // occupancy: yup.string().required("required"),
+  // meal_plan: yup.string().required("required"),
+  // // hotel_number_of_adults: "",
+  // // hotel_number_of_children_and_age: "",
+  // // hotel_number_of_infants_and_age: "",
+  // // pick_up_date: "",
+  // // pick_up_time: "",
+  // // pick_up_location: "",
+  // // drop_off_location: "",
+  // // number_of_passengers: "",
+  // // car_preferred: "",
+  // // preferred_tour_city: "",
+  // // tour_date: "",
+  // // tour_number_of_adults: "",
+  // // tour_number_of_children: "",
+  // // tour_type: "",
+  // // visa_type: yup.string().required("required"),
+  // passport_name: yup.string().required("required"),
+  // visa_phone_number: yup.string().required("required"),
+  // visa_email: yup.string().required("required"),
 });
-function FormSection({ sponsors }) {
+
+function timeFunction(val) {
+  let time;
+  if (!val) {
+    return (time = "");
+  }
+  time = new Date(val).toLocaleTimeString();
+  return time;
+}
+
+function dateFunction(val) {
+  let date;
+  if (!val) {
+    return (date = "");
+  }
+  date = new Date(val).toLocaleDateString();
+  return date;
+}
+
+function FormSection({ sponsors, endpoint }) {
+  const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
   const handleFormSubmit = async (values) => {
-    console.log(values);
+    const data = {
+      ...values,
+      departure_date: dateFunction(values.departure_date),
+      return_date: dateFunction(values.return_date),
+      check_in_date: dateFunction(values.check_in_date),
+      check_out_date: dateFunction(values.check_out_date),
+      pick_up_date: dateFunction(values.pick_up_date),
+      tour_date: dateFunction(values.tour_date),
+      pick_up_time: timeFunction(values.pick_up_time),
+    };
+    axios
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/${endpoint}`, {
+        data: {
+          ...values,
+          departure_date: dateFunction(values.departure_date),
+          return_date: dateFunction(values.return_date),
+          check_in_date: dateFunction(values.check_in_date),
+          check_out_date: dateFunction(values.check_out_date),
+          pick_up_date: dateFunction(values.pick_up_date),
+          tour_date: dateFunction(values.tour_date),
+          pick_up_time: timeFunction(values.pick_up_time),
+        },
+      })
+      .then(function (response) {
+        setSuccess(true);
+        setFailure(false);
+      })
+      .catch(function (error) {
+        console.log(error);
+        setSuccess(false);
+        setFailure(true);
+      });
+    console.log(data);
   };
 
   return (
@@ -128,17 +235,17 @@ function FormSection({ sponsors }) {
                     <Grid item sm={12} xs={12}>
                       <TextField
                         fullWidth
-                        type="email"
+                        type="Email"
                         sx={{
                           mb: 2,
                         }}
                         onBlur={handleBlur}
-                        name="email"
+                        name="Email"
                         label="Email Address"
                         onChange={handleChange}
-                        value={values.email}
-                        error={!!touched.email && !!errors.email}
-                        helperText={touched.email && errors.email}
+                        value={values.Email}
+                        error={!!touched.Email && !!errors.Email}
+                        helperText={touched.Email && errors.Email}
                       />
                     </Grid>{" "}
                   </Grid>
@@ -178,11 +285,11 @@ function FormSection({ sponsors }) {
                         <RadioGroup
                           aria-labelledby="ticket-type-group-label"
                           // defaultValue="female"
-                          name="ticketType"
-                          value={values.ticketType}
+                          name="ticket_type"
+                          value={values.ticket_type}
                           onChange={(event) => {
                             setFieldValue(
-                              "ticketType",
+                              "ticket_type",
                               event.currentTarget.value
                             );
                           }}
@@ -219,11 +326,11 @@ function FormSection({ sponsors }) {
                         <RadioGroup
                           aria-labelledby="flight-class-group-label"
                           // defaultValue="female"
-                          name="flightClass"
-                          value={values.flightClass}
+                          name="flight_class"
+                          value={values.flight_class}
                           onChange={(event) => {
                             setFieldValue(
-                              "flightClass",
+                              "flight_class",
                               event.currentTarget.value
                             );
                           }}
@@ -279,15 +386,11 @@ function FormSection({ sponsors }) {
                         }}
                         label="Leaving from (Airport Name)"
                         onBlur={handleBlur}
-                        name="leavingAirport"
+                        name="leaving_from"
                         onChange={handleChange}
-                        value={values.leavingAirport}
-                        error={
-                          !!touched.leavingAirport && !!errors.leavingAirport
-                        }
-                        helperText={
-                          touched.leavingAirport && errors.leavingAirport
-                        }
+                        value={values.leaving_from}
+                        error={!!touched.leaving_from && !!errors.leaving_from}
+                        helperText={touched.leaving_from && errors.leaving_from}
                       />
                     </Grid>
                     <Grid item sm={6} xs={12}>
@@ -298,15 +401,11 @@ function FormSection({ sponsors }) {
                         }}
                         label="Arriving to (Airport Name)"
                         onBlur={handleBlur}
-                        name="arrivingAirport"
+                        name="arriving_to"
                         onChange={handleChange}
-                        value={values.arrivingAirport}
-                        error={
-                          !!touched.arrivingAirport && !!errors.arrivingAirport
-                        }
-                        helperText={
-                          touched.arrivingAirport && errors.arrivingAirport
-                        }
+                        value={values.arriving_to}
+                        error={!!touched.arriving_to && !!errors.arriving_to}
+                        helperText={touched.arriving_to && errors.arriving_to}
                       />
                     </Grid>
                     <Grid item sm={6} xs={12}>
@@ -316,7 +415,7 @@ function FormSection({ sponsors }) {
                         }}
                       >
                         <Field
-                          name={`departureDate`}
+                          name={`departure_date`}
                           className="form-control in_field"
                         >
                           {({ form, field }) => {
@@ -324,7 +423,7 @@ function FormSection({ sponsors }) {
                             const { value } = field;
                             return (
                               <StyledDateView
-                                id={`departureDate`}
+                                id={`departure_date`}
                                 {...field}
                                 selected={value}
                                 peekNextMonth
@@ -332,7 +431,7 @@ function FormSection({ sponsors }) {
                                 showYearDropdown
                                 dropdownMode="select"
                                 onChange={(val) =>
-                                  setFieldValue(`departureDate`, val)
+                                  setFieldValue(`departure_date`, val)
                                 }
                                 placeholderText="Departure Date"
                               />
@@ -348,7 +447,7 @@ function FormSection({ sponsors }) {
                         }}
                       >
                         <Field
-                          name={`returnDate`}
+                          name={`return_date`}
                           className="form-control in_field"
                         >
                           {({ form, field }) => {
@@ -356,7 +455,7 @@ function FormSection({ sponsors }) {
                             const { value } = field;
                             return (
                               <StyledDateView
-                                id={`returnDate`}
+                                id={`return_date`}
                                 {...field}
                                 selected={value}
                                 peekNextMonth
@@ -364,7 +463,7 @@ function FormSection({ sponsors }) {
                                 showYearDropdown
                                 dropdownMode="select"
                                 onChange={(val) =>
-                                  setFieldValue(`returnDate`, val)
+                                  setFieldValue(`return_date`, val)
                                 }
                                 placeholderText="Return Date"
                               />
@@ -382,11 +481,17 @@ function FormSection({ sponsors }) {
                         }}
                         label="No of Adults"
                         onBlur={handleBlur}
-                        name="adultsNo"
+                        name="flight_number_of_adults"
                         onChange={handleChange}
-                        value={values.adultsNo}
-                        error={!!touched.adultsNo && !!errors.adultsNo}
-                        helperText={touched.adultsNo && errors.adultsNo}
+                        value={values.flight_number_of_adults}
+                        error={
+                          !!touched.flight_number_of_adults &&
+                          !!errors.flight_number_of_adults
+                        }
+                        helperText={
+                          touched.flight_number_of_adults &&
+                          errors.flight_number_of_adults
+                        }
                       />
                     </Grid>
                     <Grid item sm={6} xs={12}>
@@ -398,11 +503,17 @@ function FormSection({ sponsors }) {
                         }}
                         label="No of Children"
                         onBlur={handleBlur}
-                        name="childrenNo"
+                        name="flight_number_of_children"
                         onChange={handleChange}
-                        value={values.childrenNo}
-                        error={!!touched.childrenNo && !!errors.childrenNo}
-                        helperText={touched.childrenNo && errors.childrenNo}
+                        value={values.flight_number_of_children}
+                        error={
+                          !!touched.flight_number_of_children &&
+                          !!errors.flight_number_of_children
+                        }
+                        helperText={
+                          touched.flight_number_of_children &&
+                          errors.flight_number_of_children
+                        }
                       />
                     </Grid>
                     <Grid item sm={6} xs={12}>
@@ -414,11 +525,17 @@ function FormSection({ sponsors }) {
                         }}
                         label="No of Infants"
                         onBlur={handleBlur}
-                        name="infantsNo"
+                        name="flight_number_of_infants"
                         onChange={handleChange}
-                        value={values.infantsNo}
-                        error={!!touched.infantsNo && !!errors.infantsNo}
-                        helperText={touched.infantsNo && errors.infantsNo}
+                        value={values.flight_number_of_infants}
+                        error={
+                          !!touched.flight_number_of_infants &&
+                          !!errors.flight_number_of_infants
+                        }
+                        helperText={
+                          touched.flight_number_of_infants &&
+                          errors.flight_number_of_infants
+                        }
                       />
                     </Grid>
                   </Grid>
@@ -453,16 +570,16 @@ function FormSection({ sponsors }) {
                         }}
                         label="Staying City"
                         onBlur={handleBlur}
-                        name="stayingCity"
+                        name="staying_city"
                         onChange={handleChange}
-                        value={values.stayingCity}
-                        error={!!touched.stayingCity && !!errors.stayingCity}
-                        helperText={touched.stayingCity && errors.stayingCity}
+                        value={values.staying_city}
+                        error={!!touched.staying_city && !!errors.staying_city}
+                        helperText={touched.staying_city && errors.staying_city}
                       />
                     </Grid>
                     <Grid item sm={6} xs={12}>
                       <Field
-                        name={`checkInDate`}
+                        name={`check_in_date`}
                         className="form-control in_field"
                       >
                         {({ form, field }) => {
@@ -470,7 +587,7 @@ function FormSection({ sponsors }) {
                           const { value } = field;
                           return (
                             <StyledDateView
-                              id={`checkInDate`}
+                              id={`check_in_date`}
                               {...field}
                               selected={value}
                               peekNextMonth
@@ -478,7 +595,7 @@ function FormSection({ sponsors }) {
                               showYearDropdown
                               dropdownMode="select"
                               onChange={(val) =>
-                                setFieldValue(`checkInDate`, val)
+                                setFieldValue(`check_in_date`, val)
                               }
                               placeholderText="Check in Date"
                             />
@@ -493,7 +610,7 @@ function FormSection({ sponsors }) {
                         }}
                       >
                         <Field
-                          name={`checkOutDate`}
+                          name={`check_out_date`}
                           className="form-control in_field"
                         >
                           {({ form, field }) => {
@@ -501,7 +618,7 @@ function FormSection({ sponsors }) {
                             const { value } = field;
                             return (
                               <StyledDateView
-                                id={`checkOutDate`}
+                                id={`check_out_date`}
                                 {...field}
                                 selected={value}
                                 peekNextMonth
@@ -509,7 +626,7 @@ function FormSection({ sponsors }) {
                                 showYearDropdown
                                 dropdownMode="select"
                                 onChange={(val) =>
-                                  setFieldValue(`checkOutDate`, val)
+                                  setFieldValue(`check_out_date`, val)
                                 }
                                 placeholderText="Check out Date"
                               />
@@ -571,11 +688,11 @@ function FormSection({ sponsors }) {
                         <RadioGroup
                           aria-labelledby="ticket-type-group-label"
                           // defaultValue="female"
-                          name="mealPlan"
-                          value={values.mealPlan}
+                          name="meal_plan"
+                          value={values.meal_plan}
                           onChange={(event) => {
                             setFieldValue(
-                              "mealPlan",
+                              "meal_plan",
                               event.currentTarget.value
                             );
                           }}
@@ -614,9 +731,15 @@ function FormSection({ sponsors }) {
                         onBlur={handleBlur}
                         name="adultsNo"
                         onChange={handleChange}
-                        value={values.adultsNo}
-                        error={!!touched.adultsNo && !!errors.adultsNo}
-                        helperText={touched.adultsNo && errors.adultsNo}
+                        value={values.hotel_number_of_adults}
+                        error={
+                          !!touched.hotel_number_of_adults &&
+                          !!errors.hotel_number_of_adults
+                        }
+                        helperText={
+                          touched.hotel_number_of_adults &&
+                          errors.hotel_number_of_adults
+                        }
                       />
                     </Grid>
                     <Grid item sm={6} xs={12}>
@@ -627,15 +750,17 @@ function FormSection({ sponsors }) {
                         // color="info"
                         // size="medium"
                         onBlur={handleBlur}
-                        name="childrenAndAges"
+                        name="hotel_number_of_children_and_age"
                         onChange={handleChange}
                         label="No of Children & Age"
-                        value={values.childrenAndAges}
+                        value={values.hotel_number_of_children_and_age}
                         error={
-                          !!touched.childrenAndAges && !!errors.childrenAndAges
+                          !!touched.hotel_number_of_children_and_age &&
+                          !!errors.hotel_number_of_children_and_age
                         }
                         helperText={
-                          touched.childrenAndAges && errors.childrenAndAges
+                          touched.hotel_number_of_children_and_age &&
+                          errors.hotel_number_of_children_and_age
                         }
                         sx={{
                           mb: 2,
@@ -650,15 +775,17 @@ function FormSection({ sponsors }) {
                         // color="info"
                         // size="medium"
                         onBlur={handleBlur}
-                        name="infantsAndAges"
+                        name="hotel_number_of_infants_and_age"
                         onChange={handleChange}
                         label="No of Infants & Age"
-                        value={values.infantsAndAges}
+                        value={values.hotel_number_of_infants_and_age}
                         error={
-                          !!touched.infantsAndAges && !!errors.infantsAndAges
+                          !!touched.hotel_number_of_infants_and_age &&
+                          !!errors.hotel_number_of_infants_and_age
                         }
                         helperText={
-                          touched.infantsAndAges && errors.infantsAndAges
+                          touched.hotel_number_of_infants_and_age &&
+                          errors.hotel_number_of_infants_and_age
                         }
                         sx={{
                           mb: 2,
@@ -696,7 +823,7 @@ function FormSection({ sponsors }) {
                         }}
                       >
                         <Field
-                          name={`pickupDate`}
+                          name={`pick_up_date`}
                           className="form-control in_field"
                         >
                           {({ form, field }) => {
@@ -704,7 +831,7 @@ function FormSection({ sponsors }) {
                             const { value } = field;
                             return (
                               <StyledDateView
-                                id={`pickupDate`}
+                                id={`pick_up_date`}
                                 {...field}
                                 selected={value}
                                 peekNextMonth
@@ -712,7 +839,7 @@ function FormSection({ sponsors }) {
                                 showYearDropdown
                                 dropdownMode="select"
                                 onChange={(val) =>
-                                  setFieldValue(`pickupDate`, val)
+                                  setFieldValue(`pick_up_date`, val)
                                 }
                                 placeholderText="Pick up Date"
                               />
@@ -728,7 +855,7 @@ function FormSection({ sponsors }) {
                         }}
                       >
                         <Field
-                          name={`pickupTime`}
+                          name={`pick_up_time`}
                           className="form-control in_field"
                         >
                           {({ form, field }) => {
@@ -736,7 +863,7 @@ function FormSection({ sponsors }) {
                             const { value } = field;
                             return (
                               <StyledDateView
-                                id={`pickupTime`}
+                                id={`pick_up_time`}
                                 {...field}
                                 selected={value}
                                 showTimeSelect
@@ -745,7 +872,7 @@ function FormSection({ sponsors }) {
                                 timeCaption="Time"
                                 dateFormat="h:mm aa"
                                 onChange={(val) =>
-                                  setFieldValue(`pickupTime`, val)
+                                  setFieldValue(`pick_up_time`, val)
                                 }
                                 placeholderText="Pick Up Time"
                               />
@@ -762,14 +889,15 @@ function FormSection({ sponsors }) {
                         }}
                         label="Pick Up Location"
                         onBlur={handleBlur}
-                        name="pickUpLocation"
+                        name="pick_up_location"
                         onChange={handleChange}
-                        value={values.pickUpLocation}
+                        value={values.pick_up_location}
                         error={
-                          !!touched.pickUpLocation && !!errors.pickUpLocation
+                          !!touched.pick_up_location &&
+                          !!errors.pick_up_location
                         }
                         helperText={
-                          touched.pickUpLocation && errors.pickUpLocation
+                          touched.pick_up_location && errors.pick_up_location
                         }
                       />
                     </Grid>
@@ -781,14 +909,15 @@ function FormSection({ sponsors }) {
                         }}
                         label="Drop Off Location"
                         onBlur={handleBlur}
-                        name="drpOffLocation"
+                        name="drop_off_location"
                         onChange={handleChange}
-                        value={values.drpOffLocation}
+                        value={values.drop_off_location}
                         error={
-                          !!touched.drpOffLocation && !!errors.drpOffLocation
+                          !!touched.drop_off_location &&
+                          !!errors.drop_off_location
                         }
                         helperText={
-                          touched.drpOffLocation && errors.drpOffLocation
+                          touched.drop_off_location && errors.drop_off_location
                         }
                       />
                     </Grid>
@@ -802,11 +931,17 @@ function FormSection({ sponsors }) {
                         }}
                         label="No of Passengers"
                         onBlur={handleBlur}
-                        name="passengersNo"
+                        name="number_of_passengers"
                         onChange={handleChange}
-                        value={values.passengersNo}
-                        error={!!touched.passengersNo && !!errors.passengersNo}
-                        helperText={touched.passengersNo && errors.passengersNo}
+                        value={values.number_of_passengers}
+                        error={
+                          !!touched.number_of_passengers &&
+                          !!errors.number_of_passengers
+                        }
+                        helperText={
+                          touched.number_of_passengers &&
+                          errors.number_of_passengers
+                        }
                       />
                     </Grid>
                     <Grid item sm={12} xs={12}>
@@ -817,15 +952,14 @@ function FormSection({ sponsors }) {
                         }}
                         label="Preferred Car Type"
                         onBlur={handleBlur}
-                        name="preferredCarType"
+                        name="car_preferred"
                         onChange={handleChange}
-                        value={values.preferredCarType}
+                        value={values.car_preferred}
                         error={
-                          !!touched.preferredCarType &&
-                          !!errors.preferredCarType
+                          !!touched.car_preferred && !!errors.car_preferred
                         }
                         helperText={
-                          touched.preferredCarType && errors.preferredCarType
+                          touched.car_preferred && errors.car_preferred
                         }
                       />
                     </Grid>
@@ -861,15 +995,16 @@ function FormSection({ sponsors }) {
                         }}
                         label="Preferred Tour City"
                         onBlur={handleBlur}
-                        name="preferredTourCity"
+                        name="preferred_tour_city"
                         onChange={handleChange}
-                        value={values.preferredTourCity}
+                        value={values.preferred_tour_city}
                         error={
-                          !!touched.preferredTourCity &&
-                          !!errors.preferredTourCity
+                          !!touched.preferred_tour_city &&
+                          !!errors.preferred_tour_city
                         }
                         helperText={
-                          touched.preferredTourCity && errors.preferredTourCity
+                          touched.preferred_tour_city &&
+                          errors.preferred_tour_city
                         }
                       />
                     </Grid>
@@ -880,7 +1015,7 @@ function FormSection({ sponsors }) {
                         }}
                       >
                         <Field
-                          name={`tourDate`}
+                          name={`tour_date`}
                           className="form-control in_field"
                         >
                           {({ form, field }) => {
@@ -888,7 +1023,7 @@ function FormSection({ sponsors }) {
                             const { value } = field;
                             return (
                               <StyledDateView
-                                id={`tourDate`}
+                                id={`tour_date`}
                                 {...field}
                                 selected={value}
                                 peekNextMonth
@@ -896,7 +1031,7 @@ function FormSection({ sponsors }) {
                                 showYearDropdown
                                 dropdownMode="select"
                                 onChange={(val) =>
-                                  setFieldValue(`tourDate`, val)
+                                  setFieldValue(`tour_date`, val)
                                 }
                                 placeholderText="Tour Date"
                               />
@@ -914,11 +1049,17 @@ function FormSection({ sponsors }) {
                         }}
                         label="No of Adults"
                         onBlur={handleBlur}
-                        name="tourAdultsNo"
+                        name="tour_number_of_adults"
                         onChange={handleChange}
-                        value={values.tourAdultsNo}
-                        error={!!touched.tourAdultsNo && !!errors.tourAdultsNo}
-                        helperText={touched.tourAdultsNo && errors.tourAdultsNo}
+                        value={values.tour_number_of_adults}
+                        error={
+                          !!touched.tour_number_of_adults &&
+                          !!errors.tour_number_of_adults
+                        }
+                        helperText={
+                          touched.tour_number_of_adults &&
+                          errors.tour_number_of_adults
+                        }
                       />
                     </Grid>
                     <Grid item sm={6} xs={12}>
@@ -930,14 +1071,16 @@ function FormSection({ sponsors }) {
                         }}
                         label="No of Children"
                         onBlur={handleBlur}
-                        name="tourChildrenNo"
+                        name="tour_number_of_children"
                         onChange={handleChange}
-                        value={values.tourChildrenNo}
+                        value={values.tour_number_of_children}
                         error={
-                          !!touched.tourChildrenNo && !!errors.tourChildrenNo
+                          !!touched.tour_number_of_children &&
+                          !!errors.tour_number_of_children
                         }
                         helperText={
-                          touched.tourChildrenNo && errors.tourChildrenNo
+                          touched.tour_number_of_children &&
+                          errors.tour_number_of_children
                         }
                       />
                     </Grid>
@@ -956,10 +1099,10 @@ function FormSection({ sponsors }) {
                           aria-labelledby="tour-type-group-label"
                           // defaultValue="female"
                           name="occupancy"
-                          value={values.tourType}
+                          value={values.tour_type}
                           onChange={(event) => {
                             setFieldValue(
-                              "tourType",
+                              "tour_type",
                               event.currentTarget.value
                             );
                           }}
@@ -1015,10 +1158,10 @@ function FormSection({ sponsors }) {
                           aria-labelledby="tour-type-group-label"
                           // defaultValue="female"
                           name="occupancy"
-                          value={values.visaType}
+                          value={values.visa_type}
                           onChange={(event) => {
                             setFieldValue(
-                              "visaType",
+                              "visa_type",
                               event.currentTarget.value
                             );
                           }}
@@ -1044,15 +1187,14 @@ function FormSection({ sponsors }) {
                         }}
                         label="Full Name as per Passport"
                         onBlur={handleBlur}
-                        name="passportFullName"
+                        name="passport_name"
                         onChange={handleChange}
-                        value={values.passportFullName}
+                        value={values.passport_name}
                         error={
-                          !!touched.passportFullName &&
-                          !!errors.passportFullName
+                          !!touched.passport_name && !!errors.passport_name
                         }
                         helperText={
-                          touched.passportFullName && errors.passportFullName
+                          touched.passport_name && errors.passport_name
                         }
                       />
                     </Grid>
@@ -1065,14 +1207,14 @@ function FormSection({ sponsors }) {
                         onBlur={handleBlur}
                         label="Phone Number"
                         onChange={handleChange}
-                        name="shipping_contact"
-                        value={values.shipping_contact}
+                        name="visa_phone_number"
+                        value={values.visa_phone_number}
                         error={
-                          !!touched.shipping_contact &&
-                          !!errors.shipping_contact
+                          !!touched.visa_phone_number &&
+                          !!errors.visa_phone_number
                         }
                         helperText={
-                          touched.shipping_contact && errors.shipping_contact
+                          touched.visa_phone_number && errors.visa_phone_number
                         }
                       />
                     </Grid>{" "}
@@ -1084,12 +1226,12 @@ function FormSection({ sponsors }) {
                           mb: 2,
                         }}
                         onBlur={handleBlur}
-                        name="email"
+                        name="visa_email"
                         label="Email Address"
                         onChange={handleChange}
-                        value={values.email}
-                        error={!!touched.email && !!errors.email}
-                        helperText={touched.email && errors.email}
+                        value={values.visa_email}
+                        error={!!touched.visa_email && !!errors.visa_email}
+                        helperText={touched.visa_email && errors.visa_email}
                       />
                     </Grid>{" "}
                   </Grid>
@@ -1133,6 +1275,16 @@ function FormSection({ sponsors }) {
                       </Box>
                     </Box>
                   </Box>
+                  {failure && (
+                    <Alert sx={{ my: "30px" }} severity="error">
+                      Failed to submit form
+                    </Alert>
+                  )}
+                  {success && (
+                    <Alert sx={{ my: "30px" }} severity="success">
+                      form submitted successfully
+                    </Alert>
+                  )}
                 </Card1>
                 {/* /----------------------------------------------------- */}
                 {/* /----------------------------------------------------- */}

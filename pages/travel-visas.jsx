@@ -10,26 +10,26 @@ import { Box } from "@mui/system";
 // ======================================================
 // ======================================================
 
-// const sponsorsData = [
-//   {
-//     source: "/assets/images/organizers/Masdar.png",
-//   },
-//   {
-//     source: "/assets/images/organizers/ADNEC.png",
-//   },
-//   {
-//     source: "/assets/images/organizers/AbuDhabi.png",
-//   },
-//   {
-//     source: "/assets/images/organizers/Nirvana.png",
-//   },
-//   {
-//     source: "/assets/images/organizers/Audi.png",
-//   },
-//   {
-//     source: "/assets/images/organizers/BritishVolt.png",
-//   },
-// ];
+const sponsorsData = [
+  {
+    source: "/assets/images/organizers/Masdar.png",
+  },
+  {
+    source: "/assets/images/organizers/ADNEC.png",
+  },
+  {
+    source: "/assets/images/organizers/AbuDhabi.png",
+  },
+  {
+    source: "/assets/images/organizers/Nirvana.png",
+  },
+  {
+    source: "/assets/images/organizers/Audi.png",
+  },
+  {
+    source: "/assets/images/organizers/BritishVolt.png",
+  },
+];
 
 const itemData = {
   img: "/assets/images/travel-visit/city.jpeg",
@@ -69,6 +69,7 @@ const GeneralPage = (props) => {
   const key_partners = sponsors?.filter((sponsor) => {
     return sponsor.key_partner === true;
   });
+  console.log(key_partners)
   return (
     <EvLayout showNavbar={true}>
       <Container
@@ -82,7 +83,7 @@ const GeneralPage = (props) => {
         </Box>
         <Stack direction={"column"} spacing={3}>
           <IntroSection itemData={itemData}></IntroSection>
-          <MainSection sponsors={key_partners} />
+          <MainSection sponsors={key_partners} endpoint={"application-for-visas"} />
         </Stack>
       </Container>
     </EvLayout>
