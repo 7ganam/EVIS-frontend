@@ -65,11 +65,9 @@ const GeneralPage = (props) => {
 
     return sponsors;
   }, [props?.sponsors]);
-
   const key_partners = sponsors?.filter((sponsor) => {
     return sponsor.key_partner === true;
   });
-  console.log(key_partners)
   return (
     <EvLayout showNavbar={true}>
       <Container
@@ -83,7 +81,10 @@ const GeneralPage = (props) => {
         </Box>
         <Stack direction={"column"} spacing={3}>
           <IntroSection itemData={itemData}></IntroSection>
-          <MainSection sponsors={key_partners} endpoint={"application-for-visas"} />
+          <MainSection
+            sponsors={key_partners}
+            endpoint={"application-for-visas"}
+          />
         </Stack>
       </Container>
     </EvLayout>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Field, Formik } from "formik";
 import {
   Button,
@@ -42,7 +43,7 @@ const StyledDateView = styled(DatePicker)(({ theme }) => ({
 const initialValues = {
   first_name: "",
   second_name: "",
-  Email: "",
+  email: "",
   leaving_from: "",
   arriving_to: "",
   ticket_type: "",
@@ -77,41 +78,41 @@ const initialValues = {
   visa_email: "",
 }; // uncomment these fields below for from validation
 const checkoutSchema = yup.object().shape({
-  // first_name: yup.string().required("required"),
-  // second_name: yup.string().required("required"),
-  // Email: yup.string().required("required"),
-  // leaving_from: yup.string().required("required"),
-  // arriving_to: yup.string().required("required"),
-  // // ticket_type: yup.string().required("required"),
-  // // flight_class: yup.string().required("required"),
+  first_name: yup.string().required("required"),
+  second_name: yup.string().required("required"),
+  email: yup.string().required("required"),
+  leaving_from: yup.string().required("required"),
+  arriving_to: yup.string().required("required"),
+  // ticket_type: "",
+  // flight_class: "",
   // departure_date: yup.string().required("required"),
   // return_date: yup.string().required("required"),
-  // flight_number_of_adults: yup.string().required("required"),
-  // flight_number_of_children: yup.string().required("required"),
-  // flight_number_of_infants: yup.string().required("required"),
-  // staying_city: yup.string().required("required"),
+  flight_number_of_adults: yup.string().required("required"),
+  flight_number_of_children: yup.string().required("required"),
+  flight_number_of_infants: yup.string().required("required"),
+  staying_city: yup.string().required("required"),
   // check_in_date: yup.string().required("required"),
   // check_out_date: yup.string().required("required"),
-  // occupancy: yup.string().required("required"),
-  // meal_plan: yup.string().required("required"),
-  // // hotel_number_of_adults: "",
-  // // hotel_number_of_children_and_age: "",
-  // // hotel_number_of_infants_and_age: "",
-  // // pick_up_date: "",
-  // // pick_up_time: "",
-  // // pick_up_location: "",
-  // // drop_off_location: "",
-  // // number_of_passengers: "",
-  // // car_preferred: "",
-  // // preferred_tour_city: "",
-  // // tour_date: "",
-  // // tour_number_of_adults: "",
-  // // tour_number_of_children: "",
-  // // tour_type: "",
-  // // visa_type: yup.string().required("required"),
-  // passport_name: yup.string().required("required"),
-  // visa_phone_number: yup.string().required("required"),
-  // visa_email: yup.string().required("required"),
+  // occupancy:"",
+  // meal_plan: "",
+  // hotel_number_of_adults: "",
+  // hotel_number_of_children_and_age: "",
+  // hotel_number_of_infants_and_age: "",
+  // pick_up_date: "",
+  // pick_up_time: "",
+  // pick_up_location: "",
+  // drop_off_location: "",
+  // number_of_passengers: "",
+  // car_preferred: "",
+  // preferred_tour_city: "",
+  // tour_date: "",
+  // tour_number_of_adults: "",
+  // tour_number_of_children: "",
+  // tour_type: "",
+  // visa_type: "",
+  passport_name: yup.string().required("required"),
+  visa_phone_number: yup.string().required("required"),
+  visa_email: yup.string().required("required"),
 });
 
 function timeFunction(val) {
@@ -135,17 +136,18 @@ function dateFunction(val) {
 function FormSection({ sponsors, endpoint }) {
   const [success, setSuccess] = useState(false);
   const [failure, setFailure] = useState(false);
+  useEffect(() => {
+    if (success === true || failure === true) {
+      const timer = setTimeout(() => {
+        setFailure(false);
+        setSuccess(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [success, failure]);
+
   const handleFormSubmit = async (values) => {
-    const data = {
-      ...values,
-      departure_date: dateFunction(values.departure_date),
-      return_date: dateFunction(values.return_date),
-      check_in_date: dateFunction(values.check_in_date),
-      check_out_date: dateFunction(values.check_out_date),
-      pick_up_date: dateFunction(values.pick_up_date),
-      tour_date: dateFunction(values.tour_date),
-      pick_up_time: timeFunction(values.pick_up_time),
-    };
     axios
       .post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/${endpoint}`, {
         data: {
@@ -157,18 +159,31 @@ function FormSection({ sponsors, endpoint }) {
           pick_up_date: dateFunction(values.pick_up_date),
           tour_date: dateFunction(values.tour_date),
           pick_up_time: timeFunction(values.pick_up_time),
+          flight_number_of_adults: values.flight_number_of_adults.toString(),
+          flight_number_of_children:
+            values.flight_number_of_children.toString(),
+          flight_number_of_infants: values.flight_number_of_infants.toString(),
+          hotel_number_of_adults: values.hotel_number_of_adults.toString(),
+          tour_number_of_adults: values.tour_number_of_adults.toString(),
+          tour_number_of_children: values.tour_number_of_children.toString(),
+          number_of_passengers: values.number_of_passengers.toString(),
         },
       })
       .then(function (response) {
         setSuccess(true);
         setFailure(false);
       })
-      .catch(function (error) {
-        console.log(error);
-        setSuccess(false);
-        setFailure(true);
-      });
-    console.log(data);
+      .catch(
+        function (error) {
+          setSuccess(false);
+          setFailure(true);
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
   };
 
   return (
@@ -235,17 +250,17 @@ function FormSection({ sponsors, endpoint }) {
                     <Grid item sm={12} xs={12}>
                       <TextField
                         fullWidth
-                        type="Email"
+                        type="email"
                         sx={{
                           mb: 2,
                         }}
                         onBlur={handleBlur}
-                        name="Email"
+                        name="email"
                         label="Email Address"
                         onChange={handleChange}
-                        value={values.Email}
-                        error={!!touched.Email && !!errors.Email}
-                        helperText={touched.Email && errors.Email}
+                        value={values.email}
+                        error={!!touched.email && !!errors.email}
+                        helperText={touched.email && errors.email}
                       />
                     </Grid>{" "}
                   </Grid>
@@ -295,17 +310,17 @@ function FormSection({ sponsors, endpoint }) {
                           }}
                         >
                           <FormControlLabel
-                            value="one-way"
+                            value="One Way"
                             control={<Radio />}
                             label="One Way"
                           />
                           <FormControlLabel
-                            value="round-trip"
+                            value="Round Trip"
                             control={<Radio />}
                             label="Round Trip"
                           />
                           <FormControlLabel
-                            value="multi-city"
+                            value="Multi City"
                             control={<Radio />}
                             label="Multi City"
                           />
@@ -336,17 +351,17 @@ function FormSection({ sponsors, endpoint }) {
                           }}
                         >
                           <FormControlLabel
-                            value="first"
+                            value="First"
                             control={<Radio />}
                             label="First"
                           />
                           <FormControlLabel
-                            value="business"
+                            value="Business"
                             control={<Radio />}
                             label="Business"
                           />
                           <FormControlLabel
-                            value="economy"
+                            value="Economy"
                             control={<Radio />}
                             label="Economy"
                           />
@@ -658,17 +673,17 @@ function FormSection({ sponsors, endpoint }) {
                           }}
                         >
                           <FormControlLabel
-                            value="single"
+                            value="Single"
                             control={<Radio />}
                             label="Single"
                           />
                           <FormControlLabel
-                            value="double"
+                            value="Double"
                             control={<Radio />}
                             label="Double"
                           />
                           <FormControlLabel
-                            value="other"
+                            value="Other"
                             control={<Radio />}
                             label="Other"
                           />
@@ -698,22 +713,22 @@ function FormSection({ sponsors, endpoint }) {
                           }}
                         >
                           <FormControlLabel
-                            value="BedBreakfast"
+                            value="Bed & Breakfast"
                             control={<Radio />}
                             label="Bed & Breakfast"
                           />
                           <FormControlLabel
-                            value="breakfastLunch"
+                            value="Breakfast & lunch"
                             control={<Radio />}
                             label="Breakfast & lunch"
                           />
                           <FormControlLabel
-                            value="breakfastDinner"
+                            value="Breakfast & Dinner"
                             control={<Radio />}
                             label="Breakfast & Dinner"
                           />
                           <FormControlLabel
-                            value="breakfastLunchDinner"
+                            value="Breakfast, Lunch & Dinner"
                             control={<Radio />}
                             label="Breakfast, Lunch & Dinner"
                           />
@@ -729,7 +744,7 @@ function FormSection({ sponsors, endpoint }) {
                         }}
                         label="No of Adults"
                         onBlur={handleBlur}
-                        name="adultsNo"
+                        name="hotel_number_of_adults"
                         onChange={handleChange}
                         value={values.hotel_number_of_adults}
                         error={
@@ -1108,12 +1123,12 @@ function FormSection({ sponsors, endpoint }) {
                           }}
                         >
                           <FormControlLabel
-                            value="halfDayTour"
+                            value="Half Day Tour"
                             control={<Radio />}
                             label="Half Day Tour"
                           />
                           <FormControlLabel
-                            value="fullDayTour"
+                            value="Full Day Tour"
                             control={<Radio />}
                             label="Full Day Tour"
                           />
@@ -1167,12 +1182,12 @@ function FormSection({ sponsors, endpoint }) {
                           }}
                         >
                           <FormControlLabel
-                            value="30Days"
+                            value="30 Days"
                             control={<Radio />}
                             label="30 Days"
                           />
                           <FormControlLabel
-                            value="90Days"
+                            value="90 Days"
                             control={<Radio />}
                             label="90 Days"
                           />
@@ -1322,7 +1337,7 @@ function FormSection({ sponsors, endpoint }) {
             elevation={2}
           >
             <Stack>
-              {sponsors.map((sponsor) => {
+              {sponsors?.map((sponsor) => {
                 return (
                   <Image
                     key={sponsor.source}
