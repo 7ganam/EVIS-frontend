@@ -13,7 +13,7 @@ import { useMemo } from "react";
 // ======================================================
 // ======================================================
 const pageHeaderData = {
-  text: "Conference",
+  // text: "Conference",
   //   buttonText: "Save The Date",
   //   buttonLink: "/",
   image: "/assets/images/summit.png",
