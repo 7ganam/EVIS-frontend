@@ -34,11 +34,11 @@ const GeneralPage = (props) => {
       return {};
     }
     let openTechPageData = JSON.parse(props.openTechPage).data?.attributes ?? null;
-    const agendaTitle = openTechPageData?.agenda_title;
+    const agendaTitle = openTechPageData?.header?.text;
     const firstBody = { text: openTechPageData?.first_body, };
     const secondBody = { text: openTechPageData?.second_body, };
     const downloadLink = openTechPageData?.download_link;
-    const mainImage = openTechPageData?.mian_image?.data?.[0]?.attributes?.url;
+    const mainImage = openTechPageData?.header?.image?.data?.attributes?.url;
     const scheduleImages = openTechPageData?.schedule_images?.data?.map((highlight) => {
       return highlight?.attributes?.url;
     });
@@ -54,6 +54,8 @@ const GeneralPage = (props) => {
     };
   }, [props?.openTechPage]);
 
+  console.log("data: ", openTechPageData);
+  // console.log("data: ", openTechPage);
 
   return (
     <EvLayout showNavbar={true}>
