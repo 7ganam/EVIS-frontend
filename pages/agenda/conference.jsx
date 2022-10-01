@@ -35,11 +35,11 @@ const GeneralPage = (props) => {
       return {};
     }
     let conferencePageData = JSON.parse(props.conferencePage).data?.attributes ?? null;
-    const agendaTitle = conferencePageData?.agenda_title;
+    const agendaTitle = conferencePageData?.header?.text;
     const firstBody = { text: conferencePageData?.first_body, };
     const secondBody = { text: conferencePageData?.second_body, };
     const downloadLink = conferencePageData?.download_link;
-    const mainImage = conferencePageData?.main_Image;
+    const mainImage = conferencePageData?.header?.image?.data?.attributes?.url;
     const scheduleImages = conferencePageData?.schedule_images?.data?.map((highlight) => {
       return highlight?.attributes?.url;
     });
@@ -59,10 +59,10 @@ const GeneralPage = (props) => {
   return (
     <EvLayout showNavbar={true}>
       <PageHeader
-        text={pageHeaderData.text}
+        text={agendaTitle}
         buttonText={pageHeaderData.buttonText}
         buttonLink={pageHeaderData.buttonLink}
-        image={pageHeaderData.image}
+        image={mainImage}
       ></PageHeader>
 
       <Container
