@@ -21,6 +21,8 @@ const itemData1 = {
 
 const SummitSection = (props) => {
   const theme = useTheme();
+  const item = props.item;
+  const topics = props.topics;
 
   return (
     <Box id={"conference"} sx={{ scrollMarginTop: "250px" }}>
@@ -33,10 +35,10 @@ const SummitSection = (props) => {
         }}
       >
         <Box sx={{ mt: "30px" }}>
-          <TwoColumnBoxV2 item={itemData1} imgPosition="left"></TwoColumnBoxV2>
+          <TwoColumnBoxV2 item={item} imgPosition="left"></TwoColumnBoxV2>
         </Box>
       </Container>
-      <TopicsSection></TopicsSection>
+      <TopicsSection topics = {topics}></TopicsSection>
     </Box>
   );
 };
