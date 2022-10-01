@@ -13,7 +13,7 @@ import { useMemo } from "react";
 // ======================================================
 // ======================================================
 const pageHeaderData = {
-  // text: "Conference",
+  text: "Conference",
   //   buttonText: "Save The Date",
   //   buttonLink: "/",
   image: "/assets/images/summit.png",
@@ -26,7 +26,7 @@ const GeneralPage = (props) => {
     agendaTitle,
     firstBody,
     secondBody,
-    firstAndSecondBody,
+    // firstAndSecondBody,
     downloadLink,
     mainImage,
     scheduleImages,

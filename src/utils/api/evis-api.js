@@ -64,7 +64,12 @@ const getPartners = async () => {
 const getAgenda = async () => {
   const response = await axios.get(`${baseUrl}/api/agenda-page?populate=deep`);
   return response.data;
-}
+};
+
+const getOpenTech = async () => {
+  const response = await axios.get(`${baseUrl}/api/open-tech-session-page?populate=deep`);
+  return response.data;
+};
 
 const api = {
   getSpeakers,
@@ -75,6 +80,7 @@ const api = {
   getSponsors,
   getPartners,
   getAgenda,
+  getOpenTech,
 };
 
 export default api;
