@@ -52,11 +52,9 @@ const getAboutPage = async () => {
 };
 
 const getSponsors = async (year) => {
-
   let strFilter;
   if (!year) {
-    strFilter =
-      "/api/sponsors?populate=deep";
+    strFilter = "/api/sponsors?populate=deep";
   }
   if (year === 22) {
     strFilter =
@@ -73,19 +71,14 @@ const getSponsors = async (year) => {
 
   return response.data;
 
-
-
-
   // const response = await axios.get(`${baseUrl}/api/sponsors?populate=deep`);
   // return response.data;
 };
 
 const getPartners = async (year) => {
-
   let strFilter;
   if (!year) {
-    strFilter =
-      "/api/partners?populate=deep";
+    strFilter = "/api/partners?populate=deep";
   }
   if (year === 22) {
     strFilter =
@@ -102,16 +95,25 @@ const getPartners = async (year) => {
 
   return response.data;
 
-
-
   // const response = await axios.get(`${baseUrl}/api/partners?populate=deep`);
   // return response.data;
 };
 
-const getWhyExhibit = async () => {
-  const response = await axios.get(`${baseUrl}/api/why-exhibit-page?populate=deep`);
+const getContactUs = async () => {
+  const response = await axios.get(`${baseUrl}/api/contact-page?populate=deep`);
   return response.data;
-}
+};
+
+const getInnovationTeam = async () => {
+  const response = await axios.get(`${baseUrl}/api/team-members?populate=deep`);
+  return response.data;
+};
+const getWhyExhibit = async () => {
+  const response = await axios.get(
+    `${baseUrl}/api/why-exhibit-page?populate=deep`
+  );
+  return response.data;
+};
 
 const api = {
   getSpeakers,
@@ -121,6 +123,8 @@ const api = {
   getAboutPage,
   getSponsors,
   getPartners,
+  getContactUs,
+  getInnovationTeam,
   getWhyExhibit,
 };
 
