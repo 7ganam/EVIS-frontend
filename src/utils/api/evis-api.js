@@ -1,7 +1,7 @@
 import axios from "axios";
 
 let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
-// let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+// let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL2;
 const getSpeakers = async () => {
   const response = await axios.get(`${baseUrl}/api/speakers?populate=*`);
   return response.data;
@@ -108,6 +108,11 @@ const getPartners = async (year) => {
   // return response.data;
 };
 
+const getWhyExhibit = async () => {
+  const response = await axios.get(`${baseUrl}/api/why-exhibit-page?populate=deep`);
+  return response.data;
+}
+
 const api = {
   getSpeakers,
   getSpeaker,
@@ -116,6 +121,7 @@ const api = {
   getAboutPage,
   getSponsors,
   getPartners,
+  getWhyExhibit,
 };
 
 export default api;
