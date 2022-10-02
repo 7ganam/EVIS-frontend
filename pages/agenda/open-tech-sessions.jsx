@@ -1,7 +1,5 @@
 import { Box, Container } from "@mui/material";
-
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
 import LandingText from "src/components/EvSections/agenda-page-sections/LandingText";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import PageHeader from "src/components/EvComponents/PageHeader";
@@ -9,32 +7,63 @@ import React from "react"; // styled component
 import CarouselSection from "@/components/EvSections/agenda-page-sections/CarouselSection";
 import { BigButton } from "@/components/EvComponents/Buttons";
 import DownloadingIcon from "@mui/icons-material/Downloading";
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
 
-const images = [
-  "/assets/images/summit-1.jpg",
-  "/assets/images/summit-2.jpg",
-  "/assets/images/summit-3.jpg",
-];
+
 // ======================================================
 // ======================================================
 const pageHeaderData = {
-  text: "Open Tech Sessions",
+  // text: "Open Tech Sessions",
   //   buttonText: "Save The Date",
   //   buttonLink: "/",
-  image: "/assets/images/techSessions.jpg",
-};
-const section = {
-  text: `Explore the latest technical content and developments in the industry which includes presentations, panel discussions and case studies, all in the show floor and free to attend for everyone.`,
+  // image: "/assets/images/techSessions.jpg",
 };
 
-const GeneralPage = () => {
+const GeneralPage = (props) => {
+  let {
+    openTechPageData,
+    agendaTitle,
+    firstBody,
+    secondBody,
+    downloadLink,
+    mainImage,
+    scheduleImages,
+  } = useMemo(() => {
+    if (!props?.openTechPage) {
+      return {};
+    }
+    let openTechPageData = JSON.parse(props.openTechPage).data?.attributes ?? null;
+    const agendaTitle = openTechPageData?.header?.text;
+    const firstBody = { text: openTechPageData?.first_body, };
+    const secondBody = { text: openTechPageData?.second_body, };
+    const downloadLink = openTechPageData?.download_link;
+    const mainImage = openTechPageData?.header?.image?.data?.attributes?.url;
+    const scheduleImages = openTechPageData?.schedule_images?.data?.map((highlight) => {
+      return highlight?.attributes?.url;
+    });
+
+    return {
+      openTechPageData,
+      agendaTitle,
+      firstBody,
+      secondBody,
+      downloadLink,
+      mainImage,
+      scheduleImages,
+    };
+  }, [props?.openTechPage]);
+
+  console.log("data: ", openTechPageData);
+  // console.log("data: ", openTechPage);
+
   return (
     <EvLayout showNavbar={true}>
       <PageHeader
-        text={pageHeaderData.text}
+        text={agendaTitle}
         buttonText={pageHeaderData.buttonText}
         buttonLink={pageHeaderData.buttonLink}
-        image={pageHeaderData.image}
+        image={mainImage}
       ></PageHeader>
 
       <Container
@@ -43,13 +72,13 @@ const GeneralPage = () => {
         }}
       >
         <Box sx={{ mt: "40px" }}>
-          <LandingText id={"summit"} section={section} />
+          <LandingText id={"summit"} section={firstBody} />
         </Box>
         <Box sx={{ mt: "40px", mb: "20px" }}>
           <SectionTitle> Agenda </SectionTitle>
         </Box>
         <Box sx={{ width: "80%", margin: "auto" }}>
-          <CarouselSection images={images}></CarouselSection>
+          <CarouselSection images={scheduleImages}></CarouselSection>
         </Box>
         <Box
           sx={{
@@ -58,7 +87,7 @@ const GeneralPage = () => {
             mt: "40px",
           }}
         >
-          <a href="/summit-agenda.pdf" download>
+          <a href={downloadLink} download>
             <BigButton
               content={
                 <Box
@@ -85,15 +114,28 @@ const GeneralPage = () => {
 };
 
 export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+  let openTechPage = null;
+  let openTechPageError = null;
+
+  try {
+    openTechPage = await api.getOpenTech();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    openTechPage = dev_error;
+  }
+
+  if (!openTechPage) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      openTechPage: JSON.stringify(openTechPage),
+      openTechPageError: JSON.stringify(openTechPageError),
     },
+    revalidate: 10, // In seconds
   };
 }
 export default GeneralPage;

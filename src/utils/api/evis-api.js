@@ -115,6 +115,18 @@ const getWhyExhibit = async () => {
   return response.data;
 };
 
+const getAgenda = async () => {
+  const response = await axios.get(`${baseUrl}/api/agenda-page?populate=deep`);
+  return response.data;
+};
+
+const getOpenTech = async () => {
+  const response = await axios.get(
+    `${baseUrl}/api/open-tech-session-page?populate=deep`
+  );
+  return response.data;
+};
+
 const api = {
   getSpeakers,
   getSpeaker,
@@ -123,6 +135,8 @@ const api = {
   getAboutPage,
   getSponsors,
   getPartners,
+  getAgenda,
+  getOpenTech,
   getContactUs,
   getInnovationTeam,
   getWhyExhibit,
