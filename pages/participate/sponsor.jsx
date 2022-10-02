@@ -1,9 +1,11 @@
 import { Container } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import EvLayout from "src/components/layouts/EvLayout";
-// import api from "src/utils/api/grocery3-shop";
+import api from "src/utils/api/evis-api";
 import MainForm from "src/components/MainForm";
 import { Box } from "@mui/system";
+import { useMemo } from "react";
+
 // ======================================================
 // ======================================================
 
@@ -30,8 +32,26 @@ const sponsorsData = [
   },
 ];
 
-const generalPage = () => {
+const GeneralPage = (props) => {
   // const { offerProducts, allProducts, topSailedProducts } = props;
+  // console.log(props.sponsors);
+  let sponsors = useMemo(() => {
+    if (!props?.sponsors) {
+      return {};
+    }
+
+    let data = JSON.parse(props.sponsors)?.data ?? null;
+    // const sponsors = data;
+
+    const sponsors = data?.map((sponsor) => {
+      return {
+        text: sponsor?.attributes?.title ?? "",
+        source: sponsor?.attributes?.image?.data?.attributes?.url ?? "",
+      };
+    });
+
+    return sponsors;
+  }, [props?.sponsors]);
 
   return (
     <EvLayout showNavbar={true}>
@@ -46,7 +66,7 @@ const generalPage = () => {
           </Box>
         </Box>
         <MainForm
-          sponsors={sponsorsData}
+          sponsors={sponsors}
           endpoint={"application-for-sponsors"}
         />
       </Container>
@@ -54,16 +74,31 @@ const generalPage = () => {
   );
 };
 
-// export async function getStaticProps() {
-//   const allProducts = await api.getGrocery3Products();
-//   const offerProducts = await api.getGrocery3offerProducts();
-//   const topSailedProducts = await api.getTopSailedProducts();
-//   return {
-//     props: {
-//       allProducts,
-//       offerProducts,
-//       topSailedProducts,
-//     },
-//   };
-// }
-export default generalPage;
+export async function getStaticProps(context) {
+  let sponsors = null;
+  let sponsorsError = null;
+
+
+  try {
+    sponsors = await api.getSponsors();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    sponsorsError = dev_error;
+  }
+
+  if (!sponsors) {
+    return {
+      notFound: true,
+    };
+  }
+
+
+  return {
+    props: {
+      sponsors: JSON.stringify(sponsors),
+      sponsorsError: JSON.stringify(sponsorsError),
+    },
+    revalidate: 10, // In seconds
+  };
+}
+export default GeneralPage;

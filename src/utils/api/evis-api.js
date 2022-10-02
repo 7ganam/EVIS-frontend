@@ -51,25 +51,69 @@ const getAboutPage = async () => {
   return response.data;
 };
 
-const getSponsors = async () => {
-  const response = await axios.get(`${baseUrl}/api/sponsors?populate=deep`);
+const getSponsors = async (year) => {
+  let strFilter;
+  if (!year) {
+    strFilter = "/api/sponsors?populate=deep";
+  }
+  if (year === 22) {
+    strFilter =
+      "/api/sponsors?filters[year][$eq]=year%202022&filters[year][$eq]=both&populate=deep";
+  }
+  if (year === 23) {
+    strFilter =
+      "/api/sponsors?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep";
+  }
+  if (year === "both") {
+    strFilter = "/api/sponsors?filters[year][$eq]=both&populate=deep";
+  }
+  const response = await axios.get(`${baseUrl}${strFilter}`);
+
   return response.data;
+
+  // const response = await axios.get(`${baseUrl}/api/sponsors?populate=deep`);
+  // return response.data;
 };
 
-const getPartners = async () => {
-  const response = await axios.get(`${baseUrl}/api/partners?populate=deep`);
+const getPartners = async (year) => {
+  let strFilter;
+  if (!year) {
+    strFilter = "/api/partners?populate=deep";
+  }
+  if (year === 22) {
+    strFilter =
+      "/api/partners?filters[year][$eq]=year%202022&filters[year][$eq]=both&populate=deep";
+  }
+  if (year === 23) {
+    strFilter =
+      "/api/partners?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep";
+  }
+  if (year === "both") {
+    strFilter = "/api/partners?filters[year][$eq]=both&populate=deep";
+  }
+  const response = await axios.get(`${baseUrl}${strFilter}`);
+
   return response.data;
+
+  // const response = await axios.get(`${baseUrl}/api/partners?populate=deep`);
+  // return response.data;
 };
 
 const getContactUs = async () => {
   const response = await axios.get(`${baseUrl}/api/contact-page?populate=deep`);
   return response.data;
-}
+};
 
 const getInnovationTeam = async () => {
   const response = await axios.get(`${baseUrl}/api/team-members?populate=deep`);
   return response.data;
-}
+};
+const getWhyExhibit = async () => {
+  const response = await axios.get(
+    `${baseUrl}/api/why-exhibit-page?populate=deep`
+  );
+  return response.data;
+};
 
 const api = {
   getSpeakers,
@@ -81,7 +125,7 @@ const api = {
   getPartners,
   getContactUs,
   getInnovationTeam,
-
+  getWhyExhibit,
 };
 
 export default api;
