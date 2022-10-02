@@ -123,7 +123,6 @@ The Emirate also has easy access to developing markets, with more than 200 air r
 };
 
 const GeneralPage = (props) => {
-
   let speakers = useMemo(() => {
     if (!props?.speakers) {
       return {};
@@ -132,17 +131,16 @@ const GeneralPage = (props) => {
     let data = JSON.parse(props.speakers)?.data ?? null;
     // const speakers = data;
 
-
     const speakers = data?.map((speaker) => {
       return {
-        name : speaker?.attributes?.name ?? "",
-        title : speaker?.attributes?.title ?? "",
-        company : speaker?.attributes?.company ?? "",
-        year : speaker?.attributes?.year ?? "",
-        src : speaker?.attributes?.image?.data?.attributes?.url ?? "",
-        phoneNumber : speaker?.attributes?.phone_number ?? "",
-        slug : speaker?.attributes?.slug ?? "",
-        about : speaker?.attributes?.about ?? ""
+        name: speaker?.attributes?.name ?? "",
+        title: speaker?.attributes?.title ?? "",
+        company: speaker?.attributes?.company ?? "",
+        year: speaker?.attributes?.year ?? "",
+        src: speaker?.attributes?.image?.data?.attributes?.url ?? "",
+        phoneNumber: speaker?.attributes?.phone_number ?? "",
+        slug: speaker?.attributes?.slug ?? "",
+        about: speaker?.attributes?.about ?? "",
       };
     });
 
@@ -154,12 +152,20 @@ const GeneralPage = (props) => {
       return {};
     }
 
-    let data = JSON.parse(props.sponsors).data[0].attributes ?? null;
+    let data = JSON.parse(props.sponsors)?.data ?? null;
 
-    const sponsors = data?.sponsor?.map((sponsor) => {
+    const sponsors = data?.map((sponsor) => {
       return {
-        text: sponsor?.title ?? "",
-        source: sponsor?.image?.data?.attributes?.url ?? "",
+        text: sponsor?.attributes?.title ?? "",
+        source: sponsor?.attributes?.image?.data?.attributes?.url ?? "",
+        year: sponsor?.attributes?.year ?? "",
+        key_partner: sponsor?.attributes?.key_partner ?? null,
+        sponsor: sponsor?.attributes?.sponsor ?? null,
+        international_media_partner:
+        sponsor?.attributes?.international_media_partner ?? null,
+        knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
+        research_partner: sponsor?.attributes?.research_partner ?? null,
+        media_partner: sponsor?.attributes?.media_partner ?? null,
       };
     });
 
@@ -171,12 +177,20 @@ const GeneralPage = (props) => {
       return {};
     }
 
-    let data = JSON.parse(props.partners).data[0].attributes ?? null;
+    let data = JSON.parse(props.partners)?.data ?? null;
 
-    const partners = data?.partner?.map((partner) => {
+    const partners = data?.map((partner) => {
       return {
-        text: partner?.title ?? "",
-        source: partner?.image?.data?.attributes?.url ?? "",
+        text: partner?.attributes?.title ?? "",
+        source: partner?.attributes?.image?.data?.attributes?.url ?? "",
+        year: partner?.attributes?.year ?? "",
+        key_partner: partner?.attributes?.key_partner ?? null,
+        sponsor: partner?.attributes?.sponsor ?? null,
+        international_media_partner:
+          partner?.attributes?.international_media_partner ?? null,
+        knowledge_partner: partner?.attributes?.knowledge_partner ?? null,
+        research_partner: partner?.attributes?.research_partner ?? null,
+        media_partner: partner?.attributes?.media_partner ?? null,
       };
     });
 
@@ -247,6 +261,13 @@ const GeneralPage = (props) => {
   }, [props?.aboutPage]);
 
 
+  const key_partners = sponsors?.filter((sponsor) => {
+    return sponsor.key_partner === true;
+  });
+  const knowledgePartners = partners?.filter((partner) => {
+    return partner.knowledge_partner === true;
+  });
+
   return (
     <EvLayout showNavbar={true}>
       <Container>
@@ -267,8 +288,8 @@ const GeneralPage = (props) => {
       <Container>
         <VenueSection data={venue} map={mapContent.text}></VenueSection>
         <Box sx={{ mt: "100px" }}>
-          <SponsorsGrid sponsors={sponsors} />
-          <PartnersGrid sx={{ mt: 5 }} partners={partners} />
+          <SponsorsGrid sponsors={key_partners} />
+          <PartnersGrid sx={{ mt: 5 }} partners={knowledgePartners} />
         </Box>
       </Container>
     </EvLayout>
@@ -339,7 +360,6 @@ export async function getStaticProps(context) {
       notFound: true,
     };
   }
-
 
   return {
     props: {
