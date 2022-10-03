@@ -61,6 +61,11 @@ const getPartners = async () => {
   return response.data;
 };
 
+const getGallery = async () => {
+  const response = await axios.get(`${baseUrl}/api/gallery-page?populate=deep`);
+  return response.data;
+};
+
 const api = {
   getSpeakers,
   getSpeaker,
@@ -69,6 +74,7 @@ const api = {
   getAboutPage,
   getSponsors,
   getPartners,
+  getGallery,
 };
 
 export default api;

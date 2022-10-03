@@ -1,63 +1,55 @@
 import React from "react";
 import EvLayout from "src/components/layouts/EvLayout";
 import { Container, Box } from "@mui/material";
-import api from "src/utils/api/grocery3-shop";
 import {
   SectionTitle,
   SectionTitle2,
 } from "src/components/EvComponents/StyledTypography";
 import Videos from "src/components/EvSections/new-page-sections/Videos";
-
 import Divider from "@mui/material/Divider";
 import { useTheme } from "@emotion/react";
-
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import BazarImage from "src/components/BazarImage";
 import ImageGallery from "react-image-gallery";
 import ImagesSection from "./imagesSection";
 import Card1 from "@/components/Card1";
-const images = [
-  {
-    original: "/assets/images/gallery/1.jpg",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-  },
-];
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
 
-const videosList = [
-  {
-    youtube:
-      "https://www.youtube.com/watch?v=pH-S5T4v000&feature=emb_logo&ab_channel=EVIS",
-  },
-  {
-    youtube:
-      "https://www.youtube.com/watch?v=9QsM34soYg0&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=3&ab_channel=EVIS",
-  },
-  {
-    youtube:
-      "https://www.youtube.com/watch?v=hFxiyLbi2Sg&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=4&ab_channel=EVIS",
-  },
-  {
-    youtube:
-      "https://www.youtube.com/watch?v=BzT8e_IFVPs&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=5&ab_channel=EVIS",
-  },
-  {
-    youtube:
-      "https://www.youtube.com/watch?v=VSiDveJb23w&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=6&ab_channel=EVIS",
-  },
-  { youtube: "https://www.youtube.com/watch?v=x2CDpB6mrp4&ab_channel=EVIS" },
-];
-
-const EvHome = () => {
+const EvHome = (props) => {
   const theme = useTheme();
+
+  let {
+    galleryPageData,
+    photosData,
+    videosData,
+
+  } = useMemo(() => {
+    if (!props?.galleryPage) {
+      return {};
+    }
+    let galleryPageData = JSON.parse(props.galleryPage).data?.attributes ?? null;
+
+    const photosData = galleryPageData?.photos?.data?.map((attributes) => {
+      return {
+        thumbnail: attributes?.attributes?.url,
+        original: attributes?.attributes?.url,
+      }
+    });
+
+    const videosData = galleryPageData?.video_link.map((attributes) => {
+      return {
+        youtube: attributes?.youtube_link,
+      }
+    });
+
+    return {
+      galleryPageData,
+      photosData,
+      videosData,
+    };
+  }, [props?.galleryPage]);
 
   return (
     <EvLayout showNavbar={true} title={"Home"}>
@@ -117,7 +109,7 @@ const EvHome = () => {
           </Box>
         </Box>
         <Card1 sx={{ p: "20px" }}>
-          <ImagesSection></ImagesSection>
+          <ImagesSection imagesData={photosData}></ImagesSection>
         </Card1>
         <Box
           sx={{
@@ -166,7 +158,7 @@ const EvHome = () => {
           </Box>
         </Box>
 
-        <Videos videosList={videosList} />
+        <Videos videosList={videosData} />
         {/* <ExhibitionFeatures data={featureList} /> */}
         {/* <Press data={news} /> */}
         {/* <Press2 data={news2} /> */}
@@ -176,16 +168,30 @@ const EvHome = () => {
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+
+export async function getStaticProps(context) {
+  let galleryPage = null;
+  let galleryPageError = null;
+
+  try {
+    galleryPage = await api.getGallery();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    galleryPageError = dev_error;
+  }
+
+  if (!galleryPage) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      galleryPage: JSON.stringify(galleryPage),
+      galleryPageError: JSON.stringify(galleryPageError),
     },
+    revalidate: 10, // In seconds
   };
 }
 

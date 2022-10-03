@@ -6,8 +6,9 @@ const PREFIX_URL =
   "https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/";
 
 export default class ImagesSection extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
+    this.allImagesData = props.imagesData;
     this.state = {
       showIndex: false,
       showBullets: true,
@@ -225,7 +226,8 @@ export default class ImagesSection extends React.Component {
       <section className="app">
         <ImageGallery
           ref={(i) => (this._imageGallery = i)}
-          items={this.images}
+          // items={this.images}
+          items={this.allImagesData}
           onClick={this._onImageClick.bind(this)}
           onImageLoad={this._onImageLoad}
           onSlide={this._onSlide.bind(this)}
