@@ -127,6 +127,11 @@ const getOpenTech = async () => {
   return response.data;
 };
 
+const getTestimonials = async () => {
+  const response = await axios.get(`${baseUrl}/api/testimonials?populate=deep`);
+  return response.data;
+}
+
 const api = {
   getSpeakers,
   getSpeaker,
@@ -135,6 +140,8 @@ const api = {
   getAboutPage,
   getSponsors,
   getPartners,
+  getTestimonials,
+
   getAgenda,
   getOpenTech,
   getContactUs,
