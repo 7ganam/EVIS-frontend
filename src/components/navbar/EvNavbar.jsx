@@ -13,6 +13,9 @@ import Image from "src/components/BazarImage";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileMenu from "src/components/navbar/MobileMenu";
+import app from "../../../pages/_app";
+import { getStaticProps } from "../../../pages/_app";
+// import { AppProps } from "next/app";
 
 // const common css style
 const navLinkStyle = {
@@ -79,6 +82,8 @@ const Navbar = ({ elevation, isFixed }) => {
   const { settings } = useSettings();
   const theme = useTheme();
   const downMd = useMediaQuery(theme.breakpoints.down(1150));
+  const leftLogo = app.navbarData.leftLogo;
+  const rightLogo = app.navbarData.rightLogo;
 
   const renderNestedNav = (list = [], isRoot = false) => {
     return list.map((nav) => {
@@ -239,7 +244,7 @@ const Navbar = ({ elevation, isFixed }) => {
               <Image
                 // height={{ xs: "50", md: isFixed ? "70" : "90" }}
                 mb={0}
-                src="/assets/images/EvLogo_MENA3.jpg"
+                src={leftLogo}
                 alt="logo"
                 sx={{ height: { xs: "60px", md: isFixed ? "70px" : "140px" } }}
               />
@@ -332,7 +337,7 @@ const Navbar = ({ elevation, isFixed }) => {
               <Image
                 // height={{ xs: "50", md: isFixed ? "70" : "90" }}
                 mb={0}
-                src="/assets/images/MOEI.jpeg"
+                src={rightLogo}
                 alt="logo"
                 sx={{ height: { xs: "60px", md: isFixed ? "70px" : "140px" } }}
               />

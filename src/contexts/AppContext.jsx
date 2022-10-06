@@ -30,7 +30,7 @@ const initialState = {
 };
 const AppContext = createContext({
   state: initialState,
-  dispatch: () => {},
+  dispatch: () => { },
 });
 
 const reducer = (state, action) => {

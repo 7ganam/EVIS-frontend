@@ -127,6 +127,12 @@ const getOpenTech = async () => {
   return response.data;
 };
 
+const getNavbar = async () => {
+  const response = await axios.get(`${baseUrl}/api/navbar?populate=deep`
+  );
+  return response.data;
+};
+
 const api = {
   getSpeakers,
   getSpeaker,
@@ -140,6 +146,7 @@ const api = {
   getContactUs,
   getInnovationTeam,
   getWhyExhibit,
+  getNavbar,
 };
 
 export default api;

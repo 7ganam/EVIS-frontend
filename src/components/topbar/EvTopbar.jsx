@@ -4,6 +4,8 @@ import { FlexBox } from "src/components/flex-box";
 import NavLink from "src/components/nav-link/NavLink";
 import { H2, H3, H4, Span } from "src/components/Typography";
 import { layoutConstant } from "src/utils/constants";
+import app from "../../../pages/_app";
+
 const TopbarWrapper = styled(Box)(({ theme }) => ({
   fontSize: 12,
   height: layoutConstant.topbarHeight,
@@ -58,6 +60,7 @@ const TopbarWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const EvTopbar = () => {
+  const headline = app.navbarData.headline;
   return (
     <TopbarWrapper>
       <Container
@@ -81,9 +84,7 @@ const EvTopbar = () => {
               fontSize: { xs: "10px", sm: "15px", md: "25px" },
             }}
           >
-            {
-              "Under the Patronage of HE Suhail Al Mazroui, UAE Minister of Energy & Infrastructure"
-            }
+            {headline}
           </Box>
         </FlexBox>
       </Container>
