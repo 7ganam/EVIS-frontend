@@ -19,6 +19,9 @@ import "../src/fake-db";
 Router.events.on("routeChangeStart", () => nProgress.start());
 Router.events.on("routeChangeComplete", () => nProgress.done());
 Router.events.on("routeChangeError", () => nProgress.done()); // small change
+import EvNavbar from "../src/components/navbar/EvNavbar";
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
 
 nProgress.configure({
   showSpinner: false,
@@ -198,6 +201,47 @@ ACM, SWE, and the Eta Kappa Nu (HKN) (Electrical Engineering Honor Society).`,
 ];
 
 const App = ({ Component, pageProps }) => {
+
+  let {
+    navbarComponentData,
+    headlineData,
+    leftLogoData,
+    rightLogoData,
+    navbarData,
+
+  } = useMemo(() => {
+    if (!pageProps?.navbarComponent) {
+      return {};
+    }
+    let navbarComponentData = JSON.parse(pageProps.navbarComponent).data?.attributes ?? null;
+
+    const headlineData = navbarComponentData?.Headline;
+    const leftLogoData = navbarComponentData?.LeftLogo?.data?.attributes?.url;
+    const rightLogoData = navbarComponentData?.RightLogo?.data?.attributes?.url;
+
+    const navbarData = {
+      headline: headlineData,
+      leftLogo: leftLogoData,
+      rightLogo: rightLogoData,
+    }
+
+
+    return {
+      navbarComponentData,
+      headlineData,
+      leftLogoData,
+      rightLogoData,
+      navbarData,
+    };
+  }, [pageProps?.navbarComponent]);
+
+  App.navbarData = navbarData;
+  // console.log("navbarComponentData: ", navbarComponentData);
+  // console.log("headline: ", headlineData);
+  // console.log("leftLogoData: ", leftLogoData);
+  // console.log("rightLogoData: ", rightLogoData);
+
+
   const getLayout = Component.getLayout ?? ((page) => page);
 
   useEffect(() => {
@@ -223,7 +267,7 @@ const App = ({ Component, pageProps }) => {
     return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
   }, []);
 
-  const [global, setGolobal] = useState({ advisoryBoard });
+  const [global, setGolobal] = useState({ advisoryBoard, navbarData });
 
   return (
     <Fragment>
@@ -239,6 +283,7 @@ const App = ({ Component, pageProps }) => {
           <MuiTheme>
             {/* <RTL>{getLayout(<Component {...pageProps} AOS />)}</RTL> */}
             {getLayout(<Component {...pageProps} AOS global={global} />)}
+            <EvNavbar navData={navbarData}></EvNavbar>
           </MuiTheme>
         </AppProvider>
       </SettingsProvider>
@@ -249,10 +294,43 @@ const App = ({ Component, pageProps }) => {
 // perform automatic static optimization, causing every page in your app to
 // be server-side rendered.
 //
-// App.getInitialProps = async (appContext) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
-//   return { ...appProps };
-// };
+App.getInitialProps = async (appContext) => {
+  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  // console.log("hereeee")
+  const test = await getStaticProps();
+  // console.log("test is: ", test)
+  const appProps = test;
+  // const appProps = await App.getInitialProps(appContext);
+  return { ...appProps };
+};
+
+
+
+export async function getStaticProps(context) {
+  let navbarComponent = null;
+  let navbarComponentError = null;
+
+  try {
+    navbarComponent = await api.getNavbar();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    navbarComponentError = dev_error;
+  }
+
+  if (!navbarComponent) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    pageProps: {
+      navbarComponent: JSON.stringify(navbarComponent),
+      navbarComponentError: JSON.stringify(navbarComponentError),
+    },
+    revalidate: 10, // In seconds
+  };
+}
+
 
 export default App;
