@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
-import { H2, H6 } from "src/components/EvComponents/Typography";
-import { H4, H5 } from "../Typography";
+import { H2} from "src/components/EvComponents/Typography";
+import { H4 } from "../Typography";
 
 const Content = (item, index) => {
   if (item.direction === "right") {
