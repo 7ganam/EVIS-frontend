@@ -54,9 +54,6 @@ const GeneralPage = (props) => {
     };
   }, [props?.openTechPage]);
 
-  console.log("data: ", openTechPageData);
-  // console.log("data: ", openTechPage);
-
   return (
     <EvLayout showNavbar={true}>
       <PageHeader
