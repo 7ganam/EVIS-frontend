@@ -56,8 +56,6 @@ const GeneralPage = (props) => {
     };
   }, [props?.conferencePage]);
 
-  console.log('data: ', downloadLink);
-
   return (
     <EvLayout showNavbar={true}>
       <PageHeader
