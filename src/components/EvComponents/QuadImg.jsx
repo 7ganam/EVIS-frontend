@@ -16,6 +16,7 @@ const Content = (item, index) => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
+          boxShadow: "-2px 5px 4px #00000078"
         }}
       >
         <Grid container>
@@ -64,6 +65,7 @@ const Content = (item, index) => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
+          boxShadow: "-2px 5px 4px #00000078"
         }}
       >
         <Grid container>
@@ -99,7 +101,7 @@ const Content = (item, index) => {
 const QuadImg = (props) => {
   const data = props.data;
   return (
-    <Box sx={{ boxShadow: "-2px 5px 4px #00000078" }}>
+    <Box>
       <Grid
         container
         sx={{

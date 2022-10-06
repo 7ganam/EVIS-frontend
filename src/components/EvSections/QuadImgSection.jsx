@@ -68,6 +68,16 @@ const itemsData = [
     ],
     direction: "right",
   },
+  {
+    img: "/assets/images/quadImage/h2.jpg",
+    title: "Hydrogen",
+    ps: [
+      "Hydrogen Vehicles",
+      "Hydrogen Tank",
+      "Hydrogen Refuelling",
+    ],
+    direction: "left",
+  }
 ];
 
 const QuadImgSection = () => {
