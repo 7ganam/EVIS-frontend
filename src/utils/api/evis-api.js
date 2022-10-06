@@ -1,7 +1,7 @@
 import axios from "axios";
 
-let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
-// let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL2;
+// let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL2;
 const getSpeakers = async () => {
   const response = await axios.get(`${baseUrl}/api/speakers?populate=*`);
   return response.data;

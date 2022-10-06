@@ -38,7 +38,7 @@ const GeneralPage = (props) => {
     const agendaTitle = conferencePageData?.header?.text;
     const firstBody = { text: conferencePageData?.first_body, };
     const secondBody = { text: conferencePageData?.second_body, };
-    const downloadLink = conferencePageData?.download_link;
+    const downloadLink = conferencePageData?.download_link?.data?.[0]?.attributes?.url;
     const mainImage = conferencePageData?.header?.image?.data?.attributes?.url;
     const scheduleImages = conferencePageData?.schedule_images?.data?.map((highlight) => {
       return highlight?.attributes?.url;
@@ -55,6 +55,8 @@ const GeneralPage = (props) => {
       scheduleImages,
     };
   }, [props?.conferencePage]);
+
+  console.log('data: ', downloadLink);
 
   return (
     <EvLayout showNavbar={true}>
