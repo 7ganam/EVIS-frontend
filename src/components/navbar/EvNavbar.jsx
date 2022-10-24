@@ -327,7 +327,7 @@ const Navbar = ({ elevation, isFixed }) => {
             // minWidth: "300px",
           }}
         >
-          <Link href="/">
+          {/* <Link href="/">
             <a>
               <Image
                 // height={{ xs: "50", md: isFixed ? "70" : "90" }}
@@ -337,7 +337,7 @@ const Navbar = ({ elevation, isFixed }) => {
                 sx={{ height: { xs: "60px", md: isFixed ? "70px" : "140px" } }}
               />
             </a>
-          </Link>
+          </Link> */}
         </Box>
       </Box>
     </NavBarWrapper>
