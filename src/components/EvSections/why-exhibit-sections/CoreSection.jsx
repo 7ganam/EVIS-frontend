@@ -148,7 +148,6 @@ const CoreSection = () => {
   return (
     <Box>
       <SectionTitle>{"Core Sectors"}</SectionTitle>
-      {/* <QuadImgSection /> */}
       <Box mt = {3}>
         <Container>
           <Carousel
