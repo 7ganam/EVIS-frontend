@@ -13,6 +13,7 @@ import { styled } from "@mui/material/styles";
 import QuadImgSection from "src/components/EvSections/QuadImgSection";
 import Carousel from "@/components/carousel/Carousel";
 import useWindowSize from "src/hooks/useWindowSize";
+import { H1 } from "@/components/Typography";
 
 const itemsData = [
   {
@@ -110,21 +111,21 @@ const Slides = () => {
           <Grid
             item
             xs={12}
-            sm={4}
+            sm={5}
             order={{ sm: 1 }}
             sx={{
-              bgcolor: "rgba(0,0,0,0.6)",
+              bgcolor: "rgba(0,0,0,0.7)",
               color: "white",
               height: "500px",
             }}
           >
             <Box
               sx={{
-                px: 3,
-                py: 4,
+                px: 6,
+                py: 5,
               }}
             >
-              <H2> {item.title} </H2>
+              <H1> {item.title} </H1>
               {item.ps?.map((item, index) => {
                 return (
                   <Box sx={{ pt: 1 }} key={index}>
@@ -144,11 +145,10 @@ const Slides = () => {
 const CoreSection = () => {
   const theme = useTheme();
 
-
   return (
     <Box>
       <SectionTitle>{"Core Sectors"}</SectionTitle>
-      <Box mt = {3}>
+      <Box mt={3}>
         <Container>
           <Carousel
             step={1}
