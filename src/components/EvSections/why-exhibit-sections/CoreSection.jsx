@@ -151,6 +151,8 @@ const CoreSection = () => {
       <Box mt={3}>
         <Container>
           <Carousel
+            autoPlay={true}
+            interval={2500}
             step={1}
             totalSlides={5}
             showArrowOnHover={true}
