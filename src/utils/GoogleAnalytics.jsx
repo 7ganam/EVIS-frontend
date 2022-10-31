@@ -15,7 +15,7 @@ const GoogleAnalytics = () => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-FLCDXWTVMD');
+            gtag('config', 'G-5PNK6PZR9M');
           `,
         }}
       ></script>
