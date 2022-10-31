@@ -32,11 +32,11 @@ const imagesData = [
 
 const mediaData = [
   {
-    source: "/assets/images/organizations/NationSheild.png",
+    source: "/assets/images/organizations/nationshield logo-01.png",
     text: "",
   },
   {
-    source: "/assets/images/organizations/HT Logo Square.png",
+    source: "/assets/images/organizations/highway.png",
     text: "",
   },
 ];
@@ -70,7 +70,7 @@ const PartnersGrid = ({ sx }) => {
         })}
       </Grid>
       <Typography variant="h5" component="h5">
-        Media PARTNERS
+        MEDIA PARTNERS
       </Typography>
       <Grid
         container

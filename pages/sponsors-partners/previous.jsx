@@ -98,7 +98,7 @@ const mediaPartners = [
     text: "",
   },
   {
-    source: "/assets/images/organizations/HT Logo Square.png",
+    source: "/assets/images/organizations/highway.png",
     text: "",
   },
 ];
