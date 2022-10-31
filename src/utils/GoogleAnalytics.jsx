@@ -4,9 +4,14 @@ const GoogleAnalytics = () => {
   return (
     <React.Fragment>
       {/* Google analytics */}
-      <script
+      {/* <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-FLCDXWTVMD"
+
+      ></script> */}
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-5PNK6PZR9M"
       ></script>
       <script
         dangerouslySetInnerHTML={{
