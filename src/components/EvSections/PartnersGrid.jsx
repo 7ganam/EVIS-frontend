@@ -13,10 +13,6 @@ const imagesData = [
     text: "",
   },
   // {
-  //   source: "/assets/images/organizations/CHARIN.png",
-  //   text: "Venue Partner",
-  // },
-  // {
   //   source: "/assets/images/organizations/GEEE.png",
   //   text: "Host City",
   // },
@@ -34,6 +30,17 @@ const imagesData = [
   // },
 ];
 
+const mediaData = [
+  {
+    source: "/assets/images/organizations/NationSheild.png",
+    text: "",
+  },
+  {
+    source: "/assets/images/organizations/HT Logo Square.png",
+    text: "",
+  },
+];
+
 const PartnersGrid = ({ sx }) => {
   return (
     <Box sx={{ ...sx, textAlign: "center", paddingBottom: "3rem" }}>
@@ -48,6 +55,30 @@ const PartnersGrid = ({ sx }) => {
         justifyContent="center"
       >
         {imagesData.map(({ source, text }) => {
+          return (
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              md={2}
+              key={source}
+              sx={{ height: "150px" }}
+            >
+              <LogoWithTitle source={source} text={text} />
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Typography variant="h5" component="h5">
+        Media PARTNERS
+      </Typography>
+      <Grid
+        container
+        sx={{ textAlign: "center", placeItems: "center" }}
+        mt={3}
+        justifyContent="center"
+      >
+        {mediaData.map(({ source, text }) => {
           return (
             <Grid item xs={12} sm={4} md={2} key={source}>
               <LogoWithTitle source={source} text={text} />

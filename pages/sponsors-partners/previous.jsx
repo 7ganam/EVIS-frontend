@@ -97,6 +97,10 @@ const mediaPartners = [
     source: "/assets/images/associations/Petrofinder.png",
     text: "",
   },
+  {
+    source: "/assets/images/organizations/HT Logo Square.png",
+    text: "",
+  },
 ];
 const pageHeaderData = {
   text: "TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
@@ -249,7 +253,7 @@ const GeneralPage = (props) => {
         <Grid
           container
           sx={{
-            width: "450px",
+            width: "600px",
             textAlign: "center",
             placeItems: "center",
             marginTop: "40px",
@@ -257,7 +261,7 @@ const GeneralPage = (props) => {
         >
           {mediaPartners.map(({ source, text }) => {
             return (
-              <Grid item xs={12} sm={6} key={source}>
+              <Grid item xs={12} sm={4} key={source}>
                 <LogoWithTitle source={source} text={text} />
               </Grid>
             );
