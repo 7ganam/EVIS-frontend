@@ -90,15 +90,7 @@ const researchPartners = [
 
 const mediaPartners = [
   {
-    source: "/assets/images/associations/Nationshield.png",
-    text: "",
-  },
-  {
     source: "/assets/images/associations/Petrofinder.png",
-    text: "",
-  },
-  {
-    source: "/assets/images/organizations/highway.png",
     text: "",
   },
 ];
