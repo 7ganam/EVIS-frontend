@@ -244,6 +244,7 @@ const GeneralPage = (props) => {
         <SectionTitle>MEDIA PARTNERS</SectionTitle>
         <Grid
           container
+          justifyContent={"center"}
           sx={{
             width: "600px",
             textAlign: "center",
