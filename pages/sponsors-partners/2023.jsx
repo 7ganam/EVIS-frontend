@@ -25,6 +25,11 @@ const mediaPartners = [
     text: "",
     link: "https://highways.today/",
   },
+  {
+    source: "/assets/images/organizations/E-Vehicle.png",
+    text: "",
+    link: "https://e-vehicleinfo.com/",
+  },
 ];
 const pageHeaderData = {
   text: "TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
