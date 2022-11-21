@@ -30,6 +30,11 @@ const mediaPartners = [
     text: "",
     link: "https://e-vehicleinfo.com/",
   },
+  {
+    source: "/assets/images/organizations/Media7.png",
+    text: "",
+    link: " https://media7.com",
+  },
 ];
 const pageHeaderData = {
   text: "TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
