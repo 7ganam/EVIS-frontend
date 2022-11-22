@@ -31,7 +31,7 @@ export default class Bazar extends Document {
               src="https://www.googletagmanager.com/ns.html?id=GTM-P5W4JQ4"
               height="0"
               width="0"
-              style="display:none;visibility:hidden"
+              style={{ display: "none", visibility: "hidden" }}
             ></iframe>
           </noscript>
           <Main />

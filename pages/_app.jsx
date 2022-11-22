@@ -13,6 +13,7 @@ import "react-quill/dist/quill.snow.css";
 import "simplebar/dist/simplebar.min.css";
 import MuiTheme from "src/theme/MuiTheme";
 import GoogleAnalytics from "src/utils/GoogleAnalytics";
+import { analytics } from "src/utils/gtm";
 import OpenGraphTags from "src/utils/OpenGraphTags";
 import "../src/fake-db";
 //Binding events.
@@ -225,12 +226,15 @@ const App = ({ Component, pageProps }) => {
 
   const [global, setGolobal] = useState({ advisoryBoard });
 
+  useEffect(() => {
+    analytics(window, document, "script", "dataLayer", "GTM-P5W4JQ4");
+  });
   return (
     <Fragment>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <GoogleAnalytics />
+        {/* <GoogleAnalytics /> */}
         <OpenGraphTags />
       </Head>
 

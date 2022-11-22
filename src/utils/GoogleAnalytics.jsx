@@ -26,15 +26,6 @@ const GoogleAnalytics = () => {
         }}
       ></script>
 
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-P5W4JQ4"
-          height="0"
-          width="0"
-          style="display:none;visibility:hidden"
-        ></iframe>
-      </noscript>
-
       <Script
         id="my-script"
         strategy="afterInteractive"
