@@ -327,7 +327,7 @@ const Navbar = ({ elevation, isFixed }) => {
             // minWidth: "300px",
           }}
         >
-          <Link href="/">
+          <Link href="https://www.moe.gov.ae/En/Pages/Home.aspx">
             <a>
               <Image
                 height={{ xs: "50", md: isFixed ? "70" : "90" }}

@@ -24,14 +24,14 @@ const data = [
     Email: "hesham@leadingeventsusa.com",
     EmailTo: "mhesham@leadingeventsusa.com",
   },
-  {
-    Src: "/assets/images/contact-us/NasryAbouZaki.jpeg",
-    Name: "Nasry Abou Zaki",
-    Position: "PR Manager",
-    Mobile: "+971 2 4444 788 / +971 56 998 9252",
-    Email: "nasry.zaki@9yards.ae",
-    EmailTo: "mailto:nasry.zaki@9yards.ae",
-  },
+  // {
+  //   Src: "/assets/images/contact-us/NasryAbouZaki.jpeg",
+  //   Name: "Nasry Abou Zaki",
+  //   Position: "PR Manager",
+  //   Mobile: "+971 2 4444 788 / +971 56 998 9252",
+  //   Email: "nasry.zaki@9yards.ae",
+  //   EmailTo: "mailto:nasry.zaki@9yards.ae",
+  // },
 
   {
     Src: "/assets/images/contact-us/ZayidAhamed.jpeg",
@@ -42,7 +42,7 @@ const data = [
     EmailTo: "mailto:zayid.ahamed@nirvanatls.com",
   },
   {
-    Src: "/assets/images/contact-us/TheanleouaChu.jpeg",
+    Src: "/assets/images/contact-us/2_Chu.jpg",
     Name: "Theanleoua Chu",
     Position: "Marketing & Media Enquiries",
     Mobile: "+971 2 304 3333 / +971 503833859",
@@ -50,21 +50,44 @@ const data = [
     EmailTo: "mailto:theanleoua.chu@nirvanatls.com",
   },
   {
-    Src: "/assets/images/contact-us/JessySuraj.jpeg",
+    Src: "/assets/images/contact-us/2_Jessy.jpg",
     Name: "Jessy Suraj",
     Position: "Operation Enquiries",
     Mobile: "+971 2 304 3322 / +971 50 686 3769",
     Email: "jessy.suraj@nirvanatls.com",
     EmailTo: "mailto:jessy.suraj@nirvanatls.com",
   },
-
   {
-    Src: "/assets/images/contact-us/HadhiaShaju.jpeg",
+    Src: "/assets/images/contact-us/2_hadhia.jpeg",
     Name: "Hadhia Shaju",
     Position: "Digital Marketing",
     Mobile: "+971 2 304 3322 / +971 50 686 3137",
     Email: "hadhia.shaju@nirvanatls.com",
     EmailTo: "mailto:hadhia.shaju@nirvanatls.com",
+  },
+  {
+    Src: "/assets/images/contact-us/2_CHRIS.jpg",
+    Name: "Christopher Salazar",
+    Position: "Graphic Designer",
+    Mobile: "+971 2 304 3360/ +971 56 433 1898",
+    Email: "christopher.salazar@nirvanatls.com",
+    EmailTo: "mailto:christopher.salazar@nirvanatls.com",
+  },
+  {
+    Src: "/assets/images/contact-us/2_april.jpeg",
+    Name: "April Claridad",
+    Position: "Operations and Speaker Management Enquiries",
+    Mobile: "+971 2 304 3356 / +971 56 4151646",
+    Email: " april.claridad@nirvanatls.com",
+    EmailTo: "mailto:april.claridad@nirvanatls.com",
+  },
+  {
+    Src: "/assets/images/contact-us/2_Abdallah.jpg",
+    Name: "Abdallah Sayed",
+    Position: "Sales Coordinator",
+    Mobile: "+971 2 304 3353/+971 50 893 0804",
+    Email: "abdallah.sayed@nirvanatls.com",
+    EmailTo: "mailto:abdallah.sayed@nirvanatls.com",
   },
 ];
 
@@ -86,7 +109,7 @@ const InnovationTeamSection = () => {
       >
         {data.map(({ Src, Name, Position, Mobile, Email, EmailTo }) => {
           return (
-            <Grid item xs={12} sm={6} md={4} key={Name}>
+            <Grid item xs={12} sm={6} md={3} key={Name} gap={"30px"}>
               <RectangularInfoImage
                 src={Src}
                 title={Position}
