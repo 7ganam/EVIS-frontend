@@ -144,12 +144,12 @@ const EvHome = (props) => {
     },
     {
       text: "DOWNLOAD EVENT BROCHURE",
-      url: "/assets/images/summit-agenda.pdf",
+      url: "/assets/images/Brochure_2023 .pdf",
       type: "download",
     },
     {
       text: "DOWNLOAD POST SHOW REPORT",
-      url: "/assets/images/summit-agenda.pdf",
+      url: "/assets/images/2022PostShowRep.pdf",
       type: "download",
     },
   ];
