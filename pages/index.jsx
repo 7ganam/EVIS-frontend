@@ -25,7 +25,8 @@ const StyledButton = styled(Button)(() => ({
 const pageHeaderData = {
   text: "The MENA’s First Electric Vehicles Exhibition and Conference",
   buttonText: "Become A Sponsor",
-  buttonLink: "/participate/sponsor",
+  buttonLink:
+    " https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome",
   image: "/assets/images/ev-home/carousel2.jpeg",
 };
 const EvHome = (props) => {
@@ -124,22 +125,22 @@ const EvHome = (props) => {
   const buttonsData = [
     {
       text: "BOOK YOUR STAND",
-      url: "/participate/exhibitor",
+      url: " https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
       type: "internalLink",
     },
     {
       text: "BECOME A SPONSOR",
-      url: "/participate/sponsor",
+      url: " https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome",
       type: "internalLink",
     },
     {
       text: "DELEGATE REGISTRATION",
-      url: "/participate/delegate",
+      url: "https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome",
       type: "internalLink",
     },
     {
       text: "VISITOR REGISTRATION",
-      url: "/participate/visitor",
+      url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
       type: "internalLink",
     },
     {
@@ -197,7 +198,11 @@ const EvHome = (props) => {
                 </Link>
               </Box>
               <Box mx={"0px"} p={1.25}>
-                <Link href={"/participate/exhibitor"}>
+                <Link
+                  href={
+                    "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome"
+                  }
+                >
                   <a>
                     <StyledButton
                       variant="contained"
