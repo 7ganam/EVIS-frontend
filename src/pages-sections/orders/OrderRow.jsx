@@ -45,10 +45,10 @@ const OrderRow = ({ item }) => {
               sx={{
                 p: "0.25rem 0.5rem",
                 fontSize: 12,
-                color: !!getColor(item.status)
+                color: getColor(item.status)
                   ? `${getColor(item.status)}.900`
                   : "inherit",
-                backgroundColor: !!getColor(item.status)
+                backgroundColor: getColor(item.status)
                   ? `${getColor(item.status)}.100`
                   : "none",
               }}

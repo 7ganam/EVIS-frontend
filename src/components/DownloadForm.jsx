@@ -12,27 +12,23 @@ import Alert from "@mui/material/Alert";
 
 const initialValues = {
   first_name: "",
-  second_name: "",
+  last_name: "",
+  company: "",
   job_title: "",
-  city: "",
   country: countryList[229],
   phone_number: "",
-  address: "",
-  website: "",
   email: "",
 }; // uncomment these fields below for from validation
 const checkoutSchema = yup.object().shape({
   first_name: yup.string().required("required"),
-  second_name: yup.string().required("required"),
+  last_name: yup.string().required("required"),
+  company: yup.string().required("required"),
   job_title: yup.string().required("required"),
   country: yup.object().required("required"),
-  // city: yup.string().required("required"),
   email: yup.string().required("required"),
   phone_number: yup.string(),
-  // address: yup.string().required("required"),
-  // website: yup.string().required("required"),
 });
-function DownloadForm({ sponsors, endpoint }) {
+function DownloadForm({ sponsors, endpoint, downloadFileUrl, fileName }) {
   const [success, setSuccess] = useState(false);
   const [failure, setFailure] = useState(false);
 
@@ -52,6 +48,22 @@ function DownloadForm({ sponsors, endpoint }) {
         setSuccess(false);
         setFailure(true);
       });
+
+    fetch(downloadFileUrl)
+      .then((resp) => resp.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        // the filename you want
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        alert("your file has downloaded!");
+      })
+      .catch(() => alert("file failed to download"));
   };
 
   return (
@@ -107,11 +119,11 @@ function DownloadForm({ sponsors, endpoint }) {
                         }}
                         label="Second Name"
                         onBlur={handleBlur}
-                        name="second_name"
+                        name="last_name"
                         onChange={handleChange}
-                        value={values.second_name}
-                        error={!!touched.second_name && !!errors.second_name}
-                        helperText={touched.second_name && errors.second_name}
+                        value={values.last_name}
+                        error={!!touched.last_name && !!errors.last_name}
+                        helperText={touched.last_name && errors.last_name}
                       />
                     </Grid>{" "}
                     <Grid item sm={6} xs={12}>
@@ -135,13 +147,13 @@ function DownloadForm({ sponsors, endpoint }) {
                         sx={{
                           mb: 2,
                         }}
-                        label="Nationality"
+                        label="Company"
                         onBlur={handleBlur}
-                        name="nationality"
+                        name="company"
                         onChange={handleChange}
-                        value={values.nationality}
-                        error={!!touched.nationality && !!errors.nationality}
-                        helperText={touched.nationality && errors.nationality}
+                        value={values.company}
+                        error={!!touched.company && !!errors.company}
+                        helperText={touched.company && errors.company}
                       />
                     </Grid>{" "}
                     <Grid item sm={6} xs={12}>
@@ -200,59 +212,6 @@ function DownloadForm({ sponsors, endpoint }) {
                         )}
                       />
                     </Grid>
-                    <Grid item sm={6} xs={12}>
-                      <TextField
-                        fullWidth
-                        name="city"
-                        label="City"
-                        value={values.city}
-                        onChange={handleChange}
-                        helperText={touched.city && errors.city}
-                        error={touched.city && Boolean(errors.city)}
-                      />
-                    </Grid>
-                    <Grid item sm={6} xs={12}>
-                      <TextField
-                        fullWidth
-                        sx={{
-                          mb: 2,
-                        }}
-                        label="Zip Code"
-                        name="zip_code"
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                        value={values.zip_code}
-                        error={!!touched.zip_code && !!errors.zip_code}
-                        helperText={touched.zip_code && errors.zip_code}
-                      />
-                    </Grid>{" "}
-                    <Grid item sm={6} xs={12}>
-                      <TextField
-                        fullWidth
-                        sx={{
-                          mb: 2,
-                        }}
-                        label="Website"
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                        name="website"
-                        value={values.website}
-                        error={!!touched.website && !!errors.website}
-                        helperText={touched.website && errors.website}
-                      />
-                    </Grid>{" "}
-                    <Grid item sm={6} xs={12}>
-                      <TextField
-                        fullWidth
-                        label="Address"
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                        name="address"
-                        value={values.address}
-                        error={!!touched.address && !!errors.address}
-                        helperText={touched.address && errors.address}
-                      />
-                    </Grid>
                   </Grid>
 
                   {failure && (
@@ -276,7 +235,7 @@ function DownloadForm({ sponsors, endpoint }) {
                       type="submit"
                       fullWidth
                     >
-                      Submit
+                      Submit & Download
                     </Button>
                   </Grid>
                 </Grid>

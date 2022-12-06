@@ -48,7 +48,7 @@ const evNavbarNavigations = [
       },
       {
         title: "Book your stand",
-        url: "/exhibition/book-your-stand",
+        url: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
       },
     ],
   },
