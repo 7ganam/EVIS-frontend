@@ -44,6 +44,16 @@ const mediaData = [
     source: "/assets/images/organizations/highway.png",
     text: "",
   },
+  {
+    source: "/assets/images/organizations/E-Vehicle.png",
+    text: "",
+    link: "https://e-vehicleinfo.com/",
+  },
+  {
+    source: "/assets/images/organizations/Media7.png",
+    text: "",
+    link: " https://media7.com",
+  },
 ];
 
 const PartnersGrid = ({ sx }) => {
