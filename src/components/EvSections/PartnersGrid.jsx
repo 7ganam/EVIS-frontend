@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { H5 } from "src/components/EvComponents/Typography";
-import LogoWithTitle from "../EvComponents/LogoWithTitle";
 import { H4 } from "../Typography";
+import LogoWithTitle from "@/components/EvComponents/LogoWithTitle";
 
 const StyledImage = (props) => {
   return <img src={props.Src} width="170" style={{ marginBottom: "10px" }} />;
@@ -9,7 +9,12 @@ const StyledImage = (props) => {
 
 const imagesData = [
   {
-    source: "/assets/images/organizations/CEBC.png",
+    source: "/assets/images/partners/CEBC.png",
+    text: "",
+  },
+
+  {
+    source: "/assets/images/partners/CHARIN.png",
     text: "",
   },
   // {
@@ -48,10 +53,11 @@ const PartnersGrid = ({ sx }) => {
       <Typography variant="h5" component="h5">
         KNOWLEDGE PARTNERS
       </Typography>
+
       <Grid
         container
         sx={{ textAlign: "center", placeItems: "center" }}
-        mt={3}
+        mb={3}
         justifyContent="center"
       >
         {imagesData.map(({ source, text }) => {
@@ -69,7 +75,7 @@ const PartnersGrid = ({ sx }) => {
           );
         })}
       </Grid>
-      <Typography variant="h5" component="h5">
+      <Typography variant="h5" component="h5" sx={{ mt: 5 }}>
         MEDIA PARTNERS
       </Typography>
       <Grid

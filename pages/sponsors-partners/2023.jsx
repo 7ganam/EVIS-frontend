@@ -36,6 +36,16 @@ const mediaPartners = [
     link: " https://media7.com",
   },
 ];
+const knowledgePartners = [
+  {
+    source: "/assets/images/partners/CEBC.png",
+    text: "",
+  },
+  {
+    source: "/assets/images/partners/CHARIN.png",
+    text: "",
+  },
+];
 const pageHeaderData = {
   text: "TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
   //   buttonText: "Save The Date",
@@ -125,6 +135,26 @@ const GeneralPage = (props) => {
                     <LogoWithTitle source={source} text={text} />
                   </a>
                 </Box>
+              </Grid>
+            );
+          })}
+        </Grid>
+        <SectionTitle>KNOWLEDGE PARTNERS</SectionTitle>
+        <Grid
+          container
+          columns={{ xs: 12, sm: 12, md: 10 }}
+          justifyContent={"center"}
+          sx={{
+            width: "950px",
+            textAlign: "center",
+            placeItems: "center",
+            marginTop: "40px",
+          }}
+        >
+          {knowledgePartners.map(({ source, text }) => {
+            return (
+              <Grid item xs={12} sm={4} md={2} key={source}>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}
