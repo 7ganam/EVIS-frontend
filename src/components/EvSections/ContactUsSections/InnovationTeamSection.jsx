@@ -17,7 +17,7 @@ const data = [
     EmailTo: "mailto:naser.ali@nirvanatls.com",
   },
   {
-    Src: "/assets/images/contact-us/HeshamAlbahri.jpeg",
+    Src: "/assets/images/contact-us/HESHAM-01.png",
     Name: "Hesham Albahri",
     Position: "Member of Organizing Committee - US Market Executive Manager ",
     Mobile: "+18185817431",
