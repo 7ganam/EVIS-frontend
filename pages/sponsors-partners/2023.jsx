@@ -35,15 +35,22 @@ const mediaPartners = [
     text: "",
     link: " https://media7.com",
   },
+  {
+    source: "/assets/images/partners/petrofinder.png",
+    text: "",
+    link: "http://www.petrofinder.com",
+  },
 ];
 const knowledgePartners = [
   {
     source: "/assets/images/partners/CEBC.png",
     text: "",
+    link: "https://www.cebcmena.com",
   },
   {
     source: "/assets/images/partners/CHARIN.png",
     text: "",
+    link: "https://www.charin.global",
   },
 ];
 const pageHeaderData = {
@@ -151,10 +158,12 @@ const GeneralPage = (props) => {
             marginTop: "40px",
           }}
         >
-          {knowledgePartners.map(({ source, text }) => {
+          {knowledgePartners.map(({ source, text, link }) => {
             return (
               <Grid item xs={12} sm={4} md={2} key={source}>
-                <LogoWithTitle source={source} text={text} />
+                <a target="_blank" href={link} rel="noopener noreferrer">
+                  <LogoWithTitle source={source} text={text} />
+                </a>
               </Grid>
             );
           })}
