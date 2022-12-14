@@ -26,7 +26,7 @@ const ByExhibit = (props) => {
         <Grid container spacing={3} alignItems="center">
           {data.map((item, ind) => {
             return (
-              <Grid item lg={2.4} md={3} xs={12} key={ind}>
+              <Grid item lg={4} md={4} xs={12} key={ind}>
                 <Card
                   hoverEffect
                   data-aos="fade-up"
@@ -41,13 +41,21 @@ const ByExhibit = (props) => {
                     textAlign: "center",
                   }}
                 >
-                  <Image height={100} mb={0.5} src={item.img} alt="logo" />
+                  <Image
+                    height={150}
+                    width={150}
+                    style={{ objectFit: "contain" }}
+                    mb={0.5}
+                    src={item.img}
+                    alt="logo"
+                  />
 
                   <H5
                     width="190px"
                     sx={{
                       color: "black",
                       mt: "10px",
+                      fontSize: "20px",
                     }}
                   >
                     {item.content}

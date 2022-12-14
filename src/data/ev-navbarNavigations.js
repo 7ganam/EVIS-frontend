@@ -40,7 +40,7 @@ const evNavbarNavigations = [
       },
       {
         title: "2022 Exhibitors",
-        url: "/coming-soon",
+        url: "/exhibition/2022",
       },
       {
         title: "2023 Exhibitors",
