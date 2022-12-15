@@ -123,11 +123,11 @@ const serviceList = [
   },
   {
     img: "/assets/images/2022_EXHIBITOR/NEV investment/NEV LOGO png.png",
-    content: "NEV investment",
+    content: "NEV Investment",
   },
   {
     img: "/assets/images/2022_EXHIBITOR/Propower Electrical equipments/Powertech Mobility English Logo .pdf.png",
-    content: "Propower Electrical equipments",
+    content: "Propower Electrical Equipments",
   },
   {
     img: "/assets/images/2022_EXHIBITOR/Pulse EV/Pulse Logo -02.jpg",

@@ -21,7 +21,7 @@ const ComingSoon = () => {
       px={2}
     >
       <BazarImage
-        src="/assets/images/illustrations/coming-soon-1.png"
+        src="/assets/images/coming-soon-1.png"
         sx={{
           display: "block",
           maxWidth: "320px",
