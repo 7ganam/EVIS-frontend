@@ -4,7 +4,7 @@ import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import Image from "src/components/BazarImage";
 import { H5 } from "src/components/Typography";
 
-const ByExhibit = (props) => {
+const Cards = (props) => {
   const theme = useTheme();
 
   const data = props.data;
@@ -16,7 +16,7 @@ const ByExhibit = (props) => {
         py: "10px",
       }}
     >
-      <SectionTitle sx={{ mb: "20px" }}>BY EXHIBITING, YOU CAN</SectionTitle>
+      <SectionTitle sx={{ mb: "20px" }}>2022 EXHIBITORS</SectionTitle>
 
       <Container
         sx={{
@@ -26,7 +26,7 @@ const ByExhibit = (props) => {
         <Grid container spacing={3} alignItems="center">
           {data.map((item, ind) => {
             return (
-              <Grid item lg={2.4} md={3} xs={12} key={ind}>
+              <Grid item lg={4} md={4} xs={12} key={ind}>
                 <Card
                   hoverEffect
                   data-aos="fade-up"
@@ -41,13 +41,21 @@ const ByExhibit = (props) => {
                     textAlign: "center",
                   }}
                 >
-                  <Image height={100} mb={0.5} src={item.img} alt="logo" />
+                  <Image
+                    height={150}
+                    width={150}
+                    style={{ objectFit: "contain" }}
+                    mb={0.5}
+                    src={item.img}
+                    alt="logo"
+                  />
 
                   <H5
                     width="190px"
                     sx={{
                       color: "black",
                       mt: "10px",
+                      fontSize: "20px",
                     }}
                   >
                     {item.content}
@@ -62,4 +70,4 @@ const ByExhibit = (props) => {
   );
 };
 
-export default ByExhibit;
+export default Cards;

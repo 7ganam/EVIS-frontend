@@ -10,6 +10,7 @@ import api from "src/utils/api/grocery3-shop";
 import QuadImgSection from "src/components/EvSections/QuadImgSection";
 import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
 import PartnersGrid from "src/components/EvSections/PartnersGrid";
+import Cards from "@/components/EvSections/exhibitors/Cards";
 // ======================================================
 // ======================================================
 
@@ -34,7 +35,7 @@ const peopleList = [
 const serviceList = [
   {
     img: "/assets/images/2022_EXHIBITOR/Al Damani/Al Damani logo.png",
-    content: "Al Damanis",
+    content: "Al Damani",
   },
   {
     img: "/assets/images/2022_EXHIBITOR/Al Masaood Automobiles Company/Al Masaood Logo.png",
@@ -50,7 +51,7 @@ const serviceList = [
   },
   {
     img: "/assets/images/2022_EXHIBITOR/autonxt/AA Logo Final.png",
-    content: "autonxt",
+    content: "Autonxt",
   },
   {
     img: "/assets/images/2022_EXHIBITOR/Barq EV/download.png",
@@ -58,7 +59,7 @@ const serviceList = [
   },
   {
     img: "/assets/images/2022_EXHIBITOR/British Volt/British volt logo.png",
-    content: "British Volt",
+    content: "BritishVolt",
   },
   {
     img: "/assets/images/2022_EXHIBITOR/CEBC/CEBC_Logo---New.png",
@@ -205,7 +206,7 @@ const generalPage = () => {
         }}
       ></Container>
       <Container>
-        <ByExhibit data={serviceList} />
+        <Cards data={serviceList} />
       </Container>
     </EvLayout>
   );
