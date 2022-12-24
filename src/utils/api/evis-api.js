@@ -132,6 +132,17 @@ const getTestimonials = async () => {
   return response.data;
 }
 
+const getEvisInNews = async () => {
+  const response = await axios.get(`${baseUrl}/api/news-videos?populate=deep`);
+  return response.data;
+};
+
+const getNewsArticle = async () => {
+  const response = await axios.get(`${baseUrl}/api/news-articles?populate=deep`);
+  return response.data;
+};
+
+
 const api = {
   getSpeakers,
   getSpeaker,
@@ -141,7 +152,8 @@ const api = {
   getSponsors,
   getPartners,
   getTestimonials,
-
+  getEvisInNews,
+  getNewsArticle,
   getAgenda,
   getOpenTech,
   getContactUs,
