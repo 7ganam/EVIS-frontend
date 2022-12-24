@@ -55,18 +55,6 @@ const partnersData = [
   {
     source: "/assets/images/partners/CHARIN.png",
   },
-  {
-    source: "/assets/images/partners/GEEE.png",
-  },
-  {
-    source: "/assets/images/partners/ISF.png",
-  },
-  {
-    source: "/assets/images/partners/AVERE.png",
-  },
-  {
-    source: "/assets/images/partners/Oxford.png",
-  },
 ];
 
 const Section3 = () => {

@@ -28,11 +28,11 @@ const checkoutSchema = yup.object().shape({
   country: yup.object().required("required"),
   // city: yup.string().required("required"),
   email: yup.string().required("required"),
-  phone_number: yup.string().required("required"),
+  phone_number: yup.string(),
   // address: yup.string().required("required"),
   // website: yup.string().required("required"),
 });
-function MainForm({ sponsors, endpoint }) {
+function DownloadForm({ sponsors, endpoint }) {
   const [success, setSuccess] = useState(false);
   const [failure, setFailure] = useState(false);
 
@@ -321,4 +321,4 @@ function MainForm({ sponsors, endpoint }) {
   );
 }
 
-export default MainForm;
+export default DownloadForm;

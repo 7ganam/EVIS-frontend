@@ -71,11 +71,7 @@ const sectionTitle = {
 // ];
 
 const InnovationTeamSection = (props) => {
-  let {
-    InnovationTeamData,
-    data
-
-  } = useMemo(() => {
+  let { InnovationTeamData, data } = useMemo(() => {
     if (!props?.InnovationTeam) {
       return {};
     }
@@ -89,13 +85,12 @@ const InnovationTeamSection = (props) => {
         Mobile: attributes?.attributes?.phone,
         Email: attributes?.attributes?.member_email,
         EmailTo: "mailto:" + attributes?.attributes?.member_email,
-      }
+      };
     });
 
     return {
       InnovationTeamData,
       data,
-
     };
   }, [props?.InnovationTeam]);
 
@@ -116,7 +111,7 @@ const InnovationTeamSection = (props) => {
       >
         {data?.map(({ Src, Name, Position, Mobile, Email, EmailTo }) => {
           return (
-            <Grid item xs={12} sm={6} md={4} key={Name}>
+            <Grid item xs={12} sm={6} md={3} key={Name} gap={"30px"}>
               <RectangularInfoImage
                 src={Src}
                 title={Position}

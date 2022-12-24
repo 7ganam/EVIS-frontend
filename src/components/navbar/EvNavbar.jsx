@@ -327,17 +327,15 @@ const Navbar = ({ elevation, isFixed }) => {
             // minWidth: "300px",
           }}
         >
-          <Link href="/">
-            <a>
-              <Image
-                // height={{ xs: "50", md: isFixed ? "70" : "90" }}
-                mb={0}
-                src="/assets/images/MOEI.jpeg"
-                alt="logo"
-                sx={{ height: { xs: "60px", md: isFixed ? "70px" : "140px" } }}
-              />
-            </a>
-          </Link>
+          <a href="https://www.moe.gov.ae/En/Pages/Home.aspx">
+            <Image
+              height={{ xs: "50", md: isFixed ? "70" : "90" }}
+              mb={0}
+              src="/assets/images/MOEI.png"
+              alt="logo"
+              sx={{ height: { xs: "60px", md: isFixed ? "70px" : "140px" } }}
+            />
+          </a>
         </Box>
       </Box>
     </NavBarWrapper>

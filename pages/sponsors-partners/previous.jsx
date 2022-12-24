@@ -123,7 +123,7 @@ const GeneralPage = (props) => {
         key_partner: sponsor?.attributes?.key_partner ?? null,
         sponsor: sponsor?.attributes?.sponsor ?? null,
         international_media_partner:
-        sponsor?.attributes?.international_media_partner ?? null,
+          sponsor?.attributes?.international_media_partner ?? null,
         knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
         research_partner: sponsor?.attributes?.research_partner ?? null,
         media_partner: sponsor?.attributes?.media_partner ?? null,
@@ -323,8 +323,9 @@ const GeneralPage = (props) => {
         <SectionTitle>MEDIA PARTNERS</SectionTitle>
         <Grid
           container
+          justifyContent={"center"}
           sx={{
-            width: "450px",
+            width: "600px",
             textAlign: "center",
             placeItems: "center",
             marginTop: "40px",
@@ -332,7 +333,7 @@ const GeneralPage = (props) => {
         >
           {mediaPartners.map(({ source, text }) => {
             return (
-              <Grid item xs={12} sm={6} key={source}>
+              <Grid item xs={12} sm={4} key={source}>
                 <LogoWithTitle source={source} text={text} />
               </Grid>
             );

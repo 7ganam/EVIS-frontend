@@ -40,7 +40,7 @@ const evNavbarNavigations = [
       },
       {
         title: "2022 Exhibitors",
-        url: "/coming-soon",
+        url: "/exhibition/2022",
       },
       {
         title: "2023 Exhibitors",
@@ -48,7 +48,7 @@ const evNavbarNavigations = [
       },
       {
         title: "Book your stand",
-        url: "/exhibition/book-your-stand",
+        url: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
       },
     ],
   },
@@ -58,11 +58,11 @@ const evNavbarNavigations = [
     title: "Sponsors & Partners",
     child: [
       {
-        title: "2023 Sponsors & Exhibitors & Partners",
+        title: "2023 Sponsors & Partners",
         url: "/sponsors-partners/2023",
       },
       {
-        title: "2022 Sponsors & Exhibitors & Partners",
+        title: "2022 Sponsors & Partners",
         url: "/sponsors-partners/previous",
       },
     ],
@@ -132,23 +132,27 @@ const evNavbarNavigations = [
     child: [
       {
         title: "Sponsor",
-        url: "/participate/sponsor",
+        url: " https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome",
       },
       {
         title: "Exhibitor",
-        url: "/participate/exhibitor",
+        url: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
       },
       {
         title: "Delegate",
-        url: "/participate/delegate",
+        url: "https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome",
       },
       {
         title: "Visitor",
-        url: "/participate/visitor",
+        url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
       },
       {
         title: "Media",
-        url: "/participate/media",
+        url: "https://registration.infosalons.ae/EVIS23AD/MED/Registration/Welcome",
+      },
+      {
+        title: "Speaker",
+        url: "https://registration.infosalons.ae/EVIS23AD/SPK/Registration/Welcome",
       },
     ],
   },

@@ -123,7 +123,7 @@ const GeneralPage = (props) => {
         key_partner: sponsor?.attributes?.key_partner ?? null,
         sponsor: sponsor?.attributes?.sponsor ?? null,
         international_media_partner:
-        sponsor?.attributes?.international_media_partner ?? null,
+          sponsor?.attributes?.international_media_partner ?? null,
         knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
         research_partner: sponsor?.attributes?.research_partner ?? null,
         media_partner: sponsor?.attributes?.media_partner ?? null,
@@ -183,49 +183,6 @@ const GeneralPage = (props) => {
 
   return (
     <EvLayout showNavbar={true}>
-      <PageHeader
-        text={pageHeaderData.text}
-        buttonText={pageHeaderData.buttonText}
-        buttonLink={pageHeaderData.buttonLink}
-        image={pageHeaderData.image}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Box
-            sx={{
-              fontSize: {
-                xs: "60px",
-                md: "120px",
-              },
-              maxWidth: "80%",
-              textAlign: "center",
-              fontWeight: "800",
-              color: theme.palette.primary.light,
-            }}
-          >
-            THANK YOU
-          </Box>
-          <H2
-            sx={{
-              fontSize: {
-                xs: "40px",
-                md: "50px",
-                maxWidth: "80%",
-                textAlign: "center",
-              },
-            }}
-          >
-            {pageHeaderData.text}
-          </H2>
-        </Box>
-      </PageHeader>
       <Container
         sx={{
           textAlign: "center",
@@ -259,6 +216,7 @@ const GeneralPage = (props) => {
         </Grid>
         <SectionTitle>SPONSORS</SectionTitle>
         <Grid
+          justifyContent={"center"}
           container
           sx={{
             width: "600px",
@@ -292,6 +250,7 @@ const GeneralPage = (props) => {
         <Grid
           container
           columns={{ xs: 12, sm: 12, md: 10 }}
+          justifyContent={"center"}
           sx={{
             width: "950px",
             textAlign: "center",
@@ -299,7 +258,7 @@ const GeneralPage = (props) => {
             marginTop: "40px",
           }}
         >
-          {knowledgePartners.map(({ source, text }) => {
+          {knowledgePartners.map(({ source, text, link }) => {
             return (
               <Grid item xs={12} sm={4} md={2} key={source}>
                 <LogoWithTitle source={source} text={text} />

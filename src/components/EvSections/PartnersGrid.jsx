@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { H5 } from "src/components/EvComponents/Typography";
-import LogoWithTitle from "../EvComponents/LogoWithTitle";
 import { H4 } from "../Typography";
+import LogoWithTitle from "@/components/EvComponents/LogoWithTitle";
 
 const StyledImage = (props) => {
   return <img src={props.Src} width="170" style={{ marginBottom: "10px" }} />;
@@ -9,13 +9,16 @@ const StyledImage = (props) => {
 
 const imagesData = [
   {
-    source: "/assets/images/organizations/CEBC.png",
+    source: "/assets/images/partners/CEBC.png",
     text: "",
+    link: "https://www.cebcmena.com",
   },
-  // {
-  //   source: "/assets/images/organizations/CHARIN.png",
-  //   text: "Venue Partner",
-  // },
+
+  {
+    source: "/assets/images/partners/CHARIN.png",
+    text: "",
+    link: "https://www.charin.global",
+  },
   // {
   //   source: "/assets/images/organizations/GEEE.png",
   //   text: "Host City",
@@ -41,16 +44,45 @@ const PartnersGrid = ({ sx, partners }) => {
       <Typography variant="h5" component="h5">
         KNOWLEDGE PARTNERS
       </Typography>
+
+      <Grid
+        container
+        sx={{ textAlign: "center", placeItems: "center" }}
+        mb={3}
+        justifyContent="center"
+      >
+        {imagesData.map(({ source, text, link }) => {
+          return (
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              md={2}
+              key={source}
+              sx={{ height: "150px" }}
+            >
+              <a target="_blank" href={link ?? "#"} rel="noopener noreferrer">
+                <LogoWithTitle source={source} text={text} />
+              </a>
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Typography variant="h5" component="h5" sx={{ mt: 5 }}>
+        MEDIA PARTNERS
+      </Typography>
       <Grid
         container
         sx={{ textAlign: "center", placeItems: "center" }}
         mt={3}
         justifyContent="center"
       >
-        {partners?.map(({ source, text }) => {
+        {partners?.map(({ source, text, link }) => {
           return (
             <Grid item xs={12} sm={4} md={2} key={source}>
-              <LogoWithTitle source={source} text={text} />
+              <a target="_blank" href={link ?? "#"} rel="noopener noreferrer">
+                <LogoWithTitle source={source} text={text} />
+              </a>
             </Grid>
           );
         })}

@@ -33,15 +33,13 @@ const RectangularInfoImage = (props) => {
         flexDirection: "column",
       }}
     >
-      <Box sx={{ height: "auto", width: "100%" }}>
+      <Box sx={{ height: "300px", width: "100%" }}>
         <Image
-          // height={60}
-          width={"100%"}
-          height={"100%"}
+          // height={"100%"}
           mb={0}
           src={props.src}
           alt="logo"
-          sx={{ objectFit: "cover" }}
+          sx={{ objectFit: "cover", width: "100%", height: "100%" }}
         />
       </Box>
       <Box sx={{ margin: "10px 0 auto" }}>

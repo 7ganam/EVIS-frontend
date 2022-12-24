@@ -55,14 +55,26 @@ const SectionTitle = styled("div")(({ theme }) => ({
 const quickLinks = [
   { label: "about", link: "/about" },
   { label: "exhibition", link: "/exhibition/why-exhibit" },
-  { label: "Sponsors & partners", link: "/sponsors-partners/previous" },
+  {
+    label: "Sponsors & partners",
+    link: "https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome",
+  },
   { label: "CONFERENCE", link: "/agenda/conference" },
   { label: "NEWS", link: "/news-media/news" },
   { label: "TRAVEL & VISAS", link: "/travel-visas" },
   { label: "EVIS2023 ACTIVITIES ", link: "#" },
-  { label: "Book Your Stand NOW", link: "/participate/exhibitor" },
-  { label: "Delegate Registration", link: "/participate/delegate" },
-  { label: "Register your interest to visit", link: "/participate/visitor" },
+  {
+    label: "Book Your Stand NOW",
+    link: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
+  },
+  {
+    label: "Delegate Registration",
+    link: " https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome",
+  },
+  {
+    label: "Register your interest to visit",
+    link: " https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
+  },
 ];
 
 // =================================================================
@@ -241,8 +253,8 @@ const PageFooter = ({ sx, id, bgcolor }) => {
             <SectionElement>
               <FlexBox alignItems="center">
                 <Span ml={1.5} className="title">
-                  <a href="mailto: evis@nirvanaholding.com">
-                    evis@nirvanaholding.com
+                  <a href="mailto: jessy.suraj@nirvanatls.com">
+                    jessy.suraj@nirvanatls.com
                   </a>
                 </Span>
               </FlexBox>

@@ -3,12 +3,7 @@ import React from "react";
 import { H4 } from "../Typography";
 const StyledImage = (props) => {
   return (
-    <img
-      src={props.Src}
-      width="170"
-      style={{ margin: "10px" }}
-      alt={props.Src}
-    />
+    <img src={props.Src} width="170" style={{ margin: "10px" }} alt={"logo"} />
   );
 };
 function LogoWithTitle({ text, source }) {

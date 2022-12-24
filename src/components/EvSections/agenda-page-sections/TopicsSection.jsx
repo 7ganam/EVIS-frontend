@@ -11,6 +11,8 @@ import { useTheme } from "@emotion/react";
 import { BigButton } from "src/components/EvComponents/Buttons";
 import { styled } from "@mui/material/styles";
 import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
+import Link from "next/link";
+
 const HoverCard = styled(({ hoverEffect, children, ...rest }) => (
   <Card {...rest}>{children}</Card>
 ))(({ theme, hoverEffect }) => ({
@@ -106,8 +108,11 @@ const TopicsSection = (props) => {
                   mt: "40px",
                 }}
               >
-                {" "}
-                <BigButton content={"Register now!"} />
+                <Link href="https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome">
+                  <a>
+                    <BigButton content={"Register now!"} />
+                  </a>
+                </Link>
               </Box>
             </Box>
           </Container>
