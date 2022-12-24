@@ -36,7 +36,6 @@ const EvHome = (props) => {
     pageHeaderData,
     topSectionsData,
     highlightsData,
-    buttonsData,
     eventFeaturesData,
     videosData,
   } = useMemo(() => {
@@ -90,7 +89,6 @@ const EvHome = (props) => {
       pageHeaderData,
       topSectionsData,
       highlightsData,
-      buttonsData,
       eventFeaturesData,
       videosData,
     };
@@ -159,39 +157,39 @@ const EvHome = (props) => {
       title: "High Standards",
     },
   ];
-  // const buttonsData = [
-  //   {
-  //     text: "BOOK YOUR STAND",
-  //     url: " https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
-  //     type: "internalLink",
-  //   },
-  //   {
-  //     text: "BECOME A SPONSOR",
-  //     url: " https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome",
-  //     type: "internalLink",
-  //   },
-  //   {
-  //     text: "DELEGATE REGISTRATION",
-  //     url: "https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome",
-  //     type: "internalLink",
-  //   },
-  //   {
-  //     text: "VISITOR REGISTRATION",
-  //     url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
-  //     type: "internalLink",
-  //   },
-  //   {
-  //     text: "DOWNLOAD EVENT BROCHURE",
-  //     // url: "/assets/images/EVIS Event Brochure 2023 10_11_22.pdf",
-  //     url: "/download/brochure",
-  //     type: "internalLink",
-  //   },
-  //   {
-  //     text: "DOWNLOAD POST SHOW REPORT",
-  //     url: "/download/post-report",
-  //     type: "internalLink",
-  //   },
-  // ];
+  const buttonsData = [
+    {
+      text: "BOOK YOUR STAND",
+      url: " https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
+      type: "internalLink",
+    },
+    {
+      text: "BECOME A SPONSOR",
+      url: " https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome",
+      type: "internalLink",
+    },
+    {
+      text: "DELEGATE REGISTRATION",
+      url: "https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome",
+      type: "internalLink",
+    },
+    {
+      text: "VISITOR REGISTRATION",
+      url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
+      type: "internalLink",
+    },
+    {
+      text: "DOWNLOAD EVENT BROCHURE",
+      // url: "/assets/images/EVIS Event Brochure 2023 10_11_22.pdf",
+      url: "/download/brochure",
+      type: "internalLink",
+    },
+    {
+      text: "DOWNLOAD POST SHOW REPORT",
+      url: "/download/post-report",
+      type: "internalLink",
+    },
+  ];
   return (
     <EvLayout showNavbar={true} title={"Home"}>
       <PageHeader
