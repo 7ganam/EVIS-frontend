@@ -127,6 +127,11 @@ const getOpenTech = async () => {
   return response.data;
 };
 
+const getTestimonials = async () => {
+  const response = await axios.get(`${baseUrl}/api/testimonials?populate=deep`);
+  return response.data;
+}
+
 const getEvisInNews = async () => {
   const response = await axios.get(`${baseUrl}/api/news-videos?populate=deep`);
   return response.data;
@@ -137,6 +142,7 @@ const getNewsArticle = async () => {
   return response.data;
 };
 
+
 const api = {
   getSpeakers,
   getSpeaker,
@@ -145,9 +151,9 @@ const api = {
   getAboutPage,
   getSponsors,
   getPartners,
+  getTestimonials,
   getEvisInNews,
   getNewsArticle,
-
   getAgenda,
   getOpenTech,
   getContactUs,
