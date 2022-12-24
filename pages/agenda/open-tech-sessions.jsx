@@ -37,7 +37,7 @@ const GeneralPage = (props) => {
     const agendaTitle = openTechPageData?.header?.text;
     const firstBody = { text: openTechPageData?.first_body, };
     const secondBody = { text: openTechPageData?.second_body, };
-    const downloadLink = openTechPageData?.download_link;
+    const downloadLink = openTechPageData?.download_link?.data?.[0]?.attributes?.url;
     const mainImage = openTechPageData?.header?.image?.data?.attributes?.url;
     const scheduleImages = openTechPageData?.schedule_images?.data?.map((highlight) => {
       return highlight?.attributes?.url;
@@ -53,9 +53,6 @@ const GeneralPage = (props) => {
       scheduleImages,
     };
   }, [props?.openTechPage]);
-
-  console.log("data: ", openTechPageData);
-  // console.log("data: ", openTechPage);
 
   return (
     <EvLayout showNavbar={true}>
