@@ -212,16 +212,4 @@ const generalPage = () => {
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
-  return {
-    props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
-    },
-  };
-}
 export default generalPage;

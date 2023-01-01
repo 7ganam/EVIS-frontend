@@ -18,87 +18,6 @@ const StyledImage = (props) => {
   return <img src={props.Src} width="170" style={{ margin: "10px" }} />;
 };
 
-// const keyPartners = [
-//   {
-//     source: "/assets/images/organizations/Masdar.jpg",
-//     text: "Sustainability Partner",
-//   },
-//   {
-//     source: "/assets/images/organizers/ADNEC.png",
-//     text: "Venue Partner",
-//   },
-//   {
-//     source: "/assets/images/organizers/AbuDhabi.png",
-//     text: "Host City",
-//   },
-//   {
-//     source: "/assets/images/NirvanaLogo.png",
-//     text: "Organized by",
-//   },
-// ];
-
-// const sponsors = [
-//   {
-//     source: "/assets/images/organizers/Audi.png",
-//     text: "Knowledge Partner",
-//   },
-//   {
-//     source: "/assets/images/organizers/BritishVolt.png",
-//     text: "Silver Sponsor",
-//   },
-//   {
-//     source: "/assets/images/associations/Totalenergies.png",
-//     text: "Delegate Host Sponsor",
-//   },
-// ];
-
-// const internationalMediaPartners = [
-//   {
-//     source: "/assets/images/associations/Skynews.png",
-//     text: "",
-//   },
-// ];
-
-// const knowledgePartners = [
-//   {
-//     source: "/assets/images/partners/CEBC.png",
-//     text: "",
-//   },
-//   {
-//     source: "/assets/images/partners/CHARIN.png",
-//     text: "",
-//   },
-//   {
-//     source: "/assets/images/partners/GEEE.png",
-//     text: "",
-//   },
-//   {
-//     source: "/assets/images/partners/ISF.png",
-//     text: "",
-//   },
-//   {
-//     source: "/assets/images/partners/AVERE.png",
-//     text: "",
-//   },
-// ];
-
-// const researchPartners = [
-//   {
-//     source: "/assets/images/organizations/Oxford.jpg",
-//     text: "",
-//   },
-// ];
-
-// const mediaPartners = [
-//   {
-//     source: "/assets/images/associations/Nationshield.png",
-//     text: "",
-//   },
-//   {
-//     source: "/assets/images/associations/Petrofinder.png",
-//     text: "",
-//   },
-// ];
 const pageHeaderData = {
   text: "TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
   //   buttonText: "Save The Date",
@@ -114,7 +33,7 @@ const GeneralPage = (props) => {
     }
 
     let data = JSON.parse(props.sponsors)?.data ?? null;
-
+    console.log("data", data);
     const sponsors = data?.map((sponsor) => {
       return {
         text: sponsor?.attributes?.title ?? "",
@@ -133,31 +52,6 @@ const GeneralPage = (props) => {
     return sponsors;
   }, [props?.sponsors]);
 
-  let partners = useMemo(() => {
-    if (!props?.partners) {
-      return {};
-    }
-
-    let data = JSON.parse(props.partners)?.data ?? null;
-
-    const partners = data?.map((partner) => {
-      return {
-        text: partner?.attributes?.title ?? "",
-        source: partner?.attributes?.image?.data?.attributes?.url ?? "",
-        year: partner?.attributes?.year ?? "",
-        key_partner: partner?.attributes?.key_partner ?? null,
-        sponsor: partner?.attributes?.sponsor ?? null,
-        international_media_partner:
-          partner?.attributes?.international_media_partner ?? null,
-        knowledge_partner: partner?.attributes?.knowledge_partner ?? null,
-        research_partner: partner?.attributes?.research_partner ?? null,
-        media_partner: partner?.attributes?.media_partner ?? null,
-      };
-    });
-
-    return partners;
-  }, [props?.partners]);
-
   const key_partners = sponsors?.filter((sponsor) => {
     return sponsor.key_partner === true;
   });
@@ -165,19 +59,19 @@ const GeneralPage = (props) => {
     return sponsor.sponsor === true;
   });
 
-  const internationalMediaPartners = partners?.filter((partner) => {
+  const internationalMediaPartners = sponsors?.filter((partner) => {
     return partner.international_media_partner === true;
   });
 
-  const knowledgePartners = partners?.filter((partner) => {
+  const knowledgePartners = sponsors?.filter((partner) => {
     return partner.knowledge_partner === true;
   });
 
-  const researchPartners = partners?.filter((partner) => {
+  const researchPartners = sponsors?.filter((partner) => {
     return partner.research_partner === true;
   });
 
-  const mediaPartners = partners?.filter((partner) => {
+  const mediaPartners = sponsors?.filter((partner) => {
     return partner.media_partner === true;
   });
 
@@ -243,7 +137,7 @@ const GeneralPage = (props) => {
         <Grid
           container
           sx={{
-            width: "800px",
+            maxWidth: "900px",
             textAlign: "center",
             placeItems: "center",
             marginTop: "40px",
@@ -257,28 +151,41 @@ const GeneralPage = (props) => {
             );
           })}
         </Grid>
-        <SectionTitle>SPONSORS</SectionTitle>
-        <Grid
+        <Box sx={{ mt: "40px", mb: "20px" }}>
+          <SectionTitle>SPONSORS</SectionTitle>
+        </Box>
+        <Box
           container
           sx={{
-            width: "600px",
-            textAlign: "center",
-            placeItems: "center",
-            marginTop: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
           }}
         >
           {SponsorsGrid?.map(({ source, text }) => {
             return (
-              <Grid item xs={12} sm={4} key={source}>
+              <Box sx={{}} key={source}>
                 <LogoWithTitle source={source} text={text} />
-              </Grid>
+              </Box>
             );
           })}
-        </Grid>
-        <SectionTitle>INTERNATIONAL MEDIA PARTNER</SectionTitle>
-        <Grid
+        </Box>
+        <Box sx={{ mt: "40px", mb: "20px" }}>
+          <SectionTitle>INTERNATIONAL MEDIA PARTNER</SectionTitle>
+        </Box>
+        <Box
           container
-          sx={{ textAlign: "center", placeItems: "center", marginTop: "40px" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+          }}
         >
           {internationalMediaPartners.map(({ source, text }) => {
             return (
@@ -287,16 +194,19 @@ const GeneralPage = (props) => {
               </Grid>
             );
           })}
-        </Grid>
-        <SectionTitle>KNOWLEDGE PARTNERS</SectionTitle>
-        <Grid
+        </Box>
+        <Box sx={{ mt: "40px", mb: "20px" }}>
+          <SectionTitle>KNOWLEDGE PARTNERS</SectionTitle>
+        </Box>
+        <Box
           container
-          columns={{ xs: 12, sm: 12, md: 10 }}
           sx={{
-            width: "950px",
-            textAlign: "center",
-            placeItems: "center",
-            marginTop: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
           }}
         >
           {knowledgePartners.map(({ source, text }) => {
@@ -306,11 +216,21 @@ const GeneralPage = (props) => {
               </Grid>
             );
           })}
-        </Grid>
-        <SectionTitle>RESEARCH PARTNER</SectionTitle>
-        <Grid
+        </Box>
+        <Box sx={{ mt: "40px", mb: "20px" }}>
+          {" "}
+          <SectionTitle>RESEARCH PARTNER</SectionTitle>
+        </Box>
+        <Box
           container
-          sx={{ textAlign: "center", placeItems: "center", marginTop: "40px" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+          }}
         >
           {researchPartners.map(({ source, text }) => {
             return (
@@ -319,16 +239,19 @@ const GeneralPage = (props) => {
               </Grid>
             );
           })}
-        </Grid>
-        <SectionTitle>MEDIA PARTNERS</SectionTitle>
-        <Grid
+        </Box>
+        <Box sx={{ mt: "40px", mb: "20px" }}>
+          <SectionTitle>MEDIA PARTNERS</SectionTitle>
+        </Box>
+        <Box
           container
-          justifyContent={"center"}
           sx={{
-            width: "600px",
-            textAlign: "center",
-            placeItems: "center",
-            marginTop: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
           }}
         >
           {mediaPartners.map(({ source, text }) => {
@@ -338,7 +261,7 @@ const GeneralPage = (props) => {
               </Grid>
             );
           })}
-        </Grid>
+        </Box>
       </Container>
     </EvLayout>
   );
@@ -359,19 +282,6 @@ export async function getStaticProps(context) {
   }
 
   if (!sponsors) {
-    return {
-      notFound: true,
-    };
-  }
-
-  try {
-    partners = await api.getPartners(22);
-  } catch (dev_error) {
-    console.log(`error fetching`, dev_error);
-    partnersError = dev_error;
-  }
-
-  if (!partners) {
     return {
       notFound: true,
     };

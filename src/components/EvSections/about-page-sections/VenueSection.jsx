@@ -1,13 +1,11 @@
 import React from "react";
-import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
-import { Grid, Box, useTheme } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { Paragraph } from "src/components/EvComponents/Typography";
 
 const VenueSection = (props) => {
-  const theme = useTheme();
-  const data = props.data;
-  const mapContent = props.map;
+  const venu_paragraph_1 = props.venu_paragraph_1;
+  const venu_paragraph_2 = props.venu_paragraph_2;
   return (
     <Box id={"venue"} sx={{ scrollMarginTop: "250px" }}>
       <Box sx={{ mt: "30px", mb: "20px" }}>
@@ -16,7 +14,7 @@ const VenueSection = (props) => {
       </Box>
       <Box>
         <Paragraph>
-          <Box sx={{ whiteSpace: "pre-wrap" }}>{data.text}</Box>
+          <Box sx={{ whiteSpace: "pre-wrap" }}>{venu_paragraph_1}</Box>
         </Paragraph>
       </Box>
       <Grid container>
@@ -32,7 +30,7 @@ const VenueSection = (props) => {
         </Grid>
         <Grid item md={6} sm={12} xs={12} sx={{ padding: "20px" }}>
           <Box>
-            <Paragraph>{mapContent}</Paragraph>
+            <Paragraph>{venu_paragraph_2}</Paragraph>
           </Box>
         </Grid>
       </Grid>

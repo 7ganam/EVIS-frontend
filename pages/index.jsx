@@ -46,8 +46,6 @@ const EvHome = (props) => {
 
     const pageHeaderData = {
       text: homePageData?.header?.text ?? "",
-      buttonText: "Become A Sponsor",
-      buttonLink: "/participate/sponsor",
       image: homePageData?.header?.image?.data?.attributes?.url ?? "",
     };
 
@@ -95,68 +93,7 @@ const EvHome = (props) => {
   }, [props?.homePage]);
   console.log("homePageData", homePageData);
   console.log("videosData", videosData);
-  const videosList = [
-    {
-      youtube:
-        "https://www.youtube.com/watch?v=pH-S5T4v000&feature=emb_logo&ab_channel=EVIS",
-    },
-    {
-      youtube:
-        "https://www.youtube.com/watch?v=9QsM34soYg0&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=3&ab_channel=EVIS",
-    },
-    {
-      youtube:
-        "https://www.youtube.com/watch?v=hFxiyLbi2Sg&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=4&ab_channel=EVIS",
-    },
-    {
-      youtube:
-        "https://www.youtube.com/watch?v=BzT8e_IFVPs&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=5&ab_channel=EVIS",
-    },
-    {
-      youtube:
-        "https://www.youtube.com/watch?v=VSiDveJb23w&list=PLZmjl1dQxsOWycsdwOKYlbBebzpfxhUDo&index=6&ab_channel=EVIS",
-    },
-    { youtube: "https://www.youtube.com/watch?v=x2CDpB6mrp4&ab_channel=EVIS" },
-  ];
-  const itemData1 = {
-    img: "/assets/images/ev-home/DSC07429.jpg",
-    title: "Electric Vehicle Innovation Summit",
-    ps: [
-      "As is true for many emerging technologies, vehicle electrification is experiencing rapid innovation. The Middle East & Africa Electric Vehicle Market is expected to witness substantial growth & business opportunities over the next decade. Governments are focusing on renewable energy and clean transportation technologies along with the implementation of economic and energy diversification plans.",
-      "EVIS is unique by integrating inter - related technologies at one event, allowing attendees to network across the value chains and exploit new opportunities at the intersection of EV technologies.",
-    ],
-  };
-  const itemData2 = {
-    img: "/assets/images/ev-home/exh4.jpg",
-    title: "",
-    ps: [
-      "The Electric Vehicles are continually evolving for a future of mobility and more efficient modes of transportation, bringing together key players and influential business leaders who works together on electric vehicles, energy and charging infrastructure, information technology to explore more advanced systems.",
-      "The Electric Vehicles are continually evolving for a future of mobility and more efficient modes of transportation, bringing together key players and influential business leaders who works together on electric vehicles, energy and charging infrastructure, information technology to explore more advanced systems.",
-    ],
-  };
-  const FeaturesData = [
-    {
-      img: "/assets/images/ev-home/exh2.jpg",
-      content: `With over 6,000 square meters of display space, Electric Vehicle Innovation Summit brings in the biggest and best brands from all over the world to present their latest products and innovations in the industry.`,
-      buttonText: "EXHIBIT AT EVIS",
-      buttonLink: "/",
-      title: "Exhibition Area",
-    },
-    {
-      img: "/assets/images/ev-home/exh4-gradient.png",
-      content: `The Electric Vehicle Innovation Summit fosters individual engagement and community interaction through networking opportunities and customized experiences including new technology, sharing economy activities, personalized meet ups and attendee personalized networking.`,
-      buttonText: "ATTEND EVIS",
-      buttonLink: "/",
-      title: "Networking Opportunities",
-    },
-    {
-      img: "/assets/images/ev-home/DSC01808.jpg",
-      content: `The Electric Vehicle Innovation Summit is to be held in accordance with the highest standards governing such professional specialized conferences addressing advanced subject of interest to the specialized experts yet appealing to the public at large.`,
-      buttonText: "ATTEND EVIS",
-      buttonLink: "/",
-      title: "High Standards",
-    },
-  ];
+
   const buttonsData = [
     {
       text: "BOOK YOUR STAND",
@@ -204,7 +141,7 @@ const EvHome = (props) => {
               {pageHeaderData.text}
             </H1>
           )}
-          {pageHeaderData.buttonText && pageHeaderData.buttonLink && (
+          {
             <Box
               sx={{
                 display: "flex",
@@ -214,7 +151,11 @@ const EvHome = (props) => {
               }}
             >
               <Box mx={"0px"} p={1.25}>
-                <Link href={pageHeaderData.buttonLink}>
+                <Link
+                  href={
+                    "https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome"
+                  }
+                >
                   <a>
                     <StyledButton
                       minWidth={"250px"}
@@ -228,7 +169,7 @@ const EvHome = (props) => {
                         border: "1px white solid",
                       }}
                     >
-                      {pageHeaderData.buttonText}
+                      {"BECOME A SPONSOR"}
                     </StyledButton>
                   </a>
                 </Link>
@@ -257,7 +198,7 @@ const EvHome = (props) => {
                 </Link>
               </Box>
             </Box>
-          )}
+          }
         </Box>
       </PageHeader>
       <Container

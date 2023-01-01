@@ -92,9 +92,9 @@ import { HighlightOff } from "@mui/icons-material";
 //   img: "/assets/images/why-exhibit/f2.jpg",
 //   title: "Future Of Mobility",
 //   ps: [
-//     `Electric cars will eventually be dominated by few giants; however the components and enabling technologies are applicable to many other types of vehicles - land,sea & air. Billion-dollar businesses will be created for those supplying components and vehicles to these “niches”. The electric vehicles of the future are likely to combine several enabling platforms. 
+//     `Electric cars will eventually be dominated by few giants; however the components and enabling technologies are applicable to many other types of vehicles - land,sea & air. Billion-dollar businesses will be created for those supplying components and vehicles to these “niches”. The electric vehicles of the future are likely to combine several enabling platforms.
 // By providing accurate information about relative market sizes, battery demand and fastest growing electric vehicle markets beyond cars, our aim is to give those in the industry the knowledge to make more informed decisions on their investments and focus into the electric vehicle market.
-// EV’s are increasingly visible on the UAE’s roads. This number is set to expand rapidly in the coming years and will interlink the transport and electricity sector like never before. 
+// EV’s are increasingly visible on the UAE’s roads. This number is set to expand rapidly in the coming years and will interlink the transport and electricity sector like never before.
 
 // `,
 //   ],
@@ -102,7 +102,6 @@ import { HighlightOff } from "@mui/icons-material";
 // };
 
 const WhyExhibitComponent = (props) => {
-
   let {
     whyExhibitPageData,
     whyExhibitSections,
@@ -112,52 +111,55 @@ const WhyExhibitComponent = (props) => {
     whyExhibit,
     serviceList,
     peopleList,
-
   } = useMemo(() => {
     if (!props?.whyExhibitPage) {
       return {};
     }
-    let whyExhibitPageData = JSON.parse(props.whyExhibitPage).data?.attributes ?? null;
+    let whyExhibitPageData =
+      JSON.parse(props.whyExhibitPage).data?.attributes ?? null;
 
     let whyExhibitSections = whyExhibitPageData?.why_exhibit_sections;
     const whyExhibit = {
-      img: whyExhibitSections[0].image.data.attributes.url,
+      img: whyExhibitSections[0].image.data?.attributes.url,
       title: whyExhibitSections[0].title,
       ps: whyExhibitSections[0].paragraph,
       direction: "right",
     };
     const futureOfMobility = {
-      img: whyExhibitSections[1].image.data.attributes.url,
+      img: whyExhibitSections[1].image.data?.attributes.url,
       title: whyExhibitSections[1].title,
       ps: whyExhibitSections[1].paragraph,
       direction: "left",
     };
 
-    const serviceList = whyExhibitPageData?.by_exhibiting_cards?.map((highlight) => {
-      return {
-        img: highlight?.image?.data?.attributes?.url,
-        content: highlight?.text,
+    const serviceList = whyExhibitPageData?.by_exhibiting_cards?.map(
+      (highlight) => {
+        return {
+          img: highlight?.image?.data?.attributes?.url,
+          content: highlight?.text,
+        };
       }
-    })
+    );
 
-    const featureList = whyExhibitPageData?.exhibition_features_cards?.map((highlight) => {
-      return {
-        img: highlight?.image?.data?.attributes?.url,
-        content: highlight?.paragraph,
-        buttonText: highlight?.action_button_text,
-        buttonLink: highlight?.action_button_url,
-        title: highlight?.title,
+    const featureList = whyExhibitPageData?.exhibition_features_cards?.map(
+      (highlight) => {
+        return {
+          img: highlight?.image?.data?.attributes?.url,
+          content: highlight?.paragraph,
+          buttonText: highlight?.action_button_text,
+          buttonLink: highlight?.action_button_url,
+          title: highlight?.title,
+        };
       }
-    })
+    );
 
-    const peopleList = whyExhibitPageData?.expect_to_meet_cards_text?.map((highlight) => {
-      return highlight?.text;
-    })
+    const peopleList = whyExhibitPageData?.expect_to_meet_cards_text?.map(
+      (highlight) => {
+        return highlight?.text;
+      }
+    );
 
     let expectToMeetCardsText = whyExhibitPageData?.expect_to_meet_cards_text;
-
-
-
 
     // const videosData = whyExhibitPageData?.why_exhibit_sections?.map((paragraph) => {
     //   return {
@@ -174,7 +176,6 @@ const WhyExhibitComponent = (props) => {
       featureList,
       serviceList,
       peopleList,
-
     };
   }, [props?.whyExhibitPage]);
 

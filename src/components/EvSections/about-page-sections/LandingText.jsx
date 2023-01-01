@@ -9,29 +9,14 @@ const LandingText = (props) => {
   return (
     <Box sx={{ mt: "35px" }}>
       <Box sx={{ mb: "15px" }}>
-        <SectionTitle>{topic}</SectionTitle>
+        <SectionTitle>About EVIS</SectionTitle>
       </Box>
       <Grid container spacing={3} sx={{ pt: 1 }}>
         <Grid item xs={12} sm={12} md={12}>
-          
-            <Paragraph><Box sx={{ whiteSpace: "pre-wrap" }}>{ps}</Box></Paragraph>
-          
+          <Paragraph>
+            <Box sx={{ whiteSpace: "pre-wrap" }}>{ps}</Box>
+          </Paragraph>
         </Grid>
-        {/* <Grid item xs={12} sm={12} md={12}>
-          <Box>
-            <Paragraph>{p1}</Paragraph>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={12} md={12}>
-          <Box>
-            <Paragraph>{p2}</Paragraph>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={12} md={12}>
-          <Box>
-            <Paragraph>{p3}</Paragraph>
-          </Box>
-        </Grid> */}
       </Grid>
     </Box>
   );

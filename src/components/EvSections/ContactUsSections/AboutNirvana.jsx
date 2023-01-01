@@ -27,40 +27,34 @@ const AboutNirvana = (props) => {
     aboutExhibition,
     nirvanaWebsiteTextToDisplay,
     aboutNirvanaImage,
-
   } = useMemo(() => {
     if (!props?.contactPage) {
       return {};
     }
     let contactPageData = props.contactPage;
 
-    const aboutNirvanaTitle = contactPageData?.about_nirvana_title;
     const aboutNirvanaParagraph = contactPageData?.about_nirvana_paragraph;
     const nirvanaWebsite = contactPageData?.nirvana_website;
-    const aboutExhibitionTitle = contactPageData?.about_nirvana_second_title;
     const aboutExhibition = contactPageData?.about_exhibition;
-    const nirvanaWebsiteTextToDisplay = contactPageData?.nirvana_website_text_to_display;
-    const aboutNirvanaImage = contactPageData?.about_nirvana_image?.data?.attributes?.url;
-
+    const nirvanaWebsiteTextToDisplay =
+      contactPageData?.nirvana_website_text_to_display;
+    const aboutNirvanaImage =
+      contactPageData?.about_nirvana_image?.data?.attributes?.url;
 
     return {
       contactPageData,
-      aboutNirvanaTitle,
       aboutNirvanaParagraph,
       nirvanaWebsite,
-      aboutExhibitionTitle,
       aboutExhibition,
       nirvanaWebsiteTextToDisplay,
       aboutNirvanaImage,
-
     };
   }, [props?.contactPage]);
-
 
   return (
     <Box>
       <Box sx={{ marginBottom: "25px" }}>
-        <SectionTitle>{aboutNirvanaTitle}</SectionTitle>
+        <SectionTitle>ABOUT NIRVANA HOLDING</SectionTitle>
       </Box>
       <Box sx={{ height: "auto", width: "100%" }}>
         <Image
@@ -84,7 +78,9 @@ const AboutNirvana = (props) => {
               </Paragraph>
             </Box>
           </Box>
-          <SectionTitle>{aboutExhibitionTitle}</SectionTitle>
+          <SectionTitle>
+            ABOUT NIRVANA EVENTS & EXHIBITIONS DEPARTMENT
+          </SectionTitle>
           <Box sx={{ margin: "40px 0 30px" }}>
             <Paragraph>{aboutExhibition}</Paragraph>
           </Box>

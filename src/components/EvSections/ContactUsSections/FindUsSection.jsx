@@ -6,45 +6,38 @@ import { H2, H3 } from "@/components/Typography";
 import { useMemo } from "react";
 
 const FindUsSection = (props) => {
-  let {
-    contactPageData,
-    title,
-    mapLocation,
-    paragraph,
-    email,
-    emailTo,
+  let { contactPageData, title, mapLocation, paragraph, email, emailTo } =
+    useMemo(() => {
+      if (!props?.contactPage) {
+        return {};
+      }
+      let contactPageData = props.contactPage;
 
-  } = useMemo(() => {
-    if (!props?.contactPage) {
-      return {};
-    }
-    let contactPageData = props.contactPage;
+      const title = contactPageData?.find_us_title;
+      const area = contactPageData?.find_us_area;
+      const building = contactPageData?.find_us_building;
+      const emirate = contactPageData?.find_us_emirate;
+      const country = contactPageData?.find_us_country;
+      const email = contactPageData?.contact_email;
+      const emailTo = "mailto:" + email;
+      const mapLocation = contactPageData?.google_maps_location;
 
-    const title = contactPageData?.find_us_title;
-    const area = contactPageData?.find_us_area;
-    const building = contactPageData?.find_us_building;
-    const emirate = contactPageData?.find_us_emirate;
-    const country = contactPageData?.find_us_country;
-    const email = contactPageData?.contact_email;
-    const emailTo = "mailto:" + email;
-    const mapLocation = contactPageData?.google_maps_location;
+      const paragraph = [
+        { body: area },
+        { body: building },
+        { body: emirate },
+        { body: country },
+      ];
 
-    const paragraph = [
-      { body: area },
-      { body: building },
-      { body: emirate },
-      { body: country },
-    ];
-
-    return {
-      contactPageData,
-      title,
-      mapLocation,
-      paragraph,
-      email,
-      emailTo,
-    };
-  }, [props?.contactPage]);
+      return {
+        contactPageData,
+        title,
+        mapLocation,
+        paragraph,
+        email,
+        emailTo,
+      };
+    }, [props?.contactPage]);
 
   return (
     <Container
@@ -60,7 +53,7 @@ const FindUsSection = (props) => {
           margin: "50px 0 40px",
         }}
       >
-        <SectionTitle>{title}</SectionTitle>
+        <SectionTitle>FIND US AT</SectionTitle>
       </Box>
       {paragraph?.map(({ body }) => {
         return <Paragraph key={body}>{body}</Paragraph>;
@@ -79,6 +72,5 @@ const FindUsSection = (props) => {
     </Container>
   );
 };
-
 
 export default FindUsSection;

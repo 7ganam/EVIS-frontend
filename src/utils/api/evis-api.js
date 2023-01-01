@@ -75,30 +75,6 @@ const getSponsors = async (year) => {
   // return response.data;
 };
 
-const getPartners = async (year) => {
-  let strFilter;
-  if (!year) {
-    strFilter = "/api/partners?populate=deep";
-  }
-  if (year === 22) {
-    strFilter =
-      "/api/partners?filters[year][$eq]=year%202022&filters[year][$eq]=both&populate=deep";
-  }
-  if (year === 23) {
-    strFilter =
-      "/api/partners?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep";
-  }
-  if (year === "both") {
-    strFilter = "/api/partners?filters[year][$eq]=both&populate=deep";
-  }
-  const response = await axios.get(`${baseUrl}${strFilter}`);
-
-  return response.data;
-
-  // const response = await axios.get(`${baseUrl}/api/partners?populate=deep`);
-  // return response.data;
-};
-
 const getContactUs = async () => {
   const response = await axios.get(`${baseUrl}/api/contact-page?populate=deep`);
   return response.data;
@@ -130,7 +106,7 @@ const getOpenTech = async () => {
 const getTestimonials = async () => {
   const response = await axios.get(`${baseUrl}/api/testimonials?populate=deep`);
   return response.data;
-}
+};
 
 const getEvisInNews = async () => {
   const response = await axios.get(`${baseUrl}/api/news-videos?populate=deep`);
@@ -138,10 +114,11 @@ const getEvisInNews = async () => {
 };
 
 const getNewsArticle = async () => {
-  const response = await axios.get(`${baseUrl}/api/news-articles?populate=deep`);
+  const response = await axios.get(
+    `${baseUrl}/api/news-articles?populate=deep`
+  );
   return response.data;
 };
-
 
 const api = {
   getSpeakers,
@@ -150,7 +127,6 @@ const api = {
   getYearSpeakers,
   getAboutPage,
   getSponsors,
-  getPartners,
   getTestimonials,
   getEvisInNews,
   getNewsArticle,
