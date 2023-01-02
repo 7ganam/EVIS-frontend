@@ -25,7 +25,6 @@ const GeneralPage = (props) => {
     }
 
     let data = JSON.parse(props.sponsors)?.data ?? null;
-    console.log("data", data);
     const sponsors = data?.map((sponsor) => {
       return {
         text: sponsor?.attributes?.title ?? "",

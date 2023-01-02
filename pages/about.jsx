@@ -255,7 +255,6 @@ const GeneralPage = (props) => {
     }
 
     let data = JSON.parse(props.aboutPage).data?.attributes ?? null;
-    console.log("data", data);
     const aboutEvis = {
       title: data?.aboutEvis?.title ?? "",
       paragraph: data?.aboutEvis?.paragraph ?? "",
@@ -304,8 +303,6 @@ const GeneralPage = (props) => {
     return sponsor.key_partner === true;
   });
   const knowledgePartners = sponsors?.filter((partner) => {
-    console.log("partner :>> ", partner);
-
     return partner.knowledge_partner === true;
   });
   const mediaPartners = sponsors?.filter((partner) => {

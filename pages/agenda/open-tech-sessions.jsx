@@ -10,7 +10,6 @@ import DownloadingIcon from "@mui/icons-material/Downloading";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
 
-
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -33,15 +32,18 @@ const GeneralPage = (props) => {
     if (!props?.openTechPage) {
       return {};
     }
-    let openTechPageData = JSON.parse(props.openTechPage).data?.attributes ?? null;
+    let openTechPageData =
+      JSON.parse(props.openTechPage).data?.attributes ?? null;
     const agendaTitle = openTechPageData?.header?.text;
-    const firstBody = { text: openTechPageData?.first_body, };
-    const secondBody = { text: openTechPageData?.second_body, };
+    const firstBody = { text: openTechPageData?.first_body };
+    const secondBody = { text: openTechPageData?.second_body };
     const downloadLink = openTechPageData?.download_link;
     const mainImage = openTechPageData?.header?.image?.data?.attributes?.url;
-    const scheduleImages = openTechPageData?.schedule_images?.data?.map((highlight) => {
-      return highlight?.attributes?.url;
-    });
+    const scheduleImages = openTechPageData?.schedule_images?.data?.map(
+      (highlight) => {
+        return highlight?.attributes?.url;
+      }
+    );
 
     return {
       openTechPageData,
@@ -53,9 +55,6 @@ const GeneralPage = (props) => {
       scheduleImages,
     };
   }, [props?.openTechPage]);
-
-  console.log("data: ", openTechPageData);
-  // console.log("data: ", openTechPage);
 
   return (
     <EvLayout showNavbar={true}>

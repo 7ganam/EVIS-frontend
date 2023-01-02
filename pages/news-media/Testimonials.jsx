@@ -27,10 +27,7 @@ const pageHeaderData = {
 // ];
 
 const TestimonialsPage = (props) => {
-  let {
-    testimonialsPageData,
-    testimonial,
-  } = useMemo(() => {
+  let { testimonialsPageData, testimonial } = useMemo(() => {
     if (!props?.testimonialsPage) {
       return {};
     }
@@ -44,20 +41,16 @@ const TestimonialsPage = (props) => {
         title: attributes?.attributes?.position,
         // company: attributes?.attributes?.position,
         videoId: attributes?.attributes?.video_link?.youtube_link,
-        pos: (attributes?.id) % 2 == 0 ? "right" : "left",
+        pos: attributes?.id % 2 == 0 ? "right" : "left",
         img: attributes?.attributes?.image?.data?.attributes?.url,
-      }
-    })
+      };
+    });
 
     return {
       testimonialsPageData,
       testimonial,
     };
   }, [props?.testimonialsPage]);
-
-  console.log("Testimonials: ", testimonialsPageData)
-  console.log("one: ", testimonial)
-
 
   return (
     <EvLayout showNavbar={true}>

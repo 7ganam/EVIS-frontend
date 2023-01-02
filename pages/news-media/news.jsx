@@ -8,7 +8,6 @@ import PartnersGrid from "src/components/EvSections/PartnersGrid";
 import NewsCard from "src/components/EvComponents/NewsCard";
 import Divider from "@mui/material/Divider";
 import { useTheme } from "@emotion/react";
-import { H3 } from "src/components/EvComponents/Typography";
 import EvisInNewsSection from "@/components/EvSections/new-page-sections/EvisInNewsSection";
 import { H2 } from "@/components/Typography";
 import api from "src/utils/api/evis-api";
@@ -16,10 +15,7 @@ import { useMemo } from "react";
 
 const EvHome = (props) => {
   const theme = useTheme();
-  let {
-    evisNewsData,
-    evisInNewsData,
-  } = useMemo(() => {
+  let { evisNewsData, evisInNewsData } = useMemo(() => {
     if (!props?.evisNews) {
       return {};
     }
@@ -29,18 +25,15 @@ const EvHome = (props) => {
         title: attributes?.attributes?.title,
         link: attributes?.attributes?.news_link,
         img: attributes?.attributes?.photo?.data?.[0]?.attributes?.url,
-      }
-    })
+      };
+    });
     return {
       evisNewsData,
       evisInNewsData,
     };
   }, [props?.evisNews]);
 
-  let {
-    newsArticleData,
-    newsList,
-  } = useMemo(() => {
+  let { newsArticleData, newsList } = useMemo(() => {
     if (!props?.newsArticle) {
       return {};
     }
@@ -54,8 +47,8 @@ const EvHome = (props) => {
         buttonLink: attributes?.attributes?.title.replaceAll("?", "%3F"),
         title: attributes?.attributes?.title,
         date: attributes?.attributes?.date,
-      }
-    })
+      };
+    });
 
     return {
       newsArticleData,

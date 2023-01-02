@@ -34,7 +34,6 @@ const sponsorsData = [
 
 const GeneralPage = (props) => {
   // const { offerProducts, allProducts, topSailedProducts } = props;
-  // console.log(props.sponsors);
   let sponsors = useMemo(() => {
     if (!props?.sponsors) {
       return {};
@@ -65,10 +64,7 @@ const GeneralPage = (props) => {
             <SectionTitle>Enquire About Sponsorship Opportunities</SectionTitle>
           </Box>
         </Box>
-        <MainForm
-          sponsors={sponsors}
-          endpoint={"application-for-sponsors"}
-        />
+        <MainForm sponsors={sponsors} endpoint={"application-for-sponsors"} />
       </Container>
     </EvLayout>
   );
@@ -77,7 +73,6 @@ const GeneralPage = (props) => {
 export async function getStaticProps(context) {
   let sponsors = null;
   let sponsorsError = null;
-
 
   try {
     sponsors = await api.getSponsors();
@@ -91,7 +86,6 @@ export async function getStaticProps(context) {
       notFound: true,
     };
   }
-
 
   return {
     props: {

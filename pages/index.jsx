@@ -91,8 +91,6 @@ const EvHome = (props) => {
       videosData,
     };
   }, [props?.homePage]);
-  console.log("homePageData", homePageData);
-  console.log("videosData", videosData);
 
   const buttonsData = [
     {

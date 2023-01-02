@@ -185,7 +185,6 @@ function DownloadForm({ sponsors, endpoint }) {
                         value={values.country}
                         getOptionLabel={(option) => option.label}
                         onChange={(_, value) => {
-                          console.log(value);
                           setFieldValue("country", value);
                         }}
                         renderInput={(params) => (
