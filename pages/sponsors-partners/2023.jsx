@@ -36,6 +36,11 @@ const mediaPartners = [
     link: " https://media7.com",
   },
   {
+    source: "/assets/images/organizations/evlogo.jpg",
+    text: "",
+    link: "https://exhibitorsvoice.com/",
+  },
+  {
     source: "/assets/images/partners/petrofinder.png",
     text: "",
     link: "http://www.petrofinder.com",
