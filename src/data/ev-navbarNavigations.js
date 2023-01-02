@@ -144,7 +144,7 @@ const evNavbarNavigations = [
       },
       {
         title: "Visitor",
-        url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
+        url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics",
       },
       {
         title: "Media",

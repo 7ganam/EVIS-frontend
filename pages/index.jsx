@@ -140,7 +140,7 @@ const EvHome = (props) => {
     },
     {
       text: "VISITOR REGISTRATION",
-      url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
+      url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics",
       type: "internalLink",
     },
     {
