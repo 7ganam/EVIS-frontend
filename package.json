@@ -38,6 +38,7 @@
     "currency.js": "^2.0.4",
     "date-fns": "^2.25.0",
     "formik": "^2.2.9",
+    "framer-motion": "^4.1.17",
     "merge": "^2.1.1",
     "moment": "^2.29.4",
     "next": "^12.0.1",

@@ -85,23 +85,26 @@ const GeneralPage = (props) => {
             <SectionTitle>KEY PARTNERS</SectionTitle>
           </Box>
         )}
-        <Grid
+        <Box
           container
           sx={{
-            maxWidth: "900px",
-            textAlign: "center",
-            placeItems: "center",
-            marginTop: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+            mt: "15px",
           }}
         >
           {key_partners.map(({ source, text }) => {
             return (
-              <Grid item xs={12} sm={6} md={3} key={source}>
+              <Box sx={{}} key={source}>
                 <LogoWithTitle source={source} text={text} />
-              </Grid>
+              </Box>
             );
           })}
-        </Grid>
+        </Box>
         {SponsorsGrid && SponsorsGrid.length > 0 && (
           <Box sx={{ mt: "40px", mb: "20px" }}>
             <SectionTitle>SPONSORS</SectionTitle>

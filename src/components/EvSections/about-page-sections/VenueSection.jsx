@@ -19,14 +19,24 @@ const VenueSection = (props) => {
       </Box>
       <Grid container>
         <Grid item md={6} sm={12} xs={12} sx={{ padding: "20px" }}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14531.667585283021!2d54.4369963!3d24.4189545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc2f73ba3f513d4b3!2sAbu%20Dhabi%20National%20Exhibition%20Centre!5e0!3m2!1sen!2seg!4v1662066790096!5m2!1sen!2seg"
-            width="100%"
-            height="400"
-            border="0"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <Box
+            sx={{
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "-4px 6px 12px 0px #00000075",
+            }}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14531.667585283021!2d54.4369963!3d24.4189545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc2f73ba3f513d4b3!2sAbu%20Dhabi%20National%20Exhibition%20Centre!5e0!3m2!1sen!2seg!4v1662066790096!5m2!1sen!2seg"
+              width="100%"
+              height="400"
+              border="0"
+              borderRadius="20px"
+              overflow="hidden "
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </Box>
         </Grid>
         <Grid item md={6} sm={12} xs={12} sx={{ padding: "20px" }}>
           <Box>
