@@ -107,7 +107,7 @@ const TopicsSection = () => {
                   mt: "40px",
                 }}
               >
-                <Link href="https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome">
+                <Link href="https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics">
                   <a>
                     <BigButton content={"Register now!"} />
                   </a>

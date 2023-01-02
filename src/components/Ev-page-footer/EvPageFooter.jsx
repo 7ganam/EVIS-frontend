@@ -57,7 +57,7 @@ const quickLinks = [
   { label: "exhibition", link: "/exhibition/why-exhibit" },
   {
     label: "Sponsors & partners",
-    link: "https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome",
+    link: "https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Demographics",
   },
   { label: "CONFERENCE", link: "/agenda/conference" },
   { label: "NEWS", link: "/news-media/news" },
@@ -65,15 +65,15 @@ const quickLinks = [
   { label: "EVIS2023 ACTIVITIES ", link: "#" },
   {
     label: "Book Your Stand NOW",
-    link: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
+    link: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Demographics",
   },
   {
     label: "Delegate Registration",
-    link: " https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome",
+    link: " https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Demographics",
   },
   {
     label: "Register your interest to visit",
-    link: " https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
+    link: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics",
   },
 ];
 
