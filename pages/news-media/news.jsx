@@ -120,7 +120,7 @@ const EvHome = (props) => {
             mb: 6,
           }}
         >
-          {newsList.map(({ img, title, date, buttonLink }) => {
+          {newsList?.map(({ img, title, date, buttonLink }) => {
             return (
               <Grid
                 item

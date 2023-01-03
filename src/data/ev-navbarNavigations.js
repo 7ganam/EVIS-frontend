@@ -48,7 +48,7 @@ const evNavbarNavigations = [
       },
       {
         title: "Book your stand",
-        url: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
+        url: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Demographics",
       },
     ],
   },
@@ -132,19 +132,19 @@ const evNavbarNavigations = [
     child: [
       {
         title: "Sponsor",
-        url: " https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome",
+        url: " https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Demographics",
       },
       {
         title: "Exhibitor",
-        url: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Welcome",
+        url: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Demographics",
       },
       {
         title: "Delegate",
-        url: "https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Welcome",
+        url: "https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Demographics",
       },
       {
         title: "Visitor",
-        url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Welcome",
+        url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics",
       },
       {
         title: "Media",
