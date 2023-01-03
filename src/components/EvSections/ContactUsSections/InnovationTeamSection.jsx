@@ -54,8 +54,8 @@ const data = [
     Name: "Jessy Suraj",
     Position: "Operation Enquiries",
     Mobile: "+971 2 304 3322 / +971 50 686 3769",
-    Email: "april.claridad@nirvanatls.com",
-    EmailTo: "mailto:april.claridad@nirvanatls.com",
+    Email: "jessy.suraj@nirvanatls.com",
+    EmailTo: "mailto:jessy.suraj@nirvanatls.com",
   },
   {
     Src: "/assets/images/contact-us/2_hadhia.jpeg",
