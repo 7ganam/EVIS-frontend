@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import EvLayout from "src/components/layouts/EvLayout";
 import { Container, Box } from "@mui/material";
-import api from "src/utils/api/grocery3-shop";
+import api from "src/utils/api/evis-api";
 import {
   SectionTitle,
   SectionTitle2,
@@ -17,22 +17,79 @@ import BazarImage from "src/components/BazarImage";
 import ImageGallery from "react-image-gallery";
 import ImagesSection from "./imagesSection";
 import Card1 from "@/components/Card1";
-const images = [
+
+const images2 = [
   {
-    original: "/assets/images/gallery/1.jpg",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
+    thumbnail: `/assets/images/gallery/1.jpg`,
+    original: `/assets/images/gallery/1.jpg`,
   },
   {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
+    thumbnail: `/assets/images/gallery/2.jpg`,
+    original: `/assets/images/gallery/2.jpg`,
   },
   {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
+    thumbnail: `/assets/images/gallery/3.jpg`,
+    original: `/assets/images/gallery/3.jpg`,
+  },
+  {
+    thumbnail: `/assets/images/gallery/4.jpg`,
+    original: `/assets/images/gallery/4.jpg`,
+  },
+  {
+    thumbnail: `/assets/images/gallery/5.jpg`,
+    original: `/assets/images/gallery/5.jpg`,
+  },
+  {
+    thumbnail: `/assets/images/gallery/6.jpg`,
+    original: `/assets/images/gallery/6.jpg`,
+  },
+  {
+    thumbnail: `/assets/images/gallery/7.png`,
+    original: `/assets/images/gallery/7.png`,
+  },
+  {
+    thumbnail: `/assets/images/gallery/8.png`,
+    original: `/assets/images/gallery/8.png`,
+  },
+  //   {
+  //     thumbnail: `/assets/images/gallery/9.png`,
+  //     original: `/assets/images/gallery/9.png`,
+  //   },
+  //   {
+  //     thumbnail: `/assets/images/gallery/10.png`,
+  //     original: `/assets/images/gallery/10.png`,
+  //   },
+  //   {
+  //     thumbnail: `/assets/images/gallery/12.png`,
+  //     original: `/assets/images/gallery/12.png`,
+  //   },
+  //   {
+  //     thumbnail: `/assets/images/gallery/13.png`,
+  //     original: `/assets/images/gallery/13.png`,
+  //   },
+  //   {
+  //     thumbnail: `/assets/images/gallery/14.png`,
+  //     original: `/assets/images/gallery/14.png`,
+  //   },
+  //   {
+  //     thumbnail: `/assets/images/gallery/15.png`,
+  //     original: `/assets/images/gallery/15.png`,
+  //   },
+  {
+    thumbnail: `/assets/images/gallery/19.jpg`,
+    original: `/assets/images/gallery/19.jpg`,
+  },
+  {
+    thumbnail: `/assets/images/gallery/17.jpg`,
+    original: `/assets/images/gallery/17.jpg`,
+  },
+  {
+    thumbnail: `/assets/images/gallery/18.jpg`,
+    original: `/assets/images/gallery/18.jpg`,
   },
 ];
 
-const videosList = [
+const videosList2 = [
   {
     youtube:
       "https://www.youtube.com/watch?v=pH-S5T4v000&feature=emb_logo&ab_channel=EVIS",
@@ -56,7 +113,28 @@ const videosList = [
   { youtube: "https://www.youtube.com/watch?v=x2CDpB6mrp4&ab_channel=EVIS" },
 ];
 
-const EvHome = () => {
+const EvHome = (props) => {
+  let { videosList, images } = useMemo(() => {
+    if (!props?.galleryPage) {
+      return {};
+    }
+
+    let data = JSON.parse(props.galleryPage).data?.attributes ?? null;
+    let videosList = data?.video_link.map((item) => {
+      return { youtube: item.youtube_link };
+    });
+    let images = data?.photos.data.map((item) => {
+      return { thumbnail: item.attributes.url, original: item.attributes.url };
+    });
+    console.log("data", data);
+    let images2;
+    return {
+      videosList,
+      images,
+    };
+  }, [props]);
+
+  console.log("videosList ", videosList);
   const theme = useTheme();
 
   return (
@@ -117,7 +195,7 @@ const EvHome = () => {
           </Box>
         </Box>
         <Card1 sx={{ p: "20px" }}>
-          <ImagesSection></ImagesSection>
+          <ImagesSection images={images}></ImagesSection>
         </Card1>
         <Box
           sx={{
@@ -176,16 +254,30 @@ const EvHome = () => {
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+export async function getStaticProps(context) {
+  let galleryPage = null;
+  let galleryPageError = null;
+
+  try {
+    galleryPage = await api.getGalleryPage();
+    console.log("galleryPage :>> ", galleryPage);
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    galleryPageError = dev_error;
+  }
+
+  if (!galleryPage) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      galleryPage: JSON.stringify(galleryPage),
+      galleryPageError: JSON.stringify(galleryPageError),
     },
+    revalidate: 10, // In seconds
   };
 }
 

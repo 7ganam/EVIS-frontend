@@ -6,8 +6,8 @@ const PREFIX_URL =
   "https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/";
 
 export default class ImagesSection extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showIndex: false,
       showBullets: true,
@@ -26,77 +26,6 @@ export default class ImagesSection extends React.Component {
       showVideo: {},
       useWindowKeyDown: true,
     };
-
-    this.images = [
-      {
-        thumbnail: `/assets/images/gallery/1.jpg`,
-        original: `/assets/images/gallery/1.jpg`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/2.jpg`,
-        original: `/assets/images/gallery/2.jpg`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/3.jpg`,
-        original: `/assets/images/gallery/3.jpg`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/4.jpg`,
-        original: `/assets/images/gallery/4.jpg`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/5.jpg`,
-        original: `/assets/images/gallery/5.jpg`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/6.jpg`,
-        original: `/assets/images/gallery/6.jpg`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/7.png`,
-        original: `/assets/images/gallery/7.png`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/8.png`,
-        original: `/assets/images/gallery/8.png`,
-      },
-      //   {
-      //     thumbnail: `/assets/images/gallery/9.png`,
-      //     original: `/assets/images/gallery/9.png`,
-      //   },
-      //   {
-      //     thumbnail: `/assets/images/gallery/10.png`,
-      //     original: `/assets/images/gallery/10.png`,
-      //   },
-      //   {
-      //     thumbnail: `/assets/images/gallery/12.png`,
-      //     original: `/assets/images/gallery/12.png`,
-      //   },
-      //   {
-      //     thumbnail: `/assets/images/gallery/13.png`,
-      //     original: `/assets/images/gallery/13.png`,
-      //   },
-      //   {
-      //     thumbnail: `/assets/images/gallery/14.png`,
-      //     original: `/assets/images/gallery/14.png`,
-      //   },
-      //   {
-      //     thumbnail: `/assets/images/gallery/15.png`,
-      //     original: `/assets/images/gallery/15.png`,
-      //   },
-      {
-        thumbnail: `/assets/images/gallery/19.jpg`,
-        original: `/assets/images/gallery/19.jpg`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/17.jpg`,
-        original: `/assets/images/gallery/17.jpg`,
-      },
-      {
-        thumbnail: `/assets/images/gallery/18.jpg`,
-        original: `/assets/images/gallery/18.jpg`,
-      },
-    ];
   }
 
   _onImageClick(event) {
@@ -225,7 +154,7 @@ export default class ImagesSection extends React.Component {
       <section className="app">
         <ImageGallery
           ref={(i) => (this._imageGallery = i)}
-          items={this.images}
+          items={this.props.images}
           onClick={this._onImageClick.bind(this)}
           onImageLoad={this._onImageLoad}
           onSlide={this._onSlide.bind(this)}

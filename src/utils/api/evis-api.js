@@ -46,6 +46,10 @@ const getAboutPage = async () => {
   const response = await axios.get(`${baseUrl}/api/about-page?populate=deep`);
   return response.data;
 };
+const getGalleryPage = async () => {
+  const response = await axios.get(`${baseUrl}/api/gallery-page?populate=deep`);
+  return response.data;
+};
 
 const getSponsors = async (year) => {
   let strFilter;
@@ -122,6 +126,7 @@ const api = {
   getHomePage,
   getYearSpeakers,
   getAboutPage,
+  getGalleryPage,
   getSponsors,
   getTestimonials,
   getEvisInNews,
