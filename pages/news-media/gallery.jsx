@@ -15,7 +15,7 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import BazarImage from "src/components/BazarImage";
 import ImageGallery from "react-image-gallery";
-import ImagesSection from "./imagesSection";
+import ImagesSection from "@/components/EvSections/imagesSection";
 import Card1 from "@/components/Card1";
 
 const images2 = [
