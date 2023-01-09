@@ -75,6 +75,10 @@ const quickLinks = [
     label: "Register your interest to visit",
     link: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics",
   },
+  {
+    label: "Exhibitor zone",
+    link: "https://onlineexhibitormanual.net/EVIS2023/ExhibitorLoginZone.aspx",
+  },
 ];
 
 // =================================================================
