@@ -9,10 +9,10 @@ const OpenGraphTags = () => {
       />
       {/* thumbnail And title for social media */}
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Bazar - React Ecommerce Template" />
+      <meta property="og:title" content="Electric Vehicles Innovation Summit" />
       <meta
         property="og:description"
-        content="React Next.js ecommerce template. Build SEO friendly Super store, Grocery delivery app and Multivendor store"
+        content="The MENA’s First Electric Vehicles Exhibition and Conference"
       />
       <meta property="og:image" content="/assets/images/landing/preview.png" />
     </React.Fragment>
