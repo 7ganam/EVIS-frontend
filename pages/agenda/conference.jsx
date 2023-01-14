@@ -11,9 +11,10 @@ import { BigButton } from "@/components/EvComponents/Buttons";
 import DownloadingIcon from "@mui/icons-material/Downloading";
 
 const images = [
-  "/assets/images/summit-1.jpg",
-  "/assets/images/summit-2.jpg",
-  "/assets/images/summit-3.jpg",
+  "/assets/images/agenda/c1.png",
+  "/assets/images/agenda/c2.png",
+  "/assets/images/agenda/c3.png",
+  "/assets/images/agenda/c4.png",
 ];
 // ======================================================
 // ======================================================
@@ -60,7 +61,7 @@ const GeneralPage = () => {
             mt: "40px",
           }}
         >
-          <a href="/summit-agenda.pdf" download>
+          <a href="/EVIS2023 Paid Conference Agenda 09_01_2023.pdf" download>
             <BigButton
               content={
                 <Box
