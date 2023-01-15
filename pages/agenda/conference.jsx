@@ -62,8 +62,6 @@ const GeneralPage = (props) => {
     };
   }, [props?.conferencePage]);
 
-  console.log({ talks });
-
   return (
     <EvLayout showNavbar={true}>
       <PageHeader

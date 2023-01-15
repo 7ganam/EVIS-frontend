@@ -54,7 +54,7 @@ function AgendaTalkCard({ talk }) {
             md={3}
             sx={{
               bgcolor: "#f8f8f8",
-              fontSize: "10px",
+              fontSize: "12px",
               padding: "5px",
               paddingLeft: "10px",
               paddingRight: "10px",

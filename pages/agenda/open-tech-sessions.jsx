@@ -9,6 +9,7 @@ import { BigButton } from "@/components/EvComponents/Buttons";
 import DownloadingIcon from "@mui/icons-material/Downloading";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
+import AgendaSection from "@/components/EvSections/agenda-page-sections/AgendaSection";
 
 // ======================================================
 // ======================================================
@@ -22,6 +23,7 @@ const pageHeaderData = {
 const GeneralPage = (props) => {
   let {
     openTechPageData,
+    talks,
     agendaTitle,
     firstBody,
     secondBody,
@@ -36,6 +38,7 @@ const GeneralPage = (props) => {
       JSON.parse(props.openTechPage).data?.attributes ?? null;
     const agendaTitle = openTechPageData?.header?.text;
     const firstBody = { text: openTechPageData?.first_body };
+    const talks = openTechPageData?.talks ?? [];
     const secondBody = { text: openTechPageData?.second_body };
     const downloadLink = openTechPageData?.download_link;
     const mainImage = openTechPageData?.header?.image?.data?.attributes?.url;
@@ -45,8 +48,10 @@ const GeneralPage = (props) => {
       }
     );
 
+    console.log("openTechPageData :>> ", openTechPageData);
     return {
       openTechPageData,
+      talks,
       agendaTitle,
       firstBody,
       secondBody,
@@ -76,14 +81,14 @@ const GeneralPage = (props) => {
         <Box sx={{ mt: "40px", mb: "20px" }}>
           <SectionTitle> Agenda </SectionTitle>
         </Box>
-        <Box sx={{ width: "80%", margin: "auto" }}>
-          <CarouselSection images={scheduleImages}></CarouselSection>
+        <Box sx={{ width: "100%", margin: "auto" }}>
+          <AgendaSection talks={talks}></AgendaSection>
         </Box>
         <Box
           sx={{
             display: "flex",
             justifyContent: "center ",
-            mt: "40px",
+            my: "40px",
           }}
         >
           <a href={downloadLink} download>
