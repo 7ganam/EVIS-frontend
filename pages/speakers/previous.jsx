@@ -1,14 +1,12 @@
 import { Container } from "@mui/material";
 
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/evis-api";
 import SpeakersSection from "src/components/EvSections/agenda-page-sections/SpeakersSection";
 import { Box } from "@mui/system";
-import { useMemo } from "react";
 // ======================================================
 // ======================================================
 
-const speakersData2 = [
+const speakersData = [
   {
     src: "/assets/images/speakers/AhmedAbdu.png",
     name: "Ahmed Abdu",
@@ -466,21 +464,7 @@ const speakersData2 = [
   },
 ];
 
-const GeneralPage = (props) => {
-  let speakersData = useMemo(() => {
-    let allSpeakers = JSON.parse(props.allSpeakers)?.data ?? [];
-
-    return allSpeakers.map((speaker) => {
-      return {
-        link: `/speakers/${speaker?.attributes?.slug ?? ""}`,
-        src: speaker?.attributes?.image?.data?.attributes?.url ?? "",
-        name: speaker?.attributes?.name ?? "",
-        title: speaker?.attributes?.title ?? "",
-        company: speaker?.attributes?.organization ?? "",
-      };
-    });
-  }, [props.allSpeakers]);
-
+const generalPage = () => {
   return (
     <EvLayout showNavbar={true}>
       <Container></Container>
@@ -498,29 +482,4 @@ const GeneralPage = (props) => {
   );
 };
 
-export async function getStaticProps(context) {
-  let allSpeakers = null;
-  let allSpeakersError = null;
-
-  try {
-    allSpeakers = await api.getYearSpeakers(22);
-  } catch (dev_error) {
-    console.log(`error fetching`, dev_error);
-    allSpeakersError = dev_error;
-  }
-
-  if (!allSpeakers) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      allSpeakers: JSON.stringify(allSpeakers),
-      allSpeakersError: JSON.stringify(allSpeakersError),
-    },
-    revalidate: 10, // In seconds
-  };
-}
-export default GeneralPage;
+export default generalPage;

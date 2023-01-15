@@ -9,7 +9,7 @@ import { BigButton } from "@/components/EvComponents/Buttons";
 import DownloadingIcon from "@mui/icons-material/Downloading";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
-
+import AgendaSection from "@/components/EvSections/agenda-page-sections/AgendaSection";
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -20,9 +20,9 @@ const pageHeaderData = {
 };
 
 const GeneralPage = (props) => {
-  // console.log(props);
   let {
     conferencePageData,
+    talks,
     agendaTitle,
     firstBody,
     secondBody,
@@ -34,18 +34,24 @@ const GeneralPage = (props) => {
     if (!props?.conferencePage) {
       return {};
     }
-    let conferencePageData = JSON.parse(props.conferencePage).data?.attributes ?? null;
+    let conferencePageData =
+      JSON.parse(props.conferencePage).data?.attributes ?? null;
     const agendaTitle = conferencePageData?.header?.text;
-    const firstBody = { text: conferencePageData?.first_body, };
-    const secondBody = { text: conferencePageData?.second_body, };
-    const downloadLink = conferencePageData?.download_link?.data?.[0]?.attributes?.url;
+    const firstBody = { text: conferencePageData?.first_body };
+    const talks = conferencePageData?.talks ?? [];
+    const secondBody = { text: conferencePageData?.second_body };
+    const downloadLink =
+      conferencePageData?.download_link?.data?.[0]?.attributes?.url;
     const mainImage = conferencePageData?.header?.image?.data?.attributes?.url;
-    const scheduleImages = conferencePageData?.schedule_images?.data?.map((highlight) => {
-      return highlight?.attributes?.url;
-    });
+    const scheduleImages = conferencePageData?.schedule_images?.data?.map(
+      (highlight) => {
+        return highlight?.attributes?.url;
+      }
+    );
 
     return {
       conferencePageData,
+      talks,
       agendaTitle,
       firstBody,
       secondBody,
@@ -55,6 +61,8 @@ const GeneralPage = (props) => {
       scheduleImages,
     };
   }, [props?.conferencePage]);
+
+  console.log({ talks });
 
   return (
     <EvLayout showNavbar={true}>
@@ -77,8 +85,8 @@ const GeneralPage = (props) => {
         <Box sx={{ mt: "40px", mb: "20px" }}>
           <SectionTitle> Agenda </SectionTitle>
         </Box>
-        <Box sx={{ width: "80%", margin: "auto" }}>
-          <CarouselSection images={scheduleImages}></CarouselSection>
+        <Box sx={{ width: "100%", margin: "auto" }}>
+          <AgendaSection talks={talks}></AgendaSection>
         </Box>
         <Box
           sx={{
