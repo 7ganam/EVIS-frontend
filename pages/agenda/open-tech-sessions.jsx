@@ -40,7 +40,8 @@ const GeneralPage = (props) => {
     const firstBody = { text: openTechPageData?.first_body };
     const talks = openTechPageData?.talks ?? [];
     const secondBody = { text: openTechPageData?.second_body };
-    const downloadLink = openTechPageData?.download_link;
+    const downloadLink =
+      openTechPageData?.download_link?.data?.[0]?.attributes?.url;
     const mainImage = openTechPageData?.header?.image?.data?.attributes?.url;
     const scheduleImages = openTechPageData?.schedule_images?.data?.map(
       (highlight) => {
