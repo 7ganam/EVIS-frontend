@@ -77,7 +77,7 @@ const NewsCard = (props) => {
         {/* <Button></Button> */}
         <Button
           onClick={() => {
-            router.push(`/news-media/${props.directory}`);
+            router.push(`/news-media/${props.id}`);
           }}
           variant="outlined"
           sx={{ width: "100%" }}

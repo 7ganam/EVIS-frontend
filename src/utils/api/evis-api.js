@@ -120,6 +120,13 @@ const getNewsArticle = async () => {
   return response.data;
 };
 
+const getNewsArticleById = async (id) => {
+  const response = await axios.get(
+    `${baseUrl}/api/news-articles?filters[id][$eq]=${id}&populate=*`
+  );
+  return response.data;
+};
+
 const api = {
   getSpeakers,
   getSpeaker,
@@ -131,6 +138,7 @@ const api = {
   getTestimonials,
   getEvisInNews,
   getNewsArticle,
+  getNewsArticleById,
   getAgenda,
   getOpenTech,
   getContactUs,

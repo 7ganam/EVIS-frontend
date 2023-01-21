@@ -69,7 +69,7 @@ const EvHome = (props) => {
     };
   }, [props?.evisNews]);
 
-  let { newsArticleData, newsList } = useMemo(() => {
+  let { newsList } = useMemo(() => {
     if (!props?.newsArticle) {
       return {};
     }
@@ -77,6 +77,7 @@ const EvHome = (props) => {
 
     const newsList = newsArticleData.map((attributes) => {
       return {
+        id: attributes?.id,
         img: attributes?.attributes?.article_photo?.data?.attributes?.url,
         content: attributes?.attributes?.content,
         buttonText: "READ MORE",
@@ -92,7 +93,6 @@ const EvHome = (props) => {
     });
 
     return {
-      newsArticleData,
       newsList,
     };
   }, [props?.newsArticle]);
@@ -161,7 +161,7 @@ const EvHome = (props) => {
             mb: 6,
           }}
         >
-          {newsList?.map(({ img, title, date, buttonLink }) => {
+          {newsList?.map(({ id, img, title, date, buttonLink }) => {
             return (
               <Grid
                 item
@@ -172,6 +172,7 @@ const EvHome = (props) => {
                 sx={{ display: "flex", justifyContent: "center" }}
               >
                 <NewsCard
+                  id={id}
                   srcImage={img}
                   header={title}
                   date={date}
