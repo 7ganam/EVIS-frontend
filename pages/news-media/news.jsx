@@ -238,25 +238,29 @@ const EvHome = () => {
             mb: 6,
           }}
         >
-          {newsList.map(({ img, title, date, buttonLink }) => {
-            return (
-              <Grid
-                item
-                xs={12}
-                sm={4}
-                md={3}
-                key={title}
-                sx={{ display: "flex", justifyContent: "center" }}
-              >
-                <NewsCard
-                  srcImage={img}
-                  header={title}
-                  date={date}
-                  directory={buttonLink}
-                />
-              </Grid>
-            );
-          })}
+          {newsList
+            .sort((a, b) => {
+              return new Date(b.date) - new Date(a.date);
+            })
+            .map(({ img, title, date, buttonLink }) => {
+              return (
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  md={3}
+                  key={title}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
+                  <NewsCard
+                    srcImage={img}
+                    header={title}
+                    date={date}
+                    directory={buttonLink}
+                  />
+                </Grid>
+              );
+            })}
         </Grid>
 
         {/* <Videos videosList={videosList} />
