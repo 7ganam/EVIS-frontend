@@ -47,7 +47,7 @@ const serviceList = [
   },
   {
     img: "/assets/images/2023_EXHIBITOR/CITA-EV-logo-min.png",
-    content: "CITA EV Cherger ",
+    content: "CITA EV Charger ",
   },
   {
     img: "/assets/images/2023_EXHIBITOR/EGME-min.png",
@@ -59,7 +59,7 @@ const serviceList = [
   },
   {
     img: "/assets/images/2023_EXHIBITOR/Powertech-Mobility-logo-min.png",
-    content: "Propower Electrical Equipments Trading LLC ",
+    content: "Powertech Electrical Equipments Trading LLC ",
   },
   {
     img: "/assets/images/2023_EXHIBITOR/Quench-Logo-min.png",
@@ -118,7 +118,7 @@ const generalPage = () => {
         }}
       ></Container>
       <Container>
-        <Cards data={serviceList} />
+        <Cards data={serviceList} title={"2023 EXHIBITORS"} />
       </Container>
     </EvLayout>
   );

@@ -16,7 +16,7 @@ const Cards = (props) => {
         py: "10px",
       }}
     >
-      <SectionTitle sx={{ mb: "20px" }}>2022 EXHIBITORS</SectionTitle>
+      <SectionTitle sx={{ mb: "20px" }}>{props.title}</SectionTitle>
 
       <Container
         sx={{

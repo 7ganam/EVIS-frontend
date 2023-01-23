@@ -206,7 +206,7 @@ const generalPage = () => {
         }}
       ></Container>
       <Container>
-        <Cards data={serviceList} />
+        <Cards data={serviceList} title={"2022 EXHIBITORS"} />
       </Container>
     </EvLayout>
   );
