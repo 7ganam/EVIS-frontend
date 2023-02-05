@@ -68,6 +68,11 @@ const mediaData = [
     text: "",
     link: "http://www.petrofinder.com",
   },
+  {
+    source: "/assets/images/organizations/Logo IBEX 220 by 132.png",
+    text: "",
+    link: "https://ibexpub.media/",
+  },
 ];
 
 const PartnersGrid = ({ sx }) => {

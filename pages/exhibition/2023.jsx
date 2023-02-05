@@ -109,6 +109,7 @@ EV’s are increasingly visible on the UAE’s roads. This number is set to expa
   ],
   direction: "left",
 };
+
 const generalPage = () => {
   return (
     <EvLayout showNavbar={true}>
