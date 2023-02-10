@@ -14,13 +14,11 @@ function extract_yt_id(url) {
 }
 
 const VideosSection = ({ videosList }) => {
-  videosList.forEach((item) => console.log(extract_yt_id(item.youtube)));
-
   const theme = useTheme();
   return (
     <Box mt={6}>
       <Grid container mb={-0.5} spacing={3}>
-        {videosList.map((item, ind) => (
+        {videosList?.map((item, ind) => (
           <Grid key={ind} item md={4} sm={6} xs={12}>
             <Box
               sx={{

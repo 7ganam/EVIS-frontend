@@ -21,18 +21,19 @@ const HoverCard = styled(({ hoverEffect, children, ...rest }) => (
     color: theme.palette.primary.main,
   },
 }));
-const topics = [
-  "Policies to accelerate the transition to zero-emission vehicles (ZEV).",
-  "Technology development and challenges in the vehicle powertrain and alternative fuels. ",
-  "EV charging infrastructure technology developments and challenges. ",
-  "Investment opportunities in the EV market in the MENA region and globally. ",
-  "Electrification of medium and heavy-duty vehicles. ",
-  "Electrification of the shipping and aviation sectors. ",
-  "Supply chain challenges in the EV sector from the well to the wheel.",
-];
+// const topics = [
+//   "Policies to accelerate the transition to zero-emission vehicles (ZEV).",
+//   "Technology development and challenges in the vehicle powertrain and alternative fuels. ",
+//   "EV charging infrastructure technology developments and challenges. ",
+//   "Investment opportunities in the EV market in the MENA region and globally. ",
+//   "Electrification of medium and heavy-duty vehicles. ",
+//   "Electrification of the shipping and aviation sectors. ",
+//   "Supply chain challenges in the EV sector from the well to the wheel.",
+// ];
 
-const TopicsSection = () => {
+const TopicsSection = (props) => {
   const theme = useTheme();
+  const topics = props.topics;
 
   return (
     <Box

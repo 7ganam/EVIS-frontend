@@ -37,94 +37,38 @@ const imagesData = [
   // },
 ];
 
-const mediaData = [
-  {
-    source: "/assets/images/organizations/nationshield logo-01.png",
-    text: "",
-    link: "http://www.nationshield.ae",
-  },
-  {
-    source: "/assets/images/organizations/highway.png",
-    text: "",
-    link: "https://highways.today/",
-  },
-  {
-    source: "/assets/images/organizations/E-Vehicle.png",
-    text: "",
-    link: "https://e-vehicleinfo.com/",
-  },
-  {
-    source: "/assets/images/organizations/Media7.png",
-    text: "",
-    link: " https://media7.com",
-  },
-  {
-    source: "/assets/images/organizations/evlogo.jpg",
-    text: "",
-    link: "https://exhibitorsvoice.com/",
-  },
-  {
-    source: "/assets/images/partners/petrofinder.png",
-    text: "",
-    link: "http://www.petrofinder.com",
-  },
-  {
-    source: "/assets/images/organizations/Logo IBEX 220 by 132.png",
-    text: "",
-    link: "https://ibexpub.media/",
-  },
-];
-
-const PartnersGrid = ({ sx }) => {
+const PartnersGrid = ({ sx, partners, title }) => {
   return (
-    <Box sx={{ ...sx, textAlign: "center", paddingBottom: "3rem" }}>
-      {/* <h6>KNOWLEDGE PARTNERS</h6>, */}
+    <Box sx={{ ...sx, textAlign: "center" }}>
       <Typography variant="h5" component="h5">
-        KNOWLEDGE PARTNERS
+        {title}
       </Typography>
-
-      <Grid
+      <Box
         container
-        sx={{ textAlign: "center", placeItems: "center" }}
-        mb={3}
-        justifyContent="center"
-      >
-        {imagesData.map(({ source, text, link }) => {
-          return (
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              md={2}
-              key={source}
-              sx={{ height: "150px" }}
-            >
-              <a target="_blank" href={link ?? "#"} rel="noopener noreferrer">
-                <LogoWithTitle source={source} text={text} />
-              </a>
-            </Grid>
-          );
-        })}
-      </Grid>
-      <Typography variant="h5" component="h5" sx={{ mt: 5 }}>
-        MEDIA PARTNERS
-      </Typography>
-      <Grid
-        container
-        sx={{ textAlign: "center", placeItems: "center" }}
+        sx={{
+          textAlign: "center",
+          placeItems: "center",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+        }}
         mt={3}
         justifyContent="center"
       >
-        {mediaData.map(({ source, text, link }) => {
+        {partners?.map(({ source, text, link }) => {
           return (
-            <Grid item xs={12} sm={4} md={2} key={source}>
-              <a target="_blank" href={link ?? "#"} rel="noopener noreferrer">
+            <Box key={source}>
+              {link ? (
+                <a target="_blank" href={link} rel="noopener noreferrer">
+                  <LogoWithTitle source={source} text={text} />
+                </a>
+              ) : (
                 <LogoWithTitle source={source} text={text} />
-              </a>
-            </Grid>
+              )}
+            </Box>
           );
         })}
-      </Grid>
+      </Box>
     </Box>
   );
 };

@@ -3,6 +3,7 @@ import { Container, Box, Link } from "@mui/material";
 import { Paragraph } from "src/components/EvComponents/Typography";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import Image from "src/components/BazarImage";
+import { useMemo } from "react";
 
 const data = {
   Src: "https://di9mr54a05a64.cloudfront.net/api-ntravel.expoplatform.com/image/MTYzMDc1MDAwODYxMzM0NTM4NDczMjg=.jpeg",
@@ -16,11 +17,44 @@ const data = {
   NirvanaLinkTo: "https://nirvanaholding.com/",
 };
 
-const AboutNirvana = () => {
+const AboutNirvana = (props) => {
+  let {
+    contactPageData,
+    aboutNirvanaTitle,
+    aboutNirvanaParagraph,
+    nirvanaWebsite,
+    aboutExhibitionTitle,
+    aboutExhibition,
+    nirvanaWebsiteTextToDisplay,
+    aboutNirvanaImage,
+  } = useMemo(() => {
+    if (!props?.contactPage) {
+      return {};
+    }
+    let contactPageData = props.contactPage;
+
+    const aboutNirvanaParagraph = contactPageData?.about_nirvana_paragraph;
+    const nirvanaWebsite = contactPageData?.nirvana_website;
+    const aboutExhibition = contactPageData?.about_exhibition;
+    const nirvanaWebsiteTextToDisplay =
+      contactPageData?.nirvana_website_text_to_display;
+    const aboutNirvanaImage =
+      contactPageData?.about_nirvana_image?.data?.attributes?.url;
+
+    return {
+      contactPageData,
+      aboutNirvanaParagraph,
+      nirvanaWebsite,
+      aboutExhibition,
+      nirvanaWebsiteTextToDisplay,
+      aboutNirvanaImage,
+    };
+  }, [props?.contactPage]);
+
   return (
     <Box>
       <Box sx={{ marginBottom: "25px" }}>
-        <SectionTitle>{data.H1}</SectionTitle>
+        <SectionTitle>ABOUT NIRVANA HOLDING</SectionTitle>
       </Box>
       <Box sx={{ height: "auto", width: "100%" }}>
         <Image
@@ -28,7 +62,7 @@ const AboutNirvana = () => {
           width={"100%"}
           height={"100%"}
           mb={0}
-          src={data.Src}
+          src={aboutNirvanaImage}
           alt="logo"
           sx={{ objectFit: "cover" }}
         />
@@ -36,17 +70,19 @@ const AboutNirvana = () => {
       <Container>
         <Container>
           <Box sx={{ margin: "25px 0 60px" }}>
-            <Paragraph>{data.Body1}</Paragraph>
+            <Paragraph>{aboutNirvanaParagraph}</Paragraph>
             <Box sx={{ margin: "20px 0 10px" }}>
               <Paragraph>
                 To learn more, visit the{" "}
-                <Link href={data.NirvanaLinkTo}>{data.NirvanaLink}</Link>
+                <Link href={nirvanaWebsite}>{nirvanaWebsiteTextToDisplay}</Link>
               </Paragraph>
             </Box>
           </Box>
-          <SectionTitle>{data.H2}</SectionTitle>
+          <SectionTitle>
+            ABOUT NIRVANA EVENTS & EXHIBITIONS DEPARTMENT
+          </SectionTitle>
           <Box sx={{ margin: "40px 0 30px" }}>
-            <Paragraph>{data.Body2}</Paragraph>
+            <Paragraph>{aboutExhibition}</Paragraph>
           </Box>
         </Container>
       </Container>

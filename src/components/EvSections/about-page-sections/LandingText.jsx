@@ -4,7 +4,8 @@ import { Box, Grid } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 const LandingText = (props) => {
-  const { p1, p2, p3 } = props.section;
+  const ps = props.paragraph;
+  const topic = props.topic;
   return (
     <Box sx={{ mt: "35px" }}>
       <Box sx={{ mb: "15px" }}>
@@ -12,19 +13,9 @@ const LandingText = (props) => {
       </Box>
       <Grid container spacing={3} sx={{ pt: 1 }}>
         <Grid item xs={12} sm={12} md={12}>
-          <Box>
-            <Paragraph>{p1}</Paragraph>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={12} md={12}>
-          <Box>
-            <Paragraph>{p2}</Paragraph>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={12} md={12}>
-          <Box>
-            <Paragraph>{p3}</Paragraph>
-          </Box>
+          <Paragraph>
+            <Box sx={{ whiteSpace: "pre-wrap" }}>{ps}</Box>
+          </Paragraph>
         </Grid>
       </Grid>
     </Box>

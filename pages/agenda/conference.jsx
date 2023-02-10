@@ -1,7 +1,5 @@
 import { Box, Container } from "@mui/material";
-
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
 import LandingText from "src/components/EvSections/agenda-page-sections/LandingText";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import PageHeader from "src/components/EvComponents/PageHeader";
@@ -9,13 +7,9 @@ import React from "react"; // styled component
 import CarouselSection from "@/components/EvSections/agenda-page-sections/CarouselSection";
 import { BigButton } from "@/components/EvComponents/Buttons";
 import DownloadingIcon from "@mui/icons-material/Downloading";
-
-const images = [
-  "/assets/images/agenda/c1.png",
-  "/assets/images/agenda/c2.png",
-  "/assets/images/agenda/c3.png",
-  "/assets/images/agenda/c4.png",
-];
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
+import AgendaSection from "@/components/EvSections/agenda-page-sections/AgendaSection";
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -24,20 +18,57 @@ const pageHeaderData = {
   //   buttonLink: "/",
   image: "/assets/images/summit.png",
 };
-const section = {
-  text: `The EVIS conference will provide a world-class conference experience for our delegates by bringing together the brightest minds of the industry as speakers at a state-of-the-art venue to share their expertise. 
 
-Each conference day kicks off with a notable keynote address followed by a series of panel discussions with top industry leaders discussing the most important market disruptors of the last year and what they expect to see in the years to come.`,
-};
+const GeneralPage = (props) => {
+  let {
+    conferencePageData,
+    talks,
+    agendaTitle,
+    firstBody,
+    secondBody,
+    // firstAndSecondBody,
+    downloadLink,
+    mainImage,
+    scheduleImages,
+  } = useMemo(() => {
+    if (!props?.conferencePage) {
+      return {};
+    }
+    let conferencePageData =
+      JSON.parse(props.conferencePage).data?.attributes ?? null;
+    const agendaTitle = conferencePageData?.header?.text;
+    const firstBody = { text: conferencePageData?.first_body };
+    const talks = conferencePageData?.talks ?? [];
+    const secondBody = { text: conferencePageData?.second_body };
+    const downloadLink =
+      conferencePageData?.download_link?.data?.[0]?.attributes?.url;
+    const mainImage = conferencePageData?.header?.image?.data?.attributes?.url;
+    const scheduleImages = conferencePageData?.schedule_images?.data?.map(
+      (highlight) => {
+        return highlight?.attributes?.url;
+      }
+    );
 
-const GeneralPage = () => {
+    return {
+      conferencePageData,
+      talks,
+      agendaTitle,
+      firstBody,
+      secondBody,
+      // firstAndSecondBody,
+      downloadLink,
+      mainImage,
+      scheduleImages,
+    };
+  }, [props?.conferencePage]);
+
   return (
     <EvLayout showNavbar={true}>
       <PageHeader
-        text={pageHeaderData.text}
+        text={agendaTitle}
         buttonText={pageHeaderData.buttonText}
         buttonLink={pageHeaderData.buttonLink}
-        image={pageHeaderData.image}
+        image={mainImage}
       ></PageHeader>
 
       <Container
@@ -46,13 +77,14 @@ const GeneralPage = () => {
         }}
       >
         <Box sx={{ mt: "40px" }}>
-          <LandingText section={section} />
+          <LandingText section={firstBody} />
+          <LandingText section={secondBody} />
         </Box>
         <Box sx={{ mt: "40px", mb: "20px" }}>
           <SectionTitle> Agenda </SectionTitle>
         </Box>
-        <Box sx={{ width: "80%", margin: "auto" }}>
-          <CarouselSection images={images}></CarouselSection>
+        <Box sx={{ width: "100%", margin: "auto" }}>
+          <AgendaSection talks={talks}></AgendaSection>
         </Box>
         <Box
           sx={{
@@ -61,7 +93,7 @@ const GeneralPage = () => {
             mt: "40px",
           }}
         >
-          <a href="/EVIS2023 Paid Conference Agenda 09_01_2023.pdf" download>
+          <a href={downloadLink} download>
             <BigButton
               content={
                 <Box
@@ -88,15 +120,28 @@ const GeneralPage = () => {
 };
 
 export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+  let conferencePage = null;
+  let conferencePageError = null;
+
+  try {
+    conferencePage = await api.getAgenda();
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    conferencePage = dev_error;
+  }
+
+  if (!conferencePage) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      conferencePage: JSON.stringify(conferencePage),
+      conferencePageError: JSON.stringify(conferencePageError),
     },
+    revalidate: 10, // In seconds
   };
 }
 export default GeneralPage;

@@ -35,7 +35,7 @@ const WhatToExpectSection = ({ serviceList }) => {
             justify="center"
             justifyContent={"center"}
           >
-            {serviceList.map((item, ind) => {
+            {serviceList?.map((item, ind) => {
               return (
                 <Grid item lg={2} md={3} xs={6} key={ind}>
                   <Card

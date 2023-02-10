@@ -18,7 +18,7 @@ const Videos = ({ videosList }) => {
   return (
     <Box mt={6}>
       <Grid container mb={-0.5} spacing={3}>
-        {videosList.map((item, ind) => (
+        {videosList?.map((item, ind) => (
           <Grid key={ind} item md={4} sm={6} xs={12}>
             <Box
               sx={{

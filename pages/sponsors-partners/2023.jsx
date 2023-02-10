@@ -4,118 +4,70 @@ import { Grid, Container, Box } from "@mui/material";
 import { H1, H4 } from "src/components/EvComponents/Typography";
 
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
 import { H2, H5 } from "@/components/Typography";
 import PageHeader from "src/components/EvComponents/PageHeader";
 import LogoWithTitle from "@/components/EvComponents/LogoWithTitle";
 import { useTheme } from "@emotion/react";
+import api from "src/utils/api/evis-api";
+import { useMemo } from "react";
 
 // ======================================================
 // ======================================================
 
-const mediaPartners = [
-  {
-    source: "/assets/images/associations/Nationshield.png",
-    text: "",
-    link: "http://www.nationshield.ae",
-  },
-
-  {
-    source: "/assets/images/organizations/highway2.png",
-    text: "",
-    link: "https://highways.today/",
-  },
-  {
-    source: "/assets/images/organizations/E-Vehicle.png",
-    text: "",
-    link: "https://e-vehicleinfo.com/",
-  },
-  {
-    source: "/assets/images/organizations/Media7.png",
-    text: "",
-    link: " https://media7.com",
-  },
-  {
-    source: "/assets/images/organizations/evlogo.jpg",
-    text: "",
-    link: "https://exhibitorsvoice.com/",
-  },
-  {
-    source: "/assets/images/partners/petrofinder.png",
-    text: "",
-    link: "http://www.petrofinder.com",
-  },
-  {
-    source: "/assets/images/organizations/Logo IBEX 220 by 132.png",
-    text: "",
-    link: "https://ibexpub.media/",
-  },
-];
-const knowledgePartners = [
-  {
-    source: "/assets/images/partners/CEBC.png",
-    text: "",
-    link: "https://www.cebcmena.com",
-  },
-  {
-    source: "/assets/images/partners/CHARIN.png",
-    text: "",
-    link: "https://www.charin.global",
-  },
-];
-const pageHeaderData = {
-  text: "TO OUR 2022 SUPPORTERS, PARTNERS AND SPONSORS!",
-  //   buttonText: "Save The Date",
-  //   buttonLink: "/",
-  image: "/assets/images/png_bg.png",
+const StyledImage = (props) => {
+  return <img src={props.Src} width="170" style={{ margin: "10px" }} />;
 };
+
 const GeneralPage = (props) => {
-  const theme = useTheme();
+  let sponsors = useMemo(() => {
+    if (!props?.sponsors) {
+      return {};
+    }
+
+    let data = JSON.parse(props.sponsors)?.data ?? null;
+    const sponsors = data?.map((sponsor) => {
+      return {
+        text: sponsor?.attributes?.title ?? "",
+        source: sponsor?.attributes?.image?.data?.attributes?.url ?? "",
+        year: sponsor?.attributes?.year ?? "",
+        key_partner: sponsor?.attributes?.key_partner ?? null,
+        sponsor: sponsor?.attributes?.sponsor ?? null,
+        international_media_partner:
+          sponsor?.attributes?.international_media_partner ?? null,
+        knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
+        research_partner: sponsor?.attributes?.research_partner ?? null,
+        media_partner: sponsor?.attributes?.media_partner ?? null,
+      };
+    });
+
+    return sponsors;
+  }, [props?.sponsors]);
+
+  const key_partners = sponsors?.filter((sponsor) => {
+    return sponsor.key_partner === true;
+  });
+  const SponsorsGrid = sponsors?.filter((sponsor) => {
+    return sponsor.sponsor === true;
+  });
+
+  const internationalMediaPartners = sponsors?.filter((partner) => {
+    return partner.international_media_partner === true;
+  });
+
+  const knowledgePartners = sponsors?.filter((partner) => {
+    return partner.knowledge_partner === true;
+  });
+
+  const researchPartners = sponsors?.filter((partner) => {
+    return partner.research_partner === true;
+  });
+
+  const mediaPartners = sponsors?.filter((partner) => {
+    return partner.media_partner === true;
+  });
+
   return (
     <EvLayout showNavbar={true}>
-      {/* <PageHeader
-        text={pageHeaderData.text}
-        buttonText={pageHeaderData.buttonText}
-        buttonLink={pageHeaderData.buttonLink}
-        image={pageHeaderData.image}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Box
-            sx={{
-              fontSize: {
-                xs: "60px",
-                md: "120px",
-              },
-              maxWidth: "80%",
-              textAlign: "center",
-              fontWeight: "800",
-              color: theme.palette.primary.light,
-            }}
-          >
-            THANK YOU
-          </Box>
-          <H2
-            sx={{
-              fontSize: {
-                xs: "40px",
-                md: "50px",
-                maxWidth: "80%",
-                textAlign: "center",
-              },
-            }}
-          >
-            {pageHeaderData.text}
-          </H2>
-        </Box>
-      </PageHeader> */}
       <Container
         sx={{
           textAlign: "center",
@@ -124,75 +76,187 @@ const GeneralPage = (props) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          pt: "110px",
+          pb: "30px",
         }}
       >
-        <SectionTitle>MEDIA PARTNERS</SectionTitle>
-        <Grid
-          justifyContent={"center"}
+        {key_partners && key_partners.length > 0 && (
+          <Box sx={{ mt: "30px" }}>
+            <SectionTitle>KEY PARTNERS</SectionTitle>
+          </Box>
+        )}
+        <Box
           container
           sx={{
-            width: "600px",
-            textAlign: "center",
-            placeItems: "center",
-            marginTop: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+            mt: "15px",
           }}
         >
-          {mediaPartners.map(({ source, text, link }) => {
+          {key_partners.map(({ source, text }) => {
             return (
-              <Grid item xs={12} sm={4} key={source}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <a target="_blank" href={link} rel="noopener noreferrer">
-                    <LogoWithTitle source={source} text={text} />
-                  </a>
-                </Box>
+              <Box sx={{}} key={source}>
+                <LogoWithTitle source={source} text={text} />
+              </Box>
+            );
+          })}
+        </Box>
+        {SponsorsGrid && SponsorsGrid.length > 0 && (
+          <Box sx={{ mt: "40px", mb: "20px" }}>
+            <SectionTitle>SPONSORS</SectionTitle>
+          </Box>
+        )}
+        <Box
+          container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+          }}
+        >
+          {SponsorsGrid?.map(({ source, text }) => {
+            return (
+              <Box sx={{}} key={source}>
+                <LogoWithTitle source={source} text={text} />
+              </Box>
+            );
+          })}
+        </Box>
+        {internationalMediaPartners && internationalMediaPartners.length > 0 && (
+          <Box sx={{ mt: "40px", mb: "20px" }}>
+            <SectionTitle>INTERNATIONAL MEDIA PARTNER</SectionTitle>
+          </Box>
+        )}
+        <Box
+          container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+          }}
+        >
+          {internationalMediaPartners.map(({ source, text }) => {
+            return (
+              <Grid item xs={12} key={source}>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}
-        </Grid>
-        <SectionTitle>KNOWLEDGE PARTNERS</SectionTitle>
-        <Grid
+        </Box>
+        {knowledgePartners && knowledgePartners.length > 0 && (
+          <Box sx={{ mt: "40px", mb: "20px" }}>
+            <SectionTitle>KNOWLEDGE PARTNERS</SectionTitle>
+          </Box>
+        )}
+        <Box
           container
-          columns={{ xs: 12, sm: 12, md: 10 }}
-          justifyContent={"center"}
           sx={{
-            width: "950px",
-            textAlign: "center",
-            placeItems: "center",
-            marginTop: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
           }}
         >
-          {knowledgePartners.map(({ source, text, link }) => {
+          {knowledgePartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={4} md={2} key={source}>
-                <a target="_blank" href={link} rel="noopener noreferrer">
-                  <LogoWithTitle source={source} text={text} />
-                </a>
+                <LogoWithTitle source={source} text={text} />
               </Grid>
             );
           })}
-        </Grid>
+        </Box>
+        {researchPartners && researchPartners.length > 0 && (
+          <Box sx={{ mt: "40px", mb: "20px" }}>
+            <SectionTitle>RESEARCH PARTNER</SectionTitle>
+          </Box>
+        )}
+        <Box
+          container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+          }}
+        >
+          {researchPartners.map(({ source, text }) => {
+            return (
+              <Grid item xs={12} key={source}>
+                <LogoWithTitle source={source} text={text} />
+              </Grid>
+            );
+          })}
+        </Box>
+        {mediaPartners && mediaPartners.length > 0 && (
+          <Box sx={{ mt: "40px", mb: "20px" }}>
+            <SectionTitle>MEDIA PARTNERS</SectionTitle>
+          </Box>
+        )}
+        <Box
+          container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+          }}
+        >
+          {mediaPartners.map(({ source, text }) => {
+            return (
+              <Grid item xs={12} sm={4} key={source}>
+                <LogoWithTitle source={source} text={text} />
+              </Grid>
+            );
+          })}
+        </Box>
       </Container>
     </EvLayout>
   );
 };
 
-export async function getStaticProps() {
-  const allProducts = await api.getGrocery3Products();
-  const offerProducts = await api.getGrocery3offerProducts();
-  const topSailedProducts = await api.getTopSailedProducts();
+export async function getStaticProps(context) {
+  let sponsors = null;
+  let sponsorsError = null;
+
+  let partners = null;
+  let partnersError = null;
+
+  try {
+    sponsors = await api.getSponsors(23);
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    sponsorsError = dev_error;
+  }
+
+  if (!sponsors) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      allProducts,
-      offerProducts,
-      topSailedProducts,
+      sponsors: JSON.stringify(sponsors),
+      sponsorsError: JSON.stringify(sponsorsError),
+      partners: JSON.stringify(partners),
+      partnersError: JSON.stringify(partnersError),
     },
+    revalidate: 10, // In seconds
   };
 }
 export default GeneralPage;

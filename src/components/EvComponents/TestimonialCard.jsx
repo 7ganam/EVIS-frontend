@@ -95,8 +95,21 @@ const TestimonialCard = (props) => {
                 boxShadow: "-4px 6px 12px 0px #00000075",
               }}
             >
-              {" "}
-              <YoutubeEmbed embedId={data.videoId} />
+              {data.videoId ? (
+                <YoutubeEmbed embedId={data.videoId} />
+              ) : (
+                <Image
+                  sx={{
+                    width: "80%",
+                    height: "100%",
+                    m: "auto",
+                    objectFit: "cover",
+                  }}
+                  src={data?.img ?? "/assets/images/EvLogo.png"}
+                  alt="profile"
+                />
+              )}
+              {/* <YoutubeEmbed embedId={data.videoId} /> */}
             </Box>
           </Grid>
         </Grid>

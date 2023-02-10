@@ -3,20 +3,42 @@ import { Container, Box, Link } from "@mui/material";
 import { H5, Paragraph } from "src/components/EvComponents/Typography";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { H2, H3 } from "@/components/Typography";
+import { useMemo } from "react";
 
-const data = {
-  Title: "FIND US AT",
-  Paragraph: [
-    { body: "Breakwater" },
-    { body: "Opp. Abu Dhabi International Marine Sports Club" },
-    { body: "Abu Dhabi" },
-    { body: "United Arab Emirates" },
-  ],
-  Email: "evis@nirvanaholding.com",
-  EmailTo: "mailto:evis@nirvanaholding.com",
-};
+const FindUsSection = (props) => {
+  let { contactPageData, title, mapLocation, paragraph, email, emailTo } =
+    useMemo(() => {
+      if (!props?.contactPage) {
+        return {};
+      }
+      let contactPageData = props.contactPage;
 
-const FindUsSection = () => {
+      const title = contactPageData?.find_us_title;
+      const area = contactPageData?.find_us_area;
+      const building = contactPageData?.find_us_building;
+      const emirate = contactPageData?.find_us_emirate;
+      const country = contactPageData?.find_us_country;
+      const email = contactPageData?.contact_email;
+      const emailTo = "mailto:" + email;
+      const mapLocation = contactPageData?.google_maps_location;
+
+      const paragraph = [
+        { body: area },
+        { body: building },
+        { body: emirate },
+        { body: country },
+      ];
+
+      return {
+        contactPageData,
+        title,
+        mapLocation,
+        paragraph,
+        email,
+        emailTo,
+      };
+    }, [props?.contactPage]);
+
   return (
     <Container
       sx={{
@@ -31,16 +53,16 @@ const FindUsSection = () => {
           margin: "50px 0 40px",
         }}
       >
-        <SectionTitle>{data.Title}</SectionTitle>
+        <SectionTitle>FIND US AT</SectionTitle>
       </Box>
-      {data.Paragraph.map(({ body }) => {
+      {paragraph?.map(({ body }) => {
         return <Paragraph key={body}>{body}</Paragraph>;
       })}
       <H2 margin="50px 0 20px">
-        Email: <Link href={data.EmailTo}>{data.Email}</Link>
+        Email: <Link href={emailTo}>{email}</Link>
       </H2>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d232406.6567360958!2d54.324372!3d24.473188000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd3ec9c9737756f30!2sNirvana%20Travel%20%26%20Tourism!5e0!3m2!1sen!2sae!4v1659829234637!5m2!1sen!2sae"
+        src={mapLocation}
         width="600"
         height="450"
         border="0"
