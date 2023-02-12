@@ -5,6 +5,7 @@ import LandingText from "src/components/EvSections/about-page-sections/LandingTe
 import Exhibition from "src/components/EvSections/about-page-sections/Exhibition";
 import SummitSection from "src/components/EvSections/about-page-sections/SummitSection";
 import OpenTechSection from "src/components/EvSections/about-page-sections/OpenTechSection";
+import MarketGateway from "@/components/EvSections/about-page-sections/MarketGateway";
 import AdvisoryBoardSection from "src/components/EvSections/about-page-sections/AdvisoryBoardSection";
 import VenueSection from "src/components/EvSections/about-page-sections/VenueSection";
 import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
@@ -324,6 +325,7 @@ const GeneralPage = (props) => {
       <SummitSection item={conference} topics={topics}></SummitSection>
       <Container>
         <OpenTechSection item={sessions} videos={videos}></OpenTechSection>
+        <MarketGateway item={sessions} videos={videos}></MarketGateway>
       </Container>
       <AdvisoryBoardSection
         advisoryBoardData={advisoryBoard}
