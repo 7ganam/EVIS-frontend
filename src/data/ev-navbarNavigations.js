@@ -44,7 +44,7 @@ const evNavbarNavigations = [
       },
       {
         title: "2023 Exhibitors",
-        url: "/exhibition/2023",
+        url: "https://onlineexhibitormanual.net/EVIS2023/exhi/exhibitorlist2023.aspx",
       },
       {
         title: "Book your stand",
