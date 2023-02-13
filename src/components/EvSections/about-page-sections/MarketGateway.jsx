@@ -9,6 +9,9 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import MarketGatewayForm from "./MarketGatewayForm";
+import { useTheme } from "@emotion/react";
+
 const whoToMeet = [
   { name: "Dealers", icon: AccountBalanceWalletIcon },
   { name: "fuel retailers", icon: LocalGasStationIcon },
@@ -17,6 +20,7 @@ const whoToMeet = [
 ];
 
 const MarketGateway = (props) => {
+  const theme = useTheme();
   const item = props.item;
   const videos = props.videos;
   return (
@@ -54,13 +58,22 @@ const MarketGateway = (props) => {
         </H3>
       </Box>
 
-      <Box mt={5} sx={{ width: "100%", bgcolor: "#E3E9EF", padding: "20px" }}>
+      <Box
+        mt={5}
+        sx={{
+          width: "100%",
+          bgcolor: "#E3E9EF",
+          padding: "40px",
+          borderRadius: "10px",
+        }}
+      >
         <H1
           sx={{
             fontWeight: "thin",
             color: "black",
-            marginBottom: "20px",
+            marginBottom: "30px",
             textAlign: "center",
+            fontSize: "60px",
           }}
         >
           Meet
@@ -78,6 +91,7 @@ const MarketGateway = (props) => {
                 <Paper
                   elevation={10}
                   sx={{
+                    borderRadius: "10px",
                     width: "100%",
                     height: "150px",
                     display: "flex",
@@ -88,7 +102,11 @@ const MarketGateway = (props) => {
                   }}
                 >
                   <item.icon
-                    sx={{ fontSize: "30px", color: "red", mb: "20px" }}
+                    sx={{
+                      fontSize: "30px",
+                      color: theme.palette.primary.main,
+                      mb: "20px",
+                    }}
                   />
                   <H2
                     sx={{
@@ -104,6 +122,7 @@ const MarketGateway = (props) => {
             </Grid>
           ))}
         </Grid>
+        <MarketGatewayForm />
       </Box>
     </Box>
   );
