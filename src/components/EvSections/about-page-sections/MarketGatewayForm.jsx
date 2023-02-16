@@ -13,7 +13,7 @@ const MarketGatewayForm = () => {
   const handleFormSubmit = async (values) => {
     axios
       .post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/application-for-gateway`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/application-for-gateways`,
         {
           data: {
             ...values,
@@ -55,7 +55,7 @@ const MarketGatewayForm = () => {
           >
             <SectionSubTitle
               text={
-                "To benefit from this feature, please apply by filling out this form."
+                "To benefit from this feature, please apply by filling out this form"
               }
             />
             <Grid container spacing={2}>

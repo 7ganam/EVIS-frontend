@@ -10,27 +10,6 @@ import { Box } from "@mui/system";
 // ======================================================
 // ======================================================
 
-const sponsorsData = [
-  {
-    source: "/assets/images/organizers/Masdar.png",
-  },
-  {
-    source: "/assets/images/organizers/ADNEC.png",
-  },
-  {
-    source: "/assets/images/organizers/AbuDhabi.png",
-  },
-  {
-    source: "/assets/images/organizers/Nirvana.png",
-  },
-  {
-    source: "/assets/images/organizers/Audi.png",
-  },
-  {
-    source: "/assets/images/organizers/BritishVolt.png",
-  },
-];
-
 const itemData = {
   img: "/assets/images/travel-visit/city.jpeg",
   title: "Enjoy preferred rates by booking through us!",

@@ -3,7 +3,7 @@ import TwoColumnBoxV2 from "src/components/EvComponents/TwoColumnBoxV2";
 import { Box, Grid, Paper } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { SectionTitle2 } from "src/components/EvComponents/StyledTypography";
-import { H1, H2, H3 } from "src/components/EvComponents/Typography";
+import { H1, H2, H3, H4 } from "src/components/EvComponents/Typography";
 import East from "@mui/icons-material/East";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
@@ -14,9 +14,9 @@ import { useTheme } from "@emotion/react";
 
 const whoToMeet = [
   { name: "Dealers", icon: AccountBalanceWalletIcon },
-  { name: "fuel retailers", icon: LocalGasStationIcon },
-  { name: "real estate developers", icon: ApartmentIcon },
-  { name: "government officials", icon: AccountBalanceIcon },
+  { name: "Fuel Retailers", icon: LocalGasStationIcon },
+  { name: "Real Estate Developers", icon: ApartmentIcon },
+  { name: "Government Officials", icon: AccountBalanceIcon },
 ];
 
 const MarketGateway = (props) => {
@@ -24,9 +24,9 @@ const MarketGateway = (props) => {
   const item = props.item;
   const videos = props.videos;
   return (
-    <Box id={"open-tech"} sx={{ scrollMarginTop: "250px" }}>
+    <Box id={"market-gateway"} sx={{ scrollMarginTop: "250px" }}>
       <Box sx={{ mt: "40px", mb: "20px" }}>
-        <SectionTitle>Market gateway</SectionTitle>
+        <SectionTitle>Market Gateway</SectionTitle>
       </Box>
       <Box sx={{ mb: "40px", textAlign: "center" }}>
         <H1 sx={{ fontWeight: "bold", color: "black", margin: "0px" }}>
@@ -73,7 +73,7 @@ const MarketGateway = (props) => {
             color: "black",
             marginBottom: "30px",
             textAlign: "center",
-            fontSize: "60px",
+            fontSize: "30px",
           }}
         >
           Meet
@@ -108,15 +108,14 @@ const MarketGateway = (props) => {
                       mb: "20px",
                     }}
                   />
-                  <H2
+                  <H3
                     sx={{
-                      fontWeight: "bold",
                       color: "black",
                       textAlign: "center",
                     }}
                   >
                     {item.name}
-                  </H2>
+                  </H3>
                 </Paper>
               </Box>
             </Grid>

@@ -112,7 +112,7 @@ const EvHome = (props) => {
         }}
       >
         <Box sx={{ mb: "30px" }}>
-          <H2>2022</H2>
+          <H2></H2>
         </Box>
         <Box
           sx={{

@@ -10,6 +10,7 @@ import DownloadingIcon from "@mui/icons-material/Downloading";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
 import AgendaSection from "@/components/EvSections/agenda-page-sections/AgendaSection";
+import Link from "next/link";
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -93,26 +94,31 @@ const GeneralPage = (props) => {
             mt: "40px",
           }}
         >
-          <a href={downloadLink} download>
-            <BigButton
-              content={
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: { md: "row", xs: "column" },
-                    justifyContent: "center",
-                    alignItems: "center",
-                    padding: "10px",
-                  }}
-                >
-                  <span>Download Agenda!</span>
-                  <DownloadingIcon
-                    sx={{ height: "40px", width: "40px", ml: 2 }}
-                  ></DownloadingIcon>
-                </Box>
-              }
-            />
-          </a>
+          {/* <a href={downloadLink} download> */}
+          <Link href="/download/conference-agenda">
+            <a>
+              <BigButton
+                content={
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: { md: "row", xs: "column" },
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "10px",
+                    }}
+                  >
+                    <span>Download Agenda!</span>
+                    <DownloadingIcon
+                      sx={{ height: "40px", width: "40px", ml: 2 }}
+                    ></DownloadingIcon>
+                  </Box>
+                }
+              />
+            </a>
+          </Link>
+
+          {/* </a> */}
         </Box>
       </Container>
     </EvLayout>
