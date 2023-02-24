@@ -30,6 +30,29 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Alert from "@mui/material/Alert";
 
+const sponsorsData = [
+  {
+    source: "/assets/images/organizations/DCT.png",
+    text: "Destination Partner",
+  },
+  {
+    source: "/assets/images/organizers/ADNEC.png",
+    text: "Venue Partner",
+  },
+  {
+    source: "/assets/images/organizers/AbuDhabi.png",
+    text: "Host City",
+  },
+  {
+    source: "/assets/images/organizers/Nirvana.png",
+    text: "Organized By",
+  },
+  // {
+  //   source: "/assets/images/organizations/CEBC.png",
+  //   text: "Knowledge Partner",
+  // },
+];
+
 const StyledDateView = styled(DatePicker)(({ theme }) => ({
   width: "100%",
   padding: 8,
@@ -1332,20 +1355,29 @@ function FormSection({ sponsors, endpoint }) {
           <Card1
             sx={{
               mb: 4,
-              overflow: "visible",
             }}
             elevation={2}
           >
-            <Stack>
-              {sponsors?.map((sponsor) => {
+            <Stack spacing={"30px"}>
+              {sponsorsData.map((sponsor) => {
                 return (
-                  <Image
+                  <Box
                     key={sponsor.source}
-                    src={sponsor.source}
-                    alt="sponsor logo"
-                    width={"80%"}
-                    sx={{ margin: "auto" }}
-                  ></Image>
+                    sx={{
+                      textAlign: "center",
+                    }}
+                  >
+                    <Card1>
+                      <H4>{sponsor.text}</H4>
+                      <Image
+                        key={sponsor.source}
+                        src={sponsor.source}
+                        alt="sponsor logo"
+                        width={"80%"}
+                        sx={{ margin: "auto" }}
+                      ></Image>
+                    </Card1>
+                  </Box>
                 );
               })}
             </Stack>

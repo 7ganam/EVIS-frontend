@@ -1,34 +1,36 @@
 import { Container } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import EvLayout from "src/components/layouts/EvLayout";
-import api from "src/utils/api/grocery3-shop";
-import MainSection from "src/components/EvSections/event-brochure-sections/MainSection";
+// import api from "src/utils/api/grocery3-shop";
+import DownloadForm from "src/components/DownloadForm";
 import { Box } from "@mui/system";
 // ======================================================
 // ======================================================
 
 const sponsorsData = [
   {
-    source: "/assets/images/organizers/Masdar.png",
+    source: "/assets/images/organizations/DCT.png",
+    text: "Destination Partner",
   },
   {
     source: "/assets/images/organizers/ADNEC.png",
+    text: "Venue Partner",
   },
   {
     source: "/assets/images/organizers/AbuDhabi.png",
+    text: "Host City",
   },
   {
     source: "/assets/images/organizers/Nirvana.png",
+    text: "Organized By",
   },
   {
-    source: "/assets/images/organizers/Audi.png",
-  },
-  {
-    source: "/assets/images/organizers/BritishVolt.png",
+    source: "/assets/images/organizations/CEBC.png",
+    text: "Knowledge Partner",
   },
 ];
 
-const generalPage = (props) => {
+const generalPage = () => {
   // const { offerProducts, allProducts, topSailedProducts } = props;
 
   return (
@@ -39,10 +41,18 @@ const generalPage = (props) => {
         }}
       >
         <Box sx={{ mb: "20px" }}>
-          {" "}
-          <SectionTitle>Download Event Brochure</SectionTitle>
+          <Box mt={"30px"}>
+            <SectionTitle>Download Open Tech Sessions Agenda</SectionTitle>
+          </Box>
         </Box>
-        <MainSection sponsors={sponsorsData} />
+        <DownloadForm
+          sponsors={sponsorsData}
+          endpoint={"application-for-opentech-agenda-downloads"}
+          downloadFileUrl={
+            "https://res.cloudinary.com/drf11lmmn/image/upload/v1673521405/EVIS_2023_Open_Tech_Sessions_Agenda_09_01_2023_044981eca8.pdf"
+          }
+          fileName="2023_brochure.pdf"
+        />
       </Container>
     </EvLayout>
   );

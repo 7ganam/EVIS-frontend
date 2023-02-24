@@ -5,6 +5,7 @@ import LandingText from "src/components/EvSections/about-page-sections/LandingTe
 import Exhibition from "src/components/EvSections/about-page-sections/Exhibition";
 import SummitSection from "src/components/EvSections/about-page-sections/SummitSection";
 import OpenTechSection from "src/components/EvSections/about-page-sections/OpenTechSection";
+import MarketGateway from "@/components/EvSections/about-page-sections/MarketGateway";
 import AdvisoryBoardSection from "src/components/EvSections/about-page-sections/AdvisoryBoardSection";
 import VenueSection from "src/components/EvSections/about-page-sections/VenueSection";
 import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
@@ -44,149 +45,47 @@ Executive MBA from the IDC Herzliya, and a GCP from the Wharton Business School
 Pennsylvania, USA.`,
   },
   {
-    src: "/assets/images/board/dr elias.png",
-    name: "Dr. Elias Boutros Sayah",
-    title: "President and Founder",
-    company: "Sayah Engineering MENA",
-    about: `President and Founder at Sayah Engineering MENA,
-GEFCO Trading &amp; LIWA Petroleum Technology
+    src: "/assets/images/board/Nabih Bedewi Photo 1.jpg",
+    name: "Dr. Nabih E. Bedewi",
+    title: "Managing Director, Global EEE ",
+    company: "Global EEE",
+    about: `Dr. Nabih E. Bedewi has been serving as Managing Director of Global EEE since 2004. Based in
+Washington DC, Global EEE is a nonprofit that organizes student competitions throughout the world
+with a focus on Education, Energy, and the Environment. Among the competitions are the United Solar
+Challenge (USC), Global Electric Vehicle Challenge (GEVC), Global Hybrid-Electric Challenge (GHEC), and
+the Electric Vehicle Grand Prix (EVGP). He also serves on the Executive Board of the International
+Solarcar Federation, and continues to lecture at several universities in the USA and the Middle East and
+North Africa (MENA) region.
+Upon receiving his PhD degree in 1986, Dr. Bedewi worked on several projects at NASA - Goddard Space
+Flight Center spanning multiple programs including the Hubble Space Telescope, Space Shuttle missions,
+numerous satellites, and space robotics. Over the next decade, Dr. Bedewi moved his research direction
+to focus on automotive engineering and alternative energy vehicles. He founded a research center
+funded by the US Department of Transportation and the automotive companies, and grew the center to
+60 faculty members and research assistants. During that period, Dr. Bedewi also led the GW solar car
+team development and raced internationally in the US, Japan, and Australia. In 1996, his team won the
+World Solar Rallye in Akita and the Grand Solar Challenge in Noto, Japan.
+During his 35 year professional career, Dr. Bedewi published over 200 papers and presented at
+numerous conferences. He also co-supervised the research of 38 doctoral students and over 300 master
+students. He taught mostly graduate courses in various fields of mechanical engineering and alternative
+energy, as well as student design projects emphasizing competitions. Dr. Bedewi holds a PhD (1986), MS
+(1984) and BS (1983) in Mechanical Engineering from the University of Maryland, and an MBA (2007)
+from California Coast University. Dr. Bedewi is an Egyptian-American and has been living in the
+Washington DC area since 1979. He is married with two children.`,
+  },
+  {
+    src: "/assets/images/board/Claas Bracklo - photo.jpg",
+    name: "Claas Bracklo",
+    title: "Chairman",
+    company: "Charging Interface Initiative (CharIN)",
+    about: `Claas Bracklo is Chairman of the Charging Interface Initiative (CharIN e. V.), Senior Consultant Electromobility at the VDA and Senior Manager within the power train development at BMW.
 
-Senior Vice President
-AmCham Abu Dhabi
-International director for Region 10
-American Society of Civil Engineers ASCE
-https://www.linkedin.com/in/eliassayah`,
-  },
-  {
-    src: "/assets/images/board/prof nizar al holou.png",
-    name: "Prof. Nizar Al-Holou",
-    title: "Professor Emeritus",
-    company: "University of Detroit Mercy",
-    about: `Dr. Nizar Al-Holou is a Professor Emeritus of Electrical &amp; Computer Engineering
-&amp; Computer Science at the University of Detroit Mercy since 2019. He was a
-Professor for 26 years. He served as chair of the ECE department for 14 years.
-He has been an active member of numerous professional engineering societies
-such as the Institute of Electrical and Electronic Engineer IEEE, IEEE-Computer
-Society, Intelligent Transportation Systems (ITS), and the American Society for
-Engineering Education (ASEE).`,
-  },
-  {
-    src: "/assets/images/board/eng. kamal malas.jpg",
-    name: "Dr. Eng. Kamal Adnan Malas",
-    title: `Kamal Malas &amp; Associates
-Prof. Eng., PhD (disputes),
-BA, MS in Law, MCIArb`,
-    company: "",
-    about: `Kamal Malas &amp; Associates
-Prof. Eng., PhD (disputes),
-BA, MS in Law, MCIArb
-www.kamalmalas.com
-Mob. 00971505971141`,
-  },
-  {
-    src: "/assets/images/board/prof sabouni.jpg",
-    name: "Prof. Abdul Rahim Sabouni",
-    title: "PhD (Cornell), MSc(GWU), BSc(Honor) PEng, FASCE, FACI,FCIOB,IAUP",
-    company: "",
-    about: `Professor Abdul Rahim Sabouni is the President &amp; CEO of the Emirates College of
-Technology ECT, and the founding CEO of Span M Consulting. He holds a PhD degree from
-Cornell university and a Master’s degree from George Washington University in Structural
-Engineering. He has more than 30 years of academic and professional experience in the US,
-Canada, and the Middle East. He assumed teaching, research, and/or adjunct faculty
-positions at several universities including Damascus University, UAE University, Ryerson
-University, Western University, and Carleton University. Dr. Sabouni is the past president of
-Civil Net International, Canada. He assumed the posts of the Building Design Expert, and
-Technical and Projects Adviser in Abu Dhabi Municipality. He is a registered Professional
-Engineer in Ontario, Fellow of the American Concrete Institute and the founding president of
-the ACI-UAE Chapter, Fellow of the American Society of Civil Engineers and President of the
-ASCE-UAE Section, Fellow and chartered construction manager CIOB, UK, Director of the
-International Federation of High Rise StructuresIFHSUAE. He is the first recipient of the
-George Winter Award from Cornell University, and the founding editor of a refereed scientific
-engineering Journal in Abu Dhabi.`,
-  },
-  {
-    src: "/assets/images/board/salim hariri.jpg",
-    name: "Salim hariri",
-    title: "Co-Director",
-    company: `NSF Center for Cloud and Autonomic Computing The University of Arizona`,
-    about: `Salim Hariri is a Professor in the Department of Electrical and Computer Engineering at The University of Arizona.
-He received his Ph.D. in computer engineering from University of Southern California in 1986, an MSc from The
-Ohio State University in 1982 and Electronic Engineering from Damascus University, Syria in 1977.
-He is the co-director of NSF Center for Cloud and Autonomic Computing and he is the Editor-In-Chief for the
-CLUSTER COMPUTING JOURNAL (Springer, http://clus.edmgr.com). He is the founder of the IEEE/ACM
-Symposium on High Performance Distributed Computing (HPDC) started in 1990, http://www.hpdc.org.
-Research interests include Autonomic Computing, Self-protection of networks and computers, Cybersecurity
-modeling and analysis, resilient cyber resources and services, resilient DDDAS services, and high performance
-distributed systems. Dr. Hariri has co-authored five books in the area of autonomic computing and parallel and
-distributed systems. At the University of Arizona, he lead managed more than 10 million dollars of research
-projects funded by the National Science Foundation (NSF), Department of Energy, Deparmtne of Defense and
-industry.
-Dr. Hariri is a founder of AVIRTEK, a startup Cybersecurity company from the NSF CAC center at UA. AVIRTEK
-received more than 7 million dollars in DoD funding to develop innovative Autonomic Cyber Security platform that
-provides self-protection with little involvement of users or system administrators.`,
-  },
-  {
-    src: "/assets/images/board/dr_mohd_kafafy.jpg",
-    name: "Dr. Mohamed G. Kafafy, PhD; DBA",
-    title: "President",
-    company: "World Chairman",
-    about: `Dr. Mohamed G. Kafafy, PhD; DBA
+Claas Bracklo joined BMW in March 2005 and held various positions in research and development with focus on E/E-architectures, system design, hardware/software components and in car networking. Before his current position in the powertrain development he was in charge of body electronics development. 
 
-World Chairman | President
-World Green Economy Council (WGECO)
-HR Management Institute (HRMI)
-Global Quality Council (GQCO)
+He started his career at Mercedes Benz and Daimler in the development of data bus systems. He led several teams and departments in the area of system test, E/E-architecture and ECU-development. 
 
-Emails: President@WGECO.org / President@HRMI.org / Info@GQCO.org
-Phone: +202-44822119 - GSM: +2-01001612017 (WhastApp)
-Official Sites:  www.HRMI.org / www.WGECO.org / www.GQCO.org`,
-  },
-  {
-    src: "/assets/images/board/dr_ rami_sabouni.jpg",
-    name: "Dr. Rami Sabouni",
-    title: `Adjunct Professor`,
-    company: "Carleton University, Ottawa, Canada",
-    about: `Dr. Rami Sabouni is Adjunct Professor at Carleton University, Ottawa, Canada. He holds a PhD degree and
-Master of Science degree from Carleton University in Systems and Computer Engineering and Master of
-Engineering degree from University of Detroit Mercy in Electrical and Computer Engineering. He has
-more than 10 years of academic and professional experience in the US, Canada, and the Middle East. He
-assumed teaching and research positions at several universities including UAE University, University of
-Detroit Mercy and Carleton University.
-Recent relevant publications.
-R. Sabouni and R. H. M. Hafez, “Performance of DSRC for V2V communications in urban and highway
-environments”, Canadian Conference on Electrical and Computer Engineering (CCECE, 2012), Montreal,
-Quebec, Canada, May, 2012.
-R. Sabouni, N. Al-Holou, U. Mohammad, K. Albarazi, S. Fallouh, M. Abdul-Hak, and F. Saadeh, “New
-Approach To Enhance And Evaluate The Performance Of Vehicle-Infrastructure Integration And Its
-Communication Systems”, Report No: MIOH UTC TS15p1-2 2010-Final, September 2010.
-Rami Sabouni, Evaluation of DSRC for V2V Communications, Master of Applied Science in Systems and
-Computer Engineering, Carleton University, Canada, MSc Thesis, April 2011.
-Rami Sabouni, Evaluation of DSRC for V2V Communications, Master of Engineering in Computer
-Engineering, University of Detroit Mercy, MSc Thesis, USA, August 2008.`,
-  },
-  {
-    src: "/assets/images/board/dr rawa adla.jpg",
-    name: "Dr. Rawa Adla",
-    title: "Assistant Professor",
-    company: `Department of Electrical and Computer
-Engineering at Florida Polytechnic University`,
-    about: `Dr. Rawa Adla is an assistant professor at the Department of Electrical and Computer
-Engineering at Florida Polytechnic University, FL, USA. Previously she held multi
-positions at different academic and industrial institutes. She was an assistant professor
-at the University of Arizona, Tucson, AZ. Also, she was a senior research engineer at
-Ford Motor Company / Collision Avoidance Metrics Partnership (CAMP). She was the
-technical lead manager for projects related to connected vehicles V2X and autonomous
-driving. Dr. Adla has more than ten years of teaching and research experience. Dr. Adla
-earned her doctoral degree in Electrical and Computer Engineering from the University
-of Detroit Mercy, MI, and her Master’s degree in Computer Science from the University
-of Michigan. Her B.S in Electrical and Computer Engineering from the University of
-Aleppo. Dr. Adla research interest lies in the field of control systems and theories,
-wireless communication, automotive safety, connected vehicles and autonomous
-driving, and electric vehicles. More specifically, her research spans several areas and
-aims to be as interdisciplinary as possible such as, data-fusion / target tracking problem,
-real-time signal filtering and prediction. Dr. Adla has published several referee papers
-and co-authored multiple high-quality publications. She is a senior member of IEEE,
-ACM, SWE, and the Eta Kappa Nu (HKN) (Electrical Engineering Honor Society).`,
+
+Claas Bracklo holds a degree in Electrical Engineering from the University of Dortmund.
+.`,
   },
 ];
 const GeneralPage = (props) => {
@@ -324,6 +223,7 @@ const GeneralPage = (props) => {
       <SummitSection item={conference} topics={topics}></SummitSection>
       <Container>
         <OpenTechSection item={sessions} videos={videos}></OpenTechSection>
+        <MarketGateway item={sessions} videos={videos}></MarketGateway>
       </Container>
       <AdvisoryBoardSection
         advisoryBoardData={advisoryBoard}

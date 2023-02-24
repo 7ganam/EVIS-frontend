@@ -19,6 +19,10 @@ const evNavbarNavigations = [
         url: "/about#open-tech",
       },
       {
+        title: "Market Gateway",
+        url: "/about#market-gateway",
+      },
+      {
         title: "Advisory Board",
         url: "/about#advisory-board",
       },
@@ -125,7 +129,7 @@ const evNavbarNavigations = [
       },
       {
         title: "EVIS activities",
-        url: "/coming-soon",
+        url: "/activities",
       },
     ],
   },
@@ -152,11 +156,11 @@ const evNavbarNavigations = [
       },
       {
         title: "Media",
-        url: "https://registration.infosalons.ae/EVIS23AD/MED/Registration/Welcome",
+        url: "https://registration.infosalons.ae/EVIS23AD/MED/Registration/Demographics",
       },
       {
         title: "Speaker",
-        url: "https://registration.infosalons.ae/EVIS23AD/SPK/Registration/Welcome",
+        url: "https://registration.infosalons.ae/EVIS23AD/SPK/Registration/Demographics",
       },
     ],
   },

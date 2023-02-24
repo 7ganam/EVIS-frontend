@@ -18,7 +18,7 @@ const AdvisoryBoardSection = ({ advisoryBoardData }) => {
         }}
       >
         <Box sx={{ mt: "30px" }}>
-          <SectionTitle>2022 Advisory Board</SectionTitle>
+          <SectionTitle>Advisory Board</SectionTitle>
         </Box>
         <Box pb="80px">
           <PeopleGrid

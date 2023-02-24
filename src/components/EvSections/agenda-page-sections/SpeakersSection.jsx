@@ -6,6 +6,7 @@ import PeopleGrid from "@/components/EvComponents/PeopleGrid";
 const SpeakersSection = (props) => {
   const theme = useTheme();
   const data = props.data;
+
   const title = props.title;
   return (
     <Box id={"advisory-board"} sx={{ scrollMarginTop: "250px" }}>

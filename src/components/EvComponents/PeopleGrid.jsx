@@ -12,7 +12,6 @@ function PeopleGrid({ data }) {
   const [showAll, setShowAll] = useState(false);
   const router = useRouter();
   const [shownPeople, setShownPeople] = useState([]);
-
   const handleShowAll = () => {
     setShownPeople(data);
   };
@@ -36,6 +35,7 @@ function PeopleGrid({ data }) {
           }}
         >
           {shownPeople.map(({ src, name, title, company, link }) => {
+            console.log("company: ", company);
             return (
               <Grid item xs={12} sm={4} md={3} key={name}>
                 <AnimationWrapper

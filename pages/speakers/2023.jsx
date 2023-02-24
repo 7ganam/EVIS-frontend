@@ -476,7 +476,7 @@ const GeneralPage = (props) => {
         src: speaker?.attributes?.image?.data?.attributes?.url ?? "",
         name: speaker?.attributes?.name ?? "",
         title: speaker?.attributes?.title ?? "",
-        company: speaker?.attributes?.organization ?? "",
+        company: speaker?.attributes?.company ?? "",
       };
     });
   }, [props.allSpeakers]);
