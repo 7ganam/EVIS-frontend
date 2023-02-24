@@ -253,8 +253,8 @@ const PageFooter = ({ sx, id, bgcolor }) => {
             <SectionElement>
               <FlexBox alignItems="center">
                 <Span ml={1.5} className="title">
-                  <a href="mailto: jessy.suraj@nirvanatls.com">
-                    jessy.suraj@nirvanatls.com
+                  <a href="mailto: april.claridad@nirvanatls.com">
+                    april.claridad@nirvanatls.com
                   </a>
                 </Span>
               </FlexBox>

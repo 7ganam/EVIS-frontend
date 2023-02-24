@@ -47,10 +47,10 @@ const sponsorsData = [
     source: "/assets/images/organizers/Nirvana.png",
     text: "Organized By",
   },
-  {
-    source: "/assets/images/organizations/CEBC.png",
-    text: "Knowledge Partner",
-  },
+  // {
+  //   source: "/assets/images/organizations/CEBC.png",
+  //   text: "Knowledge Partner",
+  // },
 ];
 
 const StyledDateView = styled(DatePicker)(({ theme }) => ({
