@@ -87,6 +87,21 @@ He started his career at Mercedes Benz and Daimler in the development of data bu
 Claas Bracklo holds a degree in Electrical Engineering from the University of Dortmund.
 .`,
   },
+  {
+    src: "/assets/images/board/Mauricio_Zuazua_62b1a381c9.png",
+    name: "Mauricio Zuazua",
+    title: "Partner & Board Director",
+    company: "Kearney",
+    about: `Mauricio Zuazua is a Partner and Board Director of global consultancy Kearney. Mauricio leads Kearney’s Sustainability Platform and the Mobility & Infrastructure Practice in Middle East & Africa.  
+
+Mauricio gathers nearly 25 years of experience across Americas, Asia, Middle East and Africa advising business and country leaders on policy, strategy, design and execution of major urban, transport, mobility and industrial infrastructure to make countries more liveable, sustainable, competitive and connected. He also has extensive experience in corporate strategy, launch and operational improvement. 
+
+He is passionate about technology and how it accelerates the ESG aspirations of companies and governments. He serves on the board of Kearney Venture Capital, and until recently he also served as Lead Partner in the World Economic Forum’s Future of Production and Advanced Manufacturing platform.
+
+Recent publications include How Millennials Will Save the World one Purchase at a Time, How Businesses can Win at Leapfrog, The Sunny Side of the Roboconomy, The Secret Sauce of Competitiveness, and has co-authored the Global Innovation Index with INSEAD. 
+
+Mr. Zuazua is based in the UAE and holds an MBA from Columbia Business School and a BS Hons. Civil Engineering from Monterrey Tech, Mexico.`,
+  },
 ];
 const GeneralPage = (props) => {
   let speakers = useMemo(() => {
