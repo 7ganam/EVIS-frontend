@@ -498,8 +498,7 @@ const GeneralPage = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  console.log(`fetching speakers`);
+export async function getStaticProps(context) {
   let allSpeakers = null;
   let allSpeakersError = null;
 
@@ -521,6 +520,7 @@ export async function getServerSideProps(context) {
       allSpeakers: JSON.stringify(allSpeakers),
       allSpeakersError: JSON.stringify(allSpeakersError),
     },
+    revalidate: 1, // In seconds
   };
 }
 export default GeneralPage;
