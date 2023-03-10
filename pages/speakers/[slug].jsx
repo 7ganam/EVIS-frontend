@@ -140,34 +140,34 @@ const SpeakerPage = (props) => {
   );
 };
 
-export async function getStaticPaths() {
-  let allSpeakers = null;
-  let allSpeakersError = null;
+// export async function getStaticPaths() {
+//   let allSpeakers = null;
+//   let allSpeakersError = null;
 
-  try {
-    allSpeakers = await api.getSpeakers();
-  } catch (dev_error) {
-    console.log(`error fetching`, dev_error);
-    allSpeakersError = dev_error;
-  }
+//   try {
+//     allSpeakers = await api.getSpeakers();
+//   } catch (dev_error) {
+//     console.log(`error fetching`, dev_error);
+//     allSpeakersError = dev_error;
+//   }
 
-  if (!allSpeakers) {
-    return {
-      notFound: true,
-    };
-  }
+//   if (!allSpeakers) {
+//     return {
+//       notFound: true,
+//     };
+//   }
 
-  const paths = allSpeakers.data.map((speaker) => ({
-    params: { slug: speaker?.attributes?.slug },
-  }));
+//   const paths = allSpeakers.data.map((speaker) => ({
+//     params: { slug: speaker?.attributes?.slug },
+//   }));
 
-  return {
-    paths: [...paths],
-    fallback: true, // See the "fallback" section below
-  };
-}
+//   return {
+//     paths: [...paths],
+//     fallback: true, // See the "fallback" section below
+//   };
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   let slug = context?.params?.slug ?? "";
   let speaker = null;
   let speakerError = null;
@@ -192,7 +192,6 @@ export async function getStaticProps(context) {
       speaker: JSON.stringify(speaker),
       speakerError: JSON.stringify(speakerError),
     },
-    revalidate: 1, // In seconds
   };
 }
 

@@ -521,7 +521,6 @@ export async function getServerSideProps(context) {
       allSpeakers: JSON.stringify(allSpeakers),
       allSpeakersError: JSON.stringify(allSpeakersError),
     },
-    revalidate: 1, // In seconds
   };
 }
 export default GeneralPage;
