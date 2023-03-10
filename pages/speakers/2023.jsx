@@ -520,7 +520,7 @@ export async function getStaticProps(context) {
       allSpeakers: JSON.stringify(allSpeakers),
       allSpeakersError: JSON.stringify(allSpeakersError),
     },
-    revalidate: 10, // In seconds
+    revalidate: 1, // In seconds
   };
 }
 export default GeneralPage;

@@ -192,7 +192,7 @@ export async function getStaticProps(context) {
       speaker: JSON.stringify(speaker),
       speakerError: JSON.stringify(speakerError),
     },
-    revalidate: 10, // In seconds
+    revalidate: 1, // In seconds
   };
 }
 
