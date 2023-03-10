@@ -12,7 +12,7 @@ const SpeakerPage = (props) => {
 
   let speakerData = useMemo(() => {
     if (props?.speaker) {
-      let speaker = JSON.parse(props.speaker)?.data[0].attributes ?? null;
+      let speaker = JSON.parse(props.speaker)?.data[0]?.attributes ?? null;
       return speaker;
     }
 
