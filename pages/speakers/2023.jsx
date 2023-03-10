@@ -499,6 +499,7 @@ const GeneralPage = (props) => {
 };
 
 export async function getStaticProps(context) {
+  console.log(`fetching speakers`);
   let allSpeakers = null;
   let allSpeakersError = null;
 
