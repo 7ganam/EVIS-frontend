@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 import EvLayout from "src/components/layouts/EvLayout";
 import api from "src/utils/api/evis-api";
 import SpeakersSection from "src/components/EvSections/agenda-page-sections/SpeakersSection";
-import { Box } from "@mui/system";
+import Box from "@mui/material/Box";
 import { useMemo } from "react";
 // ======================================================
 // ======================================================
