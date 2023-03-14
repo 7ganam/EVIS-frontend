@@ -109,7 +109,7 @@ Mr. Zuazua is based in the UAE and holds an MBA from Columbia Business School an
     src: "/assets/images/board/Naser_Abu_Daqqa_PNG_2702f844d8.png",
     name: "Naser Abu Daqqa",
     title: "Managing Director",
-    company: "Power I.D. GmbH eTree mobility GmbH",
+    company: "Power I.D. GmbH & eTree mobility GmbH",
     about: `Managing Director and Founder Power I.D. GmbH
 MD and co-Founder eTree mobility GmbH
 Former Director eDrive Porsche AG
