@@ -27,10 +27,13 @@ nProgress.configure({
 
 const advisoryBoard = [
   {
-    src: "/assets/images/board/Ahmed_Samir_Elbermbali.jpg",
+    src: "/assets/images/board/Ahmed_Samir_Elbermbali.png",
     name: "Ahmed Samir Elbermbali",
-    title: "",
-    company: "",
+    title: "Sustainability Market Leader Middle East ",
+    company: "Bureau Veritas ",
+    about: `Ahmed is a seasoned professional in the sustainability and clean energy industry, currently serving as the Sustainability Market Leader for the Middle East Region at Bureau Veritas. He is a trusted advisor to clients across the region, helping them to establish and achieve their net-zero goals. Ahmed has a deep understanding of the clean energy and sustainable mobility sectors, having served as the Zero-Emission Vehicles (ZEV) Lead at the UN Climate Change High-Level Champions, where he promoted and advocated for the ZEV Declaration launched at COP26 in Glasgow. The Declaration aims to accelerate the transition to ZEVs by 2035 in leading markets and 2040 in emerging markets. He also served as the Managing Director of the MENA Clean Energy Business Council (CEBC), a non-profit organization dedicated to promoting clean energy and clean technologies and solutions in the MENA region. At CEBC he launched several initiatives and working groups and co-authored multiple research pieces and white papers around Climate Finance, Venture Capital in Climate Tech, Electric Mobility, Energy Efficiency and others. 
+With an MBA in Sustainable Mobility Management from the Technical University of Berlin, Ahmed's research interests lie at the intersection of policy, technology, and consumer behavior, and how they can be leveraged to accelerate the transition to clean energy and sustainable mobility sectors. He is committed to helping businesses and organizations achieve their sustainability goals, and drive the global transition to a more sustainable future.
+`,
   },
   {
     src: "/assets/images/board/Shadie-Bisharat IAB.png",
@@ -108,6 +111,22 @@ He is passionate about technology and how it accelerates the ESG aspirations of 
 Recent publications include How Millennials Will Save the World one Purchase at a Time, How Businesses can Win at Leapfrog, The Sunny Side of the Roboconomy, The Secret Sauce of Competitiveness, and has co-authored the Global Innovation Index with INSEAD. 
 
 Mr. Zuazua is based in the UAE and holds an MBA from Columbia Business School and a BS Hons. Civil Engineering from Monterrey Tech, Mexico.`,
+  },
+  {
+    src: "/assets/images/board/Naser_Abu_Daqqa_PNG_2702f844d8.png",
+    name: "Naser Abu Daqqa",
+    title: "Managing Director",
+    company: "Power I.D. GmbH eTree mobility GmbH",
+    about: `Managing Director and Founder Power I.D. GmbH
+MD and co-Founder eTree mobility GmbH
+Former Director eDrive Porsche AG
+Former Product Manager eDrive Mercedes BenzMD and co-Founder eTree mobility GmbH
+Former Director eDrive Porsche AG
+
+Demonstrated history in developing more than 10 e-mobility  projects from design up to mass production in the automotive and energy industry.
+Accompanied the eMobility development for two and half decades with great convictions and enthusiasm.
+Skilled in International Project Management, Automotive Engineering, German, Arabic, Romanian and English. 
+M.Sc., Electronics and Communications Engineering Politehnica University Timisoara.`,
   },
 ];
 
