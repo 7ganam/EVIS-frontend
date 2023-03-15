@@ -411,3 +411,8 @@
     padding: 5px 10px;
   }
 }
+
+pre,
+code {
+  white-space: pre-line;
+}

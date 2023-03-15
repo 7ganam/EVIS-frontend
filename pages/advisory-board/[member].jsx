@@ -568,13 +568,11 @@ const MemberPage = ({ global: { advisoryBoard } }) => {
                 >
                   About
                 </H2>
-                <H5
-                  sx={{
-                    color: "#4d4d4d",
-                  }}
-                >
+
+                <pre styel={{ width: "100%" }}>
+                  {" "}
                   {member?.about ? member.about : "No data"}
-                </H5>
+                </pre>
               </Box>
             </Grid>
           </Grid>
