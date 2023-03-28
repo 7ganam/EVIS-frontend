@@ -12,6 +12,9 @@ import PartnersGrid from "src/components/EvSections/PartnersGrid";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
 import { HighlightOff } from "@mui/icons-material";
+
+import MarketGateway from "@/components/EvSections/about-page-sections/MarketGateway";
+
 // ======================================================
 // ======================================================
 

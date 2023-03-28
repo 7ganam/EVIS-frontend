@@ -12,6 +12,8 @@ import CountDownSection from "src/components/EvSections/home-page-sections/Count
 import DownloadSection from "src/components/EvSections/home-page-sections/DownloadSection";
 import { H1 } from "src/components/Typography";
 import Link from "next/link";
+import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
+import PartnersGrid from "src/components/EvSections/PartnersGrid";
 
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
@@ -91,6 +93,42 @@ const EvHome = (props) => {
       videosData,
     };
   }, [props?.homePage]);
+
+  let sponsors = useMemo(() => {
+    if (!props?.sponsors) {
+      return {};
+    }
+
+    let data = JSON.parse(props.sponsors)?.data ?? null;
+
+    const sponsors = data?.map((sponsor) => {
+      return {
+        text: sponsor?.attributes?.title ?? "",
+        source: sponsor?.attributes?.image?.data?.attributes?.url ?? "",
+        year: sponsor?.attributes?.year ?? "",
+        key_partner: sponsor?.attributes?.key_partner ?? null,
+        sponsor: sponsor?.attributes?.sponsor ?? null,
+        international_media_partner:
+          sponsor?.attributes?.international_media_partner ?? null,
+        knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
+        research_partner: sponsor?.attributes?.research_partner ?? null,
+        media_partner: sponsor?.attributes?.media_partner ?? null,
+        link: sponsor?.attributes?.link ?? null,
+      };
+    });
+
+    return sponsors;
+  }, [props?.sponsors]);
+
+  const key_partners = sponsors?.filter((sponsor) => {
+    return sponsor.key_partner === true;
+  });
+  const knowledgePartners = sponsors?.filter((partner) => {
+    return partner.knowledge_partner === true;
+  });
+  const mediaPartners = sponsors?.filter((partner) => {
+    return partner.media_partner === true;
+  });
 
   const buttonsData = [
     {
@@ -232,6 +270,23 @@ const EvHome = (props) => {
         </Box> */}
         <VideosSection videosList={videosData} />
         <SubscribeSection />
+        <Box sx={{ mt: "100px" }}>
+          <PartnersGrid
+            sx={{ mt: 5 }}
+            partners={key_partners}
+            title={"KEY PARTNERS"}
+          />
+          <PartnersGrid
+            sx={{ mt: "80px" }}
+            partners={knowledgePartners}
+            title={"KNOWLEDGE PARTNERS"}
+          />
+          <PartnersGrid
+            sx={{ mt: "80px", pb: "100px" }}
+            partners={mediaPartners}
+            title={"MEDIA PARTNERS"}
+          />
+        </Box>
       </Container>
     </EvLayout>
   );
@@ -254,10 +309,21 @@ export async function getStaticProps(context) {
     };
   }
 
+  let sponsors = null;
+  let sponsorsError = null;
+
+  try {
+    sponsors = await api.getSponsors(23);
+  } catch (dev_error) {
+    console.log(`error fetching`, dev_error);
+    sponsorsError = dev_error;
+  }
+
   return {
     props: {
       homePage: JSON.stringify(homePage),
       homePageError: JSON.stringify(homePageError),
+      sponsors: JSON.stringify(sponsors),
     },
     revalidate: 10, // In seconds
   };
