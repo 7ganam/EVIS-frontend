@@ -130,8 +130,9 @@ M.Sc., Electronics and Communications Engineering Politehnica University Timisoa
   {
     src: "/assets/images/board/download.jpeg",
     name: "Angie Farrag-Thibault",
-    title: "COP27 Road Transport Lead",
-    company: "Climate Champions Team",
+    title: "Industry Decarbonization Manager, Sustainable Freight",
+    company:
+      "World Economic Forum and COP27 Road Transport Lead at Climate Champions Team",
     about: ``,
   },
 ];
