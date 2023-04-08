@@ -7,6 +7,16 @@ import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
 
 import { Box } from "@mui/system";
+
+import { H1, H6 } from "src/components/Typography";
+import PageHeader from "src/components/EvComponents/PageHeader";
+import { styled, Button } from "@mui/material";
+import Link from "next/link";
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  fontWeight: 400,
+  fontSize: "16px",
+}));
 // ======================================================
 // ======================================================
 
@@ -20,6 +30,8 @@ const itemData = {
 };
 
 const GeneralPage = (props) => {
+  const headers = props?.headers ?? [];
+
   let sponsors = useMemo(() => {
     if (!props?.sponsors) {
       return {};
@@ -49,6 +61,32 @@ const GeneralPage = (props) => {
   });
   return (
     <EvLayout showNavbar={true}>
+      <PageHeader
+        image={headers?.PLAN_YOUR_VISIT?.image?.data?.attributes?.url}
+      >
+        <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
+          {headers?.PLAN_YOUR_VISIT?.text && (
+            <H1
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.PLAN_YOUR_VISIT?.text}
+            </H1>
+          )}
+          {headers?.PLAN_YOUR_VISIT?.sub_text && (
+            <H6
+              sx={{
+                fontSize: { xs: "20px", md: "25px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.PLAN_YOUR_VISIT?.sub_text}
+            </H6>
+          )}
+        </Box>
+      </PageHeader>
       <Container
         sx={{
           mb: 6,

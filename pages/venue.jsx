@@ -3,6 +3,16 @@ import EvLayout from "src/components/layouts/EvLayout";
 import VenueSection from "src/components/EvSections/about-page-sections/VenueSection";
 
 import { Box } from "@mui/system";
+
+import { H1, H6 } from "src/components/Typography";
+import PageHeader from "src/components/EvComponents/PageHeader";
+import { styled, Button } from "@mui/material";
+import Link from "next/link";
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  fontWeight: 400,
+  fontSize: "16px",
+}));
 // ======================================================
 // ======================================================
 
@@ -11,8 +21,36 @@ The Emirate also has easy access to developing markets, with more than 200 air r
 const venu_paragraph_2 = `EVIS 2023 will take place at ADNEC Halls 3 & 4 with 6,686 sqm of exhibition space. Located in the capital of the United Arab Emirates, our Venue Partner ADNEC is a multi-award-winning venue, with state-of-the-art facilities to provide our attendees with the best experience.`;
 
 const GeneralPage = (props) => {
+  const headers = props?.headers ?? [];
+
   return (
     <EvLayout showNavbar={true}>
+      <PageHeader
+        image={headers?.PLAN_YOUR_VISIT?.image?.data?.attributes?.url}
+      >
+        <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
+          {headers?.PLAN_YOUR_VISIT?.text && (
+            <H1
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.PLAN_YOUR_VISIT?.text}
+            </H1>
+          )}
+          {headers?.PLAN_YOUR_VISIT?.sub_text && (
+            <H6
+              sx={{
+                fontSize: { xs: "20px", md: "25px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.PLAN_YOUR_VISIT?.sub_text}
+            </H6>
+          )}
+        </Box>
+      </PageHeader>
       <Container
         sx={{
           mb: 6,

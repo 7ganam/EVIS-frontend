@@ -10,13 +10,13 @@ import FactsSection from "src/components/EvSections/home-page-sections/FactsSect
 import FeaturesSection from "src/components/EvSections/home-page-sections/FeaturesSection";
 import CountDownSection from "src/components/EvSections/home-page-sections/CountDownSection";
 import DownloadSection from "src/components/EvSections/home-page-sections/DownloadSection";
-import { H1 } from "src/components/Typography";
-import Link from "next/link";
+import { H1, H3 } from "src/components/Typography";
 import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
 import PartnersGrid from "src/components/EvSections/PartnersGrid";
 
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
+import Link from "next/link";
 const StyledButton = styled(Button)(() => ({
   color: "#fff",
   fontWeight: 400,
@@ -33,6 +33,8 @@ const pageHeaderData = {
   image: "/assets/images/ev-home/carousel2.jpeg",
 };
 const EvHome = (props) => {
+  const headers = props?.headers ?? [];
+
   let {
     homePageData,
     pageHeaderData,
@@ -165,17 +167,27 @@ const EvHome = (props) => {
   ];
   return (
     <EvLayout showNavbar={true} title={"Home"}>
-      <PageHeader
-        text={pageHeaderData.text}
-        buttonText={pageHeaderData.buttonText}
-        buttonLink={pageHeaderData.buttonLink}
-        image={pageHeaderData.image}
-      >
+      <PageHeader image={headers?.home?.image?.data?.attributes?.url}>
         <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
-          {pageHeaderData.text && (
-            <H1 sx={{ fontSize: { xs: "40px", md: "55px" } }}>
-              {pageHeaderData.text}
+          {headers?.home?.text && (
+            <H1
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.home?.text}
             </H1>
+          )}
+          {headers?.home?.sub_text && (
+            <H3
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.home?.sub_text}
+            </H3>
           )}
           {
             <Box
@@ -189,7 +201,7 @@ const EvHome = (props) => {
               <Box mx={"0px"} p={1.25}>
                 <Link
                   href={
-                    "https://registration.infosalons.ae/EVIS23AD/SPON/Registration/Welcome"
+                    "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics"
                   }
                 >
                   <a>
@@ -205,30 +217,7 @@ const EvHome = (props) => {
                         border: "1px white solid",
                       }}
                     >
-                      {"BECOME A SPONSOR"}
-                    </StyledButton>
-                  </a>
-                </Link>
-              </Box>
-              <Box mx={"0px"} p={1.25}>
-                <Link
-                  href={
-                    "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Demographics"
-                  }
-                >
-                  <a>
-                    <StyledButton
-                      variant="contained"
-                      color="primary"
-                      sx={{
-                        width: "250px",
-                        px: "30px",
-                        py: "15px",
-                        fontWeight: "700",
-                        border: "1px white solid",
-                      }}
-                    >
-                      {"Book your stand now"}
+                      {"Register to Visit"}
                     </StyledButton>
                   </a>
                 </Link>

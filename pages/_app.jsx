@@ -16,6 +16,10 @@ import GoogleAnalytics from "src/utils/GoogleAnalytics";
 import { analytics } from "src/utils/gtm";
 import OpenGraphTags from "src/utils/OpenGraphTags";
 import "../src/fake-db";
+import axios from "axios";
+
+let baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+
 //Binding events.
 Router.events.on("routeChangeStart", () => nProgress.start());
 Router.events.on("routeChangeComplete", () => nProgress.done());
@@ -167,6 +171,19 @@ const App = ({ Component, pageProps }) => {
   useEffect(() => {
     analytics(window, document, "script", "dataLayer", "GTM-P5W4JQ4");
   });
+
+  const [headers, setHeaders] = useState([]);
+
+  useEffect(() => {
+    const getHeaders = async () => {
+      const response = await axios.get(`${baseUrl}/api/header?populate=deep`);
+      const headers = response?.data?.data?.attributes ?? [];
+      setHeaders(headers);
+    };
+
+    getHeaders();
+  }, []);
+
   return (
     <Fragment>
       <Head>
@@ -180,7 +197,9 @@ const App = ({ Component, pageProps }) => {
         <AppProvider>
           <MuiTheme>
             {/* <RTL>{getLayout(<Component {...pageProps} AOS />)}</RTL> */}
-            {getLayout(<Component {...pageProps} AOS global={global} />)}
+            {getLayout(
+              <Component {...pageProps} AOS global={global} headers={headers} />
+            )}
           </MuiTheme>
         </AppProvider>
       </SettingsProvider>

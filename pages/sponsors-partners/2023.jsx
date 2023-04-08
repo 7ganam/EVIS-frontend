@@ -1,16 +1,24 @@
 import React from "react";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 import { Grid, Container, Box } from "@mui/material";
-import { H1, H4 } from "src/components/EvComponents/Typography";
+import { H4 } from "src/components/EvComponents/Typography";
 
 import EvLayout from "src/components/layouts/EvLayout";
 import { H2, H5 } from "@/components/Typography";
-import PageHeader from "src/components/EvComponents/PageHeader";
 import LogoWithTitle from "@/components/EvComponents/LogoWithTitle";
 import { useTheme } from "@emotion/react";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
 
+import { H1, H6 } from "src/components/Typography";
+import PageHeader from "src/components/EvComponents/PageHeader";
+import { styled, Button } from "@mui/material";
+import Link from "next/link";
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  fontWeight: 400,
+  fontSize: "16px",
+}));
 // ======================================================
 // ======================================================
 
@@ -19,6 +27,8 @@ const StyledImage = (props) => {
 };
 
 const GeneralPage = (props) => {
+  const headers = props?.headers ?? [];
+
   let sponsors = useMemo(() => {
     if (!props?.sponsors) {
       return {};
@@ -68,6 +78,63 @@ const GeneralPage = (props) => {
 
   return (
     <EvLayout showNavbar={true}>
+      <PageHeader
+        image={headers?.EXHIBIT_SPONSOR?.image?.data?.attributes?.url}
+      >
+        <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
+          {headers?.EXHIBIT_SPONSOR?.text && (
+            <H1
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.EXHIBIT_SPONSOR?.text}
+            </H1>
+          )}
+          {headers?.EXHIBIT_SPONSOR?.sub_text && (
+            <H6
+              sx={{
+                fontSize: { xs: "20px", md: "25px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.EXHIBIT_SPONSOR?.sub_text}
+            </H6>
+          )}
+          {
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+                justifyContent: "center",
+                flexDirection: { xs: "column", md: "row" },
+              }}
+            >
+              <Box mx={"0px"} p={1.25}>
+                <Link href={"/download/brochure"}>
+                  <a>
+                    <StyledButton
+                      minWidth={"250px"}
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        width: "250px",
+                        px: "30px",
+                        py: "15px",
+                        fontWeight: "700",
+                        border: "1px white solid",
+                      }}
+                    >
+                      {"Download the Event Brochure"}
+                    </StyledButton>
+                  </a>
+                </Link>
+              </Box>
+            </Box>
+          }
+        </Box>
+      </PageHeader>
       <Container
         sx={{
           textAlign: "center",

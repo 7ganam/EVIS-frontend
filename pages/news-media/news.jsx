@@ -1,6 +1,6 @@
 import React from "react";
 import EvLayout from "src/components/layouts/EvLayout";
-import { Container, Grid, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
@@ -13,7 +13,19 @@ import { H2 } from "@/components/Typography";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
 
+import { H1, H6 } from "src/components/Typography";
+import PageHeader from "src/components/EvComponents/PageHeader";
+import { Box, Container, styled, Button } from "@mui/material";
+import Link from "next/link";
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  fontWeight: 400,
+  fontSize: "16px",
+}));
+
 const EvHome = (props) => {
+  const headers = props?.headers ?? [];
+
   const theme = useTheme();
 
   let sponsors = useMemo(() => {
@@ -99,6 +111,65 @@ const EvHome = (props) => {
 
   return (
     <EvLayout showNavbar={true} title={"Home"}>
+      <PageHeader image={headers?.PRESS?.image?.data?.attributes?.url}>
+        <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
+          {headers?.PRESS?.text && (
+            <H1
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.PRESS?.text}
+            </H1>
+          )}
+          {headers?.PRESS?.sub_text && (
+            <H6
+              sx={{
+                fontSize: { xs: "20px", md: "25px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.PRESS?.sub_text}
+            </H6>
+          )}
+          {
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+                justifyContent: "center",
+                flexDirection: { xs: "column", md: "row" },
+              }}
+            >
+              <Box mx={"0px"} p={1.25}>
+                <Link
+                  href={
+                    "https://registration.infosalons.ae/EVIS23AD/MED/Registration/Demographics"
+                  }
+                >
+                  <a>
+                    <StyledButton
+                      minWidth={"250px"}
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        width: "250px",
+                        px: "30px",
+                        py: "15px",
+                        fontWeight: "700",
+                        border: "1px white solid",
+                      }}
+                    >
+                      {"Register as Media Partner"}
+                    </StyledButton>
+                  </a>
+                </Link>
+              </Box>
+            </Box>
+          }
+        </Box>
+      </PageHeader>
       <EvisInNewsSection data={evisInNewsData}></EvisInNewsSection>
       <Box mt={"30px"}>
         <SectionTitle>Articles</SectionTitle>

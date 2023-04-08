@@ -12,6 +12,13 @@ import { useMemo } from "react";
 import AgendaSection from "@/components/EvSections/agenda-page-sections/AgendaSection";
 import Link from "next/link";
 
+import { H1, H6 } from "src/components/Typography";
+import { styled, Button } from "@mui/material";
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  fontWeight: 400,
+  fontSize: "16px",
+}));
 // ======================================================
 // ======================================================
 const pageHeaderData = {
@@ -22,6 +29,8 @@ const pageHeaderData = {
 };
 
 const GeneralPage = (props) => {
+  const headers = props?.headers ?? [];
+
   let {
     openTechPageData,
     talks,
@@ -65,12 +74,30 @@ const GeneralPage = (props) => {
 
   return (
     <EvLayout showNavbar={true}>
-      <PageHeader
-        text={agendaTitle}
-        buttonText={pageHeaderData.buttonText}
-        buttonLink={pageHeaderData.buttonLink}
-        image={mainImage}
-      ></PageHeader>
+      <PageHeader image={headers?.AGENDA?.image?.data?.attributes?.url}>
+        <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
+          {headers?.AGENDA?.text && (
+            <H1
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.AGENDA?.text}
+            </H1>
+          )}
+          {headers?.AGENDA?.sub_text && (
+            <H6
+              sx={{
+                fontSize: { xs: "20px", md: "33px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.AGENDA?.sub_text}
+            </H6>
+          )}
+        </Box>
+      </PageHeader>
 
       <Container
         sx={{
