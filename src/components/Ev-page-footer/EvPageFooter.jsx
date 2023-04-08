@@ -69,7 +69,7 @@ const quickLinks = [
   },
   {
     label: "Delegate Registration",
-    link: " https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Demographics",
+    link: "https://cloudme02.infosalons.biz/reg/EVIS23AD/Delegate/",
   },
   {
     label: "Register your interest to visit",

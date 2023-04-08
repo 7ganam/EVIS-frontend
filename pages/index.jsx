@@ -105,7 +105,7 @@ const EvHome = (props) => {
     },
     {
       text: "DELEGATE REGISTRATION",
-      url: "https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Demographics",
+      url: "https://cloudme02.infosalons.biz/reg/EVIS23AD/Delegate/",
       type: "internalLink",
     },
     {
