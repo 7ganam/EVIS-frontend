@@ -9,6 +9,8 @@ export default class Bazar extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta name="google-site-verification" content="3b8a4ba62ff6e047" />
+
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
