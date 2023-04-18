@@ -469,7 +469,7 @@ const speakersData2 = [
 const GeneralPage = (props) => {
   let speakersData = useMemo(() => {
     let allSpeakers = JSON.parse(props.allSpeakers)?.data ?? [];
-
+    console.log("allSpeakers :>> ", allSpeakers);
     return allSpeakers.map((speaker) => {
       return {
         link: `/speakers/${speaker?.attributes?.slug ?? ""}`,

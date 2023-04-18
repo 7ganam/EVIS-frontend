@@ -24,18 +24,19 @@ const getYearSpeakers = async (year) => {
   let strFilter;
   if (!year) {
     strFilter =
-      "/api/speakers?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep";
+      "/api/speakers?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep&pagination[limit]=500";
   }
   if (year === 22) {
     strFilter =
-      "/api/speakers?filters[year][$eq]=year%202022&filters[year][$eq]=both&populate=deep";
+      "/api/speakers?filters[year][$eq]=year%202022&filters[year][$eq]=both&populate=deep&pagination[limit]=500";
   }
   if (year === 23) {
     strFilter =
-      "/api/speakers?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep";
+      "/api/speakers?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep&pagination[limit]=500";
   }
   if (year === "both") {
-    strFilter = "/api/speakers?filters[year][$eq]=both&populate=deep";
+    strFilter =
+      "/api/speakers?filters[year][$eq]=both&populate=deep&pagination[limit]=500";
   }
   const response = await axios.get(`${baseUrl}${strFilter}`);
 
