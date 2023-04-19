@@ -49,7 +49,7 @@ const generalPage = () => {
           sponsors={sponsorsData}
           endpoint={"application-for-conference-agenda-downloads"}
           downloadFileUrl={
-            "https://res.cloudinary.com/drf11lmmn/image/upload/v1673503724/EVIS_2023_Paid_Conference_Agenda_09_01_2023_a351c70fb6.pdf"
+            "https://res.cloudinary.com/drf11lmmn/image/upload/v1681905890/EVIS_2023_Conference_Agenda_15_04_2023_1460ee1b63.pdf"
           }
           fileName="Conference_Agenda.pdf"
         />
