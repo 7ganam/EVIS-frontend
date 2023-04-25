@@ -9,7 +9,7 @@ function CardsSection({ cardsData }) {
   return (
     <Box sx={{}}>
       <Box sx={{ mb: "20px", mt: "30px" }}>
-        <SectionTitle>Event Features</SectionTitle>
+        <SectionTitle>A Glimpse of EVIS Previous Edition </SectionTitle>
       </Box>
       <Grid container columns={12} spacing={3}>
         {cardsData?.map((card, ind) => {

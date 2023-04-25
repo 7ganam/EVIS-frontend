@@ -1,17 +1,26 @@
 import { Box, Grid, useTheme, Card } from "@mui/material";
+import { Stack, styled, Button } from "@mui/material";
+import Link from "next/link";
 
 import { Container } from "@mui/material";
 import React from "react";
 import Image from "src/components/BazarImage";
 import { SectionTitle } from "@/components/EvComponents/StyledTypography";
 // ===============================================================
+
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  fontWeight: 400,
+  fontSize: "16px",
+}));
+
 const WhatToExpectSection = ({ serviceList }) => {
   const theme = useTheme();
 
   return (
     <Box>
       <Box sx={{ mb: "20px" }}>
-        <SectionTitle>2023 HIGHLIGHTS</SectionTitle>
+        <SectionTitle>What to expect</SectionTitle>
       </Box>
       <Box
         sx={{
@@ -61,6 +70,35 @@ const WhatToExpectSection = ({ serviceList }) => {
             })}
           </Grid>
         </Container>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "center",
+          flexDirection: { xs: "column", md: "row" },
+        }}
+      >
+        <Box mx={"0px"} p={1.25}>
+          <Link href={"/about"}>
+            <a>
+              <StyledButton
+                minWidth={"250px"}
+                variant="contained"
+                color="primary"
+                sx={{
+                  width: "250px",
+                  px: "30px",
+                  py: "15px",
+                  fontWeight: "700",
+                  border: "1px white solid",
+                }}
+              >
+                {"FIND OUT MORE"}
+              </StyledButton>
+            </a>
+          </Link>
+        </Box>
       </Box>
     </Box>
   );

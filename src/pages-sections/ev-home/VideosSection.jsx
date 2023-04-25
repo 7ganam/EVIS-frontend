@@ -1,6 +1,7 @@
 import { Box, Grid, styled, useTheme } from "@mui/material";
 import React from "react";
 import YoutubeEmbed from "src/components/YoutubeEmbed";
+import { SectionTitle } from "src/components/EvComponents/StyledTypography";
 
 function extract_yt_id(url) {
   var video_id = url.split("v=")[1];
@@ -17,6 +18,9 @@ const VideosSection = ({ videosList }) => {
   const theme = useTheme();
   return (
     <Box mt={6}>
+      <Box sx={{ mb: "20px", mt: "30px" }}>
+        <SectionTitle>A Glimpse of EVIS Previous Edition </SectionTitle>
+      </Box>
       <Grid container mb={-0.5} spacing={3}>
         {videosList?.map((item, ind) => (
           <Grid key={ind} item md={4} sm={6} xs={12}>

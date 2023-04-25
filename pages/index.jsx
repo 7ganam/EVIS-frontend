@@ -13,6 +13,7 @@ import DownloadSection from "src/components/EvSections/home-page-sections/Downlo
 import { H1, H3 } from "src/components/Typography";
 import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
 import PartnersGrid from "src/components/EvSections/PartnersGrid";
+import ByExhibit from "src/components/EvSections/why-exhibit-sections/ByExhibit";
 
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
@@ -165,6 +166,31 @@ const EvHome = (props) => {
       type: "internalLink",
     },
   ];
+
+  const serviceList = [
+    {
+      content: "Connect with thousands of prospective customers and partners",
+      img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672600334/2_1_6288772a72_8e38586ce3.png",
+    },
+    {
+      content:
+        "Network with global representatives from across the H/EV supply chain",
+      img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672604207/3_dfc79f579b.png",
+    },
+    {
+      content: "Stay informed on the latest trends in the EV industry",
+      img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672604244/4_c2f19d4da6.png",
+    },
+    {
+      content:
+        "Benchmark your products and services against industry competition",
+      img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672604272/5_f24e400cff.png",
+    },
+    {
+      content: "Stay ahead of the curve on evolving customer requirements",
+      img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672604295/6_5e35888177.png",
+    },
+  ];
   return (
     <EvLayout showNavbar={true} title={"Home"}>
       <PageHeader image={headers?.home?.image?.data?.attributes?.url}>
@@ -222,6 +248,30 @@ const EvHome = (props) => {
                   </a>
                 </Link>
               </Box>
+              <Box mx={"0px"} p={1.25}>
+                <Link
+                  href={
+                    "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Demographics"
+                  }
+                >
+                  <a>
+                    <StyledButton
+                      minWidth={"250px"}
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        width: "250px",
+                        px: "30px",
+                        py: "15px",
+                        fontWeight: "700",
+                        border: "1px white solid",
+                      }}
+                    >
+                      {"Exhibit/Sponsor"}
+                    </StyledButton>
+                  </a>
+                </Link>
+              </Box>
             </Box>
           }
         </Box>
@@ -252,13 +302,14 @@ const EvHome = (props) => {
           mb: 6,
         }}
       >
-        <DownloadSection ButtonsData={buttonsData} />
+        {/* <DownloadSection ButtonsData={buttonsData} /> */}
         <FeaturesSection cardsData={eventFeaturesData}></FeaturesSection>
         {/* <Box sx={{ mt: "60px" }}>
           <CountDownSection></CountDownSection>
         </Box> */}
         <VideosSection videosList={videosData} />
         <SubscribeSection />
+        <ByExhibit data={serviceList} />
         <Box sx={{ mt: "100px" }}>
           <PartnersGrid
             sx={{ mt: 5 }}
