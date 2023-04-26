@@ -98,24 +98,24 @@ const Navbar = ({ elevation, isFixed }) => {
           );
         }
 
-        if (nav.url) {
-          return (
-            <StyledNavLink
-              href={nav.url}
-              key={nav.title}
-              sx={{
-                whiteSpace: "nowrap ",
-                display: "flex",
-                alignItems: "center",
-                px: "10px",
-                height: "55px",
-                fontWeight: "400",
-              }}
-            >
-              {nav.title}
-            </StyledNavLink>
-          );
-        }
+        // if (nav.url) {
+        //   return (
+        //     <StyledNavLink
+        //       href={nav.url}
+        //       key={nav.title}
+        //       sx={{
+        //         whiteSpace: "nowrap ",
+        //         display: "flex",
+        //         alignItems: "center",
+        //         px: "10px",
+        //         height: "55px",
+        //         fontWeight: "400",
+        //       }}
+        //     >
+        //       {nav.title}
+        //     </StyledNavLink>
+        //   );
+        // }
 
         if (nav.child) {
           return (
@@ -145,7 +145,25 @@ const Navbar = ({ elevation, isFixed }) => {
                   px: "10px",
                 }}
               >
-                {nav.title}{" "}
+                {nav.url ? (
+                  <StyledNavLink
+                    href={nav.url}
+                    key={nav.title}
+                    sx={{
+                      whiteSpace: "nowrap ",
+                      display: "flex",
+                      alignItems: "center",
+                      px: "10px",
+                      height: "55px",
+                      fontWeight: "400",
+                    }}
+                  >
+                    {nav.title}
+                  </StyledNavLink>
+                ) : (
+                  nav.title
+                )}
+                {/* {nav.title} */}
                 <KeyboardArrowDown
                   sx={{
                     color: "grey.500",

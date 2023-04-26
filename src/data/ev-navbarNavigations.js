@@ -3,32 +3,19 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "About",
-
+    url: "/about",
     child: [
-      {
-        title: "Exhibition",
-        url: "/about/#exhibition",
-      },
-      {
-        title: "Conference",
-        url: "/about#conference",
-      },
-
-      {
-        title: "Open Tech Sessions",
-        url: "/about#open-tech",
-      },
-      {
-        title: "Market Gateway",
-        url: "/about#market-gateway",
-      },
       {
         title: "Advisory Board",
         url: "/about#advisory-board",
       },
       {
-        title: "Venue",
-        url: "/about#venue",
+        title: "Sponsors & Partners",
+        url: "/sponsors-partners/2023",
+      },
+      {
+        title: "Contact Us",
+        url: "/contact-us",
       },
     ],
   },
@@ -36,12 +23,9 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "Exhibition",
+    url: "/exhibition/why-exhibit",
 
     child: [
-      {
-        title: "Why Exhibit",
-        url: "/exhibition/why-exhibit",
-      },
       {
         title: "Market Gateway",
         url: "/exhibition/market-gateway",

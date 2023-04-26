@@ -1,6 +1,6 @@
 import { Box, Container } from "@mui/material";
 import WhyExhibit from "src/components/EvSections/why-exhibit-sections/WhyExhibit";
-import ExhibitionFeatures from "src/components/EvSections/why-exhibit-sections/ExhibitionFeatures";
+import WhatIsNew from "src/components/EvSections/why-exhibit-sections/WhatIsNew";
 import ByExhibit from "src/components/EvSections/why-exhibit-sections/ByExhibit";
 import ExpectMeet from "src/components/EvSections/why-exhibit-sections/ExpectMeet";
 import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
@@ -12,6 +12,7 @@ import PartnersGrid from "src/components/EvSections/PartnersGrid";
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
 import { HighlightOff } from "@mui/icons-material";
+import TopicsSection from "src/components/EvSections/agenda-page-sections/TopicsSection2";
 
 import MarketGateway from "@/components/EvSections/about-page-sections/MarketGateway";
 
@@ -24,6 +25,39 @@ const StyledButton = styled(Button)(() => ({
   fontWeight: 400,
   fontSize: "16px",
 }));
+
+const topics = [
+  "EV Manufacturers",
+  "Distributors",
+  "Fleet Owners",
+  "Integrated Energy Companies",
+  "Banks",
+  "R&D Centers",
+  "Environmental Agencies",
+  "Government Organizations",
+  "Municipalities",
+  "Public Transport Operators",
+  "Investment Firms",
+  "and more ...",
+];
+
+const WhatIsNewData = [
+  {
+    img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1682529271/market_gateway_handshake_ga427b5841_1920_db5912ae7d.jpg?updated_at=2023-04-26T17:14:32.531Z",
+    link: "https://www.evinnovationsummit.com/market-gateway",
+    title: "Market Gateway ",
+  },
+  {
+    img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1682529320/tech_park_8f2cd50c27.jpg?updated_at=2023-04-26T17:15:21.438Z",
+    link: "https://www.evinnovationsummit.com/techpark",
+    title: "Tech Park",
+  },
+  {
+    img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1682529281/test_drive_d7325c66d2.jpg?updated_at=2023-04-26T17:14:42.570Z",
+    link: "https://www.evinnovationsummit.com/testdrive",
+    title: "Test Drive",
+  },
+];
 
 const WhyExhibitComponent = (props) => {
   const headers = props?.headers ?? [];
@@ -171,11 +205,14 @@ const WhyExhibitComponent = (props) => {
           futureOfMobility={futureOfMobility}
         />
       </Container>
-      <CoreSection></CoreSection>
+      {/* <CoreSection></CoreSection> */}
+      <TopicsSection topics={topics}></TopicsSection>
+
       <Container>
-        <ExhibitionFeatures data={featureList} />
-        <ByExhibit data={serviceList} />
-        <ExpectMeet data={peopleList} />
+        <WhatIsNew data={WhatIsNewData} />
+        {/* <ExhibitionFeatures data={featureList} /> */}
+        {/* <ByExhibit data={serviceList} /> */}
+        {/* <ExpectMeet data={peopleList} /> */}
       </Container>
 
       <Container>

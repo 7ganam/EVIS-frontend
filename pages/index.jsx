@@ -303,7 +303,7 @@ const EvHome = (props) => {
         }}
       >
         {/* <DownloadSection ButtonsData={buttonsData} /> */}
-        <FeaturesSection cardsData={eventFeaturesData}></FeaturesSection>
+        {/* <FeaturesSection cardsData={eventFeaturesData}></FeaturesSection> */}
         {/* <Box sx={{ mt: "60px" }}>
           <CountDownSection></CountDownSection>
         </Box> */}

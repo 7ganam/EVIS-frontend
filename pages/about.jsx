@@ -1,4 +1,6 @@
 import { Box, Container } from "@mui/material";
+import { Stack, styled, Button } from "@mui/material";
+import FeaturesSection from "src/components/EvSections/home-page-sections/FeaturesSection";
 
 import EvLayout from "src/components/layouts/EvLayout";
 import LandingText from "src/components/EvSections/about-page-sections/LandingText";
@@ -10,10 +12,18 @@ import AdvisoryBoardSection from "src/components/EvSections/about-page-sections/
 import VenueSection from "src/components/EvSections/about-page-sections/VenueSection";
 import SponsorsGrid from "src/components/EvSections/SponsorsGrid";
 import PartnersGrid from "src/components/EvSections/PartnersGrid";
+import { H1, H3 } from "src/components/Typography";
+import CoreSection from "@/components/EvSections/why-exhibit-sections/CoreSection";
 
 import api from "src/utils/api/evis-api";
 import { useMemo } from "react";
-
+import PageHeader from "src/components/EvComponents/PageHeader";
+import Link from "next/link";
+const StyledButton = styled(Button)(() => ({
+  color: "#fff",
+  fontWeight: 400,
+  fontSize: "16px",
+}));
 // import Footer from "src/components/EvSections/why-exhibit-sections/Footer";
 
 // ======================================================
@@ -128,7 +138,36 @@ M.Sc., Electronics and Communications Engineering Politehnica University Timisoa
     about: ``,
   },
 ];
+
+let eventFeaturesData = [
+  {
+    img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672595069/exh2_ba44ff2027_756a701aee_15e3272abe.jpg",
+    buttonText: "EXHIBIT AT EVIS",
+    buttonLink: "https://www.evinnovationsummit.com/participate/exhibitor",
+    content: `EVIS features an impressive 10,000+ square meters of display space, showcasing the largest and most outstanding brands from around the world. These leading brands present their latest products and innovations in the electric vehicle industry, making EVIS the ultimate destination for industry professionals seeking to stay informed on the newest and most exceptional offerings.`,
+    title: "EXHIBIT",
+  },
+  {
+    img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672595243/ex4_gradient_82e01c7e61_93bc6feed9_e39eb45a8a.png",
+    buttonText: "ATTEND EVIS",
+    buttonLink: "https://www.evinnovationsummit.com/participate/visitor",
+    content:
+      "EVIS is designed to foster individual engagement and community interaction through tailored experiences, utilizing the latest technology showcases, personalized meetups, sharing economy activities, and individualized attendee networking opportunities.",
+    title: "NETWORK",
+  },
+  {
+    img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672595224/DSC_01808_dd735ecb89_22ac71b56e_ec05b23220.jpg",
+    buttonText: "ATTEND EVIS",
+    buttonLink: "https://www.evinnovationsummit.com/participate/visitor ",
+    content:
+      "EVIS will feature advanced topics for specialized experts while also being accessible to the wider public, all while adhering to the highest standards of specialized conferences.",
+    title: "HIGHEST STANDARDS",
+  },
+];
+
 const GeneralPage = (props) => {
+  const headers = props?.headers ?? [];
+
   let speakers = useMemo(() => {
     if (!props?.speakers) {
       return {};
@@ -250,25 +289,112 @@ const GeneralPage = (props) => {
 
   return (
     <EvLayout showNavbar={true}>
+      <PageHeader image={headers?.about?.image?.data?.attributes?.url}>
+        <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
+          {headers?.about?.text && (
+            <H1
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.about?.text}
+            </H1>
+          )}
+          {headers?.about?.sub_text && (
+            <H3
+              sx={{
+                fontSize: { xs: "40px", md: "55px" },
+                marginBottom: "20px",
+              }}
+            >
+              {headers?.about?.sub_text}
+            </H3>
+          )}
+          {
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+                justifyContent: "center",
+                flexDirection: { xs: "column", md: "row" },
+              }}
+            >
+              <Box mx={"0px"} p={1.25}>
+                <Link
+                  href={
+                    "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Demographics"
+                  }
+                >
+                  <a>
+                    <StyledButton
+                      minWidth={"250px"}
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        width: "250px",
+                        px: "30px",
+                        py: "15px",
+                        fontWeight: "700",
+                        border: "1px white solid",
+                      }}
+                    >
+                      {"BOOK A STAND"}
+                    </StyledButton>
+                  </a>
+                </Link>
+              </Box>
+              <Box mx={"0px"} p={1.25}>
+                <Link
+                  href={
+                    "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics"
+                  }
+                >
+                  <a>
+                    <StyledButton
+                      minWidth={"250px"}
+                      variant="contained"
+                      color="primary"
+                      sx={{
+                        width: "250px",
+                        px: "30px",
+                        py: "15px",
+                        fontWeight: "700",
+                        border: "1px white solid",
+                      }}
+                    >
+                      {"REGISTER TO VISIT"}
+                    </StyledButton>
+                  </a>
+                </Link>
+              </Box>
+            </Box>
+          }
+        </Box>
+      </PageHeader>
       <Container>
         <LandingText
           id={"summit"}
-          paragraph={aboutEvis.paragraph}
+          paragraph={`EVIS, the largest electric vehicle exhibition and conference in the MENA region, proudly embodies the slogan ""Where EV Innovations Meet."" 
+
+The event is an unparalleled opportunity for industry professionals and innovators to engage in collaborative and productive discussions on crucial technical, policy, and market advancements of the ever-growing e-mobility sector. With a perfect blend of a highly informative conference, an exhibition showcasing state-of-the-art technologies, interactive tech sessions, and unrivaled networking events, EVIS promises an immersive and valuable experience for all attendees. `}
           topic={aboutEvis.title}
         />
+        <FeaturesSection cardsData={eventFeaturesData}></FeaturesSection>
       </Container>
+      <Container>{/* <Exhibition item={exhibition} /> */}</Container>
+      {/* <SummitSection item={conference} topics={topics}></SummitSection> */}
       <Container>
-        <Exhibition item={exhibition} />
+        {/* <OpenTechSection item={sessions} videos={videos}></OpenTechSection> */}
+        {/* <MarketGateway item={sessions} videos={videos}></MarketGateway> */}
       </Container>
-      <SummitSection item={conference} topics={topics}></SummitSection>
-      <Container>
-        <OpenTechSection item={sessions} videos={videos}></OpenTechSection>
-        <MarketGateway item={sessions} videos={videos}></MarketGateway>
-      </Container>
+      <CoreSection></CoreSection>
+
       <AdvisoryBoardSection
         advisoryBoardData={advisoryBoard}
       ></AdvisoryBoardSection>
-      <Container>
+      <Box sx={{ mt: "40px" }}></Box>
+      {/* <Container>
         <VenueSection
           venu_paragraph_1={venu_paragraph_1}
           venu_paragraph_2={venu_paragraph_2}
@@ -290,7 +416,7 @@ const GeneralPage = (props) => {
             title={"MEDIA PARTNERS"}
           />
         </Box>
-      </Container>
+      </Container> */}
     </EvLayout>
   );
 };
