@@ -140,7 +140,9 @@ const WhyExhibitComponent = (props) => {
 
   return (
     <EvLayout showNavbar={true}>
-      <PageHeader image={headers?.home?.image?.data?.attributes?.url}>
+      <PageHeader
+        image={headers?.EXHIBIT_SPONSOR?.image?.data?.attributes?.url}
+      >
         <Box sx={{ maxWidth: "830px", textAlign: "center" }}>
           {headers?.EXHIBIT_SPONSOR?.text && (
             <H1

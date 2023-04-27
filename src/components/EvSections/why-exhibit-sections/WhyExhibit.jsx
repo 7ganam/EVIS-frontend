@@ -12,7 +12,7 @@ const item = {
 const WhyExhibit = (props) => {
   const whyExhibit = props.whyExhibit;
   return (
-    <Box hoverEffect data-aos="fade-up" data-aos-duration={1000}>
+    <Box>
       <Box mt={"30px"} mb={"20px"}>
         <SectionTitle>Why Exhibit </SectionTitle>
       </Box>

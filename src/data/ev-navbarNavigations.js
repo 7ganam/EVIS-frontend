@@ -67,7 +67,7 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "Conference",
-
+    url: "/conference",
     child: [
       {
         title: "Agenda",
@@ -105,7 +105,7 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "Visit",
-
+    url: "/visit",
     child: [
       {
         title: "Exhibitor List",
