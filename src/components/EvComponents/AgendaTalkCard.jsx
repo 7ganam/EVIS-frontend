@@ -98,14 +98,27 @@ function AgendaTalkCard({ talk }) {
               <Box
                 sx={{
                   display: "flex",
-                  alignItems: "center",
+                  alignItems: "top",
                 }}
               >
                 <Box sx={{ width: "20px", height: "20px" }}>
-                  <PersonIcon sx={{ width: "100%", height: "100%" }} />
+                  <PersonIcon sx={{ width: "20px", height: "20px" }} />
                 </Box>
                 <Box sx={{ ml: "4px" }}>
-                  Speaker : {talk?.speaker?.data?.attributes?.name ?? "-"}
+                  Speakers :
+                  <div>
+                    {talk?.speakers?.data.length > 0 &&
+                      talk.speakers.data.map((speaker) => {
+                        return (
+                          <Box
+                            key={speaker.attributes.name}
+                            sx={{ ml: "10px" }}
+                          >
+                            {speaker.attributes.name}
+                          </Box>
+                        );
+                      })}
+                  </div>
                 </Box>
               </Box>
             </Box>

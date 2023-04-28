@@ -14,7 +14,17 @@ const AgendaSection = ({ talks = [] }) => {
   const [speakerValue, setSpeakerValue] = React.useState();
   const [speakerInputValue, setSpeakerInputValue] = React.useState("");
   let speakers = useMemo(() => {
-    return talks.map((talk) => talk?.speaker?.data?.attributes?.name ?? "-");
+    // return talks.map((talk) => talk?.speaker?.data?.attributes?.name ?? "-");
+    let allSpeakers = [];
+    talks.forEach((talk) => {
+      allSpeakers = [
+        ...allSpeakers,
+        ...(talk?.speakers?.data.map((speaker) => speaker.attributes.name) ??
+          []),
+      ];
+    });
+
+    return allSpeakers;
   }, [talks]);
 
   const [dayValue, setDayValue] = React.useState();
@@ -34,8 +44,10 @@ const AgendaSection = ({ talks = [] }) => {
     }
 
     if (speakerValue) {
-      filteredTalks = filteredTalks.filter(
-        (talk) => talk?.speaker?.data?.attributes?.name === speakerValue
+      filteredTalks = filteredTalks.filter((talk) =>
+        talk?.speakers?.data
+          .map((speaker) => speaker.attributes.name)
+          .includes(speakerValue)
       );
     }
 
@@ -45,6 +57,7 @@ const AgendaSection = ({ talks = [] }) => {
 
     return filteredTalks;
   }, [speakerValue, dayValue, talks]);
+
   const renderTalks = () => {
     let talksView = displayedTalks.map((talk) => {
       return (
