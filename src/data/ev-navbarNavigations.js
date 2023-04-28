@@ -107,29 +107,30 @@ const evNavbarNavigations = [
     title: "Visit",
     url: "/visit",
     child: [
-      {
-        title: "Exhibitor List",
-        url: "https://onlineexhibitormanual.net/EVIS2023/exhi/exhibitorlist2023.aspx",
-      },
+      // {
+      //   title: "Exhibitor List",
+      //   url: "https://onlineexhibitormanual.net/EVIS2023/exhi/exhibitorlist2023.aspx",
+      // },
       {
         title: "Open Tech Sessions",
         url: "/agenda/open-tech-sessions",
       },
-      {
-        title: "Register",
-        url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics",
-      },
+
       {
         title: "Technology Park",
-        url: "/coming-soon",
+        url: "/techpark",
       },
       {
         title: "EV Test Drive",
-        url: "/coming-soon",
+        url: "/testdrive",
       },
+      // {
+      //   title: "Sponsors & Partners",
+      //   url: "/sponsors-partners/2023",
+      // },
       {
-        title: "Sponsors & Partners",
-        url: "/sponsors-partners/2023",
+        title: "Register",
+        url: "https://registration.infosalons.ae/EVIS23AD/Visitor/Registration/Demographics",
       },
     ],
   },
@@ -137,6 +138,7 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "Press Center",
+    url: "/press",
     child: [
       {
         title: "News",
@@ -195,6 +197,7 @@ const evNavbarNavigations = [
     megaMenu: false,
     megaMenuWithSub: false,
     title: "Plan your visit",
+    url: "/travel-visas",
     child: [
       // {
       //   title: "Contact",

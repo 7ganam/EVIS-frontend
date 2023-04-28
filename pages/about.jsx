@@ -143,14 +143,14 @@ let eventFeaturesData = [
   {
     img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672595069/exh2_ba44ff2027_756a701aee_15e3272abe.jpg",
     buttonText: "EXHIBIT AT EVIS",
-    buttonLink: "https://www.evinnovationsummit.com/participate/exhibitor",
+    buttonLink: "/participate/exhibitor",
     content: `EVIS features an impressive 10,000+ square meters of display space, showcasing the largest and most outstanding brands from around the world. These leading brands present their latest products and innovations in the electric vehicle industry, making EVIS the ultimate destination for industry professionals seeking to stay informed on the newest and most exceptional offerings.`,
     title: "EXHIBIT",
   },
   {
     img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672595243/ex4_gradient_82e01c7e61_93bc6feed9_e39eb45a8a.png",
     buttonText: "ATTEND EVIS",
-    buttonLink: "https://www.evinnovationsummit.com/participate/visitor",
+    buttonLink: "/participate/visitor",
     content:
       "EVIS is designed to foster individual engagement and community interaction through tailored experiences, utilizing the latest technology showcases, personalized meetups, sharing economy activities, and individualized attendee networking opportunities.",
     title: "NETWORK",
@@ -158,7 +158,7 @@ let eventFeaturesData = [
   {
     img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672595224/DSC_01808_dd735ecb89_22ac71b56e_ec05b23220.jpg",
     buttonText: "ATTEND EVIS",
-    buttonLink: "https://www.evinnovationsummit.com/participate/visitor ",
+    buttonLink: "/participate/visitor ",
     content:
       "EVIS will feature advanced topics for specialized experts while also being accessible to the wider public, all while adhering to the highest standards of specialized conferences.",
     title: "HIGHEST STANDARDS",

@@ -44,17 +44,17 @@ const topics = [
 const WhatIsNewData = [
   {
     img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1682529271/market_gateway_handshake_ga427b5841_1920_db5912ae7d.jpg?updated_at=2023-04-26T17:14:32.531Z",
-    link: "https://www.evinnovationsummit.com/market-gateway",
+    link: "/market-gateway",
     title: "Market Gateway ",
   },
   {
     img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1682529320/tech_park_8f2cd50c27.jpg?updated_at=2023-04-26T17:15:21.438Z",
-    link: "https://www.evinnovationsummit.com/techpark",
+    link: "/techpark",
     title: "Tech Park",
   },
   {
     img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1682529281/test_drive_d7325c66d2.jpg?updated_at=2023-04-26T17:14:42.570Z",
-    link: "https://www.evinnovationsummit.com/testdrive",
+    link: "/testdrive",
     title: "Test Drive",
   },
 ];

@@ -103,11 +103,7 @@ const Page = (props) => {
               }}
             >
               <Box mx={"0px"} p={1.25} mb={"100px"} mt={"30px"}>
-                <Link
-                  href={
-                    "https://www.evinnovationsummit.com/download/conference-agenda"
-                  }
-                >
+                <Link href={"/download/conference-agenda"}>
                   <a>
                     <StyledButton
                       minWidth={"250px"}
