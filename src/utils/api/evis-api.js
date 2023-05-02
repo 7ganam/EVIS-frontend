@@ -9,7 +9,7 @@ const getSpeakers = async () => {
 
 const getSpeaker = async (slug) => {
   const response = await axios.get(
-    `${baseUrl}/api/speakers?filters[slug][$eq]=${slug}&populate=*`
+    `${baseUrl}/api/speakers?filters[slug][$eq]=${slug}&populate=deep&pagination[limit]=500`
   );
   return response.data;
 };
