@@ -51,7 +51,7 @@ const generalPage = () => {
           downloadFileUrl={
             "https://res.cloudinary.com/drf11lmmn/image/upload/v1683206097/EVIS_2023_Tech_Sessions_Agenda_1_113e0e8756.pdf"
           }
-          fileName="open_tech_agenda.pdf"
+          fileName="openTech_agenda.pdf"
         />
       </Container>
     </EvLayout>
