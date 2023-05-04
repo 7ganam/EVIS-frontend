@@ -49,7 +49,7 @@ const generalPage = () => {
           sponsors={sponsorsData}
           endpoint={"application-for-opentech-agenda-downloads"}
           downloadFileUrl={
-            "https://res.cloudinary.com/drf11lmmn/image/upload/v1681905828/EVIS_2023_Open_Tech_Sessions_Agenda_15_04_2023_95dc7de791.pdf"
+            "https://res.cloudinary.com/drf11lmmn/image/upload/v1683206097/EVIS_2023_Tech_Sessions_Agenda_1_113e0e8756.pdf"
           }
           fileName="2023_brochure.pdf"
         />
