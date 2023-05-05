@@ -267,8 +267,16 @@ const PageFooter = ({ sx, id, bgcolor }) => {
 
           <Grid item md={3} sm={6} xs={12}>
             <SectionTitle>{`EVENT INFO`}</SectionTitle>
-            <SectionElement>{"When: 29 – 31 May 2023"}</SectionElement>
-            <SectionElement>{"Timings: 9am - 5pm"}</SectionElement>
+            <SectionElement>{"When:"}</SectionElement>
+            <SectionElement sx={{ ml: 3 }}>
+              {"29 May 2023: 10am-6pm"}
+            </SectionElement>
+            <SectionElement sx={{ ml: 3 }}>
+              {"30 May 2023: 9:00am-6pm"}
+            </SectionElement>
+            <SectionElement sx={{ ml: 3 }}>
+              {"31 May 2023: 9:00am-6pm"}
+            </SectionElement>
             <SectionElement>
               {"Venue: Abu Dhabi National Exhibition Centre, UAE"}
             </SectionElement>
