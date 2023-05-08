@@ -90,7 +90,7 @@ const GeneralPage = (props) => {
           {headers?.AGENDA?.sub_text && (
             <H6
               sx={{
-                fontSize: { xs: "20px", md: "33px" },
+                fontSize: { xs: "20px", md: "20px" },
                 marginBottom: "20px",
               }}
             >

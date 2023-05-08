@@ -69,31 +69,32 @@ const evNavbarNavigations = [
     title: "Conference",
     url: "/conference",
     child: [
-      {
-        title: "Agenda",
-        child: [
-          {
-            title: "Conference Agenda",
-            url: "/agenda/conference",
-          },
-          {
-            title: "Open Tech Sessions Agenda",
-            url: "/agenda/open-tech-sessions",
-          },
-        ],
-      },
+      // {
+      //   title: "Agenda",
+      //   child: [
+      //     {
+      //       title: "Conference Agenda",
+      //       url: "/agenda/conference",
+      //     },
+      //     {
+      //       title: "Open Tech Sessions Agenda",
+      //       url: "/agenda/open-tech-sessions",
+      //     },
+      //   ],
+      // },
       {
         title: "Speakers",
-        child: [
-          {
-            title: "2023 speakers",
-            url: "/speakers/2023",
-          },
-          {
-            title: "2022 speakers",
-            url: "/speakers/previous",
-          },
-        ],
+        url: "/speakers/2023",
+        // child: [
+        //   {
+        //     title: "2023 speakers",
+        //     url: "/speakers/2023",
+        //   },
+        //   {
+        //     title: "2022 speakers",
+        //     url: "/speakers/previous",
+        //   },
+        // ],
       },
       {
         title: "Register",

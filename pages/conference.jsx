@@ -16,7 +16,7 @@ const StyledButton = styled(Button)(() => ({
 const item = {
   img: "https://res.cloudinary.com/drf11lmmn/image/upload/v1672592657/speaker_814395104d_c75580257e.jpg",
   title: "",
-  ps: `Join the EVIS Main Conference for an enriching experience, featuring renowned industry luminaries as speakers at a cutting-edge venue. Each day starts with a distinguished keynote address, followed by dynamic panel discussions led by top industry leaders. Discover invaluable insights on market disruptors from the past year and gain foresight into future trends shaping the dynamic EV industry. Expand your understanding and stay ahead in the evolving world of electric vehicles at the EVIS Conference..`,
+  ps: `Join the EVIS Main Conference for an enriching experience, featuring renowned industry luminaries as speakers at a cutting-edge venue. Each day starts with a distinguished keynote address, followed by dynamic panel discussions led by top industry leaders. Discover invaluable insights on market disruptors from the past year and gain foresight into future trends shaping the dynamic EV industry. Expand your understanding and stay ahead in the evolving world of electric vehicles at the EVIS Conference.`,
 };
 
 const Page = (props) => {
@@ -58,7 +58,7 @@ const Page = (props) => {
               <Box mx={"0px"} p={1.25}>
                 <Link
                   href={
-                    "https://registration.infosalons.ae/EVIS23AD/DEL/Registration/Demographics"
+                    "https://cloudme02.infosalons.biz/reg/EVIS23AD/Delegate/"
                   }
                 >
                   <a>
