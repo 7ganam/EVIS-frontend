@@ -55,18 +55,19 @@ const getGalleryPage = async () => {
 const getSponsors = async (year) => {
   let strFilter;
   if (!year) {
-    strFilter = "/api/sponsors?populate=deep";
+    strFilter = "/api/sponsors?populate=deep&pagination[limit]=500";
   }
   if (year === 22) {
     strFilter =
-      "/api/sponsors?filters[year][$eq]=year%202022&filters[year][$eq]=both&populate=deep";
+      "/api/sponsors?filters[year][$eq]=year%202022&filters[year][$eq]=both&populate=deep&pagination[limit]=500";
   }
   if (year === 23) {
     strFilter =
-      "/api/sponsors?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep";
+      "/api/sponsors?filters[year][$eq]=year%202023&filters[year][$eq]=both&populate=deep&pagination[limit]=500";
   }
   if (year === "both") {
-    strFilter = "/api/sponsors?filters[year][$eq]=both&populate=deep";
+    strFilter =
+      "/api/sponsors?filters[year][$eq]=both&populate=deep&pagination[limit]=500";
   }
   const response = await axios.get(`${baseUrl}${strFilter}`);
 
@@ -82,7 +83,9 @@ const getContactUs = async () => {
 };
 
 const getInnovationTeam = async () => {
-  const response = await axios.get(`${baseUrl}/api/team-members?populate=deep`);
+  const response = await axios.get(
+    `${baseUrl}/api/team-members?populate=deep&pagination[limit]=500`
+  );
   return response.data;
 };
 const getWhyExhibit = async () => {
@@ -105,18 +108,22 @@ const getOpenTech = async () => {
 };
 
 const getTestimonials = async () => {
-  const response = await axios.get(`${baseUrl}/api/testimonials?populate=deep`);
+  const response = await axios.get(
+    `${baseUrl}/api/testimonials?populate=deep&pagination[limit]=500`
+  );
   return response.data;
 };
 
 const getEvisInNews = async () => {
-  const response = await axios.get(`${baseUrl}/api/news-videos?populate=deep`);
+  const response = await axios.get(
+    `${baseUrl}/api/news-videos?populate=deep&pagination[limit]=500`
+  );
   return response.data;
 };
 
 const getNewsArticle = async () => {
   const response = await axios.get(
-    `${baseUrl}/api/news-articles?populate=deep`
+    `${baseUrl}/api/news-articles?populate=deep&pagination[limit]=500`
   );
   return response.data;
 };
