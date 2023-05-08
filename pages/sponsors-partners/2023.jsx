@@ -232,7 +232,7 @@ const GeneralPage = (props) => {
         </Box>
         {otherPartners && otherPartners.length > 0 && (
           <Box sx={{ mt: "40px", mb: "20px" }}>
-            <SectionTitle>Other PARTNERS</SectionTitle>
+            <SectionTitle>OTHER PARTNERS</SectionTitle>
           </Box>
         )}
         <Box
