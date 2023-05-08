@@ -37,11 +37,13 @@ const GeneralPage = (props) => {
         knowledge_partner: sponsor?.attributes?.knowledge_partner ?? null,
         research_partner: sponsor?.attributes?.research_partner ?? null,
         media_partner: sponsor?.attributes?.media_partner ?? null,
+        other: sponsor?.attributes?.other ?? null,
       };
     });
-
     return sponsors;
   }, [props?.sponsors]);
+
+  console.log("sponsors", sponsors);
 
   const key_partners = sponsors?.filter((sponsor) => {
     return sponsor.key_partner === true;
@@ -64,6 +66,10 @@ const GeneralPage = (props) => {
 
   const mediaPartners = sponsors?.filter((partner) => {
     return partner.media_partner === true;
+  });
+
+  const otherPartners = sponsors?.filter((partner) => {
+    return partner.other === true;
   });
 
   return (
@@ -217,6 +223,30 @@ const GeneralPage = (props) => {
           }}
         >
           {mediaPartners.map(({ source, text }) => {
+            return (
+              <Grid item xs={12} sm={4} key={source}>
+                <LogoWithTitle source={source} text={text} />
+              </Grid>
+            );
+          })}
+        </Box>
+        {otherPartners && otherPartners.length > 0 && (
+          <Box sx={{ mt: "40px", mb: "20px" }}>
+            <SectionTitle>Other PARTNERS</SectionTitle>
+          </Box>
+        )}
+        <Box
+          container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "20px",
+            width: "900px",
+          }}
+        >
+          {otherPartners.map(({ source, text }) => {
             return (
               <Grid item xs={12} sm={4} key={source}>
                 <LogoWithTitle source={source} text={text} />
