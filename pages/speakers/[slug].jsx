@@ -74,7 +74,10 @@ const SpeakerPage = (props) => {
                     margin: "auto",
                   }}
                   alt="rounded image"
-                  src={speakerData?.image?.data?.attributes?.url}
+                  src={
+                    speakerData?.image?.data?.attributes?.url ||
+                    "/assets/images/dummyUser.jpeg"
+                  }
                   width={"100%"}
                   height={"100%"}
                 />

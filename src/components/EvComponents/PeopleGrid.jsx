@@ -35,7 +35,7 @@ function PeopleGrid({ data }) {
           }}
         >
           {shownPeople.map(({ src, name, title, company, link }) => {
-            console.log("company: ", company);
+            console.log("src: ", src);
             return (
               <Grid item xs={12} sm={4} md={3} key={name}>
                 <AnimationWrapper
@@ -72,7 +72,7 @@ function PeopleGrid({ data }) {
                         // }}
                       >
                         <ModifiedRoundedImage
-                          Src={src}
+                          Src={src || "/assets/images/dummyUser.jpeg"}
                           Name={name}
                           Title={title}
                           Company={company}
