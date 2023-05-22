@@ -58,6 +58,10 @@ const evNavbarNavigations = [
         title: "Exhibitor zone",
         url: "https://onlineexhibitormanual.net/EVIS2023/ExhibitorLoginZone.aspx",
       },
+      {
+        title: "match making",
+        url: "https://networking.myworldofexpo.com/evis23/Login.aspx",
+      },
     ],
   },
   {
