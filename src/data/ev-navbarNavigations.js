@@ -51,15 +51,15 @@ const evNavbarNavigations = [
         url: "https://onlineexhibitormanual.net/EVIS2023/exhi/exhibitorlist2023.aspx",
       },
       {
-        title: "Book your stand",
+        title: "Book Your Stand",
         url: "https://registration.infosalons.ae/EVIS23AD/EXH/Registration/Demographics",
       },
       {
-        title: "Exhibitor zone",
+        title: "Exhibitor Zone",
         url: "https://onlineexhibitormanual.net/EVIS2023/ExhibitorLoginZone.aspx",
       },
       {
-        title: "match making",
+        title: "Match Making",
         url: "https://networking.myworldofexpo.com/evis23/Login.aspx",
       },
     ],
