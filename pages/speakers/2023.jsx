@@ -469,8 +469,7 @@ const speakersData2 = [
 const GeneralPage = (props) => {
   let speakersData = useMemo(() => {
     let allSpeakers = JSON.parse(props.allSpeakers)?.data ?? [];
-    console.log("allSpeakers :>> ", allSpeakers);
-    return allSpeakers.map((speaker) => {
+    let mappedSpeakers = allSpeakers.map((speaker) => {
       return {
         link: `/speakers/${speaker?.attributes?.slug ?? ""}`,
         src: speaker?.attributes?.image?.data?.attributes?.url ?? "",
@@ -479,6 +478,21 @@ const GeneralPage = (props) => {
         company: speaker?.attributes?.company ?? "",
       };
     });
+
+    let HESuhail = {
+      link: "/speakers/h.e.-suhail-al-mazrooei",
+      src: "https://res.cloudinary.com/drf11lmmn/image/upload/v1684491804/HE_Suhail_Al_Mazrouei_c3ca97e2e0.jpg",
+      name: "H.E. Suhail Al Mazrooei",
+      title: "Minister of Energy and Infrastructure",
+      company: "Minister of Energy and Infrastructure",
+    };
+
+    let filteredSpeakers = mappedSpeakers.filter((speaker) => {
+      return speaker.name !== "H.E. Suhail Al Mazrooei";
+    });
+
+    filteredSpeakers.unshift(HESuhail);
+    return filteredSpeakers;
   }, [props.allSpeakers]);
 
   return (
