@@ -30,6 +30,10 @@ const evNavbarNavigations = [
         title: "Venue",
         url: "/about#venue",
       },
+      {
+        title: "Technology Park",
+        url: "/about#tech-park",
+      },
     ],
   },
   {
